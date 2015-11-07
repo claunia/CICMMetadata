@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CICMMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cicm.xsd">
+  <Developer>Developer</Developer>
+  <Publisher>Publisher</Publisher>
+  <Author>Author</Author>
+  <Performer>Performer</Performer>
+  <Name>Name</Name>
+  <Version>Version</Version>
+  <ReleaseType>Retail</ReleaseType>
+  <ReleaseDate>2001-01-01</ReleaseDate>
+  <Barcodes>
+    <Barcode type="aztec">Barcode</Barcode>
+  </Barcodes>
+  <PartNumber>PartNumber</PartNumber>
+  <SerialNumber>SerialNumber</SerialNumber>
+  <Keywords>
+    <Keyword>Keyword</Keyword>
+  </Keywords>
+  <Magazine>
+    <Barcodes>
+      <Barcode type="aztec">Barcode</Barcode>
+    </Barcodes>
+    <Cover>
+      <File format="">File</File>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+      <Thumbnail>MA==</Thumbnail>
+    </Cover>
+    <Name>Name</Name>
+    <Editorial>Editorial</Editorial>
+    <PublicationDate>2001-01-01</PublicationDate>
+    <Number>0</Number>
+    <Language>
+      <Language>aar</Language>
+    </Language>
+    <Pages>0</Pages>
+    <PageSize>PageSize</PageSize>
+    <Scan>
+      <File format="">File</File>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </Scan>
+  </Magazine>
+  <Book>
+    <Barcodes>
+      <Barcode type="aztec">Barcode</Barcode>
+    </Barcodes>
+    <Cover>
+      <File format="">File</File>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+      <Thumbnail>MA==</Thumbnail>
+    </Cover>
+    <Name>Name</Name>
+    <Editorial>Editorial</Editorial>
+    <Author>Author</Author>
+    <PublicationDate>2001-01-01</PublicationDate>
+    <Language>
+      <Language>aar</Language>
+    </Language>
+    <Pages>0</Pages>
+    <PageSize>PageSize</PageSize>
+    <Scan>
+      <File format="">File</File>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </Scan>
+  </Book>
+  <Categories>
+    <Category>Category</Category>
+  </Categories>
+  <Subcategories>
+    <Subcategory>Subcategory</Subcategory>
+  </Subcategories>
+  <Languages>
+    <Language>aar</Language>
+  </Languages>
+  <Systems>
+    <System>System</System>
+  </Systems>
+  <Architectures>
+    <Architecture>i86</Architecture>
+  </Architectures>
+  <RequiredOperatingSystems>
+    <RequiredOperatingSystem>
+      <Name>Name</Name>
+      <Version>Version</Version>
+    </RequiredOperatingSystem>
+  </RequiredOperatingSystems>
+  <UserManual>
+    <Language>
+      <Language>aar</Language>
+    </Language>
+    <Pages>0</Pages>
+    <PageSize>PageSize</PageSize>
+    <Scan>
+      <File format="">File</File>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </Scan>
+  </UserManual>
+  <OpticalDisc>
+    <Image format="" offset="0">Image</Image>
+    <Size>0</Size>
+    <Sequence>
+      <DiscTitle>DiscTitle</DiscTitle>
+      <Disc>0</Disc>
+      <TotalDiscs>1</TotalDiscs>
+      <Side>1</Side>
+    </Sequence>
+    <Layers type="PTP">
+      <Sectors layer="0">0</Sectors>
+    </Layers>
+    <Checksums>
+      <Checksum type="fletcher16">Checksum</Checksum>
+    </Checksums>
+    <RingCode layer="0">RingCode</RingCode>
+    <MasteringSID layer="0">MasteringSID</MasteringSID>
+    <Toolstamp layer="0">Toolstamp</Toolstamp>
+    <MouldSID layer="0">MouldSID</MouldSID>
+    <MouldText layer="0">MouldText</MouldText>
+    <DiscType>DiscType</DiscType>
+    <DiscSubType>DiscSubType</DiscSubType>
+    <Offset>0</Offset>
+    <Tracks>0</Tracks>
+    <Sessions>0</Sessions>
+    <CopyProtection>CopyProtection</CopyProtection>
+    <Dimensions>
+      <Thickness>0.0</Thickness>
+    </Dimensions>
+    <Case>
+      <CaseType>jewel</CaseType>
+      <Scans/>
+    </Case>
+    <Scans/>
+    <PFI>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </PFI>
+    <DMI>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </DMI>
+    <CMI>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </CMI>
+    <BCA>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </BCA>
+    <ATIP>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </ATIP>
+    <PMA>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </PMA>
+    <LeadIn session="1">
+      <Image>Image</Image>
+      <Size>Size</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </LeadIn>
+    <LeadOut session="1">
+      <Image>Image</Image>
+      <Size>Size</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </LeadOut>
+    <XboxSecuritySectors>
+      <SecuritySectors>
+        <Start>0</Start>
+        <End>0</End>
+      </SecuritySectors>
+    </XboxSecuritySectors>
+    <PS3Encryption>
+      <Key>Key</Key>
+      <Serial>Serial</Serial>
+    </PS3Encryption>
+    <Track>
+      <Image format="" offset="0">Image</Image>
+      <Size>Size</Size>
+      <Sequence>
+        <TrackNumber>0</TrackNumber>
+        <Session>1</Session>
+      </Sequence>
+      <StartSector>0</StartSector>
+      <EndSector>0</EndSector>
+      <TrackType>audio</TrackType>
+      <BytesPerSector>0</BytesPerSector>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </Track>
+    <DumpHardwareArray>
+      <DumpHardware>
+        <Manufacturer>Manufacturer</Manufacturer>
+        <Model>Model</Model>
+        <Revision>Revision</Revision>
+        <Firmware>Firmware</Firmware>
+        <Serial>Serial</Serial>
+        <Extents>
+          <Extent>
+            <Start>0</Start>
+            <End>0</End>
+          </Extent>
+        </Extents>
+        <Software>
+          <Name>Name</Name>
+          <Version>Version</Version>
+          <OperatingSystem>OperatingSystem</OperatingSystem>
+        </Software>
+      </DumpHardware>
+    </DumpHardwareArray>
+  </OpticalDisc>
+</CICMMetadata>
