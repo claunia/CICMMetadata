@@ -240,4 +240,23 @@
       </DumpHardware>
     </DumpHardwareArray>
   </OpticalDisc>
+  <Advertisement>
+    <Manufacturer>Manufacturer</Manufacturer>
+    <Product>Product</Product>
+    <File format="">File</File>
+    <FileSize>0</FileSize>
+    <Frames>0</Frames>
+    <Duration>0</Duration>
+    <MeanFrameRate>0</MeanFrameRate>
+    <Checksums>
+      <Checksum type="fletcher16">Checksum</Checksum>
+    </Checksums>
+    <AudioTrack AccoustID="" Channels="0" Codec="" MeanBitrate="0" SampleRate="0" TrackNumber="1"/>
+    <VideoTrack Codec="" Horizontal="0" MeanBitrate="0" ThreeD="true" TrackNumber="1" Vertical="0"/>
+    <SubtitleTrack Codec="" TrackNumber="1"/>
+    <Recording>
+      <SourceFormat>ITU-A</SourceFormat>
+      <Timestamp>2001-12-31T12:00:00</Timestamp>
+    </Recording>
+  </Advertisement>
 </CICMMetadata>

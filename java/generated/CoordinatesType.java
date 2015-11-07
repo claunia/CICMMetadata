@@ -15,17 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ExtentType complex type.
+ * <p>Java class for CoordinatesType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ExtentType">
+ * &lt;complexType name="CoordinatesType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Start" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="End" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="Latitude" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="Longitude" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,47 +35,47 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ExtentType", propOrder = {
-    "start",
-    "end"
+@XmlType(name = "CoordinatesType", propOrder = {
+    "latitude",
+    "longitude"
 })
-public class ExtentType {
+public class CoordinatesType {
 
-    @XmlElement(name = "Start")
-    protected int start;
-    @XmlElement(name = "End")
-    protected int end;
+    @XmlElement(name = "Latitude")
+    protected double latitude;
+    @XmlElement(name = "Longitude")
+    protected double longitude;
 
     /**
-     * Gets the value of the start property.
+     * Gets the value of the latitude property.
      * 
      */
-    public int getStart() {
-        return start;
+    public double getLatitude() {
+        return latitude;
     }
 
     /**
-     * Sets the value of the start property.
+     * Sets the value of the latitude property.
      * 
      */
-    public void setStart(int value) {
-        this.start = value;
+    public void setLatitude(double value) {
+        this.latitude = value;
     }
 
     /**
-     * Gets the value of the end property.
+     * Gets the value of the longitude property.
      * 
      */
-    public int getEnd() {
-        return end;
+    public double getLongitude() {
+        return longitude;
     }
 
     /**
-     * Sets the value of the end property.
+     * Sets the value of the longitude property.
      * 
      */
-    public void setEnd(int value) {
-        this.end = value;
+    public void setLongitude(double value) {
+        this.longitude = value;
     }
 
 }

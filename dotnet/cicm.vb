@@ -73,6 +73,8 @@ Namespace Schemas
         
         Private opticalDiscField As OpticalDiscType()
         
+        Private advertisementField As AdvertisementType()
+        
         '''<remarks>
 '''Developer of the set
 '''</remarks>
@@ -139,6 +141,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Version of the set if applicable
+'''					
 '''</remarks>
         Public Property Version() As String
             Get
@@ -151,8 +154,8 @@ Namespace Schemas
         
         '''<remarks>
 '''
-'''      			Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
-'''      		
+'''						Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
+'''					
 '''</remarks>
         Public Property ReleaseType() As CICMMetadataTypeReleaseType
             Get
@@ -222,7 +225,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Manufacturer serial no., not to be confused with software registration serial number
+'''Manufacturer serial no., not to be confused with
+'''						software registration serial number
 '''</remarks>
         Public Property SerialNumber() As String
             Get
@@ -317,7 +321,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''CPU architectures this set is designed to run on, if it includes software
+'''CPU architectures this set is designed to run on,
+'''						if it includes software
 '''</remarks>
         Public Property Architectures() As ArchitecturesType
             Get
@@ -329,7 +334,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Required operating systems and versions this set runs on, if it includes software
+'''Required operating systems and versions this set
+'''						runs on, if it includes software
 '''</remarks>
         Public Property RequiredOperatingSystems() As RequiredOperatingSystemsType
             Get
@@ -341,7 +347,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''User manual/guide, installation manual/guide and any applicable entity
+'''User manual/guide, installation manual/guide and
+'''						any applicable entity
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("UserManual")>  _
         Public Property UserManual() As UserManualType()
@@ -355,6 +362,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Optical discs this set contains
+'''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("OpticalDisc")>  _
         Public Property OpticalDisc() As OpticalDiscType()
@@ -363,6 +371,19 @@ Namespace Schemas
             End Get
             Set
                 Me.opticalDiscField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Advertisement
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("Advertisement")>  _
+        Public Property Advertisement() As AdvertisementType()
+            Get
+                Return Me.advertisementField
+            End Get
+            Set
+                Me.advertisementField = Value
             End Set
         End Property
     End Class
@@ -626,6 +647,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Publication date of this magazine
+'''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute(DataType:="date")>  _
         Public Property PublicationDate() As Date
@@ -650,6 +672,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Sequential number of this magazine
+'''					
 '''</remarks>
         Public Property Number() As Integer
             Get
@@ -673,6 +696,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Languages this magazine is written in
+'''					
 '''</remarks>
         Public Property Language() As LanguagesType
             Get
@@ -685,6 +709,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Pages of this magazine, including cover and back
+'''					
 '''</remarks>
         Public Property Pages() As Integer
             Get
@@ -707,7 +732,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Page size of this magazine, standard or in WxH milimeters
+'''Page size of this magazine, standard or in WxH
+'''						milimeters
 '''</remarks>
         Public Property PageSize() As String
             Get
@@ -945,8 +971,8 @@ Namespace Schemas
         
         '''<remarks>
 '''
-'''      			Languages included in the set, ISO 3-letter code
-'''      		
+'''						Languages included in the set, ISO 3-letter code
+'''					
 '''</remarks>
         Public Property Language() As LanguagesTypeLanguage
             Get
@@ -2600,6 +2626,7 @@ Namespace Schemas
     
     '''<remarks>
 '''Information about any scan processing done
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -2703,6 +2730,7 @@ Namespace Schemas
         
         '''<remarks>
 '''OCR applied for which languages
+'''					
 '''</remarks>
         Public Property Language() As LanguagesType
             Get
@@ -2865,6 +2893,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Magazine page size in WxH milimeters
+'''					
 '''</remarks>
         Public Property PageSize() As String
             Get
@@ -2890,6 +2919,7 @@ Namespace Schemas
     
     '''<remarks>
 '''CPU architectures this set is intended to be run on
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -3092,6 +3122,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Minimal supported operating system
+'''					
 '''</remarks>
         Public Property Name() As String
             Get
@@ -3114,7 +3145,8 @@ Namespace Schemas
     End Class
     
     '''<remarks>
-'''User manual or user guide accompanying this set. Can be more than one.
+'''User manual or user guide accompanying this set.
+'''				Can be more than one.
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -3156,6 +3188,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Paper size in standard name or in WxH milimeters
+'''					
 '''</remarks>
         Public Property PageSize() As String
             Get
@@ -3251,7 +3284,8 @@ Namespace Schemas
         Private dumpHardwareArrayField As DumpHardwareArrayType
         
         '''<remarks>
-'''Image file, or image description file, plus format (cue, toc, etc, etc)
+'''Image file, or image description file, plus
+'''						format (cue, toc, etc, etc)
 '''</remarks>
         Public Property Image() As ImageType
             Get
@@ -3276,6 +3310,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Sequence information about this disc
+'''					
 '''</remarks>
         Public Property Sequence() As SequenceType
             Get
@@ -3376,6 +3411,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Disc type (CD, GD, SACD, DDCD, DVD, HDDVD, BD)
+'''					
 '''</remarks>
         Public Property DiscType() As String
             Get
@@ -3388,6 +3424,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Disc subtype (CD-ROM, CD-DA, CD+G, etc)
+'''					
 '''</remarks>
         Public Property DiscSubType() As String
             Get
@@ -3399,7 +3436,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Offset between subchannel servo and data sectors servo, in bytes
+'''Offset between subchannel servo and data sectors
+'''						servo, in bytes
 '''</remarks>
         Public Property Offset() As Integer
             Get
@@ -3472,6 +3510,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Case where the disk came from factory
+'''					
 '''</remarks>
         Public Property Case() As CaseType
             Get
@@ -3495,7 +3534,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Physical Manufacturing Information (DVD and HD DVD)
+'''Physical Manufacturing Information (DVD and HD
+'''						DVD)
 '''</remarks>
         Public Property PFI() As DumpType
             Get
@@ -3520,6 +3560,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Lead-In Copyright Management Information
+'''					
 '''</remarks>
         Public Property CMI() As DumpType
             Get
@@ -3568,6 +3609,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Lead-In, Border-In, or equivalent
+'''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("LeadIn")>  _
         Public Property LeadIn() As BorderType()
@@ -3581,6 +3623,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Lead-Out, Border-Out, or equivalent
+'''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("LeadOut")>  _
         Public Property LeadOut() As BorderType()
@@ -3630,6 +3673,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Array of drives used to dump disc
+'''					
 '''</remarks>
         Public Property DumpHardwareArray() As DumpHardwareArrayType
             Get
@@ -3642,7 +3686,8 @@ Namespace Schemas
     End Class
     
     '''<remarks>
-'''File containing track dump, and format, binary, yranib, or audio/video container
+'''File containing track dump, and format, binary,
+'''				yranib, or audio/video container
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -3705,6 +3750,7 @@ Namespace Schemas
     
     '''<remarks>
 '''Sequence information about a disc
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -3726,6 +3772,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Sequence information about this disc
+'''					
 '''</remarks>
         Public Property DiscTitle() As String
             Get
@@ -3750,6 +3797,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Total number of discs in this set
+'''					
 '''</remarks>
         Public Property TotalDiscs() As Integer
             Get
@@ -3762,6 +3810,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Side of disc described by this field
+'''					
 '''</remarks>
         Public Property Side() As Integer
             Get
@@ -3773,7 +3822,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''On PTP layering, layer of disc described by this field, starting on 0
+'''On PTP layering, layer of disc described by this
+'''						field, starting on 0
 '''</remarks>
         Public Property Layer() As Integer
             Get
@@ -3976,6 +4026,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Diameter in milimeters for circular discs
+'''					
 '''</remarks>
         Public Property Diameter() As Double
             Get
@@ -3999,6 +4050,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Height in milimeters for non-circular disks
+'''					
 '''</remarks>
         Public Property Height() As Double
             Get
@@ -4022,6 +4074,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Width in milimeters for non-circular disks
+'''					
 '''</remarks>
         Public Property Width() As Double
             Get
@@ -4045,6 +4098,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Thickness in milimeters for non-circular disks
+'''					
 '''</remarks>
         Public Property Thickness() As Double
             Get
@@ -4222,6 +4276,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Scanned element: cover, back, inlay, etc
+'''					
 '''</remarks>
         Public Property CaseScanElement() As CaseScanTypeCaseScanElement
             Get
@@ -4291,8 +4346,8 @@ Namespace Schemas
         
         '''<remarks>
 '''
-'''      			Scanned element: up, down, label, data, etc
-'''      		
+'''						Scanned element: up, down, label, data, etc
+'''					
 '''</remarks>
         Public Property DiscScanElement() As DiscScanTypeDiscScanElement
             Get
@@ -4342,6 +4397,7 @@ Namespace Schemas
     
     '''<remarks>
 '''Information about dumped structure
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -4468,6 +4524,7 @@ Namespace Schemas
     
     '''<remarks>
 '''Start and end of XGD's security sectors
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -4481,6 +4538,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Start of XGD's security sectors
+'''					
 '''</remarks>
         Public Property Start() As Long
             Get
@@ -4576,7 +4634,8 @@ Namespace Schemas
         Private fileSystemInformationField As PartitionType()
         
         '''<remarks>
-'''File containing track dump, and format, binary, yranib, or audio/video container
+'''File containing track dump, and format, binary,
+'''						yranib, or audio/video container
 '''</remarks>
         Public Property Image() As ImageType
             Get
@@ -4613,6 +4672,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Track start address in MM:SS:FF
+'''					
 '''</remarks>
         Public Property StartMSF() As String
             Get
@@ -4661,8 +4721,8 @@ Namespace Schemas
         
         '''<remarks>
 '''
-'''      			Track type: audio, mode0, mode1, mode2
-'''      		
+'''						Track type: audio, mode0, mode1, mode2
+'''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("TrackType")>  _
         Public Property TrackType1() As TrackTypeTrackType
@@ -4675,7 +4735,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical format)
+'''Bytes per sector: 2048, 2352, 2448, etc, etc (as
+'''						stored in image, not in physical format)
 '''</remarks>
         Public Property BytesPerSector() As Integer
             Get
@@ -4735,6 +4796,7 @@ Namespace Schemas
     
     '''<remarks>
 '''Sequence information about a track
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -4823,7 +4885,8 @@ Namespace Schemas
         Private checksumsField6 As ChecksumType()
         
         '''<remarks>
-'''File containing track's subchannel dump and format, packed, rw_raw
+'''File containing track's subchannel dump and
+'''						format, packed, rw_raw
 '''</remarks>
         Public Property Image() As ImageType
             Get
@@ -4881,6 +4944,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Partition sequence number, starting on 1
+'''					
 '''</remarks>
         Public Property Sequence() As Integer
             Get
@@ -4893,6 +4957,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Partition name if supported by partition scheme
+'''					
 '''</remarks>
         Public Property Name() As String
             Get
@@ -4940,7 +5005,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Partition description if supported by partition scheme
+'''Partition description if supported by partition
+'''						scheme
 '''</remarks>
         Public Property Description() As String
             Get
@@ -4953,6 +5019,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Array of filesystems contained in the partition
+'''					
 '''</remarks>
         Public Property FileSystems() As FileSystemsType
             Get
@@ -5084,6 +5151,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Filesystem last modification date
+'''					
 '''</remarks>
         Public Property ModificationDate() As Date
             Get
@@ -5294,6 +5362,7 @@ Namespace Schemas
         
         '''<remarks>
 '''System identifier filesystem applies to
+'''					
 '''</remarks>
         Public Property SystemIdentifier() As String
             Get
@@ -5318,6 +5387,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Filesystem publisher identifier
+'''					
 '''</remarks>
         Public Property PublisherIdentifier() As String
             Get
@@ -5342,6 +5412,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Filesystem application preparer
+'''					
 '''</remarks>
         Public Property ApplicationIdentifier() As String
             Get
@@ -5469,6 +5540,7 @@ Namespace Schemas
         
         '''<remarks>
 '''Software used to read with this drive
+'''					
 '''</remarks>
         Public Property Software() As SoftwareType
             Get
@@ -5556,7 +5628,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Operating system name and version where the software was run
+'''Operating system name and version where the
+'''						software was run
 '''</remarks>
         Public Property OperatingSystem() As String
             Get
@@ -5564,6 +5637,891 @@ Namespace Schemas
             End Get
             Set
                 Me.operatingSystemField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class AdvertisementType
+        
+        Private manufacturerField2 As String
+        
+        Private productField As String
+        
+        Private fileField2 As FileType
+        
+        Private fileSizeField As Long
+        
+        Private framesField As Long
+        
+        Private framesSpecifiedField As Boolean
+        
+        Private durationField As Long
+        
+        Private meanFrameRateField As Integer
+        
+        Private meanFrameRateSpecifiedField As Boolean
+        
+        Private checksumsField7 As ChecksumType()
+        
+        Private audioTrackField As AudioTracksType()
+        
+        Private videoTrackField As VideoTracksType()
+        
+        Private subtitleTrackField As SubtitleTracksType()
+        
+        Private recordingField As RecordingType
+        
+        '''<remarks>
+'''Manufactured of the advertised product
+'''					
+'''</remarks>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField2
+            End Get
+            Set
+                Me.manufacturerField2 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Advertised product
+'''</remarks>
+        Public Property Product() As String
+            Get
+                Return Me.productField
+            End Get
+            Set
+                Me.productField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''File containing advertising
+'''</remarks>
+        Public Property File() As FileType
+            Get
+                Return Me.fileField2
+            End Get
+            Set
+                Me.fileField2 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Size of file
+'''</remarks>
+        Public Property FileSize() As Long
+            Get
+                Return Me.fileSizeField
+            End Get
+            Set
+                Me.fileSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Total video frames
+'''</remarks>
+        Public Property Frames() As Long
+            Get
+                Return Me.framesField
+            End Get
+            Set
+                Me.framesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnore()>  _
+        Public Overridable Property FramesSpecified() As Boolean
+            Get
+                Return Me.framesSpecifiedField
+            End Get
+            Set
+                Me.framesSpecifiedField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Duration in seconds
+'''</remarks>
+        Public Property Duration() As Long
+            Get
+                Return Me.durationField
+            End Get
+            Set
+                Me.durationField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Mean framerate
+'''</remarks>
+        Public Property MeanFrameRate() As Integer
+            Get
+                Return Me.meanFrameRateField
+            End Get
+            Set
+                Me.meanFrameRateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnore()>  _
+        Public Overridable Property MeanFrameRateSpecified() As Boolean
+            Get
+                Return Me.meanFrameRateSpecifiedField
+            End Get
+            Set
+                Me.meanFrameRateSpecifiedField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField7
+            End Get
+            Set
+                Me.checksumsField7 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Audio tracks of advertisement
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("AudioTrack")>  _
+        Public Property AudioTrack() As AudioTracksType()
+            Get
+                Return Me.audioTrackField
+            End Get
+            Set
+                Me.audioTrackField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Video tracks of advertisement
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("VideoTrack")>  _
+        Public Property VideoTrack() As VideoTracksType()
+            Get
+                Return Me.videoTrackField
+            End Get
+            Set
+                Me.videoTrackField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Subtitle tracks of advertisement
+'''					
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("SubtitleTrack")>  _
+        Public Property SubtitleTrack() As SubtitleTracksType()
+            Get
+                Return Me.subtitleTrackField
+            End Get
+            Set
+                Me.subtitleTrackField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''If advertisement has been capture from a
+'''						television/radio broadcast, here is the capture information
+'''					
+'''</remarks>
+        Public Property Recording() As RecordingType
+            Get
+                Return Me.recordingField
+            End Get
+            Set
+                Me.recordingField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class AudioTracksType
+        
+        Private trackNumberField1 As Integer
+        
+        Private accoustIDField1 As String
+        
+        Private codecField As String
+        
+        Private channelsField As Integer
+        
+        Private sampleRateField As Integer
+        
+        Private meanBitrateField As Long
+        
+        Private languagesField1 As LanguagesType
+        
+        '''<remarks>
+'''Track number in media container
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property TrackNumber() As Integer
+            Get
+                Return Me.trackNumberField1
+            End Get
+            Set
+                Me.trackNumberField1 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Track's AccoustID
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property AccoustID() As String
+            Get
+                Return Me.accoustIDField1
+            End Get
+            Set
+                Me.accoustIDField1 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Track's codec
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Codec() As String
+            Get
+                Return Me.codecField
+            End Get
+            Set
+                Me.codecField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Audio channels
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Channels() As Integer
+            Get
+                Return Me.channelsField
+            End Get
+            Set
+                Me.channelsField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Audio sampling rate
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property SampleRate() As Integer
+            Get
+                Return Me.sampleRateField
+            End Get
+            Set
+                Me.sampleRateField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Mean bitrate, or constant bitrate, in bits per
+'''					second
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property MeanBitrate() As Long
+            Get
+                Return Me.meanBitrateField
+            End Get
+            Set
+                Me.meanBitrateField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Track languages
+'''</remarks>
+        Public Property Languages() As LanguagesType
+            Get
+                Return Me.languagesField1
+            End Get
+            Set
+                Me.languagesField1 = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class VideoTracksType
+        
+        Private trackNumberField2 As Integer
+        
+        Private codecField1 As String
+        
+        Private horizontalField As Integer
+        
+        Private verticalField As Integer
+        
+        Private meanBitrateField1 As Long
+        
+        Private threeDField As Boolean
+        
+        Private languagesField2 As LanguagesType
+        
+        '''<remarks>
+'''Track number in media container
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property TrackNumber() As Integer
+            Get
+                Return Me.trackNumberField2
+            End Get
+            Set
+                Me.trackNumberField2 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Track's codec
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Codec() As String
+            Get
+                Return Me.codecField1
+            End Get
+            Set
+                Me.codecField1 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Horizontal resolution in pixels
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Horizontal() As Integer
+            Get
+                Return Me.horizontalField
+            End Get
+            Set
+                Me.horizontalField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Vertical resolution in pixels
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Vertical() As Integer
+            Get
+                Return Me.verticalField
+            End Get
+            Set
+                Me.verticalField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Mean bitrate, or constant bitrate, in bits per
+'''					second
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property MeanBitrate() As Long
+            Get
+                Return Me.meanBitrateField1
+            End Get
+            Set
+                Me.meanBitrateField1 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Is this video track in 3D?
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property ThreeD() As Boolean
+            Get
+                Return Me.threeDField
+            End Get
+            Set
+                Me.threeDField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Track languages
+'''</remarks>
+        Public Property Languages() As LanguagesType
+            Get
+                Return Me.languagesField2
+            End Get
+            Set
+                Me.languagesField2 = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SubtitleTracksType
+        
+        Private trackNumberField3 As Integer
+        
+        Private codecField2 As String
+        
+        Private languagesField3 As LanguagesType
+        
+        '''<remarks>
+'''Track number in media container
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property TrackNumber() As Integer
+            Get
+                Return Me.trackNumberField3
+            End Get
+            Set
+                Me.trackNumberField3 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Track's codec
+'''</remarks>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Codec() As String
+            Get
+                Return Me.codecField2
+            End Get
+            Set
+                Me.codecField2 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Track languages
+'''</remarks>
+        Public Property Languages() As LanguagesType
+            Get
+                Return Me.languagesField3
+            End Get
+            Set
+                Me.languagesField3 = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class RecordingType
+        
+        Private broadcasterField As String
+        
+        Private broadcastPlatformField As String
+        
+        Private sourceFormatField As RecordingTypeSourceFormat
+        
+        Private timestampField As Date
+        
+        Private softwareField4 As SoftwareType()
+        
+        Private coordinatesField As CoordinatesType
+        
+        '''<remarks>
+'''Name of the television channel this recording was
+'''						broadcasted, if applicable
+'''</remarks>
+        Public Property Broadcaster() As String
+            Get
+                Return Me.broadcasterField
+            End Get
+            Set
+                Me.broadcasterField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Platform that broadcasted the television channel,
+'''						if applicable
+'''</remarks>
+        Public Property BroadcastPlatform() As String
+            Get
+                Return Me.broadcastPlatformField
+            End Get
+            Set
+                Me.broadcastPlatformField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''
+'''						Format of the source of this recording
+'''					
+'''</remarks>
+        Public Property SourceFormat() As RecordingTypeSourceFormat
+            Get
+                Return Me.sourceFormatField
+            End Get
+            Set
+                Me.sourceFormatField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Date and time of broadcast
+'''</remarks>
+        Public Property Timestamp() As Date
+            Get
+                Return Me.timestampField
+            End Get
+            Set
+                Me.timestampField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Software used to capture, process, convert, the
+'''						recording
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("Software")>  _
+        Public Property Software() As SoftwareType()
+            Get
+                Return Me.softwareField4
+            End Get
+            Set
+                Me.softwareField4 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Approximate coordinates where the recording was
+'''						done
+'''</remarks>
+        Public Property Coordinates() As CoordinatesType
+            Get
+                Return Me.coordinatesField
+            End Get
+            Set
+                Me.coordinatesField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute()>  _
+    Public Enum RecordingTypeSourceFormat
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-A")>  _
+        ITUA
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-B")>  _
+        ITUB
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-C")>  _
+        ITUC
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-D")>  _
+        ITUD
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-E")>  _
+        ITUE
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-F")>  _
+        ITUF
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-G")>  _
+        ITUG
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-H")>  _
+        ITUH
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-I")>  _
+        ITUI
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-J")>  _
+        ITUJ
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-K")>  _
+        ITUK
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-L")>  _
+        ITUL
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-M")>  _
+        ITUM
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ITU-N")>  _
+        ITUN
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-B")>  _
+        PALB
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("SECAM-B")>  _
+        SECAMB
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-D")>  _
+        PALD
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("SECAM-D")>  _
+        SECAMD
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-G")>  _
+        PALG
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("SECAM-G")>  _
+        SECAMG
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-H")>  _
+        PALH
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-I")>  _
+        PALI
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-K")>  _
+        PALK
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("SECAM-K")>  _
+        SECAMK
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("NTSC-M")>  _
+        NTSCM
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-N")>  _
+        PALN
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("PAL-M")>  _
+        PALM
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("SECAM-M")>  _
+        SECAMM
+        
+        '''<remarks/>
+        MUSE
+        
+        '''<remarks/>
+        PALplus
+        
+        '''<remarks/>
+        FM
+        
+        '''<remarks/>
+        AM
+        
+        '''<remarks/>
+        COFDM
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("CAM-D")>  _
+        CAMD
+        
+        '''<remarks/>
+        DAB
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DAB+")>  _
+        DAB1
+        
+        '''<remarks/>
+        DRM
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DRM+")>  _
+        DRM1
+        
+        '''<remarks/>
+        FMeXtra
+        
+        '''<remarks/>
+        ATSC
+        
+        '''<remarks/>
+        ATSC2
+        
+        '''<remarks/>
+        ATSC3
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ATSC-M/H")>  _
+        ATSCMH
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-T")>  _
+        DVBT
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-T2")>  _
+        DVBT2
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-S")>  _
+        DVBS
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-S2")>  _
+        DVBS2
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-S2X")>  _
+        DVBS2X
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-C")>  _
+        DVBC
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-C2")>  _
+        DVBC2
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-H")>  _
+        DVBH
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-NGH")>  _
+        DVBNGH
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-SH")>  _
+        DVBSH
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ISDB-T")>  _
+        ISDBT
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ISDB-Tb")>  _
+        ISDBTb
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ISDB-S")>  _
+        ISDBS
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("ISDB-C")>  _
+        ISDBC
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("1seg")>  _
+        Item1seg
+        
+        '''<remarks/>
+        DTMB
+        
+        '''<remarks/>
+        CCMB
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("T-DMB")>  _
+        TDMB
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("S-DMB")>  _
+        SDMB
+        
+        '''<remarks/>
+        IPTV
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-MT")>  _
+        DVBMT
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-MC")>  _
+        DVBMC
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("DVB-MS")>  _
+        DVBMS
+        
+        '''<remarks/>
+        ADR
+        
+        '''<remarks/>
+        SDR
+    End Enum
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class CoordinatesType
+        
+        Private latitudeField As Double
+        
+        Private longitudeField As Double
+        
+        '''<remarks>
+'''Approximate latitude of recording
+'''					
+'''</remarks>
+        Public Property Latitude() As Double
+            Get
+                Return Me.latitudeField
+            End Get
+            Set
+                Me.latitudeField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Approximate longitude of recording
+'''					
+'''</remarks>
+        Public Property Longitude() As Double
+            Get
+                Return Me.longitudeField
+            End Get
+            Set
+                Me.longitudeField = Value
             End Set
         End Property
     End Class

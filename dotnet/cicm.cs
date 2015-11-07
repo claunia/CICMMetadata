@@ -70,6 +70,8 @@ namespace Schemas {
         
         private OpticalDiscType[] opticalDiscField;
         
+        private AdvertisementType[] advertisementField;
+        
         /// <remarks>
 ///Developer of the set
 ///</remarks>
@@ -136,6 +138,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Version of the set if applicable
+///					
 ///</remarks>
         public string Version {
             get {
@@ -148,8 +151,8 @@ namespace Schemas {
         
         /// <remarks>
 ///
-///      			Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
-///      		
+///						Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
+///					
 ///</remarks>
         public CICMMetadataTypeReleaseType ReleaseType {
             get {
@@ -219,7 +222,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Manufacturer serial no., not to be confused with software registration serial number
+///Manufacturer serial no., not to be confused with
+///						software registration serial number
 ///</remarks>
         public string SerialNumber {
             get {
@@ -314,7 +318,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///CPU architectures this set is designed to run on, if it includes software
+///CPU architectures this set is designed to run on,
+///						if it includes software
 ///</remarks>
         public ArchitecturesType Architectures {
             get {
@@ -326,7 +331,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Required operating systems and versions this set runs on, if it includes software
+///Required operating systems and versions this set
+///						runs on, if it includes software
 ///</remarks>
         public RequiredOperatingSystemsType RequiredOperatingSystems {
             get {
@@ -338,7 +344,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///User manual/guide, installation manual/guide and any applicable entity
+///User manual/guide, installation manual/guide and
+///						any applicable entity
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("UserManual")]
         public UserManualType[] UserManual {
@@ -352,6 +359,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Optical discs this set contains
+///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("OpticalDisc")]
         public OpticalDiscType[] OpticalDisc {
@@ -360,6 +368,19 @@ namespace Schemas {
             }
             set {
                 this.opticalDiscField = value;
+            }
+        }
+        
+        /// <remarks>
+///Advertisement
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("Advertisement")]
+        public AdvertisementType[] Advertisement {
+            get {
+                return this.advertisementField;
+            }
+            set {
+                this.advertisementField = value;
             }
         }
     }
@@ -623,6 +644,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Publication date of this magazine
+///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
         public System.DateTime PublicationDate {
@@ -647,6 +669,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Sequential number of this magazine
+///					
 ///</remarks>
         public int Number {
             get {
@@ -670,6 +693,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Languages this magazine is written in
+///					
 ///</remarks>
         public LanguagesType Language {
             get {
@@ -682,6 +706,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Pages of this magazine, including cover and back
+///					
 ///</remarks>
         public int Pages {
             get {
@@ -704,7 +729,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Page size of this magazine, standard or in WxH milimeters
+///Page size of this magazine, standard or in WxH
+///						milimeters
 ///</remarks>
         public string PageSize {
             get {
@@ -942,8 +968,8 @@ namespace Schemas {
         
         /// <remarks>
 ///
-///      			Languages included in the set, ISO 3-letter code
-///      		
+///						Languages included in the set, ISO 3-letter code
+///					
 ///</remarks>
         public LanguagesTypeLanguage Language {
             get {
@@ -2597,6 +2623,7 @@ namespace Schemas {
     
     /// <remarks>
 ///Information about any scan processing done
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -2700,6 +2727,7 @@ namespace Schemas {
         
         /// <remarks>
 ///OCR applied for which languages
+///					
 ///</remarks>
         public LanguagesType Language {
             get {
@@ -2862,6 +2890,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Magazine page size in WxH milimeters
+///					
 ///</remarks>
         public string PageSize {
             get {
@@ -2887,6 +2916,7 @@ namespace Schemas {
     
     /// <remarks>
 ///CPU architectures this set is intended to be run on
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -3089,6 +3119,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Minimal supported operating system
+///					
 ///</remarks>
         public string Name {
             get {
@@ -3111,7 +3142,8 @@ namespace Schemas {
     }
     
     /// <remarks>
-///User manual or user guide accompanying this set. Can be more than one.
+///User manual or user guide accompanying this set.
+///				Can be more than one.
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -3153,6 +3185,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Paper size in standard name or in WxH milimeters
+///					
 ///</remarks>
         public string PageSize {
             get {
@@ -3248,7 +3281,8 @@ namespace Schemas {
         private DumpHardwareArrayType dumpHardwareArrayField;
         
         /// <remarks>
-///Image file, or image description file, plus format (cue, toc, etc, etc)
+///Image file, or image description file, plus
+///						format (cue, toc, etc, etc)
 ///</remarks>
         public ImageType Image {
             get {
@@ -3273,6 +3307,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Sequence information about this disc
+///					
 ///</remarks>
         public SequenceType Sequence {
             get {
@@ -3373,6 +3408,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Disc type (CD, GD, SACD, DDCD, DVD, HDDVD, BD)
+///					
 ///</remarks>
         public string DiscType {
             get {
@@ -3385,6 +3421,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Disc subtype (CD-ROM, CD-DA, CD+G, etc)
+///					
 ///</remarks>
         public string DiscSubType {
             get {
@@ -3396,7 +3433,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Offset between subchannel servo and data sectors servo, in bytes
+///Offset between subchannel servo and data sectors
+///						servo, in bytes
 ///</remarks>
         public int Offset {
             get {
@@ -3469,6 +3507,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Case where the disk came from factory
+///					
 ///</remarks>
         public CaseType Case {
             get {
@@ -3492,7 +3531,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Physical Manufacturing Information (DVD and HD DVD)
+///Physical Manufacturing Information (DVD and HD
+///						DVD)
 ///</remarks>
         public DumpType PFI {
             get {
@@ -3517,6 +3557,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Lead-In Copyright Management Information
+///					
 ///</remarks>
         public DumpType CMI {
             get {
@@ -3565,6 +3606,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Lead-In, Border-In, or equivalent
+///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("LeadIn")]
         public BorderType[] LeadIn {
@@ -3578,6 +3620,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Lead-Out, Border-Out, or equivalent
+///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("LeadOut")]
         public BorderType[] LeadOut {
@@ -3627,6 +3670,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Array of drives used to dump disc
+///					
 ///</remarks>
         public DumpHardwareArrayType DumpHardwareArray {
             get {
@@ -3639,7 +3683,8 @@ namespace Schemas {
     }
     
     /// <remarks>
-///File containing track dump, and format, binary, yranib, or audio/video container
+///File containing track dump, and format, binary,
+///				yranib, or audio/video container
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -3702,6 +3747,7 @@ namespace Schemas {
     
     /// <remarks>
 ///Sequence information about a disc
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -3723,6 +3769,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Sequence information about this disc
+///					
 ///</remarks>
         public string DiscTitle {
             get {
@@ -3747,6 +3794,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Total number of discs in this set
+///					
 ///</remarks>
         public int TotalDiscs {
             get {
@@ -3759,6 +3807,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Side of disc described by this field
+///					
 ///</remarks>
         public int Side {
             get {
@@ -3770,7 +3819,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///On PTP layering, layer of disc described by this field, starting on 0
+///On PTP layering, layer of disc described by this
+///						field, starting on 0
 ///</remarks>
         public int Layer {
             get {
@@ -3973,6 +4023,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Diameter in milimeters for circular discs
+///					
 ///</remarks>
         public double Diameter {
             get {
@@ -3996,6 +4047,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Height in milimeters for non-circular disks
+///					
 ///</remarks>
         public double Height {
             get {
@@ -4019,6 +4071,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Width in milimeters for non-circular disks
+///					
 ///</remarks>
         public double Width {
             get {
@@ -4042,6 +4095,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Thickness in milimeters for non-circular disks
+///					
 ///</remarks>
         public double Thickness {
             get {
@@ -4219,6 +4273,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Scanned element: cover, back, inlay, etc
+///					
 ///</remarks>
         public CaseScanTypeCaseScanElement CaseScanElement {
             get {
@@ -4288,8 +4343,8 @@ namespace Schemas {
         
         /// <remarks>
 ///
-///      			Scanned element: up, down, label, data, etc
-///      		
+///						Scanned element: up, down, label, data, etc
+///					
 ///</remarks>
         public DiscScanTypeDiscScanElement DiscScanElement {
             get {
@@ -4339,6 +4394,7 @@ namespace Schemas {
     
     /// <remarks>
 ///Information about dumped structure
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -4465,6 +4521,7 @@ namespace Schemas {
     
     /// <remarks>
 ///Start and end of XGD's security sectors
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -4478,6 +4535,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Start of XGD's security sectors
+///					
 ///</remarks>
         public long Start {
             get {
@@ -4573,7 +4631,8 @@ namespace Schemas {
         private PartitionType[] fileSystemInformationField;
         
         /// <remarks>
-///File containing track dump, and format, binary, yranib, or audio/video container
+///File containing track dump, and format, binary,
+///						yranib, or audio/video container
 ///</remarks>
         public ImageType Image {
             get {
@@ -4610,6 +4669,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Track start address in MM:SS:FF
+///					
 ///</remarks>
         public string StartMSF {
             get {
@@ -4658,8 +4718,8 @@ namespace Schemas {
         
         /// <remarks>
 ///
-///      			Track type: audio, mode0, mode1, mode2
-///      		
+///						Track type: audio, mode0, mode1, mode2
+///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("TrackType")]
         public TrackTypeTrackType TrackType1 {
@@ -4672,7 +4732,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical format)
+///Bytes per sector: 2048, 2352, 2448, etc, etc (as
+///						stored in image, not in physical format)
 ///</remarks>
         public int BytesPerSector {
             get {
@@ -4732,6 +4793,7 @@ namespace Schemas {
     
     /// <remarks>
 ///Sequence information about a track
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -4820,7 +4882,8 @@ namespace Schemas {
         private ChecksumType[] checksumsField6;
         
         /// <remarks>
-///File containing track's subchannel dump and format, packed, rw_raw
+///File containing track's subchannel dump and
+///						format, packed, rw_raw
 ///</remarks>
         public ImageType Image {
             get {
@@ -4878,6 +4941,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Partition sequence number, starting on 1
+///					
 ///</remarks>
         public int Sequence {
             get {
@@ -4890,6 +4954,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Partition name if supported by partition scheme
+///					
 ///</remarks>
         public string Name {
             get {
@@ -4937,7 +5002,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Partition description if supported by partition scheme
+///Partition description if supported by partition
+///						scheme
 ///</remarks>
         public string Description {
             get {
@@ -4950,6 +5016,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Array of filesystems contained in the partition
+///					
 ///</remarks>
         public FileSystemsType FileSystems {
             get {
@@ -5081,6 +5148,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Filesystem last modification date
+///					
 ///</remarks>
         public System.DateTime ModificationDate {
             get {
@@ -5291,6 +5359,7 @@ namespace Schemas {
         
         /// <remarks>
 ///System identifier filesystem applies to
+///					
 ///</remarks>
         public string SystemIdentifier {
             get {
@@ -5315,6 +5384,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Filesystem publisher identifier
+///					
 ///</remarks>
         public string PublisherIdentifier {
             get {
@@ -5339,6 +5409,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Filesystem application preparer
+///					
 ///</remarks>
         public string ApplicationIdentifier {
             get {
@@ -5466,6 +5537,7 @@ namespace Schemas {
         
         /// <remarks>
 ///Software used to read with this drive
+///					
 ///</remarks>
         public SoftwareType Software {
             get {
@@ -5553,7 +5625,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Operating system name and version where the software was run
+///Operating system name and version where the
+///						software was run
 ///</remarks>
         public string OperatingSystem {
             get {
@@ -5561,6 +5634,891 @@ namespace Schemas {
             }
             set {
                 this.operatingSystemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AdvertisementType {
+        
+        private string manufacturerField2;
+        
+        private string productField;
+        
+        private FileType fileField2;
+        
+        private long fileSizeField;
+        
+        private long framesField;
+        
+        private bool framesSpecifiedField;
+        
+        private long durationField;
+        
+        private int meanFrameRateField;
+        
+        private bool meanFrameRateSpecifiedField;
+        
+        private ChecksumType[] checksumsField7;
+        
+        private AudioTracksType[] audioTrackField;
+        
+        private VideoTracksType[] videoTrackField;
+        
+        private SubtitleTracksType[] subtitleTrackField;
+        
+        private RecordingType recordingField;
+        
+        /// <remarks>
+///Manufactured of the advertised product
+///					
+///</remarks>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField2;
+            }
+            set {
+                this.manufacturerField2 = value;
+            }
+        }
+        
+        /// <remarks>
+///Advertised product
+///</remarks>
+        public string Product {
+            get {
+                return this.productField;
+            }
+            set {
+                this.productField = value;
+            }
+        }
+        
+        /// <remarks>
+///File containing advertising
+///</remarks>
+        public FileType File {
+            get {
+                return this.fileField2;
+            }
+            set {
+                this.fileField2 = value;
+            }
+        }
+        
+        /// <remarks>
+///Size of file
+///</remarks>
+        public long FileSize {
+            get {
+                return this.fileSizeField;
+            }
+            set {
+                this.fileSizeField = value;
+            }
+        }
+        
+        /// <remarks>
+///Total video frames
+///</remarks>
+        public long Frames {
+            get {
+                return this.framesField;
+            }
+            set {
+                this.framesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore()]
+        public virtual bool FramesSpecified {
+            get {
+                return this.framesSpecifiedField;
+            }
+            set {
+                this.framesSpecifiedField = value;
+            }
+        }
+        
+        /// <remarks>
+///Duration in seconds
+///</remarks>
+        public long Duration {
+            get {
+                return this.durationField;
+            }
+            set {
+                this.durationField = value;
+            }
+        }
+        
+        /// <remarks>
+///Mean framerate
+///</remarks>
+        public int MeanFrameRate {
+            get {
+                return this.meanFrameRateField;
+            }
+            set {
+                this.meanFrameRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore()]
+        public virtual bool MeanFrameRateSpecified {
+            get {
+                return this.meanFrameRateSpecifiedField;
+            }
+            set {
+                this.meanFrameRateSpecifiedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField7;
+            }
+            set {
+                this.checksumsField7 = value;
+            }
+        }
+        
+        /// <remarks>
+///Audio tracks of advertisement
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("AudioTrack")]
+        public AudioTracksType[] AudioTrack {
+            get {
+                return this.audioTrackField;
+            }
+            set {
+                this.audioTrackField = value;
+            }
+        }
+        
+        /// <remarks>
+///Video tracks of advertisement
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("VideoTrack")]
+        public VideoTracksType[] VideoTrack {
+            get {
+                return this.videoTrackField;
+            }
+            set {
+                this.videoTrackField = value;
+            }
+        }
+        
+        /// <remarks>
+///Subtitle tracks of advertisement
+///					
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("SubtitleTrack")]
+        public SubtitleTracksType[] SubtitleTrack {
+            get {
+                return this.subtitleTrackField;
+            }
+            set {
+                this.subtitleTrackField = value;
+            }
+        }
+        
+        /// <remarks>
+///If advertisement has been capture from a
+///						television/radio broadcast, here is the capture information
+///					
+///</remarks>
+        public RecordingType Recording {
+            get {
+                return this.recordingField;
+            }
+            set {
+                this.recordingField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AudioTracksType {
+        
+        private int trackNumberField1;
+        
+        private string accoustIDField1;
+        
+        private string codecField;
+        
+        private int channelsField;
+        
+        private int sampleRateField;
+        
+        private long meanBitrateField;
+        
+        private LanguagesType languagesField1;
+        
+        /// <remarks>
+///Track number in media container
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int TrackNumber {
+            get {
+                return this.trackNumberField1;
+            }
+            set {
+                this.trackNumberField1 = value;
+            }
+        }
+        
+        /// <remarks>
+///Track's AccoustID
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AccoustID {
+            get {
+                return this.accoustIDField1;
+            }
+            set {
+                this.accoustIDField1 = value;
+            }
+        }
+        
+        /// <remarks>
+///Track's codec
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Codec {
+            get {
+                return this.codecField;
+            }
+            set {
+                this.codecField = value;
+            }
+        }
+        
+        /// <remarks>
+///Audio channels
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Channels {
+            get {
+                return this.channelsField;
+            }
+            set {
+                this.channelsField = value;
+            }
+        }
+        
+        /// <remarks>
+///Audio sampling rate
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int SampleRate {
+            get {
+                return this.sampleRateField;
+            }
+            set {
+                this.sampleRateField = value;
+            }
+        }
+        
+        /// <remarks>
+///Mean bitrate, or constant bitrate, in bits per
+///					second
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public long MeanBitrate {
+            get {
+                return this.meanBitrateField;
+            }
+            set {
+                this.meanBitrateField = value;
+            }
+        }
+        
+        /// <remarks>
+///Track languages
+///</remarks>
+        public LanguagesType Languages {
+            get {
+                return this.languagesField1;
+            }
+            set {
+                this.languagesField1 = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class VideoTracksType {
+        
+        private int trackNumberField2;
+        
+        private string codecField1;
+        
+        private int horizontalField;
+        
+        private int verticalField;
+        
+        private long meanBitrateField1;
+        
+        private bool threeDField;
+        
+        private LanguagesType languagesField2;
+        
+        /// <remarks>
+///Track number in media container
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int TrackNumber {
+            get {
+                return this.trackNumberField2;
+            }
+            set {
+                this.trackNumberField2 = value;
+            }
+        }
+        
+        /// <remarks>
+///Track's codec
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Codec {
+            get {
+                return this.codecField1;
+            }
+            set {
+                this.codecField1 = value;
+            }
+        }
+        
+        /// <remarks>
+///Horizontal resolution in pixels
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Horizontal {
+            get {
+                return this.horizontalField;
+            }
+            set {
+                this.horizontalField = value;
+            }
+        }
+        
+        /// <remarks>
+///Vertical resolution in pixels
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Vertical {
+            get {
+                return this.verticalField;
+            }
+            set {
+                this.verticalField = value;
+            }
+        }
+        
+        /// <remarks>
+///Mean bitrate, or constant bitrate, in bits per
+///					second
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public long MeanBitrate {
+            get {
+                return this.meanBitrateField1;
+            }
+            set {
+                this.meanBitrateField1 = value;
+            }
+        }
+        
+        /// <remarks>
+///Is this video track in 3D?
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool ThreeD {
+            get {
+                return this.threeDField;
+            }
+            set {
+                this.threeDField = value;
+            }
+        }
+        
+        /// <remarks>
+///Track languages
+///</remarks>
+        public LanguagesType Languages {
+            get {
+                return this.languagesField2;
+            }
+            set {
+                this.languagesField2 = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SubtitleTracksType {
+        
+        private int trackNumberField3;
+        
+        private string codecField2;
+        
+        private LanguagesType languagesField3;
+        
+        /// <remarks>
+///Track number in media container
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int TrackNumber {
+            get {
+                return this.trackNumberField3;
+            }
+            set {
+                this.trackNumberField3 = value;
+            }
+        }
+        
+        /// <remarks>
+///Track's codec
+///</remarks>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Codec {
+            get {
+                return this.codecField2;
+            }
+            set {
+                this.codecField2 = value;
+            }
+        }
+        
+        /// <remarks>
+///Track languages
+///</remarks>
+        public LanguagesType Languages {
+            get {
+                return this.languagesField3;
+            }
+            set {
+                this.languagesField3 = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RecordingType {
+        
+        private string broadcasterField;
+        
+        private string broadcastPlatformField;
+        
+        private RecordingTypeSourceFormat sourceFormatField;
+        
+        private System.DateTime timestampField;
+        
+        private SoftwareType[] softwareField4;
+        
+        private CoordinatesType coordinatesField;
+        
+        /// <remarks>
+///Name of the television channel this recording was
+///						broadcasted, if applicable
+///</remarks>
+        public string Broadcaster {
+            get {
+                return this.broadcasterField;
+            }
+            set {
+                this.broadcasterField = value;
+            }
+        }
+        
+        /// <remarks>
+///Platform that broadcasted the television channel,
+///						if applicable
+///</remarks>
+        public string BroadcastPlatform {
+            get {
+                return this.broadcastPlatformField;
+            }
+            set {
+                this.broadcastPlatformField = value;
+            }
+        }
+        
+        /// <remarks>
+///
+///						Format of the source of this recording
+///					
+///</remarks>
+        public RecordingTypeSourceFormat SourceFormat {
+            get {
+                return this.sourceFormatField;
+            }
+            set {
+                this.sourceFormatField = value;
+            }
+        }
+        
+        /// <remarks>
+///Date and time of broadcast
+///</remarks>
+        public System.DateTime Timestamp {
+            get {
+                return this.timestampField;
+            }
+            set {
+                this.timestampField = value;
+            }
+        }
+        
+        /// <remarks>
+///Software used to capture, process, convert, the
+///						recording
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("Software")]
+        public SoftwareType[] Software {
+            get {
+                return this.softwareField4;
+            }
+            set {
+                this.softwareField4 = value;
+            }
+        }
+        
+        /// <remarks>
+///Approximate coordinates where the recording was
+///						done
+///</remarks>
+        public CoordinatesType Coordinates {
+            get {
+                return this.coordinatesField;
+            }
+            set {
+                this.coordinatesField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    public enum RecordingTypeSourceFormat {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-A")]
+        ITUA,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-B")]
+        ITUB,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-C")]
+        ITUC,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-D")]
+        ITUD,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-E")]
+        ITUE,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-F")]
+        ITUF,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-G")]
+        ITUG,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-H")]
+        ITUH,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-I")]
+        ITUI,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-J")]
+        ITUJ,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-K")]
+        ITUK,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-L")]
+        ITUL,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-M")]
+        ITUM,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ITU-N")]
+        ITUN,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-B")]
+        PALB,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("SECAM-B")]
+        SECAMB,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-D")]
+        PALD,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("SECAM-D")]
+        SECAMD,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-G")]
+        PALG,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("SECAM-G")]
+        SECAMG,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-H")]
+        PALH,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-I")]
+        PALI,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-K")]
+        PALK,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("SECAM-K")]
+        SECAMK,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("NTSC-M")]
+        NTSCM,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-N")]
+        PALN,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("PAL-M")]
+        PALM,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("SECAM-M")]
+        SECAMM,
+        
+        /// <remarks/>
+        MUSE,
+        
+        /// <remarks/>
+        PALplus,
+        
+        /// <remarks/>
+        FM,
+        
+        /// <remarks/>
+        AM,
+        
+        /// <remarks/>
+        COFDM,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("CAM-D")]
+        CAMD,
+        
+        /// <remarks/>
+        DAB,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DAB+")]
+        DAB1,
+        
+        /// <remarks/>
+        DRM,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DRM+")]
+        DRM1,
+        
+        /// <remarks/>
+        FMeXtra,
+        
+        /// <remarks/>
+        ATSC,
+        
+        /// <remarks/>
+        ATSC2,
+        
+        /// <remarks/>
+        ATSC3,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ATSC-M/H")]
+        ATSCMH,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-T")]
+        DVBT,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-T2")]
+        DVBT2,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-S")]
+        DVBS,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-S2")]
+        DVBS2,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-S2X")]
+        DVBS2X,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-C")]
+        DVBC,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-C2")]
+        DVBC2,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-H")]
+        DVBH,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-NGH")]
+        DVBNGH,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-SH")]
+        DVBSH,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ISDB-T")]
+        ISDBT,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ISDB-Tb")]
+        ISDBTb,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ISDB-S")]
+        ISDBS,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("ISDB-C")]
+        ISDBC,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("1seg")]
+        Item1seg,
+        
+        /// <remarks/>
+        DTMB,
+        
+        /// <remarks/>
+        CCMB,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("T-DMB")]
+        TDMB,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("S-DMB")]
+        SDMB,
+        
+        /// <remarks/>
+        IPTV,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-MT")]
+        DVBMT,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-MC")]
+        DVBMC,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("DVB-MS")]
+        DVBMS,
+        
+        /// <remarks/>
+        ADR,
+        
+        /// <remarks/>
+        SDR,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CoordinatesType {
+        
+        private double latitudeField;
+        
+        private double longitudeField;
+        
+        /// <remarks>
+///Approximate latitude of recording
+///					
+///</remarks>
+        public double Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+            }
+        }
+        
+        /// <remarks>
+///Approximate longitude of recording
+///					
+///</remarks>
+        public double Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
             }
         }
     }
