@@ -318,4 +318,24 @@
       </CIS>
     </PCMCIA>
   </LinearMedia>
+  <PCICard>
+    <VendorID>1</VendorID>
+    <DeviceID>1</DeviceID>
+    <Configuration>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </Configuration>
+    <ExpansionROM>
+      <Image format="" offset="0">Image</Image>
+      <Size>0</Size>
+      <ImageChecksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </ImageChecksums>
+      <Title>Title</Title>
+      <Package>Package</Package>
+    </ExpansionROM>
+  </PCICard>
 </CICMMetadata>

@@ -1253,6 +1253,11 @@
 					<xs:documentation>Linear media (flash, ram, rom, cartridges)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="PCIType" name="PCICard" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Dump of a PCI/PCI-X/PCIe configuration space and/or expansion ROM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BarcodesType">
@@ -2459,4 +2464,169 @@
     		</xs:element>
     	</xs:sequence>
     </xs:complexType>
+    
+    <xs:complexType name="PCIType">
+    	<xs:annotation>
+    		<xs:documentation>Contains PCI/PCI-X/PCIe card information</xs:documentation>
+    	</xs:annotation>
+    	<xs:sequence>
+    		<xs:element name="VendorID" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                	<xs:documentation>Contains PCI Vendor ID</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+    				<xs:restriction base="xs:int">
+    					<xs:minInclusive value="1"/>
+    					<xs:maxInclusive value="65534"/>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    		<xs:element name="DeviceID" minOccurs="1" maxOccurs="1">
+    			<xs:annotation>
+    				<xs:documentation>Contains PCI Device ID</xs:documentation>
+    			</xs:annotation>
+    			<xs:simpleType>
+    				<xs:restriction base="xs:int">
+    					<xs:minInclusive value="1"/>
+    					<xs:maxInclusive value="65534"/>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    		<xs:element type="DumpType" name="Configuration" minOccurs="0" maxOccurs="1">
+    			<xs:annotation>
+    				<xs:documentation>Binary dump of the PCI configuration space</xs:documentation>
+    			</xs:annotation></xs:element>
+    		<xs:element type="LinearMediaType" name="ExpansionROM" minOccurs="0" maxOccurs="1">
+    			<xs:annotation>
+    				<xs:documentation>Binary dump of the PCI expansion rom</xs:documentation>
+    			</xs:annotation></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+    
+	<xs:complexType name="EVPDType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="Image" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File containing SCSI Extended Vendor Page Descriptor dump</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Size of SCSI Extended Vendor Page Descriptor dump</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of SCSI Extended Vendor Page Descriptor dump</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="page">
+            <xs:annotation>
+            	<xs:documentation>EVPD page</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:minInclusive value="1" />
+					<xs:maxInclusive value="255" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="SCSIType">
+        <xs:annotation>
+        	<xs:documentation>Contains SCSI device information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+			<xs:element type="DumpType" name="Inquiry" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SCSI INQUIRY result dump</xs:documentation>
+				</xs:annotation></xs:element>
+			<xs:element type="EVPDType" name="EVPD" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains SCSI EVPD dumps</xs:documentation>
+				</xs:annotation></xs:element>
+			<xs:element type="DumpType" name="ModeSense" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SCSI MODE SENSE(6) dump</xs:documentation>
+				</xs:annotation></xs:element>
+			<xs:element type="DumpType" name="ModeSense10" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SCSI MODE SENSE(10) dump</xs:documentation>
+				</xs:annotation></xs:element>
+			<xs:element type="DumpType" name="LogSense" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SCSI LOG SENSE dump</xs:documentation>
+				</xs:annotation></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="USBType">
+    	<xs:annotation>
+    		<xs:documentation>Contains USB device information</xs:documentation>
+    	</xs:annotation>
+    	<xs:sequence>
+    		<xs:element name="VendorID" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                	<xs:documentation>Contains USB Vendor ID</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+    				<xs:restriction base="xs:int">
+    					<xs:minInclusive value="1"/>
+    					<xs:maxInclusive value="65534"/>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    		<xs:element name="ProductID" minOccurs="1" maxOccurs="1">
+    			<xs:annotation>
+    				<xs:documentation>Contains USB Product ID</xs:documentation>
+    			</xs:annotation>
+    			<xs:simpleType>
+    				<xs:restriction base="xs:int">
+    					<xs:minInclusive value="1"/>
+    					<xs:maxInclusive value="65534"/>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    		<xs:element type="DumpType" name="Descriptors" minOccurs="0" maxOccurs="1">
+    			<xs:annotation>
+    				<xs:documentation>Binary dump of the USB descriptors</xs:documentation>
+    			</xs:annotation></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="SecureDigitalType">
+        <xs:annotation>
+        	<xs:documentation>Contains SD/MMC device information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+			<xs:element type="DumpType" name="CID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SD/MMC's CID</xs:documentation>
+				</xs:annotation></xs:element>
+			<xs:element type="DumpType" name="CSD" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SD/MMC's CSD</xs:documentation>
+				</xs:annotation></xs:element>
+			<xs:element type="DumpType" name="ExtendedCSD" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SD/MMC's extended CSD</xs:documentation>
+				</xs:annotation></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+    
+    <xs:complexType name="ATAType">
+        <xs:annotation>
+        	<xs:documentation>Contains ATA/ATAPI device information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+			<xs:element type="DumpType" name="Identify" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains ATA/ATAPI IDENTIFY binary dump</xs:documentation>
+				</xs:annotation></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+    
+	
 </xs:schema>

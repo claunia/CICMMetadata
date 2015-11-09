@@ -74,6 +74,8 @@ namespace Schemas {
         
         private LinearMediaType[] linearMediaField;
         
+        private PCIType[] pCICardField;
+        
         /// <remarks>
 ///Developer of the set
 ///</remarks>
@@ -395,6 +397,19 @@ namespace Schemas {
             }
             set {
                 this.linearMediaField = value;
+            }
+        }
+        
+        /// <remarks>
+///Dump of a PCI/PCI-X/PCIe configuration space and/or expansion ROM
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("PCICard")]
+        public PCIType[] PCICard {
+            get {
+                return this.pCICardField;
+            }
+            set {
+                this.pCICardField = value;
             }
         }
     }
@@ -6823,6 +6838,72 @@ namespace Schemas {
             }
             set {
                 this.cISField = value;
+            }
+        }
+    }
+    
+    /// <remarks>
+///Contains PCI/PCI-X/PCIe card information
+///</remarks>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PCIType {
+        
+        private int vendorIDField;
+        
+        private int deviceIDField;
+        
+        private DumpType configurationField;
+        
+        private LinearMediaType expansionROMField;
+        
+        /// <remarks>
+///Contains PCI Vendor ID
+///</remarks>
+        public int VendorID {
+            get {
+                return this.vendorIDField;
+            }
+            set {
+                this.vendorIDField = value;
+            }
+        }
+        
+        /// <remarks>
+///Contains PCI Device ID
+///</remarks>
+        public int DeviceID {
+            get {
+                return this.deviceIDField;
+            }
+            set {
+                this.deviceIDField = value;
+            }
+        }
+        
+        /// <remarks>
+///Binary dump of the PCI configuration space
+///</remarks>
+        public DumpType Configuration {
+            get {
+                return this.configurationField;
+            }
+            set {
+                this.configurationField = value;
+            }
+        }
+        
+        /// <remarks>
+///Binary dump of the PCI expansion rom
+///</remarks>
+        public LinearMediaType ExpansionROM {
+            get {
+                return this.expansionROMField;
+            }
+            set {
+                this.expansionROMField = value;
             }
         }
     }

@@ -77,6 +77,8 @@ Namespace Schemas
         
         Private linearMediaField As LinearMediaType()
         
+        Private pCICardField As PCIType()
+        
         '''<remarks>
 '''Developer of the set
 '''</remarks>
@@ -398,6 +400,19 @@ Namespace Schemas
             End Get
             Set
                 Me.linearMediaField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Dump of a PCI/PCI-X/PCIe configuration space and/or expansion ROM
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("PCICard")>  _
+        Public Property PCICard() As PCIType()
+            Get
+                Return Me.pCICardField
+            End Get
+            Set
+                Me.pCICardField = Value
             End Set
         End Property
     End Class
@@ -6826,6 +6841,72 @@ Namespace Schemas
             End Get
             Set
                 Me.cISField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks>
+'''Contains PCI/PCI-X/PCIe card information
+'''</remarks>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class PCIType
+        
+        Private vendorIDField As Integer
+        
+        Private deviceIDField As Integer
+        
+        Private configurationField As DumpType
+        
+        Private expansionROMField As LinearMediaType
+        
+        '''<remarks>
+'''Contains PCI Vendor ID
+'''</remarks>
+        Public Property VendorID() As Integer
+            Get
+                Return Me.vendorIDField
+            End Get
+            Set
+                Me.vendorIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Contains PCI Device ID
+'''</remarks>
+        Public Property DeviceID() As Integer
+            Get
+                Return Me.deviceIDField
+            End Get
+            Set
+                Me.deviceIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Binary dump of the PCI configuration space
+'''</remarks>
+        Public Property Configuration() As DumpType
+            Get
+                Return Me.configurationField
+            End Get
+            Set
+                Me.configurationField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Binary dump of the PCI expansion rom
+'''</remarks>
+        Public Property ExpansionROM() As LinearMediaType
+            Get
+                Return Me.expansionROMField
+            End Get
+            Set
+                Me.expansionROMField = Value
             End Set
         End Property
     End Class
