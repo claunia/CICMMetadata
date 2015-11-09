@@ -259,4 +259,63 @@
       <Timestamp>2001-12-31T12:00:00</Timestamp>
     </Recording>
   </Advertisement>
+  <LinearMedia>
+    <Image format="" offset="0">Image</Image>
+    <Size>0</Size>
+    <ImageChecksums>
+      <Checksum type="fletcher16">Checksum</Checksum>
+    </ImageChecksums>
+    <Checksums>
+      <Checksum type="fletcher16">Checksum</Checksum>
+    </Checksums>
+    <Title>Title</Title>
+    <Sequence>0</Sequence>
+    <ImageInterleave>0</ImageInterleave>
+    <Interleave>0</Interleave>
+    <Manufacturer>Manufacturer</Manufacturer>
+    <Model>Model</Model>
+    <Package>Package</Package>
+    <Interface>Interface</Interface>
+    <Dimensions>
+      <Thickness>0.0</Thickness>
+    </Dimensions>
+    <Scan>
+      <MediaScanElement>up</MediaScanElement>
+      <Scan>
+        <File format="">File</File>
+        <Checksums>
+          <Checksum type="fletcher16">Checksum</Checksum>
+        </Checksums>
+      </Scan>
+    </Scan>
+    <DumpHardwareArray>
+      <DumpHardware>
+        <Manufacturer>Manufacturer</Manufacturer>
+        <Model>Model</Model>
+        <Revision>Revision</Revision>
+        <Firmware>Firmware</Firmware>
+        <Serial>Serial</Serial>
+        <Extents>
+          <Extent>
+            <Start>0</Start>
+            <End>0</End>
+          </Extent>
+        </Extents>
+        <Software>
+          <Name>Name</Name>
+          <Version>Version</Version>
+          <OperatingSystem>OperatingSystem</OperatingSystem>
+        </Software>
+      </DumpHardware>
+    </DumpHardwareArray>
+    <PCMCIA>
+      <CIS>
+        <Image>Image</Image>
+        <Size>0</Size>
+        <Checksums>
+          <Checksum type="fletcher16">Checksum</Checksum>
+        </Checksums>
+      </CIS>
+    </PCMCIA>
+  </LinearMedia>
 </CICMMetadata>

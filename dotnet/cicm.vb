@@ -75,6 +75,8 @@ Namespace Schemas
         
         Private advertisementField As AdvertisementType()
         
+        Private linearMediaField As LinearMediaType()
+        
         '''<remarks>
 '''Developer of the set
 '''</remarks>
@@ -153,8 +155,7 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''
-'''						Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
+''' Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
 '''					
 '''</remarks>
         Public Property ReleaseType() As CICMMetadataTypeReleaseType
@@ -225,8 +226,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Manufacturer serial no., not to be confused with
-'''						software registration serial number
+'''Manufacturer serial no., not to be confused with software registration serial number
+'''					
 '''</remarks>
         Public Property SerialNumber() As String
             Get
@@ -321,8 +322,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''CPU architectures this set is designed to run on,
-'''						if it includes software
+'''CPU architectures this set is designed to run on, if it includes software
+'''					
 '''</remarks>
         Public Property Architectures() As ArchitecturesType
             Get
@@ -334,8 +335,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Required operating systems and versions this set
-'''						runs on, if it includes software
+'''Required operating systems and versions this set runs on, if it includes software
+'''					
 '''</remarks>
         Public Property RequiredOperatingSystems() As RequiredOperatingSystemsType
             Get
@@ -347,8 +348,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''User manual/guide, installation manual/guide and
-'''						any applicable entity
+'''User manual/guide, installation manual/guide and any applicable entity
+'''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("UserManual")>  _
         Public Property UserManual() As UserManualType()
@@ -384,6 +385,19 @@ Namespace Schemas
             End Get
             Set
                 Me.advertisementField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Linear media (flash, ram, rom, cartridges)
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("LinearMedia")>  _
+        Public Property LinearMedia() As LinearMediaType()
+            Get
+                Return Me.linearMediaField
+            End Get
+            Set
+                Me.linearMediaField = Value
             End Set
         End Property
     End Class
@@ -732,8 +746,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Page size of this magazine, standard or in WxH
-'''						milimeters
+'''Page size of this magazine, standard or in WxH milimeters
+'''					
 '''</remarks>
         Public Property PageSize() As String
             Get
@@ -970,8 +984,7 @@ Namespace Schemas
         Private languageField1 As LanguagesTypeLanguage
         
         '''<remarks>
-'''
-'''						Languages included in the set, ISO 3-letter code
+''' Languages included in the set, ISO 3-letter code
 '''					
 '''</remarks>
         Public Property Language() As LanguagesTypeLanguage
@@ -3145,8 +3158,8 @@ Namespace Schemas
     End Class
     
     '''<remarks>
-'''User manual or user guide accompanying this set.
-'''				Can be more than one.
+'''User manual or user guide accompanying this set. Can be more than one.
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -3284,8 +3297,8 @@ Namespace Schemas
         Private dumpHardwareArrayField As DumpHardwareArrayType
         
         '''<remarks>
-'''Image file, or image description file, plus
-'''						format (cue, toc, etc, etc)
+'''Image file, or image description file, plus format (cue, toc, etc, etc)
+'''					
 '''</remarks>
         Public Property Image() As ImageType
             Get
@@ -3436,8 +3449,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Offset between subchannel servo and data sectors
-'''						servo, in bytes
+'''Offset between subchannel servo and data sectors servo, in bytes
+'''					
 '''</remarks>
         Public Property Offset() As Integer
             Get
@@ -3534,8 +3547,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Physical Manufacturing Information (DVD and HD
-'''						DVD)
+'''Physical Manufacturing Information (DVD and HD DVD)
+'''					
 '''</remarks>
         Public Property PFI() As DumpType
             Get
@@ -3686,8 +3699,8 @@ Namespace Schemas
     End Class
     
     '''<remarks>
-'''File containing track dump, and format, binary,
-'''				yranib, or audio/video container
+'''File containing track dump, and format, binary, yranib, or audio/video container
+'''			
 '''</remarks>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute(),  _
@@ -3822,8 +3835,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''On PTP layering, layer of disc described by this
-'''						field, starting on 0
+'''On PTP layering, layer of disc described by this field, starting on 0
+'''					
 '''</remarks>
         Public Property Layer() As Integer
             Get
@@ -4236,7 +4249,7 @@ Namespace Schemas
         
         Private caseScanField As CaseScanType
         
-        Private discScanField As DiscScanType
+        Private scanField4 As MediaScanType
         
         '''<remarks>
 '''Case scans
@@ -4253,12 +4266,12 @@ Namespace Schemas
         '''<remarks>
 '''Disc scans
 '''</remarks>
-        Public Property DiscScan() As DiscScanType
+        Public Property Scan() As MediaScanType
             Get
-                Return Me.discScanField
+                Return Me.scanField4
             End Get
             Set
-                Me.discScanField = Value
+                Me.scanField4 = Value
             End Set
         End Property
     End Class
@@ -4338,23 +4351,22 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class DiscScanType
+    Partial Public Class MediaScanType
         
-        Private discScanElementField As DiscScanTypeDiscScanElement
+        Private mediaScanElementField As MediaScanTypeMediaScanElement
         
-        Private scanField4 As ScanType
+        Private scanField5 As ScanType
         
         '''<remarks>
-'''
-'''						Scanned element: up, down, label, data, etc
+''' Scanned element: up, down, label, data, etc
 '''					
 '''</remarks>
-        Public Property DiscScanElement() As DiscScanTypeDiscScanElement
+        Public Property MediaScanElement() As MediaScanTypeMediaScanElement
             Get
-                Return Me.discScanElementField
+                Return Me.mediaScanElementField
             End Get
             Set
-                Me.discScanElementField = Value
+                Me.mediaScanElementField = Value
             End Set
         End Property
         
@@ -4363,10 +4375,10 @@ Namespace Schemas
 '''</remarks>
         Public Property Scan() As ScanType
             Get
-                Return Me.scanField4
+                Return Me.scanField5
             End Get
             Set
-                Me.scanField4 = Value
+                Me.scanField5 = Value
             End Set
         End Property
     End Class
@@ -4374,7 +4386,7 @@ Namespace Schemas
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
      System.SerializableAttribute()>  _
-    Public Enum DiscScanTypeDiscScanElement
+    Public Enum MediaScanTypeMediaScanElement
         
         '''<remarks/>
         up
@@ -4634,8 +4646,8 @@ Namespace Schemas
         Private fileSystemInformationField As PartitionType()
         
         '''<remarks>
-'''File containing track dump, and format, binary,
-'''						yranib, or audio/video container
+'''File containing track dump, and format, binary, yranib, or audio/video container
+'''					
 '''</remarks>
         Public Property Image() As ImageType
             Get
@@ -4720,8 +4732,7 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''
-'''						Track type: audio, mode0, mode1, mode2
+''' Track type: audio, mode0, mode1, mode2
 '''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("TrackType")>  _
@@ -4735,8 +4746,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Bytes per sector: 2048, 2352, 2448, etc, etc (as
-'''						stored in image, not in physical format)
+'''Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical format)
+'''					
 '''</remarks>
         Public Property BytesPerSector() As Integer
             Get
@@ -4885,8 +4896,8 @@ Namespace Schemas
         Private checksumsField6 As ChecksumType()
         
         '''<remarks>
-'''File containing track's subchannel dump and
-'''						format, packed, rw_raw
+'''File containing track's subchannel dump and format, packed, rw_raw
+'''					
 '''</remarks>
         Public Property Image() As ImageType
             Get
@@ -5005,8 +5016,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Partition description if supported by partition
-'''						scheme
+'''Partition description if supported by partition scheme
+'''					
 '''</remarks>
         Public Property Description() As String
             Get
@@ -5628,8 +5639,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Operating system name and version where the
-'''						software was run
+'''Operating system name and version where the software was run
+'''					
 '''</remarks>
         Public Property OperatingSystem() As String
             Get
@@ -5835,8 +5846,7 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''If advertisement has been capture from a
-'''						television/radio broadcast, here is the capture information
+'''If advertisement has been capture from a television/radio broadcast, here is the capture information
 '''					
 '''</remarks>
         Public Property Recording() As RecordingType
@@ -5936,8 +5946,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Mean bitrate, or constant bitrate, in bits per
-'''					second
+'''Mean bitrate, or constant bitrate, in bits per second
+'''				
 '''</remarks>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
         Public Property MeanBitrate() As Long
@@ -6036,8 +6046,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Mean bitrate, or constant bitrate, in bits per
-'''					second
+'''Mean bitrate, or constant bitrate, in bits per second
+'''				
 '''</remarks>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
         Public Property MeanBitrate() As Long
@@ -6147,8 +6157,8 @@ Namespace Schemas
         Private coordinatesField As CoordinatesType
         
         '''<remarks>
-'''Name of the television channel this recording was
-'''						broadcasted, if applicable
+'''Name of the television channel this recording was broadcasted, if applicable
+'''					
 '''</remarks>
         Public Property Broadcaster() As String
             Get
@@ -6160,8 +6170,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Platform that broadcasted the television channel,
-'''						if applicable
+'''Platform that broadcasted the television channel, if applicable
+'''					
 '''</remarks>
         Public Property BroadcastPlatform() As String
             Get
@@ -6173,8 +6183,7 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''
-'''						Format of the source of this recording
+''' Format of the source of this recording
 '''					
 '''</remarks>
         Public Property SourceFormat() As RecordingTypeSourceFormat
@@ -6199,8 +6208,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Software used to capture, process, convert, the
-'''						recording
+'''Software used to capture, process, convert, the recording
+'''					
 '''</remarks>
         <System.Xml.Serialization.XmlElementAttribute("Software")>  _
         Public Property Software() As SoftwareType()
@@ -6213,8 +6222,8 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-'''Approximate coordinates where the recording was
-'''						done
+'''Approximate coordinates where the recording was done
+'''					
 '''</remarks>
         Public Property Coordinates() As CoordinatesType
             Get
@@ -6522,6 +6531,301 @@ Namespace Schemas
             End Get
             Set
                 Me.longitudeField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks>
+'''Describes a dump of a linear media, that is, a media that is read byte-by-byte like for example, a ROM chip, a game cartridge, a PCMCIA SRAM card, etc...
+'''</remarks>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class LinearMediaType
+        
+        Private imageField5 As ImageType
+        
+        Private sizeField5 As Long
+        
+        Private imageChecksumsField As ChecksumType()
+        
+        Private checksumsField8 As ChecksumType()
+        
+        Private titleField As String
+        
+        Private sequenceField3 As Integer
+        
+        Private sequenceSpecifiedField As Boolean
+        
+        Private imageInterleaveField As Integer
+        
+        Private imageInterleaveSpecifiedField As Boolean
+        
+        Private interleaveField As Integer
+        
+        Private interleaveSpecifiedField As Boolean
+        
+        Private manufacturerField3 As String
+        
+        Private modelField2 As String
+        
+        Private packageField As String
+        
+        Private interfaceField As String
+        
+        Private dimensionsField1 As DimensionsType
+        
+        Private scanField6 As MediaScanType
+        
+        Private dumpHardwareArrayField1 As DumpHardwareArrayType
+        
+        Private pCMCIAField As PCMCIAType
+        
+        '''<remarks>
+'''Image file, or image description file, plus format (cue, toc, etc, etc)
+'''</remarks>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField5
+            End Get
+            Set
+                Me.imageField5 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Image file size
+'''</remarks>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField5
+            End Get
+            Set
+                Me.sizeField5 = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
+        Public Property ImageChecksums() As ChecksumType()
+            Get
+                Return Me.imageChecksumsField
+            End Get
+            Set
+                Me.imageChecksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField8
+            End Get
+            Set
+                Me.checksumsField8 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Title as it is labeled on media
+'''</remarks>
+        Public Property Title() As String
+            Get
+                Return Me.titleField
+            End Get
+            Set
+                Me.titleField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Sequence of media
+'''</remarks>
+        Public Property Sequence() As Integer
+            Get
+                Return Me.sequenceField3
+            End Get
+            Set
+                Me.sequenceField3 = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnore()>  _
+        Public Overridable Property SequenceSpecified() As Boolean
+            Get
+                Return Me.sequenceSpecifiedField
+            End Get
+            Set
+                Me.sequenceSpecifiedField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''How many bytes must be read in image file for each byte in media
+'''</remarks>
+        Public Property ImageInterleave() As Integer
+            Get
+                Return Me.imageInterleaveField
+            End Get
+            Set
+                Me.imageInterleaveField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnore()>  _
+        Public Overridable Property ImageInterleaveSpecified() As Boolean
+            Get
+                Return Me.imageInterleaveSpecifiedField
+            End Get
+            Set
+                Me.imageInterleaveSpecifiedField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''How many bytes must be skipped in image file for each byte in media
+'''</remarks>
+        Public Property Interleave() As Integer
+            Get
+                Return Me.interleaveField
+            End Get
+            Set
+                Me.interleaveField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnore()>  _
+        Public Overridable Property InterleaveSpecified() As Boolean
+            Get
+                Return Me.interleaveSpecifiedField
+            End Get
+            Set
+                Me.interleaveSpecifiedField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Media manufacturer
+'''</remarks>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField3
+            End Get
+            Set
+                Me.manufacturerField3 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Media model
+'''</remarks>
+        Public Property Model() As String
+            Get
+                Return Me.modelField2
+            End Get
+            Set
+                Me.modelField2 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Media packaging (DIP, PCMCIA, Cartridge, etc)
+'''</remarks>
+        Public Property Package() As String
+            Get
+                Return Me.packageField
+            End Get
+            Set
+                Me.packageField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Media interface
+'''</remarks>
+        Public Property Interface() As String
+            Get
+                Return Me.interfaceField
+            End Get
+            Set
+                Me.interfaceField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Dimensions of media
+'''</remarks>
+        Public Property Dimensions() As DimensionsType
+            Get
+                Return Me.dimensionsField1
+            End Get
+            Set
+                Me.dimensionsField1 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Scan of media
+'''</remarks>
+        Public Property Scan() As MediaScanType
+            Get
+                Return Me.scanField6
+            End Get
+            Set
+                Me.scanField6 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Array of hardware used to dump media
+'''</remarks>
+        Public Property DumpHardwareArray() As DumpHardwareArrayType
+            Get
+                Return Me.dumpHardwareArrayField1
+            End Get
+            Set
+                Me.dumpHardwareArrayField1 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Present if media is a PCMCIA Linear Flash or SRAM card, to contain PCMCIA specific information
+'''</remarks>
+        Public Property PCMCIA() As PCMCIAType
+            Get
+                Return Me.pCMCIAField
+            End Get
+            Set
+                Me.pCMCIAField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks>
+'''Contains PCMCIA card information
+'''</remarks>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class PCMCIAType
+        
+        Private cISField As DumpType
+        
+        '''<remarks>
+'''Contains the PCMCIA Card Information Structure dump.
+'''</remarks>
+        Public Property CIS() As DumpType
+            Get
+                Return Me.cISField
+            End Get
+            Set
+                Me.cISField = Value
             End Set
         End Property
     End Class

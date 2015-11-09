@@ -72,6 +72,8 @@ namespace Schemas {
         
         private AdvertisementType[] advertisementField;
         
+        private LinearMediaType[] linearMediaField;
+        
         /// <remarks>
 ///Developer of the set
 ///</remarks>
@@ -150,8 +152,7 @@ namespace Schemas {
         }
         
         /// <remarks>
-///
-///						Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
+/// Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
 ///					
 ///</remarks>
         public CICMMetadataTypeReleaseType ReleaseType {
@@ -222,8 +223,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Manufacturer serial no., not to be confused with
-///						software registration serial number
+///Manufacturer serial no., not to be confused with software registration serial number
+///					
 ///</remarks>
         public string SerialNumber {
             get {
@@ -318,8 +319,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///CPU architectures this set is designed to run on,
-///						if it includes software
+///CPU architectures this set is designed to run on, if it includes software
+///					
 ///</remarks>
         public ArchitecturesType Architectures {
             get {
@@ -331,8 +332,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Required operating systems and versions this set
-///						runs on, if it includes software
+///Required operating systems and versions this set runs on, if it includes software
+///					
 ///</remarks>
         public RequiredOperatingSystemsType RequiredOperatingSystems {
             get {
@@ -344,8 +345,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///User manual/guide, installation manual/guide and
-///						any applicable entity
+///User manual/guide, installation manual/guide and any applicable entity
+///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("UserManual")]
         public UserManualType[] UserManual {
@@ -381,6 +382,19 @@ namespace Schemas {
             }
             set {
                 this.advertisementField = value;
+            }
+        }
+        
+        /// <remarks>
+///Linear media (flash, ram, rom, cartridges)
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("LinearMedia")]
+        public LinearMediaType[] LinearMedia {
+            get {
+                return this.linearMediaField;
+            }
+            set {
+                this.linearMediaField = value;
             }
         }
     }
@@ -729,8 +743,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Page size of this magazine, standard or in WxH
-///						milimeters
+///Page size of this magazine, standard or in WxH milimeters
+///					
 ///</remarks>
         public string PageSize {
             get {
@@ -967,8 +981,7 @@ namespace Schemas {
         private LanguagesTypeLanguage languageField1;
         
         /// <remarks>
-///
-///						Languages included in the set, ISO 3-letter code
+/// Languages included in the set, ISO 3-letter code
 ///					
 ///</remarks>
         public LanguagesTypeLanguage Language {
@@ -3142,8 +3155,8 @@ namespace Schemas {
     }
     
     /// <remarks>
-///User manual or user guide accompanying this set.
-///				Can be more than one.
+///User manual or user guide accompanying this set. Can be more than one.
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -3281,8 +3294,8 @@ namespace Schemas {
         private DumpHardwareArrayType dumpHardwareArrayField;
         
         /// <remarks>
-///Image file, or image description file, plus
-///						format (cue, toc, etc, etc)
+///Image file, or image description file, plus format (cue, toc, etc, etc)
+///					
 ///</remarks>
         public ImageType Image {
             get {
@@ -3433,8 +3446,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Offset between subchannel servo and data sectors
-///						servo, in bytes
+///Offset between subchannel servo and data sectors servo, in bytes
+///					
 ///</remarks>
         public int Offset {
             get {
@@ -3531,8 +3544,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Physical Manufacturing Information (DVD and HD
-///						DVD)
+///Physical Manufacturing Information (DVD and HD DVD)
+///					
 ///</remarks>
         public DumpType PFI {
             get {
@@ -3683,8 +3696,8 @@ namespace Schemas {
     }
     
     /// <remarks>
-///File containing track dump, and format, binary,
-///				yranib, or audio/video container
+///File containing track dump, and format, binary, yranib, or audio/video container
+///			
 ///</remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
@@ -3819,8 +3832,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///On PTP layering, layer of disc described by this
-///						field, starting on 0
+///On PTP layering, layer of disc described by this field, starting on 0
+///					
 ///</remarks>
         public int Layer {
             get {
@@ -4233,7 +4246,7 @@ namespace Schemas {
         
         private CaseScanType caseScanField;
         
-        private DiscScanType discScanField;
+        private MediaScanType scanField4;
         
         /// <remarks>
 ///Case scans
@@ -4250,12 +4263,12 @@ namespace Schemas {
         /// <remarks>
 ///Disc scans
 ///</remarks>
-        public DiscScanType DiscScan {
+        public MediaScanType Scan {
             get {
-                return this.discScanField;
+                return this.scanField4;
             }
             set {
-                this.discScanField = value;
+                this.scanField4 = value;
             }
         }
     }
@@ -4335,23 +4348,22 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DiscScanType {
+    public partial class MediaScanType {
         
-        private DiscScanTypeDiscScanElement discScanElementField;
+        private MediaScanTypeMediaScanElement mediaScanElementField;
         
-        private ScanType scanField4;
+        private ScanType scanField5;
         
         /// <remarks>
-///
-///						Scanned element: up, down, label, data, etc
+/// Scanned element: up, down, label, data, etc
 ///					
 ///</remarks>
-        public DiscScanTypeDiscScanElement DiscScanElement {
+        public MediaScanTypeMediaScanElement MediaScanElement {
             get {
-                return this.discScanElementField;
+                return this.mediaScanElementField;
             }
             set {
-                this.discScanElementField = value;
+                this.mediaScanElementField = value;
             }
         }
         
@@ -4360,10 +4372,10 @@ namespace Schemas {
 ///</remarks>
         public ScanType Scan {
             get {
-                return this.scanField4;
+                return this.scanField5;
             }
             set {
-                this.scanField4 = value;
+                this.scanField5 = value;
             }
         }
     }
@@ -4371,7 +4383,7 @@ namespace Schemas {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
     [System.SerializableAttribute()]
-    public enum DiscScanTypeDiscScanElement {
+    public enum MediaScanTypeMediaScanElement {
         
         /// <remarks/>
         up,
@@ -4631,8 +4643,8 @@ namespace Schemas {
         private PartitionType[] fileSystemInformationField;
         
         /// <remarks>
-///File containing track dump, and format, binary,
-///						yranib, or audio/video container
+///File containing track dump, and format, binary, yranib, or audio/video container
+///					
 ///</remarks>
         public ImageType Image {
             get {
@@ -4717,8 +4729,7 @@ namespace Schemas {
         }
         
         /// <remarks>
-///
-///						Track type: audio, mode0, mode1, mode2
+/// Track type: audio, mode0, mode1, mode2
 ///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("TrackType")]
@@ -4732,8 +4743,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Bytes per sector: 2048, 2352, 2448, etc, etc (as
-///						stored in image, not in physical format)
+///Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical format)
+///					
 ///</remarks>
         public int BytesPerSector {
             get {
@@ -4882,8 +4893,8 @@ namespace Schemas {
         private ChecksumType[] checksumsField6;
         
         /// <remarks>
-///File containing track's subchannel dump and
-///						format, packed, rw_raw
+///File containing track's subchannel dump and format, packed, rw_raw
+///					
 ///</remarks>
         public ImageType Image {
             get {
@@ -5002,8 +5013,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Partition description if supported by partition
-///						scheme
+///Partition description if supported by partition scheme
+///					
 ///</remarks>
         public string Description {
             get {
@@ -5625,8 +5636,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Operating system name and version where the
-///						software was run
+///Operating system name and version where the software was run
+///					
 ///</remarks>
         public string OperatingSystem {
             get {
@@ -5832,8 +5843,7 @@ namespace Schemas {
         }
         
         /// <remarks>
-///If advertisement has been capture from a
-///						television/radio broadcast, here is the capture information
+///If advertisement has been capture from a television/radio broadcast, here is the capture information
 ///					
 ///</remarks>
         public RecordingType Recording {
@@ -5933,8 +5943,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Mean bitrate, or constant bitrate, in bits per
-///					second
+///Mean bitrate, or constant bitrate, in bits per second
+///				
 ///</remarks>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public long MeanBitrate {
@@ -6033,8 +6043,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Mean bitrate, or constant bitrate, in bits per
-///					second
+///Mean bitrate, or constant bitrate, in bits per second
+///				
 ///</remarks>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public long MeanBitrate {
@@ -6144,8 +6154,8 @@ namespace Schemas {
         private CoordinatesType coordinatesField;
         
         /// <remarks>
-///Name of the television channel this recording was
-///						broadcasted, if applicable
+///Name of the television channel this recording was broadcasted, if applicable
+///					
 ///</remarks>
         public string Broadcaster {
             get {
@@ -6157,8 +6167,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Platform that broadcasted the television channel,
-///						if applicable
+///Platform that broadcasted the television channel, if applicable
+///					
 ///</remarks>
         public string BroadcastPlatform {
             get {
@@ -6170,8 +6180,7 @@ namespace Schemas {
         }
         
         /// <remarks>
-///
-///						Format of the source of this recording
+/// Format of the source of this recording
 ///					
 ///</remarks>
         public RecordingTypeSourceFormat SourceFormat {
@@ -6196,8 +6205,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Software used to capture, process, convert, the
-///						recording
+///Software used to capture, process, convert, the recording
+///					
 ///</remarks>
         [System.Xml.Serialization.XmlElementAttribute("Software")]
         public SoftwareType[] Software {
@@ -6210,8 +6219,8 @@ namespace Schemas {
         }
         
         /// <remarks>
-///Approximate coordinates where the recording was
-///						done
+///Approximate coordinates where the recording was done
+///					
 ///</remarks>
         public CoordinatesType Coordinates {
             get {
@@ -6519,6 +6528,301 @@ namespace Schemas {
             }
             set {
                 this.longitudeField = value;
+            }
+        }
+    }
+    
+    /// <remarks>
+///Describes a dump of a linear media, that is, a media that is read byte-by-byte like for example, a ROM chip, a game cartridge, a PCMCIA SRAM card, etc...
+///</remarks>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LinearMediaType {
+        
+        private ImageType imageField5;
+        
+        private long sizeField5;
+        
+        private ChecksumType[] imageChecksumsField;
+        
+        private ChecksumType[] checksumsField8;
+        
+        private string titleField;
+        
+        private int sequenceField3;
+        
+        private bool sequenceSpecifiedField;
+        
+        private int imageInterleaveField;
+        
+        private bool imageInterleaveSpecifiedField;
+        
+        private int interleaveField;
+        
+        private bool interleaveSpecifiedField;
+        
+        private string manufacturerField3;
+        
+        private string modelField2;
+        
+        private string packageField;
+        
+        private string interfaceField;
+        
+        private DimensionsType dimensionsField1;
+        
+        private MediaScanType scanField6;
+        
+        private DumpHardwareArrayType dumpHardwareArrayField1;
+        
+        private PCMCIAType pCMCIAField;
+        
+        /// <remarks>
+///Image file, or image description file, plus format (cue, toc, etc, etc)
+///</remarks>
+        public ImageType Image {
+            get {
+                return this.imageField5;
+            }
+            set {
+                this.imageField5 = value;
+            }
+        }
+        
+        /// <remarks>
+///Image file size
+///</remarks>
+        public long Size {
+            get {
+                return this.sizeField5;
+            }
+            set {
+                this.sizeField5 = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
+        public ChecksumType[] ImageChecksums {
+            get {
+                return this.imageChecksumsField;
+            }
+            set {
+                this.imageChecksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField8;
+            }
+            set {
+                this.checksumsField8 = value;
+            }
+        }
+        
+        /// <remarks>
+///Title as it is labeled on media
+///</remarks>
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks>
+///Sequence of media
+///</remarks>
+        public int Sequence {
+            get {
+                return this.sequenceField3;
+            }
+            set {
+                this.sequenceField3 = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore()]
+        public virtual bool SequenceSpecified {
+            get {
+                return this.sequenceSpecifiedField;
+            }
+            set {
+                this.sequenceSpecifiedField = value;
+            }
+        }
+        
+        /// <remarks>
+///How many bytes must be read in image file for each byte in media
+///</remarks>
+        public int ImageInterleave {
+            get {
+                return this.imageInterleaveField;
+            }
+            set {
+                this.imageInterleaveField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore()]
+        public virtual bool ImageInterleaveSpecified {
+            get {
+                return this.imageInterleaveSpecifiedField;
+            }
+            set {
+                this.imageInterleaveSpecifiedField = value;
+            }
+        }
+        
+        /// <remarks>
+///How many bytes must be skipped in image file for each byte in media
+///</remarks>
+        public int Interleave {
+            get {
+                return this.interleaveField;
+            }
+            set {
+                this.interleaveField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore()]
+        public virtual bool InterleaveSpecified {
+            get {
+                return this.interleaveSpecifiedField;
+            }
+            set {
+                this.interleaveSpecifiedField = value;
+            }
+        }
+        
+        /// <remarks>
+///Media manufacturer
+///</remarks>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField3;
+            }
+            set {
+                this.manufacturerField3 = value;
+            }
+        }
+        
+        /// <remarks>
+///Media model
+///</remarks>
+        public string Model {
+            get {
+                return this.modelField2;
+            }
+            set {
+                this.modelField2 = value;
+            }
+        }
+        
+        /// <remarks>
+///Media packaging (DIP, PCMCIA, Cartridge, etc)
+///</remarks>
+        public string Package {
+            get {
+                return this.packageField;
+            }
+            set {
+                this.packageField = value;
+            }
+        }
+        
+        /// <remarks>
+///Media interface
+///</remarks>
+        public string Interface {
+            get {
+                return this.interfaceField;
+            }
+            set {
+                this.interfaceField = value;
+            }
+        }
+        
+        /// <remarks>
+///Dimensions of media
+///</remarks>
+        public DimensionsType Dimensions {
+            get {
+                return this.dimensionsField1;
+            }
+            set {
+                this.dimensionsField1 = value;
+            }
+        }
+        
+        /// <remarks>
+///Scan of media
+///</remarks>
+        public MediaScanType Scan {
+            get {
+                return this.scanField6;
+            }
+            set {
+                this.scanField6 = value;
+            }
+        }
+        
+        /// <remarks>
+///Array of hardware used to dump media
+///</remarks>
+        public DumpHardwareArrayType DumpHardwareArray {
+            get {
+                return this.dumpHardwareArrayField1;
+            }
+            set {
+                this.dumpHardwareArrayField1 = value;
+            }
+        }
+        
+        /// <remarks>
+///Present if media is a PCMCIA Linear Flash or SRAM card, to contain PCMCIA specific information
+///</remarks>
+        public PCMCIAType PCMCIA {
+            get {
+                return this.pCMCIAField;
+            }
+            set {
+                this.pCMCIAField = value;
+            }
+        }
+    }
+    
+    /// <remarks>
+///Contains PCMCIA card information
+///</remarks>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PCMCIAType {
+        
+        private DumpType cISField;
+        
+        /// <remarks>
+///Contains the PCMCIA Card Information Structure dump.
+///</remarks>
+        public DumpType CIS {
+            get {
+                return this.cISField;
+            }
+            set {
+                this.cISField = value;
             }
         }
     }
