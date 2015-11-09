@@ -428,5 +428,72 @@
         </FileSystems>
       </Partition>
     </FileSystemInformation>
+    <DumpHardwareArray>
+      <DumpHardware>
+        <Manufacturer>Manufacturer</Manufacturer>
+        <Model>Model</Model>
+        <Revision>Revision</Revision>
+        <Firmware>Firmware</Firmware>
+        <Serial>Serial</Serial>
+        <Extents>
+          <Extent>
+            <Start>0</Start>
+            <End>0</End>
+          </Extent>
+        </Extents>
+        <Software>
+          <Name>Name</Name>
+          <Version>Version</Version>
+          <OperatingSystem>OperatingSystem</OperatingSystem>
+        </Software>
+      </DumpHardware>
+    </DumpHardwareArray>
   </BlockMedia>
+  <AudioMedia>
+    <Image format="" offset="0">Image</Image>
+    <Size>0</Size>
+    <Checksums>
+      <Checksum type="fletcher16">Checksum</Checksum>
+    </Checksums>
+    <Sequence>
+      <MediaSequence>0</MediaSequence>
+      <TotalMedia>1</TotalMedia>
+    </Sequence>
+    <Manufacturer>Manufacturer</Manufacturer>
+    <Model>Model</Model>
+    <AccoustID>AccoustID</AccoustID>
+    <Block>
+      <Image format="" offset="0">Image</Image>
+      <Size>Size</Size>
+      <AccoustID>AccoustID</AccoustID>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </Block>
+    <CopyProtection>CopyProtection</CopyProtection>
+    <Dimensions>
+      <Thickness>0.0</Thickness>
+    </Dimensions>
+    <Scans/>
+    <DumpHardwareArray>
+      <DumpHardware>
+        <Manufacturer>Manufacturer</Manufacturer>
+        <Model>Model</Model>
+        <Revision>Revision</Revision>
+        <Firmware>Firmware</Firmware>
+        <Serial>Serial</Serial>
+        <Extents>
+          <Extent>
+            <Start>0</Start>
+            <End>0</End>
+          </Extent>
+        </Extents>
+        <Software>
+          <Name>Name</Name>
+          <Version>Version</Version>
+          <OperatingSystem>OperatingSystem</OperatingSystem>
+        </Software>
+      </DumpHardware>
+    </DumpHardwareArray>
+  </AudioMedia>
 </CICMMetadata>

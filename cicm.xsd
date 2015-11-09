@@ -1266,6 +1266,11 @@
 					<xs:documentation>Dump of media that is block constructed (floppy, hard drive) or abstracted (most memory cards, flash drives, SSDs)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="AudioMediaType" name="AudioMedia" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Dump of media that is stored as audio, like C64/Speccy/CPC cassettes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BarcodesType">
@@ -2208,7 +2213,7 @@
 			</xs:element>
 			<xs:element name="SourceFormat" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation> Format of the source of this recording
+					<xs:documentation>Format of the source of this recording
 					</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
@@ -2833,6 +2838,110 @@
 			<xs:element type="FileSystemInformationType" name="FileSystemInformation" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Information about filesystems and partitions contained in this media</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Array of hardware used to dump media, if removable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AudioBlockType">
+		<xs:annotation>
+			<xs:documentation>Information about "blocks" in audio based media</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File containing block dump, and format</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Size of block dump in bytes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="AccoustID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>AccoustID of block</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of block dump</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Format" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Block format/encoding</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AudioMediaType">
+		<xs:annotation>
+			<xs:documentation>Describes a dump of a media that is stored in an audio device (like a ZX Spectrum cassette)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Image file, or image description file, plus format (cue, toc, etc, etc)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Image file size</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ChecksumsType" name="Checksums" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of image file</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="SequenceType" name="Sequence" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Media sequence information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Manufacturer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media manufacturer (if known)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Model" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media model (if known)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="AccoustID" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>AccoustID of media in audio form</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="AudioBlockType" name="Block" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Blocks on audio media that uses separate blocks</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="CopyProtection" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Copy protection, if applicable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DimensionsType" name="Dimensions" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Dimensions of the media</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ScansType" name="Scans" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Scan of media</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Array of hardware used to dump media, if removable</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

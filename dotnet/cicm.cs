@@ -80,6 +80,8 @@ namespace Schemas {
         
         private BlockMediaType[] blockMediaField;
         
+        private AudioMediaType[] audioMediaField;
+        
         /// <remarks>
 ///Developer of the set
 ///</remarks>
@@ -427,6 +429,19 @@ namespace Schemas {
             }
             set {
                 this.blockMediaField = value;
+            }
+        }
+        
+        /// <remarks>
+///Dump of media that is stored as audio, like C64/Speccy/CPC cassettes.
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("AudioMedia")]
+        public AudioMediaType[] AudioMedia {
+            get {
+                return this.audioMediaField;
+            }
+            set {
+                this.audioMediaField = value;
             }
         }
     }
@@ -6225,7 +6240,7 @@ namespace Schemas {
         }
         
         /// <remarks>
-/// Format of the source of this recording
+///Format of the source of this recording
 ///					
 ///</remarks>
         public RecordingTypeSourceFormat SourceFormat {
@@ -7019,6 +7034,8 @@ namespace Schemas {
         
         private PartitionType[] fileSystemInformationField1;
         
+        private DumpHardwareArrayType dumpHardwareArrayField2;
+        
         /// <remarks>
 ///Image file, or image description file, plus format (cue, toc, etc, etc)
 ///</remarks>
@@ -7360,6 +7377,18 @@ namespace Schemas {
             }
             set {
                 this.fileSystemInformationField1 = value;
+            }
+        }
+        
+        /// <remarks>
+///Array of hardware used to dump media, if removable
+///</remarks>
+        public DumpHardwareArrayType DumpHardwareArray {
+            get {
+                return this.dumpHardwareArrayField2;
+            }
+            set {
+                this.dumpHardwareArrayField2 = value;
             }
         }
     }
@@ -7795,6 +7824,263 @@ namespace Schemas {
             }
             set {
                 this.formatField2 = value;
+            }
+        }
+    }
+    
+    /// <remarks>
+///Describes a dump of a media that is stored in an audio device (like a ZX Spectrum cassette)
+///</remarks>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AudioMediaType {
+        
+        private ImageType imageField9;
+        
+        private long sizeField9;
+        
+        private ChecksumType[] checksumsField12;
+        
+        private SequenceType sequenceField5;
+        
+        private string manufacturerField5;
+        
+        private string modelField4;
+        
+        private string accoustIDField2;
+        
+        private AudioBlockType[] blockField;
+        
+        private string copyProtectionField3;
+        
+        private DimensionsType dimensionsField3;
+        
+        private ScansType scansField4;
+        
+        private DumpHardwareArrayType dumpHardwareArrayField3;
+        
+        /// <remarks>
+///Image file, or image description file, plus format (cue, toc, etc, etc)
+///</remarks>
+        public ImageType Image {
+            get {
+                return this.imageField9;
+            }
+            set {
+                this.imageField9 = value;
+            }
+        }
+        
+        /// <remarks>
+///Image file size
+///</remarks>
+        public long Size {
+            get {
+                return this.sizeField9;
+            }
+            set {
+                this.sizeField9 = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField12;
+            }
+            set {
+                this.checksumsField12 = value;
+            }
+        }
+        
+        /// <remarks>
+///Media sequence information
+///</remarks>
+        public SequenceType Sequence {
+            get {
+                return this.sequenceField5;
+            }
+            set {
+                this.sequenceField5 = value;
+            }
+        }
+        
+        /// <remarks>
+///Media manufacturer (if known)
+///</remarks>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField5;
+            }
+            set {
+                this.manufacturerField5 = value;
+            }
+        }
+        
+        /// <remarks>
+///Media model (if known)
+///</remarks>
+        public string Model {
+            get {
+                return this.modelField4;
+            }
+            set {
+                this.modelField4 = value;
+            }
+        }
+        
+        /// <remarks>
+///AccoustID of media in audio form
+///</remarks>
+        public string AccoustID {
+            get {
+                return this.accoustIDField2;
+            }
+            set {
+                this.accoustIDField2 = value;
+            }
+        }
+        
+        /// <remarks>
+///Blocks on audio media that uses separate blocks
+///</remarks>
+        [System.Xml.Serialization.XmlElementAttribute("Block")]
+        public AudioBlockType[] Block {
+            get {
+                return this.blockField;
+            }
+            set {
+                this.blockField = value;
+            }
+        }
+        
+        /// <remarks>
+///Copy protection, if applicable
+///</remarks>
+        public string CopyProtection {
+            get {
+                return this.copyProtectionField3;
+            }
+            set {
+                this.copyProtectionField3 = value;
+            }
+        }
+        
+        /// <remarks>
+///Dimensions of the media
+///</remarks>
+        public DimensionsType Dimensions {
+            get {
+                return this.dimensionsField3;
+            }
+            set {
+                this.dimensionsField3 = value;
+            }
+        }
+        
+        /// <remarks>
+///Scan of media
+///</remarks>
+        public ScansType Scans {
+            get {
+                return this.scansField4;
+            }
+            set {
+                this.scansField4 = value;
+            }
+        }
+        
+        /// <remarks>
+///Array of hardware used to dump media, if removable
+///</remarks>
+        public DumpHardwareArrayType DumpHardwareArray {
+            get {
+                return this.dumpHardwareArrayField3;
+            }
+            set {
+                this.dumpHardwareArrayField3 = value;
+            }
+        }
+    }
+    
+    /// <remarks>
+///Information about "blocks" in audio based media
+///</remarks>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AudioBlockType {
+        
+        private ImageType imageField10;
+        
+        private string sizeField10;
+        
+        private string accoustIDField3;
+        
+        private ChecksumType[] checksumsField13;
+        
+        private string formatField3;
+        
+        /// <remarks>
+///File containing block dump, and format
+///</remarks>
+        public ImageType Image {
+            get {
+                return this.imageField10;
+            }
+            set {
+                this.imageField10 = value;
+            }
+        }
+        
+        /// <remarks>
+///Size of block dump in bytes
+///</remarks>
+        public string Size {
+            get {
+                return this.sizeField10;
+            }
+            set {
+                this.sizeField10 = value;
+            }
+        }
+        
+        /// <remarks>
+///AccoustID of block
+///</remarks>
+        public string AccoustID {
+            get {
+                return this.accoustIDField3;
+            }
+            set {
+                this.accoustIDField3 = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField13;
+            }
+            set {
+                this.checksumsField13 = value;
+            }
+        }
+        
+        /// <remarks>
+///Block format/encoding
+///</remarks>
+        public string Format {
+            get {
+                return this.formatField3;
+            }
+            set {
+                this.formatField3 = value;
             }
         }
     }

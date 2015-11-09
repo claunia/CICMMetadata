@@ -83,6 +83,8 @@ Namespace Schemas
         
         Private blockMediaField As BlockMediaType()
         
+        Private audioMediaField As AudioMediaType()
+        
         '''<remarks>
 '''Developer of the set
 '''</remarks>
@@ -430,6 +432,19 @@ Namespace Schemas
             End Get
             Set
                 Me.blockMediaField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Dump of media that is stored as audio, like C64/Speccy/CPC cassettes.
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("AudioMedia")>  _
+        Public Property AudioMedia() As AudioMediaType()
+            Get
+                Return Me.audioMediaField
+            End Get
+            Set
+                Me.audioMediaField = Value
             End Set
         End Property
     End Class
@@ -6228,7 +6243,7 @@ Namespace Schemas
         End Property
         
         '''<remarks>
-''' Format of the source of this recording
+'''Format of the source of this recording
 '''					
 '''</remarks>
         Public Property SourceFormat() As RecordingTypeSourceFormat
@@ -7022,6 +7037,8 @@ Namespace Schemas
         
         Private fileSystemInformationField1 As PartitionType()
         
+        Private dumpHardwareArrayField2 As DumpHardwareArrayType
+        
         '''<remarks>
 '''Image file, or image description file, plus format (cue, toc, etc, etc)
 '''</remarks>
@@ -7363,6 +7380,18 @@ Namespace Schemas
             End Get
             Set
                 Me.fileSystemInformationField1 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Array of hardware used to dump media, if removable
+'''</remarks>
+        Public Property DumpHardwareArray() As DumpHardwareArrayType
+            Get
+                Return Me.dumpHardwareArrayField2
+            End Get
+            Set
+                Me.dumpHardwareArrayField2 = Value
             End Set
         End Property
     End Class
@@ -7798,6 +7827,263 @@ Namespace Schemas
             End Get
             Set
                 Me.formatField2 = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks>
+'''Describes a dump of a media that is stored in an audio device (like a ZX Spectrum cassette)
+'''</remarks>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class AudioMediaType
+        
+        Private imageField9 As ImageType
+        
+        Private sizeField9 As Long
+        
+        Private checksumsField12 As ChecksumType()
+        
+        Private sequenceField5 As SequenceType
+        
+        Private manufacturerField5 As String
+        
+        Private modelField4 As String
+        
+        Private accoustIDField2 As String
+        
+        Private blockField As AudioBlockType()
+        
+        Private copyProtectionField3 As String
+        
+        Private dimensionsField3 As DimensionsType
+        
+        Private scansField4 As ScansType
+        
+        Private dumpHardwareArrayField3 As DumpHardwareArrayType
+        
+        '''<remarks>
+'''Image file, or image description file, plus format (cue, toc, etc, etc)
+'''</remarks>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField9
+            End Get
+            Set
+                Me.imageField9 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Image file size
+'''</remarks>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField9
+            End Get
+            Set
+                Me.sizeField9 = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField12
+            End Get
+            Set
+                Me.checksumsField12 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Media sequence information
+'''</remarks>
+        Public Property Sequence() As SequenceType
+            Get
+                Return Me.sequenceField5
+            End Get
+            Set
+                Me.sequenceField5 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Media manufacturer (if known)
+'''</remarks>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField5
+            End Get
+            Set
+                Me.manufacturerField5 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Media model (if known)
+'''</remarks>
+        Public Property Model() As String
+            Get
+                Return Me.modelField4
+            End Get
+            Set
+                Me.modelField4 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''AccoustID of media in audio form
+'''</remarks>
+        Public Property AccoustID() As String
+            Get
+                Return Me.accoustIDField2
+            End Get
+            Set
+                Me.accoustIDField2 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Blocks on audio media that uses separate blocks
+'''</remarks>
+        <System.Xml.Serialization.XmlElementAttribute("Block")>  _
+        Public Property Block() As AudioBlockType()
+            Get
+                Return Me.blockField
+            End Get
+            Set
+                Me.blockField = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Copy protection, if applicable
+'''</remarks>
+        Public Property CopyProtection() As String
+            Get
+                Return Me.copyProtectionField3
+            End Get
+            Set
+                Me.copyProtectionField3 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Dimensions of the media
+'''</remarks>
+        Public Property Dimensions() As DimensionsType
+            Get
+                Return Me.dimensionsField3
+            End Get
+            Set
+                Me.dimensionsField3 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Scan of media
+'''</remarks>
+        Public Property Scans() As ScansType
+            Get
+                Return Me.scansField4
+            End Get
+            Set
+                Me.scansField4 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Array of hardware used to dump media, if removable
+'''</remarks>
+        Public Property DumpHardwareArray() As DumpHardwareArrayType
+            Get
+                Return Me.dumpHardwareArrayField3
+            End Get
+            Set
+                Me.dumpHardwareArrayField3 = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks>
+'''Information about "blocks" in audio based media
+'''</remarks>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class AudioBlockType
+        
+        Private imageField10 As ImageType
+        
+        Private sizeField10 As String
+        
+        Private accoustIDField3 As String
+        
+        Private checksumsField13 As ChecksumType()
+        
+        Private formatField3 As String
+        
+        '''<remarks>
+'''File containing block dump, and format
+'''</remarks>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField10
+            End Get
+            Set
+                Me.imageField10 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Size of block dump in bytes
+'''</remarks>
+        Public Property Size() As String
+            Get
+                Return Me.sizeField10
+            End Get
+            Set
+                Me.sizeField10 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''AccoustID of block
+'''</remarks>
+        Public Property AccoustID() As String
+            Get
+                Return Me.accoustIDField3
+            End Get
+            Set
+                Me.accoustIDField3 = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField13
+            End Get
+            Set
+                Me.checksumsField13 = Value
+            End Set
+        End Property
+        
+        '''<remarks>
+'''Block format/encoding
+'''</remarks>
+        Public Property Format() As String
+            Get
+                Return Me.formatField3
+            End Get
+            Set
+                Me.formatField3 = Value
             End Set
         End Property
     End Class

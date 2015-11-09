@@ -8,6 +8,8 @@
 
 package generated;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -15,34 +17,29 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Describes a dump of a linear media, that is, a media that is read byte-by-byte like for example, a ROM chip, a game cartridge, a PCMCIA SRAM card, etc...
+ * Describes a dump of a media that is stored in an audio device (like a ZX Spectrum cassette)
  * 
- * <p>Java class for LinearMediaType complex type.
+ * <p>Java class for AudioMediaType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="LinearMediaType">
+ * &lt;complexType name="AudioMediaType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="Image" type="{}ImageType"/>
  *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="ImageChecksums" type="{}ChecksumsType"/>
- *         &lt;element name="Checksums" type="{}ChecksumsType" minOccurs="0"/>
- *         &lt;element name="Title" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Sequence" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="ImageInterleave" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="Interleave" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="Checksums" type="{}ChecksumsType"/>
+ *         &lt;element name="Sequence" type="{}SequenceType"/>
  *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Package" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Interface" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Dimensions" type="{}DimensionsType" minOccurs="0"/>
+ *         &lt;element name="AccoustID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Block" type="{}AudioBlockType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Dimensions" type="{}DimensionsType"/>
  *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/>
  *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/>
- *         &lt;element name="PCMCIA" type="{}PCMCIAType" minOccurs="0"/>
- *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -52,61 +49,46 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "LinearMediaType", propOrder = {
+@XmlType(name = "AudioMediaType", propOrder = {
     "image",
     "size",
-    "imageChecksums",
     "checksums",
-    "title",
     "sequence",
-    "imageInterleave",
-    "interleave",
     "manufacturer",
     "model",
-    "_package",
-    "_interface",
+    "accoustID",
+    "block",
+    "copyProtection",
     "dimensions",
     "scans",
-    "dumpHardwareArray",
-    "pcmcia",
-    "copyProtection"
+    "dumpHardwareArray"
 })
-public class LinearMediaType {
+public class AudioMediaType {
 
     @XmlElement(name = "Image", required = true)
     protected ImageType image;
     @XmlElement(name = "Size")
     protected long size;
-    @XmlElement(name = "ImageChecksums", required = true)
-    protected ChecksumsType imageChecksums;
-    @XmlElement(name = "Checksums")
+    @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
-    @XmlElement(name = "Title", required = true)
-    protected String title;
-    @XmlElement(name = "Sequence")
-    protected Integer sequence;
-    @XmlElement(name = "ImageInterleave")
-    protected Integer imageInterleave;
-    @XmlElement(name = "Interleave")
-    protected Integer interleave;
+    @XmlElement(name = "Sequence", required = true)
+    protected SequenceType sequence;
     @XmlElement(name = "Manufacturer")
     protected String manufacturer;
     @XmlElement(name = "Model")
     protected String model;
-    @XmlElement(name = "Package", required = true)
-    protected String _package;
-    @XmlElement(name = "Interface")
-    protected String _interface;
-    @XmlElement(name = "Dimensions")
+    @XmlElement(name = "AccoustID")
+    protected String accoustID;
+    @XmlElement(name = "Block")
+    protected List<AudioBlockType> block;
+    @XmlElement(name = "CopyProtection")
+    protected String copyProtection;
+    @XmlElement(name = "Dimensions", required = true)
     protected DimensionsType dimensions;
     @XmlElement(name = "Scans")
     protected ScansType scans;
     @XmlElement(name = "DumpHardwareArray")
     protected DumpHardwareArrayType dumpHardwareArray;
-    @XmlElement(name = "PCMCIA")
-    protected PCMCIAType pcmcia;
-    @XmlElement(name = "CopyProtection")
-    protected String copyProtection;
 
     /**
      * Gets the value of the image property.
@@ -149,30 +131,6 @@ public class LinearMediaType {
     }
 
     /**
-     * Gets the value of the imageChecksums property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ChecksumsType }
-     *     
-     */
-    public ChecksumsType getImageChecksums() {
-        return imageChecksums;
-    }
-
-    /**
-     * Sets the value of the imageChecksums property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ChecksumsType }
-     *     
-     */
-    public void setImageChecksums(ChecksumsType value) {
-        this.imageChecksums = value;
-    }
-
-    /**
      * Gets the value of the checksums property.
      * 
      * @return
@@ -197,38 +155,14 @@ public class LinearMediaType {
     }
 
     /**
-     * Gets the value of the title property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * Sets the value of the title property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
-    }
-
-    /**
      * Gets the value of the sequence property.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link SequenceType }
      *     
      */
-    public Integer getSequence() {
+    public SequenceType getSequence() {
         return sequence;
     }
 
@@ -237,59 +171,11 @@ public class LinearMediaType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link SequenceType }
      *     
      */
-    public void setSequence(Integer value) {
+    public void setSequence(SequenceType value) {
         this.sequence = value;
-    }
-
-    /**
-     * Gets the value of the imageInterleave property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getImageInterleave() {
-        return imageInterleave;
-    }
-
-    /**
-     * Sets the value of the imageInterleave property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setImageInterleave(Integer value) {
-        this.imageInterleave = value;
-    }
-
-    /**
-     * Gets the value of the interleave property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getInterleave() {
-        return interleave;
-    }
-
-    /**
-     * Sets the value of the interleave property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setInterleave(Integer value) {
-        this.interleave = value;
     }
 
     /**
@@ -341,51 +227,80 @@ public class LinearMediaType {
     }
 
     /**
-     * Gets the value of the package property.
+     * Gets the value of the accoustID property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getPackage() {
-        return _package;
+    public String getAccoustID() {
+        return accoustID;
     }
 
     /**
-     * Sets the value of the package property.
+     * Sets the value of the accoustID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPackage(String value) {
-        this._package = value;
+    public void setAccoustID(String value) {
+        this.accoustID = value;
     }
 
     /**
-     * Gets the value of the interface property.
+     * Gets the value of the block property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the block property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBlock().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link AudioBlockType }
+     * 
+     * 
+     */
+    public List<AudioBlockType> getBlock() {
+        if (block == null) {
+            block = new ArrayList<AudioBlockType>();
+        }
+        return this.block;
+    }
+
+    /**
+     * Gets the value of the copyProtection property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getInterface() {
-        return _interface;
+    public String getCopyProtection() {
+        return copyProtection;
     }
 
     /**
-     * Sets the value of the interface property.
+     * Sets the value of the copyProtection property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setInterface(String value) {
-        this._interface = value;
+    public void setCopyProtection(String value) {
+        this.copyProtection = value;
     }
 
     /**
@@ -458,54 +373,6 @@ public class LinearMediaType {
      */
     public void setDumpHardwareArray(DumpHardwareArrayType value) {
         this.dumpHardwareArray = value;
-    }
-
-    /**
-     * Gets the value of the pcmcia property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link PCMCIAType }
-     *     
-     */
-    public PCMCIAType getPCMCIA() {
-        return pcmcia;
-    }
-
-    /**
-     * Sets the value of the pcmcia property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PCMCIAType }
-     *     
-     */
-    public void setPCMCIA(PCMCIAType value) {
-        this.pcmcia = value;
-    }
-
-    /**
-     * Gets the value of the copyProtection property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCopyProtection() {
-        return copyProtection;
-    }
-
-    /**
-     * Sets the value of the copyProtection property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCopyProtection(String value) {
-        this.copyProtection = value;
     }
 
 }
