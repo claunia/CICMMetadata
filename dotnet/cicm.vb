@@ -53,7 +53,7 @@ Namespace Schemas
         
         Private serialNumberField As String
         
-        Private keywordsField As KeywordsType
+        Private keywordsField As String()
         
         Private magazineField As MagazineType()
         
@@ -63,13 +63,13 @@ Namespace Schemas
         
         Private subcategoriesField As String()
         
-        Private languagesField As LanguagesType
+        Private languagesField As LanguagesTypeLanguage()
         
         Private systemsField As String()
         
-        Private architecturesField As ArchitecturesType
+        Private architecturesField As ArchitecturesTypeArchitecture()
         
-        Private requiredOperatingSystemsField As RequiredOperatingSystemsType
+        Private requiredOperatingSystemsField As RequiredOperatingSystemType()
         
         Private userManualField As UserManualType()
         
@@ -246,10 +246,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Keywords
-'''</remarks>
-        Public Property Keywords() As KeywordsType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Keyword", IsNullable:=false)>  _
+        Public Property Keywords() As String()
             Get
                 Return Me.keywordsField
             End Get
@@ -306,10 +305,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Languages this set comes in
-'''</remarks>
-        Public Property Languages() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Languages() As LanguagesTypeLanguage()
             Get
                 Return Me.languagesField
             End Get
@@ -329,11 +327,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''CPU architectures this set is designed to run on, if it includes software
-'''					
-'''</remarks>
-        Public Property Architectures() As ArchitecturesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Architecture", IsNullable:=false)>  _
+        Public Property Architectures() As ArchitecturesTypeArchitecture()
             Get
                 Return Me.architecturesField
             End Get
@@ -342,11 +338,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Required operating systems and versions this set runs on, if it includes software
-'''					
-'''</remarks>
-        Public Property RequiredOperatingSystems() As RequiredOperatingSystemsType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="RequiredOperatingSystem", IsNullable:=false)>  _
+        Public Property RequiredOperatingSystems() As RequiredOperatingSystemType()
             Get
                 Return Me.requiredOperatingSystemsField
             End Get
@@ -609,28 +603,6 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class KeywordsType
-        
-        Private keywordField As String
-        
-        '''<remarks>
-'''Keywords
-'''</remarks>
-        Public Property Keyword() As String
-            Get
-                Return Me.keywordField
-            End Get
-            Set
-                Me.keywordField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class MagazineType
         
         Private barcodesField1 As BarcodeType()
@@ -649,7 +621,7 @@ Namespace Schemas
         
         Private numberSpecifiedField As Boolean
         
-        Private languageField As LanguagesType
+        Private languageField As LanguagesTypeLanguage()
         
         Private pagesField As Integer
         
@@ -755,11 +727,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Languages this magazine is written in
-'''					
-'''</remarks>
-        Public Property Language() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
             Get
                 Return Me.languageField
             End Get
@@ -1020,29 +990,6 @@ Namespace Schemas
         '''<remarks/>
         spamsum
     End Enum
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class LanguagesType
-        
-        Private languageField1 As LanguagesTypeLanguage
-        
-        '''<remarks>
-''' Languages included in the set, ISO 3-letter code
-'''					
-'''</remarks>
-        Public Property Language() As LanguagesTypeLanguage
-            Get
-                Return Me.languageField1
-            End Get
-            Set
-                Me.languageField1 = Value
-            End Set
-        End Property
-    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
@@ -2750,7 +2697,7 @@ Namespace Schemas
         
         Private softwareVersionField2 As String
         
-        Private languageField2 As LanguagesType
+        Private languageField1 As LanguagesTypeLanguage()
         
         '''<remarks>
 '''Who did the OCR
@@ -2788,16 +2735,14 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''OCR applied for which languages
-'''					
-'''</remarks>
-        Public Property Language() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
             Get
-                Return Me.languageField2
+                Return Me.languageField1
             End Get
             Set
-                Me.languageField2 = Value
+                Me.languageField1 = Value
             End Set
         End Property
     End Class
@@ -2823,7 +2768,7 @@ Namespace Schemas
         
         Private publicationDateSpecifiedField1 As Boolean
         
-        Private languageField3 As LanguagesType
+        Private languageField2 As LanguagesTypeLanguage()
         
         Private pagesField1 As Integer
         
@@ -2916,15 +2861,14 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Book language
-'''</remarks>
-        Public Property Language() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
             Get
-                Return Me.languageField3
+                Return Me.languageField2
             End Get
             Set
-                Me.languageField3 = Value
+                Me.languageField2 = Value
             End Set
         End Property
         
@@ -2973,29 +2917,6 @@ Namespace Schemas
             End Get
             Set
                 Me.scanField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''CPU architectures this set is intended to be run on
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ArchitecturesType
-        
-        Private architectureField As ArchitecturesTypeArchitecture
-        
-        '''<remarks/>
-        Public Property Architecture() As ArchitecturesTypeArchitecture
-            Get
-                Return Me.architectureField
-            End Get
-            Set
-                Me.architectureField = Value
             End Set
         End Property
     End Class
@@ -3154,31 +3075,11 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class RequiredOperatingSystemsType
-        
-        Private requiredOperatingSystemField As RequiredOperatingSystemType
-        
-        '''<remarks/>
-        Public Property RequiredOperatingSystem() As RequiredOperatingSystemType
-            Get
-                Return Me.requiredOperatingSystemField
-            End Get
-            Set
-                Me.requiredOperatingSystemField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class RequiredOperatingSystemType
         
         Private nameField3 As String
         
-        Private versionField1 As String
+        Private versionField1 As String()
         
         '''<remarks>
 '''Minimal supported operating system
@@ -3194,7 +3095,8 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Version() As String
+        <System.Xml.Serialization.XmlElementAttribute("Version")>  _
+        Public Property Version() As String()
             Get
                 Return Me.versionField1
             End Get
@@ -3214,7 +3116,7 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class UserManualType
         
-        Private languageField4 As LanguagesType
+        Private languageField3 As LanguagesTypeLanguage()
         
         Private pagesField2 As Integer
         
@@ -3222,15 +3124,14 @@ Namespace Schemas
         
         Private scanField2 As ScanType
         
-        '''<remarks>
-'''Language of the user manual
-'''</remarks>
-        Public Property Language() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
             Get
-                Return Me.languageField4
+                Return Me.languageField3
             End Get
             Set
-                Me.languageField4 = Value
+                Me.languageField3 = Value
             End Set
         End Property
         
@@ -5938,7 +5839,7 @@ Namespace Schemas
         
         Private meanBitrateField As Long
         
-        Private languagesField1 As LanguagesType
+        Private languagesField1 As LanguagesTypeLanguage()
         
         '''<remarks>
 '''Track number in media container
@@ -6019,10 +5920,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Track languages
-'''</remarks>
-        Public Property Languages() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Languages() As LanguagesTypeLanguage()
             Get
                 Return Me.languagesField1
             End Get
@@ -6051,7 +5951,7 @@ Namespace Schemas
         
         Private threeDField As Boolean
         
-        Private languagesField2 As LanguagesType
+        Private languagesField2 As LanguagesTypeLanguage()
         
         '''<remarks>
 '''Track number in media container
@@ -6132,10 +6032,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Track languages
-'''</remarks>
-        Public Property Languages() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Languages() As LanguagesTypeLanguage()
             Get
                 Return Me.languagesField2
             End Get
@@ -6156,7 +6055,7 @@ Namespace Schemas
         
         Private codecField2 As String
         
-        Private languagesField3 As LanguagesType
+        Private languagesField3 As LanguagesTypeLanguage()
         
         '''<remarks>
 '''Track number in media container
@@ -6184,10 +6083,9 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Track languages
-'''</remarks>
-        Public Property Languages() As LanguagesType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        Public Property Languages() As LanguagesTypeLanguage()
             Get
                 Return Me.languagesField3
             End Get

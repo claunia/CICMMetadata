@@ -50,7 +50,7 @@ namespace Schemas {
         
         private string serialNumberField;
         
-        private KeywordsType keywordsField;
+        private string[] keywordsField;
         
         private MagazineType[] magazineField;
         
@@ -60,13 +60,13 @@ namespace Schemas {
         
         private string[] subcategoriesField;
         
-        private LanguagesType languagesField;
+        private LanguagesTypeLanguage[] languagesField;
         
         private string[] systemsField;
         
-        private ArchitecturesType architecturesField;
+        private ArchitecturesTypeArchitecture[] architecturesField;
         
-        private RequiredOperatingSystemsType requiredOperatingSystemsField;
+        private RequiredOperatingSystemType[] requiredOperatingSystemsField;
         
         private UserManualType[] userManualField;
         
@@ -243,10 +243,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Keywords
-///</remarks>
-        public KeywordsType Keywords {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Keyword", IsNullable=false)]
+        public string[] Keywords {
             get {
                 return this.keywordsField;
             }
@@ -303,10 +302,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Languages this set comes in
-///</remarks>
-        public LanguagesType Languages {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Languages {
             get {
                 return this.languagesField;
             }
@@ -326,11 +324,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///CPU architectures this set is designed to run on, if it includes software
-///					
-///</remarks>
-        public ArchitecturesType Architectures {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Architecture", IsNullable=false)]
+        public ArchitecturesTypeArchitecture[] Architectures {
             get {
                 return this.architecturesField;
             }
@@ -339,11 +335,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Required operating systems and versions this set runs on, if it includes software
-///					
-///</remarks>
-        public RequiredOperatingSystemsType RequiredOperatingSystems {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="RequiredOperatingSystem", IsNullable=false)]
+        public RequiredOperatingSystemType[] RequiredOperatingSystems {
             get {
                 return this.requiredOperatingSystemsField;
             }
@@ -606,28 +600,6 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class KeywordsType {
-        
-        private string keywordField;
-        
-        /// <remarks>
-///Keywords
-///</remarks>
-        public string Keyword {
-            get {
-                return this.keywordField;
-            }
-            set {
-                this.keywordField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MagazineType {
         
         private BarcodeType[] barcodesField1;
@@ -646,7 +618,7 @@ namespace Schemas {
         
         private bool numberSpecifiedField;
         
-        private LanguagesType languageField;
+        private LanguagesTypeLanguage[] languageField;
         
         private int pagesField;
         
@@ -752,11 +724,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Languages this magazine is written in
-///					
-///</remarks>
-        public LanguagesType Language {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
             get {
                 return this.languageField;
             }
@@ -1016,29 +986,6 @@ namespace Schemas {
         
         /// <remarks/>
         spamsum,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class LanguagesType {
-        
-        private LanguagesTypeLanguage languageField1;
-        
-        /// <remarks>
-/// Languages included in the set, ISO 3-letter code
-///					
-///</remarks>
-        public LanguagesTypeLanguage Language {
-            get {
-                return this.languageField1;
-            }
-            set {
-                this.languageField1 = value;
-            }
-        }
     }
     
     /// <remarks/>
@@ -2747,7 +2694,7 @@ namespace Schemas {
         
         private string softwareVersionField2;
         
-        private LanguagesType languageField2;
+        private LanguagesTypeLanguage[] languageField1;
         
         /// <remarks>
 ///Who did the OCR
@@ -2785,16 +2732,14 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///OCR applied for which languages
-///					
-///</remarks>
-        public LanguagesType Language {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
             get {
-                return this.languageField2;
+                return this.languageField1;
             }
             set {
-                this.languageField2 = value;
+                this.languageField1 = value;
             }
         }
     }
@@ -2820,7 +2765,7 @@ namespace Schemas {
         
         private bool publicationDateSpecifiedField1;
         
-        private LanguagesType languageField3;
+        private LanguagesTypeLanguage[] languageField2;
         
         private int pagesField1;
         
@@ -2913,15 +2858,14 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Book language
-///</remarks>
-        public LanguagesType Language {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
             get {
-                return this.languageField3;
+                return this.languageField2;
             }
             set {
-                this.languageField3 = value;
+                this.languageField2 = value;
             }
         }
         
@@ -2970,29 +2914,6 @@ namespace Schemas {
             }
             set {
                 this.scanField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///CPU architectures this set is intended to be run on
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ArchitecturesType {
-        
-        private ArchitecturesTypeArchitecture architectureField;
-        
-        /// <remarks/>
-        public ArchitecturesTypeArchitecture Architecture {
-            get {
-                return this.architectureField;
-            }
-            set {
-                this.architectureField = value;
             }
         }
     }
@@ -3151,31 +3072,11 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class RequiredOperatingSystemsType {
-        
-        private RequiredOperatingSystemType requiredOperatingSystemField;
-        
-        /// <remarks/>
-        public RequiredOperatingSystemType RequiredOperatingSystem {
-            get {
-                return this.requiredOperatingSystemField;
-            }
-            set {
-                this.requiredOperatingSystemField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class RequiredOperatingSystemType {
         
         private string nameField3;
         
-        private string versionField1;
+        private string[] versionField1;
         
         /// <remarks>
 ///Minimal supported operating system
@@ -3191,7 +3092,8 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public string Version {
+        [System.Xml.Serialization.XmlElementAttribute("Version")]
+        public string[] Version {
             get {
                 return this.versionField1;
             }
@@ -3211,7 +3113,7 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class UserManualType {
         
-        private LanguagesType languageField4;
+        private LanguagesTypeLanguage[] languageField3;
         
         private int pagesField2;
         
@@ -3219,15 +3121,14 @@ namespace Schemas {
         
         private ScanType scanField2;
         
-        /// <remarks>
-///Language of the user manual
-///</remarks>
-        public LanguagesType Language {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
             get {
-                return this.languageField4;
+                return this.languageField3;
             }
             set {
-                this.languageField4 = value;
+                this.languageField3 = value;
             }
         }
         
@@ -5935,7 +5836,7 @@ namespace Schemas {
         
         private long meanBitrateField;
         
-        private LanguagesType languagesField1;
+        private LanguagesTypeLanguage[] languagesField1;
         
         /// <remarks>
 ///Track number in media container
@@ -6016,10 +5917,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Track languages
-///</remarks>
-        public LanguagesType Languages {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Languages {
             get {
                 return this.languagesField1;
             }
@@ -6048,7 +5948,7 @@ namespace Schemas {
         
         private bool threeDField;
         
-        private LanguagesType languagesField2;
+        private LanguagesTypeLanguage[] languagesField2;
         
         /// <remarks>
 ///Track number in media container
@@ -6129,10 +6029,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Track languages
-///</remarks>
-        public LanguagesType Languages {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Languages {
             get {
                 return this.languagesField2;
             }
@@ -6153,7 +6052,7 @@ namespace Schemas {
         
         private string codecField2;
         
-        private LanguagesType languagesField3;
+        private LanguagesTypeLanguage[] languagesField3;
         
         /// <remarks>
 ///Track number in media container
@@ -6181,10 +6080,9 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Track languages
-///</remarks>
-        public LanguagesType Languages {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Languages {
             get {
                 return this.languagesField3;
             }

@@ -90,7 +90,7 @@
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Architecture" minOccurs="1" maxOccurs="1">
+			<xs:element name="Architecture" minOccurs="1" maxOccurs="unbounded">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<xs:enumeration value="i86" />
@@ -894,7 +894,7 @@
 	</xs:complexType>
 	<xs:complexType name="KeywordsType">
 		<xs:sequence>
-			<xs:element type="xs:string" name="Keyword">
+			<xs:element type="xs:string" name="Keyword" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Keywords</xs:documentation>
 				</xs:annotation>
@@ -1103,13 +1103,13 @@
 	</xs:complexType>
 	<xs:complexType name="RequiredOperatingSystemType">
 		<xs:sequence>
-			<xs:element type="xs:string" name="Name">
+			<xs:element type="xs:string" name="Name" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Minimal supported operating system
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:string" name="Version" />
+			<xs:element type="xs:string" name="Version" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="CICMMetadataType">
@@ -1517,7 +1517,7 @@
 	</xs:complexType>
 	<xs:complexType name="LanguagesType">
 		<xs:sequence>
-			<xs:element name="Language">
+			<xs:element name="Language" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation> Languages included in the set, ISO 3-letter code
 					</xs:documentation>
@@ -2017,7 +2017,7 @@
 	</xs:complexType>
 	<xs:complexType name="RequiredOperatingSystemsType">
 		<xs:sequence>
-			<xs:element type="RequiredOperatingSystemType" name="RequiredOperatingSystem" />
+			<xs:element type="RequiredOperatingSystemType" name="RequiredOperatingSystem" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="SubChannelType">
@@ -2361,7 +2361,7 @@
 					<xs:documentation>Video tracks of advertisement</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="SubtitleTracksType" name="SubtitleTrack" minOccurs="1" maxOccurs="unbounded">
+			<xs:element type="SubtitleTracksType" name="SubtitleTrack" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Subtitle tracks of advertisement
 					</xs:documentation>
