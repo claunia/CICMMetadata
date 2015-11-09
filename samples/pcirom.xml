@@ -27,8 +27,6 @@
         <Checksum type="crc16">0xb943</Checksum>
         <Checksum type="crc32">0x041bd908</Checksum>
         <Checksum type="crc64">0x3ee7cc130a1c280d</Checksum>
-        <Checksum type="fletcher16">0xffff</Checksum>
-        <Checksum type="fletcher32">0xffffffff</Checksum>
         <Checksum type="md5">e86d20cac3727a0ebaf901eeef1a283a</Checksum>
         <Checksum type="ripemd160">064b2b8050296caa535aa08de35d051e9e3fb6c7</Checksum>
         <Checksum type="sha1">9c2f1b6c07a00c16e35c82ee79050a459568f645</Checksum>
