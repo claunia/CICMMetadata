@@ -15,16 +15,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RequiredOperatingSystemsType complex type.
+ * Contains ATA/ATAPI device information
+ * 
+ * <p>Java class for ATAType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="RequiredOperatingSystemsType">
+ * &lt;complexType name="ATAType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="RequiredOperatingSystem" type="{}RequiredOperatingSystemType"/>
+ *         &lt;element name="Identify" type="{}DumpType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RequiredOperatingSystemsType", propOrder = {
-    "requiredOperatingSystem"
+@XmlType(name = "ATAType", propOrder = {
+    "identify"
 })
-public class RequiredOperatingSystemsType {
+public class ATAType {
 
-    @XmlElement(name = "RequiredOperatingSystem", required = true)
-    protected RequiredOperatingSystemType requiredOperatingSystem;
+    @XmlElement(name = "Identify", required = true)
+    protected DumpType identify;
 
     /**
-     * Gets the value of the requiredOperatingSystem property.
+     * Gets the value of the identify property.
      * 
      * @return
      *     possible object is
-     *     {@link RequiredOperatingSystemType }
+     *     {@link DumpType }
      *     
      */
-    public RequiredOperatingSystemType getRequiredOperatingSystem() {
-        return requiredOperatingSystem;
+    public DumpType getIdentify() {
+        return identify;
     }
 
     /**
-     * Sets the value of the requiredOperatingSystem property.
+     * Sets the value of the identify property.
      * 
      * @param value
      *     allowed object is
-     *     {@link RequiredOperatingSystemType }
+     *     {@link DumpType }
      *     
      */
-    public void setRequiredOperatingSystem(RequiredOperatingSystemType value) {
-        this.requiredOperatingSystem = value;
+    public void setIdentify(DumpType value) {
+        this.identify = value;
     }
 
 }

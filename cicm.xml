@@ -108,10 +108,8 @@
     <Image format="" offset="0">Image</Image>
     <Size>0</Size>
     <Sequence>
-      <DiscTitle>DiscTitle</DiscTitle>
-      <Disc>0</Disc>
-      <TotalDiscs>1</TotalDiscs>
-      <Side>1</Side>
+      <MediaSequence>0</MediaSequence>
+      <TotalMedia>1</TotalMedia>
     </Sequence>
     <Layers type="PTP">
       <Sectors layer="0">0</Sectors>
@@ -279,15 +277,7 @@
     <Dimensions>
       <Thickness>0.0</Thickness>
     </Dimensions>
-    <Scan>
-      <MediaScanElement>up</MediaScanElement>
-      <Scan>
-        <File format="">File</File>
-        <Checksums>
-          <Checksum type="fletcher16">Checksum</Checksum>
-        </Checksums>
-      </Scan>
-    </Scan>
+    <Scans/>
     <DumpHardwareArray>
       <DumpHardware>
         <Manufacturer>Manufacturer</Manufacturer>
@@ -317,6 +307,7 @@
         </Checksums>
       </CIS>
     </PCMCIA>
+    <CopyProtection>CopyProtection</CopyProtection>
   </LinearMedia>
   <PCICard>
     <VendorID>1</VendorID>
@@ -338,4 +329,104 @@
       <Package>Package</Package>
     </ExpansionROM>
   </PCICard>
+  <BlockMedia>
+    <Image format="" offset="0">Image</Image>
+    <Size>0</Size>
+    <Checksums>
+      <Checksum type="fletcher16">Checksum</Checksum>
+    </Checksums>
+    <Sequence>
+      <MediaSequence>0</MediaSequence>
+      <TotalMedia>1</TotalMedia>
+    </Sequence>
+    <Manufacturer>Manufacturer</Manufacturer>
+    <Model>Model</Model>
+    <Serial>Serial</Serial>
+    <Firmware>Firmware</Firmware>
+    <Interface>Interface</Interface>
+    <PhysicalBlockSize>0</PhysicalBlockSize>
+    <LogicalBlockSize>0</LogicalBlockSize>
+    <LogicalBlocks>0</LogicalBlocks>
+    <Scans/>
+    <ATA>
+      <Identify>
+        <Image>Image</Image>
+        <Size>0</Size>
+        <Checksums>
+          <Checksum type="fletcher16">Checksum</Checksum>
+        </Checksums>
+      </Identify>
+    </ATA>
+    <PCI>
+      <VendorID>1</VendorID>
+      <DeviceID>1</DeviceID>
+    </PCI>
+    <PCMCIA>
+      <CIS>
+        <Image>Image</Image>
+        <Size>0</Size>
+        <Checksums>
+          <Checksum type="fletcher16">Checksum</Checksum>
+        </Checksums>
+      </CIS>
+    </PCMCIA>
+    <SecureDigital>
+      <CID>
+        <Image>Image</Image>
+        <Size>0</Size>
+        <Checksums>
+          <Checksum type="fletcher16">Checksum</Checksum>
+        </Checksums>
+      </CID>
+    </SecureDigital>
+    <SCSI>
+      <Inquiry>
+        <Image>Image</Image>
+        <Size>0</Size>
+        <Checksums>
+          <Checksum type="fletcher16">Checksum</Checksum>
+        </Checksums>
+      </Inquiry>
+    </SCSI>
+    <USB>
+      <VendorID>1</VendorID>
+      <ProductID>1</ProductID>
+    </USB>
+    <Heads>0</Heads>
+    <Cylinders>0</Cylinders>
+    <SectorsPerTrack>0</SectorsPerTrack>
+    <Track>
+      <Image format="" offset="0">Image</Image>
+      <Size>Size</Size>
+      <Head>0</Head>
+      <Cylinder>0</Cylinder>
+      <StartSector>0</StartSector>
+      <EndSector>0</EndSector>
+      <Sectors>0</Sectors>
+      <BytesPerSector>0</BytesPerSector>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </Track>
+    <CopyProtection>CopyProtection</CopyProtection>
+    <Dimensions>
+      <Thickness>0.0</Thickness>
+    </Dimensions>
+    <FileSystemInformation>
+      <Partition>
+        <Sequence>1</Sequence>
+        <StartSector>0</StartSector>
+        <EndSector>0</EndSector>
+        <FileSystems>
+          <FileSystem>
+            <Type>Type</Type>
+            <ClusterSize>0</ClusterSize>
+            <Clusters>0</Clusters>
+            <Bootable>true</Bootable>
+            <Dirty>true</Dirty>
+          </FileSystem>
+        </FileSystems>
+      </Partition>
+    </FileSystemInformation>
+  </BlockMedia>
 </CICMMetadata>

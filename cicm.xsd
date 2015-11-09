@@ -917,18 +917,18 @@
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element type="xs:string" name="DiscTitle" minOccurs="1">
+			<xs:element type="xs:string" name="MediaTitle" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Sequence information about this disc
+					<xs:documentation>Sequence information about this media
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:int" name="Disc" minOccurs="1">
+			<xs:element type="xs:int" name="MediaSequence" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Disc title as printed in label</xs:documentation>
+					<xs:documentation>Media title as printed in label</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TotalDiscs" minOccurs="1">
+			<xs:element name="TotalMedia" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Total number of discs in this set
 					</xs:documentation>
@@ -939,7 +939,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Side" minOccurs="1">
+			<xs:element name="Side" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Side of disc described by this field
 					</xs:documentation>
@@ -951,7 +951,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Layer" minOccurs="0">
+			<xs:element name="Layer" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>On PTP layering, layer of disc described by this field, starting on 0
 					</xs:documentation>
@@ -1113,6 +1113,9 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="CICMMetadataType">
+		<xs:annotation>
+			<xs:documentation>Digital Asset Metadata</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:element type="xs:string" name="Developer" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
@@ -1256,6 +1259,11 @@
 			<xs:element type="PCIType" name="PCICard" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Dump of a PCI/PCI-X/PCIe configuration space and/or expansion ROM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="BlockMediaType" name="BlockMedia" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Dump of media that is block constructed (floppy, hard drive) or abstracted (most memory cards, flash drives, SSDs)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -2362,20 +2370,17 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-
-    <xs:complexType name="LinearMediaType">
-        <xs:annotation>
-        	<xs:documentation>Describes a dump of a linear media, that is, a media that is read byte-by-byte like for example, a ROM chip, a game cartridge, a PCMCIA SRAM card, etc...</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-			<xs:element type="ImageType" name="Image" minOccurs="1"
-				maxOccurs="1">
+	<xs:complexType name="LinearMediaType">
+		<xs:annotation>
+			<xs:documentation>Describes a dump of a linear media, that is, a media that is read byte-by-byte like for example, a ROM chip, a game cartridge, a PCMCIA SRAM card, etc...</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Image file, or image description file, plus format (cue, toc, etc, etc)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:long" name="Size" minOccurs="1"
-				maxOccurs="1">
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Image file size</xs:documentation>
 				</xs:annotation>
@@ -2408,7 +2413,8 @@
 			<xs:element type="xs:int" name="Interleave" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>How many bytes must be skipped in image file for each byte in media</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="xs:string" name="Manufacturer" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Media manufacturer</xs:documentation>
@@ -2434,7 +2440,7 @@
 					<xs:documentation>Dimensions of media</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="MediaScanType" name="Scan" minOccurs="0" maxOccurs="1">
+			<xs:element type="ScansType" name="Scans" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Scan of media</xs:documentation>
 				</xs:annotation>
@@ -2449,60 +2455,64 @@
 					<xs:documentation>Present if media is a PCMCIA Linear Flash or SRAM card, to contain PCMCIA specific information</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-   		</xs:sequence>
-    </xs:complexType>
-    
-    <xs:complexType name="PCMCIAType">
-    	<xs:annotation>
-    		<xs:documentation>Contains PCMCIA card information</xs:documentation>
-    	</xs:annotation>
-    	<xs:sequence>
-    		<xs:element type="DumpType" name="CIS" minOccurs="1" maxOccurs="1">
-    			<xs:annotation>
-    				<xs:documentation>Contains the PCMCIA Card Information Structure dump.</xs:documentation>
-    			</xs:annotation>
-    		</xs:element>
-    	</xs:sequence>
-    </xs:complexType>
-    
-    <xs:complexType name="PCIType">
-    	<xs:annotation>
-    		<xs:documentation>Contains PCI/PCI-X/PCIe card information</xs:documentation>
-    	</xs:annotation>
-    	<xs:sequence>
-    		<xs:element name="VendorID" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                	<xs:documentation>Contains PCI Vendor ID</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-    				<xs:restriction base="xs:int">
-    					<xs:minInclusive value="1"/>
-    					<xs:maxInclusive value="65534"/>
-    				</xs:restriction>
-    			</xs:simpleType>
-    		</xs:element>
-    		<xs:element name="DeviceID" minOccurs="1" maxOccurs="1">
-    			<xs:annotation>
-    				<xs:documentation>Contains PCI Device ID</xs:documentation>
-    			</xs:annotation>
-    			<xs:simpleType>
-    				<xs:restriction base="xs:int">
-    					<xs:minInclusive value="1"/>
-    					<xs:maxInclusive value="65534"/>
-    				</xs:restriction>
-    			</xs:simpleType>
-    		</xs:element>
-    		<xs:element type="DumpType" name="Configuration" minOccurs="0" maxOccurs="1">
-    			<xs:annotation>
-    				<xs:documentation>Binary dump of the PCI configuration space</xs:documentation>
-    			</xs:annotation></xs:element>
-    		<xs:element type="LinearMediaType" name="ExpansionROM" minOccurs="0" maxOccurs="1">
-    			<xs:annotation>
-    				<xs:documentation>Binary dump of the PCI expansion rom</xs:documentation>
-    			</xs:annotation></xs:element>
-    	</xs:sequence>
-    </xs:complexType>
-    
+			<xs:element type="xs:string" name="CopyProtection" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Copy protection, if applicable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PCMCIAType">
+		<xs:annotation>
+			<xs:documentation>Contains PCMCIA card information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="DumpType" name="CIS" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains the PCMCIA Card Information Structure dump.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PCIType">
+		<xs:annotation>
+			<xs:documentation>Contains PCI/PCI-X/PCIe card information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="VendorID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains PCI Vendor ID</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1" />
+						<xs:maxInclusive value="65534" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DeviceID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains PCI Device ID</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1" />
+						<xs:maxInclusive value="65534" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element type="DumpType" name="Configuration" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Binary dump of the PCI configuration space</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="LinearMediaType" name="ExpansionROM" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Binary dump of the PCI expansion rom</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="EVPDType">
 		<xs:sequence>
 			<xs:element type="xs:string" name="Image" minOccurs="1" maxOccurs="1">
@@ -2522,10 +2532,10 @@
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="page">
-            <xs:annotation>
-            	<xs:documentation>EVPD page</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>EVPD page</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
 				<xs:restriction base="xs:int">
 					<xs:minInclusive value="1" />
 					<xs:maxInclusive value="255" />
@@ -2533,100 +2543,298 @@
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
-	
 	<xs:complexType name="SCSIType">
-        <xs:annotation>
-        	<xs:documentation>Contains SCSI device information</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
+		<xs:annotation>
+			<xs:documentation>Contains SCSI device information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
 			<xs:element type="DumpType" name="Inquiry" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains SCSI INQUIRY result dump</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="EVPDType" name="EVPD" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Contains SCSI EVPD dumps</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="DumpType" name="ModeSense" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains SCSI MODE SENSE(6) dump</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="DumpType" name="ModeSense10" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains SCSI MODE SENSE(10) dump</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="DumpType" name="LogSense" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains SCSI LOG SENSE dump</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	
 	<xs:complexType name="USBType">
-    	<xs:annotation>
-    		<xs:documentation>Contains USB device information</xs:documentation>
-    	</xs:annotation>
-    	<xs:sequence>
-    		<xs:element name="VendorID" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                	<xs:documentation>Contains USB Vendor ID</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-    				<xs:restriction base="xs:int">
-    					<xs:minInclusive value="1"/>
-    					<xs:maxInclusive value="65534"/>
-    				</xs:restriction>
-    			</xs:simpleType>
-    		</xs:element>
-    		<xs:element name="ProductID" minOccurs="1" maxOccurs="1">
-    			<xs:annotation>
-    				<xs:documentation>Contains USB Product ID</xs:documentation>
-    			</xs:annotation>
-    			<xs:simpleType>
-    				<xs:restriction base="xs:int">
-    					<xs:minInclusive value="1"/>
-    					<xs:maxInclusive value="65534"/>
-    				</xs:restriction>
-    			</xs:simpleType>
-    		</xs:element>
-    		<xs:element type="DumpType" name="Descriptors" minOccurs="0" maxOccurs="1">
-    			<xs:annotation>
-    				<xs:documentation>Binary dump of the USB descriptors</xs:documentation>
-    			</xs:annotation></xs:element>
-    	</xs:sequence>
-    </xs:complexType>
-    
-    <xs:complexType name="SecureDigitalType">
-        <xs:annotation>
-        	<xs:documentation>Contains SD/MMC device information</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
+		<xs:annotation>
+			<xs:documentation>Contains USB device information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="VendorID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains USB Vendor ID</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1" />
+						<xs:maxInclusive value="65534" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ProductID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains USB Product ID</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1" />
+						<xs:maxInclusive value="65534" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element type="DumpType" name="Descriptors" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Binary dump of the USB descriptors</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SecureDigitalType">
+		<xs:annotation>
+			<xs:documentation>Contains SD/MMC device information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
 			<xs:element type="DumpType" name="CID" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains SD/MMC's CID</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="DumpType" name="CSD" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains SD/MMC's CSD</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="DumpType" name="ExtendedCSD" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains SD/MMC's extended CSD</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-    
-    <xs:complexType name="ATAType">
-        <xs:annotation>
-        	<xs:documentation>Contains ATA/ATAPI device information</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
+	<xs:complexType name="ATAType">
+		<xs:annotation>
+			<xs:documentation>Contains ATA/ATAPI device information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
 			<xs:element type="DumpType" name="Identify" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains ATA/ATAPI IDENTIFY binary dump</xs:documentation>
-				</xs:annotation></xs:element>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-    
-	
+	<xs:complexType name="BlockTrackType">
+		<xs:annotation>
+			<xs:documentation>Information about track in non-abstracted block based media</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File containing track dump, and format</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Size of track dump in bytes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Head" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Head (from 0) where this track resides</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Cylinder" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Cylinder where this track resides</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="StartSector" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Track start sector</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="EndSector" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Track end sector</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Sectors" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Sectors in track. Not necessarily EndSector-StartSector, as there can be hidden sectors</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:int" name="BytesPerSector" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Bytes per sector, physical undecoded tag-less</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of track dump</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Format" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Track format (IBM FM, IBM MFM, Amiga MFM, Apple GCR, etc)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BlockMediaType">
+		<xs:annotation>
+			<xs:documentation>Describes a dump of a block (sector) layered media</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Image file, or image description file, plus format (cue, toc, etc, etc)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Image file size</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ChecksumsType" name="Checksums" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of image file</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="SequenceType" name="Sequence" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Media sequence information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Manufacturer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media manufacturer (for fixed AND removable media)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Model" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media model (for fixed AND removable media)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Serial" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media serial number (for fixed and, if applicable, removable media)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Firmware" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media firmware version, for fixed media only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="Interface" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media physical interface, for fixed media only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:int" name="PhysicalBlockSize" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Physical block size in bytes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:int" name="LogicalBlockSize" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Logical block size in bytes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="LogicalBlocks" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>User accessible logical blocks</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ScansType" name="Scans" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Media scans</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ATAType" name="ATA" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If media responds to native ATA/ATAPI commands, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="PCIType" name="PCI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If media is PCI/PCI-X/PCIe attached, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="PCMCIAType" name="PCMCIA" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If media is PCMCIA attached, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="SecureDigitalType" name="SecureDigital" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If media is SecureDigital or MultiMediaCard, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="SCSIType" name="SCSI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If media conforms to SCSI specifications, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="USBType" name="USB" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If media is USB attached, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Heads" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Real physical heads</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Cylinders" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Real physical cylinders</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="SectorsPerTrack" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Sectors per track, if constant, if not, this field is ommited and separate tracks must be indicated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="BlockTrackType" name="Track" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Tracks for block media that allow separate cylinder/head addressing, like floppies. It can be ommitted for media that strictly follows a standard (no copy protection either).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="CopyProtection" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Copy protection, if applicable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DimensionsType" name="Dimensions" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Dimensions of the media</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="FileSystemInformationType" name="FileSystemInformation" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Information about filesystems and partitions contained in this media</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>

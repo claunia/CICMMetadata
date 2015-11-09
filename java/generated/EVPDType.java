@@ -10,24 +10,33 @@ package generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for CoverType complex type.
+ * <p>Java class for EVPDType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="CoverType">
+ * &lt;complexType name="EVPDType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="File" type="{}FileType"/>
+ *         &lt;element name="Image" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="Checksums" type="{}ChecksumsType"/>
- *         &lt;element name="Thumbnail" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
  *       &lt;/sequence>
+ *       &lt;attribute name="page">
+ *         &lt;simpleType>
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
+ *             &lt;minInclusive value="1"/>
+ *             &lt;maxInclusive value="255"/>
+ *           &lt;/restriction>
+ *         &lt;/simpleType>
+ *       &lt;/attribute>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,42 +45,68 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CoverType", propOrder = {
-    "file",
-    "checksums",
-    "thumbnail"
+@XmlType(name = "EVPDType", propOrder = {
+    "image",
+    "size",
+    "checksums"
 })
-public class CoverType {
+public class EVPDType {
 
-    @XmlElement(name = "File", required = true)
-    protected FileType file;
+    @XmlElement(name = "Image", required = true)
+    protected String image;
+    @XmlElement(name = "Size", required = true)
+    protected String size;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
-    @XmlElement(name = "Thumbnail", required = true)
-    protected byte[] thumbnail;
+    @XmlAttribute(name = "page")
+    protected Integer page;
 
     /**
-     * Gets the value of the file property.
+     * Gets the value of the image property.
      * 
      * @return
      *     possible object is
-     *     {@link FileType }
+     *     {@link String }
      *     
      */
-    public FileType getFile() {
-        return file;
+    public String getImage() {
+        return image;
     }
 
     /**
-     * Sets the value of the file property.
+     * Sets the value of the image property.
      * 
      * @param value
      *     allowed object is
-     *     {@link FileType }
+     *     {@link String }
      *     
      */
-    public void setFile(FileType value) {
-        this.file = value;
+    public void setImage(String value) {
+        this.image = value;
+    }
+
+    /**
+     * Gets the value of the size property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSize() {
+        return size;
+    }
+
+    /**
+     * Sets the value of the size property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSize(String value) {
+        this.size = value;
     }
 
     /**
@@ -99,25 +134,27 @@ public class CoverType {
     }
 
     /**
-     * Gets the value of the thumbnail property.
+     * Gets the value of the page property.
      * 
      * @return
      *     possible object is
-     *     byte[]
+     *     {@link Integer }
+     *     
      */
-    public byte[] getThumbnail() {
-        return thumbnail;
+    public Integer getPage() {
+        return page;
     }
 
     /**
-     * Sets the value of the thumbnail property.
+     * Sets the value of the page property.
      * 
      * @param value
      *     allowed object is
-     *     byte[]
+     *     {@link Integer }
+     *     
      */
-    public void setThumbnail(byte[] value) {
-        this.thumbnail = value;
+    public void setPage(Integer value) {
+        this.page = value;
     }
 
 }

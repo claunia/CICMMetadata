@@ -15,17 +15,28 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ScansType complex type.
+ * <p>Java class for MediaScanType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ScansType">
+ * &lt;complexType name="MediaScanType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="CaseScan" type="{}CaseScanType" minOccurs="0"/>
- *         &lt;element name="Scan" type="{}MediaScanType" minOccurs="0"/>
+ *         &lt;element name="MediaScanElement">
+ *           &lt;simpleType>
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *               &lt;enumeration value="up"/>
+ *               &lt;enumeration value="down"/>
+ *               &lt;enumeration value="front"/>
+ *               &lt;enumeration value="back"/>
+ *               &lt;enumeration value="left"/>
+ *               &lt;enumeration value="right"/>
+ *             &lt;/restriction>
+ *           &lt;/simpleType>
+ *         &lt;/element>
+ *         &lt;element name="Scan" type="{}ScanType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,39 +46,39 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ScansType", propOrder = {
-    "caseScan",
+@XmlType(name = "MediaScanType", propOrder = {
+    "mediaScanElement",
     "scan"
 })
-public class ScansType {
+public class MediaScanType {
 
-    @XmlElement(name = "CaseScan")
-    protected CaseScanType caseScan;
-    @XmlElement(name = "Scan")
-    protected MediaScanType scan;
+    @XmlElement(name = "MediaScanElement", required = true)
+    protected String mediaScanElement;
+    @XmlElement(name = "Scan", required = true)
+    protected ScanType scan;
 
     /**
-     * Gets the value of the caseScan property.
+     * Gets the value of the mediaScanElement property.
      * 
      * @return
      *     possible object is
-     *     {@link CaseScanType }
+     *     {@link String }
      *     
      */
-    public CaseScanType getCaseScan() {
-        return caseScan;
+    public String getMediaScanElement() {
+        return mediaScanElement;
     }
 
     /**
-     * Sets the value of the caseScan property.
+     * Sets the value of the mediaScanElement property.
      * 
      * @param value
      *     allowed object is
-     *     {@link CaseScanType }
+     *     {@link String }
      *     
      */
-    public void setCaseScan(CaseScanType value) {
-        this.caseScan = value;
+    public void setMediaScanElement(String value) {
+        this.mediaScanElement = value;
     }
 
     /**
@@ -75,10 +86,10 @@ public class ScansType {
      * 
      * @return
      *     possible object is
-     *     {@link MediaScanType }
+     *     {@link ScanType }
      *     
      */
-    public MediaScanType getScan() {
+    public ScanType getScan() {
         return scan;
     }
 
@@ -87,10 +98,10 @@ public class ScansType {
      * 
      * @param value
      *     allowed object is
-     *     {@link MediaScanType }
+     *     {@link ScanType }
      *     
      */
-    public void setScan(MediaScanType value) {
+    public void setScan(ScanType value) {
         this.scan = value;
     }
 

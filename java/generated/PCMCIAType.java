@@ -15,16 +15,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RequiredOperatingSystemsType complex type.
+ * Contains PCMCIA card information
+ * 
+ * <p>Java class for PCMCIAType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="RequiredOperatingSystemsType">
+ * &lt;complexType name="PCMCIAType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="RequiredOperatingSystem" type="{}RequiredOperatingSystemType"/>
+ *         &lt;element name="CIS" type="{}DumpType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RequiredOperatingSystemsType", propOrder = {
-    "requiredOperatingSystem"
+@XmlType(name = "PCMCIAType", propOrder = {
+    "cis"
 })
-public class RequiredOperatingSystemsType {
+public class PCMCIAType {
 
-    @XmlElement(name = "RequiredOperatingSystem", required = true)
-    protected RequiredOperatingSystemType requiredOperatingSystem;
+    @XmlElement(name = "CIS", required = true)
+    protected DumpType cis;
 
     /**
-     * Gets the value of the requiredOperatingSystem property.
+     * Gets the value of the cis property.
      * 
      * @return
      *     possible object is
-     *     {@link RequiredOperatingSystemType }
+     *     {@link DumpType }
      *     
      */
-    public RequiredOperatingSystemType getRequiredOperatingSystem() {
-        return requiredOperatingSystem;
+    public DumpType getCIS() {
+        return cis;
     }
 
     /**
-     * Sets the value of the requiredOperatingSystem property.
+     * Sets the value of the cis property.
      * 
      * @param value
      *     allowed object is
-     *     {@link RequiredOperatingSystemType }
+     *     {@link DumpType }
      *     
      */
-    public void setRequiredOperatingSystem(RequiredOperatingSystemType value) {
-        this.requiredOperatingSystem = value;
+    public void setCIS(DumpType value) {
+        this.cis = value;
     }
 
 }
