@@ -4433,7 +4433,7 @@ Namespace Schemas
         
         Private imageField2 As String
         
-        Private sizeField2 As String
+        Private sizeField2 As Long
         
         Private checksumsField4 As ChecksumType()
         
@@ -4474,7 +4474,7 @@ Namespace Schemas
         '''<remarks>
 '''Size of border dump
 '''</remarks>
-        Public Property Size() As String
+        Public Property Size() As Long
             Get
                 Return Me.sizeField2
             End Get
@@ -4582,7 +4582,7 @@ Namespace Schemas
         
         Private imageField3 As ImageType
         
-        Private sizeField3 As String
+        Private sizeField3 As Long
         
         Private sequenceField1 As TrackSequenceType
         
@@ -4622,7 +4622,7 @@ Namespace Schemas
         '''<remarks>
 '''Size of track dump in bytes
 '''</remarks>
-        Public Property Size() As String
+        Public Property Size() As Long
             Get
                 Return Me.sizeField3
             End Get
@@ -4852,7 +4852,7 @@ Namespace Schemas
         
         Private imageField4 As ImageType
         
-        Private sizeField4 As String
+        Private sizeField4 As Long
         
         Private checksumsField6 As ChecksumType()
         
@@ -4872,7 +4872,7 @@ Namespace Schemas
         '''<remarks>
 '''Size of subchannel dump
 '''</remarks>
-        Public Property Size() As String
+        Public Property Size() As Long
             Get
                 Return Me.sizeField4
             End Get
@@ -4912,7 +4912,7 @@ Namespace Schemas
         
         Private descriptionField As String
         
-        Private fileSystemsField As FileSystemsType
+        Private fileSystemsField As FileSystemType()
         
         '''<remarks>
 '''Partition sequence number, starting on 1
@@ -4989,38 +4989,14 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Array of filesystems contained in the partition
-'''					
-'''</remarks>
-        Public Property FileSystems() As FileSystemsType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItem(ElementName:="FileSystem", IsNullable:=false)>  _
+        Public Property FileSystems() As FileSystemType()
             Get
                 Return Me.fileSystemsField
             End Get
             Set
                 Me.fileSystemsField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class FileSystemsType
-        
-        Private fileSystemField As FileSystemType
-        
-        '''<remarks>
-'''Array of filesystems
-'''</remarks>
-        Public Property FileSystem() As FileSystemType
-            Get
-                Return Me.fileSystemField
-            End Get
-            Set
-                Me.fileSystemField = Value
             End Set
         End Property
     End Class
@@ -7464,7 +7440,7 @@ Namespace Schemas
         
         Private imageField7 As String
         
-        Private sizeField7 As String
+        Private sizeField7 As Long
         
         Private checksumsField10 As ChecksumType()
         
@@ -7507,7 +7483,7 @@ Namespace Schemas
         '''<remarks>
 '''Size of SCSI Extended Vendor Page Descriptor dump
 '''</remarks>
-        Public Property Size() As String
+        Public Property Size() As Long
             Get
                 Return Me.sizeField7
             End Get
@@ -7591,7 +7567,7 @@ Namespace Schemas
         
         Private imageField8 As ImageType
         
-        Private sizeField8 As String
+        Private sizeField8 As Long
         
         Private headField As Long
         
@@ -7624,7 +7600,7 @@ Namespace Schemas
         '''<remarks>
 '''Size of track dump in bytes
 '''</remarks>
-        Public Property Size() As String
+        Public Property Size() As Long
             Get
                 Return Me.sizeField8
             End Get
@@ -7918,7 +7894,7 @@ Namespace Schemas
         
         Private imageField10 As ImageType
         
-        Private sizeField10 As String
+        Private sizeField10 As Long
         
         Private accoustIDField3 As String
         
@@ -7941,7 +7917,7 @@ Namespace Schemas
         '''<remarks>
 '''Size of block dump in bytes
 '''</remarks>
-        Public Property Size() As String
+        Public Property Size() As Long
             Get
                 Return Me.sizeField10
             End Get

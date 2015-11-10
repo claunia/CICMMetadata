@@ -180,14 +180,14 @@
     </PMA>
     <LeadIn session="1">
       <Image>Image</Image>
-      <Size>Size</Size>
+      <Size>0</Size>
       <Checksums>
         <Checksum type="fletcher16">Checksum</Checksum>
       </Checksums>
     </LeadIn>
     <LeadOut session="1">
       <Image>Image</Image>
-      <Size>Size</Size>
+      <Size>0</Size>
       <Checksums>
         <Checksum type="fletcher16">Checksum</Checksum>
       </Checksums>
@@ -204,7 +204,7 @@
     </PS3Encryption>
     <Track>
       <Image format="" offset="0">Image</Image>
-      <Size>Size</Size>
+      <Size>0</Size>
       <Sequence>
         <TrackNumber>0</TrackNumber>
         <Session>1</Session>
@@ -397,7 +397,7 @@
     <SectorsPerTrack>0</SectorsPerTrack>
     <Track>
       <Image format="" offset="0">Image</Image>
-      <Size>Size</Size>
+      <Size>0</Size>
       <Head>0</Head>
       <Cylinder>0</Cylinder>
       <StartSector>0</StartSector>
@@ -464,7 +464,7 @@
     <AccoustID>AccoustID</AccoustID>
     <Block>
       <Image format="" offset="0">Image</Image>
-      <Size>Size</Size>
+      <Size>0</Size>
       <AccoustID>AccoustID</AccoustID>
       <Checksums>
         <Checksum type="fletcher16">Checksum</Checksum>

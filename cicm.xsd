@@ -164,7 +164,7 @@
 					<xs:documentation>File containing border dump</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Size of border dump</xs:documentation>
 				</xs:annotation>
@@ -194,7 +194,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Size of track dump in bytes</xs:documentation>
 				</xs:annotation>
@@ -1094,7 +1094,7 @@
 	</xs:complexType>
 	<xs:complexType name="FileSystemsType">
 		<xs:sequence>
-			<xs:element type="FileSystemType" name="FileSystem">
+			<xs:element type="FileSystemType" name="FileSystem" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Array of filesystems</xs:documentation>
 				</xs:annotation>
@@ -2031,7 +2031,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Size of subchannel dump</xs:documentation>
 				</xs:annotation>
@@ -2525,7 +2525,7 @@
 					<xs:documentation>File containing SCSI Extended Vendor Page Descriptor dump</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Size of SCSI Extended Vendor Page Descriptor dump</xs:documentation>
 				</xs:annotation>
@@ -2658,7 +2658,7 @@
 					<xs:documentation>File containing track dump, and format</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Size of track dump in bytes</xs:documentation>
 				</xs:annotation>
@@ -2857,7 +2857,7 @@
 					<xs:documentation>File containing block dump, and format</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:string" name="Size" minOccurs="1" maxOccurs="1">
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Size of block dump in bytes</xs:documentation>
 				</xs:annotation>

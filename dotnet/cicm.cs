@@ -4430,7 +4430,7 @@ namespace Schemas {
         
         private string imageField2;
         
-        private string sizeField2;
+        private long sizeField2;
         
         private ChecksumType[] checksumsField4;
         
@@ -4471,7 +4471,7 @@ namespace Schemas {
         /// <remarks>
 ///Size of border dump
 ///</remarks>
-        public string Size {
+        public long Size {
             get {
                 return this.sizeField2;
             }
@@ -4579,7 +4579,7 @@ namespace Schemas {
         
         private ImageType imageField3;
         
-        private string sizeField3;
+        private long sizeField3;
         
         private TrackSequenceType sequenceField1;
         
@@ -4619,7 +4619,7 @@ namespace Schemas {
         /// <remarks>
 ///Size of track dump in bytes
 ///</remarks>
-        public string Size {
+        public long Size {
             get {
                 return this.sizeField3;
             }
@@ -4849,7 +4849,7 @@ namespace Schemas {
         
         private ImageType imageField4;
         
-        private string sizeField4;
+        private long sizeField4;
         
         private ChecksumType[] checksumsField6;
         
@@ -4869,7 +4869,7 @@ namespace Schemas {
         /// <remarks>
 ///Size of subchannel dump
 ///</remarks>
-        public string Size {
+        public long Size {
             get {
                 return this.sizeField4;
             }
@@ -4909,7 +4909,7 @@ namespace Schemas {
         
         private string descriptionField;
         
-        private FileSystemsType fileSystemsField;
+        private FileSystemType[] fileSystemsField;
         
         /// <remarks>
 ///Partition sequence number, starting on 1
@@ -4986,38 +4986,14 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Array of filesystems contained in the partition
-///					
-///</remarks>
-        public FileSystemsType FileSystems {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItem(ElementName="FileSystem", IsNullable=false)]
+        public FileSystemType[] FileSystems {
             get {
                 return this.fileSystemsField;
             }
             set {
                 this.fileSystemsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FileSystemsType {
-        
-        private FileSystemType fileSystemField;
-        
-        /// <remarks>
-///Array of filesystems
-///</remarks>
-        public FileSystemType FileSystem {
-            get {
-                return this.fileSystemField;
-            }
-            set {
-                this.fileSystemField = value;
             }
         }
     }
@@ -7461,7 +7437,7 @@ namespace Schemas {
         
         private string imageField7;
         
-        private string sizeField7;
+        private long sizeField7;
         
         private ChecksumType[] checksumsField10;
         
@@ -7504,7 +7480,7 @@ namespace Schemas {
         /// <remarks>
 ///Size of SCSI Extended Vendor Page Descriptor dump
 ///</remarks>
-        public string Size {
+        public long Size {
             get {
                 return this.sizeField7;
             }
@@ -7588,7 +7564,7 @@ namespace Schemas {
         
         private ImageType imageField8;
         
-        private string sizeField8;
+        private long sizeField8;
         
         private long headField;
         
@@ -7621,7 +7597,7 @@ namespace Schemas {
         /// <remarks>
 ///Size of track dump in bytes
 ///</remarks>
-        public string Size {
+        public long Size {
             get {
                 return this.sizeField8;
             }
@@ -7915,7 +7891,7 @@ namespace Schemas {
         
         private ImageType imageField10;
         
-        private string sizeField10;
+        private long sizeField10;
         
         private string accoustIDField3;
         
@@ -7938,7 +7914,7 @@ namespace Schemas {
         /// <remarks>
 ///Size of block dump in bytes
 ///</remarks>
-        public string Size {
+        public long Size {
             get {
                 return this.sizeField10;
             }
