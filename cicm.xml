@@ -448,6 +448,8 @@
         </Software>
       </DumpHardware>
     </DumpHardwareArray>
+    <DiskType>DiskType</DiskType>
+    <DiskSubType>DiskSubType</DiskSubType>
   </BlockMedia>
   <AudioMedia>
     <Image format="" offset="0">Image</Image>

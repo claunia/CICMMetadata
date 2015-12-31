@@ -2845,6 +2845,16 @@
 					<xs:documentation>Array of hardware used to dump media, if removable</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="xs:string" name="DiskType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Disk type (Floppy, Twiggy, Hard Disk)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="DiskSubType" maxOccurs="1" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Disk subtype</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AudioBlockType">

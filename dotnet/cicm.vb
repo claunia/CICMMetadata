@@ -17,10 +17,8 @@ Option Strict On
 '
 Namespace Schemas
     
-    '''<remarks>
-'''Digital Asset Metadata
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -41,11 +39,11 @@ Namespace Schemas
         
         Private releaseTypeField As CICMMetadataTypeReleaseType
         
-        Private releaseTypeSpecifiedField As Boolean
+        Private releaseTypeFieldSpecified As Boolean
         
         Private releaseDateField As Date
         
-        Private releaseDateSpecifiedField As Boolean
+        Private releaseDateFieldSpecified As Boolean
         
         Private barcodesField As BarcodeType()
         
@@ -85,9 +83,7 @@ Namespace Schemas
         
         Private audioMediaField As AudioMediaType()
         
-        '''<remarks>
-'''Developer of the set
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Developer")>  _
         Public Property Developer() As String()
             Get
@@ -98,9 +94,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Publisher of the set
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Publisher")>  _
         Public Property Publisher() As String()
             Get
@@ -111,9 +105,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Author/writer of the set
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Author")>  _
         Public Property Author() As String()
             Get
@@ -124,9 +116,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Performer/narrator of the set
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Performer")>  _
         Public Property Performer() As String()
             Get
@@ -137,9 +127,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Name of the set
-'''</remarks>
+        '''<remarks/>
         Public Property Name() As String
             Get
                 Return Me.nameField
@@ -149,10 +137,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Version of the set if applicable
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property Version() As String
             Get
                 Return Me.versionField
@@ -162,10 +147,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-''' Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property ReleaseType() As CICMMetadataTypeReleaseType
             Get
                 Return Me.releaseTypeField
@@ -176,19 +158,17 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property ReleaseTypeSpecified() As Boolean
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property ReleaseTypeSpecified() As Boolean
             Get
-                Return Me.releaseTypeSpecifiedField
+                Return Me.releaseTypeFieldSpecified
             End Get
             Set
-                Me.releaseTypeSpecifiedField = Value
+                Me.releaseTypeFieldSpecified = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Date of release in YYYY-MM-DD
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(DataType:="date")>  _
         Public Property ReleaseDate() As Date
             Get
@@ -200,18 +180,18 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property ReleaseDateSpecified() As Boolean
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property ReleaseDateSpecified() As Boolean
             Get
-                Return Me.releaseDateSpecifiedField
+                Return Me.releaseDateFieldSpecified
             End Get
             Set
-                Me.releaseDateSpecifiedField = Value
+                Me.releaseDateFieldSpecified = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Barcode", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("Barcode", IsNullable:=false)>  _
         Public Property Barcodes() As BarcodeType()
             Get
                 Return Me.barcodesField
@@ -221,9 +201,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Manufacturer part no. or SKU
-'''</remarks>
+        '''<remarks/>
         Public Property PartNumber() As String
             Get
                 Return Me.partNumberField
@@ -233,10 +211,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Manufacturer serial no., not to be confused with software registration serial number
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property SerialNumber() As String
             Get
                 Return Me.serialNumberField
@@ -247,7 +222,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Keyword", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("Keyword", IsNullable:=false)>  _
         Public Property Keywords() As String()
             Get
                 Return Me.keywordsField
@@ -257,9 +232,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Magazine on this set
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Magazine")>  _
         Public Property Magazine() As MagazineType()
             Get
@@ -270,9 +243,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Books on this set
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Book")>  _
         Public Property Book() As BookType()
             Get
@@ -284,7 +255,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Category", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("Category", IsNullable:=false)>  _
         Public Property Categories() As String()
             Get
                 Return Me.categoriesField
@@ -295,7 +266,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Subcategory", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("Subcategory", IsNullable:=false)>  _
         Public Property Subcategories() As String()
             Get
                 Return Me.subcategoriesField
@@ -306,7 +277,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
         Public Property Languages() As LanguagesTypeLanguage()
             Get
                 Return Me.languagesField
@@ -317,7 +288,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="System", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("System", IsNullable:=false)>  _
         Public Property Systems() As String()
             Get
                 Return Me.systemsField
@@ -328,7 +299,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Architecture", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("Architecture", IsNullable:=false)>  _
         Public Property Architectures() As ArchitecturesTypeArchitecture()
             Get
                 Return Me.architecturesField
@@ -339,7 +310,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="RequiredOperatingSystem", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("RequiredOperatingSystem", IsNullable:=false)>  _
         Public Property RequiredOperatingSystems() As RequiredOperatingSystemType()
             Get
                 Return Me.requiredOperatingSystemsField
@@ -349,10 +320,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''User manual/guide, installation manual/guide and any applicable entity
-'''					
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("UserManual")>  _
         Public Property UserManual() As UserManualType()
             Get
@@ -363,10 +331,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Optical discs this set contains
-'''					
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("OpticalDisc")>  _
         Public Property OpticalDisc() As OpticalDiscType()
             Get
@@ -377,9 +342,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Advertisement
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Advertisement")>  _
         Public Property Advertisement() As AdvertisementType()
             Get
@@ -390,9 +353,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Linear media (flash, ram, rom, cartridges)
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("LinearMedia")>  _
         Public Property LinearMedia() As LinearMediaType()
             Get
@@ -403,9 +364,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Dump of a PCI/PCI-X/PCIe configuration space and/or expansion ROM
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("PCICard")>  _
         Public Property PCICard() As PCIType()
             Get
@@ -416,9 +375,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Dump of media that is block constructed (floppy, hard drive) or abstracted (most memory cards, flash drives, SSDs)
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("BlockMedia")>  _
         Public Property BlockMedia() As BlockMediaType()
             Get
@@ -429,9 +386,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Dump of media that is stored as audio, like C64/Speccy/CPC cassettes.
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("AudioMedia")>  _
         Public Property AudioMedia() As AudioMediaType()
             Get
@@ -444,8 +399,9 @@ Namespace Schemas
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
     Public Enum CICMMetadataTypeReleaseType
         
         '''<remarks/>
@@ -468,7 +424,7 @@ Namespace Schemas
     End Enum
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
@@ -502,8 +458,9 @@ Namespace Schemas
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
     Public Enum BarcodeTypeType
         
         '''<remarks/>
@@ -599,222 +556,54 @@ Namespace Schemas
     End Enum
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class MagazineType
+    Partial Public Class AudioBlockType
         
-        Private barcodesField1 As BarcodeType()
+        Private imageField As ImageType
         
-        Private coverField As CoverType
+        Private sizeField As Long
         
-        Private nameField1 As String
-        
-        Private editorialField As String
-        
-        Private publicationDateField As Date
-        
-        Private publicationDateSpecifiedField As Boolean
-        
-        Private numberField As Integer
-        
-        Private numberSpecifiedField As Boolean
-        
-        Private languageField As LanguagesTypeLanguage()
-        
-        Private pagesField As Integer
-        
-        Private pagesSpecifiedField As Boolean
-        
-        Private pageSizeField As String
-        
-        Private scanField As ScanType
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Barcode", IsNullable:=false)>  _
-        Public Property Barcodes() As BarcodeType()
-            Get
-                Return Me.barcodesField1
-            End Get
-            Set
-                Me.barcodesField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Cover of this magazine
-'''</remarks>
-        Public Property Cover() As CoverType
-            Get
-                Return Me.coverField
-            End Get
-            Set
-                Me.coverField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Name of this magazine
-'''</remarks>
-        Public Property Name() As String
-            Get
-                Return Me.nameField1
-            End Get
-            Set
-                Me.nameField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Editorial of this magazine
-'''</remarks>
-        Public Property Editorial() As String
-            Get
-                Return Me.editorialField
-            End Get
-            Set
-                Me.editorialField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Publication date of this magazine
-'''					
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute(DataType:="date")>  _
-        Public Property PublicationDate() As Date
-            Get
-                Return Me.publicationDateField
-            End Get
-            Set
-                Me.publicationDateField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property PublicationDateSpecified() As Boolean
-            Get
-                Return Me.publicationDateSpecifiedField
-            End Get
-            Set
-                Me.publicationDateSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Sequential number of this magazine
-'''					
-'''</remarks>
-        Public Property Number() As Integer
-            Get
-                Return Me.numberField
-            End Get
-            Set
-                Me.numberField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property NumberSpecified() As Boolean
-            Get
-                Return Me.numberSpecifiedField
-            End Get
-            Set
-                Me.numberSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
-        Public Property Language() As LanguagesTypeLanguage()
-            Get
-                Return Me.languageField
-            End Get
-            Set
-                Me.languageField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Pages of this magazine, including cover and back
-'''					
-'''</remarks>
-        Public Property Pages() As Integer
-            Get
-                Return Me.pagesField
-            End Get
-            Set
-                Me.pagesField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property PagesSpecified() As Boolean
-            Get
-                Return Me.pagesSpecifiedField
-            End Get
-            Set
-                Me.pagesSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Page size of this magazine, standard or in WxH milimeters
-'''					
-'''</remarks>
-        Public Property PageSize() As String
-            Get
-                Return Me.pageSizeField
-            End Get
-            Set
-                Me.pageSizeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Scan of this magazine
-'''</remarks>
-        Public Property Scan() As ScanType
-            Get
-                Return Me.scanField
-            End Get
-            Set
-                Me.scanField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class CoverType
-        
-        Private fileField As FileType
+        Private accoustIDField As String
         
         Private checksumsField As ChecksumType()
         
-        Private thumbnailField As Byte()
+        Private formatField As String
         
-        '''<remarks>
-'''Cover file
-'''</remarks>
-        Public Property File() As FileType
+        '''<remarks/>
+        Public Property Image() As ImageType
             Get
-                Return Me.fileField
+                Return Me.imageField
             End Get
             Set
-                Me.fileField = Value
+                Me.imageField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property AccoustID() As String
+            Get
+                Return Me.accoustIDField
+            End Get
+            Set
+                Me.accoustIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
         Public Property Checksums() As ChecksumType()
             Get
                 Return Me.checksumsField
@@ -824,31 +613,31 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Base64 of JPEG thumbnail
-'''</remarks>
-        Public Property Thumbnail() As Byte()
+        '''<remarks/>
+        Public Property Format() As String
             Get
-                Return Me.thumbnailField
+                Return Me.formatField
             End Get
             Set
-                Me.thumbnailField = Value
+                Me.formatField = Value
             End Set
         End Property
     End Class
     
-    '''<remarks>
-'''File
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class FileType
+    Partial Public Class ImageType
         
         Private formatField As String
         
-        Private valueField1 As String
+        Private offsetField As Long
+        
+        Private offsetFieldSpecified As Boolean
+        
+        Private valueField As String
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
@@ -862,36 +651,58 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property offset() As Long
+            Get
+                Return Me.offsetField
+            End Get
+            Set
+                Me.offsetField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property offsetSpecified() As Boolean
+            Get
+                Return Me.offsetFieldSpecified
+            End Get
+            Set
+                Me.offsetFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
         <System.Xml.Serialization.XmlTextAttribute()>  _
         Public Property Value() As String
             Get
-                Return Me.valueField1
+                Return Me.valueField
             End Get
             Set
-                Me.valueField1 = Value
+                Me.valueField = Value
             End Set
         End Property
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class ChecksumType
         
-        Private typeField1 As ChecksumTypeType
+        Private typeField As ChecksumTypeType
         
-        Private valueField2 As String
+        Private valueField As String
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
         Public Property type() As ChecksumTypeType
             Get
-                Return Me.typeField1
+                Return Me.typeField
             End Get
             Set
-                Me.typeField1 = Value
+                Me.typeField = Value
             End Set
         End Property
         
@@ -899,17 +710,18 @@ Namespace Schemas
         <System.Xml.Serialization.XmlTextAttribute()>  _
         Public Property Value() As String
             Get
-                Return Me.valueField2
+                Return Me.valueField
             End Get
             Set
-                Me.valueField2 = Value
+                Me.valueField = Value
             End Set
         End Property
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
     Public Enum ChecksumTypeType
         
         '''<remarks/>
@@ -992,8 +804,737 @@ Namespace Schemas
     End Enum
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class AudioMediaType
+        
+        Private imageField As ImageType
+        
+        Private sizeField As Long
+        
+        Private checksumsField As ChecksumType()
+        
+        Private sequenceField As SequenceType
+        
+        Private manufacturerField As String
+        
+        Private modelField As String
+        
+        Private accoustIDField As String
+        
+        Private blockField As AudioBlockType()
+        
+        Private copyProtectionField As String
+        
+        Private dimensionsField As DimensionsType
+        
+        Private scansField As ScansType
+        
+        Private dumpHardwareArrayField As DumpHardwareArrayType
+        
+        '''<remarks/>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Sequence() As SequenceType
+            Get
+                Return Me.sequenceField
+            End Get
+            Set
+                Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField
+            End Get
+            Set
+                Me.manufacturerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Model() As String
+            Get
+                Return Me.modelField
+            End Get
+            Set
+                Me.modelField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property AccoustID() As String
+            Get
+                Return Me.accoustIDField
+            End Get
+            Set
+                Me.accoustIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Block")>  _
+        Public Property Block() As AudioBlockType()
+            Get
+                Return Me.blockField
+            End Get
+            Set
+                Me.blockField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CopyProtection() As String
+            Get
+                Return Me.copyProtectionField
+            End Get
+            Set
+                Me.copyProtectionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Dimensions() As DimensionsType
+            Get
+                Return Me.dimensionsField
+            End Get
+            Set
+                Me.dimensionsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scans() As ScansType
+            Get
+                Return Me.scansField
+            End Get
+            Set
+                Me.scansField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DumpHardwareArray() As DumpHardwareArrayType
+            Get
+                Return Me.dumpHardwareArrayField
+            End Get
+            Set
+                Me.dumpHardwareArrayField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SequenceType
+        
+        Private mediaTitleField As String
+        
+        Private mediaSequenceField As Integer
+        
+        Private totalMediaField As Integer
+        
+        Private sideField As Integer
+        
+        Private sideFieldSpecified As Boolean
+        
+        Private layerField As Integer
+        
+        Private layerFieldSpecified As Boolean
+        
+        '''<remarks/>
+        Public Property MediaTitle() As String
+            Get
+                Return Me.mediaTitleField
+            End Get
+            Set
+                Me.mediaTitleField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property MediaSequence() As Integer
+            Get
+                Return Me.mediaSequenceField
+            End Get
+            Set
+                Me.mediaSequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property TotalMedia() As Integer
+            Get
+                Return Me.totalMediaField
+            End Get
+            Set
+                Me.totalMediaField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Side() As Integer
+            Get
+                Return Me.sideField
+            End Get
+            Set
+                Me.sideField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property SideSpecified() As Boolean
+            Get
+                Return Me.sideFieldSpecified
+            End Get
+            Set
+                Me.sideFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Layer() As Integer
+            Get
+                Return Me.layerField
+            End Get
+            Set
+                Me.layerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property LayerSpecified() As Boolean
+            Get
+                Return Me.layerFieldSpecified
+            End Get
+            Set
+                Me.layerFieldSpecified = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DimensionsType
+        
+        Private diameterField As Double
+        
+        Private diameterFieldSpecified As Boolean
+        
+        Private heightField As Double
+        
+        Private heightFieldSpecified As Boolean
+        
+        Private widthField As Double
+        
+        Private widthFieldSpecified As Boolean
+        
+        Private thicknessField As Double
+        
+        '''<remarks/>
+        Public Property Diameter() As Double
+            Get
+                Return Me.diameterField
+            End Get
+            Set
+                Me.diameterField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property DiameterSpecified() As Boolean
+            Get
+                Return Me.diameterFieldSpecified
+            End Get
+            Set
+                Me.diameterFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Height() As Double
+            Get
+                Return Me.heightField
+            End Get
+            Set
+                Me.heightField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property HeightSpecified() As Boolean
+            Get
+                Return Me.heightFieldSpecified
+            End Get
+            Set
+                Me.heightFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Width() As Double
+            Get
+                Return Me.widthField
+            End Get
+            Set
+                Me.widthField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property WidthSpecified() As Boolean
+            Get
+                Return Me.widthFieldSpecified
+            End Get
+            Set
+                Me.widthFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Thickness() As Double
+            Get
+                Return Me.thicknessField
+            End Get
+            Set
+                Me.thicknessField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ScansType
+        
+        Private caseScanField As CaseScanType
+        
+        Private scanField As MediaScanType
+        
+        '''<remarks/>
+        Public Property CaseScan() As CaseScanType
+            Get
+                Return Me.caseScanField
+            End Get
+            Set
+                Me.caseScanField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scan() As MediaScanType
+            Get
+                Return Me.scanField
+            End Get
+            Set
+                Me.scanField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class CaseScanType
+        
+        Private caseScanElementField As CaseScanTypeCaseScanElement
+        
+        Private scanField As ScanType
+        
+        '''<remarks/>
+        Public Property CaseScanElement() As CaseScanTypeCaseScanElement
+            Get
+                Return Me.caseScanElementField
+            End Get
+            Set
+                Me.caseScanElementField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scan() As ScanType
+            Get
+                Return Me.scanField
+            End Get
+            Set
+                Me.scanField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
+    Public Enum CaseScanTypeCaseScanElement
+        
+        '''<remarks/>
+        sleeve
+        
+        '''<remarks/>
+        inner
+        
+        '''<remarks/>
+        inlay
+        
+        '''<remarks/>
+        frontback
+        
+        '''<remarks/>
+        frontfull
+        
+        '''<remarks/>
+        boxfront
+        
+        '''<remarks/>
+        boxback
+        
+        '''<remarks/>
+        boxspine
+        
+        '''<remarks/>
+        external
+    End Enum
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ScanType
+        
+        Private fileField As FileType
+        
+        Private checksumsField As ChecksumType()
+        
+        Private scannerField As ScannerType()
+        
+        Private scanProcessingField As ScanProcessingType()
+        
+        Private oCRField As OCRType()
+        
+        '''<remarks/>
+        Public Property File() As FileType
+            Get
+                Return Me.fileField
+            End Get
+            Set
+                Me.fileField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Scanner")>  _
+        Public Property Scanner() As ScannerType()
+            Get
+                Return Me.scannerField
+            End Get
+            Set
+                Me.scannerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("ScanProcessing")>  _
+        Public Property ScanProcessing() As ScanProcessingType()
+            Get
+                Return Me.scanProcessingField
+            End Get
+            Set
+                Me.scanProcessingField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("OCR")>  _
+        Public Property OCR() As OCRType()
+            Get
+                Return Me.oCRField
+            End Get
+            Set
+                Me.oCRField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class FileType
+        
+        Private formatField As String
+        
+        Private valueField As String
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property format() As String
+            Get
+                Return Me.formatField
+            End Get
+            Set
+                Me.formatField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlTextAttribute()>  _
+        Public Property Value() As String
+            Get
+                Return Me.valueField
+            End Get
+            Set
+                Me.valueField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ScannerType
+        
+        Private authorField As String
+        
+        Private manufacturerField As String
+        
+        Private modelField As String
+        
+        Private serialField As String
+        
+        Private softwareField As String
+        
+        Private softwareVersionField As String
+        
+        '''<remarks/>
+        Public Property Author() As String
+            Get
+                Return Me.authorField
+            End Get
+            Set
+                Me.authorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField
+            End Get
+            Set
+                Me.manufacturerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Model() As String
+            Get
+                Return Me.modelField
+            End Get
+            Set
+                Me.modelField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Serial() As String
+            Get
+                Return Me.serialField
+            End Get
+            Set
+                Me.serialField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Software() As String
+            Get
+                Return Me.softwareField
+            End Get
+            Set
+                Me.softwareField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SoftwareVersion() As String
+            Get
+                Return Me.softwareVersionField
+            End Get
+            Set
+                Me.softwareVersionField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ScanProcessingType
+        
+        Private authorField As String
+        
+        Private softwareField As String
+        
+        Private softwareVersionField As String
+        
+        '''<remarks/>
+        Public Property Author() As String
+            Get
+                Return Me.authorField
+            End Get
+            Set
+                Me.authorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Software() As String
+            Get
+                Return Me.softwareField
+            End Get
+            Set
+                Me.softwareField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SoftwareVersion() As String
+            Get
+                Return Me.softwareVersionField
+            End Get
+            Set
+                Me.softwareVersionField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class OCRType
+        
+        Private authorField As String
+        
+        Private softwareField As String
+        
+        Private softwareVersionField As String
+        
+        Private languageField As LanguagesTypeLanguage()
+        
+        '''<remarks/>
+        Public Property Author() As String
+            Get
+                Return Me.authorField
+            End Get
+            Set
+                Me.authorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Software() As String
+            Get
+                Return Me.softwareField
+            End Get
+            Set
+                Me.softwareField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SoftwareVersion() As String
+            Get
+                Return Me.softwareVersionField
+            End Get
+            Set
+                Me.softwareVersionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
+            Get
+                Return Me.languageField
+            End Get
+            Set
+                Me.languageField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
     Public Enum LanguagesTypeLanguage
         
         '''<remarks/>
@@ -2457,1858 +2998,7 @@ Namespace Schemas
     End Enum
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ScanType
-        
-        Private fileField1 As FileType
-        
-        Private checksumsField1 As ChecksumType()
-        
-        Private scannerField As ScannerType()
-        
-        Private scanProcessingField As ScanProcessingType()
-        
-        Private oCRField As OCRType()
-        
-        '''<remarks>
-'''File containing the scan
-'''</remarks>
-        Public Property File() As FileType
-            Get
-                Return Me.fileField1
-            End Get
-            Set
-                Me.fileField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
-            Get
-                Return Me.checksumsField1
-            End Get
-            Set
-                Me.checksumsField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Information about scanning
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("Scanner")>  _
-        Public Property Scanner() As ScannerType()
-            Get
-                Return Me.scannerField
-            End Get
-            Set
-                Me.scannerField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Information about any scan processing done
-'''					
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("ScanProcessing")>  _
-        Public Property ScanProcessing() As ScanProcessingType()
-            Get
-                Return Me.scanProcessingField
-            End Get
-            Set
-                Me.scanProcessingField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Information about OCR
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("OCR")>  _
-        Public Property OCR() As OCRType()
-            Get
-                Return Me.oCRField
-            End Get
-            Set
-                Me.oCRField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Information about scanning
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ScannerType
-        
-        Private authorField1 As String
-        
-        Private manufacturerField As String
-        
-        Private modelField As String
-        
-        Private serialField As String
-        
-        Private softwareField As String
-        
-        Private softwareVersionField As String
-        
-        '''<remarks>
-'''Who scanned it?
-'''</remarks>
-        Public Property Author() As String
-            Get
-                Return Me.authorField1
-            End Get
-            Set
-                Me.authorField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Who built the scanner
-'''</remarks>
-        Public Property Manufacturer() As String
-            Get
-                Return Me.manufacturerField
-            End Get
-            Set
-                Me.manufacturerField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Scanner model
-'''</remarks>
-        Public Property Model() As String
-            Get
-                Return Me.modelField
-            End Get
-            Set
-                Me.modelField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Scanner serial number
-'''</remarks>
-        Public Property Serial() As String
-            Get
-                Return Me.serialField
-            End Get
-            Set
-                Me.serialField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Software used for scanning
-'''</remarks>
-        Public Property Software() As String
-            Get
-                Return Me.softwareField
-            End Get
-            Set
-                Me.softwareField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Software version
-'''</remarks>
-        Public Property SoftwareVersion() As String
-            Get
-                Return Me.softwareVersionField
-            End Get
-            Set
-                Me.softwareVersionField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Information about any scan processing done
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ScanProcessingType
-        
-        Private authorField2 As String
-        
-        Private softwareField1 As String
-        
-        Private softwareVersionField1 As String
-        
-        '''<remarks>
-'''Who processed it?
-'''</remarks>
-        Public Property Author() As String
-            Get
-                Return Me.authorField2
-            End Get
-            Set
-                Me.authorField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Software used for processing
-'''</remarks>
-        Public Property Software() As String
-            Get
-                Return Me.softwareField1
-            End Get
-            Set
-                Me.softwareField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Software version
-'''</remarks>
-        Public Property SoftwareVersion() As String
-            Get
-                Return Me.softwareVersionField1
-            End Get
-            Set
-                Me.softwareVersionField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class OCRType
-        
-        Private authorField3 As String
-        
-        Private softwareField2 As String
-        
-        Private softwareVersionField2 As String
-        
-        Private languageField1 As LanguagesTypeLanguage()
-        
-        '''<remarks>
-'''Who did the OCR
-'''</remarks>
-        Public Property Author() As String
-            Get
-                Return Me.authorField3
-            End Get
-            Set
-                Me.authorField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Using what software
-'''</remarks>
-        Public Property Software() As String
-            Get
-                Return Me.softwareField2
-            End Get
-            Set
-                Me.softwareField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''And the software version
-'''</remarks>
-        Public Property SoftwareVersion() As String
-            Get
-                Return Me.softwareVersionField2
-            End Get
-            Set
-                Me.softwareVersionField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
-        Public Property Language() As LanguagesTypeLanguage()
-            Get
-                Return Me.languageField1
-            End Get
-            Set
-                Me.languageField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class BookType
-        
-        Private barcodesField2 As BarcodeType()
-        
-        Private coverField1 As CoverType
-        
-        Private nameField2 As String
-        
-        Private editorialField1 As String
-        
-        Private authorField4 As String
-        
-        Private publicationDateField1 As Date
-        
-        Private publicationDateSpecifiedField1 As Boolean
-        
-        Private languageField2 As LanguagesTypeLanguage()
-        
-        Private pagesField1 As Integer
-        
-        Private pagesSpecifiedField1 As Boolean
-        
-        Private pageSizeField1 As String
-        
-        Private scanField1 As ScanType
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Barcode", IsNullable:=false)>  _
-        Public Property Barcodes() As BarcodeType()
-            Get
-                Return Me.barcodesField2
-            End Get
-            Set
-                Me.barcodesField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Book cover
-'''</remarks>
-        Public Property Cover() As CoverType
-            Get
-                Return Me.coverField1
-            End Get
-            Set
-                Me.coverField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Book name
-'''</remarks>
-        Public Property Name() As String
-            Get
-                Return Me.nameField2
-            End Get
-            Set
-                Me.nameField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Book publisher
-'''</remarks>
-        Public Property Editorial() As String
-            Get
-                Return Me.editorialField1
-            End Get
-            Set
-                Me.editorialField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Book author
-'''</remarks>
-        Public Property Author() As String
-            Get
-                Return Me.authorField4
-            End Get
-            Set
-                Me.authorField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Book's publication date
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute(DataType:="date")>  _
-        Public Property PublicationDate() As Date
-            Get
-                Return Me.publicationDateField1
-            End Get
-            Set
-                Me.publicationDateField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property PublicationDateSpecified() As Boolean
-            Get
-                Return Me.publicationDateSpecifiedField1
-            End Get
-            Set
-                Me.publicationDateSpecifiedField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
-        Public Property Language() As LanguagesTypeLanguage()
-            Get
-                Return Me.languageField2
-            End Get
-            Set
-                Me.languageField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Book pages
-'''</remarks>
-        Public Property Pages() As Integer
-            Get
-                Return Me.pagesField1
-            End Get
-            Set
-                Me.pagesField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property PagesSpecified() As Boolean
-            Get
-                Return Me.pagesSpecifiedField1
-            End Get
-            Set
-                Me.pagesSpecifiedField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Magazine page size in WxH milimeters
-'''					
-'''</remarks>
-        Public Property PageSize() As String
-            Get
-                Return Me.pageSizeField1
-            End Get
-            Set
-                Me.pageSizeField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Scan of the book
-'''</remarks>
-        Public Property Scan() As ScanType
-            Get
-                Return Me.scanField1
-            End Get
-            Set
-                Me.scanField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
-    Public Enum ArchitecturesTypeArchitecture
-        
-        '''<remarks/>
-        i86
-        
-        '''<remarks/>
-        ia32
-        
-        '''<remarks/>
-        ia64
-        
-        '''<remarks/>
-        amd64
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("4004")>  _
-        Item4004
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("4040")>  _
-        Item4040
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("8080")>  _
-        Item8080
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("8008")>  _
-        Item8008
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("8085")>  _
-        Item8085
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("8051")>  _
-        Item8051
-        
-        '''<remarks/>
-        i860
-        
-        '''<remarks/>
-        i960
-        
-        '''<remarks/>
-        apx432
-        
-        '''<remarks/>
-        m68k
-        
-        '''<remarks/>
-        ppc
-        
-        '''<remarks/>
-        ppc64
-        
-        '''<remarks/>
-        x32
-        
-        '''<remarks/>
-        sparc
-        
-        '''<remarks/>
-        sparc64
-        
-        '''<remarks/>
-        arm
-        
-        '''<remarks/>
-        aarch64
-        
-        '''<remarks/>
-        avr
-        
-        '''<remarks/>
-        pic
-        
-        '''<remarks/>
-        msp430
-        
-        '''<remarks/>
-        z80
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("65816")>  _
-        Item65816
-        
-        '''<remarks/>
-        sh
-        
-        '''<remarks/>
-        sh1
-        
-        '''<remarks/>
-        sh2
-        
-        '''<remarks/>
-        sh3
-        
-        '''<remarks/>
-        sh5
-        
-        '''<remarks/>
-        sh4
-        
-        '''<remarks/>
-        m6800
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("6502")>  _
-        Item6502
-        
-        '''<remarks/>
-        axp
-        
-        '''<remarks/>
-        parisc
-        
-        '''<remarks/>
-        mips32
-        
-        '''<remarks/>
-        mips64
-        
-        '''<remarks/>
-        s360
-        
-        '''<remarks/>
-        s370
-        
-        '''<remarks/>
-        esa390
-        
-        '''<remarks/>
-        zarch
-        
-        '''<remarks/>
-        pdp11
-        
-        '''<remarks/>
-        vax
-        
-        '''<remarks/>
-        power
-    End Enum
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class RequiredOperatingSystemType
-        
-        Private nameField3 As String
-        
-        Private versionField1 As String()
-        
-        '''<remarks>
-'''Minimal supported operating system
-'''					
-'''</remarks>
-        Public Property Name() As String
-            Get
-                Return Me.nameField3
-            End Get
-            Set
-                Me.nameField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute("Version")>  _
-        Public Property Version() As String()
-            Get
-                Return Me.versionField1
-            End Get
-            Set
-                Me.versionField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''User manual or user guide accompanying this set. Can be more than one.
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class UserManualType
-        
-        Private languageField3 As LanguagesTypeLanguage()
-        
-        Private pagesField2 As Integer
-        
-        Private pageSizeField2 As String
-        
-        Private scanField2 As ScanType
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
-        Public Property Language() As LanguagesTypeLanguage()
-            Get
-                Return Me.languageField3
-            End Get
-            Set
-                Me.languageField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Pages of the user manual
-'''</remarks>
-        Public Property Pages() As Integer
-            Get
-                Return Me.pagesField2
-            End Get
-            Set
-                Me.pagesField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Paper size in standard name or in WxH milimeters
-'''					
-'''</remarks>
-        Public Property PageSize() As String
-            Get
-                Return Me.pageSizeField2
-            End Get
-            Set
-                Me.pageSizeField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''User manual scanning
-'''</remarks>
-        Public Property Scan() As ScanType
-            Get
-                Return Me.scanField2
-            End Get
-            Set
-                Me.scanField2 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class OpticalDiscType
-        
-        Private imageField As ImageType
-        
-        Private sizeField As Long
-        
-        Private sequenceField As SequenceType
-        
-        Private layersField As LayersType
-        
-        Private checksumsField2 As ChecksumType()
-        
-        Private ringCodeField As LayeredTextType()
-        
-        Private masteringSIDField As LayeredTextType()
-        
-        Private toolstampField As LayeredTextType()
-        
-        Private mouldSIDField As LayeredTextType()
-        
-        Private mouldTextField As LayeredTextType()
-        
-        Private discTypeField As String
-        
-        Private discSubTypeField As String
-        
-        Private offsetField1 As Integer
-        
-        Private offsetSpecifiedField1 As Boolean
-        
-        Private tracksField As Integer()
-        
-        Private sessionsField As Integer
-        
-        Private copyProtectionField As String
-        
-        Private dimensionsField As DimensionsType
-        
-        Private caseField As CaseType
-        
-        Private scansField1 As ScansType
-        
-        Private pFIField As DumpType
-        
-        Private dMIField As DumpType
-        
-        Private cMIField As DumpType
-        
-        Private bCAField As DumpType
-        
-        Private aTIPField As DumpType
-        
-        Private pMAField As DumpType
-        
-        Private leadInField As BorderType()
-        
-        Private leadOutField As BorderType()
-        
-        Private xboxSecuritySectorsField As SecuritySectorsType()
-        
-        Private pS3EncryptionField As PS3EncryptionType
-        
-        Private trackField As TrackType()
-        
-        Private dumpHardwareArrayField As DumpHardwareArrayType
-        
-        '''<remarks>
-'''Image file, or image description file, plus format (cue, toc, etc, etc)
-'''					
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField
-            End Get
-            Set
-                Me.imageField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Image file size
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField
-            End Get
-            Set
-                Me.sizeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Sequence information about this disc
-'''					
-'''</remarks>
-        Public Property Sequence() As SequenceType
-            Get
-                Return Me.sequenceField
-            End Get
-            Set
-                Me.sequenceField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Layering type and sizes
-'''</remarks>
-        Public Property Layers() As LayersType
-            Get
-                Return Me.layersField
-            End Get
-            Set
-                Me.layersField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
-            Get
-                Return Me.checksumsField2
-            End Get
-            Set
-                Me.checksumsField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc/side ring code
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("RingCode")>  _
-        Public Property RingCode() As LayeredTextType()
-            Get
-                Return Me.ringCodeField
-            End Get
-            Set
-                Me.ringCodeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc/side mastering SID
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("MasteringSID")>  _
-        Public Property MasteringSID() As LayeredTextType()
-            Get
-                Return Me.masteringSIDField
-            End Get
-            Set
-                Me.masteringSIDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc/side toolstamp
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("Toolstamp")>  _
-        Public Property Toolstamp() As LayeredTextType()
-            Get
-                Return Me.toolstampField
-            End Get
-            Set
-                Me.toolstampField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc/side mould SID
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("MouldSID")>  _
-        Public Property MouldSID() As LayeredTextType()
-            Get
-                Return Me.mouldSIDField
-            End Get
-            Set
-                Me.mouldSIDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc/side mould text
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("MouldText")>  _
-        Public Property MouldText() As LayeredTextType()
-            Get
-                Return Me.mouldTextField
-            End Get
-            Set
-                Me.mouldTextField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc type (CD, GD, SACD, DDCD, DVD, HDDVD, BD)
-'''					
-'''</remarks>
-        Public Property DiscType() As String
-            Get
-                Return Me.discTypeField
-            End Get
-            Set
-                Me.discTypeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc subtype (CD-ROM, CD-DA, CD+G, etc)
-'''					
-'''</remarks>
-        Public Property DiscSubType() As String
-            Get
-                Return Me.discSubTypeField
-            End Get
-            Set
-                Me.discSubTypeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Offset between subchannel servo and data sectors servo, in bytes
-'''					
-'''</remarks>
-        Public Property Offset() As Integer
-            Get
-                Return Me.offsetField1
-            End Get
-            Set
-                Me.offsetField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property OffsetSpecified() As Boolean
-            Get
-                Return Me.offsetSpecifiedField1
-            End Get
-            Set
-                Me.offsetSpecifiedField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Tracks on this disc/side
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("Tracks")>  _
-        Public Property Tracks() As Integer()
-            Get
-                Return Me.tracksField
-            End Get
-            Set
-                Me.tracksField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Sessions on this disc/side
-'''</remarks>
-        Public Property Sessions() As Integer
-            Get
-                Return Me.sessionsField
-            End Get
-            Set
-                Me.sessionsField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Copy protection, if applicable
-'''</remarks>
-        Public Property CopyProtection() As String
-            Get
-                Return Me.copyProtectionField
-            End Get
-            Set
-                Me.copyProtectionField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Dimensions of the disc
-'''</remarks>
-        Public Property Dimensions() As DimensionsType
-            Get
-                Return Me.dimensionsField
-            End Get
-            Set
-                Me.dimensionsField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Case where the disk came from factory
-'''					
-'''</remarks>
-        Public Property Case() As CaseType
-            Get
-                Return Me.caseField
-            End Get
-            Set
-                Me.caseField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc scans
-'''</remarks>
-        Public Property Scans() As ScansType
-            Get
-                Return Me.scansField1
-            End Get
-            Set
-                Me.scansField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Physical Manufacturing Information (DVD and HD DVD)
-'''					
-'''</remarks>
-        Public Property PFI() As DumpType
-            Get
-                Return Me.pFIField
-            End Get
-            Set
-                Me.pFIField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc Manufacturing Information
-'''</remarks>
-        Public Property DMI() As DumpType
-            Get
-                Return Me.dMIField
-            End Get
-            Set
-                Me.dMIField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Lead-In Copyright Management Information
-'''					
-'''</remarks>
-        Public Property CMI() As DumpType
-            Get
-                Return Me.cMIField
-            End Get
-            Set
-                Me.cMIField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Burst Cutting Area
-'''</remarks>
-        Public Property BCA() As DumpType
-            Get
-                Return Me.bCAField
-            End Get
-            Set
-                Me.bCAField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Absolute Time In Pre-groove
-'''</remarks>
-        Public Property ATIP() As DumpType
-            Get
-                Return Me.aTIPField
-            End Get
-            Set
-                Me.aTIPField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''PMA
-'''</remarks>
-        Public Property PMA() As DumpType
-            Get
-                Return Me.pMAField
-            End Get
-            Set
-                Me.pMAField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Lead-In, Border-In, or equivalent
-'''					
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("LeadIn")>  _
-        Public Property LeadIn() As BorderType()
-            Get
-                Return Me.leadInField
-            End Get
-            Set
-                Me.leadInField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Lead-Out, Border-Out, or equivalent
-'''					
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("LeadOut")>  _
-        Public Property LeadOut() As BorderType()
-            Get
-                Return Me.leadOutField
-            End Get
-            Set
-                Me.leadOutField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="SecuritySectors", IsNullable:=false)>  _
-        Public Property XboxSecuritySectors() As SecuritySectorsType()
-            Get
-                Return Me.xboxSecuritySectorsField
-            End Get
-            Set
-                Me.xboxSecuritySectorsField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''PS3 Encryption Key
-'''</remarks>
-        Public Property PS3Encryption() As PS3EncryptionType
-            Get
-                Return Me.pS3EncryptionField
-            End Get
-            Set
-                Me.pS3EncryptionField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Array of disc tracks
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("Track")>  _
-        Public Property Track() As TrackType()
-            Get
-                Return Me.trackField
-            End Get
-            Set
-                Me.trackField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Array of drives used to dump disc
-'''					
-'''</remarks>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
-            Get
-                Return Me.dumpHardwareArrayField
-            End Get
-            Set
-                Me.dumpHardwareArrayField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''File containing track dump, and format, binary, yranib, or audio/video container
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ImageType
-        
-        Private formatField1 As String
-        
-        Private offsetField As Long
-        
-        Private offsetSpecifiedField As Boolean
-        
-        Private valueField3 As String
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property format() As String
-            Get
-                Return Me.formatField1
-            End Get
-            Set
-                Me.formatField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property offset() As Long
-            Get
-                Return Me.offsetField
-            End Get
-            Set
-                Me.offsetField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property offsetSpecified() As Boolean
-            Get
-                Return Me.offsetSpecifiedField
-            End Get
-            Set
-                Me.offsetSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlTextAttribute()>  _
-        Public Property Value() As String
-            Get
-                Return Me.valueField3
-            End Get
-            Set
-                Me.valueField3 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Sequence information about a disc
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SequenceType
-        
-        Private mediaTitleField As String
-        
-        Private mediaSequenceField As Integer
-        
-        Private totalMediaField As Integer
-        
-        Private sideField As Integer
-        
-        Private sideSpecifiedField As Boolean
-        
-        Private layerField As Integer
-        
-        Private layerSpecifiedField As Boolean
-        
-        '''<remarks>
-'''Sequence information about this media
-'''					
-'''</remarks>
-        Public Property MediaTitle() As String
-            Get
-                Return Me.mediaTitleField
-            End Get
-            Set
-                Me.mediaTitleField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media title as printed in label
-'''</remarks>
-        Public Property MediaSequence() As Integer
-            Get
-                Return Me.mediaSequenceField
-            End Get
-            Set
-                Me.mediaSequenceField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Total number of discs in this set
-'''					
-'''</remarks>
-        Public Property TotalMedia() As Integer
-            Get
-                Return Me.totalMediaField
-            End Get
-            Set
-                Me.totalMediaField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Side of disc described by this field
-'''					
-'''</remarks>
-        Public Property Side() As Integer
-            Get
-                Return Me.sideField
-            End Get
-            Set
-                Me.sideField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property SideSpecified() As Boolean
-            Get
-                Return Me.sideSpecifiedField
-            End Get
-            Set
-                Me.sideSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''On PTP layering, layer of disc described by this field, starting on 0
-'''					
-'''</remarks>
-        Public Property Layer() As Integer
-            Get
-                Return Me.layerField
-            End Get
-            Set
-                Me.layerField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property LayerSpecified() As Boolean
-            Get
-                Return Me.layerSpecifiedField
-            End Get
-            Set
-                Me.layerSpecifiedField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class LayersType
-        
-        Private typeField2 As LayersTypeType
-        
-        Private typeSpecifiedField As Boolean
-        
-        Private sectorsField As SectorsType()
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property type() As LayersTypeType
-            Get
-                Return Me.typeField2
-            End Get
-            Set
-                Me.typeField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property typeSpecified() As Boolean
-            Get
-                Return Me.typeSpecifiedField
-            End Get
-            Set
-                Me.typeSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Layering type and sizes
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("Sectors")>  _
-        Public Property Sectors() As SectorsType()
-            Get
-                Return Me.sectorsField
-            End Get
-            Set
-                Me.sectorsField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
-    Public Enum LayersTypeType
-        
-        '''<remarks/>
-        PTP
-        
-        '''<remarks/>
-        OTP
-    End Enum
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SectorsType
-        
-        Private layerField1 As Integer
-        
-        Private layerSpecifiedField1 As Boolean
-        
-        Private valueField4 As Long
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property layer() As Integer
-            Get
-                Return Me.layerField1
-            End Get
-            Set
-                Me.layerField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property layerSpecified() As Boolean
-            Get
-                Return Me.layerSpecifiedField1
-            End Get
-            Set
-                Me.layerSpecifiedField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlTextAttribute()>  _
-        Public Property Value() As Long
-            Get
-                Return Me.valueField4
-            End Get
-            Set
-                Me.valueField4 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class LayeredTextType
-        
-        Private layerField2 As Integer
-        
-        Private layerSpecifiedField2 As Boolean
-        
-        Private valueField5 As String
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property layer() As Integer
-            Get
-                Return Me.layerField2
-            End Get
-            Set
-                Me.layerField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property layerSpecified() As Boolean
-            Get
-                Return Me.layerSpecifiedField2
-            End Get
-            Set
-                Me.layerSpecifiedField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlTextAttribute()>  _
-        Public Property Value() As String
-            Get
-                Return Me.valueField5
-            End Get
-            Set
-                Me.valueField5 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Dimensions of media
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class DimensionsType
-        
-        Private diameterField As Double
-        
-        Private diameterSpecifiedField As Boolean
-        
-        Private heightField As Double
-        
-        Private heightSpecifiedField As Boolean
-        
-        Private widthField As Double
-        
-        Private widthSpecifiedField As Boolean
-        
-        Private thicknessField As Double
-        
-        '''<remarks>
-'''Diameter in milimeters for circular discs
-'''					
-'''</remarks>
-        Public Property Diameter() As Double
-            Get
-                Return Me.diameterField
-            End Get
-            Set
-                Me.diameterField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property DiameterSpecified() As Boolean
-            Get
-                Return Me.diameterSpecifiedField
-            End Get
-            Set
-                Me.diameterSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Height in milimeters for non-circular disks
-'''					
-'''</remarks>
-        Public Property Height() As Double
-            Get
-                Return Me.heightField
-            End Get
-            Set
-                Me.heightField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property HeightSpecified() As Boolean
-            Get
-                Return Me.heightSpecifiedField
-            End Get
-            Set
-                Me.heightSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Width in milimeters for non-circular disks
-'''					
-'''</remarks>
-        Public Property Width() As Double
-            Get
-                Return Me.widthField
-            End Get
-            Set
-                Me.widthField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property WidthSpecified() As Boolean
-            Get
-                Return Me.widthSpecifiedField
-            End Get
-            Set
-                Me.widthSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Thickness in milimeters for non-circular disks
-'''					
-'''</remarks>
-        Public Property Thickness() As Double
-            Get
-                Return Me.thicknessField
-            End Get
-            Set
-                Me.thicknessField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class CaseType
-        
-        Private caseType1Field As CaseTypeCaseType
-        
-        Private scansField As ScansType
-        
-        '''<remarks>
-'''Original case type: jewel, bigjewel, dvdcase, etc
-'''					
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("CaseType")>  _
-        Public Property CaseType1() As CaseTypeCaseType
-            Get
-                Return Me.caseType1Field
-            End Get
-            Set
-                Me.caseType1Field = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        Public Property Scans() As ScansType
-            Get
-                Return Me.scansField
-            End Get
-            Set
-                Me.scansField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
-    Public Enum CaseTypeCaseType
-        
-        '''<remarks/>
-        jewel
-        
-        '''<remarks/>
-        bigjewel
-        
-        '''<remarks/>
-        slimjewel
-        
-        '''<remarks/>
-        sleeve
-        
-        '''<remarks/>
-        qpack
-        
-        '''<remarks/>
-        digisleeve
-        
-        '''<remarks/>
-        discboxslider
-        
-        '''<remarks/>
-        compacplus
-        
-        '''<remarks/>
-        keepcase
-        
-        '''<remarks/>
-        snapcase
-        
-        '''<remarks/>
-        softcase
-        
-        '''<remarks/>
-        ecopack
-        
-        '''<remarks/>
-        liftlock
-        
-        '''<remarks/>
-        spindle
-        
-        '''<remarks/>
-        ps2case
-        
-        '''<remarks/>
-        ps3case
-        
-        '''<remarks/>
-        bluraykeepcase
-        
-        '''<remarks/>
-        pscase
-        
-        '''<remarks/>
-        dccase
-        
-        '''<remarks/>
-        saturncase
-        
-        '''<remarks/>
-        xboxcase
-        
-        '''<remarks/>
-        saturnbigcase
-        
-        '''<remarks/>
-        gccase
-        
-        '''<remarks/>
-        wiicase
-        
-        '''<remarks/>
-        unknown
-    End Enum
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ScansType
-        
-        Private caseScanField As CaseScanType
-        
-        Private scanField4 As MediaScanType
-        
-        '''<remarks>
-'''Case scans
-'''</remarks>
-        Public Property CaseScan() As CaseScanType
-            Get
-                Return Me.caseScanField
-            End Get
-            Set
-                Me.caseScanField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Disc scans
-'''</remarks>
-        Public Property Scan() As MediaScanType
-            Get
-                Return Me.scanField4
-            End Get
-            Set
-                Me.scanField4 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class CaseScanType
-        
-        Private caseScanElementField As CaseScanTypeCaseScanElement
-        
-        Private scanField3 As ScanType
-        
-        '''<remarks>
-'''Scanned element: cover, back, inlay, etc
-'''					
-'''</remarks>
-        Public Property CaseScanElement() As CaseScanTypeCaseScanElement
-            Get
-                Return Me.caseScanElementField
-            End Get
-            Set
-                Me.caseScanElementField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Scanning information
-'''</remarks>
-        Public Property Scan() As ScanType
-            Get
-                Return Me.scanField3
-            End Get
-            Set
-                Me.scanField3 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
-    Public Enum CaseScanTypeCaseScanElement
-        
-        '''<remarks/>
-        sleeve
-        
-        '''<remarks/>
-        inner
-        
-        '''<remarks/>
-        inlay
-        
-        '''<remarks/>
-        frontback
-        
-        '''<remarks/>
-        frontfull
-        
-        '''<remarks/>
-        boxfront
-        
-        '''<remarks/>
-        boxback
-        
-        '''<remarks/>
-        boxspine
-        
-        '''<remarks/>
-        external
-    End Enum
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
@@ -4316,12 +3006,9 @@ Namespace Schemas
         
         Private mediaScanElementField As MediaScanTypeMediaScanElement
         
-        Private scanField5 As ScanType
+        Private scanField As ScanType
         
-        '''<remarks>
-''' Scanned element: up, down, label, data, etc
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property MediaScanElement() As MediaScanTypeMediaScanElement
             Get
                 Return Me.mediaScanElementField
@@ -4331,22 +3018,21 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Scan of disk part
-'''</remarks>
+        '''<remarks/>
         Public Property Scan() As ScanType
             Get
-                Return Me.scanField5
+                Return Me.scanField
             End Get
             Set
-                Me.scanField5 = Value
+                Me.scanField = Value
             End Set
         End Property
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
     Public Enum MediaScanTypeMediaScanElement
         
         '''<remarks/>
@@ -4368,1012 +3054,8 @@ Namespace Schemas
         right
     End Enum
     
-    '''<remarks>
-'''Information about dumped structure
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class DumpType
-        
-        Private imageField1 As String
-        
-        Private sizeField1 As Integer
-        
-        Private checksumsField3 As ChecksumType()
-        
-        '''<remarks>
-'''File containing dump
-'''</remarks>
-        Public Property Image() As String
-            Get
-                Return Me.imageField1
-            End Get
-            Set
-                Me.imageField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of dump
-'''</remarks>
-        Public Property Size() As Integer
-            Get
-                Return Me.sizeField1
-            End Get
-            Set
-                Me.sizeField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
-            Get
-                Return Me.checksumsField3
-            End Get
-            Set
-                Me.checksumsField3 = Value
-            End Set
-        End Property
-    End Class
-    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class BorderType
-        
-        Private sessionField As Integer
-        
-        Private sessionSpecifiedField As Boolean
-        
-        Private imageField2 As String
-        
-        Private sizeField2 As Long
-        
-        Private checksumsField4 As ChecksumType()
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property session() As Integer
-            Get
-                Return Me.sessionField
-            End Get
-            Set
-                Me.sessionField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property sessionSpecified() As Boolean
-            Get
-                Return Me.sessionSpecifiedField
-            End Get
-            Set
-                Me.sessionSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''File containing border dump
-'''</remarks>
-        Public Property Image() As String
-            Get
-                Return Me.imageField2
-            End Get
-            Set
-                Me.imageField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of border dump
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField2
-            End Get
-            Set
-                Me.sizeField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
-            Get
-                Return Me.checksumsField4
-            End Get
-            Set
-                Me.checksumsField4 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Start and end of XGD's security sectors
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SecuritySectorsType
-        
-        Private startField As Long
-        
-        Private endField As Long
-        
-        '''<remarks>
-'''Start of XGD's security sectors
-'''					
-'''</remarks>
-        Public Property Start() As Long
-            Get
-                Return Me.startField
-            End Get
-            Set
-                Me.startField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''End of XGD's security sectors
-'''</remarks>
-        Public Property End() As Long
-            Get
-                Return Me.endField
-            End Get
-            Set
-                Me.endField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class PS3EncryptionType
-        
-        Private keyField As String
-        
-        Private serialField1 As String
-        
-        '''<remarks>
-'''PS3 encryption key
-'''</remarks>
-        Public Property Key() As String
-            Get
-                Return Me.keyField
-            End Get
-            Set
-                Me.keyField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''PS3 encryption key
-'''</remarks>
-        Public Property Serial() As String
-            Get
-                Return Me.serialField1
-            End Get
-            Set
-                Me.serialField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Track information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class TrackType
-        
-        Private imageField3 As ImageType
-        
-        Private sizeField3 As Long
-        
-        Private sequenceField1 As TrackSequenceType
-        
-        Private startMSFField As String
-        
-        Private endMSFField As String
-        
-        Private startSectorField As Long
-        
-        Private endSectorField As Long
-        
-        Private trackType1Field As TrackTypeTrackType
-        
-        Private bytesPerSectorField As Integer
-        
-        Private accoustIDField As String
-        
-        Private checksumsField5 As ChecksumType()
-        
-        Private subChannelField As SubChannelType
-        
-        Private fileSystemInformationField As PartitionType()
-        
-        '''<remarks>
-'''File containing track dump, and format, binary, yranib, or audio/video container
-'''					
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField3
-            End Get
-            Set
-                Me.imageField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of track dump in bytes
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField3
-            End Get
-            Set
-                Me.sizeField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track sequence information
-'''</remarks>
-        Public Property Sequence() As TrackSequenceType
-            Get
-                Return Me.sequenceField1
-            End Get
-            Set
-                Me.sequenceField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track start address in MM:SS:FF
-'''					
-'''</remarks>
-        Public Property StartMSF() As String
-            Get
-                Return Me.startMSFField
-            End Get
-            Set
-                Me.startMSFField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track end address in MM:SS:FF
-'''</remarks>
-        Public Property EndMSF() As String
-            Get
-                Return Me.endMSFField
-            End Get
-            Set
-                Me.endMSFField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track start sector
-'''</remarks>
-        Public Property StartSector() As Long
-            Get
-                Return Me.startSectorField
-            End Get
-            Set
-                Me.startSectorField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track end sector
-'''</remarks>
-        Public Property EndSector() As Long
-            Get
-                Return Me.endSectorField
-            End Get
-            Set
-                Me.endSectorField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-''' Track type: audio, mode0, mode1, mode2
-'''					
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("TrackType")>  _
-        Public Property TrackType1() As TrackTypeTrackType
-            Get
-                Return Me.trackType1Field
-            End Get
-            Set
-                Me.trackType1Field = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical format)
-'''					
-'''</remarks>
-        Public Property BytesPerSector() As Integer
-            Get
-                Return Me.bytesPerSectorField
-            End Get
-            Set
-                Me.bytesPerSectorField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''AccoustID for audio tracks
-'''</remarks>
-        Public Property AccoustID() As String
-            Get
-                Return Me.accoustIDField
-            End Get
-            Set
-                Me.accoustIDField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
-            Get
-                Return Me.checksumsField5
-            End Get
-            Set
-                Me.checksumsField5 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track's subchannel information
-'''</remarks>
-        Public Property SubChannel() As SubChannelType
-            Get
-                Return Me.subChannelField
-            End Get
-            Set
-                Me.subChannelField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Partition", IsNullable:=false)>  _
-        Public Property FileSystemInformation() As PartitionType()
-            Get
-                Return Me.fileSystemInformationField
-            End Get
-            Set
-                Me.fileSystemInformationField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Sequence information about a track
-'''			
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class TrackSequenceType
-        
-        Private trackNumberField As Integer
-        
-        Private sessionField1 As Integer
-        
-        '''<remarks>
-'''Track number
-'''</remarks>
-        Public Property TrackNumber() As Integer
-            Get
-                Return Me.trackNumberField
-            End Get
-            Set
-                Me.trackNumberField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Session this track belongs to
-'''</remarks>
-        Public Property Session() As Integer
-            Get
-                Return Me.sessionField1
-            End Get
-            Set
-                Me.sessionField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
-    Public Enum TrackTypeTrackType
-        
-        '''<remarks/>
-        audio
-        
-        '''<remarks/>
-        mode0
-        
-        '''<remarks/>
-        mode1
-        
-        '''<remarks/>
-        mode2
-        
-        '''<remarks/>
-        m2f1
-        
-        '''<remarks/>
-        m2f2
-        
-        '''<remarks/>
-        dvd
-        
-        '''<remarks/>
-        hddvd
-        
-        '''<remarks/>
-        bluray
-        
-        '''<remarks/>
-        ddcd
-    End Enum
-    
-    '''<remarks>
-'''Track's subchannel information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SubChannelType
-        
-        Private imageField4 As ImageType
-        
-        Private sizeField4 As Long
-        
-        Private checksumsField6 As ChecksumType()
-        
-        '''<remarks>
-'''File containing track's subchannel dump and format, packed, rw_raw
-'''					
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField4
-            End Get
-            Set
-                Me.imageField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of subchannel dump
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField4
-            End Get
-            Set
-                Me.sizeField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
-            Get
-                Return Me.checksumsField6
-            End Get
-            Set
-                Me.checksumsField6 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class PartitionType
-        
-        Private sequenceField2 As Integer
-        
-        Private nameField4 As String
-        
-        Private typeField3 As String
-        
-        Private startSectorField1 As Integer
-        
-        Private endSectorField1 As Integer
-        
-        Private descriptionField As String
-        
-        Private fileSystemsField As FileSystemType()
-        
-        '''<remarks>
-'''Partition sequence number, starting on 1
-'''					
-'''</remarks>
-        Public Property Sequence() As Integer
-            Get
-                Return Me.sequenceField2
-            End Get
-            Set
-                Me.sequenceField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Partition name if supported by partition scheme
-'''					
-'''</remarks>
-        Public Property Name() As String
-            Get
-                Return Me.nameField4
-            End Get
-            Set
-                Me.nameField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Partition type
-'''</remarks>
-        Public Property Type() As String
-            Get
-                Return Me.typeField3
-            End Get
-            Set
-                Me.typeField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Partition starting sector
-'''</remarks>
-        Public Property StartSector() As Integer
-            Get
-                Return Me.startSectorField1
-            End Get
-            Set
-                Me.startSectorField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Partition ending sector
-'''</remarks>
-        Public Property EndSector() As Integer
-            Get
-                Return Me.endSectorField1
-            End Get
-            Set
-                Me.endSectorField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Partition description if supported by partition scheme
-'''					
-'''</remarks>
-        Public Property Description() As String
-            Get
-                Return Me.descriptionField
-            End Get
-            Set
-                Me.descriptionField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="FileSystem", IsNullable:=false)>  _
-        Public Property FileSystems() As FileSystemType()
-            Get
-                Return Me.fileSystemsField
-            End Get
-            Set
-                Me.fileSystemsField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Information about a filesystem
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class FileSystemType
-        
-        Private typeField4 As String
-        
-        Private creationDateField As Date
-        
-        Private creationDateSpecifiedField As Boolean
-        
-        Private modificationDateField As Date
-        
-        Private modificationDateSpecifiedField As Boolean
-        
-        Private backupDateField As Date
-        
-        Private backupDateSpecifiedField As Boolean
-        
-        Private clusterSizeField As Integer
-        
-        Private clustersField As Long
-        
-        Private filesField As Long
-        
-        Private filesSpecifiedField As Boolean
-        
-        Private bootableField As Boolean
-        
-        Private volumeSerialField As String
-        
-        Private volumeNameField As String
-        
-        Private freeClustersField As Long
-        
-        Private freeClustersSpecifiedField As Boolean
-        
-        Private dirtyField As Boolean
-        
-        Private expirationDateField As Date
-        
-        Private expirationDateSpecifiedField As Boolean
-        
-        Private effectiveDateField As Date
-        
-        Private effectiveDateSpecifiedField As Boolean
-        
-        Private systemIdentifierField As String
-        
-        Private volumeSetIdentifierField As String
-        
-        Private publisherIdentifierField As String
-        
-        Private dataPreparerIdentifierField As String
-        
-        Private applicationIdentifierField As String
-        
-        '''<remarks>
-'''Filesystem type
-'''</remarks>
-        Public Property Type() As String
-            Get
-                Return Me.typeField4
-            End Get
-            Set
-                Me.typeField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem creation date
-'''</remarks>
-        Public Property CreationDate() As Date
-            Get
-                Return Me.creationDateField
-            End Get
-            Set
-                Me.creationDateField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property CreationDateSpecified() As Boolean
-            Get
-                Return Me.creationDateSpecifiedField
-            End Get
-            Set
-                Me.creationDateSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem last modification date
-'''					
-'''</remarks>
-        Public Property ModificationDate() As Date
-            Get
-                Return Me.modificationDateField
-            End Get
-            Set
-                Me.modificationDateField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property ModificationDateSpecified() As Boolean
-            Get
-                Return Me.modificationDateSpecifiedField
-            End Get
-            Set
-                Me.modificationDateSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem last backup date
-'''</remarks>
-        Public Property BackupDate() As Date
-            Get
-                Return Me.backupDateField
-            End Get
-            Set
-                Me.backupDateField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property BackupDateSpecified() As Boolean
-            Get
-                Return Me.backupDateSpecifiedField
-            End Get
-            Set
-                Me.backupDateSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Bytes per cluster
-'''</remarks>
-        Public Property ClusterSize() As Integer
-            Get
-                Return Me.clusterSizeField
-            End Get
-            Set
-                Me.clusterSizeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Clusters in filesystem
-'''</remarks>
-        Public Property Clusters() As Long
-            Get
-                Return Me.clustersField
-            End Get
-            Set
-                Me.clustersField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Files in filesystem
-'''</remarks>
-        Public Property Files() As Long
-            Get
-                Return Me.filesField
-            End Get
-            Set
-                Me.filesField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property FilesSpecified() As Boolean
-            Get
-                Return Me.filesSpecifiedField
-            End Get
-            Set
-                Me.filesSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Bootable filesystem?
-'''</remarks>
-        Public Property Bootable() As Boolean
-            Get
-                Return Me.bootableField
-            End Get
-            Set
-                Me.bootableField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem serial number
-'''</remarks>
-        Public Property VolumeSerial() As String
-            Get
-                Return Me.volumeSerialField
-            End Get
-            Set
-                Me.volumeSerialField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem volume name
-'''</remarks>
-        Public Property VolumeName() As String
-            Get
-                Return Me.volumeNameField
-            End Get
-            Set
-                Me.volumeNameField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Free clusters in filesystem
-'''</remarks>
-        Public Property FreeClusters() As Long
-            Get
-                Return Me.freeClustersField
-            End Get
-            Set
-                Me.freeClustersField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property FreeClustersSpecified() As Boolean
-            Get
-                Return Me.freeClustersSpecifiedField
-            End Get
-            Set
-                Me.freeClustersSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Dirty/unclean filesystem
-'''</remarks>
-        Public Property Dirty() As Boolean
-            Get
-                Return Me.dirtyField
-            End Get
-            Set
-                Me.dirtyField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem expiration date
-'''</remarks>
-        Public Property ExpirationDate() As Date
-            Get
-                Return Me.expirationDateField
-            End Get
-            Set
-                Me.expirationDateField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property ExpirationDateSpecified() As Boolean
-            Get
-                Return Me.expirationDateSpecifiedField
-            End Get
-            Set
-                Me.expirationDateSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem effective date
-'''</remarks>
-        Public Property EffectiveDate() As Date
-            Get
-                Return Me.effectiveDateField
-            End Get
-            Set
-                Me.effectiveDateField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property EffectiveDateSpecified() As Boolean
-            Get
-                Return Me.effectiveDateSpecifiedField
-            End Get
-            Set
-                Me.effectiveDateSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''System identifier filesystem applies to
-'''					
-'''</remarks>
-        Public Property SystemIdentifier() As String
-            Get
-                Return Me.systemIdentifierField
-            End Get
-            Set
-                Me.systemIdentifierField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Volume set identifier
-'''</remarks>
-        Public Property VolumeSetIdentifier() As String
-            Get
-                Return Me.volumeSetIdentifierField
-            End Get
-            Set
-                Me.volumeSetIdentifierField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem publisher identifier
-'''					
-'''</remarks>
-        Public Property PublisherIdentifier() As String
-            Get
-                Return Me.publisherIdentifierField
-            End Get
-            Set
-                Me.publisherIdentifierField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem data preparer
-'''</remarks>
-        Public Property DataPreparerIdentifier() As String
-            Get
-                Return Me.dataPreparerIdentifierField
-            End Get
-            Set
-                Me.dataPreparerIdentifierField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Filesystem application preparer
-'''					
-'''</remarks>
-        Public Property ApplicationIdentifier() As String
-            Get
-                Return Me.applicationIdentifierField
-            End Get
-            Set
-                Me.applicationIdentifierField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
@@ -5381,9 +3063,7 @@ Namespace Schemas
         
         Private dumpHardwareField As DumpHardwareType
         
-        '''<remarks>
-'''Array of drives information
-'''</remarks>
+        '''<remarks/>
         Public Property DumpHardware() As DumpHardwareType
             Get
                 Return Me.dumpHardwareField
@@ -5395,53 +3075,47 @@ Namespace Schemas
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class DumpHardwareType
         
-        Private manufacturerField1 As String
+        Private manufacturerField As String
         
-        Private modelField1 As String
+        Private modelField As String
         
         Private revisionField As String
         
         Private firmwareField As String
         
-        Private serialField2 As String
+        Private serialField As String
         
         Private extentsField As ExtentType()
         
-        Private softwareField3 As SoftwareType
+        Private softwareField As SoftwareType
         
-        '''<remarks>
-'''Drive manufacturer
-'''</remarks>
+        '''<remarks/>
         Public Property Manufacturer() As String
             Get
-                Return Me.manufacturerField1
+                Return Me.manufacturerField
             End Get
             Set
-                Me.manufacturerField1 = Value
+                Me.manufacturerField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Drive model
-'''</remarks>
+        '''<remarks/>
         Public Property Model() As String
             Get
-                Return Me.modelField1
+                Return Me.modelField
             End Get
             Set
-                Me.modelField1 = Value
+                Me.modelField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Drive revision
-'''</remarks>
+        '''<remarks/>
         Public Property Revision() As String
             Get
                 Return Me.revisionField
@@ -5451,9 +3125,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Drive firmware version
-'''</remarks>
+        '''<remarks/>
         Public Property Firmware() As String
             Get
                 Return Me.firmwareField
@@ -5463,20 +3135,18 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Drive serial number
-'''</remarks>
+        '''<remarks/>
         Public Property Serial() As String
             Get
-                Return Me.serialField2
+                Return Me.serialField
             End Get
             Set
-                Me.serialField2 = Value
+                Me.serialField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Extent", IsNullable:=false)>  _
+        <System.Xml.Serialization.XmlArrayItemAttribute("Extent", IsNullable:=false)>  _
         Public Property Extents() As ExtentType()
             Get
                 Return Me.extentsField
@@ -5486,99 +3156,83 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Software used to read with this drive
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property Software() As SoftwareType
             Get
-                Return Me.softwareField3
+                Return Me.softwareField
             End Get
             Set
-                Me.softwareField3 = Value
+                Me.softwareField = Value
             End Set
         End Property
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class ExtentType
         
-        Private startField1 As Integer
+        Private startField As Integer
         
-        Private endField1 As Integer
+        Private endField As Integer
         
-        '''<remarks>
-'''Starting sector
-'''</remarks>
+        '''<remarks/>
         Public Property Start() As Integer
             Get
-                Return Me.startField1
+                Return Me.startField
             End Get
             Set
-                Me.startField1 = Value
+                Me.startField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Ending sector
-'''</remarks>
+        '''<remarks/>
         Public Property End() As Integer
             Get
-                Return Me.endField1
+                Return Me.endField
             End Get
             Set
-                Me.endField1 = Value
+                Me.endField = Value
             End Set
         End Property
     End Class
     
-    '''<remarks>
-'''Software used for disc reading
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class SoftwareType
         
-        Private nameField5 As String
+        Private nameField As String
         
-        Private versionField2 As String
+        Private versionField As String
         
         Private operatingSystemField As String
         
-        '''<remarks>
-'''Software name
-'''</remarks>
+        '''<remarks/>
         Public Property Name() As String
             Get
-                Return Me.nameField5
+                Return Me.nameField
             End Get
             Set
-                Me.nameField5 = Value
+                Me.nameField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Software version
-'''</remarks>
+        '''<remarks/>
         Public Property Version() As String
             Get
-                Return Me.versionField2
+                Return Me.versionField
             End Get
             Set
-                Me.versionField2 = Value
+                Me.versionField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Operating system name and version where the software was run
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property OperatingSystem() As String
             Get
                 Return Me.operatingSystemField
@@ -5590,489 +3244,1608 @@ Namespace Schemas
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class AdvertisementType
+    Partial Public Class BlockTrackType
         
-        Private manufacturerField2 As String
+        Private imageField As ImageType
         
-        Private productField As String
+        Private sizeField As Long
         
-        Private fileField2 As FileType
+        Private headField As Long
         
-        Private fileSizeField As Long
+        Private cylinderField As Long
         
-        Private framesField As Long
+        Private startSectorField As Long
         
-        Private framesSpecifiedField As Boolean
+        Private endSectorField As Long
         
-        Private durationField As Long
+        Private sectorsField As Long
         
-        Private meanFrameRateField As Integer
+        Private bytesPerSectorField As Integer
         
-        Private meanFrameRateSpecifiedField As Boolean
+        Private checksumsField As ChecksumType()
         
-        Private checksumsField7 As ChecksumType()
+        Private formatField As String
         
-        Private audioTrackField As AudioTracksType()
-        
-        Private videoTrackField As VideoTracksType()
-        
-        Private subtitleTrackField As SubtitleTracksType()
-        
-        Private recordingField As RecordingType
-        
-        '''<remarks>
-'''Manufactured of the advertised product
-'''					
-'''</remarks>
-        Public Property Manufacturer() As String
+        '''<remarks/>
+        Public Property Image() As ImageType
             Get
-                Return Me.manufacturerField2
+                Return Me.imageField
             End Get
             Set
-                Me.manufacturerField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Advertised product
-'''</remarks>
-        Public Property Product() As String
-            Get
-                Return Me.productField
-            End Get
-            Set
-                Me.productField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''File containing advertising
-'''</remarks>
-        Public Property File() As FileType
-            Get
-                Return Me.fileField2
-            End Get
-            Set
-                Me.fileField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of file
-'''</remarks>
-        Public Property FileSize() As Long
-            Get
-                Return Me.fileSizeField
-            End Get
-            Set
-                Me.fileSizeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Total video frames
-'''</remarks>
-        Public Property Frames() As Long
-            Get
-                Return Me.framesField
-            End Get
-            Set
-                Me.framesField = Value
+                Me.imageField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property FramesSpecified() As Boolean
+        Public Property Size() As Long
             Get
-                Return Me.framesSpecifiedField
+                Return Me.sizeField
             End Get
             Set
-                Me.framesSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Duration in seconds
-'''</remarks>
-        Public Property Duration() As Long
-            Get
-                Return Me.durationField
-            End Get
-            Set
-                Me.durationField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Mean framerate
-'''</remarks>
-        Public Property MeanFrameRate() As Integer
-            Get
-                Return Me.meanFrameRateField
-            End Get
-            Set
-                Me.meanFrameRateField = Value
+                Me.sizeField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property MeanFrameRateSpecified() As Boolean
+        Public Property Head() As Long
             Get
-                Return Me.meanFrameRateSpecifiedField
+                Return Me.headField
             End Get
             Set
-                Me.meanFrameRateSpecifiedField = Value
+                Me.headField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
+        Public Property Cylinder() As Long
+            Get
+                Return Me.cylinderField
+            End Get
+            Set
+                Me.cylinderField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property StartSector() As Long
+            Get
+                Return Me.startSectorField
+            End Get
+            Set
+                Me.startSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property EndSector() As Long
+            Get
+                Return Me.endSectorField
+            End Get
+            Set
+                Me.endSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Sectors() As Long
+            Get
+                Return Me.sectorsField
+            End Get
+            Set
+                Me.sectorsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property BytesPerSector() As Integer
+            Get
+                Return Me.bytesPerSectorField
+            End Get
+            Set
+                Me.bytesPerSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
         Public Property Checksums() As ChecksumType()
             Get
-                Return Me.checksumsField7
+                Return Me.checksumsField
             End Get
             Set
-                Me.checksumsField7 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Audio tracks of advertisement
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("AudioTrack")>  _
-        Public Property AudioTrack() As AudioTracksType()
-            Get
-                Return Me.audioTrackField
-            End Get
-            Set
-                Me.audioTrackField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Video tracks of advertisement
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("VideoTrack")>  _
-        Public Property VideoTrack() As VideoTracksType()
-            Get
-                Return Me.videoTrackField
-            End Get
-            Set
-                Me.videoTrackField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Subtitle tracks of advertisement
-'''					
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("SubtitleTrack")>  _
-        Public Property SubtitleTrack() As SubtitleTracksType()
-            Get
-                Return Me.subtitleTrackField
-            End Get
-            Set
-                Me.subtitleTrackField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''If advertisement has been capture from a television/radio broadcast, here is the capture information
-'''					
-'''</remarks>
-        Public Property Recording() As RecordingType
-            Get
-                Return Me.recordingField
-            End Get
-            Set
-                Me.recordingField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class AudioTracksType
-        
-        Private trackNumberField1 As Integer
-        
-        Private accoustIDField1 As String
-        
-        Private codecField As String
-        
-        Private channelsField As Integer
-        
-        Private sampleRateField As Integer
-        
-        Private meanBitrateField As Long
-        
-        Private languagesField1 As LanguagesTypeLanguage()
-        
-        '''<remarks>
-'''Track number in media container
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property TrackNumber() As Integer
-            Get
-                Return Me.trackNumberField1
-            End Get
-            Set
-                Me.trackNumberField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track's AccoustID
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property AccoustID() As String
-            Get
-                Return Me.accoustIDField1
-            End Get
-            Set
-                Me.accoustIDField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track's codec
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Codec() As String
-            Get
-                Return Me.codecField
-            End Get
-            Set
-                Me.codecField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Audio channels
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Channels() As Integer
-            Get
-                Return Me.channelsField
-            End Get
-            Set
-                Me.channelsField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Audio sampling rate
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property SampleRate() As Integer
-            Get
-                Return Me.sampleRateField
-            End Get
-            Set
-                Me.sampleRateField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Mean bitrate, or constant bitrate, in bits per second
-'''				
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property MeanBitrate() As Long
-            Get
-                Return Me.meanBitrateField
-            End Get
-            Set
-                Me.meanBitrateField = Value
+                Me.checksumsField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
-        Public Property Languages() As LanguagesTypeLanguage()
+        Public Property Format() As String
             Get
-                Return Me.languagesField1
+                Return Me.formatField
             End Get
             Set
-                Me.languagesField1 = Value
+                Me.formatField = Value
             End Set
         End Property
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class VideoTracksType
+    Partial Public Class USBType
         
-        Private trackNumberField2 As Integer
+        Private vendorIDField As Integer
         
-        Private codecField1 As String
+        Private productIDField As Integer
         
-        Private horizontalField As Integer
+        Private descriptorsField As DumpType
         
-        Private verticalField As Integer
-        
-        Private meanBitrateField1 As Long
-        
-        Private threeDField As Boolean
-        
-        Private languagesField2 As LanguagesTypeLanguage()
-        
-        '''<remarks>
-'''Track number in media container
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property TrackNumber() As Integer
+        '''<remarks/>
+        Public Property VendorID() As Integer
             Get
-                Return Me.trackNumberField2
+                Return Me.vendorIDField
             End Get
             Set
-                Me.trackNumberField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track's codec
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Codec() As String
-            Get
-                Return Me.codecField1
-            End Get
-            Set
-                Me.codecField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Horizontal resolution in pixels
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Horizontal() As Integer
-            Get
-                Return Me.horizontalField
-            End Get
-            Set
-                Me.horizontalField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Vertical resolution in pixels
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Vertical() As Integer
-            Get
-                Return Me.verticalField
-            End Get
-            Set
-                Me.verticalField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Mean bitrate, or constant bitrate, in bits per second
-'''				
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property MeanBitrate() As Long
-            Get
-                Return Me.meanBitrateField1
-            End Get
-            Set
-                Me.meanBitrateField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Is this video track in 3D?
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property ThreeD() As Boolean
-            Get
-                Return Me.threeDField
-            End Get
-            Set
-                Me.threeDField = Value
+                Me.vendorIDField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
-        Public Property Languages() As LanguagesTypeLanguage()
+        Public Property ProductID() As Integer
             Get
-                Return Me.languagesField2
+                Return Me.productIDField
             End Get
             Set
-                Me.languagesField2 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SubtitleTracksType
-        
-        Private trackNumberField3 As Integer
-        
-        Private codecField2 As String
-        
-        Private languagesField3 As LanguagesTypeLanguage()
-        
-        '''<remarks>
-'''Track number in media container
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property TrackNumber() As Integer
-            Get
-                Return Me.trackNumberField3
-            End Get
-            Set
-                Me.trackNumberField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track's codec
-'''</remarks>
-        <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Codec() As String
-            Get
-                Return Me.codecField2
-            End Get
-            Set
-                Me.codecField2 = Value
+                Me.productIDField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Language", IsNullable:=false)>  _
-        Public Property Languages() As LanguagesTypeLanguage()
+        Public Property Descriptors() As DumpType
             Get
-                Return Me.languagesField3
+                Return Me.descriptorsField
             End Get
             Set
-                Me.languagesField3 = Value
+                Me.descriptorsField = Value
             End Set
         End Property
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DumpType
+        
+        Private imageField As String
+        
+        Private sizeField As Integer
+        
+        Private checksumsField As ChecksumType()
+        
+        '''<remarks/>
+        Public Property Image() As String
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Integer
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class EVPDType
+        
+        Private imageField As String
+        
+        Private sizeField As Long
+        
+        Private checksumsField As ChecksumType()
+        
+        Private pageField As Integer
+        
+        Private pageFieldSpecified As Boolean
+        
+        '''<remarks/>
+        Public Property Image() As String
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property page() As Integer
+            Get
+                Return Me.pageField
+            End Get
+            Set
+                Me.pageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property pageSpecified() As Boolean
+            Get
+                Return Me.pageFieldSpecified
+            End Get
+            Set
+                Me.pageFieldSpecified = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SCSIType
+        
+        Private inquiryField As DumpType
+        
+        Private eVPDField As EVPDType()
+        
+        Private modeSenseField As DumpType
+        
+        Private modeSense10Field As DumpType
+        
+        Private logSenseField As DumpType
+        
+        '''<remarks/>
+        Public Property Inquiry() As DumpType
+            Get
+                Return Me.inquiryField
+            End Get
+            Set
+                Me.inquiryField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("EVPD")>  _
+        Public Property EVPD() As EVPDType()
+            Get
+                Return Me.eVPDField
+            End Get
+            Set
+                Me.eVPDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ModeSense() As DumpType
+            Get
+                Return Me.modeSenseField
+            End Get
+            Set
+                Me.modeSenseField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ModeSense10() As DumpType
+            Get
+                Return Me.modeSense10Field
+            End Get
+            Set
+                Me.modeSense10Field = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LogSense() As DumpType
+            Get
+                Return Me.logSenseField
+            End Get
+            Set
+                Me.logSenseField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SecureDigitalType
+        
+        Private cIDField As DumpType
+        
+        Private cSDField As DumpType
+        
+        Private extendedCSDField As DumpType
+        
+        '''<remarks/>
+        Public Property CID() As DumpType
+            Get
+                Return Me.cIDField
+            End Get
+            Set
+                Me.cIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CSD() As DumpType
+            Get
+                Return Me.cSDField
+            End Get
+            Set
+                Me.cSDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ExtendedCSD() As DumpType
+            Get
+                Return Me.extendedCSDField
+            End Get
+            Set
+                Me.extendedCSDField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ATAType
+        
+        Private identifyField As DumpType
+        
+        '''<remarks/>
+        Public Property Identify() As DumpType
+            Get
+                Return Me.identifyField
+            End Get
+            Set
+                Me.identifyField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class BlockMediaType
+        
+        Private imageField As ImageType
+        
+        Private sizeField As Long
+        
+        Private checksumsField As ChecksumType()
+        
+        Private sequenceField As SequenceType
+        
+        Private manufacturerField As String
+        
+        Private modelField As String
+        
+        Private serialField As String
+        
+        Private firmwareField As String
+        
+        Private interfaceField As String
+        
+        Private physicalBlockSizeField As Integer
+        
+        Private logicalBlockSizeField As Integer
+        
+        Private logicalBlocksField As Long
+        
+        Private scansField As ScansType
+        
+        Private aTAField As ATAType
+        
+        Private pCIField As PCIType
+        
+        Private pCMCIAField As PCMCIAType
+        
+        Private secureDigitalField As SecureDigitalType
+        
+        Private sCSIField As SCSIType
+        
+        Private uSBField As USBType
+        
+        Private headsField As Long
+        
+        Private headsFieldSpecified As Boolean
+        
+        Private cylindersField As Long
+        
+        Private cylindersFieldSpecified As Boolean
+        
+        Private sectorsPerTrackField As Long
+        
+        Private sectorsPerTrackFieldSpecified As Boolean
+        
+        Private trackField As BlockTrackType()
+        
+        Private copyProtectionField As String
+        
+        Private dimensionsField As DimensionsType
+        
+        Private fileSystemInformationField As PartitionType()
+        
+        Private dumpHardwareArrayField As DumpHardwareArrayType
+        
+        Private diskTypeField As String
+        
+        Private diskSubTypeField As String
+        
+        '''<remarks/>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Sequence() As SequenceType
+            Get
+                Return Me.sequenceField
+            End Get
+            Set
+                Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField
+            End Get
+            Set
+                Me.manufacturerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Model() As String
+            Get
+                Return Me.modelField
+            End Get
+            Set
+                Me.modelField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Serial() As String
+            Get
+                Return Me.serialField
+            End Get
+            Set
+                Me.serialField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Firmware() As String
+            Get
+                Return Me.firmwareField
+            End Get
+            Set
+                Me.firmwareField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Interface() As String
+            Get
+                Return Me.interfaceField
+            End Get
+            Set
+                Me.interfaceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PhysicalBlockSize() As Integer
+            Get
+                Return Me.physicalBlockSizeField
+            End Get
+            Set
+                Me.physicalBlockSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LogicalBlockSize() As Integer
+            Get
+                Return Me.logicalBlockSizeField
+            End Get
+            Set
+                Me.logicalBlockSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LogicalBlocks() As Long
+            Get
+                Return Me.logicalBlocksField
+            End Get
+            Set
+                Me.logicalBlocksField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scans() As ScansType
+            Get
+                Return Me.scansField
+            End Get
+            Set
+                Me.scansField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ATA() As ATAType
+            Get
+                Return Me.aTAField
+            End Get
+            Set
+                Me.aTAField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PCI() As PCIType
+            Get
+                Return Me.pCIField
+            End Get
+            Set
+                Me.pCIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PCMCIA() As PCMCIAType
+            Get
+                Return Me.pCMCIAField
+            End Get
+            Set
+                Me.pCMCIAField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SecureDigital() As SecureDigitalType
+            Get
+                Return Me.secureDigitalField
+            End Get
+            Set
+                Me.secureDigitalField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SCSI() As SCSIType
+            Get
+                Return Me.sCSIField
+            End Get
+            Set
+                Me.sCSIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property USB() As USBType
+            Get
+                Return Me.uSBField
+            End Get
+            Set
+                Me.uSBField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Heads() As Long
+            Get
+                Return Me.headsField
+            End Get
+            Set
+                Me.headsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property HeadsSpecified() As Boolean
+            Get
+                Return Me.headsFieldSpecified
+            End Get
+            Set
+                Me.headsFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Cylinders() As Long
+            Get
+                Return Me.cylindersField
+            End Get
+            Set
+                Me.cylindersField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property CylindersSpecified() As Boolean
+            Get
+                Return Me.cylindersFieldSpecified
+            End Get
+            Set
+                Me.cylindersFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SectorsPerTrack() As Long
+            Get
+                Return Me.sectorsPerTrackField
+            End Get
+            Set
+                Me.sectorsPerTrackField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property SectorsPerTrackSpecified() As Boolean
+            Get
+                Return Me.sectorsPerTrackFieldSpecified
+            End Get
+            Set
+                Me.sectorsPerTrackFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Track")>  _
+        Public Property Track() As BlockTrackType()
+            Get
+                Return Me.trackField
+            End Get
+            Set
+                Me.trackField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CopyProtection() As String
+            Get
+                Return Me.copyProtectionField
+            End Get
+            Set
+                Me.copyProtectionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Dimensions() As DimensionsType
+            Get
+                Return Me.dimensionsField
+            End Get
+            Set
+                Me.dimensionsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Partition", IsNullable:=false)>  _
+        Public Property FileSystemInformation() As PartitionType()
+            Get
+                Return Me.fileSystemInformationField
+            End Get
+            Set
+                Me.fileSystemInformationField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DumpHardwareArray() As DumpHardwareArrayType
+            Get
+                Return Me.dumpHardwareArrayField
+            End Get
+            Set
+                Me.dumpHardwareArrayField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DiskType() As String
+            Get
+                Return Me.diskTypeField
+            End Get
+            Set
+                Me.diskTypeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DiskSubType() As String
+            Get
+                Return Me.diskSubTypeField
+            End Get
+            Set
+                Me.diskSubTypeField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class PCIType
+        
+        Private vendorIDField As Integer
+        
+        Private deviceIDField As Integer
+        
+        Private configurationField As DumpType
+        
+        Private expansionROMField As LinearMediaType
+        
+        '''<remarks/>
+        Public Property VendorID() As Integer
+            Get
+                Return Me.vendorIDField
+            End Get
+            Set
+                Me.vendorIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DeviceID() As Integer
+            Get
+                Return Me.deviceIDField
+            End Get
+            Set
+                Me.deviceIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Configuration() As DumpType
+            Get
+                Return Me.configurationField
+            End Get
+            Set
+                Me.configurationField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ExpansionROM() As LinearMediaType
+            Get
+                Return Me.expansionROMField
+            End Get
+            Set
+                Me.expansionROMField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class LinearMediaType
+        
+        Private imageField As ImageType
+        
+        Private sizeField As Long
+        
+        Private imageChecksumsField As ChecksumType()
+        
+        Private checksumsField As ChecksumType()
+        
+        Private titleField As String
+        
+        Private sequenceField As Integer
+        
+        Private sequenceFieldSpecified As Boolean
+        
+        Private imageInterleaveField As Integer
+        
+        Private imageInterleaveFieldSpecified As Boolean
+        
+        Private interleaveField As Integer
+        
+        Private interleaveFieldSpecified As Boolean
+        
+        Private manufacturerField As String
+        
+        Private modelField As String
+        
+        Private packageField As String
+        
+        Private interfaceField As String
+        
+        Private dimensionsField As DimensionsType
+        
+        Private scansField As ScansType
+        
+        Private dumpHardwareArrayField As DumpHardwareArrayType
+        
+        Private pCMCIAField As PCMCIAType
+        
+        Private copyProtectionField As String
+        
+        '''<remarks/>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property ImageChecksums() As ChecksumType()
+            Get
+                Return Me.imageChecksumsField
+            End Get
+            Set
+                Me.imageChecksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Title() As String
+            Get
+                Return Me.titleField
+            End Get
+            Set
+                Me.titleField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Sequence() As Integer
+            Get
+                Return Me.sequenceField
+            End Get
+            Set
+                Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property SequenceSpecified() As Boolean
+            Get
+                Return Me.sequenceFieldSpecified
+            End Get
+            Set
+                Me.sequenceFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ImageInterleave() As Integer
+            Get
+                Return Me.imageInterleaveField
+            End Get
+            Set
+                Me.imageInterleaveField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property ImageInterleaveSpecified() As Boolean
+            Get
+                Return Me.imageInterleaveFieldSpecified
+            End Get
+            Set
+                Me.imageInterleaveFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Interleave() As Integer
+            Get
+                Return Me.interleaveField
+            End Get
+            Set
+                Me.interleaveField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property InterleaveSpecified() As Boolean
+            Get
+                Return Me.interleaveFieldSpecified
+            End Get
+            Set
+                Me.interleaveFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField
+            End Get
+            Set
+                Me.manufacturerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Model() As String
+            Get
+                Return Me.modelField
+            End Get
+            Set
+                Me.modelField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Package() As String
+            Get
+                Return Me.packageField
+            End Get
+            Set
+                Me.packageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Interface() As String
+            Get
+                Return Me.interfaceField
+            End Get
+            Set
+                Me.interfaceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Dimensions() As DimensionsType
+            Get
+                Return Me.dimensionsField
+            End Get
+            Set
+                Me.dimensionsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scans() As ScansType
+            Get
+                Return Me.scansField
+            End Get
+            Set
+                Me.scansField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DumpHardwareArray() As DumpHardwareArrayType
+            Get
+                Return Me.dumpHardwareArrayField
+            End Get
+            Set
+                Me.dumpHardwareArrayField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PCMCIA() As PCMCIAType
+            Get
+                Return Me.pCMCIAField
+            End Get
+            Set
+                Me.pCMCIAField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CopyProtection() As String
+            Get
+                Return Me.copyProtectionField
+            End Get
+            Set
+                Me.copyProtectionField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class PCMCIAType
+        
+        Private cISField As DumpType
+        
+        '''<remarks/>
+        Public Property CIS() As DumpType
+            Get
+                Return Me.cISField
+            End Get
+            Set
+                Me.cISField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class PartitionType
+        
+        Private sequenceField As Integer
+        
+        Private nameField As String
+        
+        Private typeField As String
+        
+        Private startSectorField As Integer
+        
+        Private endSectorField As Integer
+        
+        Private descriptionField As String
+        
+        Private fileSystemsField As FileSystemType()
+        
+        '''<remarks/>
+        Public Property Sequence() As Integer
+            Get
+                Return Me.sequenceField
+            End Get
+            Set
+                Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Name() As String
+            Get
+                Return Me.nameField
+            End Get
+            Set
+                Me.nameField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Type() As String
+            Get
+                Return Me.typeField
+            End Get
+            Set
+                Me.typeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property StartSector() As Integer
+            Get
+                Return Me.startSectorField
+            End Get
+            Set
+                Me.startSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property EndSector() As Integer
+            Get
+                Return Me.endSectorField
+            End Get
+            Set
+                Me.endSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Description() As String
+            Get
+                Return Me.descriptionField
+            End Get
+            Set
+                Me.descriptionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("FileSystem", IsNullable:=false)>  _
+        Public Property FileSystems() As FileSystemType()
+            Get
+                Return Me.fileSystemsField
+            End Get
+            Set
+                Me.fileSystemsField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class FileSystemType
+        
+        Private typeField As String
+        
+        Private creationDateField As Date
+        
+        Private creationDateFieldSpecified As Boolean
+        
+        Private modificationDateField As Date
+        
+        Private modificationDateFieldSpecified As Boolean
+        
+        Private backupDateField As Date
+        
+        Private backupDateFieldSpecified As Boolean
+        
+        Private clusterSizeField As Integer
+        
+        Private clustersField As Long
+        
+        Private filesField As Long
+        
+        Private filesFieldSpecified As Boolean
+        
+        Private bootableField As Boolean
+        
+        Private volumeSerialField As String
+        
+        Private volumeNameField As String
+        
+        Private freeClustersField As Long
+        
+        Private freeClustersFieldSpecified As Boolean
+        
+        Private dirtyField As Boolean
+        
+        Private expirationDateField As Date
+        
+        Private expirationDateFieldSpecified As Boolean
+        
+        Private effectiveDateField As Date
+        
+        Private effectiveDateFieldSpecified As Boolean
+        
+        Private systemIdentifierField As String
+        
+        Private volumeSetIdentifierField As String
+        
+        Private publisherIdentifierField As String
+        
+        Private dataPreparerIdentifierField As String
+        
+        Private applicationIdentifierField As String
+        
+        '''<remarks/>
+        Public Property Type() As String
+            Get
+                Return Me.typeField
+            End Get
+            Set
+                Me.typeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CreationDate() As Date
+            Get
+                Return Me.creationDateField
+            End Get
+            Set
+                Me.creationDateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property CreationDateSpecified() As Boolean
+            Get
+                Return Me.creationDateFieldSpecified
+            End Get
+            Set
+                Me.creationDateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ModificationDate() As Date
+            Get
+                Return Me.modificationDateField
+            End Get
+            Set
+                Me.modificationDateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property ModificationDateSpecified() As Boolean
+            Get
+                Return Me.modificationDateFieldSpecified
+            End Get
+            Set
+                Me.modificationDateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property BackupDate() As Date
+            Get
+                Return Me.backupDateField
+            End Get
+            Set
+                Me.backupDateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property BackupDateSpecified() As Boolean
+            Get
+                Return Me.backupDateFieldSpecified
+            End Get
+            Set
+                Me.backupDateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ClusterSize() As Integer
+            Get
+                Return Me.clusterSizeField
+            End Get
+            Set
+                Me.clusterSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Clusters() As Long
+            Get
+                Return Me.clustersField
+            End Get
+            Set
+                Me.clustersField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Files() As Long
+            Get
+                Return Me.filesField
+            End Get
+            Set
+                Me.filesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property FilesSpecified() As Boolean
+            Get
+                Return Me.filesFieldSpecified
+            End Get
+            Set
+                Me.filesFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Bootable() As Boolean
+            Get
+                Return Me.bootableField
+            End Get
+            Set
+                Me.bootableField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VolumeSerial() As String
+            Get
+                Return Me.volumeSerialField
+            End Get
+            Set
+                Me.volumeSerialField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VolumeName() As String
+            Get
+                Return Me.volumeNameField
+            End Get
+            Set
+                Me.volumeNameField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property FreeClusters() As Long
+            Get
+                Return Me.freeClustersField
+            End Get
+            Set
+                Me.freeClustersField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property FreeClustersSpecified() As Boolean
+            Get
+                Return Me.freeClustersFieldSpecified
+            End Get
+            Set
+                Me.freeClustersFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Dirty() As Boolean
+            Get
+                Return Me.dirtyField
+            End Get
+            Set
+                Me.dirtyField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ExpirationDate() As Date
+            Get
+                Return Me.expirationDateField
+            End Get
+            Set
+                Me.expirationDateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property ExpirationDateSpecified() As Boolean
+            Get
+                Return Me.expirationDateFieldSpecified
+            End Get
+            Set
+                Me.expirationDateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property EffectiveDate() As Date
+            Get
+                Return Me.effectiveDateField
+            End Get
+            Set
+                Me.effectiveDateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property EffectiveDateSpecified() As Boolean
+            Get
+                Return Me.effectiveDateFieldSpecified
+            End Get
+            Set
+                Me.effectiveDateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SystemIdentifier() As String
+            Get
+                Return Me.systemIdentifierField
+            End Get
+            Set
+                Me.systemIdentifierField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VolumeSetIdentifier() As String
+            Get
+                Return Me.volumeSetIdentifierField
+            End Get
+            Set
+                Me.volumeSetIdentifierField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PublisherIdentifier() As String
+            Get
+                Return Me.publisherIdentifierField
+            End Get
+            Set
+                Me.publisherIdentifierField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DataPreparerIdentifier() As String
+            Get
+                Return Me.dataPreparerIdentifierField
+            End Get
+            Set
+                Me.dataPreparerIdentifierField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ApplicationIdentifier() As String
+            Get
+                Return Me.applicationIdentifierField
+            End Get
+            Set
+                Me.applicationIdentifierField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class CoordinatesType
+        
+        Private latitudeField As Double
+        
+        Private longitudeField As Double
+        
+        '''<remarks/>
+        Public Property Latitude() As Double
+            Get
+                Return Me.latitudeField
+            End Get
+            Set
+                Me.latitudeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Longitude() As Double
+            Get
+                Return Me.longitudeField
+            End Get
+            Set
+                Me.longitudeField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
@@ -6086,14 +4859,11 @@ Namespace Schemas
         
         Private timestampField As Date
         
-        Private softwareField4 As SoftwareType()
+        Private softwareField As SoftwareType()
         
         Private coordinatesField As CoordinatesType
         
-        '''<remarks>
-'''Name of the television channel this recording was broadcasted, if applicable
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property Broadcaster() As String
             Get
                 Return Me.broadcasterField
@@ -6103,10 +4873,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Platform that broadcasted the television channel, if applicable
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property BroadcastPlatform() As String
             Get
                 Return Me.broadcastPlatformField
@@ -6116,10 +4883,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Format of the source of this recording
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property SourceFormat() As RecordingTypeSourceFormat
             Get
                 Return Me.sourceFormatField
@@ -6129,9 +4893,7 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Date and time of broadcast
-'''</remarks>
+        '''<remarks/>
         Public Property Timestamp() As Date
             Get
                 Return Me.timestampField
@@ -6141,24 +4903,18 @@ Namespace Schemas
             End Set
         End Property
         
-        '''<remarks>
-'''Software used to capture, process, convert, the recording
-'''					
-'''</remarks>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Software")>  _
         Public Property Software() As SoftwareType()
             Get
-                Return Me.softwareField4
+                Return Me.softwareField
             End Get
             Set
-                Me.softwareField4 = Value
+                Me.softwareField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Approximate coordinates where the recording was done
-'''					
-'''</remarks>
+        '''<remarks/>
         Public Property Coordinates() As CoordinatesType
             Get
                 Return Me.coordinatesField
@@ -6170,8 +4926,9 @@ Namespace Schemas
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute()>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
     Public Enum RecordingTypeSourceFormat
         
         '''<remarks/>
@@ -6432,1533 +5189,2131 @@ Namespace Schemas
     End Enum
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class CoordinatesType
+    Partial Public Class SubtitleTracksType
         
-        Private latitudeField As Double
+        Private languagesField As LanguagesTypeLanguage()
         
-        Private longitudeField As Double
+        Private trackNumberField As Integer
         
-        '''<remarks>
-'''Approximate latitude of recording
-'''					
-'''</remarks>
-        Public Property Latitude() As Double
+        Private codecField As String
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
+        Public Property Languages() As LanguagesTypeLanguage()
             Get
-                Return Me.latitudeField
+                Return Me.languagesField
             End Get
             Set
-                Me.latitudeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Approximate longitude of recording
-'''					
-'''</remarks>
-        Public Property Longitude() As Double
-            Get
-                Return Me.longitudeField
-            End Get
-            Set
-                Me.longitudeField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Describes a dump of a linear media, that is, a media that is read byte-by-byte like for example, a ROM chip, a game cartridge, a PCMCIA SRAM card, etc...
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class LinearMediaType
-        
-        Private imageField5 As ImageType
-        
-        Private sizeField5 As Long
-        
-        Private imageChecksumsField As ChecksumType()
-        
-        Private checksumsField8 As ChecksumType()
-        
-        Private titleField As String
-        
-        Private sequenceField3 As Integer
-        
-        Private sequenceSpecifiedField As Boolean
-        
-        Private imageInterleaveField As Integer
-        
-        Private imageInterleaveSpecifiedField As Boolean
-        
-        Private interleaveField As Integer
-        
-        Private interleaveSpecifiedField As Boolean
-        
-        Private manufacturerField3 As String
-        
-        Private modelField2 As String
-        
-        Private packageField As String
-        
-        Private interfaceField As String
-        
-        Private dimensionsField1 As DimensionsType
-        
-        Private scansField2 As ScansType
-        
-        Private dumpHardwareArrayField1 As DumpHardwareArrayType
-        
-        Private pCMCIAField As PCMCIAType
-        
-        Private copyProtectionField1 As String
-        
-        '''<remarks>
-'''Image file, or image description file, plus format (cue, toc, etc, etc)
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField5
-            End Get
-            Set
-                Me.imageField5 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Image file size
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField5
-            End Get
-            Set
-                Me.sizeField5 = Value
+                Me.languagesField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property ImageChecksums() As ChecksumType()
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property TrackNumber() As Integer
             Get
-                Return Me.imageChecksumsField
+                Return Me.trackNumberField
             End Get
             Set
-                Me.imageChecksumsField = Value
+                Me.trackNumberField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Codec() As String
             Get
-                Return Me.checksumsField8
+                Return Me.codecField
             End Get
             Set
-                Me.checksumsField8 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Title as it is labeled on media
-'''</remarks>
-        Public Property Title() As String
-            Get
-                Return Me.titleField
-            End Get
-            Set
-                Me.titleField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Sequence of media
-'''</remarks>
-        Public Property Sequence() As Integer
-            Get
-                Return Me.sequenceField3
-            End Get
-            Set
-                Me.sequenceField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property SequenceSpecified() As Boolean
-            Get
-                Return Me.sequenceSpecifiedField
-            End Get
-            Set
-                Me.sequenceSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''How many bytes must be read in image file for each byte in media
-'''</remarks>
-        Public Property ImageInterleave() As Integer
-            Get
-                Return Me.imageInterleaveField
-            End Get
-            Set
-                Me.imageInterleaveField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property ImageInterleaveSpecified() As Boolean
-            Get
-                Return Me.imageInterleaveSpecifiedField
-            End Get
-            Set
-                Me.imageInterleaveSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''How many bytes must be skipped in image file for each byte in media
-'''</remarks>
-        Public Property Interleave() As Integer
-            Get
-                Return Me.interleaveField
-            End Get
-            Set
-                Me.interleaveField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property InterleaveSpecified() As Boolean
-            Get
-                Return Me.interleaveSpecifiedField
-            End Get
-            Set
-                Me.interleaveSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media manufacturer
-'''</remarks>
-        Public Property Manufacturer() As String
-            Get
-                Return Me.manufacturerField3
-            End Get
-            Set
-                Me.manufacturerField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media model
-'''</remarks>
-        Public Property Model() As String
-            Get
-                Return Me.modelField2
-            End Get
-            Set
-                Me.modelField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media packaging (DIP, PCMCIA, Cartridge, etc)
-'''</remarks>
-        Public Property Package() As String
-            Get
-                Return Me.packageField
-            End Get
-            Set
-                Me.packageField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media interface
-'''</remarks>
-        Public Property Interface() As String
-            Get
-                Return Me.interfaceField
-            End Get
-            Set
-                Me.interfaceField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Dimensions of media
-'''</remarks>
-        Public Property Dimensions() As DimensionsType
-            Get
-                Return Me.dimensionsField1
-            End Get
-            Set
-                Me.dimensionsField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Scan of media
-'''</remarks>
-        Public Property Scans() As ScansType
-            Get
-                Return Me.scansField2
-            End Get
-            Set
-                Me.scansField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Array of hardware used to dump media
-'''</remarks>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
-            Get
-                Return Me.dumpHardwareArrayField1
-            End Get
-            Set
-                Me.dumpHardwareArrayField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Present if media is a PCMCIA Linear Flash or SRAM card, to contain PCMCIA specific information
-'''</remarks>
-        Public Property PCMCIA() As PCMCIAType
-            Get
-                Return Me.pCMCIAField
-            End Get
-            Set
-                Me.pCMCIAField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Copy protection, if applicable
-'''</remarks>
-        Public Property CopyProtection() As String
-            Get
-                Return Me.copyProtectionField1
-            End Get
-            Set
-                Me.copyProtectionField1 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Contains PCMCIA card information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class PCMCIAType
-        
-        Private cISField As DumpType
-        
-        '''<remarks>
-'''Contains the PCMCIA Card Information Structure dump.
-'''</remarks>
-        Public Property CIS() As DumpType
-            Get
-                Return Me.cISField
-            End Get
-            Set
-                Me.cISField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Contains PCI/PCI-X/PCIe card information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class PCIType
-        
-        Private vendorIDField As Integer
-        
-        Private deviceIDField As Integer
-        
-        Private configurationField As DumpType
-        
-        Private expansionROMField As LinearMediaType
-        
-        '''<remarks>
-'''Contains PCI Vendor ID
-'''</remarks>
-        Public Property VendorID() As Integer
-            Get
-                Return Me.vendorIDField
-            End Get
-            Set
-                Me.vendorIDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains PCI Device ID
-'''</remarks>
-        Public Property DeviceID() As Integer
-            Get
-                Return Me.deviceIDField
-            End Get
-            Set
-                Me.deviceIDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Binary dump of the PCI configuration space
-'''</remarks>
-        Public Property Configuration() As DumpType
-            Get
-                Return Me.configurationField
-            End Get
-            Set
-                Me.configurationField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Binary dump of the PCI expansion rom
-'''</remarks>
-        Public Property ExpansionROM() As LinearMediaType
-            Get
-                Return Me.expansionROMField
-            End Get
-            Set
-                Me.expansionROMField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Describes a dump of a block (sector) layered media
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class BlockMediaType
-        
-        Private imageField6 As ImageType
-        
-        Private sizeField6 As Long
-        
-        Private checksumsField9 As ChecksumType()
-        
-        Private sequenceField4 As SequenceType
-        
-        Private manufacturerField4 As String
-        
-        Private modelField3 As String
-        
-        Private serialField3 As String
-        
-        Private firmwareField1 As String
-        
-        Private interfaceField1 As String
-        
-        Private physicalBlockSizeField As Integer
-        
-        Private logicalBlockSizeField As Integer
-        
-        Private logicalBlocksField As Long
-        
-        Private scansField3 As ScansType
-        
-        Private aTAField As ATAType
-        
-        Private pCIField As PCIType
-        
-        Private pCMCIAField1 As PCMCIAType
-        
-        Private secureDigitalField As SecureDigitalType
-        
-        Private sCSIField As SCSIType
-        
-        Private uSBField As USBType
-        
-        Private headsField As Long
-        
-        Private headsSpecifiedField As Boolean
-        
-        Private cylindersField As Long
-        
-        Private cylindersSpecifiedField As Boolean
-        
-        Private sectorsPerTrackField As Long
-        
-        Private sectorsPerTrackSpecifiedField As Boolean
-        
-        Private trackField1 As BlockTrackType()
-        
-        Private copyProtectionField2 As String
-        
-        Private dimensionsField2 As DimensionsType
-        
-        Private fileSystemInformationField1 As PartitionType()
-        
-        Private dumpHardwareArrayField2 As DumpHardwareArrayType
-        
-        '''<remarks>
-'''Image file, or image description file, plus format (cue, toc, etc, etc)
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField6
-            End Get
-            Set
-                Me.imageField6 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Image file size
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField6
-            End Get
-            Set
-                Me.sizeField6 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
-            Get
-                Return Me.checksumsField9
-            End Get
-            Set
-                Me.checksumsField9 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media sequence information
-'''</remarks>
-        Public Property Sequence() As SequenceType
-            Get
-                Return Me.sequenceField4
-            End Get
-            Set
-                Me.sequenceField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media manufacturer (for fixed AND removable media)
-'''</remarks>
-        Public Property Manufacturer() As String
-            Get
-                Return Me.manufacturerField4
-            End Get
-            Set
-                Me.manufacturerField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media model (for fixed AND removable media)
-'''</remarks>
-        Public Property Model() As String
-            Get
-                Return Me.modelField3
-            End Get
-            Set
-                Me.modelField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media serial number (for fixed and, if applicable, removable media)
-'''</remarks>
-        Public Property Serial() As String
-            Get
-                Return Me.serialField3
-            End Get
-            Set
-                Me.serialField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media firmware version, for fixed media only
-'''</remarks>
-        Public Property Firmware() As String
-            Get
-                Return Me.firmwareField1
-            End Get
-            Set
-                Me.firmwareField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media physical interface, for fixed media only
-'''</remarks>
-        Public Property Interface() As String
-            Get
-                Return Me.interfaceField1
-            End Get
-            Set
-                Me.interfaceField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Physical block size in bytes
-'''</remarks>
-        Public Property PhysicalBlockSize() As Integer
-            Get
-                Return Me.physicalBlockSizeField
-            End Get
-            Set
-                Me.physicalBlockSizeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Logical block size in bytes
-'''</remarks>
-        Public Property LogicalBlockSize() As Integer
-            Get
-                Return Me.logicalBlockSizeField
-            End Get
-            Set
-                Me.logicalBlockSizeField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''User accessible logical blocks
-'''</remarks>
-        Public Property LogicalBlocks() As Long
-            Get
-                Return Me.logicalBlocksField
-            End Get
-            Set
-                Me.logicalBlocksField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media scans
-'''</remarks>
-        Public Property Scans() As ScansType
-            Get
-                Return Me.scansField3
-            End Get
-            Set
-                Me.scansField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''If media responds to native ATA/ATAPI commands, information here
-'''</remarks>
-        Public Property ATA() As ATAType
-            Get
-                Return Me.aTAField
-            End Get
-            Set
-                Me.aTAField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''If media is PCI/PCI-X/PCIe attached, information here
-'''</remarks>
-        Public Property PCI() As PCIType
-            Get
-                Return Me.pCIField
-            End Get
-            Set
-                Me.pCIField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''If media is PCMCIA attached, information here
-'''</remarks>
-        Public Property PCMCIA() As PCMCIAType
-            Get
-                Return Me.pCMCIAField1
-            End Get
-            Set
-                Me.pCMCIAField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''If media is SecureDigital or MultiMediaCard, information here
-'''</remarks>
-        Public Property SecureDigital() As SecureDigitalType
-            Get
-                Return Me.secureDigitalField
-            End Get
-            Set
-                Me.secureDigitalField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''If media conforms to SCSI specifications, information here
-'''</remarks>
-        Public Property SCSI() As SCSIType
-            Get
-                Return Me.sCSIField
-            End Get
-            Set
-                Me.sCSIField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''If media is USB attached, information here
-'''</remarks>
-        Public Property USB() As USBType
-            Get
-                Return Me.uSBField
-            End Get
-            Set
-                Me.uSBField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Real physical heads
-'''</remarks>
-        Public Property Heads() As Long
-            Get
-                Return Me.headsField
-            End Get
-            Set
-                Me.headsField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property HeadsSpecified() As Boolean
-            Get
-                Return Me.headsSpecifiedField
-            End Get
-            Set
-                Me.headsSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Real physical cylinders
-'''</remarks>
-        Public Property Cylinders() As Long
-            Get
-                Return Me.cylindersField
-            End Get
-            Set
-                Me.cylindersField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property CylindersSpecified() As Boolean
-            Get
-                Return Me.cylindersSpecifiedField
-            End Get
-            Set
-                Me.cylindersSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Sectors per track, if constant, if not, this field is ommited and separate tracks must be indicated
-'''</remarks>
-        Public Property SectorsPerTrack() As Long
-            Get
-                Return Me.sectorsPerTrackField
-            End Get
-            Set
-                Me.sectorsPerTrackField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property SectorsPerTrackSpecified() As Boolean
-            Get
-                Return Me.sectorsPerTrackSpecifiedField
-            End Get
-            Set
-                Me.sectorsPerTrackSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Tracks for block media that allow separate cylinder/head addressing, like floppies. It can be ommitted for media that strictly follows a standard (no copy protection either).
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("Track")>  _
-        Public Property Track() As BlockTrackType()
-            Get
-                Return Me.trackField1
-            End Get
-            Set
-                Me.trackField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Copy protection, if applicable
-'''</remarks>
-        Public Property CopyProtection() As String
-            Get
-                Return Me.copyProtectionField2
-            End Get
-            Set
-                Me.copyProtectionField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Dimensions of the media
-'''</remarks>
-        Public Property Dimensions() As DimensionsType
-            Get
-                Return Me.dimensionsField2
-            End Get
-            Set
-                Me.dimensionsField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Partition", IsNullable:=false)>  _
-        Public Property FileSystemInformation() As PartitionType()
-            Get
-                Return Me.fileSystemInformationField1
-            End Get
-            Set
-                Me.fileSystemInformationField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Array of hardware used to dump media, if removable
-'''</remarks>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
-            Get
-                Return Me.dumpHardwareArrayField2
-            End Get
-            Set
-                Me.dumpHardwareArrayField2 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Contains ATA/ATAPI device information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ATAType
-        
-        Private identifyField As DumpType
-        
-        '''<remarks>
-'''Contains ATA/ATAPI IDENTIFY binary dump
-'''</remarks>
-        Public Property Identify() As DumpType
-            Get
-                Return Me.identifyField
-            End Get
-            Set
-                Me.identifyField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Contains SD/MMC device information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SecureDigitalType
-        
-        Private cIDField As DumpType
-        
-        Private cSDField As DumpType
-        
-        Private extendedCSDField As DumpType
-        
-        '''<remarks>
-'''Contains SD/MMC's CID
-'''</remarks>
-        Public Property CID() As DumpType
-            Get
-                Return Me.cIDField
-            End Get
-            Set
-                Me.cIDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains SD/MMC's CSD
-'''</remarks>
-        Public Property CSD() As DumpType
-            Get
-                Return Me.cSDField
-            End Get
-            Set
-                Me.cSDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains SD/MMC's extended CSD
-'''</remarks>
-        Public Property ExtendedCSD() As DumpType
-            Get
-                Return Me.extendedCSDField
-            End Get
-            Set
-                Me.extendedCSDField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Contains SCSI device information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SCSIType
-        
-        Private inquiryField As DumpType
-        
-        Private eVPDField As EVPDType()
-        
-        Private modeSenseField As DumpType
-        
-        Private modeSense10Field As DumpType
-        
-        Private logSenseField As DumpType
-        
-        '''<remarks>
-'''Contains SCSI INQUIRY result dump
-'''</remarks>
-        Public Property Inquiry() As DumpType
-            Get
-                Return Me.inquiryField
-            End Get
-            Set
-                Me.inquiryField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains SCSI EVPD dumps
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("EVPD")>  _
-        Public Property EVPD() As EVPDType()
-            Get
-                Return Me.eVPDField
-            End Get
-            Set
-                Me.eVPDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains SCSI MODE SENSE(6) dump
-'''</remarks>
-        Public Property ModeSense() As DumpType
-            Get
-                Return Me.modeSenseField
-            End Get
-            Set
-                Me.modeSenseField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains SCSI MODE SENSE(10) dump
-'''</remarks>
-        Public Property ModeSense10() As DumpType
-            Get
-                Return Me.modeSense10Field
-            End Get
-            Set
-                Me.modeSense10Field = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains SCSI LOG SENSE dump
-'''</remarks>
-        Public Property LogSense() As DumpType
-            Get
-                Return Me.logSenseField
-            End Get
-            Set
-                Me.logSenseField = Value
+                Me.codecField = Value
             End Set
         End Property
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class EVPDType
+    Partial Public Class VideoTracksType
         
-        Private pageField As Integer
+        Private languagesField As LanguagesTypeLanguage()
         
-        Private pageSpecifiedField As Boolean
+        Private trackNumberField As Integer
         
-        Private imageField7 As String
+        Private codecField As String
         
-        Private sizeField7 As Long
+        Private horizontalField As Integer
         
-        Private checksumsField10 As ChecksumType()
+        Private verticalField As Integer
         
-        '''<remarks>
-'''EVPD page
-'''</remarks>
+        Private meanBitrateField As Long
+        
+        Private threeDField As Boolean
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
+        Public Property Languages() As LanguagesTypeLanguage()
+            Get
+                Return Me.languagesField
+            End Get
+            Set
+                Me.languagesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property page() As Integer
+        Public Property TrackNumber() As Integer
             Get
-                Return Me.pageField
+                Return Me.trackNumberField
             End Get
             Set
-                Me.pageField = Value
+                Me.trackNumberField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlIgnore()>  _
-        Public Overridable Property pageSpecified() As Boolean
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Codec() As String
             Get
-                Return Me.pageSpecifiedField
+                Return Me.codecField
             End Get
             Set
-                Me.pageSpecifiedField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''File containing SCSI Extended Vendor Page Descriptor dump
-'''</remarks>
-        Public Property Image() As String
-            Get
-                Return Me.imageField7
-            End Get
-            Set
-                Me.imageField7 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of SCSI Extended Vendor Page Descriptor dump
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField7
-            End Get
-            Set
-                Me.sizeField7 = Value
+                Me.codecField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Horizontal() As Integer
             Get
-                Return Me.checksumsField10
+                Return Me.horizontalField
             End Get
             Set
-                Me.checksumsField10 = Value
+                Me.horizontalField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Vertical() As Integer
+            Get
+                Return Me.verticalField
+            End Get
+            Set
+                Me.verticalField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property MeanBitrate() As Long
+            Get
+                Return Me.meanBitrateField
+            End Get
+            Set
+                Me.meanBitrateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property ThreeD() As Boolean
+            Get
+                Return Me.threeDField
+            End Get
+            Set
+                Me.threeDField = Value
             End Set
         End Property
     End Class
     
-    '''<remarks>
-'''Contains USB device information
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class USBType
+    Partial Public Class AudioTracksType
         
-        Private vendorIDField1 As Integer
+        Private languagesField As LanguagesTypeLanguage()
         
-        Private productIDField As Integer
+        Private trackNumberField As Integer
         
-        Private descriptorsField As DumpType
+        Private accoustIDField As String
         
-        '''<remarks>
-'''Contains USB Vendor ID
-'''</remarks>
-        Public Property VendorID() As Integer
+        Private codecField As String
+        
+        Private channelsField As Integer
+        
+        Private sampleRateField As Integer
+        
+        Private meanBitrateField As Long
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
+        Public Property Languages() As LanguagesTypeLanguage()
             Get
-                Return Me.vendorIDField1
+                Return Me.languagesField
             End Get
             Set
-                Me.vendorIDField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Contains USB Product ID
-'''</remarks>
-        Public Property ProductID() As Integer
-            Get
-                Return Me.productIDField
-            End Get
-            Set
-                Me.productIDField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Binary dump of the USB descriptors
-'''</remarks>
-        Public Property Descriptors() As DumpType
-            Get
-                Return Me.descriptorsField
-            End Get
-            Set
-                Me.descriptorsField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Information about track in non-abstracted block based media
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class BlockTrackType
-        
-        Private imageField8 As ImageType
-        
-        Private sizeField8 As Long
-        
-        Private headField As Long
-        
-        Private cylinderField As Long
-        
-        Private startSectorField2 As Long
-        
-        Private endSectorField2 As Long
-        
-        Private sectorsField1 As Long
-        
-        Private bytesPerSectorField1 As Integer
-        
-        Private checksumsField11 As ChecksumType()
-        
-        Private formatField2 As String
-        
-        '''<remarks>
-'''File containing track dump, and format
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField8
-            End Get
-            Set
-                Me.imageField8 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of track dump in bytes
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField8
-            End Get
-            Set
-                Me.sizeField8 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Head (from 0) where this track resides
-'''</remarks>
-        Public Property Head() As Long
-            Get
-                Return Me.headField
-            End Get
-            Set
-                Me.headField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Cylinder where this track resides
-'''</remarks>
-        Public Property Cylinder() As Long
-            Get
-                Return Me.cylinderField
-            End Get
-            Set
-                Me.cylinderField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track start sector
-'''</remarks>
-        Public Property StartSector() As Long
-            Get
-                Return Me.startSectorField2
-            End Get
-            Set
-                Me.startSectorField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track end sector
-'''</remarks>
-        Public Property EndSector() As Long
-            Get
-                Return Me.endSectorField2
-            End Get
-            Set
-                Me.endSectorField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Sectors in track. Not necessarily EndSector-StartSector, as there can be hidden sectors
-'''</remarks>
-        Public Property Sectors() As Long
-            Get
-                Return Me.sectorsField1
-            End Get
-            Set
-                Me.sectorsField1 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Bytes per sector, physical undecoded tag-less
-'''</remarks>
-        Public Property BytesPerSector() As Integer
-            Get
-                Return Me.bytesPerSectorField1
-            End Get
-            Set
-                Me.bytesPerSectorField1 = Value
+                Me.languagesField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property TrackNumber() As Integer
             Get
-                Return Me.checksumsField11
+                Return Me.trackNumberField
             End Get
             Set
-                Me.checksumsField11 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Track format (IBM FM, IBM MFM, Amiga MFM, Apple GCR, etc)
-'''</remarks>
-        Public Property Format() As String
-            Get
-                Return Me.formatField2
-            End Get
-            Set
-                Me.formatField2 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Describes a dump of a media that is stored in an audio device (like a ZX Spectrum cassette)
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class AudioMediaType
-        
-        Private imageField9 As ImageType
-        
-        Private sizeField9 As Long
-        
-        Private checksumsField12 As ChecksumType()
-        
-        Private sequenceField5 As SequenceType
-        
-        Private manufacturerField5 As String
-        
-        Private modelField4 As String
-        
-        Private accoustIDField2 As String
-        
-        Private blockField As AudioBlockType()
-        
-        Private copyProtectionField3 As String
-        
-        Private dimensionsField3 As DimensionsType
-        
-        Private scansField4 As ScansType
-        
-        Private dumpHardwareArrayField3 As DumpHardwareArrayType
-        
-        '''<remarks>
-'''Image file, or image description file, plus format (cue, toc, etc, etc)
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField9
-            End Get
-            Set
-                Me.imageField9 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Image file size
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField9
-            End Get
-            Set
-                Me.sizeField9 = Value
+                Me.trackNumberField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property AccoustID() As String
             Get
-                Return Me.checksumsField12
+                Return Me.accoustIDField
             End Get
             Set
-                Me.checksumsField12 = Value
+                Me.accoustIDField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Media sequence information
-'''</remarks>
-        Public Property Sequence() As SequenceType
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Codec() As String
             Get
-                Return Me.sequenceField5
+                Return Me.codecField
             End Get
             Set
-                Me.sequenceField5 = Value
+                Me.codecField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Media manufacturer (if known)
-'''</remarks>
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property Channels() As Integer
+            Get
+                Return Me.channelsField
+            End Get
+            Set
+                Me.channelsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property SampleRate() As Integer
+            Get
+                Return Me.sampleRateField
+            End Get
+            Set
+                Me.sampleRateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property MeanBitrate() As Long
+            Get
+                Return Me.meanBitrateField
+            End Get
+            Set
+                Me.meanBitrateField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class AdvertisementType
+        
+        Private manufacturerField As String
+        
+        Private productField As String
+        
+        Private fileField As FileType
+        
+        Private fileSizeField As Long
+        
+        Private framesField As Long
+        
+        Private framesFieldSpecified As Boolean
+        
+        Private durationField As Long
+        
+        Private meanFrameRateField As Integer
+        
+        Private meanFrameRateFieldSpecified As Boolean
+        
+        Private checksumsField As ChecksumType()
+        
+        Private audioTrackField As AudioTracksType()
+        
+        Private videoTrackField As VideoTracksType()
+        
+        Private subtitleTrackField As SubtitleTracksType()
+        
+        Private recordingField As RecordingType
+        
+        '''<remarks/>
         Public Property Manufacturer() As String
             Get
-                Return Me.manufacturerField5
+                Return Me.manufacturerField
             End Get
             Set
-                Me.manufacturerField5 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Media model (if known)
-'''</remarks>
-        Public Property Model() As String
-            Get
-                Return Me.modelField4
-            End Get
-            Set
-                Me.modelField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''AccoustID of media in audio form
-'''</remarks>
-        Public Property AccoustID() As String
-            Get
-                Return Me.accoustIDField2
-            End Get
-            Set
-                Me.accoustIDField2 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Blocks on audio media that uses separate blocks
-'''</remarks>
-        <System.Xml.Serialization.XmlElementAttribute("Block")>  _
-        Public Property Block() As AudioBlockType()
-            Get
-                Return Me.blockField
-            End Get
-            Set
-                Me.blockField = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Copy protection, if applicable
-'''</remarks>
-        Public Property CopyProtection() As String
-            Get
-                Return Me.copyProtectionField3
-            End Get
-            Set
-                Me.copyProtectionField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Dimensions of the media
-'''</remarks>
-        Public Property Dimensions() As DimensionsType
-            Get
-                Return Me.dimensionsField3
-            End Get
-            Set
-                Me.dimensionsField3 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Scan of media
-'''</remarks>
-        Public Property Scans() As ScansType
-            Get
-                Return Me.scansField4
-            End Get
-            Set
-                Me.scansField4 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Array of hardware used to dump media, if removable
-'''</remarks>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
-            Get
-                Return Me.dumpHardwareArrayField3
-            End Get
-            Set
-                Me.dumpHardwareArrayField3 = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks>
-'''Information about "blocks" in audio based media
-'''</remarks>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class AudioBlockType
-        
-        Private imageField10 As ImageType
-        
-        Private sizeField10 As Long
-        
-        Private accoustIDField3 As String
-        
-        Private checksumsField13 As ChecksumType()
-        
-        Private formatField3 As String
-        
-        '''<remarks>
-'''File containing block dump, and format
-'''</remarks>
-        Public Property Image() As ImageType
-            Get
-                Return Me.imageField10
-            End Get
-            Set
-                Me.imageField10 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''Size of block dump in bytes
-'''</remarks>
-        Public Property Size() As Long
-            Get
-                Return Me.sizeField10
-            End Get
-            Set
-                Me.sizeField10 = Value
-            End Set
-        End Property
-        
-        '''<remarks>
-'''AccoustID of block
-'''</remarks>
-        Public Property AccoustID() As String
-            Get
-                Return Me.accoustIDField3
-            End Get
-            Set
-                Me.accoustIDField3 = Value
+                Me.manufacturerField = Value
             End Set
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItem(ElementName:="Checksum", IsNullable:=false)>  _
-        Public Property Checksums() As ChecksumType()
+        Public Property Product() As String
             Get
-                Return Me.checksumsField13
+                Return Me.productField
             End Get
             Set
-                Me.checksumsField13 = Value
+                Me.productField = Value
             End Set
         End Property
         
-        '''<remarks>
-'''Block format/encoding
-'''</remarks>
-        Public Property Format() As String
+        '''<remarks/>
+        Public Property File() As FileType
             Get
-                Return Me.formatField3
+                Return Me.fileField
             End Get
             Set
-                Me.formatField3 = Value
+                Me.fileField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property FileSize() As Long
+            Get
+                Return Me.fileSizeField
+            End Get
+            Set
+                Me.fileSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Frames() As Long
+            Get
+                Return Me.framesField
+            End Get
+            Set
+                Me.framesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property FramesSpecified() As Boolean
+            Get
+                Return Me.framesFieldSpecified
+            End Get
+            Set
+                Me.framesFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Duration() As Long
+            Get
+                Return Me.durationField
+            End Get
+            Set
+                Me.durationField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property MeanFrameRate() As Integer
+            Get
+                Return Me.meanFrameRateField
+            End Get
+            Set
+                Me.meanFrameRateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property MeanFrameRateSpecified() As Boolean
+            Get
+                Return Me.meanFrameRateFieldSpecified
+            End Get
+            Set
+                Me.meanFrameRateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("AudioTrack")>  _
+        Public Property AudioTrack() As AudioTracksType()
+            Get
+                Return Me.audioTrackField
+            End Get
+            Set
+                Me.audioTrackField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("VideoTrack")>  _
+        Public Property VideoTrack() As VideoTracksType()
+            Get
+                Return Me.videoTrackField
+            End Get
+            Set
+                Me.videoTrackField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("SubtitleTrack")>  _
+        Public Property SubtitleTrack() As SubtitleTracksType()
+            Get
+                Return Me.subtitleTrackField
+            End Get
+            Set
+                Me.subtitleTrackField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Recording() As RecordingType
+            Get
+                Return Me.recordingField
+            End Get
+            Set
+                Me.recordingField = Value
             End Set
         End Property
     End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SubChannelType
+        
+        Private imageField As ImageType
+        
+        Private sizeField As Long
+        
+        Private checksumsField As ChecksumType()
+        
+        '''<remarks/>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class TrackSequenceType
+        
+        Private trackNumberField As Integer
+        
+        Private sessionField As Integer
+        
+        '''<remarks/>
+        Public Property TrackNumber() As Integer
+            Get
+                Return Me.trackNumberField
+            End Get
+            Set
+                Me.trackNumberField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Session() As Integer
+            Get
+                Return Me.sessionField
+            End Get
+            Set
+                Me.sessionField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class TrackType
+        
+        Private imageField As ImageType
+        
+        Private sizeField As Long
+        
+        Private sequenceField As TrackSequenceType
+        
+        Private startMSFField As String
+        
+        Private endMSFField As String
+        
+        Private startSectorField As Long
+        
+        Private endSectorField As Long
+        
+        Private trackType1Field As TrackTypeTrackType
+        
+        Private bytesPerSectorField As Integer
+        
+        Private accoustIDField As String
+        
+        Private checksumsField As ChecksumType()
+        
+        Private subChannelField As SubChannelType
+        
+        Private fileSystemInformationField As PartitionType()
+        
+        '''<remarks/>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Sequence() As TrackSequenceType
+            Get
+                Return Me.sequenceField
+            End Get
+            Set
+                Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property StartMSF() As String
+            Get
+                Return Me.startMSFField
+            End Get
+            Set
+                Me.startMSFField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property EndMSF() As String
+            Get
+                Return Me.endMSFField
+            End Get
+            Set
+                Me.endMSFField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property StartSector() As Long
+            Get
+                Return Me.startSectorField
+            End Get
+            Set
+                Me.startSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property EndSector() As Long
+            Get
+                Return Me.endSectorField
+            End Get
+            Set
+                Me.endSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("TrackType")>  _
+        Public Property TrackType1() As TrackTypeTrackType
+            Get
+                Return Me.trackType1Field
+            End Get
+            Set
+                Me.trackType1Field = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property BytesPerSector() As Integer
+            Get
+                Return Me.bytesPerSectorField
+            End Get
+            Set
+                Me.bytesPerSectorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property AccoustID() As String
+            Get
+                Return Me.accoustIDField
+            End Get
+            Set
+                Me.accoustIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SubChannel() As SubChannelType
+            Get
+                Return Me.subChannelField
+            End Get
+            Set
+                Me.subChannelField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Partition", IsNullable:=false)>  _
+        Public Property FileSystemInformation() As PartitionType()
+            Get
+                Return Me.fileSystemInformationField
+            End Get
+            Set
+                Me.fileSystemInformationField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
+    Public Enum TrackTypeTrackType
+        
+        '''<remarks/>
+        audio
+        
+        '''<remarks/>
+        mode0
+        
+        '''<remarks/>
+        mode1
+        
+        '''<remarks/>
+        mode2
+        
+        '''<remarks/>
+        m2f1
+        
+        '''<remarks/>
+        m2f2
+        
+        '''<remarks/>
+        dvd
+        
+        '''<remarks/>
+        hddvd
+        
+        '''<remarks/>
+        bluray
+        
+        '''<remarks/>
+        ddcd
+    End Enum
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class PS3EncryptionType
+        
+        Private keyField As String
+        
+        Private serialField As String
+        
+        '''<remarks/>
+        Public Property Key() As String
+            Get
+                Return Me.keyField
+            End Get
+            Set
+                Me.keyField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Serial() As String
+            Get
+                Return Me.serialField
+            End Get
+            Set
+                Me.serialField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SecuritySectorsType
+        
+        Private startField As Long
+        
+        Private endField As Long
+        
+        '''<remarks/>
+        Public Property Start() As Long
+            Get
+                Return Me.startField
+            End Get
+            Set
+                Me.startField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property End() As Long
+            Get
+                Return Me.endField
+            End Get
+            Set
+                Me.endField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class BorderType
+        
+        Private imageField As String
+        
+        Private sizeField As Long
+        
+        Private checksumsField As ChecksumType()
+        
+        Private sessionField As Integer
+        
+        Private sessionFieldSpecified As Boolean
+        
+        '''<remarks/>
+        Public Property Image() As String
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property session() As Integer
+            Get
+                Return Me.sessionField
+            End Get
+            Set
+                Me.sessionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property sessionSpecified() As Boolean
+            Get
+                Return Me.sessionFieldSpecified
+            End Get
+            Set
+                Me.sessionFieldSpecified = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class CaseType
+        
+        Private caseType1Field As CaseTypeCaseType
+        
+        Private scansField As ScansType
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("CaseType")>  _
+        Public Property CaseType1() As CaseTypeCaseType
+            Get
+                Return Me.caseType1Field
+            End Get
+            Set
+                Me.caseType1Field = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scans() As ScansType
+            Get
+                Return Me.scansField
+            End Get
+            Set
+                Me.scansField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
+    Public Enum CaseTypeCaseType
+        
+        '''<remarks/>
+        jewel
+        
+        '''<remarks/>
+        bigjewel
+        
+        '''<remarks/>
+        slimjewel
+        
+        '''<remarks/>
+        sleeve
+        
+        '''<remarks/>
+        qpack
+        
+        '''<remarks/>
+        digisleeve
+        
+        '''<remarks/>
+        discboxslider
+        
+        '''<remarks/>
+        compacplus
+        
+        '''<remarks/>
+        keepcase
+        
+        '''<remarks/>
+        snapcase
+        
+        '''<remarks/>
+        softcase
+        
+        '''<remarks/>
+        ecopack
+        
+        '''<remarks/>
+        liftlock
+        
+        '''<remarks/>
+        spindle
+        
+        '''<remarks/>
+        ps2case
+        
+        '''<remarks/>
+        ps3case
+        
+        '''<remarks/>
+        bluraykeepcase
+        
+        '''<remarks/>
+        pscase
+        
+        '''<remarks/>
+        dccase
+        
+        '''<remarks/>
+        saturncase
+        
+        '''<remarks/>
+        xboxcase
+        
+        '''<remarks/>
+        saturnbigcase
+        
+        '''<remarks/>
+        gccase
+        
+        '''<remarks/>
+        wiicase
+        
+        '''<remarks/>
+        unknown
+    End Enum
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class LayeredTextType
+        
+        Private layerField As Integer
+        
+        Private layerFieldSpecified As Boolean
+        
+        Private valueField As String
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property layer() As Integer
+            Get
+                Return Me.layerField
+            End Get
+            Set
+                Me.layerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property layerSpecified() As Boolean
+            Get
+                Return Me.layerFieldSpecified
+            End Get
+            Set
+                Me.layerFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlTextAttribute()>  _
+        Public Property Value() As String
+            Get
+                Return Me.valueField
+            End Get
+            Set
+                Me.valueField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SectorsType
+        
+        Private layerField As Integer
+        
+        Private layerFieldSpecified As Boolean
+        
+        Private valueField As Long
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property layer() As Integer
+            Get
+                Return Me.layerField
+            End Get
+            Set
+                Me.layerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property layerSpecified() As Boolean
+            Get
+                Return Me.layerFieldSpecified
+            End Get
+            Set
+                Me.layerFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlTextAttribute()>  _
+        Public Property Value() As Long
+            Get
+                Return Me.valueField
+            End Get
+            Set
+                Me.valueField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class LayersType
+        
+        Private sectorsField As SectorsType()
+        
+        Private typeField As LayersTypeType
+        
+        Private typeFieldSpecified As Boolean
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Sectors")>  _
+        Public Property Sectors() As SectorsType()
+            Get
+                Return Me.sectorsField
+            End Get
+            Set
+                Me.sectorsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property type() As LayersTypeType
+            Get
+                Return Me.typeField
+            End Get
+            Set
+                Me.typeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property typeSpecified() As Boolean
+            Get
+                Return Me.typeFieldSpecified
+            End Get
+            Set
+                Me.typeFieldSpecified = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
+    Public Enum LayersTypeType
+        
+        '''<remarks/>
+        PTP
+        
+        '''<remarks/>
+        OTP
+    End Enum
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class OpticalDiscType
+        
+        Private imageField As ImageType
+        
+        Private sizeField As Long
+        
+        Private sequenceField As SequenceType
+        
+        Private layersField As LayersType
+        
+        Private checksumsField As ChecksumType()
+        
+        Private ringCodeField As LayeredTextType()
+        
+        Private masteringSIDField As LayeredTextType()
+        
+        Private toolstampField As LayeredTextType()
+        
+        Private mouldSIDField As LayeredTextType()
+        
+        Private mouldTextField As LayeredTextType()
+        
+        Private discTypeField As String
+        
+        Private discSubTypeField As String
+        
+        Private offsetField As Integer
+        
+        Private offsetFieldSpecified As Boolean
+        
+        Private tracksField As Integer()
+        
+        Private sessionsField As Integer
+        
+        Private copyProtectionField As String
+        
+        Private dimensionsField As DimensionsType
+        
+        Private caseField As CaseType
+        
+        Private scansField As ScansType
+        
+        Private pFIField As DumpType
+        
+        Private dMIField As DumpType
+        
+        Private cMIField As DumpType
+        
+        Private bCAField As DumpType
+        
+        Private aTIPField As DumpType
+        
+        Private pMAField As DumpType
+        
+        Private leadInField As BorderType()
+        
+        Private leadOutField As BorderType()
+        
+        Private xboxSecuritySectorsField As SecuritySectorsType()
+        
+        Private pS3EncryptionField As PS3EncryptionType
+        
+        Private trackField As TrackType()
+        
+        Private dumpHardwareArrayField As DumpHardwareArrayType
+        
+        '''<remarks/>
+        Public Property Image() As ImageType
+            Get
+                Return Me.imageField
+            End Get
+            Set
+                Me.imageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Size() As Long
+            Get
+                Return Me.sizeField
+            End Get
+            Set
+                Me.sizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Sequence() As SequenceType
+            Get
+                Return Me.sequenceField
+            End Get
+            Set
+                Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Layers() As LayersType
+            Get
+                Return Me.layersField
+            End Get
+            Set
+                Me.layersField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("RingCode")>  _
+        Public Property RingCode() As LayeredTextType()
+            Get
+                Return Me.ringCodeField
+            End Get
+            Set
+                Me.ringCodeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("MasteringSID")>  _
+        Public Property MasteringSID() As LayeredTextType()
+            Get
+                Return Me.masteringSIDField
+            End Get
+            Set
+                Me.masteringSIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Toolstamp")>  _
+        Public Property Toolstamp() As LayeredTextType()
+            Get
+                Return Me.toolstampField
+            End Get
+            Set
+                Me.toolstampField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("MouldSID")>  _
+        Public Property MouldSID() As LayeredTextType()
+            Get
+                Return Me.mouldSIDField
+            End Get
+            Set
+                Me.mouldSIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("MouldText")>  _
+        Public Property MouldText() As LayeredTextType()
+            Get
+                Return Me.mouldTextField
+            End Get
+            Set
+                Me.mouldTextField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DiscType() As String
+            Get
+                Return Me.discTypeField
+            End Get
+            Set
+                Me.discTypeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DiscSubType() As String
+            Get
+                Return Me.discSubTypeField
+            End Get
+            Set
+                Me.discSubTypeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Offset() As Integer
+            Get
+                Return Me.offsetField
+            End Get
+            Set
+                Me.offsetField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property OffsetSpecified() As Boolean
+            Get
+                Return Me.offsetFieldSpecified
+            End Get
+            Set
+                Me.offsetFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Tracks")>  _
+        Public Property Tracks() As Integer()
+            Get
+                Return Me.tracksField
+            End Get
+            Set
+                Me.tracksField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Sessions() As Integer
+            Get
+                Return Me.sessionsField
+            End Get
+            Set
+                Me.sessionsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CopyProtection() As String
+            Get
+                Return Me.copyProtectionField
+            End Get
+            Set
+                Me.copyProtectionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Dimensions() As DimensionsType
+            Get
+                Return Me.dimensionsField
+            End Get
+            Set
+                Me.dimensionsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Case() As CaseType
+            Get
+                Return Me.caseField
+            End Get
+            Set
+                Me.caseField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scans() As ScansType
+            Get
+                Return Me.scansField
+            End Get
+            Set
+                Me.scansField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PFI() As DumpType
+            Get
+                Return Me.pFIField
+            End Get
+            Set
+                Me.pFIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DMI() As DumpType
+            Get
+                Return Me.dMIField
+            End Get
+            Set
+                Me.dMIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CMI() As DumpType
+            Get
+                Return Me.cMIField
+            End Get
+            Set
+                Me.cMIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property BCA() As DumpType
+            Get
+                Return Me.bCAField
+            End Get
+            Set
+                Me.bCAField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ATIP() As DumpType
+            Get
+                Return Me.aTIPField
+            End Get
+            Set
+                Me.aTIPField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PMA() As DumpType
+            Get
+                Return Me.pMAField
+            End Get
+            Set
+                Me.pMAField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("LeadIn")>  _
+        Public Property LeadIn() As BorderType()
+            Get
+                Return Me.leadInField
+            End Get
+            Set
+                Me.leadInField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("LeadOut")>  _
+        Public Property LeadOut() As BorderType()
+            Get
+                Return Me.leadOutField
+            End Get
+            Set
+                Me.leadOutField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("SecuritySectors", IsNullable:=false)>  _
+        Public Property XboxSecuritySectors() As SecuritySectorsType()
+            Get
+                Return Me.xboxSecuritySectorsField
+            End Get
+            Set
+                Me.xboxSecuritySectorsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PS3Encryption() As PS3EncryptionType
+            Get
+                Return Me.pS3EncryptionField
+            End Get
+            Set
+                Me.pS3EncryptionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Track")>  _
+        Public Property Track() As TrackType()
+            Get
+                Return Me.trackField
+            End Get
+            Set
+                Me.trackField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DumpHardwareArray() As DumpHardwareArrayType
+            Get
+                Return Me.dumpHardwareArrayField
+            End Get
+            Set
+                Me.dumpHardwareArrayField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class UserManualType
+        
+        Private languageField As LanguagesTypeLanguage()
+        
+        Private pagesField As Integer
+        
+        Private pageSizeField As String
+        
+        Private scanField As ScanType
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
+            Get
+                Return Me.languageField
+            End Get
+            Set
+                Me.languageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Pages() As Integer
+            Get
+                Return Me.pagesField
+            End Get
+            Set
+                Me.pagesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PageSize() As String
+            Get
+                Return Me.pageSizeField
+            End Get
+            Set
+                Me.pageSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scan() As ScanType
+            Get
+                Return Me.scanField
+            End Get
+            Set
+                Me.scanField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class RequiredOperatingSystemType
+        
+        Private nameField As String
+        
+        Private versionField As String()
+        
+        '''<remarks/>
+        Public Property Name() As String
+            Get
+                Return Me.nameField
+            End Get
+            Set
+                Me.nameField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Version")>  _
+        Public Property Version() As String()
+            Get
+                Return Me.versionField
+            End Get
+            Set
+                Me.versionField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class BookType
+        
+        Private barcodesField As BarcodeType()
+        
+        Private coverField As CoverType
+        
+        Private nameField As String
+        
+        Private editorialField As String
+        
+        Private authorField As String
+        
+        Private publicationDateField As Date
+        
+        Private publicationDateFieldSpecified As Boolean
+        
+        Private languageField As LanguagesTypeLanguage()
+        
+        Private pagesField As Integer
+        
+        Private pagesFieldSpecified As Boolean
+        
+        Private pageSizeField As String
+        
+        Private scanField As ScanType
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Barcode", IsNullable:=false)>  _
+        Public Property Barcodes() As BarcodeType()
+            Get
+                Return Me.barcodesField
+            End Get
+            Set
+                Me.barcodesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Cover() As CoverType
+            Get
+                Return Me.coverField
+            End Get
+            Set
+                Me.coverField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Name() As String
+            Get
+                Return Me.nameField
+            End Get
+            Set
+                Me.nameField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Editorial() As String
+            Get
+                Return Me.editorialField
+            End Get
+            Set
+                Me.editorialField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Author() As String
+            Get
+                Return Me.authorField
+            End Get
+            Set
+                Me.authorField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute(DataType:="date")>  _
+        Public Property PublicationDate() As Date
+            Get
+                Return Me.publicationDateField
+            End Get
+            Set
+                Me.publicationDateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property PublicationDateSpecified() As Boolean
+            Get
+                Return Me.publicationDateFieldSpecified
+            End Get
+            Set
+                Me.publicationDateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
+            Get
+                Return Me.languageField
+            End Get
+            Set
+                Me.languageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Pages() As Integer
+            Get
+                Return Me.pagesField
+            End Get
+            Set
+                Me.pagesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property PagesSpecified() As Boolean
+            Get
+                Return Me.pagesFieldSpecified
+            End Get
+            Set
+                Me.pagesFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PageSize() As String
+            Get
+                Return Me.pageSizeField
+            End Get
+            Set
+                Me.pageSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scan() As ScanType
+            Get
+                Return Me.scanField
+            End Get
+            Set
+                Me.scanField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class CoverType
+        
+        Private fileField As FileType
+        
+        Private checksumsField As ChecksumType()
+        
+        Private thumbnailField As Byte()
+        
+        '''<remarks/>
+        Public Property File() As FileType
+            Get
+                Return Me.fileField
+            End Get
+            Set
+                Me.fileField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute(DataType:="base64Binary")>  _
+        Public Property Thumbnail() As Byte()
+            Get
+                Return Me.thumbnailField
+            End Get
+            Set
+                Me.thumbnailField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class MagazineType
+        
+        Private barcodesField As BarcodeType()
+        
+        Private coverField As CoverType
+        
+        Private nameField As String
+        
+        Private editorialField As String
+        
+        Private publicationDateField As Date
+        
+        Private publicationDateFieldSpecified As Boolean
+        
+        Private numberField As Integer
+        
+        Private numberFieldSpecified As Boolean
+        
+        Private languageField As LanguagesTypeLanguage()
+        
+        Private pagesField As Integer
+        
+        Private pagesFieldSpecified As Boolean
+        
+        Private pageSizeField As String
+        
+        Private scanField As ScanType
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Barcode", IsNullable:=false)>  _
+        Public Property Barcodes() As BarcodeType()
+            Get
+                Return Me.barcodesField
+            End Get
+            Set
+                Me.barcodesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Cover() As CoverType
+            Get
+                Return Me.coverField
+            End Get
+            Set
+                Me.coverField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Name() As String
+            Get
+                Return Me.nameField
+            End Get
+            Set
+                Me.nameField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Editorial() As String
+            Get
+                Return Me.editorialField
+            End Get
+            Set
+                Me.editorialField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute(DataType:="date")>  _
+        Public Property PublicationDate() As Date
+            Get
+                Return Me.publicationDateField
+            End Get
+            Set
+                Me.publicationDateField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property PublicationDateSpecified() As Boolean
+            Get
+                Return Me.publicationDateFieldSpecified
+            End Get
+            Set
+                Me.publicationDateFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Number() As Integer
+            Get
+                Return Me.numberField
+            End Get
+            Set
+                Me.numberField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property NumberSpecified() As Boolean
+            Get
+                Return Me.numberFieldSpecified
+            End Get
+            Set
+                Me.numberFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable:=false)>  _
+        Public Property Language() As LanguagesTypeLanguage()
+            Get
+                Return Me.languageField
+            End Get
+            Set
+                Me.languageField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Pages() As Integer
+            Get
+                Return Me.pagesField
+            End Get
+            Set
+                Me.pagesField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property PagesSpecified() As Boolean
+            Get
+                Return Me.pagesFieldSpecified
+            End Get
+            Set
+                Me.pagesFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PageSize() As String
+            Get
+                Return Me.pageSizeField
+            End Get
+            Set
+                Me.pageSizeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Scan() As ScanType
+            Get
+                Return Me.scanField
+            End Get
+            Set
+                Me.scanField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true)>  _
+    Public Enum ArchitecturesTypeArchitecture
+        
+        '''<remarks/>
+        i86
+        
+        '''<remarks/>
+        ia32
+        
+        '''<remarks/>
+        ia64
+        
+        '''<remarks/>
+        amd64
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("4004")>  _
+        Item4004
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("4040")>  _
+        Item4040
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("8080")>  _
+        Item8080
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("8008")>  _
+        Item8008
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("8085")>  _
+        Item8085
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("8051")>  _
+        Item8051
+        
+        '''<remarks/>
+        i860
+        
+        '''<remarks/>
+        i960
+        
+        '''<remarks/>
+        apx432
+        
+        '''<remarks/>
+        m68k
+        
+        '''<remarks/>
+        ppc
+        
+        '''<remarks/>
+        ppc64
+        
+        '''<remarks/>
+        x32
+        
+        '''<remarks/>
+        sparc
+        
+        '''<remarks/>
+        sparc64
+        
+        '''<remarks/>
+        arm
+        
+        '''<remarks/>
+        aarch64
+        
+        '''<remarks/>
+        avr
+        
+        '''<remarks/>
+        pic
+        
+        '''<remarks/>
+        msp430
+        
+        '''<remarks/>
+        z80
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("65816")>  _
+        Item65816
+        
+        '''<remarks/>
+        sh
+        
+        '''<remarks/>
+        sh1
+        
+        '''<remarks/>
+        sh2
+        
+        '''<remarks/>
+        sh3
+        
+        '''<remarks/>
+        sh5
+        
+        '''<remarks/>
+        sh4
+        
+        '''<remarks/>
+        m6800
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("6502")>  _
+        Item6502
+        
+        '''<remarks/>
+        axp
+        
+        '''<remarks/>
+        parisc
+        
+        '''<remarks/>
+        mips32
+        
+        '''<remarks/>
+        mips64
+        
+        '''<remarks/>
+        s360
+        
+        '''<remarks/>
+        s370
+        
+        '''<remarks/>
+        esa390
+        
+        '''<remarks/>
+        zarch
+        
+        '''<remarks/>
+        pdp11
+        
+        '''<remarks/>
+        vax
+        
+        '''<remarks/>
+        power
+    End Enum
 End Namespace

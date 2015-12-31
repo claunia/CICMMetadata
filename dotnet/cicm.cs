@@ -14,10 +14,8 @@
 namespace Schemas {
     
     
-    /// <remarks>
-///Digital Asset Metadata
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38,11 +36,11 @@ namespace Schemas {
         
         private CICMMetadataTypeReleaseType releaseTypeField;
         
-        private bool releaseTypeSpecifiedField;
+        private bool releaseTypeFieldSpecified;
         
         private System.DateTime releaseDateField;
         
-        private bool releaseDateSpecifiedField;
+        private bool releaseDateFieldSpecified;
         
         private BarcodeType[] barcodesField;
         
@@ -82,9 +80,7 @@ namespace Schemas {
         
         private AudioMediaType[] audioMediaField;
         
-        /// <remarks>
-///Developer of the set
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Developer")]
         public string[] Developer {
             get {
@@ -95,9 +91,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Publisher of the set
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Publisher")]
         public string[] Publisher {
             get {
@@ -108,9 +102,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Author/writer of the set
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Author")]
         public string[] Author {
             get {
@@ -121,9 +113,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Performer/narrator of the set
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Performer")]
         public string[] Performer {
             get {
@@ -134,9 +124,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Name of the set
-///</remarks>
+        /// <remarks/>
         public string Name {
             get {
                 return this.nameField;
@@ -146,10 +134,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Version of the set if applicable
-///					
-///</remarks>
+        /// <remarks/>
         public string Version {
             get {
                 return this.versionField;
@@ -159,10 +144,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-/// Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
-///					
-///</remarks>
+        /// <remarks/>
         public CICMMetadataTypeReleaseType ReleaseType {
             get {
                 return this.releaseTypeField;
@@ -173,19 +155,17 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool ReleaseTypeSpecified {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReleaseTypeSpecified {
             get {
-                return this.releaseTypeSpecifiedField;
+                return this.releaseTypeFieldSpecified;
             }
             set {
-                this.releaseTypeSpecifiedField = value;
+                this.releaseTypeFieldSpecified = value;
             }
         }
         
-        /// <remarks>
-///Date of release in YYYY-MM-DD
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
         public System.DateTime ReleaseDate {
             get {
@@ -197,18 +177,18 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool ReleaseDateSpecified {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReleaseDateSpecified {
             get {
-                return this.releaseDateSpecifiedField;
+                return this.releaseDateFieldSpecified;
             }
             set {
-                this.releaseDateSpecifiedField = value;
+                this.releaseDateFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Barcode", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Barcode", IsNullable=false)]
         public BarcodeType[] Barcodes {
             get {
                 return this.barcodesField;
@@ -218,9 +198,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Manufacturer part no. or SKU
-///</remarks>
+        /// <remarks/>
         public string PartNumber {
             get {
                 return this.partNumberField;
@@ -230,10 +208,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Manufacturer serial no., not to be confused with software registration serial number
-///					
-///</remarks>
+        /// <remarks/>
         public string SerialNumber {
             get {
                 return this.serialNumberField;
@@ -244,7 +219,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Keyword", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Keyword", IsNullable=false)]
         public string[] Keywords {
             get {
                 return this.keywordsField;
@@ -254,9 +229,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Magazine on this set
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Magazine")]
         public MagazineType[] Magazine {
             get {
@@ -267,9 +240,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Books on this set
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Book")]
         public BookType[] Book {
             get {
@@ -281,7 +252,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Category", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Category", IsNullable=false)]
         public string[] Categories {
             get {
                 return this.categoriesField;
@@ -292,7 +263,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Subcategory", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Subcategory", IsNullable=false)]
         public string[] Subcategories {
             get {
                 return this.subcategoriesField;
@@ -303,7 +274,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
         public LanguagesTypeLanguage[] Languages {
             get {
                 return this.languagesField;
@@ -314,7 +285,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="System", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("System", IsNullable=false)]
         public string[] Systems {
             get {
                 return this.systemsField;
@@ -325,7 +296,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Architecture", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Architecture", IsNullable=false)]
         public ArchitecturesTypeArchitecture[] Architectures {
             get {
                 return this.architecturesField;
@@ -336,7 +307,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="RequiredOperatingSystem", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("RequiredOperatingSystem", IsNullable=false)]
         public RequiredOperatingSystemType[] RequiredOperatingSystems {
             get {
                 return this.requiredOperatingSystemsField;
@@ -346,10 +317,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///User manual/guide, installation manual/guide and any applicable entity
-///					
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("UserManual")]
         public UserManualType[] UserManual {
             get {
@@ -360,10 +328,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Optical discs this set contains
-///					
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("OpticalDisc")]
         public OpticalDiscType[] OpticalDisc {
             get {
@@ -374,9 +339,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Advertisement
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Advertisement")]
         public AdvertisementType[] Advertisement {
             get {
@@ -387,9 +350,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Linear media (flash, ram, rom, cartridges)
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("LinearMedia")]
         public LinearMediaType[] LinearMedia {
             get {
@@ -400,9 +361,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Dump of a PCI/PCI-X/PCIe configuration space and/or expansion ROM
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PCICard")]
         public PCIType[] PCICard {
             get {
@@ -413,9 +372,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Dump of media that is block constructed (floppy, hard drive) or abstracted (most memory cards, flash drives, SSDs)
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("BlockMedia")]
         public BlockMediaType[] BlockMedia {
             get {
@@ -426,9 +383,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Dump of media that is stored as audio, like C64/Speccy/CPC cassettes.
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AudioMedia")]
         public AudioMediaType[] AudioMedia {
             get {
@@ -441,8 +396,9 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum CICMMetadataTypeReleaseType {
         
         /// <remarks/>
@@ -465,7 +421,7 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -499,8 +455,9 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BarcodeTypeType {
         
         /// <remarks/>
@@ -596,222 +553,54 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class MagazineType {
+    public partial class AudioBlockType {
         
-        private BarcodeType[] barcodesField1;
+        private ImageType imageField;
         
-        private CoverType coverField;
+        private long sizeField;
         
-        private string nameField1;
-        
-        private string editorialField;
-        
-        private System.DateTime publicationDateField;
-        
-        private bool publicationDateSpecifiedField;
-        
-        private int numberField;
-        
-        private bool numberSpecifiedField;
-        
-        private LanguagesTypeLanguage[] languageField;
-        
-        private int pagesField;
-        
-        private bool pagesSpecifiedField;
-        
-        private string pageSizeField;
-        
-        private ScanType scanField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Barcode", IsNullable=false)]
-        public BarcodeType[] Barcodes {
-            get {
-                return this.barcodesField1;
-            }
-            set {
-                this.barcodesField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Cover of this magazine
-///</remarks>
-        public CoverType Cover {
-            get {
-                return this.coverField;
-            }
-            set {
-                this.coverField = value;
-            }
-        }
-        
-        /// <remarks>
-///Name of this magazine
-///</remarks>
-        public string Name {
-            get {
-                return this.nameField1;
-            }
-            set {
-                this.nameField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Editorial of this magazine
-///</remarks>
-        public string Editorial {
-            get {
-                return this.editorialField;
-            }
-            set {
-                this.editorialField = value;
-            }
-        }
-        
-        /// <remarks>
-///Publication date of this magazine
-///					
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
-        public System.DateTime PublicationDate {
-            get {
-                return this.publicationDateField;
-            }
-            set {
-                this.publicationDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool PublicationDateSpecified {
-            get {
-                return this.publicationDateSpecifiedField;
-            }
-            set {
-                this.publicationDateSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Sequential number of this magazine
-///					
-///</remarks>
-        public int Number {
-            get {
-                return this.numberField;
-            }
-            set {
-                this.numberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool NumberSpecified {
-            get {
-                return this.numberSpecifiedField;
-            }
-            set {
-                this.numberSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
-        public LanguagesTypeLanguage[] Language {
-            get {
-                return this.languageField;
-            }
-            set {
-                this.languageField = value;
-            }
-        }
-        
-        /// <remarks>
-///Pages of this magazine, including cover and back
-///					
-///</remarks>
-        public int Pages {
-            get {
-                return this.pagesField;
-            }
-            set {
-                this.pagesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool PagesSpecified {
-            get {
-                return this.pagesSpecifiedField;
-            }
-            set {
-                this.pagesSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Page size of this magazine, standard or in WxH milimeters
-///					
-///</remarks>
-        public string PageSize {
-            get {
-                return this.pageSizeField;
-            }
-            set {
-                this.pageSizeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Scan of this magazine
-///</remarks>
-        public ScanType Scan {
-            get {
-                return this.scanField;
-            }
-            set {
-                this.scanField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CoverType {
-        
-        private FileType fileField;
+        private string accoustIDField;
         
         private ChecksumType[] checksumsField;
         
-        private byte[] thumbnailField;
+        private string formatField;
         
-        /// <remarks>
-///Cover file
-///</remarks>
-        public FileType File {
+        /// <remarks/>
+        public ImageType Image {
             get {
-                return this.fileField;
+                return this.imageField;
             }
             set {
-                this.fileField = value;
+                this.imageField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AccoustID {
+            get {
+                return this.accoustIDField;
+            }
+            set {
+                this.accoustIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
         public ChecksumType[] Checksums {
             get {
                 return this.checksumsField;
@@ -821,31 +610,31 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Base64 of JPEG thumbnail
-///</remarks>
-        public byte[] Thumbnail {
+        /// <remarks/>
+        public string Format {
             get {
-                return this.thumbnailField;
+                return this.formatField;
             }
             set {
-                this.thumbnailField = value;
+                this.formatField = value;
             }
         }
     }
     
-    /// <remarks>
-///File
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FileType {
+    public partial class ImageType {
         
         private string formatField;
         
-        private string valueField1;
+        private long offsetField;
+        
+        private bool offsetFieldSpecified;
+        
+        private string valueField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -859,36 +648,58 @@ namespace Schemas {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public long offset {
+            get {
+                return this.offsetField;
+            }
+            set {
+                this.offsetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool offsetSpecified {
+            get {
+                return this.offsetFieldSpecified;
+            }
+            set {
+                this.offsetFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value {
             get {
-                return this.valueField1;
+                return this.valueField;
             }
             set {
-                this.valueField1 = value;
+                this.valueField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ChecksumType {
         
-        private ChecksumTypeType typeField1;
+        private ChecksumTypeType typeField;
         
-        private string valueField2;
+        private string valueField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ChecksumTypeType type {
             get {
-                return this.typeField1;
+                return this.typeField;
             }
             set {
-                this.typeField1 = value;
+                this.typeField = value;
             }
         }
         
@@ -896,17 +707,18 @@ namespace Schemas {
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value {
             get {
-                return this.valueField2;
+                return this.valueField;
             }
             set {
-                this.valueField2 = value;
+                this.valueField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum ChecksumTypeType {
         
         /// <remarks/>
@@ -989,8 +801,737 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AudioMediaType {
+        
+        private ImageType imageField;
+        
+        private long sizeField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private SequenceType sequenceField;
+        
+        private string manufacturerField;
+        
+        private string modelField;
+        
+        private string accoustIDField;
+        
+        private AudioBlockType[] blockField;
+        
+        private string copyProtectionField;
+        
+        private DimensionsType dimensionsField;
+        
+        private ScansType scansField;
+        
+        private DumpHardwareArrayType dumpHardwareArrayField;
+        
+        /// <remarks/>
+        public ImageType Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SequenceType Sequence {
+            get {
+                return this.sequenceField;
+            }
+            set {
+                this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField;
+            }
+            set {
+                this.manufacturerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Model {
+            get {
+                return this.modelField;
+            }
+            set {
+                this.modelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AccoustID {
+            get {
+                return this.accoustIDField;
+            }
+            set {
+                this.accoustIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Block")]
+        public AudioBlockType[] Block {
+            get {
+                return this.blockField;
+            }
+            set {
+                this.blockField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CopyProtection {
+            get {
+                return this.copyProtectionField;
+            }
+            set {
+                this.copyProtectionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DimensionsType Dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                this.dimensionsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScansType Scans {
+            get {
+                return this.scansField;
+            }
+            set {
+                this.scansField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpHardwareArrayType DumpHardwareArray {
+            get {
+                return this.dumpHardwareArrayField;
+            }
+            set {
+                this.dumpHardwareArrayField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SequenceType {
+        
+        private string mediaTitleField;
+        
+        private int mediaSequenceField;
+        
+        private int totalMediaField;
+        
+        private int sideField;
+        
+        private bool sideFieldSpecified;
+        
+        private int layerField;
+        
+        private bool layerFieldSpecified;
+        
+        /// <remarks/>
+        public string MediaTitle {
+            get {
+                return this.mediaTitleField;
+            }
+            set {
+                this.mediaTitleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MediaSequence {
+            get {
+                return this.mediaSequenceField;
+            }
+            set {
+                this.mediaSequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int TotalMedia {
+            get {
+                return this.totalMediaField;
+            }
+            set {
+                this.totalMediaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Side {
+            get {
+                return this.sideField;
+            }
+            set {
+                this.sideField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SideSpecified {
+            get {
+                return this.sideFieldSpecified;
+            }
+            set {
+                this.sideFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Layer {
+            get {
+                return this.layerField;
+            }
+            set {
+                this.layerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool LayerSpecified {
+            get {
+                return this.layerFieldSpecified;
+            }
+            set {
+                this.layerFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DimensionsType {
+        
+        private double diameterField;
+        
+        private bool diameterFieldSpecified;
+        
+        private double heightField;
+        
+        private bool heightFieldSpecified;
+        
+        private double widthField;
+        
+        private bool widthFieldSpecified;
+        
+        private double thicknessField;
+        
+        /// <remarks/>
+        public double Diameter {
+            get {
+                return this.diameterField;
+            }
+            set {
+                this.diameterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DiameterSpecified {
+            get {
+                return this.diameterFieldSpecified;
+            }
+            set {
+                this.diameterFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Height {
+            get {
+                return this.heightField;
+            }
+            set {
+                this.heightField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool HeightSpecified {
+            get {
+                return this.heightFieldSpecified;
+            }
+            set {
+                this.heightFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Width {
+            get {
+                return this.widthField;
+            }
+            set {
+                this.widthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool WidthSpecified {
+            get {
+                return this.widthFieldSpecified;
+            }
+            set {
+                this.widthFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Thickness {
+            get {
+                return this.thicknessField;
+            }
+            set {
+                this.thicknessField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ScansType {
+        
+        private CaseScanType caseScanField;
+        
+        private MediaScanType scanField;
+        
+        /// <remarks/>
+        public CaseScanType CaseScan {
+            get {
+                return this.caseScanField;
+            }
+            set {
+                this.caseScanField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public MediaScanType Scan {
+            get {
+                return this.scanField;
+            }
+            set {
+                this.scanField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CaseScanType {
+        
+        private CaseScanTypeCaseScanElement caseScanElementField;
+        
+        private ScanType scanField;
+        
+        /// <remarks/>
+        public CaseScanTypeCaseScanElement CaseScanElement {
+            get {
+                return this.caseScanElementField;
+            }
+            set {
+                this.caseScanElementField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScanType Scan {
+            get {
+                return this.scanField;
+            }
+            set {
+                this.scanField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum CaseScanTypeCaseScanElement {
+        
+        /// <remarks/>
+        sleeve,
+        
+        /// <remarks/>
+        inner,
+        
+        /// <remarks/>
+        inlay,
+        
+        /// <remarks/>
+        frontback,
+        
+        /// <remarks/>
+        frontfull,
+        
+        /// <remarks/>
+        boxfront,
+        
+        /// <remarks/>
+        boxback,
+        
+        /// <remarks/>
+        boxspine,
+        
+        /// <remarks/>
+        external,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ScanType {
+        
+        private FileType fileField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private ScannerType[] scannerField;
+        
+        private ScanProcessingType[] scanProcessingField;
+        
+        private OCRType[] oCRField;
+        
+        /// <remarks/>
+        public FileType File {
+            get {
+                return this.fileField;
+            }
+            set {
+                this.fileField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Scanner")]
+        public ScannerType[] Scanner {
+            get {
+                return this.scannerField;
+            }
+            set {
+                this.scannerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ScanProcessing")]
+        public ScanProcessingType[] ScanProcessing {
+            get {
+                return this.scanProcessingField;
+            }
+            set {
+                this.scanProcessingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("OCR")]
+        public OCRType[] OCR {
+            get {
+                return this.oCRField;
+            }
+            set {
+                this.oCRField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FileType {
+        
+        private string formatField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string format {
+            get {
+                return this.formatField;
+            }
+            set {
+                this.formatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ScannerType {
+        
+        private string authorField;
+        
+        private string manufacturerField;
+        
+        private string modelField;
+        
+        private string serialField;
+        
+        private string softwareField;
+        
+        private string softwareVersionField;
+        
+        /// <remarks/>
+        public string Author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField;
+            }
+            set {
+                this.manufacturerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Model {
+            get {
+                return this.modelField;
+            }
+            set {
+                this.modelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Serial {
+            get {
+                return this.serialField;
+            }
+            set {
+                this.serialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Software {
+            get {
+                return this.softwareField;
+            }
+            set {
+                this.softwareField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SoftwareVersion {
+            get {
+                return this.softwareVersionField;
+            }
+            set {
+                this.softwareVersionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ScanProcessingType {
+        
+        private string authorField;
+        
+        private string softwareField;
+        
+        private string softwareVersionField;
+        
+        /// <remarks/>
+        public string Author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Software {
+            get {
+                return this.softwareField;
+            }
+            set {
+                this.softwareField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SoftwareVersion {
+            get {
+                return this.softwareVersionField;
+            }
+            set {
+                this.softwareVersionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class OCRType {
+        
+        private string authorField;
+        
+        private string softwareField;
+        
+        private string softwareVersionField;
+        
+        private LanguagesTypeLanguage[] languageField;
+        
+        /// <remarks/>
+        public string Author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Software {
+            get {
+                return this.softwareField;
+            }
+            set {
+                this.softwareField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SoftwareVersion {
+            get {
+                return this.softwareVersionField;
+            }
+            set {
+                this.softwareVersionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum LanguagesTypeLanguage {
         
         /// <remarks/>
@@ -2454,1858 +2995,7 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ScanType {
-        
-        private FileType fileField1;
-        
-        private ChecksumType[] checksumsField1;
-        
-        private ScannerType[] scannerField;
-        
-        private ScanProcessingType[] scanProcessingField;
-        
-        private OCRType[] oCRField;
-        
-        /// <remarks>
-///File containing the scan
-///</remarks>
-        public FileType File {
-            get {
-                return this.fileField1;
-            }
-            set {
-                this.fileField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
-            get {
-                return this.checksumsField1;
-            }
-            set {
-                this.checksumsField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Information about scanning
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("Scanner")]
-        public ScannerType[] Scanner {
-            get {
-                return this.scannerField;
-            }
-            set {
-                this.scannerField = value;
-            }
-        }
-        
-        /// <remarks>
-///Information about any scan processing done
-///					
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("ScanProcessing")]
-        public ScanProcessingType[] ScanProcessing {
-            get {
-                return this.scanProcessingField;
-            }
-            set {
-                this.scanProcessingField = value;
-            }
-        }
-        
-        /// <remarks>
-///Information about OCR
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("OCR")]
-        public OCRType[] OCR {
-            get {
-                return this.oCRField;
-            }
-            set {
-                this.oCRField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Information about scanning
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ScannerType {
-        
-        private string authorField1;
-        
-        private string manufacturerField;
-        
-        private string modelField;
-        
-        private string serialField;
-        
-        private string softwareField;
-        
-        private string softwareVersionField;
-        
-        /// <remarks>
-///Who scanned it?
-///</remarks>
-        public string Author {
-            get {
-                return this.authorField1;
-            }
-            set {
-                this.authorField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Who built the scanner
-///</remarks>
-        public string Manufacturer {
-            get {
-                return this.manufacturerField;
-            }
-            set {
-                this.manufacturerField = value;
-            }
-        }
-        
-        /// <remarks>
-///Scanner model
-///</remarks>
-        public string Model {
-            get {
-                return this.modelField;
-            }
-            set {
-                this.modelField = value;
-            }
-        }
-        
-        /// <remarks>
-///Scanner serial number
-///</remarks>
-        public string Serial {
-            get {
-                return this.serialField;
-            }
-            set {
-                this.serialField = value;
-            }
-        }
-        
-        /// <remarks>
-///Software used for scanning
-///</remarks>
-        public string Software {
-            get {
-                return this.softwareField;
-            }
-            set {
-                this.softwareField = value;
-            }
-        }
-        
-        /// <remarks>
-///Software version
-///</remarks>
-        public string SoftwareVersion {
-            get {
-                return this.softwareVersionField;
-            }
-            set {
-                this.softwareVersionField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Information about any scan processing done
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ScanProcessingType {
-        
-        private string authorField2;
-        
-        private string softwareField1;
-        
-        private string softwareVersionField1;
-        
-        /// <remarks>
-///Who processed it?
-///</remarks>
-        public string Author {
-            get {
-                return this.authorField2;
-            }
-            set {
-                this.authorField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Software used for processing
-///</remarks>
-        public string Software {
-            get {
-                return this.softwareField1;
-            }
-            set {
-                this.softwareField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Software version
-///</remarks>
-        public string SoftwareVersion {
-            get {
-                return this.softwareVersionField1;
-            }
-            set {
-                this.softwareVersionField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class OCRType {
-        
-        private string authorField3;
-        
-        private string softwareField2;
-        
-        private string softwareVersionField2;
-        
-        private LanguagesTypeLanguage[] languageField1;
-        
-        /// <remarks>
-///Who did the OCR
-///</remarks>
-        public string Author {
-            get {
-                return this.authorField3;
-            }
-            set {
-                this.authorField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Using what software
-///</remarks>
-        public string Software {
-            get {
-                return this.softwareField2;
-            }
-            set {
-                this.softwareField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///And the software version
-///</remarks>
-        public string SoftwareVersion {
-            get {
-                return this.softwareVersionField2;
-            }
-            set {
-                this.softwareVersionField2 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
-        public LanguagesTypeLanguage[] Language {
-            get {
-                return this.languageField1;
-            }
-            set {
-                this.languageField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BookType {
-        
-        private BarcodeType[] barcodesField2;
-        
-        private CoverType coverField1;
-        
-        private string nameField2;
-        
-        private string editorialField1;
-        
-        private string authorField4;
-        
-        private System.DateTime publicationDateField1;
-        
-        private bool publicationDateSpecifiedField1;
-        
-        private LanguagesTypeLanguage[] languageField2;
-        
-        private int pagesField1;
-        
-        private bool pagesSpecifiedField1;
-        
-        private string pageSizeField1;
-        
-        private ScanType scanField1;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Barcode", IsNullable=false)]
-        public BarcodeType[] Barcodes {
-            get {
-                return this.barcodesField2;
-            }
-            set {
-                this.barcodesField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Book cover
-///</remarks>
-        public CoverType Cover {
-            get {
-                return this.coverField1;
-            }
-            set {
-                this.coverField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Book name
-///</remarks>
-        public string Name {
-            get {
-                return this.nameField2;
-            }
-            set {
-                this.nameField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Book publisher
-///</remarks>
-        public string Editorial {
-            get {
-                return this.editorialField1;
-            }
-            set {
-                this.editorialField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Book author
-///</remarks>
-        public string Author {
-            get {
-                return this.authorField4;
-            }
-            set {
-                this.authorField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///Book's publication date
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
-        public System.DateTime PublicationDate {
-            get {
-                return this.publicationDateField1;
-            }
-            set {
-                this.publicationDateField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool PublicationDateSpecified {
-            get {
-                return this.publicationDateSpecifiedField1;
-            }
-            set {
-                this.publicationDateSpecifiedField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
-        public LanguagesTypeLanguage[] Language {
-            get {
-                return this.languageField2;
-            }
-            set {
-                this.languageField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Book pages
-///</remarks>
-        public int Pages {
-            get {
-                return this.pagesField1;
-            }
-            set {
-                this.pagesField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool PagesSpecified {
-            get {
-                return this.pagesSpecifiedField1;
-            }
-            set {
-                this.pagesSpecifiedField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Magazine page size in WxH milimeters
-///					
-///</remarks>
-        public string PageSize {
-            get {
-                return this.pageSizeField1;
-            }
-            set {
-                this.pageSizeField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Scan of the book
-///</remarks>
-        public ScanType Scan {
-            get {
-                return this.scanField1;
-            }
-            set {
-                this.scanField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    public enum ArchitecturesTypeArchitecture {
-        
-        /// <remarks/>
-        i86,
-        
-        /// <remarks/>
-        ia32,
-        
-        /// <remarks/>
-        ia64,
-        
-        /// <remarks/>
-        amd64,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("4004")]
-        Item4004,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("4040")]
-        Item4040,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("8080")]
-        Item8080,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("8008")]
-        Item8008,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("8085")]
-        Item8085,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("8051")]
-        Item8051,
-        
-        /// <remarks/>
-        i860,
-        
-        /// <remarks/>
-        i960,
-        
-        /// <remarks/>
-        apx432,
-        
-        /// <remarks/>
-        m68k,
-        
-        /// <remarks/>
-        ppc,
-        
-        /// <remarks/>
-        ppc64,
-        
-        /// <remarks/>
-        x32,
-        
-        /// <remarks/>
-        sparc,
-        
-        /// <remarks/>
-        sparc64,
-        
-        /// <remarks/>
-        arm,
-        
-        /// <remarks/>
-        aarch64,
-        
-        /// <remarks/>
-        avr,
-        
-        /// <remarks/>
-        pic,
-        
-        /// <remarks/>
-        msp430,
-        
-        /// <remarks/>
-        z80,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("65816")]
-        Item65816,
-        
-        /// <remarks/>
-        sh,
-        
-        /// <remarks/>
-        sh1,
-        
-        /// <remarks/>
-        sh2,
-        
-        /// <remarks/>
-        sh3,
-        
-        /// <remarks/>
-        sh5,
-        
-        /// <remarks/>
-        sh4,
-        
-        /// <remarks/>
-        m6800,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("6502")]
-        Item6502,
-        
-        /// <remarks/>
-        axp,
-        
-        /// <remarks/>
-        parisc,
-        
-        /// <remarks/>
-        mips32,
-        
-        /// <remarks/>
-        mips64,
-        
-        /// <remarks/>
-        s360,
-        
-        /// <remarks/>
-        s370,
-        
-        /// <remarks/>
-        esa390,
-        
-        /// <remarks/>
-        zarch,
-        
-        /// <remarks/>
-        pdp11,
-        
-        /// <remarks/>
-        vax,
-        
-        /// <remarks/>
-        power,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class RequiredOperatingSystemType {
-        
-        private string nameField3;
-        
-        private string[] versionField1;
-        
-        /// <remarks>
-///Minimal supported operating system
-///					
-///</remarks>
-        public string Name {
-            get {
-                return this.nameField3;
-            }
-            set {
-                this.nameField3 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Version")]
-        public string[] Version {
-            get {
-                return this.versionField1;
-            }
-            set {
-                this.versionField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///User manual or user guide accompanying this set. Can be more than one.
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UserManualType {
-        
-        private LanguagesTypeLanguage[] languageField3;
-        
-        private int pagesField2;
-        
-        private string pageSizeField2;
-        
-        private ScanType scanField2;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
-        public LanguagesTypeLanguage[] Language {
-            get {
-                return this.languageField3;
-            }
-            set {
-                this.languageField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Pages of the user manual
-///</remarks>
-        public int Pages {
-            get {
-                return this.pagesField2;
-            }
-            set {
-                this.pagesField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Paper size in standard name or in WxH milimeters
-///					
-///</remarks>
-        public string PageSize {
-            get {
-                return this.pageSizeField2;
-            }
-            set {
-                this.pageSizeField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///User manual scanning
-///</remarks>
-        public ScanType Scan {
-            get {
-                return this.scanField2;
-            }
-            set {
-                this.scanField2 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class OpticalDiscType {
-        
-        private ImageType imageField;
-        
-        private long sizeField;
-        
-        private SequenceType sequenceField;
-        
-        private LayersType layersField;
-        
-        private ChecksumType[] checksumsField2;
-        
-        private LayeredTextType[] ringCodeField;
-        
-        private LayeredTextType[] masteringSIDField;
-        
-        private LayeredTextType[] toolstampField;
-        
-        private LayeredTextType[] mouldSIDField;
-        
-        private LayeredTextType[] mouldTextField;
-        
-        private string discTypeField;
-        
-        private string discSubTypeField;
-        
-        private int offsetField1;
-        
-        private bool offsetSpecifiedField1;
-        
-        private int[] tracksField;
-        
-        private int sessionsField;
-        
-        private string copyProtectionField;
-        
-        private DimensionsType dimensionsField;
-        
-        private CaseType caseField;
-        
-        private ScansType scansField1;
-        
-        private DumpType pFIField;
-        
-        private DumpType dMIField;
-        
-        private DumpType cMIField;
-        
-        private DumpType bCAField;
-        
-        private DumpType aTIPField;
-        
-        private DumpType pMAField;
-        
-        private BorderType[] leadInField;
-        
-        private BorderType[] leadOutField;
-        
-        private SecuritySectorsType[] xboxSecuritySectorsField;
-        
-        private PS3EncryptionType pS3EncryptionField;
-        
-        private TrackType[] trackField;
-        
-        private DumpHardwareArrayType dumpHardwareArrayField;
-        
-        /// <remarks>
-///Image file, or image description file, plus format (cue, toc, etc, etc)
-///					
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField;
-            }
-            set {
-                this.imageField = value;
-            }
-        }
-        
-        /// <remarks>
-///Image file size
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                this.sizeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Sequence information about this disc
-///					
-///</remarks>
-        public SequenceType Sequence {
-            get {
-                return this.sequenceField;
-            }
-            set {
-                this.sequenceField = value;
-            }
-        }
-        
-        /// <remarks>
-///Layering type and sizes
-///</remarks>
-        public LayersType Layers {
-            get {
-                return this.layersField;
-            }
-            set {
-                this.layersField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
-            get {
-                return this.checksumsField2;
-            }
-            set {
-                this.checksumsField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc/side ring code
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("RingCode")]
-        public LayeredTextType[] RingCode {
-            get {
-                return this.ringCodeField;
-            }
-            set {
-                this.ringCodeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc/side mastering SID
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("MasteringSID")]
-        public LayeredTextType[] MasteringSID {
-            get {
-                return this.masteringSIDField;
-            }
-            set {
-                this.masteringSIDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc/side toolstamp
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("Toolstamp")]
-        public LayeredTextType[] Toolstamp {
-            get {
-                return this.toolstampField;
-            }
-            set {
-                this.toolstampField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc/side mould SID
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("MouldSID")]
-        public LayeredTextType[] MouldSID {
-            get {
-                return this.mouldSIDField;
-            }
-            set {
-                this.mouldSIDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc/side mould text
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("MouldText")]
-        public LayeredTextType[] MouldText {
-            get {
-                return this.mouldTextField;
-            }
-            set {
-                this.mouldTextField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc type (CD, GD, SACD, DDCD, DVD, HDDVD, BD)
-///					
-///</remarks>
-        public string DiscType {
-            get {
-                return this.discTypeField;
-            }
-            set {
-                this.discTypeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc subtype (CD-ROM, CD-DA, CD+G, etc)
-///					
-///</remarks>
-        public string DiscSubType {
-            get {
-                return this.discSubTypeField;
-            }
-            set {
-                this.discSubTypeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Offset between subchannel servo and data sectors servo, in bytes
-///					
-///</remarks>
-        public int Offset {
-            get {
-                return this.offsetField1;
-            }
-            set {
-                this.offsetField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool OffsetSpecified {
-            get {
-                return this.offsetSpecifiedField1;
-            }
-            set {
-                this.offsetSpecifiedField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Tracks on this disc/side
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("Tracks")]
-        public int[] Tracks {
-            get {
-                return this.tracksField;
-            }
-            set {
-                this.tracksField = value;
-            }
-        }
-        
-        /// <remarks>
-///Sessions on this disc/side
-///</remarks>
-        public int Sessions {
-            get {
-                return this.sessionsField;
-            }
-            set {
-                this.sessionsField = value;
-            }
-        }
-        
-        /// <remarks>
-///Copy protection, if applicable
-///</remarks>
-        public string CopyProtection {
-            get {
-                return this.copyProtectionField;
-            }
-            set {
-                this.copyProtectionField = value;
-            }
-        }
-        
-        /// <remarks>
-///Dimensions of the disc
-///</remarks>
-        public DimensionsType Dimensions {
-            get {
-                return this.dimensionsField;
-            }
-            set {
-                this.dimensionsField = value;
-            }
-        }
-        
-        /// <remarks>
-///Case where the disk came from factory
-///					
-///</remarks>
-        public CaseType Case {
-            get {
-                return this.caseField;
-            }
-            set {
-                this.caseField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc scans
-///</remarks>
-        public ScansType Scans {
-            get {
-                return this.scansField1;
-            }
-            set {
-                this.scansField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Physical Manufacturing Information (DVD and HD DVD)
-///					
-///</remarks>
-        public DumpType PFI {
-            get {
-                return this.pFIField;
-            }
-            set {
-                this.pFIField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc Manufacturing Information
-///</remarks>
-        public DumpType DMI {
-            get {
-                return this.dMIField;
-            }
-            set {
-                this.dMIField = value;
-            }
-        }
-        
-        /// <remarks>
-///Lead-In Copyright Management Information
-///					
-///</remarks>
-        public DumpType CMI {
-            get {
-                return this.cMIField;
-            }
-            set {
-                this.cMIField = value;
-            }
-        }
-        
-        /// <remarks>
-///Burst Cutting Area
-///</remarks>
-        public DumpType BCA {
-            get {
-                return this.bCAField;
-            }
-            set {
-                this.bCAField = value;
-            }
-        }
-        
-        /// <remarks>
-///Absolute Time In Pre-groove
-///</remarks>
-        public DumpType ATIP {
-            get {
-                return this.aTIPField;
-            }
-            set {
-                this.aTIPField = value;
-            }
-        }
-        
-        /// <remarks>
-///PMA
-///</remarks>
-        public DumpType PMA {
-            get {
-                return this.pMAField;
-            }
-            set {
-                this.pMAField = value;
-            }
-        }
-        
-        /// <remarks>
-///Lead-In, Border-In, or equivalent
-///					
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("LeadIn")]
-        public BorderType[] LeadIn {
-            get {
-                return this.leadInField;
-            }
-            set {
-                this.leadInField = value;
-            }
-        }
-        
-        /// <remarks>
-///Lead-Out, Border-Out, or equivalent
-///					
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("LeadOut")]
-        public BorderType[] LeadOut {
-            get {
-                return this.leadOutField;
-            }
-            set {
-                this.leadOutField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="SecuritySectors", IsNullable=false)]
-        public SecuritySectorsType[] XboxSecuritySectors {
-            get {
-                return this.xboxSecuritySectorsField;
-            }
-            set {
-                this.xboxSecuritySectorsField = value;
-            }
-        }
-        
-        /// <remarks>
-///PS3 Encryption Key
-///</remarks>
-        public PS3EncryptionType PS3Encryption {
-            get {
-                return this.pS3EncryptionField;
-            }
-            set {
-                this.pS3EncryptionField = value;
-            }
-        }
-        
-        /// <remarks>
-///Array of disc tracks
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("Track")]
-        public TrackType[] Track {
-            get {
-                return this.trackField;
-            }
-            set {
-                this.trackField = value;
-            }
-        }
-        
-        /// <remarks>
-///Array of drives used to dump disc
-///					
-///</remarks>
-        public DumpHardwareArrayType DumpHardwareArray {
-            get {
-                return this.dumpHardwareArrayField;
-            }
-            set {
-                this.dumpHardwareArrayField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///File containing track dump, and format, binary, yranib, or audio/video container
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ImageType {
-        
-        private string formatField1;
-        
-        private long offsetField;
-        
-        private bool offsetSpecifiedField;
-        
-        private string valueField3;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string format {
-            get {
-                return this.formatField1;
-            }
-            set {
-                this.formatField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public long offset {
-            get {
-                return this.offsetField;
-            }
-            set {
-                this.offsetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool offsetSpecified {
-            get {
-                return this.offsetSpecifiedField;
-            }
-            set {
-                this.offsetSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField3;
-            }
-            set {
-                this.valueField3 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Sequence information about a disc
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SequenceType {
-        
-        private string mediaTitleField;
-        
-        private int mediaSequenceField;
-        
-        private int totalMediaField;
-        
-        private int sideField;
-        
-        private bool sideSpecifiedField;
-        
-        private int layerField;
-        
-        private bool layerSpecifiedField;
-        
-        /// <remarks>
-///Sequence information about this media
-///					
-///</remarks>
-        public string MediaTitle {
-            get {
-                return this.mediaTitleField;
-            }
-            set {
-                this.mediaTitleField = value;
-            }
-        }
-        
-        /// <remarks>
-///Media title as printed in label
-///</remarks>
-        public int MediaSequence {
-            get {
-                return this.mediaSequenceField;
-            }
-            set {
-                this.mediaSequenceField = value;
-            }
-        }
-        
-        /// <remarks>
-///Total number of discs in this set
-///					
-///</remarks>
-        public int TotalMedia {
-            get {
-                return this.totalMediaField;
-            }
-            set {
-                this.totalMediaField = value;
-            }
-        }
-        
-        /// <remarks>
-///Side of disc described by this field
-///					
-///</remarks>
-        public int Side {
-            get {
-                return this.sideField;
-            }
-            set {
-                this.sideField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool SideSpecified {
-            get {
-                return this.sideSpecifiedField;
-            }
-            set {
-                this.sideSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///On PTP layering, layer of disc described by this field, starting on 0
-///					
-///</remarks>
-        public int Layer {
-            get {
-                return this.layerField;
-            }
-            set {
-                this.layerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool LayerSpecified {
-            get {
-                return this.layerSpecifiedField;
-            }
-            set {
-                this.layerSpecifiedField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class LayersType {
-        
-        private LayersTypeType typeField2;
-        
-        private bool typeSpecifiedField;
-        
-        private SectorsType[] sectorsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public LayersTypeType type {
-            get {
-                return this.typeField2;
-            }
-            set {
-                this.typeField2 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool typeSpecified {
-            get {
-                return this.typeSpecifiedField;
-            }
-            set {
-                this.typeSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Layering type and sizes
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("Sectors")]
-        public SectorsType[] Sectors {
-            get {
-                return this.sectorsField;
-            }
-            set {
-                this.sectorsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    public enum LayersTypeType {
-        
-        /// <remarks/>
-        PTP,
-        
-        /// <remarks/>
-        OTP,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SectorsType {
-        
-        private int layerField1;
-        
-        private bool layerSpecifiedField1;
-        
-        private long valueField4;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int layer {
-            get {
-                return this.layerField1;
-            }
-            set {
-                this.layerField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool layerSpecified {
-            get {
-                return this.layerSpecifiedField1;
-            }
-            set {
-                this.layerSpecifiedField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public long Value {
-            get {
-                return this.valueField4;
-            }
-            set {
-                this.valueField4 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class LayeredTextType {
-        
-        private int layerField2;
-        
-        private bool layerSpecifiedField2;
-        
-        private string valueField5;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int layer {
-            get {
-                return this.layerField2;
-            }
-            set {
-                this.layerField2 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool layerSpecified {
-            get {
-                return this.layerSpecifiedField2;
-            }
-            set {
-                this.layerSpecifiedField2 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField5;
-            }
-            set {
-                this.valueField5 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Dimensions of media
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DimensionsType {
-        
-        private double diameterField;
-        
-        private bool diameterSpecifiedField;
-        
-        private double heightField;
-        
-        private bool heightSpecifiedField;
-        
-        private double widthField;
-        
-        private bool widthSpecifiedField;
-        
-        private double thicknessField;
-        
-        /// <remarks>
-///Diameter in milimeters for circular discs
-///					
-///</remarks>
-        public double Diameter {
-            get {
-                return this.diameterField;
-            }
-            set {
-                this.diameterField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool DiameterSpecified {
-            get {
-                return this.diameterSpecifiedField;
-            }
-            set {
-                this.diameterSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Height in milimeters for non-circular disks
-///					
-///</remarks>
-        public double Height {
-            get {
-                return this.heightField;
-            }
-            set {
-                this.heightField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool HeightSpecified {
-            get {
-                return this.heightSpecifiedField;
-            }
-            set {
-                this.heightSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Width in milimeters for non-circular disks
-///					
-///</remarks>
-        public double Width {
-            get {
-                return this.widthField;
-            }
-            set {
-                this.widthField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool WidthSpecified {
-            get {
-                return this.widthSpecifiedField;
-            }
-            set {
-                this.widthSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Thickness in milimeters for non-circular disks
-///					
-///</remarks>
-        public double Thickness {
-            get {
-                return this.thicknessField;
-            }
-            set {
-                this.thicknessField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CaseType {
-        
-        private CaseTypeCaseType caseType1Field;
-        
-        private ScansType scansField;
-        
-        /// <remarks>
-///Original case type: jewel, bigjewel, dvdcase, etc
-///					
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("CaseType")]
-        public CaseTypeCaseType CaseType1 {
-            get {
-                return this.caseType1Field;
-            }
-            set {
-                this.caseType1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ScansType Scans {
-            get {
-                return this.scansField;
-            }
-            set {
-                this.scansField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    public enum CaseTypeCaseType {
-        
-        /// <remarks/>
-        jewel,
-        
-        /// <remarks/>
-        bigjewel,
-        
-        /// <remarks/>
-        slimjewel,
-        
-        /// <remarks/>
-        sleeve,
-        
-        /// <remarks/>
-        qpack,
-        
-        /// <remarks/>
-        digisleeve,
-        
-        /// <remarks/>
-        discboxslider,
-        
-        /// <remarks/>
-        compacplus,
-        
-        /// <remarks/>
-        keepcase,
-        
-        /// <remarks/>
-        snapcase,
-        
-        /// <remarks/>
-        softcase,
-        
-        /// <remarks/>
-        ecopack,
-        
-        /// <remarks/>
-        liftlock,
-        
-        /// <remarks/>
-        spindle,
-        
-        /// <remarks/>
-        ps2case,
-        
-        /// <remarks/>
-        ps3case,
-        
-        /// <remarks/>
-        bluraykeepcase,
-        
-        /// <remarks/>
-        pscase,
-        
-        /// <remarks/>
-        dccase,
-        
-        /// <remarks/>
-        saturncase,
-        
-        /// <remarks/>
-        xboxcase,
-        
-        /// <remarks/>
-        saturnbigcase,
-        
-        /// <remarks/>
-        gccase,
-        
-        /// <remarks/>
-        wiicase,
-        
-        /// <remarks/>
-        unknown,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ScansType {
-        
-        private CaseScanType caseScanField;
-        
-        private MediaScanType scanField4;
-        
-        /// <remarks>
-///Case scans
-///</remarks>
-        public CaseScanType CaseScan {
-            get {
-                return this.caseScanField;
-            }
-            set {
-                this.caseScanField = value;
-            }
-        }
-        
-        /// <remarks>
-///Disc scans
-///</remarks>
-        public MediaScanType Scan {
-            get {
-                return this.scanField4;
-            }
-            set {
-                this.scanField4 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CaseScanType {
-        
-        private CaseScanTypeCaseScanElement caseScanElementField;
-        
-        private ScanType scanField3;
-        
-        /// <remarks>
-///Scanned element: cover, back, inlay, etc
-///					
-///</remarks>
-        public CaseScanTypeCaseScanElement CaseScanElement {
-            get {
-                return this.caseScanElementField;
-            }
-            set {
-                this.caseScanElementField = value;
-            }
-        }
-        
-        /// <remarks>
-///Scanning information
-///</remarks>
-        public ScanType Scan {
-            get {
-                return this.scanField3;
-            }
-            set {
-                this.scanField3 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    public enum CaseScanTypeCaseScanElement {
-        
-        /// <remarks/>
-        sleeve,
-        
-        /// <remarks/>
-        inner,
-        
-        /// <remarks/>
-        inlay,
-        
-        /// <remarks/>
-        frontback,
-        
-        /// <remarks/>
-        frontfull,
-        
-        /// <remarks/>
-        boxfront,
-        
-        /// <remarks/>
-        boxback,
-        
-        /// <remarks/>
-        boxspine,
-        
-        /// <remarks/>
-        external,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4313,12 +3003,9 @@ namespace Schemas {
         
         private MediaScanTypeMediaScanElement mediaScanElementField;
         
-        private ScanType scanField5;
+        private ScanType scanField;
         
-        /// <remarks>
-/// Scanned element: up, down, label, data, etc
-///					
-///</remarks>
+        /// <remarks/>
         public MediaScanTypeMediaScanElement MediaScanElement {
             get {
                 return this.mediaScanElementField;
@@ -4328,22 +3015,21 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Scan of disk part
-///</remarks>
+        /// <remarks/>
         public ScanType Scan {
             get {
-                return this.scanField5;
+                return this.scanField;
             }
             set {
-                this.scanField5 = value;
+                this.scanField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum MediaScanTypeMediaScanElement {
         
         /// <remarks/>
@@ -4365,1012 +3051,8 @@ namespace Schemas {
         right,
     }
     
-    /// <remarks>
-///Information about dumped structure
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DumpType {
-        
-        private string imageField1;
-        
-        private int sizeField1;
-        
-        private ChecksumType[] checksumsField3;
-        
-        /// <remarks>
-///File containing dump
-///</remarks>
-        public string Image {
-            get {
-                return this.imageField1;
-            }
-            set {
-                this.imageField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of dump
-///</remarks>
-        public int Size {
-            get {
-                return this.sizeField1;
-            }
-            set {
-                this.sizeField1 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
-            get {
-                return this.checksumsField3;
-            }
-            set {
-                this.checksumsField3 = value;
-            }
-        }
-    }
-    
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BorderType {
-        
-        private int sessionField;
-        
-        private bool sessionSpecifiedField;
-        
-        private string imageField2;
-        
-        private long sizeField2;
-        
-        private ChecksumType[] checksumsField4;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int session {
-            get {
-                return this.sessionField;
-            }
-            set {
-                this.sessionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool sessionSpecified {
-            get {
-                return this.sessionSpecifiedField;
-            }
-            set {
-                this.sessionSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///File containing border dump
-///</remarks>
-        public string Image {
-            get {
-                return this.imageField2;
-            }
-            set {
-                this.imageField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of border dump
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField2;
-            }
-            set {
-                this.sizeField2 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
-            get {
-                return this.checksumsField4;
-            }
-            set {
-                this.checksumsField4 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Start and end of XGD's security sectors
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SecuritySectorsType {
-        
-        private long startField;
-        
-        private long endField;
-        
-        /// <remarks>
-///Start of XGD's security sectors
-///					
-///</remarks>
-        public long Start {
-            get {
-                return this.startField;
-            }
-            set {
-                this.startField = value;
-            }
-        }
-        
-        /// <remarks>
-///End of XGD's security sectors
-///</remarks>
-        public long End {
-            get {
-                return this.endField;
-            }
-            set {
-                this.endField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class PS3EncryptionType {
-        
-        private string keyField;
-        
-        private string serialField1;
-        
-        /// <remarks>
-///PS3 encryption key
-///</remarks>
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-            }
-        }
-        
-        /// <remarks>
-///PS3 encryption key
-///</remarks>
-        public string Serial {
-            get {
-                return this.serialField1;
-            }
-            set {
-                this.serialField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Track information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class TrackType {
-        
-        private ImageType imageField3;
-        
-        private long sizeField3;
-        
-        private TrackSequenceType sequenceField1;
-        
-        private string startMSFField;
-        
-        private string endMSFField;
-        
-        private long startSectorField;
-        
-        private long endSectorField;
-        
-        private TrackTypeTrackType trackType1Field;
-        
-        private int bytesPerSectorField;
-        
-        private string accoustIDField;
-        
-        private ChecksumType[] checksumsField5;
-        
-        private SubChannelType subChannelField;
-        
-        private PartitionType[] fileSystemInformationField;
-        
-        /// <remarks>
-///File containing track dump, and format, binary, yranib, or audio/video container
-///					
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField3;
-            }
-            set {
-                this.imageField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of track dump in bytes
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField3;
-            }
-            set {
-                this.sizeField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track sequence information
-///</remarks>
-        public TrackSequenceType Sequence {
-            get {
-                return this.sequenceField1;
-            }
-            set {
-                this.sequenceField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track start address in MM:SS:FF
-///					
-///</remarks>
-        public string StartMSF {
-            get {
-                return this.startMSFField;
-            }
-            set {
-                this.startMSFField = value;
-            }
-        }
-        
-        /// <remarks>
-///Track end address in MM:SS:FF
-///</remarks>
-        public string EndMSF {
-            get {
-                return this.endMSFField;
-            }
-            set {
-                this.endMSFField = value;
-            }
-        }
-        
-        /// <remarks>
-///Track start sector
-///</remarks>
-        public long StartSector {
-            get {
-                return this.startSectorField;
-            }
-            set {
-                this.startSectorField = value;
-            }
-        }
-        
-        /// <remarks>
-///Track end sector
-///</remarks>
-        public long EndSector {
-            get {
-                return this.endSectorField;
-            }
-            set {
-                this.endSectorField = value;
-            }
-        }
-        
-        /// <remarks>
-/// Track type: audio, mode0, mode1, mode2
-///					
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("TrackType")]
-        public TrackTypeTrackType TrackType1 {
-            get {
-                return this.trackType1Field;
-            }
-            set {
-                this.trackType1Field = value;
-            }
-        }
-        
-        /// <remarks>
-///Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical format)
-///					
-///</remarks>
-        public int BytesPerSector {
-            get {
-                return this.bytesPerSectorField;
-            }
-            set {
-                this.bytesPerSectorField = value;
-            }
-        }
-        
-        /// <remarks>
-///AccoustID for audio tracks
-///</remarks>
-        public string AccoustID {
-            get {
-                return this.accoustIDField;
-            }
-            set {
-                this.accoustIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
-            get {
-                return this.checksumsField5;
-            }
-            set {
-                this.checksumsField5 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track's subchannel information
-///</remarks>
-        public SubChannelType SubChannel {
-            get {
-                return this.subChannelField;
-            }
-            set {
-                this.subChannelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Partition", IsNullable=false)]
-        public PartitionType[] FileSystemInformation {
-            get {
-                return this.fileSystemInformationField;
-            }
-            set {
-                this.fileSystemInformationField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Sequence information about a track
-///			
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class TrackSequenceType {
-        
-        private int trackNumberField;
-        
-        private int sessionField1;
-        
-        /// <remarks>
-///Track number
-///</remarks>
-        public int TrackNumber {
-            get {
-                return this.trackNumberField;
-            }
-            set {
-                this.trackNumberField = value;
-            }
-        }
-        
-        /// <remarks>
-///Session this track belongs to
-///</remarks>
-        public int Session {
-            get {
-                return this.sessionField1;
-            }
-            set {
-                this.sessionField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    public enum TrackTypeTrackType {
-        
-        /// <remarks/>
-        audio,
-        
-        /// <remarks/>
-        mode0,
-        
-        /// <remarks/>
-        mode1,
-        
-        /// <remarks/>
-        mode2,
-        
-        /// <remarks/>
-        m2f1,
-        
-        /// <remarks/>
-        m2f2,
-        
-        /// <remarks/>
-        dvd,
-        
-        /// <remarks/>
-        hddvd,
-        
-        /// <remarks/>
-        bluray,
-        
-        /// <remarks/>
-        ddcd,
-    }
-    
-    /// <remarks>
-///Track's subchannel information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SubChannelType {
-        
-        private ImageType imageField4;
-        
-        private long sizeField4;
-        
-        private ChecksumType[] checksumsField6;
-        
-        /// <remarks>
-///File containing track's subchannel dump and format, packed, rw_raw
-///					
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField4;
-            }
-            set {
-                this.imageField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of subchannel dump
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField4;
-            }
-            set {
-                this.sizeField4 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
-            get {
-                return this.checksumsField6;
-            }
-            set {
-                this.checksumsField6 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class PartitionType {
-        
-        private int sequenceField2;
-        
-        private string nameField4;
-        
-        private string typeField3;
-        
-        private int startSectorField1;
-        
-        private int endSectorField1;
-        
-        private string descriptionField;
-        
-        private FileSystemType[] fileSystemsField;
-        
-        /// <remarks>
-///Partition sequence number, starting on 1
-///					
-///</remarks>
-        public int Sequence {
-            get {
-                return this.sequenceField2;
-            }
-            set {
-                this.sequenceField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Partition name if supported by partition scheme
-///					
-///</remarks>
-        public string Name {
-            get {
-                return this.nameField4;
-            }
-            set {
-                this.nameField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///Partition type
-///</remarks>
-        public string Type {
-            get {
-                return this.typeField3;
-            }
-            set {
-                this.typeField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Partition starting sector
-///</remarks>
-        public int StartSector {
-            get {
-                return this.startSectorField1;
-            }
-            set {
-                this.startSectorField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Partition ending sector
-///</remarks>
-        public int EndSector {
-            get {
-                return this.endSectorField1;
-            }
-            set {
-                this.endSectorField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Partition description if supported by partition scheme
-///					
-///</remarks>
-        public string Description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="FileSystem", IsNullable=false)]
-        public FileSystemType[] FileSystems {
-            get {
-                return this.fileSystemsField;
-            }
-            set {
-                this.fileSystemsField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Information about a filesystem
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FileSystemType {
-        
-        private string typeField4;
-        
-        private System.DateTime creationDateField;
-        
-        private bool creationDateSpecifiedField;
-        
-        private System.DateTime modificationDateField;
-        
-        private bool modificationDateSpecifiedField;
-        
-        private System.DateTime backupDateField;
-        
-        private bool backupDateSpecifiedField;
-        
-        private int clusterSizeField;
-        
-        private long clustersField;
-        
-        private long filesField;
-        
-        private bool filesSpecifiedField;
-        
-        private bool bootableField;
-        
-        private string volumeSerialField;
-        
-        private string volumeNameField;
-        
-        private long freeClustersField;
-        
-        private bool freeClustersSpecifiedField;
-        
-        private bool dirtyField;
-        
-        private System.DateTime expirationDateField;
-        
-        private bool expirationDateSpecifiedField;
-        
-        private System.DateTime effectiveDateField;
-        
-        private bool effectiveDateSpecifiedField;
-        
-        private string systemIdentifierField;
-        
-        private string volumeSetIdentifierField;
-        
-        private string publisherIdentifierField;
-        
-        private string dataPreparerIdentifierField;
-        
-        private string applicationIdentifierField;
-        
-        /// <remarks>
-///Filesystem type
-///</remarks>
-        public string Type {
-            get {
-                return this.typeField4;
-            }
-            set {
-                this.typeField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem creation date
-///</remarks>
-        public System.DateTime CreationDate {
-            get {
-                return this.creationDateField;
-            }
-            set {
-                this.creationDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool CreationDateSpecified {
-            get {
-                return this.creationDateSpecifiedField;
-            }
-            set {
-                this.creationDateSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem last modification date
-///					
-///</remarks>
-        public System.DateTime ModificationDate {
-            get {
-                return this.modificationDateField;
-            }
-            set {
-                this.modificationDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool ModificationDateSpecified {
-            get {
-                return this.modificationDateSpecifiedField;
-            }
-            set {
-                this.modificationDateSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem last backup date
-///</remarks>
-        public System.DateTime BackupDate {
-            get {
-                return this.backupDateField;
-            }
-            set {
-                this.backupDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool BackupDateSpecified {
-            get {
-                return this.backupDateSpecifiedField;
-            }
-            set {
-                this.backupDateSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Bytes per cluster
-///</remarks>
-        public int ClusterSize {
-            get {
-                return this.clusterSizeField;
-            }
-            set {
-                this.clusterSizeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Clusters in filesystem
-///</remarks>
-        public long Clusters {
-            get {
-                return this.clustersField;
-            }
-            set {
-                this.clustersField = value;
-            }
-        }
-        
-        /// <remarks>
-///Files in filesystem
-///</remarks>
-        public long Files {
-            get {
-                return this.filesField;
-            }
-            set {
-                this.filesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool FilesSpecified {
-            get {
-                return this.filesSpecifiedField;
-            }
-            set {
-                this.filesSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Bootable filesystem?
-///</remarks>
-        public bool Bootable {
-            get {
-                return this.bootableField;
-            }
-            set {
-                this.bootableField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem serial number
-///</remarks>
-        public string VolumeSerial {
-            get {
-                return this.volumeSerialField;
-            }
-            set {
-                this.volumeSerialField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem volume name
-///</remarks>
-        public string VolumeName {
-            get {
-                return this.volumeNameField;
-            }
-            set {
-                this.volumeNameField = value;
-            }
-        }
-        
-        /// <remarks>
-///Free clusters in filesystem
-///</remarks>
-        public long FreeClusters {
-            get {
-                return this.freeClustersField;
-            }
-            set {
-                this.freeClustersField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool FreeClustersSpecified {
-            get {
-                return this.freeClustersSpecifiedField;
-            }
-            set {
-                this.freeClustersSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Dirty/unclean filesystem
-///</remarks>
-        public bool Dirty {
-            get {
-                return this.dirtyField;
-            }
-            set {
-                this.dirtyField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem expiration date
-///</remarks>
-        public System.DateTime ExpirationDate {
-            get {
-                return this.expirationDateField;
-            }
-            set {
-                this.expirationDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool ExpirationDateSpecified {
-            get {
-                return this.expirationDateSpecifiedField;
-            }
-            set {
-                this.expirationDateSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem effective date
-///</remarks>
-        public System.DateTime EffectiveDate {
-            get {
-                return this.effectiveDateField;
-            }
-            set {
-                this.effectiveDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool EffectiveDateSpecified {
-            get {
-                return this.effectiveDateSpecifiedField;
-            }
-            set {
-                this.effectiveDateSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///System identifier filesystem applies to
-///					
-///</remarks>
-        public string SystemIdentifier {
-            get {
-                return this.systemIdentifierField;
-            }
-            set {
-                this.systemIdentifierField = value;
-            }
-        }
-        
-        /// <remarks>
-///Volume set identifier
-///</remarks>
-        public string VolumeSetIdentifier {
-            get {
-                return this.volumeSetIdentifierField;
-            }
-            set {
-                this.volumeSetIdentifierField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem publisher identifier
-///					
-///</remarks>
-        public string PublisherIdentifier {
-            get {
-                return this.publisherIdentifierField;
-            }
-            set {
-                this.publisherIdentifierField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem data preparer
-///</remarks>
-        public string DataPreparerIdentifier {
-            get {
-                return this.dataPreparerIdentifierField;
-            }
-            set {
-                this.dataPreparerIdentifierField = value;
-            }
-        }
-        
-        /// <remarks>
-///Filesystem application preparer
-///					
-///</remarks>
-        public string ApplicationIdentifier {
-            get {
-                return this.applicationIdentifierField;
-            }
-            set {
-                this.applicationIdentifierField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5378,9 +3060,7 @@ namespace Schemas {
         
         private DumpHardwareType dumpHardwareField;
         
-        /// <remarks>
-///Array of drives information
-///</remarks>
+        /// <remarks/>
         public DumpHardwareType DumpHardware {
             get {
                 return this.dumpHardwareField;
@@ -5392,53 +3072,47 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DumpHardwareType {
         
-        private string manufacturerField1;
+        private string manufacturerField;
         
-        private string modelField1;
+        private string modelField;
         
         private string revisionField;
         
         private string firmwareField;
         
-        private string serialField2;
+        private string serialField;
         
         private ExtentType[] extentsField;
         
-        private SoftwareType softwareField3;
+        private SoftwareType softwareField;
         
-        /// <remarks>
-///Drive manufacturer
-///</remarks>
+        /// <remarks/>
         public string Manufacturer {
             get {
-                return this.manufacturerField1;
+                return this.manufacturerField;
             }
             set {
-                this.manufacturerField1 = value;
+                this.manufacturerField = value;
             }
         }
         
-        /// <remarks>
-///Drive model
-///</remarks>
+        /// <remarks/>
         public string Model {
             get {
-                return this.modelField1;
+                return this.modelField;
             }
             set {
-                this.modelField1 = value;
+                this.modelField = value;
             }
         }
         
-        /// <remarks>
-///Drive revision
-///</remarks>
+        /// <remarks/>
         public string Revision {
             get {
                 return this.revisionField;
@@ -5448,9 +3122,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Drive firmware version
-///</remarks>
+        /// <remarks/>
         public string Firmware {
             get {
                 return this.firmwareField;
@@ -5460,20 +3132,18 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Drive serial number
-///</remarks>
+        /// <remarks/>
         public string Serial {
             get {
-                return this.serialField2;
+                return this.serialField;
             }
             set {
-                this.serialField2 = value;
+                this.serialField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Extent", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Extent", IsNullable=false)]
         public ExtentType[] Extents {
             get {
                 return this.extentsField;
@@ -5483,99 +3153,83 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Software used to read with this drive
-///					
-///</remarks>
+        /// <remarks/>
         public SoftwareType Software {
             get {
-                return this.softwareField3;
+                return this.softwareField;
             }
             set {
-                this.softwareField3 = value;
+                this.softwareField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ExtentType {
         
-        private int startField1;
+        private int startField;
         
-        private int endField1;
+        private int endField;
         
-        /// <remarks>
-///Starting sector
-///</remarks>
+        /// <remarks/>
         public int Start {
             get {
-                return this.startField1;
+                return this.startField;
             }
             set {
-                this.startField1 = value;
+                this.startField = value;
             }
         }
         
-        /// <remarks>
-///Ending sector
-///</remarks>
+        /// <remarks/>
         public int End {
             get {
-                return this.endField1;
+                return this.endField;
             }
             set {
-                this.endField1 = value;
+                this.endField = value;
             }
         }
     }
     
-    /// <remarks>
-///Software used for disc reading
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoftwareType {
         
-        private string nameField5;
+        private string nameField;
         
-        private string versionField2;
+        private string versionField;
         
         private string operatingSystemField;
         
-        /// <remarks>
-///Software name
-///</remarks>
+        /// <remarks/>
         public string Name {
             get {
-                return this.nameField5;
+                return this.nameField;
             }
             set {
-                this.nameField5 = value;
+                this.nameField = value;
             }
         }
         
-        /// <remarks>
-///Software version
-///</remarks>
+        /// <remarks/>
         public string Version {
             get {
-                return this.versionField2;
+                return this.versionField;
             }
             set {
-                this.versionField2 = value;
+                this.versionField = value;
             }
         }
         
-        /// <remarks>
-///Operating system name and version where the software was run
-///					
-///</remarks>
+        /// <remarks/>
         public string OperatingSystem {
             get {
                 return this.operatingSystemField;
@@ -5587,489 +3241,1608 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AdvertisementType {
+    public partial class BlockTrackType {
         
-        private string manufacturerField2;
+        private ImageType imageField;
         
-        private string productField;
+        private long sizeField;
         
-        private FileType fileField2;
+        private long headField;
         
-        private long fileSizeField;
+        private long cylinderField;
         
-        private long framesField;
+        private long startSectorField;
         
-        private bool framesSpecifiedField;
+        private long endSectorField;
         
-        private long durationField;
+        private long sectorsField;
         
-        private int meanFrameRateField;
+        private int bytesPerSectorField;
         
-        private bool meanFrameRateSpecifiedField;
+        private ChecksumType[] checksumsField;
         
-        private ChecksumType[] checksumsField7;
+        private string formatField;
         
-        private AudioTracksType[] audioTrackField;
-        
-        private VideoTracksType[] videoTrackField;
-        
-        private SubtitleTracksType[] subtitleTrackField;
-        
-        private RecordingType recordingField;
-        
-        /// <remarks>
-///Manufactured of the advertised product
-///					
-///</remarks>
-        public string Manufacturer {
+        /// <remarks/>
+        public ImageType Image {
             get {
-                return this.manufacturerField2;
+                return this.imageField;
             }
             set {
-                this.manufacturerField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Advertised product
-///</remarks>
-        public string Product {
-            get {
-                return this.productField;
-            }
-            set {
-                this.productField = value;
-            }
-        }
-        
-        /// <remarks>
-///File containing advertising
-///</remarks>
-        public FileType File {
-            get {
-                return this.fileField2;
-            }
-            set {
-                this.fileField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of file
-///</remarks>
-        public long FileSize {
-            get {
-                return this.fileSizeField;
-            }
-            set {
-                this.fileSizeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Total video frames
-///</remarks>
-        public long Frames {
-            get {
-                return this.framesField;
-            }
-            set {
-                this.framesField = value;
+                this.imageField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool FramesSpecified {
+        public long Size {
             get {
-                return this.framesSpecifiedField;
+                return this.sizeField;
             }
             set {
-                this.framesSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Duration in seconds
-///</remarks>
-        public long Duration {
-            get {
-                return this.durationField;
-            }
-            set {
-                this.durationField = value;
-            }
-        }
-        
-        /// <remarks>
-///Mean framerate
-///</remarks>
-        public int MeanFrameRate {
-            get {
-                return this.meanFrameRateField;
-            }
-            set {
-                this.meanFrameRateField = value;
+                this.sizeField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool MeanFrameRateSpecified {
+        public long Head {
             get {
-                return this.meanFrameRateSpecifiedField;
+                return this.headField;
             }
             set {
-                this.meanFrameRateSpecifiedField = value;
+                this.headField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
+        public long Cylinder {
+            get {
+                return this.cylinderField;
+            }
+            set {
+                this.cylinderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long StartSector {
+            get {
+                return this.startSectorField;
+            }
+            set {
+                this.startSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long EndSector {
+            get {
+                return this.endSectorField;
+            }
+            set {
+                this.endSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Sectors {
+            get {
+                return this.sectorsField;
+            }
+            set {
+                this.sectorsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int BytesPerSector {
+            get {
+                return this.bytesPerSectorField;
+            }
+            set {
+                this.bytesPerSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
         public ChecksumType[] Checksums {
             get {
-                return this.checksumsField7;
+                return this.checksumsField;
             }
             set {
-                this.checksumsField7 = value;
-            }
-        }
-        
-        /// <remarks>
-///Audio tracks of advertisement
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("AudioTrack")]
-        public AudioTracksType[] AudioTrack {
-            get {
-                return this.audioTrackField;
-            }
-            set {
-                this.audioTrackField = value;
-            }
-        }
-        
-        /// <remarks>
-///Video tracks of advertisement
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("VideoTrack")]
-        public VideoTracksType[] VideoTrack {
-            get {
-                return this.videoTrackField;
-            }
-            set {
-                this.videoTrackField = value;
-            }
-        }
-        
-        /// <remarks>
-///Subtitle tracks of advertisement
-///					
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("SubtitleTrack")]
-        public SubtitleTracksType[] SubtitleTrack {
-            get {
-                return this.subtitleTrackField;
-            }
-            set {
-                this.subtitleTrackField = value;
-            }
-        }
-        
-        /// <remarks>
-///If advertisement has been capture from a television/radio broadcast, here is the capture information
-///					
-///</remarks>
-        public RecordingType Recording {
-            get {
-                return this.recordingField;
-            }
-            set {
-                this.recordingField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AudioTracksType {
-        
-        private int trackNumberField1;
-        
-        private string accoustIDField1;
-        
-        private string codecField;
-        
-        private int channelsField;
-        
-        private int sampleRateField;
-        
-        private long meanBitrateField;
-        
-        private LanguagesTypeLanguage[] languagesField1;
-        
-        /// <remarks>
-///Track number in media container
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int TrackNumber {
-            get {
-                return this.trackNumberField1;
-            }
-            set {
-                this.trackNumberField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track's AccoustID
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AccoustID {
-            get {
-                return this.accoustIDField1;
-            }
-            set {
-                this.accoustIDField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track's codec
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Codec {
-            get {
-                return this.codecField;
-            }
-            set {
-                this.codecField = value;
-            }
-        }
-        
-        /// <remarks>
-///Audio channels
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int Channels {
-            get {
-                return this.channelsField;
-            }
-            set {
-                this.channelsField = value;
-            }
-        }
-        
-        /// <remarks>
-///Audio sampling rate
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int SampleRate {
-            get {
-                return this.sampleRateField;
-            }
-            set {
-                this.sampleRateField = value;
-            }
-        }
-        
-        /// <remarks>
-///Mean bitrate, or constant bitrate, in bits per second
-///				
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public long MeanBitrate {
-            get {
-                return this.meanBitrateField;
-            }
-            set {
-                this.meanBitrateField = value;
+                this.checksumsField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
-        public LanguagesTypeLanguage[] Languages {
+        public string Format {
             get {
-                return this.languagesField1;
+                return this.formatField;
             }
             set {
-                this.languagesField1 = value;
+                this.formatField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class VideoTracksType {
+    public partial class USBType {
         
-        private int trackNumberField2;
+        private int vendorIDField;
         
-        private string codecField1;
+        private int productIDField;
         
-        private int horizontalField;
+        private DumpType descriptorsField;
         
-        private int verticalField;
-        
-        private long meanBitrateField1;
-        
-        private bool threeDField;
-        
-        private LanguagesTypeLanguage[] languagesField2;
-        
-        /// <remarks>
-///Track number in media container
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int TrackNumber {
+        /// <remarks/>
+        public int VendorID {
             get {
-                return this.trackNumberField2;
+                return this.vendorIDField;
             }
             set {
-                this.trackNumberField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track's codec
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Codec {
-            get {
-                return this.codecField1;
-            }
-            set {
-                this.codecField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Horizontal resolution in pixels
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int Horizontal {
-            get {
-                return this.horizontalField;
-            }
-            set {
-                this.horizontalField = value;
-            }
-        }
-        
-        /// <remarks>
-///Vertical resolution in pixels
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int Vertical {
-            get {
-                return this.verticalField;
-            }
-            set {
-                this.verticalField = value;
-            }
-        }
-        
-        /// <remarks>
-///Mean bitrate, or constant bitrate, in bits per second
-///				
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public long MeanBitrate {
-            get {
-                return this.meanBitrateField1;
-            }
-            set {
-                this.meanBitrateField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Is this video track in 3D?
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool ThreeD {
-            get {
-                return this.threeDField;
-            }
-            set {
-                this.threeDField = value;
+                this.vendorIDField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
-        public LanguagesTypeLanguage[] Languages {
+        public int ProductID {
             get {
-                return this.languagesField2;
+                return this.productIDField;
             }
             set {
-                this.languagesField2 = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SubtitleTracksType {
-        
-        private int trackNumberField3;
-        
-        private string codecField2;
-        
-        private LanguagesTypeLanguage[] languagesField3;
-        
-        /// <remarks>
-///Track number in media container
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int TrackNumber {
-            get {
-                return this.trackNumberField3;
-            }
-            set {
-                this.trackNumberField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track's codec
-///</remarks>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Codec {
-            get {
-                return this.codecField2;
-            }
-            set {
-                this.codecField2 = value;
+                this.productIDField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Language", IsNullable=false)]
-        public LanguagesTypeLanguage[] Languages {
+        public DumpType Descriptors {
             get {
-                return this.languagesField3;
+                return this.descriptorsField;
             }
             set {
-                this.languagesField3 = value;
+                this.descriptorsField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DumpType {
+        
+        private string imageField;
+        
+        private int sizeField;
+        
+        private ChecksumType[] checksumsField;
+        
+        /// <remarks/>
+        public string Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class EVPDType {
+        
+        private string imageField;
+        
+        private long sizeField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private int pageField;
+        
+        private bool pageFieldSpecified;
+        
+        /// <remarks/>
+        public string Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pageSpecified {
+            get {
+                return this.pageFieldSpecified;
+            }
+            set {
+                this.pageFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SCSIType {
+        
+        private DumpType inquiryField;
+        
+        private EVPDType[] eVPDField;
+        
+        private DumpType modeSenseField;
+        
+        private DumpType modeSense10Field;
+        
+        private DumpType logSenseField;
+        
+        /// <remarks/>
+        public DumpType Inquiry {
+            get {
+                return this.inquiryField;
+            }
+            set {
+                this.inquiryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("EVPD")]
+        public EVPDType[] EVPD {
+            get {
+                return this.eVPDField;
+            }
+            set {
+                this.eVPDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType ModeSense {
+            get {
+                return this.modeSenseField;
+            }
+            set {
+                this.modeSenseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType ModeSense10 {
+            get {
+                return this.modeSense10Field;
+            }
+            set {
+                this.modeSense10Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType LogSense {
+            get {
+                return this.logSenseField;
+            }
+            set {
+                this.logSenseField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SecureDigitalType {
+        
+        private DumpType cIDField;
+        
+        private DumpType cSDField;
+        
+        private DumpType extendedCSDField;
+        
+        /// <remarks/>
+        public DumpType CID {
+            get {
+                return this.cIDField;
+            }
+            set {
+                this.cIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType CSD {
+            get {
+                return this.cSDField;
+            }
+            set {
+                this.cSDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType ExtendedCSD {
+            get {
+                return this.extendedCSDField;
+            }
+            set {
+                this.extendedCSDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ATAType {
+        
+        private DumpType identifyField;
+        
+        /// <remarks/>
+        public DumpType Identify {
+            get {
+                return this.identifyField;
+            }
+            set {
+                this.identifyField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BlockMediaType {
+        
+        private ImageType imageField;
+        
+        private long sizeField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private SequenceType sequenceField;
+        
+        private string manufacturerField;
+        
+        private string modelField;
+        
+        private string serialField;
+        
+        private string firmwareField;
+        
+        private string interfaceField;
+        
+        private int physicalBlockSizeField;
+        
+        private int logicalBlockSizeField;
+        
+        private long logicalBlocksField;
+        
+        private ScansType scansField;
+        
+        private ATAType aTAField;
+        
+        private PCIType pCIField;
+        
+        private PCMCIAType pCMCIAField;
+        
+        private SecureDigitalType secureDigitalField;
+        
+        private SCSIType sCSIField;
+        
+        private USBType uSBField;
+        
+        private long headsField;
+        
+        private bool headsFieldSpecified;
+        
+        private long cylindersField;
+        
+        private bool cylindersFieldSpecified;
+        
+        private long sectorsPerTrackField;
+        
+        private bool sectorsPerTrackFieldSpecified;
+        
+        private BlockTrackType[] trackField;
+        
+        private string copyProtectionField;
+        
+        private DimensionsType dimensionsField;
+        
+        private PartitionType[] fileSystemInformationField;
+        
+        private DumpHardwareArrayType dumpHardwareArrayField;
+        
+        private string diskTypeField;
+        
+        private string diskSubTypeField;
+        
+        /// <remarks/>
+        public ImageType Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SequenceType Sequence {
+            get {
+                return this.sequenceField;
+            }
+            set {
+                this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField;
+            }
+            set {
+                this.manufacturerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Model {
+            get {
+                return this.modelField;
+            }
+            set {
+                this.modelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Serial {
+            get {
+                return this.serialField;
+            }
+            set {
+                this.serialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Firmware {
+            get {
+                return this.firmwareField;
+            }
+            set {
+                this.firmwareField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Interface {
+            get {
+                return this.interfaceField;
+            }
+            set {
+                this.interfaceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int PhysicalBlockSize {
+            get {
+                return this.physicalBlockSizeField;
+            }
+            set {
+                this.physicalBlockSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int LogicalBlockSize {
+            get {
+                return this.logicalBlockSizeField;
+            }
+            set {
+                this.logicalBlockSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long LogicalBlocks {
+            get {
+                return this.logicalBlocksField;
+            }
+            set {
+                this.logicalBlocksField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScansType Scans {
+            get {
+                return this.scansField;
+            }
+            set {
+                this.scansField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ATAType ATA {
+            get {
+                return this.aTAField;
+            }
+            set {
+                this.aTAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PCIType PCI {
+            get {
+                return this.pCIField;
+            }
+            set {
+                this.pCIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PCMCIAType PCMCIA {
+            get {
+                return this.pCMCIAField;
+            }
+            set {
+                this.pCMCIAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SecureDigitalType SecureDigital {
+            get {
+                return this.secureDigitalField;
+            }
+            set {
+                this.secureDigitalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SCSIType SCSI {
+            get {
+                return this.sCSIField;
+            }
+            set {
+                this.sCSIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public USBType USB {
+            get {
+                return this.uSBField;
+            }
+            set {
+                this.uSBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Heads {
+            get {
+                return this.headsField;
+            }
+            set {
+                this.headsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool HeadsSpecified {
+            get {
+                return this.headsFieldSpecified;
+            }
+            set {
+                this.headsFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Cylinders {
+            get {
+                return this.cylindersField;
+            }
+            set {
+                this.cylindersField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CylindersSpecified {
+            get {
+                return this.cylindersFieldSpecified;
+            }
+            set {
+                this.cylindersFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long SectorsPerTrack {
+            get {
+                return this.sectorsPerTrackField;
+            }
+            set {
+                this.sectorsPerTrackField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SectorsPerTrackSpecified {
+            get {
+                return this.sectorsPerTrackFieldSpecified;
+            }
+            set {
+                this.sectorsPerTrackFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Track")]
+        public BlockTrackType[] Track {
+            get {
+                return this.trackField;
+            }
+            set {
+                this.trackField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CopyProtection {
+            get {
+                return this.copyProtectionField;
+            }
+            set {
+                this.copyProtectionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DimensionsType Dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                this.dimensionsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Partition", IsNullable=false)]
+        public PartitionType[] FileSystemInformation {
+            get {
+                return this.fileSystemInformationField;
+            }
+            set {
+                this.fileSystemInformationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpHardwareArrayType DumpHardwareArray {
+            get {
+                return this.dumpHardwareArrayField;
+            }
+            set {
+                this.dumpHardwareArrayField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DiskType {
+            get {
+                return this.diskTypeField;
+            }
+            set {
+                this.diskTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DiskSubType {
+            get {
+                return this.diskSubTypeField;
+            }
+            set {
+                this.diskSubTypeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PCIType {
+        
+        private int vendorIDField;
+        
+        private int deviceIDField;
+        
+        private DumpType configurationField;
+        
+        private LinearMediaType expansionROMField;
+        
+        /// <remarks/>
+        public int VendorID {
+            get {
+                return this.vendorIDField;
+            }
+            set {
+                this.vendorIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int DeviceID {
+            get {
+                return this.deviceIDField;
+            }
+            set {
+                this.deviceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType Configuration {
+            get {
+                return this.configurationField;
+            }
+            set {
+                this.configurationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public LinearMediaType ExpansionROM {
+            get {
+                return this.expansionROMField;
+            }
+            set {
+                this.expansionROMField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LinearMediaType {
+        
+        private ImageType imageField;
+        
+        private long sizeField;
+        
+        private ChecksumType[] imageChecksumsField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private string titleField;
+        
+        private int sequenceField;
+        
+        private bool sequenceFieldSpecified;
+        
+        private int imageInterleaveField;
+        
+        private bool imageInterleaveFieldSpecified;
+        
+        private int interleaveField;
+        
+        private bool interleaveFieldSpecified;
+        
+        private string manufacturerField;
+        
+        private string modelField;
+        
+        private string packageField;
+        
+        private string interfaceField;
+        
+        private DimensionsType dimensionsField;
+        
+        private ScansType scansField;
+        
+        private DumpHardwareArrayType dumpHardwareArrayField;
+        
+        private PCMCIAType pCMCIAField;
+        
+        private string copyProtectionField;
+        
+        /// <remarks/>
+        public ImageType Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] ImageChecksums {
+            get {
+                return this.imageChecksumsField;
+            }
+            set {
+                this.imageChecksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequence {
+            get {
+                return this.sequenceField;
+            }
+            set {
+                this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SequenceSpecified {
+            get {
+                return this.sequenceFieldSpecified;
+            }
+            set {
+                this.sequenceFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ImageInterleave {
+            get {
+                return this.imageInterleaveField;
+            }
+            set {
+                this.imageInterleaveField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ImageInterleaveSpecified {
+            get {
+                return this.imageInterleaveFieldSpecified;
+            }
+            set {
+                this.imageInterleaveFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Interleave {
+            get {
+                return this.interleaveField;
+            }
+            set {
+                this.interleaveField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool InterleaveSpecified {
+            get {
+                return this.interleaveFieldSpecified;
+            }
+            set {
+                this.interleaveFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField;
+            }
+            set {
+                this.manufacturerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Model {
+            get {
+                return this.modelField;
+            }
+            set {
+                this.modelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Package {
+            get {
+                return this.packageField;
+            }
+            set {
+                this.packageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Interface {
+            get {
+                return this.interfaceField;
+            }
+            set {
+                this.interfaceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DimensionsType Dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                this.dimensionsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScansType Scans {
+            get {
+                return this.scansField;
+            }
+            set {
+                this.scansField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpHardwareArrayType DumpHardwareArray {
+            get {
+                return this.dumpHardwareArrayField;
+            }
+            set {
+                this.dumpHardwareArrayField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PCMCIAType PCMCIA {
+            get {
+                return this.pCMCIAField;
+            }
+            set {
+                this.pCMCIAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CopyProtection {
+            get {
+                return this.copyProtectionField;
+            }
+            set {
+                this.copyProtectionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PCMCIAType {
+        
+        private DumpType cISField;
+        
+        /// <remarks/>
+        public DumpType CIS {
+            get {
+                return this.cISField;
+            }
+            set {
+                this.cISField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PartitionType {
+        
+        private int sequenceField;
+        
+        private string nameField;
+        
+        private string typeField;
+        
+        private int startSectorField;
+        
+        private int endSectorField;
+        
+        private string descriptionField;
+        
+        private FileSystemType[] fileSystemsField;
+        
+        /// <remarks/>
+        public int Sequence {
+            get {
+                return this.sequenceField;
+            }
+            set {
+                this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int StartSector {
+            get {
+                return this.startSectorField;
+            }
+            set {
+                this.startSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int EndSector {
+            get {
+                return this.endSectorField;
+            }
+            set {
+                this.endSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("FileSystem", IsNullable=false)]
+        public FileSystemType[] FileSystems {
+            get {
+                return this.fileSystemsField;
+            }
+            set {
+                this.fileSystemsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FileSystemType {
+        
+        private string typeField;
+        
+        private System.DateTime creationDateField;
+        
+        private bool creationDateFieldSpecified;
+        
+        private System.DateTime modificationDateField;
+        
+        private bool modificationDateFieldSpecified;
+        
+        private System.DateTime backupDateField;
+        
+        private bool backupDateFieldSpecified;
+        
+        private int clusterSizeField;
+        
+        private long clustersField;
+        
+        private long filesField;
+        
+        private bool filesFieldSpecified;
+        
+        private bool bootableField;
+        
+        private string volumeSerialField;
+        
+        private string volumeNameField;
+        
+        private long freeClustersField;
+        
+        private bool freeClustersFieldSpecified;
+        
+        private bool dirtyField;
+        
+        private System.DateTime expirationDateField;
+        
+        private bool expirationDateFieldSpecified;
+        
+        private System.DateTime effectiveDateField;
+        
+        private bool effectiveDateFieldSpecified;
+        
+        private string systemIdentifierField;
+        
+        private string volumeSetIdentifierField;
+        
+        private string publisherIdentifierField;
+        
+        private string dataPreparerIdentifierField;
+        
+        private string applicationIdentifierField;
+        
+        /// <remarks/>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime CreationDate {
+            get {
+                return this.creationDateField;
+            }
+            set {
+                this.creationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CreationDateSpecified {
+            get {
+                return this.creationDateFieldSpecified;
+            }
+            set {
+                this.creationDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime ModificationDate {
+            get {
+                return this.modificationDateField;
+            }
+            set {
+                this.modificationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ModificationDateSpecified {
+            get {
+                return this.modificationDateFieldSpecified;
+            }
+            set {
+                this.modificationDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime BackupDate {
+            get {
+                return this.backupDateField;
+            }
+            set {
+                this.backupDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool BackupDateSpecified {
+            get {
+                return this.backupDateFieldSpecified;
+            }
+            set {
+                this.backupDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ClusterSize {
+            get {
+                return this.clusterSizeField;
+            }
+            set {
+                this.clusterSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Clusters {
+            get {
+                return this.clustersField;
+            }
+            set {
+                this.clustersField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Files {
+            get {
+                return this.filesField;
+            }
+            set {
+                this.filesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FilesSpecified {
+            get {
+                return this.filesFieldSpecified;
+            }
+            set {
+                this.filesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool Bootable {
+            get {
+                return this.bootableField;
+            }
+            set {
+                this.bootableField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string VolumeSerial {
+            get {
+                return this.volumeSerialField;
+            }
+            set {
+                this.volumeSerialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string VolumeName {
+            get {
+                return this.volumeNameField;
+            }
+            set {
+                this.volumeNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long FreeClusters {
+            get {
+                return this.freeClustersField;
+            }
+            set {
+                this.freeClustersField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FreeClustersSpecified {
+            get {
+                return this.freeClustersFieldSpecified;
+            }
+            set {
+                this.freeClustersFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool Dirty {
+            get {
+                return this.dirtyField;
+            }
+            set {
+                this.dirtyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime ExpirationDate {
+            get {
+                return this.expirationDateField;
+            }
+            set {
+                this.expirationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ExpirationDateSpecified {
+            get {
+                return this.expirationDateFieldSpecified;
+            }
+            set {
+                this.expirationDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EffectiveDateSpecified {
+            get {
+                return this.effectiveDateFieldSpecified;
+            }
+            set {
+                this.effectiveDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SystemIdentifier {
+            get {
+                return this.systemIdentifierField;
+            }
+            set {
+                this.systemIdentifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string VolumeSetIdentifier {
+            get {
+                return this.volumeSetIdentifierField;
+            }
+            set {
+                this.volumeSetIdentifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PublisherIdentifier {
+            get {
+                return this.publisherIdentifierField;
+            }
+            set {
+                this.publisherIdentifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataPreparerIdentifier {
+            get {
+                return this.dataPreparerIdentifierField;
+            }
+            set {
+                this.dataPreparerIdentifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ApplicationIdentifier {
+            get {
+                return this.applicationIdentifierField;
+            }
+            set {
+                this.applicationIdentifierField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CoordinatesType {
+        
+        private double latitudeField;
+        
+        private double longitudeField;
+        
+        /// <remarks/>
+        public double Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6083,14 +4856,11 @@ namespace Schemas {
         
         private System.DateTime timestampField;
         
-        private SoftwareType[] softwareField4;
+        private SoftwareType[] softwareField;
         
         private CoordinatesType coordinatesField;
         
-        /// <remarks>
-///Name of the television channel this recording was broadcasted, if applicable
-///					
-///</remarks>
+        /// <remarks/>
         public string Broadcaster {
             get {
                 return this.broadcasterField;
@@ -6100,10 +4870,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Platform that broadcasted the television channel, if applicable
-///					
-///</remarks>
+        /// <remarks/>
         public string BroadcastPlatform {
             get {
                 return this.broadcastPlatformField;
@@ -6113,10 +4880,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Format of the source of this recording
-///					
-///</remarks>
+        /// <remarks/>
         public RecordingTypeSourceFormat SourceFormat {
             get {
                 return this.sourceFormatField;
@@ -6126,9 +4890,7 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Date and time of broadcast
-///</remarks>
+        /// <remarks/>
         public System.DateTime Timestamp {
             get {
                 return this.timestampField;
@@ -6138,24 +4900,18 @@ namespace Schemas {
             }
         }
         
-        /// <remarks>
-///Software used to capture, process, convert, the recording
-///					
-///</remarks>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Software")]
         public SoftwareType[] Software {
             get {
-                return this.softwareField4;
+                return this.softwareField;
             }
             set {
-                this.softwareField4 = value;
+                this.softwareField = value;
             }
         }
         
-        /// <remarks>
-///Approximate coordinates where the recording was done
-///					
-///</remarks>
+        /// <remarks/>
         public CoordinatesType Coordinates {
             get {
                 return this.coordinatesField;
@@ -6167,8 +4923,9 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RecordingTypeSourceFormat {
         
         /// <remarks/>
@@ -6429,1533 +5186,2131 @@ namespace Schemas {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CoordinatesType {
+    public partial class SubtitleTracksType {
         
-        private double latitudeField;
+        private LanguagesTypeLanguage[] languagesField;
         
-        private double longitudeField;
+        private int trackNumberField;
         
-        /// <remarks>
-///Approximate latitude of recording
-///					
-///</remarks>
-        public double Latitude {
+        private string codecField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Languages {
             get {
-                return this.latitudeField;
+                return this.languagesField;
             }
             set {
-                this.latitudeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Approximate longitude of recording
-///					
-///</remarks>
-        public double Longitude {
-            get {
-                return this.longitudeField;
-            }
-            set {
-                this.longitudeField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Describes a dump of a linear media, that is, a media that is read byte-by-byte like for example, a ROM chip, a game cartridge, a PCMCIA SRAM card, etc...
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class LinearMediaType {
-        
-        private ImageType imageField5;
-        
-        private long sizeField5;
-        
-        private ChecksumType[] imageChecksumsField;
-        
-        private ChecksumType[] checksumsField8;
-        
-        private string titleField;
-        
-        private int sequenceField3;
-        
-        private bool sequenceSpecifiedField;
-        
-        private int imageInterleaveField;
-        
-        private bool imageInterleaveSpecifiedField;
-        
-        private int interleaveField;
-        
-        private bool interleaveSpecifiedField;
-        
-        private string manufacturerField3;
-        
-        private string modelField2;
-        
-        private string packageField;
-        
-        private string interfaceField;
-        
-        private DimensionsType dimensionsField1;
-        
-        private ScansType scansField2;
-        
-        private DumpHardwareArrayType dumpHardwareArrayField1;
-        
-        private PCMCIAType pCMCIAField;
-        
-        private string copyProtectionField1;
-        
-        /// <remarks>
-///Image file, or image description file, plus format (cue, toc, etc, etc)
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField5;
-            }
-            set {
-                this.imageField5 = value;
-            }
-        }
-        
-        /// <remarks>
-///Image file size
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField5;
-            }
-            set {
-                this.sizeField5 = value;
+                this.languagesField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] ImageChecksums {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int TrackNumber {
             get {
-                return this.imageChecksumsField;
+                return this.trackNumberField;
             }
             set {
-                this.imageChecksumsField = value;
+                this.trackNumberField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Codec {
             get {
-                return this.checksumsField8;
+                return this.codecField;
             }
             set {
-                this.checksumsField8 = value;
-            }
-        }
-        
-        /// <remarks>
-///Title as it is labeled on media
-///</remarks>
-        public string Title {
-            get {
-                return this.titleField;
-            }
-            set {
-                this.titleField = value;
-            }
-        }
-        
-        /// <remarks>
-///Sequence of media
-///</remarks>
-        public int Sequence {
-            get {
-                return this.sequenceField3;
-            }
-            set {
-                this.sequenceField3 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool SequenceSpecified {
-            get {
-                return this.sequenceSpecifiedField;
-            }
-            set {
-                this.sequenceSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///How many bytes must be read in image file for each byte in media
-///</remarks>
-        public int ImageInterleave {
-            get {
-                return this.imageInterleaveField;
-            }
-            set {
-                this.imageInterleaveField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool ImageInterleaveSpecified {
-            get {
-                return this.imageInterleaveSpecifiedField;
-            }
-            set {
-                this.imageInterleaveSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///How many bytes must be skipped in image file for each byte in media
-///</remarks>
-        public int Interleave {
-            get {
-                return this.interleaveField;
-            }
-            set {
-                this.interleaveField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool InterleaveSpecified {
-            get {
-                return this.interleaveSpecifiedField;
-            }
-            set {
-                this.interleaveSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Media manufacturer
-///</remarks>
-        public string Manufacturer {
-            get {
-                return this.manufacturerField3;
-            }
-            set {
-                this.manufacturerField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media model
-///</remarks>
-        public string Model {
-            get {
-                return this.modelField2;
-            }
-            set {
-                this.modelField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media packaging (DIP, PCMCIA, Cartridge, etc)
-///</remarks>
-        public string Package {
-            get {
-                return this.packageField;
-            }
-            set {
-                this.packageField = value;
-            }
-        }
-        
-        /// <remarks>
-///Media interface
-///</remarks>
-        public string Interface {
-            get {
-                return this.interfaceField;
-            }
-            set {
-                this.interfaceField = value;
-            }
-        }
-        
-        /// <remarks>
-///Dimensions of media
-///</remarks>
-        public DimensionsType Dimensions {
-            get {
-                return this.dimensionsField1;
-            }
-            set {
-                this.dimensionsField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Scan of media
-///</remarks>
-        public ScansType Scans {
-            get {
-                return this.scansField2;
-            }
-            set {
-                this.scansField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Array of hardware used to dump media
-///</remarks>
-        public DumpHardwareArrayType DumpHardwareArray {
-            get {
-                return this.dumpHardwareArrayField1;
-            }
-            set {
-                this.dumpHardwareArrayField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Present if media is a PCMCIA Linear Flash or SRAM card, to contain PCMCIA specific information
-///</remarks>
-        public PCMCIAType PCMCIA {
-            get {
-                return this.pCMCIAField;
-            }
-            set {
-                this.pCMCIAField = value;
-            }
-        }
-        
-        /// <remarks>
-///Copy protection, if applicable
-///</remarks>
-        public string CopyProtection {
-            get {
-                return this.copyProtectionField1;
-            }
-            set {
-                this.copyProtectionField1 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Contains PCMCIA card information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class PCMCIAType {
-        
-        private DumpType cISField;
-        
-        /// <remarks>
-///Contains the PCMCIA Card Information Structure dump.
-///</remarks>
-        public DumpType CIS {
-            get {
-                return this.cISField;
-            }
-            set {
-                this.cISField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Contains PCI/PCI-X/PCIe card information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class PCIType {
-        
-        private int vendorIDField;
-        
-        private int deviceIDField;
-        
-        private DumpType configurationField;
-        
-        private LinearMediaType expansionROMField;
-        
-        /// <remarks>
-///Contains PCI Vendor ID
-///</remarks>
-        public int VendorID {
-            get {
-                return this.vendorIDField;
-            }
-            set {
-                this.vendorIDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains PCI Device ID
-///</remarks>
-        public int DeviceID {
-            get {
-                return this.deviceIDField;
-            }
-            set {
-                this.deviceIDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Binary dump of the PCI configuration space
-///</remarks>
-        public DumpType Configuration {
-            get {
-                return this.configurationField;
-            }
-            set {
-                this.configurationField = value;
-            }
-        }
-        
-        /// <remarks>
-///Binary dump of the PCI expansion rom
-///</remarks>
-        public LinearMediaType ExpansionROM {
-            get {
-                return this.expansionROMField;
-            }
-            set {
-                this.expansionROMField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Describes a dump of a block (sector) layered media
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BlockMediaType {
-        
-        private ImageType imageField6;
-        
-        private long sizeField6;
-        
-        private ChecksumType[] checksumsField9;
-        
-        private SequenceType sequenceField4;
-        
-        private string manufacturerField4;
-        
-        private string modelField3;
-        
-        private string serialField3;
-        
-        private string firmwareField1;
-        
-        private string interfaceField1;
-        
-        private int physicalBlockSizeField;
-        
-        private int logicalBlockSizeField;
-        
-        private long logicalBlocksField;
-        
-        private ScansType scansField3;
-        
-        private ATAType aTAField;
-        
-        private PCIType pCIField;
-        
-        private PCMCIAType pCMCIAField1;
-        
-        private SecureDigitalType secureDigitalField;
-        
-        private SCSIType sCSIField;
-        
-        private USBType uSBField;
-        
-        private long headsField;
-        
-        private bool headsSpecifiedField;
-        
-        private long cylindersField;
-        
-        private bool cylindersSpecifiedField;
-        
-        private long sectorsPerTrackField;
-        
-        private bool sectorsPerTrackSpecifiedField;
-        
-        private BlockTrackType[] trackField1;
-        
-        private string copyProtectionField2;
-        
-        private DimensionsType dimensionsField2;
-        
-        private PartitionType[] fileSystemInformationField1;
-        
-        private DumpHardwareArrayType dumpHardwareArrayField2;
-        
-        /// <remarks>
-///Image file, or image description file, plus format (cue, toc, etc, etc)
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField6;
-            }
-            set {
-                this.imageField6 = value;
-            }
-        }
-        
-        /// <remarks>
-///Image file size
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField6;
-            }
-            set {
-                this.sizeField6 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
-            get {
-                return this.checksumsField9;
-            }
-            set {
-                this.checksumsField9 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media sequence information
-///</remarks>
-        public SequenceType Sequence {
-            get {
-                return this.sequenceField4;
-            }
-            set {
-                this.sequenceField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media manufacturer (for fixed AND removable media)
-///</remarks>
-        public string Manufacturer {
-            get {
-                return this.manufacturerField4;
-            }
-            set {
-                this.manufacturerField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media model (for fixed AND removable media)
-///</remarks>
-        public string Model {
-            get {
-                return this.modelField3;
-            }
-            set {
-                this.modelField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media serial number (for fixed and, if applicable, removable media)
-///</remarks>
-        public string Serial {
-            get {
-                return this.serialField3;
-            }
-            set {
-                this.serialField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media firmware version, for fixed media only
-///</remarks>
-        public string Firmware {
-            get {
-                return this.firmwareField1;
-            }
-            set {
-                this.firmwareField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media physical interface, for fixed media only
-///</remarks>
-        public string Interface {
-            get {
-                return this.interfaceField1;
-            }
-            set {
-                this.interfaceField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Physical block size in bytes
-///</remarks>
-        public int PhysicalBlockSize {
-            get {
-                return this.physicalBlockSizeField;
-            }
-            set {
-                this.physicalBlockSizeField = value;
-            }
-        }
-        
-        /// <remarks>
-///Logical block size in bytes
-///</remarks>
-        public int LogicalBlockSize {
-            get {
-                return this.logicalBlockSizeField;
-            }
-            set {
-                this.logicalBlockSizeField = value;
-            }
-        }
-        
-        /// <remarks>
-///User accessible logical blocks
-///</remarks>
-        public long LogicalBlocks {
-            get {
-                return this.logicalBlocksField;
-            }
-            set {
-                this.logicalBlocksField = value;
-            }
-        }
-        
-        /// <remarks>
-///Media scans
-///</remarks>
-        public ScansType Scans {
-            get {
-                return this.scansField3;
-            }
-            set {
-                this.scansField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///If media responds to native ATA/ATAPI commands, information here
-///</remarks>
-        public ATAType ATA {
-            get {
-                return this.aTAField;
-            }
-            set {
-                this.aTAField = value;
-            }
-        }
-        
-        /// <remarks>
-///If media is PCI/PCI-X/PCIe attached, information here
-///</remarks>
-        public PCIType PCI {
-            get {
-                return this.pCIField;
-            }
-            set {
-                this.pCIField = value;
-            }
-        }
-        
-        /// <remarks>
-///If media is PCMCIA attached, information here
-///</remarks>
-        public PCMCIAType PCMCIA {
-            get {
-                return this.pCMCIAField1;
-            }
-            set {
-                this.pCMCIAField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///If media is SecureDigital or MultiMediaCard, information here
-///</remarks>
-        public SecureDigitalType SecureDigital {
-            get {
-                return this.secureDigitalField;
-            }
-            set {
-                this.secureDigitalField = value;
-            }
-        }
-        
-        /// <remarks>
-///If media conforms to SCSI specifications, information here
-///</remarks>
-        public SCSIType SCSI {
-            get {
-                return this.sCSIField;
-            }
-            set {
-                this.sCSIField = value;
-            }
-        }
-        
-        /// <remarks>
-///If media is USB attached, information here
-///</remarks>
-        public USBType USB {
-            get {
-                return this.uSBField;
-            }
-            set {
-                this.uSBField = value;
-            }
-        }
-        
-        /// <remarks>
-///Real physical heads
-///</remarks>
-        public long Heads {
-            get {
-                return this.headsField;
-            }
-            set {
-                this.headsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool HeadsSpecified {
-            get {
-                return this.headsSpecifiedField;
-            }
-            set {
-                this.headsSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Real physical cylinders
-///</remarks>
-        public long Cylinders {
-            get {
-                return this.cylindersField;
-            }
-            set {
-                this.cylindersField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool CylindersSpecified {
-            get {
-                return this.cylindersSpecifiedField;
-            }
-            set {
-                this.cylindersSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Sectors per track, if constant, if not, this field is ommited and separate tracks must be indicated
-///</remarks>
-        public long SectorsPerTrack {
-            get {
-                return this.sectorsPerTrackField;
-            }
-            set {
-                this.sectorsPerTrackField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool SectorsPerTrackSpecified {
-            get {
-                return this.sectorsPerTrackSpecifiedField;
-            }
-            set {
-                this.sectorsPerTrackSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///Tracks for block media that allow separate cylinder/head addressing, like floppies. It can be ommitted for media that strictly follows a standard (no copy protection either).
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("Track")]
-        public BlockTrackType[] Track {
-            get {
-                return this.trackField1;
-            }
-            set {
-                this.trackField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Copy protection, if applicable
-///</remarks>
-        public string CopyProtection {
-            get {
-                return this.copyProtectionField2;
-            }
-            set {
-                this.copyProtectionField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Dimensions of the media
-///</remarks>
-        public DimensionsType Dimensions {
-            get {
-                return this.dimensionsField2;
-            }
-            set {
-                this.dimensionsField2 = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Partition", IsNullable=false)]
-        public PartitionType[] FileSystemInformation {
-            get {
-                return this.fileSystemInformationField1;
-            }
-            set {
-                this.fileSystemInformationField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Array of hardware used to dump media, if removable
-///</remarks>
-        public DumpHardwareArrayType DumpHardwareArray {
-            get {
-                return this.dumpHardwareArrayField2;
-            }
-            set {
-                this.dumpHardwareArrayField2 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Contains ATA/ATAPI device information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ATAType {
-        
-        private DumpType identifyField;
-        
-        /// <remarks>
-///Contains ATA/ATAPI IDENTIFY binary dump
-///</remarks>
-        public DumpType Identify {
-            get {
-                return this.identifyField;
-            }
-            set {
-                this.identifyField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Contains SD/MMC device information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SecureDigitalType {
-        
-        private DumpType cIDField;
-        
-        private DumpType cSDField;
-        
-        private DumpType extendedCSDField;
-        
-        /// <remarks>
-///Contains SD/MMC's CID
-///</remarks>
-        public DumpType CID {
-            get {
-                return this.cIDField;
-            }
-            set {
-                this.cIDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains SD/MMC's CSD
-///</remarks>
-        public DumpType CSD {
-            get {
-                return this.cSDField;
-            }
-            set {
-                this.cSDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains SD/MMC's extended CSD
-///</remarks>
-        public DumpType ExtendedCSD {
-            get {
-                return this.extendedCSDField;
-            }
-            set {
-                this.extendedCSDField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Contains SCSI device information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SCSIType {
-        
-        private DumpType inquiryField;
-        
-        private EVPDType[] eVPDField;
-        
-        private DumpType modeSenseField;
-        
-        private DumpType modeSense10Field;
-        
-        private DumpType logSenseField;
-        
-        /// <remarks>
-///Contains SCSI INQUIRY result dump
-///</remarks>
-        public DumpType Inquiry {
-            get {
-                return this.inquiryField;
-            }
-            set {
-                this.inquiryField = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains SCSI EVPD dumps
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("EVPD")]
-        public EVPDType[] EVPD {
-            get {
-                return this.eVPDField;
-            }
-            set {
-                this.eVPDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains SCSI MODE SENSE(6) dump
-///</remarks>
-        public DumpType ModeSense {
-            get {
-                return this.modeSenseField;
-            }
-            set {
-                this.modeSenseField = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains SCSI MODE SENSE(10) dump
-///</remarks>
-        public DumpType ModeSense10 {
-            get {
-                return this.modeSense10Field;
-            }
-            set {
-                this.modeSense10Field = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains SCSI LOG SENSE dump
-///</remarks>
-        public DumpType LogSense {
-            get {
-                return this.logSenseField;
-            }
-            set {
-                this.logSenseField = value;
+                this.codecField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class EVPDType {
+    public partial class VideoTracksType {
         
-        private int pageField;
+        private LanguagesTypeLanguage[] languagesField;
         
-        private bool pageSpecifiedField;
+        private int trackNumberField;
         
-        private string imageField7;
+        private string codecField;
         
-        private long sizeField7;
+        private int horizontalField;
         
-        private ChecksumType[] checksumsField10;
+        private int verticalField;
         
-        /// <remarks>
-///EVPD page
-///</remarks>
+        private long meanBitrateField;
+        
+        private bool threeDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Languages {
+            get {
+                return this.languagesField;
+            }
+            set {
+                this.languagesField = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int page {
+        public int TrackNumber {
             get {
-                return this.pageField;
+                return this.trackNumberField;
             }
             set {
-                this.pageField = value;
+                this.trackNumberField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnore()]
-        public virtual bool pageSpecified {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Codec {
             get {
-                return this.pageSpecifiedField;
+                return this.codecField;
             }
             set {
-                this.pageSpecifiedField = value;
-            }
-        }
-        
-        /// <remarks>
-///File containing SCSI Extended Vendor Page Descriptor dump
-///</remarks>
-        public string Image {
-            get {
-                return this.imageField7;
-            }
-            set {
-                this.imageField7 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of SCSI Extended Vendor Page Descriptor dump
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField7;
-            }
-            set {
-                this.sizeField7 = value;
+                this.codecField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Horizontal {
             get {
-                return this.checksumsField10;
+                return this.horizontalField;
             }
             set {
-                this.checksumsField10 = value;
+                this.horizontalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Vertical {
+            get {
+                return this.verticalField;
+            }
+            set {
+                this.verticalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public long MeanBitrate {
+            get {
+                return this.meanBitrateField;
+            }
+            set {
+                this.meanBitrateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool ThreeD {
+            get {
+                return this.threeDField;
+            }
+            set {
+                this.threeDField = value;
             }
         }
     }
     
-    /// <remarks>
-///Contains USB device information
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class USBType {
+    public partial class AudioTracksType {
         
-        private int vendorIDField1;
+        private LanguagesTypeLanguage[] languagesField;
         
-        private int productIDField;
+        private int trackNumberField;
         
-        private DumpType descriptorsField;
+        private string accoustIDField;
         
-        /// <remarks>
-///Contains USB Vendor ID
-///</remarks>
-        public int VendorID {
+        private string codecField;
+        
+        private int channelsField;
+        
+        private int sampleRateField;
+        
+        private long meanBitrateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Languages {
             get {
-                return this.vendorIDField1;
+                return this.languagesField;
             }
             set {
-                this.vendorIDField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Contains USB Product ID
-///</remarks>
-        public int ProductID {
-            get {
-                return this.productIDField;
-            }
-            set {
-                this.productIDField = value;
-            }
-        }
-        
-        /// <remarks>
-///Binary dump of the USB descriptors
-///</remarks>
-        public DumpType Descriptors {
-            get {
-                return this.descriptorsField;
-            }
-            set {
-                this.descriptorsField = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Information about track in non-abstracted block based media
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BlockTrackType {
-        
-        private ImageType imageField8;
-        
-        private long sizeField8;
-        
-        private long headField;
-        
-        private long cylinderField;
-        
-        private long startSectorField2;
-        
-        private long endSectorField2;
-        
-        private long sectorsField1;
-        
-        private int bytesPerSectorField1;
-        
-        private ChecksumType[] checksumsField11;
-        
-        private string formatField2;
-        
-        /// <remarks>
-///File containing track dump, and format
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField8;
-            }
-            set {
-                this.imageField8 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of track dump in bytes
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField8;
-            }
-            set {
-                this.sizeField8 = value;
-            }
-        }
-        
-        /// <remarks>
-///Head (from 0) where this track resides
-///</remarks>
-        public long Head {
-            get {
-                return this.headField;
-            }
-            set {
-                this.headField = value;
-            }
-        }
-        
-        /// <remarks>
-///Cylinder where this track resides
-///</remarks>
-        public long Cylinder {
-            get {
-                return this.cylinderField;
-            }
-            set {
-                this.cylinderField = value;
-            }
-        }
-        
-        /// <remarks>
-///Track start sector
-///</remarks>
-        public long StartSector {
-            get {
-                return this.startSectorField2;
-            }
-            set {
-                this.startSectorField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track end sector
-///</remarks>
-        public long EndSector {
-            get {
-                return this.endSectorField2;
-            }
-            set {
-                this.endSectorField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Sectors in track. Not necessarily EndSector-StartSector, as there can be hidden sectors
-///</remarks>
-        public long Sectors {
-            get {
-                return this.sectorsField1;
-            }
-            set {
-                this.sectorsField1 = value;
-            }
-        }
-        
-        /// <remarks>
-///Bytes per sector, physical undecoded tag-less
-///</remarks>
-        public int BytesPerSector {
-            get {
-                return this.bytesPerSectorField1;
-            }
-            set {
-                this.bytesPerSectorField1 = value;
+                this.languagesField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int TrackNumber {
             get {
-                return this.checksumsField11;
+                return this.trackNumberField;
             }
             set {
-                this.checksumsField11 = value;
-            }
-        }
-        
-        /// <remarks>
-///Track format (IBM FM, IBM MFM, Amiga MFM, Apple GCR, etc)
-///</remarks>
-        public string Format {
-            get {
-                return this.formatField2;
-            }
-            set {
-                this.formatField2 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Describes a dump of a media that is stored in an audio device (like a ZX Spectrum cassette)
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AudioMediaType {
-        
-        private ImageType imageField9;
-        
-        private long sizeField9;
-        
-        private ChecksumType[] checksumsField12;
-        
-        private SequenceType sequenceField5;
-        
-        private string manufacturerField5;
-        
-        private string modelField4;
-        
-        private string accoustIDField2;
-        
-        private AudioBlockType[] blockField;
-        
-        private string copyProtectionField3;
-        
-        private DimensionsType dimensionsField3;
-        
-        private ScansType scansField4;
-        
-        private DumpHardwareArrayType dumpHardwareArrayField3;
-        
-        /// <remarks>
-///Image file, or image description file, plus format (cue, toc, etc, etc)
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField9;
-            }
-            set {
-                this.imageField9 = value;
-            }
-        }
-        
-        /// <remarks>
-///Image file size
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField9;
-            }
-            set {
-                this.sizeField9 = value;
+                this.trackNumberField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AccoustID {
             get {
-                return this.checksumsField12;
+                return this.accoustIDField;
             }
             set {
-                this.checksumsField12 = value;
+                this.accoustIDField = value;
             }
         }
         
-        /// <remarks>
-///Media sequence information
-///</remarks>
-        public SequenceType Sequence {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Codec {
             get {
-                return this.sequenceField5;
+                return this.codecField;
             }
             set {
-                this.sequenceField5 = value;
+                this.codecField = value;
             }
         }
         
-        /// <remarks>
-///Media manufacturer (if known)
-///</remarks>
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Channels {
+            get {
+                return this.channelsField;
+            }
+            set {
+                this.channelsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int SampleRate {
+            get {
+                return this.sampleRateField;
+            }
+            set {
+                this.sampleRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public long MeanBitrate {
+            get {
+                return this.meanBitrateField;
+            }
+            set {
+                this.meanBitrateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AdvertisementType {
+        
+        private string manufacturerField;
+        
+        private string productField;
+        
+        private FileType fileField;
+        
+        private long fileSizeField;
+        
+        private long framesField;
+        
+        private bool framesFieldSpecified;
+        
+        private long durationField;
+        
+        private int meanFrameRateField;
+        
+        private bool meanFrameRateFieldSpecified;
+        
+        private ChecksumType[] checksumsField;
+        
+        private AudioTracksType[] audioTrackField;
+        
+        private VideoTracksType[] videoTrackField;
+        
+        private SubtitleTracksType[] subtitleTrackField;
+        
+        private RecordingType recordingField;
+        
+        /// <remarks/>
         public string Manufacturer {
             get {
-                return this.manufacturerField5;
+                return this.manufacturerField;
             }
             set {
-                this.manufacturerField5 = value;
-            }
-        }
-        
-        /// <remarks>
-///Media model (if known)
-///</remarks>
-        public string Model {
-            get {
-                return this.modelField4;
-            }
-            set {
-                this.modelField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///AccoustID of media in audio form
-///</remarks>
-        public string AccoustID {
-            get {
-                return this.accoustIDField2;
-            }
-            set {
-                this.accoustIDField2 = value;
-            }
-        }
-        
-        /// <remarks>
-///Blocks on audio media that uses separate blocks
-///</remarks>
-        [System.Xml.Serialization.XmlElementAttribute("Block")]
-        public AudioBlockType[] Block {
-            get {
-                return this.blockField;
-            }
-            set {
-                this.blockField = value;
-            }
-        }
-        
-        /// <remarks>
-///Copy protection, if applicable
-///</remarks>
-        public string CopyProtection {
-            get {
-                return this.copyProtectionField3;
-            }
-            set {
-                this.copyProtectionField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Dimensions of the media
-///</remarks>
-        public DimensionsType Dimensions {
-            get {
-                return this.dimensionsField3;
-            }
-            set {
-                this.dimensionsField3 = value;
-            }
-        }
-        
-        /// <remarks>
-///Scan of media
-///</remarks>
-        public ScansType Scans {
-            get {
-                return this.scansField4;
-            }
-            set {
-                this.scansField4 = value;
-            }
-        }
-        
-        /// <remarks>
-///Array of hardware used to dump media, if removable
-///</remarks>
-        public DumpHardwareArrayType DumpHardwareArray {
-            get {
-                return this.dumpHardwareArrayField3;
-            }
-            set {
-                this.dumpHardwareArrayField3 = value;
-            }
-        }
-    }
-    
-    /// <remarks>
-///Information about "blocks" in audio based media
-///</remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17020")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AudioBlockType {
-        
-        private ImageType imageField10;
-        
-        private long sizeField10;
-        
-        private string accoustIDField3;
-        
-        private ChecksumType[] checksumsField13;
-        
-        private string formatField3;
-        
-        /// <remarks>
-///File containing block dump, and format
-///</remarks>
-        public ImageType Image {
-            get {
-                return this.imageField10;
-            }
-            set {
-                this.imageField10 = value;
-            }
-        }
-        
-        /// <remarks>
-///Size of block dump in bytes
-///</remarks>
-        public long Size {
-            get {
-                return this.sizeField10;
-            }
-            set {
-                this.sizeField10 = value;
-            }
-        }
-        
-        /// <remarks>
-///AccoustID of block
-///</remarks>
-        public string AccoustID {
-            get {
-                return this.accoustIDField3;
-            }
-            set {
-                this.accoustIDField3 = value;
+                this.manufacturerField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItem(ElementName="Checksum", IsNullable=false)]
-        public ChecksumType[] Checksums {
+        public string Product {
             get {
-                return this.checksumsField13;
+                return this.productField;
             }
             set {
-                this.checksumsField13 = value;
+                this.productField = value;
             }
         }
         
-        /// <remarks>
-///Block format/encoding
-///</remarks>
-        public string Format {
+        /// <remarks/>
+        public FileType File {
             get {
-                return this.formatField3;
+                return this.fileField;
             }
             set {
-                this.formatField3 = value;
+                this.fileField = value;
             }
         }
+        
+        /// <remarks/>
+        public long FileSize {
+            get {
+                return this.fileSizeField;
+            }
+            set {
+                this.fileSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Frames {
+            get {
+                return this.framesField;
+            }
+            set {
+                this.framesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FramesSpecified {
+            get {
+                return this.framesFieldSpecified;
+            }
+            set {
+                this.framesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Duration {
+            get {
+                return this.durationField;
+            }
+            set {
+                this.durationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MeanFrameRate {
+            get {
+                return this.meanFrameRateField;
+            }
+            set {
+                this.meanFrameRateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MeanFrameRateSpecified {
+            get {
+                return this.meanFrameRateFieldSpecified;
+            }
+            set {
+                this.meanFrameRateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AudioTrack")]
+        public AudioTracksType[] AudioTrack {
+            get {
+                return this.audioTrackField;
+            }
+            set {
+                this.audioTrackField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("VideoTrack")]
+        public VideoTracksType[] VideoTrack {
+            get {
+                return this.videoTrackField;
+            }
+            set {
+                this.videoTrackField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SubtitleTrack")]
+        public SubtitleTracksType[] SubtitleTrack {
+            get {
+                return this.subtitleTrackField;
+            }
+            set {
+                this.subtitleTrackField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public RecordingType Recording {
+            get {
+                return this.recordingField;
+            }
+            set {
+                this.recordingField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SubChannelType {
+        
+        private ImageType imageField;
+        
+        private long sizeField;
+        
+        private ChecksumType[] checksumsField;
+        
+        /// <remarks/>
+        public ImageType Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TrackSequenceType {
+        
+        private int trackNumberField;
+        
+        private int sessionField;
+        
+        /// <remarks/>
+        public int TrackNumber {
+            get {
+                return this.trackNumberField;
+            }
+            set {
+                this.trackNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Session {
+            get {
+                return this.sessionField;
+            }
+            set {
+                this.sessionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TrackType {
+        
+        private ImageType imageField;
+        
+        private long sizeField;
+        
+        private TrackSequenceType sequenceField;
+        
+        private string startMSFField;
+        
+        private string endMSFField;
+        
+        private long startSectorField;
+        
+        private long endSectorField;
+        
+        private TrackTypeTrackType trackType1Field;
+        
+        private int bytesPerSectorField;
+        
+        private string accoustIDField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private SubChannelType subChannelField;
+        
+        private PartitionType[] fileSystemInformationField;
+        
+        /// <remarks/>
+        public ImageType Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TrackSequenceType Sequence {
+            get {
+                return this.sequenceField;
+            }
+            set {
+                this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string StartMSF {
+            get {
+                return this.startMSFField;
+            }
+            set {
+                this.startMSFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EndMSF {
+            get {
+                return this.endMSFField;
+            }
+            set {
+                this.endMSFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long StartSector {
+            get {
+                return this.startSectorField;
+            }
+            set {
+                this.startSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long EndSector {
+            get {
+                return this.endSectorField;
+            }
+            set {
+                this.endSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("TrackType")]
+        public TrackTypeTrackType TrackType1 {
+            get {
+                return this.trackType1Field;
+            }
+            set {
+                this.trackType1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int BytesPerSector {
+            get {
+                return this.bytesPerSectorField;
+            }
+            set {
+                this.bytesPerSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AccoustID {
+            get {
+                return this.accoustIDField;
+            }
+            set {
+                this.accoustIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SubChannelType SubChannel {
+            get {
+                return this.subChannelField;
+            }
+            set {
+                this.subChannelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Partition", IsNullable=false)]
+        public PartitionType[] FileSystemInformation {
+            get {
+                return this.fileSystemInformationField;
+            }
+            set {
+                this.fileSystemInformationField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum TrackTypeTrackType {
+        
+        /// <remarks/>
+        audio,
+        
+        /// <remarks/>
+        mode0,
+        
+        /// <remarks/>
+        mode1,
+        
+        /// <remarks/>
+        mode2,
+        
+        /// <remarks/>
+        m2f1,
+        
+        /// <remarks/>
+        m2f2,
+        
+        /// <remarks/>
+        dvd,
+        
+        /// <remarks/>
+        hddvd,
+        
+        /// <remarks/>
+        bluray,
+        
+        /// <remarks/>
+        ddcd,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PS3EncryptionType {
+        
+        private string keyField;
+        
+        private string serialField;
+        
+        /// <remarks/>
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Serial {
+            get {
+                return this.serialField;
+            }
+            set {
+                this.serialField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SecuritySectorsType {
+        
+        private long startField;
+        
+        private long endField;
+        
+        /// <remarks/>
+        public long Start {
+            get {
+                return this.startField;
+            }
+            set {
+                this.startField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long End {
+            get {
+                return this.endField;
+            }
+            set {
+                this.endField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BorderType {
+        
+        private string imageField;
+        
+        private long sizeField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private int sessionField;
+        
+        private bool sessionFieldSpecified;
+        
+        /// <remarks/>
+        public string Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int session {
+            get {
+                return this.sessionField;
+            }
+            set {
+                this.sessionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sessionSpecified {
+            get {
+                return this.sessionFieldSpecified;
+            }
+            set {
+                this.sessionFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CaseType {
+        
+        private CaseTypeCaseType caseType1Field;
+        
+        private ScansType scansField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("CaseType")]
+        public CaseTypeCaseType CaseType1 {
+            get {
+                return this.caseType1Field;
+            }
+            set {
+                this.caseType1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScansType Scans {
+            get {
+                return this.scansField;
+            }
+            set {
+                this.scansField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum CaseTypeCaseType {
+        
+        /// <remarks/>
+        jewel,
+        
+        /// <remarks/>
+        bigjewel,
+        
+        /// <remarks/>
+        slimjewel,
+        
+        /// <remarks/>
+        sleeve,
+        
+        /// <remarks/>
+        qpack,
+        
+        /// <remarks/>
+        digisleeve,
+        
+        /// <remarks/>
+        discboxslider,
+        
+        /// <remarks/>
+        compacplus,
+        
+        /// <remarks/>
+        keepcase,
+        
+        /// <remarks/>
+        snapcase,
+        
+        /// <remarks/>
+        softcase,
+        
+        /// <remarks/>
+        ecopack,
+        
+        /// <remarks/>
+        liftlock,
+        
+        /// <remarks/>
+        spindle,
+        
+        /// <remarks/>
+        ps2case,
+        
+        /// <remarks/>
+        ps3case,
+        
+        /// <remarks/>
+        bluraykeepcase,
+        
+        /// <remarks/>
+        pscase,
+        
+        /// <remarks/>
+        dccase,
+        
+        /// <remarks/>
+        saturncase,
+        
+        /// <remarks/>
+        xboxcase,
+        
+        /// <remarks/>
+        saturnbigcase,
+        
+        /// <remarks/>
+        gccase,
+        
+        /// <remarks/>
+        wiicase,
+        
+        /// <remarks/>
+        unknown,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LayeredTextType {
+        
+        private int layerField;
+        
+        private bool layerFieldSpecified;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int layer {
+            get {
+                return this.layerField;
+            }
+            set {
+                this.layerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool layerSpecified {
+            get {
+                return this.layerFieldSpecified;
+            }
+            set {
+                this.layerFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SectorsType {
+        
+        private int layerField;
+        
+        private bool layerFieldSpecified;
+        
+        private long valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int layer {
+            get {
+                return this.layerField;
+            }
+            set {
+                this.layerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool layerSpecified {
+            get {
+                return this.layerFieldSpecified;
+            }
+            set {
+                this.layerFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public long Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LayersType {
+        
+        private SectorsType[] sectorsField;
+        
+        private LayersTypeType typeField;
+        
+        private bool typeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Sectors")]
+        public SectorsType[] Sectors {
+            get {
+                return this.sectorsField;
+            }
+            set {
+                this.sectorsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public LayersTypeType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool typeSpecified {
+            get {
+                return this.typeFieldSpecified;
+            }
+            set {
+                this.typeFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum LayersTypeType {
+        
+        /// <remarks/>
+        PTP,
+        
+        /// <remarks/>
+        OTP,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class OpticalDiscType {
+        
+        private ImageType imageField;
+        
+        private long sizeField;
+        
+        private SequenceType sequenceField;
+        
+        private LayersType layersField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private LayeredTextType[] ringCodeField;
+        
+        private LayeredTextType[] masteringSIDField;
+        
+        private LayeredTextType[] toolstampField;
+        
+        private LayeredTextType[] mouldSIDField;
+        
+        private LayeredTextType[] mouldTextField;
+        
+        private string discTypeField;
+        
+        private string discSubTypeField;
+        
+        private int offsetField;
+        
+        private bool offsetFieldSpecified;
+        
+        private int[] tracksField;
+        
+        private int sessionsField;
+        
+        private string copyProtectionField;
+        
+        private DimensionsType dimensionsField;
+        
+        private CaseType caseField;
+        
+        private ScansType scansField;
+        
+        private DumpType pFIField;
+        
+        private DumpType dMIField;
+        
+        private DumpType cMIField;
+        
+        private DumpType bCAField;
+        
+        private DumpType aTIPField;
+        
+        private DumpType pMAField;
+        
+        private BorderType[] leadInField;
+        
+        private BorderType[] leadOutField;
+        
+        private SecuritySectorsType[] xboxSecuritySectorsField;
+        
+        private PS3EncryptionType pS3EncryptionField;
+        
+        private TrackType[] trackField;
+        
+        private DumpHardwareArrayType dumpHardwareArrayField;
+        
+        /// <remarks/>
+        public ImageType Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SequenceType Sequence {
+            get {
+                return this.sequenceField;
+            }
+            set {
+                this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public LayersType Layers {
+            get {
+                return this.layersField;
+            }
+            set {
+                this.layersField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("RingCode")]
+        public LayeredTextType[] RingCode {
+            get {
+                return this.ringCodeField;
+            }
+            set {
+                this.ringCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("MasteringSID")]
+        public LayeredTextType[] MasteringSID {
+            get {
+                return this.masteringSIDField;
+            }
+            set {
+                this.masteringSIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Toolstamp")]
+        public LayeredTextType[] Toolstamp {
+            get {
+                return this.toolstampField;
+            }
+            set {
+                this.toolstampField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("MouldSID")]
+        public LayeredTextType[] MouldSID {
+            get {
+                return this.mouldSIDField;
+            }
+            set {
+                this.mouldSIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("MouldText")]
+        public LayeredTextType[] MouldText {
+            get {
+                return this.mouldTextField;
+            }
+            set {
+                this.mouldTextField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DiscType {
+            get {
+                return this.discTypeField;
+            }
+            set {
+                this.discTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DiscSubType {
+            get {
+                return this.discSubTypeField;
+            }
+            set {
+                this.discSubTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Offset {
+            get {
+                return this.offsetField;
+            }
+            set {
+                this.offsetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool OffsetSpecified {
+            get {
+                return this.offsetFieldSpecified;
+            }
+            set {
+                this.offsetFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Tracks")]
+        public int[] Tracks {
+            get {
+                return this.tracksField;
+            }
+            set {
+                this.tracksField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sessions {
+            get {
+                return this.sessionsField;
+            }
+            set {
+                this.sessionsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CopyProtection {
+            get {
+                return this.copyProtectionField;
+            }
+            set {
+                this.copyProtectionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DimensionsType Dimensions {
+            get {
+                return this.dimensionsField;
+            }
+            set {
+                this.dimensionsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public CaseType Case {
+            get {
+                return this.caseField;
+            }
+            set {
+                this.caseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScansType Scans {
+            get {
+                return this.scansField;
+            }
+            set {
+                this.scansField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType PFI {
+            get {
+                return this.pFIField;
+            }
+            set {
+                this.pFIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType DMI {
+            get {
+                return this.dMIField;
+            }
+            set {
+                this.dMIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType CMI {
+            get {
+                return this.cMIField;
+            }
+            set {
+                this.cMIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType BCA {
+            get {
+                return this.bCAField;
+            }
+            set {
+                this.bCAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType ATIP {
+            get {
+                return this.aTIPField;
+            }
+            set {
+                this.aTIPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType PMA {
+            get {
+                return this.pMAField;
+            }
+            set {
+                this.pMAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("LeadIn")]
+        public BorderType[] LeadIn {
+            get {
+                return this.leadInField;
+            }
+            set {
+                this.leadInField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("LeadOut")]
+        public BorderType[] LeadOut {
+            get {
+                return this.leadOutField;
+            }
+            set {
+                this.leadOutField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("SecuritySectors", IsNullable=false)]
+        public SecuritySectorsType[] XboxSecuritySectors {
+            get {
+                return this.xboxSecuritySectorsField;
+            }
+            set {
+                this.xboxSecuritySectorsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PS3EncryptionType PS3Encryption {
+            get {
+                return this.pS3EncryptionField;
+            }
+            set {
+                this.pS3EncryptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Track")]
+        public TrackType[] Track {
+            get {
+                return this.trackField;
+            }
+            set {
+                this.trackField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpHardwareArrayType DumpHardwareArray {
+            get {
+                return this.dumpHardwareArrayField;
+            }
+            set {
+                this.dumpHardwareArrayField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UserManualType {
+        
+        private LanguagesTypeLanguage[] languageField;
+        
+        private int pagesField;
+        
+        private string pageSizeField;
+        
+        private ScanType scanField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Pages {
+            get {
+                return this.pagesField;
+            }
+            set {
+                this.pagesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScanType Scan {
+            get {
+                return this.scanField;
+            }
+            set {
+                this.scanField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RequiredOperatingSystemType {
+        
+        private string nameField;
+        
+        private string[] versionField;
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Version")]
+        public string[] Version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BookType {
+        
+        private BarcodeType[] barcodesField;
+        
+        private CoverType coverField;
+        
+        private string nameField;
+        
+        private string editorialField;
+        
+        private string authorField;
+        
+        private System.DateTime publicationDateField;
+        
+        private bool publicationDateFieldSpecified;
+        
+        private LanguagesTypeLanguage[] languageField;
+        
+        private int pagesField;
+        
+        private bool pagesFieldSpecified;
+        
+        private string pageSizeField;
+        
+        private ScanType scanField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Barcode", IsNullable=false)]
+        public BarcodeType[] Barcodes {
+            get {
+                return this.barcodesField;
+            }
+            set {
+                this.barcodesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public CoverType Cover {
+            get {
+                return this.coverField;
+            }
+            set {
+                this.coverField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Editorial {
+            get {
+                return this.editorialField;
+            }
+            set {
+                this.editorialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
+        public System.DateTime PublicationDate {
+            get {
+                return this.publicationDateField;
+            }
+            set {
+                this.publicationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PublicationDateSpecified {
+            get {
+                return this.publicationDateFieldSpecified;
+            }
+            set {
+                this.publicationDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Pages {
+            get {
+                return this.pagesField;
+            }
+            set {
+                this.pagesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PagesSpecified {
+            get {
+                return this.pagesFieldSpecified;
+            }
+            set {
+                this.pagesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScanType Scan {
+            get {
+                return this.scanField;
+            }
+            set {
+                this.scanField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CoverType {
+        
+        private FileType fileField;
+        
+        private ChecksumType[] checksumsField;
+        
+        private byte[] thumbnailField;
+        
+        /// <remarks/>
+        public FileType File {
+            get {
+                return this.fileField;
+            }
+            set {
+                this.fileField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] Thumbnail {
+            get {
+                return this.thumbnailField;
+            }
+            set {
+                this.thumbnailField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class MagazineType {
+        
+        private BarcodeType[] barcodesField;
+        
+        private CoverType coverField;
+        
+        private string nameField;
+        
+        private string editorialField;
+        
+        private System.DateTime publicationDateField;
+        
+        private bool publicationDateFieldSpecified;
+        
+        private int numberField;
+        
+        private bool numberFieldSpecified;
+        
+        private LanguagesTypeLanguage[] languageField;
+        
+        private int pagesField;
+        
+        private bool pagesFieldSpecified;
+        
+        private string pageSizeField;
+        
+        private ScanType scanField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Barcode", IsNullable=false)]
+        public BarcodeType[] Barcodes {
+            get {
+                return this.barcodesField;
+            }
+            set {
+                this.barcodesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public CoverType Cover {
+            get {
+                return this.coverField;
+            }
+            set {
+                this.coverField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Editorial {
+            get {
+                return this.editorialField;
+            }
+            set {
+                this.editorialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
+        public System.DateTime PublicationDate {
+            get {
+                return this.publicationDateField;
+            }
+            set {
+                this.publicationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PublicationDateSpecified {
+            get {
+                return this.publicationDateFieldSpecified;
+            }
+            set {
+                this.publicationDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NumberSpecified {
+            get {
+                return this.numberFieldSpecified;
+            }
+            set {
+                this.numberFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Language", IsNullable=false)]
+        public LanguagesTypeLanguage[] Language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Pages {
+            get {
+                return this.pagesField;
+            }
+            set {
+                this.pagesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PagesSpecified {
+            get {
+                return this.pagesFieldSpecified;
+            }
+            set {
+                this.pagesFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ScanType Scan {
+            get {
+                return this.scanField;
+            }
+            set {
+                this.scanField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum ArchitecturesTypeArchitecture {
+        
+        /// <remarks/>
+        i86,
+        
+        /// <remarks/>
+        ia32,
+        
+        /// <remarks/>
+        ia64,
+        
+        /// <remarks/>
+        amd64,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("4004")]
+        Item4004,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("4040")]
+        Item4040,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("8080")]
+        Item8080,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("8008")]
+        Item8008,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("8085")]
+        Item8085,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("8051")]
+        Item8051,
+        
+        /// <remarks/>
+        i860,
+        
+        /// <remarks/>
+        i960,
+        
+        /// <remarks/>
+        apx432,
+        
+        /// <remarks/>
+        m68k,
+        
+        /// <remarks/>
+        ppc,
+        
+        /// <remarks/>
+        ppc64,
+        
+        /// <remarks/>
+        x32,
+        
+        /// <remarks/>
+        sparc,
+        
+        /// <remarks/>
+        sparc64,
+        
+        /// <remarks/>
+        arm,
+        
+        /// <remarks/>
+        aarch64,
+        
+        /// <remarks/>
+        avr,
+        
+        /// <remarks/>
+        pic,
+        
+        /// <remarks/>
+        msp430,
+        
+        /// <remarks/>
+        z80,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("65816")]
+        Item65816,
+        
+        /// <remarks/>
+        sh,
+        
+        /// <remarks/>
+        sh1,
+        
+        /// <remarks/>
+        sh2,
+        
+        /// <remarks/>
+        sh3,
+        
+        /// <remarks/>
+        sh5,
+        
+        /// <remarks/>
+        sh4,
+        
+        /// <remarks/>
+        m6800,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("6502")]
+        Item6502,
+        
+        /// <remarks/>
+        axp,
+        
+        /// <remarks/>
+        parisc,
+        
+        /// <remarks/>
+        mips32,
+        
+        /// <remarks/>
+        mips64,
+        
+        /// <remarks/>
+        s360,
+        
+        /// <remarks/>
+        s370,
+        
+        /// <remarks/>
+        esa390,
+        
+        /// <remarks/>
+        zarch,
+        
+        /// <remarks/>
+        pdp11,
+        
+        /// <remarks/>
+        vax,
+        
+        /// <remarks/>
+        power,
     }
 }
