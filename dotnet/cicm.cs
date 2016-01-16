@@ -3707,6 +3707,8 @@ namespace Schemas {
         
         private USBType uSBField;
         
+        private DumpType mAMField;
+        
         private long headsField;
         
         private bool headsFieldSpecified;
@@ -3921,6 +3923,16 @@ namespace Schemas {
             }
             set {
                 this.uSBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType MAM {
+            get {
+                return this.mAMField;
+            }
+            set {
+                this.mAMField = value;
             }
         }
         
@@ -6356,6 +6368,28 @@ namespace Schemas {
         
         private DumpType pMAField;
         
+        private DumpType dDSField;
+        
+        private DumpType sAIField;
+        
+        private DumpType lastRMDField;
+        
+        private DumpType pRIField;
+        
+        private DumpType mediaIDField;
+        
+        private DumpType pFIRField;
+        
+        private DumpType dCBField;
+        
+        private DumpType diField;
+        
+        private DumpType pACField;
+        
+        private DumpType tOCField;
+        
+        private DumpType leadInCdTextField;
+        
         private BorderType[] leadInField;
         
         private BorderType[] leadOutField;
@@ -6633,6 +6667,116 @@ namespace Schemas {
             }
             set {
                 this.pMAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType DDS {
+            get {
+                return this.dDSField;
+            }
+            set {
+                this.dDSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType SAI {
+            get {
+                return this.sAIField;
+            }
+            set {
+                this.sAIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType LastRMD {
+            get {
+                return this.lastRMDField;
+            }
+            set {
+                this.lastRMDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType PRI {
+            get {
+                return this.pRIField;
+            }
+            set {
+                this.pRIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType MediaID {
+            get {
+                return this.mediaIDField;
+            }
+            set {
+                this.mediaIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType PFIR {
+            get {
+                return this.pFIRField;
+            }
+            set {
+                this.pFIRField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType DCB {
+            get {
+                return this.dCBField;
+            }
+            set {
+                this.dCBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType DI {
+            get {
+                return this.diField;
+            }
+            set {
+                this.diField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType PAC {
+            get {
+                return this.pACField;
+            }
+            set {
+                this.pACField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType TOC {
+            get {
+                return this.tOCField;
+            }
+            set {
+                this.tOCField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType LeadInCdText {
+            get {
+                return this.leadInCdTextField;
+            }
+            set {
+                this.leadInCdTextField = value;
             }
         }
         

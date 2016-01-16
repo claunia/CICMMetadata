@@ -682,6 +682,61 @@
 					<xs:documentation>PMA</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="DumpType" name="DDS" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Disc Definition Structure</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="SAI" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Spare Area Information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="LastRMD" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Last RMD</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="PRI" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pre-Recorded Information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="MediaID" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Media Identification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="PFIR" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>PFI for recordables</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="DCB" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Disc Control Blocks</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="DI" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Disc Information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="PAC" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>PAC</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="TOC" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>CD TOC</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="LeadInCdText" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>CD-Text in Lead-In</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="BorderType" name="LeadIn" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Lead-In, Border-In, or equivalent
@@ -2803,6 +2858,11 @@
 			<xs:element type="USBType" name="USB" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>If media is USB attached, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="MAM" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Medium Auxiliary Memory</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element type="xs:long" name="Heads" minOccurs="0">

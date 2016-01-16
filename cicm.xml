@@ -178,6 +178,83 @@
         <Checksum type="fletcher16">Checksum</Checksum>
       </Checksums>
     </PMA>
+    <DDS>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </DDS>
+    <SAI>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </SAI>
+    <LastRMD>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </LastRMD>
+    <PRI>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </PRI>
+    <MediaID>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </MediaID>
+    <PFIR>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </PFIR>
+    <DCB>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </DCB>
+    <DI>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </DI>
+    <PAC>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </PAC>
+    <TOC>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </TOC>
+    <LeadInCdText>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </LeadInCdText>
     <LeadIn session="1">
       <Image>Image</Image>
       <Size>0</Size>
@@ -392,6 +469,13 @@
       <VendorID>1</VendorID>
       <ProductID>1</ProductID>
     </USB>
+    <MAM>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </MAM>
     <Heads>0</Heads>
     <Cylinders>0</Cylinders>
     <SectorsPerTrack>0</SectorsPerTrack>

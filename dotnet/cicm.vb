@@ -3710,6 +3710,8 @@ Namespace Schemas
         
         Private uSBField As USBType
         
+        Private mAMField As DumpType
+        
         Private headsField As Long
         
         Private headsFieldSpecified As Boolean
@@ -3924,6 +3926,16 @@ Namespace Schemas
             End Get
             Set
                 Me.uSBField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property MAM() As DumpType
+            Get
+                Return Me.mAMField
+            End Get
+            Set
+                Me.mAMField = Value
             End Set
         End Property
         
@@ -6359,6 +6371,28 @@ Namespace Schemas
         
         Private pMAField As DumpType
         
+        Private dDSField As DumpType
+        
+        Private sAIField As DumpType
+        
+        Private lastRMDField As DumpType
+        
+        Private pRIField As DumpType
+        
+        Private mediaIDField As DumpType
+        
+        Private pFIRField As DumpType
+        
+        Private dCBField As DumpType
+        
+        Private diField As DumpType
+        
+        Private pACField As DumpType
+        
+        Private tOCField As DumpType
+        
+        Private leadInCdTextField As DumpType
+        
         Private leadInField As BorderType()
         
         Private leadOutField As BorderType()
@@ -6636,6 +6670,116 @@ Namespace Schemas
             End Get
             Set
                 Me.pMAField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DDS() As DumpType
+            Get
+                Return Me.dDSField
+            End Get
+            Set
+                Me.dDSField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SAI() As DumpType
+            Get
+                Return Me.sAIField
+            End Get
+            Set
+                Me.sAIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LastRMD() As DumpType
+            Get
+                Return Me.lastRMDField
+            End Get
+            Set
+                Me.lastRMDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PRI() As DumpType
+            Get
+                Return Me.pRIField
+            End Get
+            Set
+                Me.pRIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property MediaID() As DumpType
+            Get
+                Return Me.mediaIDField
+            End Get
+            Set
+                Me.mediaIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PFIR() As DumpType
+            Get
+                Return Me.pFIRField
+            End Get
+            Set
+                Me.pFIRField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DCB() As DumpType
+            Get
+                Return Me.dCBField
+            End Get
+            Set
+                Me.dCBField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DI() As DumpType
+            Get
+                Return Me.diField
+            End Get
+            Set
+                Me.diField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PAC() As DumpType
+            Get
+                Return Me.pACField
+            End Get
+            Set
+                Me.pACField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property TOC() As DumpType
+            Get
+                Return Me.tOCField
+            End Get
+            Set
+                Me.tOCField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LeadInCdText() As DumpType
+            Get
+                Return Me.leadInCdTextField
+            End Get
+            Set
+                Me.leadInCdTextField = Value
             End Set
         End Property
         
