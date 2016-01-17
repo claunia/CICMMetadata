@@ -832,7 +832,7 @@ Namespace Schemas
         
         Private scansField As ScansType
         
-        Private dumpHardwareArrayField As DumpHardwareArrayType
+        Private dumpHardwareArrayField As DumpHardwareType()
         
         '''<remarks/>
         Public Property Image() As ImageType
@@ -947,7 +947,8 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
+        <System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable:=false)>  _
+        Public Property DumpHardwareArray() As DumpHardwareType()
             Get
                 Return Me.dumpHardwareArrayField
             End Get
@@ -3059,26 +3060,6 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class DumpHardwareArrayType
-        
-        Private dumpHardwareField As DumpHardwareType
-        
-        '''<remarks/>
-        Public Property DumpHardware() As DumpHardwareType
-            Get
-                Return Me.dumpHardwareField
-            End Get
-            Set
-                Me.dumpHardwareField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class DumpHardwareType
         
         Private manufacturerField As String
@@ -3732,7 +3713,7 @@ Namespace Schemas
         
         Private fileSystemInformationField As PartitionType()
         
-        Private dumpHardwareArrayField As DumpHardwareArrayType
+        Private dumpHardwareArrayField As DumpHardwareType()
         
         Private diskTypeField As String
         
@@ -4045,7 +4026,8 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
+        <System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable:=false)>  _
+        Public Property DumpHardwareArray() As DumpHardwareType()
             Get
                 Return Me.dumpHardwareArrayField
             End Get
@@ -4172,7 +4154,7 @@ Namespace Schemas
         
         Private scansField As ScansType
         
-        Private dumpHardwareArrayField As DumpHardwareArrayType
+        Private dumpHardwareArrayField As DumpHardwareType()
         
         Private pCMCIAField As PCMCIAType
         
@@ -4354,7 +4336,8 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
+        <System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable:=false)>  _
+        Public Property DumpHardwareArray() As DumpHardwareType()
             Get
                 Return Me.dumpHardwareArrayField
             End Get
@@ -6403,7 +6386,7 @@ Namespace Schemas
         
         Private trackField As TrackType()
         
-        Private dumpHardwareArrayField As DumpHardwareArrayType
+        Private dumpHardwareArrayField As DumpHardwareType()
         
         '''<remarks/>
         Public Property Image() As ImageType
@@ -6838,7 +6821,8 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property DumpHardwareArray() As DumpHardwareArrayType
+        <System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable:=false)>  _
+        Public Property DumpHardwareArray() As DumpHardwareType()
             Get
                 Return Me.dumpHardwareArrayField
             End Get

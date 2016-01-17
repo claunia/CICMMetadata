@@ -829,7 +829,7 @@ namespace Schemas {
         
         private ScansType scansField;
         
-        private DumpHardwareArrayType dumpHardwareArrayField;
+        private DumpHardwareType[] dumpHardwareArrayField;
         
         /// <remarks/>
         public ImageType Image {
@@ -944,7 +944,8 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public DumpHardwareArrayType DumpHardwareArray {
+        [System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable=false)]
+        public DumpHardwareType[] DumpHardwareArray {
             get {
                 return this.dumpHardwareArrayField;
             }
@@ -3056,26 +3057,6 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DumpHardwareArrayType {
-        
-        private DumpHardwareType dumpHardwareField;
-        
-        /// <remarks/>
-        public DumpHardwareType DumpHardware {
-            get {
-                return this.dumpHardwareField;
-            }
-            set {
-                this.dumpHardwareField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DumpHardwareType {
         
         private string manufacturerField;
@@ -3729,7 +3710,7 @@ namespace Schemas {
         
         private PartitionType[] fileSystemInformationField;
         
-        private DumpHardwareArrayType dumpHardwareArrayField;
+        private DumpHardwareType[] dumpHardwareArrayField;
         
         private string diskTypeField;
         
@@ -4042,7 +4023,8 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public DumpHardwareArrayType DumpHardwareArray {
+        [System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable=false)]
+        public DumpHardwareType[] DumpHardwareArray {
             get {
                 return this.dumpHardwareArrayField;
             }
@@ -4169,7 +4151,7 @@ namespace Schemas {
         
         private ScansType scansField;
         
-        private DumpHardwareArrayType dumpHardwareArrayField;
+        private DumpHardwareType[] dumpHardwareArrayField;
         
         private PCMCIAType pCMCIAField;
         
@@ -4351,7 +4333,8 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public DumpHardwareArrayType DumpHardwareArray {
+        [System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable=false)]
+        public DumpHardwareType[] DumpHardwareArray {
             get {
                 return this.dumpHardwareArrayField;
             }
@@ -6400,7 +6383,7 @@ namespace Schemas {
         
         private TrackType[] trackField;
         
-        private DumpHardwareArrayType dumpHardwareArrayField;
+        private DumpHardwareType[] dumpHardwareArrayField;
         
         /// <remarks/>
         public ImageType Image {
@@ -6835,7 +6818,8 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public DumpHardwareArrayType DumpHardwareArray {
+        [System.Xml.Serialization.XmlArrayItemAttribute("DumpHardware", IsNullable=false)]
+        public DumpHardwareType[] DumpHardwareArray {
             get {
                 return this.dumpHardwareArrayField;
             }

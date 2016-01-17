@@ -844,10 +844,13 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="DumpHardwareArrayType">
-		<xs:sequence>
-			<xs:element type="DumpHardwareType" name="DumpHardware">
+        <xs:annotation>
+        	<xs:documentation>Array of drives information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+			<xs:element type="DumpHardwareType" name="DumpHardware" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Array of drives information</xs:documentation>
+					<xs:documentation>Drives information</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
