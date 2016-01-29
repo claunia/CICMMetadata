@@ -6352,6 +6352,8 @@ Namespace Schemas
         
         Private aTIPField As DumpType
         
+        Private aDIPField As DumpType
+        
         Private pMAField As DumpType
         
         Private dDSField As DumpType
@@ -6643,6 +6645,16 @@ Namespace Schemas
             End Get
             Set
                 Me.aTIPField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ADIP() As DumpType
+            Get
+                Return Me.aDIPField
+            End Get
+            Set
+                Me.aDIPField = Value
             End Set
         End Property
         

@@ -677,6 +677,11 @@
 					<xs:documentation>Absolute Time In Pre-groove</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="DumpType" name="ADIP" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>ADdress In Pre-groove</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="DumpType" name="PMA" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>PMA</xs:documentation>

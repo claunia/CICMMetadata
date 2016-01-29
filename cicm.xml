@@ -171,6 +171,13 @@
         <Checksum type="fletcher16">Checksum</Checksum>
       </Checksums>
     </ATIP>
+    <ADIP>
+      <Image>Image</Image>
+      <Size>0</Size>
+      <Checksums>
+        <Checksum type="fletcher16">Checksum</Checksum>
+      </Checksums>
+    </ADIP>
     <PMA>
       <Image>Image</Image>
       <Size>0</Size>

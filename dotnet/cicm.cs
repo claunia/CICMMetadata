@@ -6349,6 +6349,8 @@ namespace Schemas {
         
         private DumpType aTIPField;
         
+        private DumpType aDIPField;
+        
         private DumpType pMAField;
         
         private DumpType dDSField;
@@ -6640,6 +6642,16 @@ namespace Schemas {
             }
             set {
                 this.aTIPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType ADIP {
+            get {
+                return this.aDIPField;
+            }
+            set {
+                this.aDIPField = value;
             }
         }
         
