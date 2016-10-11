@@ -17,16 +17,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for FileSystemInformationType complex type.
+ * <p>Java class for TapeInformationType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="FileSystemInformationType">
+ * &lt;complexType name="TapeInformationType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Partition" type="{}PartitionType" maxOccurs="unbounded"/>
+ *         &lt;element name="Partition" type="{}TapePartitionType" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,13 +36,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FileSystemInformationType", propOrder = {
+@XmlType(name = "TapeInformationType", propOrder = {
     "partition"
 })
-public class FileSystemInformationType {
+public class TapeInformationType {
 
     @XmlElement(name = "Partition", required = true)
-    protected List<PartitionType> partition;
+    protected List<TapePartitionType> partition;
 
     /**
      * Gets the value of the partition property.
@@ -62,13 +62,13 @@ public class FileSystemInformationType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link PartitionType }
+     * {@link TapePartitionType }
      * 
      * 
      */
-    public List<PartitionType> getPartition() {
+    public List<TapePartitionType> getPartition() {
         if (partition == null) {
-            partition = new ArrayList<PartitionType>();
+            partition = new ArrayList<TapePartitionType>();
         }
         return this.partition;
     }

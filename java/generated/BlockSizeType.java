@@ -16,15 +16,15 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for SectorsType complex type.
+ * <p>Java class for BlockSizeType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SectorsType">
+ * &lt;complexType name="BlockSizeType">
  *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>long">
- *       &lt;attribute name="layer" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>int">
+ *       &lt;attribute name="startingBlock" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/extension>
  *   &lt;/simpleContent>
  * &lt;/complexType>
@@ -33,21 +33,21 @@ import javax.xml.bind.annotation.XmlValue;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SectorsType", propOrder = {
+@XmlType(name = "BlockSizeType", propOrder = {
     "value"
 })
-public class SectorsType {
+public class BlockSizeType {
 
     @XmlValue
-    protected long value;
-    @XmlAttribute(name = "layer")
-    protected Integer layer;
+    protected int value;
+    @XmlAttribute(name = "startingBlock", required = true)
+    protected int startingBlock;
 
     /**
      * Gets the value of the value property.
      * 
      */
-    public long getValue() {
+    public int getValue() {
         return value;
     }
 
@@ -55,32 +55,24 @@ public class SectorsType {
      * Sets the value of the value property.
      * 
      */
-    public void setValue(long value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
     /**
-     * Gets the value of the layer property.
+     * Gets the value of the startingBlock property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
      */
-    public Integer getLayer() {
-        return layer;
+    public int getStartingBlock() {
+        return startingBlock;
     }
 
     /**
-     * Sets the value of the layer property.
+     * Sets the value of the startingBlock property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
      */
-    public void setLayer(Integer value) {
-        this.layer = value;
+    public void setStartingBlock(int value) {
+        this.startingBlock = value;
     }
 
 }

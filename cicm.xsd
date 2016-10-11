@@ -2833,6 +2833,16 @@
 					<xs:documentation>User accessible logical blocks</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="VariableBlockSizeType" name="VariableBlockSize" maxOccurs="1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List size for variable blocks</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="TapeInformationType" name="TapeInformation" maxOccurs="1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Presents information specific about a digital tape</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="ScansType" name="Scans" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Media scans</xs:documentation>
@@ -3020,6 +3030,102 @@
 			<xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Array of hardware used to dump media, if removable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VariableBlockSizeType">
+		<xs:sequence>
+			<xs:element type="BlockSizeType" name="BlockSize" maxOccurs="unbounded" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BlockSizeType">
+		<xs:simpleContent>
+			<xs:extension base="xs:int">
+				<xs:attribute type="xs:int" name="startingBlock" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TapeInformationType">
+		<xs:sequence>
+			<xs:element type="TapePartitionType" name="Partition" maxOccurs="unbounded" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TapePartitionType">
+		<xs:annotation>
+			<xs:documentation>Partition information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File containing partition dump, and format, binary, yranib, or audio/video container
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Size of partition dump in bytes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Sequence" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Partition sequence</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="StartBlock" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Partition start block</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="EndBlock" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Partition end block</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of track dump</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:element type="TapeFileType" name="File" maxOccurs="unbounded" minOccurs="1"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TapeFileType">
+		<xs:annotation>
+			<xs:documentation>Tape file information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File containing file dump, and format, binary, yranib, or audio/video container
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Size of file in bytes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="Sequence" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File sequence</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="StartBlock" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File start block</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:long" name="EndBlock" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>File end block</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of track dump</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

@@ -8,6 +8,8 @@
 
 package generated;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -15,22 +17,26 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Information about "blocks" in audio based media
+ * Partition information
  * 
- * <p>Java class for AudioBlockType complex type.
+ * <p>Java class for TapePartitionType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AudioBlockType">
+ * &lt;complexType name="TapePartitionType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="Image" type="{}ImageType"/>
  *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="AccoustID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Sequence" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="StartBlock" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="EndBlock" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *         &lt;element name="Checksums" type="{}ChecksumsType"/>
- *         &lt;element name="Format" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;sequence>
+ *           &lt;element name="File" type="{}TapeFileType" maxOccurs="unbounded"/>
+ *         &lt;/sequence>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,25 +46,31 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AudioBlockType", propOrder = {
+@XmlType(name = "TapePartitionType", propOrder = {
     "image",
     "size",
-    "accoustID",
+    "sequence",
+    "startBlock",
+    "endBlock",
     "checksums",
-    "format"
+    "file"
 })
-public class AudioBlockType {
+public class TapePartitionType {
 
     @XmlElement(name = "Image", required = true)
     protected ImageType image;
     @XmlElement(name = "Size")
     protected long size;
-    @XmlElement(name = "AccoustID", required = true)
-    protected String accoustID;
+    @XmlElement(name = "Sequence")
+    protected long sequence;
+    @XmlElement(name = "StartBlock")
+    protected long startBlock;
+    @XmlElement(name = "EndBlock")
+    protected long endBlock;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
-    @XmlElement(name = "Format")
-    protected String format;
+    @XmlElement(name = "File", required = true)
+    protected List<TapeFileType> file;
 
     /**
      * Gets the value of the image property.
@@ -101,27 +113,51 @@ public class AudioBlockType {
     }
 
     /**
-     * Gets the value of the accoustID property.
+     * Gets the value of the sequence property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getAccoustID() {
-        return accoustID;
+    public long getSequence() {
+        return sequence;
     }
 
     /**
-     * Sets the value of the accoustID property.
+     * Sets the value of the sequence property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setAccoustID(String value) {
-        this.accoustID = value;
+    public void setSequence(long value) {
+        this.sequence = value;
+    }
+
+    /**
+     * Gets the value of the startBlock property.
+     * 
+     */
+    public long getStartBlock() {
+        return startBlock;
+    }
+
+    /**
+     * Sets the value of the startBlock property.
+     * 
+     */
+    public void setStartBlock(long value) {
+        this.startBlock = value;
+    }
+
+    /**
+     * Gets the value of the endBlock property.
+     * 
+     */
+    public long getEndBlock() {
+        return endBlock;
+    }
+
+    /**
+     * Sets the value of the endBlock property.
+     * 
+     */
+    public void setEndBlock(long value) {
+        this.endBlock = value;
     }
 
     /**
@@ -149,27 +185,32 @@ public class AudioBlockType {
     }
 
     /**
-     * Gets the value of the format property.
+     * Gets the value of the file property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFormat() {
-        return format;
-    }
-
-    /**
-     * Sets the value of the format property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the file property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFile().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TapeFileType }
+     * 
+     * 
      */
-    public void setFormat(String value) {
-        this.format = value;
+    public List<TapeFileType> getFile() {
+        if (file == null) {
+            file = new ArrayList<TapeFileType>();
+        }
+        return this.file;
     }
 
 }

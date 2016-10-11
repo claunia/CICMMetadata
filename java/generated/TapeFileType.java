@@ -10,32 +10,29 @@ package generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for BorderType complex type.
+ * Tape file information
+ * 
+ * <p>Java class for TapeFileType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="BorderType">
+ * &lt;complexType name="TapeFileType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Image" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Image" type="{}ImageType"/>
  *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="Sequence" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="StartBlock" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="EndBlock" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *         &lt;element name="Checksums" type="{}ChecksumsType"/>
  *       &lt;/sequence>
- *       &lt;attribute name="session">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *             &lt;minInclusive value="1"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -44,31 +41,38 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BorderType", propOrder = {
+@XmlType(name = "TapeFileType", propOrder = {
     "image",
     "size",
+    "sequence",
+    "startBlock",
+    "endBlock",
     "checksums"
 })
-public class BorderType {
+public class TapeFileType {
 
     @XmlElement(name = "Image", required = true)
-    protected String image;
+    protected ImageType image;
     @XmlElement(name = "Size")
     protected long size;
+    @XmlElement(name = "Sequence")
+    protected long sequence;
+    @XmlElement(name = "StartBlock")
+    protected long startBlock;
+    @XmlElement(name = "EndBlock")
+    protected long endBlock;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
-    @XmlAttribute(name = "session")
-    protected Integer session;
 
     /**
      * Gets the value of the image property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ImageType }
      *     
      */
-    public String getImage() {
+    public ImageType getImage() {
         return image;
     }
 
@@ -77,10 +81,10 @@ public class BorderType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ImageType }
      *     
      */
-    public void setImage(String value) {
+    public void setImage(ImageType value) {
         this.image = value;
     }
 
@@ -98,6 +102,54 @@ public class BorderType {
      */
     public void setSize(long value) {
         this.size = value;
+    }
+
+    /**
+     * Gets the value of the sequence property.
+     * 
+     */
+    public long getSequence() {
+        return sequence;
+    }
+
+    /**
+     * Sets the value of the sequence property.
+     * 
+     */
+    public void setSequence(long value) {
+        this.sequence = value;
+    }
+
+    /**
+     * Gets the value of the startBlock property.
+     * 
+     */
+    public long getStartBlock() {
+        return startBlock;
+    }
+
+    /**
+     * Sets the value of the startBlock property.
+     * 
+     */
+    public void setStartBlock(long value) {
+        this.startBlock = value;
+    }
+
+    /**
+     * Gets the value of the endBlock property.
+     * 
+     */
+    public long getEndBlock() {
+        return endBlock;
+    }
+
+    /**
+     * Sets the value of the endBlock property.
+     * 
+     */
+    public void setEndBlock(long value) {
+        this.endBlock = value;
     }
 
     /**
@@ -122,30 +174,6 @@ public class BorderType {
      */
     public void setChecksums(ChecksumsType value) {
         this.checksums = value;
-    }
-
-    /**
-     * Gets the value of the session property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getSession() {
-        return session;
-    }
-
-    /**
-     * Sets the value of the session property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setSession(Integer value) {
-        this.session = value;
     }
 
 }

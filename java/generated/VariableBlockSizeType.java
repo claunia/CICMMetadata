@@ -17,16 +17,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for FileSystemInformationType complex type.
+ * <p>Java class for VariableBlockSizeType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="FileSystemInformationType">
+ * &lt;complexType name="VariableBlockSizeType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Partition" type="{}PartitionType" maxOccurs="unbounded"/>
+ *         &lt;element name="BlockSize" type="{}BlockSizeType" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,41 +36,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FileSystemInformationType", propOrder = {
-    "partition"
+@XmlType(name = "VariableBlockSizeType", propOrder = {
+    "blockSize"
 })
-public class FileSystemInformationType {
+public class VariableBlockSizeType {
 
-    @XmlElement(name = "Partition", required = true)
-    protected List<PartitionType> partition;
+    @XmlElement(name = "BlockSize", required = true)
+    protected List<BlockSizeType> blockSize;
 
     /**
-     * Gets the value of the partition property.
+     * Gets the value of the blockSize property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the partition property.
+     * This is why there is not a <CODE>set</CODE> method for the blockSize property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPartition().add(newItem);
+     *    getBlockSize().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link PartitionType }
+     * {@link BlockSizeType }
      * 
      * 
      */
-    public List<PartitionType> getPartition() {
-        if (partition == null) {
-            partition = new ArrayList<PartitionType>();
+    public List<BlockSizeType> getBlockSize() {
+        if (blockSize == null) {
+            blockSize = new ArrayList<BlockSizeType>();
         }
-        return this.partition;
+        return this.blockSize;
     }
 
 }
