@@ -946,6 +946,18 @@
           <Checksum type="adler32">string</Checksum>
         </Checksums>
       </CIS>
+      <!--Optional:-->
+      <Compliance>string</Compliance>
+      <!--Optional:-->
+      <ManufacturerCode>5</ManufacturerCode>
+      <!--Optional:-->
+      <CardCode>5</CardCode>
+      <!--Optional:-->
+      <Manufacturer>string</Manufacturer>
+      <!--Optional:-->
+      <ProductName>string</ProductName>
+      <!--Zero or more repetitions:-->
+      <AdditionalInformation>string</AdditionalInformation>
     </PCMCIA>
     <!--Optional:-->
     <CopyProtection>string</CopyProtection>
@@ -1108,6 +1120,18 @@
             <Checksum type="tiger">string</Checksum>
           </Checksums>
         </CIS>
+        <!--Optional:-->
+        <Compliance>string</Compliance>
+        <!--Optional:-->
+        <ManufacturerCode>5</ManufacturerCode>
+        <!--Optional:-->
+        <CardCode>5</CardCode>
+        <!--Optional:-->
+        <Manufacturer>string</Manufacturer>
+        <!--Optional:-->
+        <ProductName>string</ProductName>
+        <!--Zero or more repetitions:-->
+        <AdditionalInformation>string</AdditionalInformation>
       </PCMCIA>
       <!--Optional:-->
       <CopyProtection>string</CopyProtection>
@@ -1420,6 +1444,18 @@
               <Checksum type="md5">string</Checksum>
             </Checksums>
           </CIS>
+          <!--Optional:-->
+          <Compliance>string</Compliance>
+          <!--Optional:-->
+          <ManufacturerCode>5</ManufacturerCode>
+          <!--Optional:-->
+          <CardCode>5</CardCode>
+          <!--Optional:-->
+          <Manufacturer>string</Manufacturer>
+          <!--Optional:-->
+          <ProductName>string</ProductName>
+          <!--Zero or more repetitions:-->
+          <AdditionalInformation>string</AdditionalInformation>
         </PCMCIA>
         <!--Optional:-->
         <CopyProtection>string</CopyProtection>
@@ -1435,6 +1471,18 @@
           <Checksum type="blake256">string</Checksum>
         </Checksums>
       </CIS>
+      <!--Optional:-->
+      <Compliance>string</Compliance>
+      <!--Optional:-->
+      <ManufacturerCode>5</ManufacturerCode>
+      <!--Optional:-->
+      <CardCode>5</CardCode>
+      <!--Optional:-->
+      <Manufacturer>string</Manufacturer>
+      <!--Optional:-->
+      <ProductName>string</ProductName>
+      <!--Zero or more repetitions:-->
+      <AdditionalInformation>string</AdditionalInformation>
     </PCMCIA>
     <!--Optional:-->
     <SecureDigital>
@@ -1682,50 +1730,15 @@
         <Checksum type="blake512">string</Checksum>
       </Checksums>
       <!--Optional:-->
-      <Format>string</Format>
     </Block>
     <!--Optional:-->
-    <CopyProtection>string</CopyProtection>
     <Dimensions>
       <!--Optional:-->
-      <Diameter>1.051732E7</Diameter>
       <!--Optional:-->
-      <Height>1.051732E7</Height>
       <!--Optional:-->
-      <Width>1.051732E7</Width>
       <Thickness>1.051732E7</Thickness>
     </Dimensions>
     <!--Optional:-->
-    <Scans>
-      <!--Optional:-->
-      <CaseScan>
-        <CaseScanElement>sleeve</CaseScanElement>
-        <Scan>
-          <File format="string">string</File>
-          <Checksums>
-            <!--1 or more repetitions:-->
-            <Checksum type="md4">string</Checksum>
-          </Checksums>
-          <!--Zero or more repetitions:-->
-          <Scanner>
-            <Author>string</Author>
-            <Manufacturer>string</Manufacturer>
-            <Model>string</Model>
-            <Serial>string</Serial>
-            <Software>string</Software>
-            <SoftwareVersion>string</SoftwareVersion>
-          </Scanner>
-          <!--Zero or more repetitions:-->
-          <ScanProcessing>
-            <Author>string</Author>
-            <Software>string</Software>
-            <SoftwareVersion>string</SoftwareVersion>
-          </ScanProcessing>
-          <!--Zero or more repetitions:-->
-        </Scan>
-      </CaseScan>
-      <!--Optional:-->
-    </Scans>
     <!--Optional:-->
   </AudioMedia>
 </CICMMetadata>

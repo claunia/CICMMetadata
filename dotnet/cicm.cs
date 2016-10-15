@@ -4608,6 +4608,22 @@ namespace Schemas {
         
         private DumpType cISField;
         
+        private string complianceField;
+        
+        private ushort manufacturerCodeField;
+        
+        private bool manufacturerCodeFieldSpecified;
+        
+        private ushort cardCodeField;
+        
+        private bool cardCodeFieldSpecified;
+        
+        private string manufacturerField;
+        
+        private string productNameField;
+        
+        private string[] additionalInformationField;
+        
         /// <remarks/>
         public DumpType CIS {
             get {
@@ -4615,6 +4631,89 @@ namespace Schemas {
             }
             set {
                 this.cISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Compliance {
+            get {
+                return this.complianceField;
+            }
+            set {
+                this.complianceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ushort ManufacturerCode {
+            get {
+                return this.manufacturerCodeField;
+            }
+            set {
+                this.manufacturerCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ManufacturerCodeSpecified {
+            get {
+                return this.manufacturerCodeFieldSpecified;
+            }
+            set {
+                this.manufacturerCodeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ushort CardCode {
+            get {
+                return this.cardCodeField;
+            }
+            set {
+                this.cardCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CardCodeSpecified {
+            get {
+                return this.cardCodeFieldSpecified;
+            }
+            set {
+                this.cardCodeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Manufacturer {
+            get {
+                return this.manufacturerField;
+            }
+            set {
+                this.manufacturerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ProductName {
+            get {
+                return this.productNameField;
+            }
+            set {
+                this.productNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AdditionalInformation")]
+        public string[] AdditionalInformation {
+            get {
+                return this.additionalInformationField;
+            }
+            set {
+                this.additionalInformationField = value;
             }
         }
     }

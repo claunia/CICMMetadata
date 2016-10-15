@@ -4611,6 +4611,22 @@ Namespace Schemas
         
         Private cISField As DumpType
         
+        Private complianceField As String
+        
+        Private manufacturerCodeField As UShort
+        
+        Private manufacturerCodeFieldSpecified As Boolean
+        
+        Private cardCodeField As UShort
+        
+        Private cardCodeFieldSpecified As Boolean
+        
+        Private manufacturerField As String
+        
+        Private productNameField As String
+        
+        Private additionalInformationField As String()
+        
         '''<remarks/>
         Public Property CIS() As DumpType
             Get
@@ -4618,6 +4634,89 @@ Namespace Schemas
             End Get
             Set
                 Me.cISField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Compliance() As String
+            Get
+                Return Me.complianceField
+            End Get
+            Set
+                Me.complianceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ManufacturerCode() As UShort
+            Get
+                Return Me.manufacturerCodeField
+            End Get
+            Set
+                Me.manufacturerCodeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property ManufacturerCodeSpecified() As Boolean
+            Get
+                Return Me.manufacturerCodeFieldSpecified
+            End Get
+            Set
+                Me.manufacturerCodeFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CardCode() As UShort
+            Get
+                Return Me.cardCodeField
+            End Get
+            Set
+                Me.cardCodeField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property CardCodeSpecified() As Boolean
+            Get
+                Return Me.cardCodeFieldSpecified
+            End Get
+            Set
+                Me.cardCodeFieldSpecified = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Manufacturer() As String
+            Get
+                Return Me.manufacturerField
+            End Get
+            Set
+                Me.manufacturerField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ProductName() As String
+            Get
+                Return Me.productNameField
+            End Get
+            Set
+                Me.productNameField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("AdditionalInformation")>  _
+        Public Property AdditionalInformation() As String()
+            Get
+                Return Me.additionalInformationField
+            End Get
+            Set
+                Me.additionalInformationField = Value
             End Set
         End Property
     End Class
