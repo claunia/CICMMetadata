@@ -3656,6 +3656,8 @@ namespace Schemas {
         
         private long sequenceField;
         
+        private long blockSizeField;
+        
         private long startBlockField;
         
         private long endBlockField;
@@ -3689,6 +3691,16 @@ namespace Schemas {
             }
             set {
                 this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long BlockSize {
+            get {
+                return this.blockSizeField;
+            }
+            set {
+                this.blockSizeField = value;
             }
         }
         

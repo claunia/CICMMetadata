@@ -3659,6 +3659,8 @@ Namespace Schemas
         
         Private sequenceField As Long
         
+        Private blockSizeField As Long
+        
         Private startBlockField As Long
         
         Private endBlockField As Long
@@ -3692,6 +3694,16 @@ Namespace Schemas
             End Get
             Set
                 Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property BlockSize() As Long
+            Get
+                Return Me.blockSizeField
+            End Get
+            Set
+                Me.blockSizeField = Value
             End Set
         End Property
         
