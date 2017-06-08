@@ -3152,12 +3152,12 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ExtentType {
         
-        private int startField;
+        private ulong startField;
         
-        private int endField;
+        private ulong endField;
         
         /// <remarks/>
-        public int Start {
+        public ulong Start {
             get {
                 return this.startField;
             }
@@ -3167,7 +3167,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int End {
+        public ulong End {
             get {
                 return this.endField;
             }

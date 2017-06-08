@@ -145,12 +145,12 @@
 	</xs:complexType>
 	<xs:complexType name="ExtentType">
 		<xs:sequence>
-			<xs:element type="xs:int" name="Start" minOccurs="1" maxOccurs="1">
+			<xs:element type="xs:unsignedLong" name="Start" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Starting sector</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="xs:int" name="End" maxOccurs="1" minOccurs="1">
+			<xs:element type="xs:unsignedLong" name="End" maxOccurs="1" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Ending sector</xs:documentation>
 				</xs:annotation>

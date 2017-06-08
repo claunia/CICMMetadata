@@ -3155,12 +3155,12 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class ExtentType
         
-        Private startField As Integer
+        Private startField As ULong
         
-        Private endField As Integer
+        Private endField As ULong
         
         '''<remarks/>
-        Public Property Start() As Integer
+        Public Property Start() As ULong
             Get
                 Return Me.startField
             End Get
@@ -3170,7 +3170,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property End() As Integer
+        Public Property End() As ULong
             Get
                 Return Me.endField
             End Get
