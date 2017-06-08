@@ -6274,38 +6274,6 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SecuritySectorsType
-        
-        Private startField As Long
-        
-        Private endField As Long
-        
-        '''<remarks/>
-        Public Property Start() As Long
-            Get
-                Return Me.startField
-            End Get
-            Set
-                Me.startField = Value
-            End Set
-        End Property
-        
-        '''<remarks/>
-        Public Property End() As Long
-            Get
-                Return Me.endField
-            End Get
-            Set
-                Me.endField = Value
-            End Set
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class BorderType
         
         Private imageField As String
@@ -6728,7 +6696,7 @@ Namespace Schemas
         
         Private leadOutField As BorderType()
         
-        Private xboxSecuritySectorsField As SecuritySectorsType()
+        Private xboxSecuritySectorsField As DumpType
         
         Private pS3EncryptionField As PS3EncryptionType
         
@@ -7147,8 +7115,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayItemAttribute("SecuritySectors", IsNullable:=false)>  _
-        Public Property XboxSecuritySectors() As SecuritySectorsType()
+        Public Property XboxSecuritySectors() As DumpType
             Get
                 Return Me.xboxSecuritySectorsField
             End Get

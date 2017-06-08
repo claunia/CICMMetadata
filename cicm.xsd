@@ -754,7 +754,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="XboxSecuritySectorsType" name="XboxSecuritySectors" minOccurs="0" maxOccurs="1">
+			<xs:element type="DumpType" name="XboxSecuritySectors" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>XGD Security Sectors</xs:documentation>
 				</xs:annotation>
@@ -2102,16 +2102,6 @@
 			<xs:element type="ChecksumsType" name="Checksums" maxOccurs="1" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Checksum of subchannel dump</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="XboxSecuritySectorsType">
-		<xs:sequence>
-			<xs:element type="SecuritySectorsType" name="SecuritySectors" minOccurs="1" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Xbox Game Discs security sectors
-					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

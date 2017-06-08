@@ -6271,38 +6271,6 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SecuritySectorsType {
-        
-        private long startField;
-        
-        private long endField;
-        
-        /// <remarks/>
-        public long Start {
-            get {
-                return this.startField;
-            }
-            set {
-                this.startField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long End {
-            get {
-                return this.endField;
-            }
-            set {
-                this.endField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class BorderType {
         
         private string imageField;
@@ -6725,7 +6693,7 @@ namespace Schemas {
         
         private BorderType[] leadOutField;
         
-        private SecuritySectorsType[] xboxSecuritySectorsField;
+        private DumpType xboxSecuritySectorsField;
         
         private PS3EncryptionType pS3EncryptionField;
         
@@ -7144,8 +7112,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("SecuritySectors", IsNullable=false)]
-        public SecuritySectorsType[] XboxSecuritySectors {
+        public DumpType XboxSecuritySectors {
             get {
                 return this.xboxSecuritySectorsField;
             }
