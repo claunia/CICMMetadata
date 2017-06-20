@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.06.20 a las 05:41:11 AM WEST 
+// Generado el: 2017.06.20 a las 06:15:00 AM WEST 
 //
 
 
@@ -65,7 +65,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="LeadInCdText" type="{}DumpType" minOccurs="0"/>
  *         &lt;element name="LeadIn" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="LeadOut" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="XboxSecuritySectors" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="Xbox" type="{}XboxType" minOccurs="0"/>
  *         &lt;element name="PS3Encryption" type="{}PS3EncryptionType" minOccurs="0"/>
  *         &lt;element name="Track" type="{}TrackType" maxOccurs="unbounded"/>
  *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/>
@@ -118,7 +118,7 @@ import javax.xml.bind.annotation.XmlType;
     "leadInCdText",
     "leadIn",
     "leadOut",
-    "xboxSecuritySectors",
+    "xbox",
     "ps3Encryption",
     "track",
     "dumpHardwareArray"
@@ -203,8 +203,8 @@ public class OpticalDiscType {
     protected List<BorderType> leadIn;
     @XmlElement(name = "LeadOut")
     protected List<BorderType> leadOut;
-    @XmlElement(name = "XboxSecuritySectors")
-    protected DumpType xboxSecuritySectors;
+    @XmlElement(name = "Xbox")
+    protected XboxType xbox;
     @XmlElement(name = "PS3Encryption")
     protected PS3EncryptionType ps3Encryption;
     @XmlElement(name = "Track", required = true)
@@ -1173,27 +1173,27 @@ public class OpticalDiscType {
     }
 
     /**
-     * Obtiene el valor de la propiedad xboxSecuritySectors.
+     * Obtiene el valor de la propiedad xbox.
      * 
      * @return
      *     possible object is
-     *     {@link DumpType }
+     *     {@link XboxType }
      *     
      */
-    public DumpType getXboxSecuritySectors() {
-        return xboxSecuritySectors;
+    public XboxType getXbox() {
+        return xbox;
     }
 
     /**
-     * Define el valor de la propiedad xboxSecuritySectors.
+     * Define el valor de la propiedad xbox.
      * 
      * @param value
      *     allowed object is
-     *     {@link DumpType }
+     *     {@link XboxType }
      *     
      */
-    public void setXboxSecuritySectors(DumpType value) {
-        this.xboxSecuritySectors = value;
+    public void setXbox(XboxType value) {
+        this.xbox = value;
     }
 
     /**

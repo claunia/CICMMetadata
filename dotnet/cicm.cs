@@ -6284,6 +6284,95 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class XboxSecuritySectorsType {
+        
+        private int requestVersionField;
+        
+        private int requestNumberField;
+        
+        private DumpType securitySectorsField;
+        
+        /// <remarks/>
+        public int RequestVersion {
+            get {
+                return this.requestVersionField;
+            }
+            set {
+                this.requestVersionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int RequestNumber {
+            get {
+                return this.requestNumberField;
+            }
+            set {
+                this.requestNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType SecuritySectors {
+            get {
+                return this.securitySectorsField;
+            }
+            set {
+                this.securitySectorsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class XboxType {
+        
+        private DumpType pFIField;
+        
+        private DumpType dMIField;
+        
+        private XboxSecuritySectorsType[] securitySectorsField;
+        
+        /// <remarks/>
+        public DumpType PFI {
+            get {
+                return this.pFIField;
+            }
+            set {
+                this.pFIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType DMI {
+            get {
+                return this.dMIField;
+            }
+            set {
+                this.dMIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SecuritySectors")]
+        public XboxSecuritySectorsType[] SecuritySectors {
+            get {
+                return this.securitySectorsField;
+            }
+            set {
+                this.securitySectorsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class BorderType {
         
         private string imageField;
@@ -6451,6 +6540,12 @@ namespace Schemas {
         
         /// <remarks/>
         xboxcase,
+        
+        /// <remarks/>
+        xbox360case,
+        
+        /// <remarks/>
+        xboxonecase,
         
         /// <remarks/>
         saturnbigcase,
@@ -6706,7 +6801,7 @@ namespace Schemas {
         
         private BorderType[] leadOutField;
         
-        private DumpType xboxSecuritySectorsField;
+        private XboxType xboxField;
         
         private PS3EncryptionType pS3EncryptionField;
         
@@ -7125,12 +7220,12 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public DumpType XboxSecuritySectors {
+        public XboxType Xbox {
             get {
-                return this.xboxSecuritySectorsField;
+                return this.xboxField;
             }
             set {
-                this.xboxSecuritySectorsField = value;
+                this.xboxField = value;
             }
         }
         

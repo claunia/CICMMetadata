@@ -62,6 +62,8 @@
 						<xs:enumeration value="dccase" />
 						<xs:enumeration value="saturncase" />
 						<xs:enumeration value="xboxcase" />
+						<xs:enumeration value="xbox360case" />
+						<xs:enumeration value="xboxonecase" />
 						<xs:enumeration value="saturnbigcase" />
 						<xs:enumeration value="gccase" />
 						<xs:enumeration value="wiicase" />
@@ -754,9 +756,9 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element type="DumpType" name="XboxSecuritySectors" minOccurs="0" maxOccurs="1">
+			<xs:element type="XboxType" name="Xbox" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>XGD Security Sectors</xs:documentation>
+					<xs:documentation>XGD information</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element type="PS3EncryptionType" name="PS3Encryption" minOccurs="0" maxOccurs="1">
@@ -883,6 +885,44 @@
 			<xs:element type="xs:string" name="Serial" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>PS3 encryption key</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="XboxType">
+		<xs:sequence>
+			<xs:element type="DumpType" name="PFI" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>XGD unlocked PFI</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="DMI" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>XGD unlocked DMI</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="XboxSecuritySectorsType" name="SecuritySectors" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>XGD security sectors</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="XboxSecuritySectorsType">
+		<xs:sequence>
+			<xs:element type="xs:int" name="RequestVersion" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Xbox SS Request Version</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:int" name="RequestNumber" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Xbox SS Request Number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="SecuritySectors" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>XGD Security Sectors</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

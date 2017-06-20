@@ -6287,6 +6287,95 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class XboxSecuritySectorsType
+        
+        Private requestVersionField As Integer
+        
+        Private requestNumberField As Integer
+        
+        Private securitySectorsField As DumpType
+        
+        '''<remarks/>
+        Public Property RequestVersion() As Integer
+            Get
+                Return Me.requestVersionField
+            End Get
+            Set
+                Me.requestVersionField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property RequestNumber() As Integer
+            Get
+                Return Me.requestNumberField
+            End Get
+            Set
+                Me.requestNumberField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SecuritySectors() As DumpType
+            Get
+                Return Me.securitySectorsField
+            End Get
+            Set
+                Me.securitySectorsField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class XboxType
+        
+        Private pFIField As DumpType
+        
+        Private dMIField As DumpType
+        
+        Private securitySectorsField As XboxSecuritySectorsType()
+        
+        '''<remarks/>
+        Public Property PFI() As DumpType
+            Get
+                Return Me.pFIField
+            End Get
+            Set
+                Me.pFIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DMI() As DumpType
+            Get
+                Return Me.dMIField
+            End Get
+            Set
+                Me.dMIField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("SecuritySectors")>  _
+        Public Property SecuritySectors() As XboxSecuritySectorsType()
+            Get
+                Return Me.securitySectorsField
+            End Get
+            Set
+                Me.securitySectorsField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class BorderType
         
         Private imageField As String
@@ -6454,6 +6543,12 @@ Namespace Schemas
         
         '''<remarks/>
         xboxcase
+        
+        '''<remarks/>
+        xbox360case
+        
+        '''<remarks/>
+        xboxonecase
         
         '''<remarks/>
         saturnbigcase
@@ -6709,7 +6804,7 @@ Namespace Schemas
         
         Private leadOutField As BorderType()
         
-        Private xboxSecuritySectorsField As DumpType
+        Private xboxField As XboxType
         
         Private pS3EncryptionField As PS3EncryptionType
         
@@ -7128,12 +7223,12 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property XboxSecuritySectors() As DumpType
+        Public Property Xbox() As XboxType
             Get
-                Return Me.xboxSecuritySectorsField
+                Return Me.xboxField
             End Get
             Set
-                Me.xboxSecuritySectorsField = Value
+                Me.xboxField = Value
             End Set
         End Property
         
