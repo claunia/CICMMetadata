@@ -578,6 +578,17 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer part no. or SKU</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer serial no., not to be confused with software registration serial number
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="LayeredTextType" name="RingCode" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Disc/side ring code</xs:documentation>
@@ -2493,6 +2504,17 @@
 					<xs:documentation>If image file contains several deinterleaved dumps, here are the checkums of the interleaved dump</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer part no. or SKU</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer serial no., not to be confused with software registration serial number
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="xs:string" name="Title" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Title as it is labeled on media</xs:documentation>
@@ -2883,6 +2905,17 @@
 					<xs:documentation>Media physical interface, for fixed media only</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer part no. or SKU</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer serial no., not to be confused with software registration serial number
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="xs:int" name="PhysicalBlockSize" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Physical block size in bytes</xs:documentation>
@@ -3055,6 +3088,17 @@
 			<xs:element type="SequenceType" name="Sequence" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Media sequence information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer part no. or SKU</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manufacturer serial no., not to be confused with software registration serial number
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element type="xs:string" name="Manufacturer" minOccurs="0">

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.06.20 a las 06:15:00 AM WEST 
+// Generado el: 2017.06.20 a las 06:21:52 AM WEST 
 //
 
 
@@ -31,6 +31,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Sequence" type="{}SequenceType"/>
  *         &lt;element name="Layers" type="{}LayersType" minOccurs="0"/>
  *         &lt;element name="Checksums" type="{}ChecksumsType"/>
+ *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RingCode" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="MasteringSID" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="Toolstamp" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
@@ -84,6 +86,8 @@ import javax.xml.bind.annotation.XmlType;
     "sequence",
     "layers",
     "checksums",
+    "partNumber",
+    "serialNumber",
     "ringCode",
     "masteringSID",
     "toolstamp",
@@ -135,6 +139,10 @@ public class OpticalDiscType {
     protected LayersType layers;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
+    @XmlElement(name = "PartNumber")
+    protected String partNumber;
+    @XmlElement(name = "SerialNumber")
+    protected String serialNumber;
     @XmlElement(name = "RingCode")
     protected List<LayeredTextType> ringCode;
     @XmlElement(name = "MasteringSID")
@@ -322,6 +330,54 @@ public class OpticalDiscType {
      */
     public void setChecksums(ChecksumsType value) {
         this.checksums = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad partNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPartNumber() {
+        return partNumber;
+    }
+
+    /**
+     * Define el valor de la propiedad partNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPartNumber(String value) {
+        this.partNumber = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad serialNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    /**
+     * Define el valor de la propiedad serialNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSerialNumber(String value) {
+        this.serialNumber = value;
     }
 
     /**

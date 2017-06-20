@@ -818,6 +818,10 @@ Namespace Schemas
         
         Private sequenceField As SequenceType
         
+        Private partNumberField As String
+        
+        Private serialNumberField As String
+        
         Private manufacturerField As String
         
         Private modelField As String
@@ -872,6 +876,26 @@ Namespace Schemas
             End Get
             Set
                 Me.sequenceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PartNumber() As String
+            Get
+                Return Me.partNumberField
+            End Get
+            Set
+                Me.partNumberField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SerialNumber() As String
+            Get
+                Return Me.serialNumberField
+            End Get
+            Set
+                Me.serialNumberField = Value
             End Set
         End Property
         
@@ -3894,6 +3918,10 @@ Namespace Schemas
         
         Private interfaceField As String
         
+        Private partNumberField As String
+        
+        Private serialNumberField As String
+        
         Private physicalBlockSizeField As Integer
         
         Private logicalBlockSizeField As Integer
@@ -4045,6 +4073,26 @@ Namespace Schemas
             End Get
             Set
                 Me.interfaceField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PartNumber() As String
+            Get
+                Return Me.partNumberField
+            End Get
+            Set
+                Me.partNumberField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SerialNumber() As String
+            Get
+                Return Me.serialNumberField
+            End Get
+            Set
+                Me.serialNumberField = Value
             End Set
         End Property
         
@@ -4388,6 +4436,10 @@ Namespace Schemas
         
         Private checksumsField As ChecksumType()
         
+        Private partNumberField As String
+        
+        Private serialNumberField As String
+        
         Private titleField As String
         
         Private sequenceField As Integer
@@ -4459,6 +4511,26 @@ Namespace Schemas
             End Get
             Set
                 Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PartNumber() As String
+            Get
+                Return Me.partNumberField
+            End Get
+            Set
+                Me.partNumberField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SerialNumber() As String
+            Get
+                Return Me.serialNumberField
+            End Get
+            Set
+                Me.serialNumberField = Value
             End Set
         End Property
         
@@ -6734,6 +6806,10 @@ Namespace Schemas
         
         Private checksumsField As ChecksumType()
         
+        Private partNumberField As String
+        
+        Private serialNumberField As String
+        
         Private ringCodeField As LayeredTextType()
         
         Private masteringSIDField As LayeredTextType()
@@ -6860,6 +6936,26 @@ Namespace Schemas
             End Get
             Set
                 Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PartNumber() As String
+            Get
+                Return Me.partNumberField
+            End Get
+            Set
+                Me.partNumberField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SerialNumber() As String
+            Get
+                Return Me.serialNumberField
+            End Get
+            Set
+                Me.serialNumberField = Value
             End Set
         End Property
         

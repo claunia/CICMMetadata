@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.06.20 a las 06:15:00 AM WEST 
+// Generado el: 2017.06.20 a las 06:21:52 AM WEST 
 //
 
 
@@ -38,6 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Serial" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Firmware" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Interface" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="PhysicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="LogicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="LogicalBlocks" type="{http://www.w3.org/2001/XMLSchema}long"/>
@@ -81,6 +83,8 @@ import javax.xml.bind.annotation.XmlType;
     "serial",
     "firmware",
     "_interface",
+    "partNumber",
+    "serialNumber",
     "physicalBlockSize",
     "logicalBlockSize",
     "logicalBlocks",
@@ -127,6 +131,10 @@ public class BlockMediaType {
     protected String firmware;
     @XmlElement(name = "Interface")
     protected String _interface;
+    @XmlElement(name = "PartNumber")
+    protected String partNumber;
+    @XmlElement(name = "SerialNumber")
+    protected String serialNumber;
     @XmlElement(name = "PhysicalBlockSize")
     protected int physicalBlockSize;
     @XmlElement(name = "LogicalBlockSize")
@@ -404,6 +412,54 @@ public class BlockMediaType {
      */
     public void setInterface(String value) {
         this._interface = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad partNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPartNumber() {
+        return partNumber;
+    }
+
+    /**
+     * Define el valor de la propiedad partNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPartNumber(String value) {
+        this.partNumber = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad serialNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    /**
+     * Define el valor de la propiedad serialNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSerialNumber(String value) {
+        this.serialNumber = value;
     }
 
     /**

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.06.20 a las 06:15:00 AM WEST 
+// Generado el: 2017.06.20 a las 06:21:52 AM WEST 
 //
 
 
@@ -32,6 +32,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *         &lt;element name="Checksums" type="{}ChecksumsType"/>
  *         &lt;element name="Sequence" type="{}SequenceType"/>
+ *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="AccoustID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -54,6 +56,8 @@ import javax.xml.bind.annotation.XmlType;
     "size",
     "checksums",
     "sequence",
+    "partNumber",
+    "serialNumber",
     "manufacturer",
     "model",
     "accoustID",
@@ -73,6 +77,10 @@ public class AudioMediaType {
     protected ChecksumsType checksums;
     @XmlElement(name = "Sequence", required = true)
     protected SequenceType sequence;
+    @XmlElement(name = "PartNumber")
+    protected String partNumber;
+    @XmlElement(name = "SerialNumber")
+    protected String serialNumber;
     @XmlElement(name = "Manufacturer")
     protected String manufacturer;
     @XmlElement(name = "Model")
@@ -176,6 +184,54 @@ public class AudioMediaType {
      */
     public void setSequence(SequenceType value) {
         this.sequence = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad partNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPartNumber() {
+        return partNumber;
+    }
+
+    /**
+     * Define el valor de la propiedad partNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPartNumber(String value) {
+        this.partNumber = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad serialNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    /**
+     * Define el valor de la propiedad serialNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSerialNumber(String value) {
+        this.serialNumber = value;
     }
 
     /**

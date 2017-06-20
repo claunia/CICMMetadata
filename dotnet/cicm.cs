@@ -815,6 +815,10 @@ namespace Schemas {
         
         private SequenceType sequenceField;
         
+        private string partNumberField;
+        
+        private string serialNumberField;
+        
         private string manufacturerField;
         
         private string modelField;
@@ -869,6 +873,26 @@ namespace Schemas {
             }
             set {
                 this.sequenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PartNumber {
+            get {
+                return this.partNumberField;
+            }
+            set {
+                this.partNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SerialNumber {
+            get {
+                return this.serialNumberField;
+            }
+            set {
+                this.serialNumberField = value;
             }
         }
         
@@ -3891,6 +3915,10 @@ namespace Schemas {
         
         private string interfaceField;
         
+        private string partNumberField;
+        
+        private string serialNumberField;
+        
         private int physicalBlockSizeField;
         
         private int logicalBlockSizeField;
@@ -4042,6 +4070,26 @@ namespace Schemas {
             }
             set {
                 this.interfaceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PartNumber {
+            get {
+                return this.partNumberField;
+            }
+            set {
+                this.partNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SerialNumber {
+            get {
+                return this.serialNumberField;
+            }
+            set {
+                this.serialNumberField = value;
             }
         }
         
@@ -4385,6 +4433,10 @@ namespace Schemas {
         
         private ChecksumType[] checksumsField;
         
+        private string partNumberField;
+        
+        private string serialNumberField;
+        
         private string titleField;
         
         private int sequenceField;
@@ -4456,6 +4508,26 @@ namespace Schemas {
             }
             set {
                 this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PartNumber {
+            get {
+                return this.partNumberField;
+            }
+            set {
+                this.partNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SerialNumber {
+            get {
+                return this.serialNumberField;
+            }
+            set {
+                this.serialNumberField = value;
             }
         }
         
@@ -6731,6 +6803,10 @@ namespace Schemas {
         
         private ChecksumType[] checksumsField;
         
+        private string partNumberField;
+        
+        private string serialNumberField;
+        
         private LayeredTextType[] ringCodeField;
         
         private LayeredTextType[] masteringSIDField;
@@ -6857,6 +6933,26 @@ namespace Schemas {
             }
             set {
                 this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PartNumber {
+            get {
+                return this.partNumberField;
+            }
+            set {
+                this.partNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SerialNumber {
+            get {
+                return this.serialNumberField;
+            }
+            set {
+                this.serialNumberField = value;
             }
         }
         
