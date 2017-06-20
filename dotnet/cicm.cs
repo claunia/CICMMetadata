@@ -3877,6 +3877,8 @@ namespace Schemas {
         
         private ChecksumType[] checksumsField;
         
+        private ChecksumType[] contentChecksumsField;
+        
         private SequenceType sequenceField;
         
         private string manufacturerField;
@@ -3969,6 +3971,17 @@ namespace Schemas {
             }
             set {
                 this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] ContentChecksums {
+            get {
+                return this.contentChecksumsField;
+            }
+            set {
+                this.contentChecksumsField = value;
             }
         }
         

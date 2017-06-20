@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.06.08 a las 09:56:12 PM WEST 
+// Generado el: 2017.06.20 a las 05:41:11 AM WEST 
 //
 
 
@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Image" type="{}ImageType"/>
  *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *         &lt;element name="Checksums" type="{}ChecksumsType"/>
+ *         &lt;element name="ContentChecksums" type="{}ChecksumsType"/>
  *         &lt;element name="Sequence" type="{}SequenceType"/>
  *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -73,6 +74,7 @@ import javax.xml.bind.annotation.XmlType;
     "image",
     "size",
     "checksums",
+    "contentChecksums",
     "sequence",
     "manufacturer",
     "model",
@@ -111,6 +113,8 @@ public class BlockMediaType {
     protected long size;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
+    @XmlElement(name = "ContentChecksums", required = true)
+    protected ChecksumsType contentChecksums;
     @XmlElement(name = "Sequence", required = true)
     protected SequenceType sequence;
     @XmlElement(name = "Manufacturer")
@@ -232,6 +236,30 @@ public class BlockMediaType {
      */
     public void setChecksums(ChecksumsType value) {
         this.checksums = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad contentChecksums.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ChecksumsType }
+     *     
+     */
+    public ChecksumsType getContentChecksums() {
+        return contentChecksums;
+    }
+
+    /**
+     * Define el valor de la propiedad contentChecksums.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ChecksumsType }
+     *     
+     */
+    public void setContentChecksums(ChecksumsType value) {
+        this.contentChecksums = value;
     }
 
     /**

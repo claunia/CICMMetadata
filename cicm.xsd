@@ -2808,6 +2808,11 @@
 					<xs:documentation>Checksums of image file</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element type="ChecksumsType" name="ContentChecksums" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Checksums of media</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="SequenceType" name="Sequence" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Media sequence information</xs:documentation>

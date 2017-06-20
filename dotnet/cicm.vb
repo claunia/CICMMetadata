@@ -3880,6 +3880,8 @@ Namespace Schemas
         
         Private checksumsField As ChecksumType()
         
+        Private contentChecksumsField As ChecksumType()
+        
         Private sequenceField As SequenceType
         
         Private manufacturerField As String
@@ -3972,6 +3974,17 @@ Namespace Schemas
             End Get
             Set
                 Me.checksumsField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property ContentChecksums() As ChecksumType()
+            Get
+                Return Me.contentChecksumsField
+            End Get
+            Set
+                Me.contentChecksumsField = Value
             End Set
         End Property
         

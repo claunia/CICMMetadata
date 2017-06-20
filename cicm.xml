@@ -1146,6 +1146,10 @@
       <!--1 or more repetitions:-->
       <Checksum type="crc32">string</Checksum>
     </Checksums>
+    <ContentChecksums>
+      <!--1 or more repetitions:-->
+      <Checksum type="crc32">string</Checksum>
+    </ContentChecksums>
     <Sequence>
       <!--Optional:-->
       <MediaTitle>string</MediaTitle>
@@ -1185,7 +1189,7 @@
         <EndBlock>10</EndBlock>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="crc32">string</Checksum>
+          <Checksum type="ripemd160">string</Checksum>
         </Checksums>
         <!--1 or more repetitions:-->
         <File>
@@ -1197,7 +1201,7 @@
           <EndBlock>10</EndBlock>
           <Checksums>
             <!--1 or more repetitions:-->
-            <Checksum type="ripemd160">string</Checksum>
+            <Checksum type="sha224">string</Checksum>
           </Checksums>
         </File>
       </Partition>
@@ -1206,12 +1210,12 @@
     <Scans>
       <!--Optional:-->
       <CaseScan>
-        <CaseScanElement>inner</CaseScanElement>
+        <CaseScanElement>inlay</CaseScanElement>
         <Scan>
           <File format="string">string</File>
           <Checksums>
             <!--1 or more repetitions:-->
-            <Checksum type="sha256">string</Checksum>
+            <Checksum type="sha512">string</Checksum>
           </Checksums>
           <!--Zero or more repetitions:-->
           <Scanner>
@@ -1235,19 +1239,19 @@
             <SoftwareVersion>string</SoftwareVersion>
             <Language>
               <!--1 or more repetitions:-->
-              <Language>tel</Language>
+              <Language>tkl</Language>
             </Language>
           </OCR>
         </Scan>
       </CaseScan>
       <!--Optional:-->
       <Scan>
-        <MediaScanElement>left</MediaScanElement>
+        <MediaScanElement>down</MediaScanElement>
         <Scan>
           <File format="string">string</File>
           <Checksums>
             <!--1 or more repetitions:-->
-            <Checksum type="spamsum">string</Checksum>
+            <Checksum type="crc16ccitt">string</Checksum>
           </Checksums>
           <!--Zero or more repetitions:-->
           <Scanner>
@@ -1271,7 +1275,7 @@
             <SoftwareVersion>string</SoftwareVersion>
             <Language>
               <!--1 or more repetitions:-->
-              <Language>ndo</Language>
+              <Language>lui</Language>
             </Language>
           </OCR>
         </Scan>
@@ -1284,7 +1288,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="skein">string</Checksum>
+          <Checksum type="snefru">string</Checksum>
         </Checksums>
       </Identify>
     </ATA>
@@ -1298,7 +1302,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="snefru">string</Checksum>
+          <Checksum type="ripemd128">string</Checksum>
         </Checksums>
       </Configuration>
       <!--Optional:-->
@@ -1307,7 +1311,7 @@
         <Size>10</Size>
         <ImageChecksums>
           <!--1 or more repetitions:-->
-          <Checksum type="ripemd128">string</Checksum>
+          <Checksum type="blake512">string</Checksum>
         </ImageChecksums>
         <!--Optional:-->
         <Checksums>
@@ -1342,12 +1346,12 @@
         <Scans>
           <!--Optional:-->
           <CaseScan>
-            <CaseScanElement>frontfull</CaseScanElement>
+            <CaseScanElement>sleeve</CaseScanElement>
             <Scan>
               <File format="string">string</File>
               <Checksums>
                 <!--1 or more repetitions:-->
-                <Checksum type="md4">string</Checksum>
+                <Checksum type="skein">string</Checksum>
               </Checksums>
               <!--Zero or more repetitions:-->
               <Scanner>
@@ -1371,19 +1375,19 @@
                 <SoftwareVersion>string</SoftwareVersion>
                 <Language>
                   <!--1 or more repetitions:-->
-                  <Language>smo</Language>
+                  <Language>myv</Language>
                 </Language>
               </OCR>
             </Scan>
           </CaseScan>
           <!--Optional:-->
           <Scan>
-            <MediaScanElement>front</MediaScanElement>
+            <MediaScanElement>right</MediaScanElement>
             <Scan>
               <File format="string">string</File>
               <Checksums>
                 <!--1 or more repetitions:-->
-                <Checksum type="tiger">string</Checksum>
+                <Checksum type="md5">string</Checksum>
               </Checksums>
               <!--Zero or more repetitions:-->
               <Scanner>
@@ -1407,7 +1411,7 @@
                 <SoftwareVersion>string</SoftwareVersion>
                 <Language>
                   <!--1 or more repetitions:-->
-                  <Language>rus</Language>
+                  <Language>sem</Language>
                 </Language>
               </OCR>
             </Scan>
@@ -1443,7 +1447,7 @@
             <Size>3</Size>
             <Checksums>
               <!--1 or more repetitions:-->
-              <Checksum type="blake256">string</Checksum>
+              <Checksum type="crc16ccitt">string</Checksum>
             </Checksums>
           </CIS>
           <!--Optional:-->
@@ -1470,7 +1474,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="crc16ccitt">string</Checksum>
+          <Checksum type="sha512">string</Checksum>
         </Checksums>
       </CIS>
       <!--Optional:-->
@@ -1502,7 +1506,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="sha512">string</Checksum>
+          <Checksum type="adler32">string</Checksum>
         </Checksums>
       </CSD>
       <!--Optional:-->
@@ -1511,7 +1515,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="adler32">string</Checksum>
+          <Checksum type="md5">string</Checksum>
         </Checksums>
       </ExtendedCSD>
     </SecureDigital>
@@ -1522,7 +1526,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="md5">string</Checksum>
+          <Checksum type="skein">string</Checksum>
         </Checksums>
       </Inquiry>
       <!--Zero or more repetitions:-->
@@ -1531,7 +1535,7 @@
         <Size>10</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="skein">string</Checksum>
+          <Checksum type="fletcher16">string</Checksum>
         </Checksums>
       </EVPD>
       <!--Optional:-->
@@ -1540,7 +1544,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="fletcher16">string</Checksum>
+          <Checksum type="adler32">string</Checksum>
         </Checksums>
       </ModeSense>
       <!--Optional:-->
@@ -1549,7 +1553,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="adler32">string</Checksum>
+          <Checksum type="snefru">string</Checksum>
         </Checksums>
       </ModeSense10>
       <!--Optional:-->
@@ -1558,7 +1562,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="snefru">string</Checksum>
+          <Checksum type="crc16ccitt">string</Checksum>
         </Checksums>
       </LogSense>
     </SCSI>
@@ -1572,7 +1576,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="crc16ccitt">string</Checksum>
+          <Checksum type="crc32">string</Checksum>
         </Checksums>
       </Descriptors>
     </USB>
@@ -1582,7 +1586,7 @@
       <Size>3</Size>
       <Checksums>
         <!--1 or more repetitions:-->
-        <Checksum type="crc32">string</Checksum>
+        <Checksum type="whirlpool">string</Checksum>
       </Checksums>
     </MAM>
     <!--Optional:-->
@@ -1603,7 +1607,7 @@
       <BytesPerSector>3</BytesPerSector>
       <Checksums>
         <!--1 or more repetitions:-->
-        <Checksum type="whirlpool">string</Checksum>
+        <Checksum type="dm6">string</Checksum>
       </Checksums>
       <!--Optional:-->
       <Format>string</Format>
@@ -1637,11 +1641,11 @@
           <FileSystem>
             <Type>string</Type>
             <!--Optional:-->
-            <CreationDate>2010-05-01T20:24:23+01:00</CreationDate>
+            <CreationDate>2019-08-10T13:03:10</CreationDate>
             <!--Optional:-->
-            <ModificationDate>2012-11-05T00:24:55+00:00</ModificationDate>
+            <ModificationDate>2003-04-21T00:04:52+01:00</ModificationDate>
             <!--Optional:-->
-            <BackupDate>2002-12-04T03:53:14+00:00</BackupDate>
+            <BackupDate>2003-03-28T17:17:22+00:00</BackupDate>
             <ClusterSize>3</ClusterSize>
             <Clusters>10</Clusters>
             <!--Optional:-->
@@ -1653,11 +1657,11 @@
             <VolumeName>string</VolumeName>
             <!--Optional:-->
             <FreeClusters>10</FreeClusters>
-            <Dirty>false</Dirty>
+            <Dirty>true</Dirty>
             <!--Optional:-->
-            <ExpirationDate>2017-02-08T14:31:15</ExpirationDate>
+            <ExpirationDate>2004-01-31T23:02:37+00:00</ExpirationDate>
             <!--Optional:-->
-            <EffectiveDate>2017-05-19T03:01:47</EffectiveDate>
+            <EffectiveDate>2009-10-26T03:22:37+00:00</EffectiveDate>
             <!--Optional:-->
             <SystemIdentifier>string</SystemIdentifier>
             <!--Optional:-->
@@ -1704,7 +1708,7 @@
     <Size>10</Size>
     <Checksums>
       <!--1 or more repetitions:-->
-      <Checksum type="blake512">string</Checksum>
+      <Checksum type="tiger">string</Checksum>
     </Checksums>
     <Sequence>
       <!--Optional:-->
@@ -1723,16 +1727,6 @@
     <!--Optional:-->
     <AccoustID>string</AccoustID>
     <!--Zero or more repetitions:-->
-    <Block>
-      <Image format="string" offset="10">string</Image>
-      <Size>10</Size>
-      <AccoustID>string</AccoustID>
-      <Checksums>
-        <!--1 or more repetitions:-->
-        <Checksum type="tiger">string</Checksum>
-      </Checksums>
-      <!--Optional:-->
-    </Block>
     <!--Optional:-->
     <Dimensions>
       <!--Optional:-->
