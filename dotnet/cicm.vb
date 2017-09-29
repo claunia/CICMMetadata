@@ -3611,13 +3611,15 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class SecureDigitalType
+    Partial Public Class MultiMediaCardType
         
         Private cIDField As DumpType
         
         Private cSDField As DumpType
         
         Private extendedCSDField As DumpType
+        
+        Private oCRField As DumpType
         
         '''<remarks/>
         Public Property CID() As DumpType
@@ -3646,6 +3648,72 @@ Namespace Schemas
             End Get
             Set
                 Me.extendedCSDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property OCR() As DumpType
+            Get
+                Return Me.oCRField
+            End Get
+            Set
+                Me.oCRField = Value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SecureDigitalType
+        
+        Private cIDField As DumpType
+        
+        Private cSDField As DumpType
+        
+        Private sCRField As DumpType
+        
+        Private oCRField As DumpType
+        
+        '''<remarks/>
+        Public Property CID() As DumpType
+            Get
+                Return Me.cIDField
+            End Get
+            Set
+                Me.cIDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CSD() As DumpType
+            Get
+                Return Me.cSDField
+            End Get
+            Set
+                Me.cSDField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SCR() As DumpType
+            Get
+                Return Me.sCRField
+            End Get
+            Set
+                Me.sCRField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property OCR() As DumpType
+            Get
+                Return Me.oCRField
+            End Get
+            Set
+                Me.oCRField = Value
             End Set
         End Property
     End Class
@@ -3942,6 +4010,8 @@ Namespace Schemas
         
         Private secureDigitalField As SecureDigitalType
         
+        Private multiMediaCardField As MultiMediaCardType
+        
         Private sCSIField As SCSIType
         
         Private uSBField As USBType
@@ -4195,6 +4265,16 @@ Namespace Schemas
             End Get
             Set
                 Me.secureDigitalField = Value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property MultiMediaCard() As MultiMediaCardType
+            Get
+                Return Me.multiMediaCardField
+            End Get
+            Set
+                Me.multiMediaCardField = Value
             End Set
         End Property
         

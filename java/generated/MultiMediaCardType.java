@@ -15,20 +15,20 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Contains SecureDigital device information
+ * Contains MultiMediaCard device information
  * 
- * <p>Clase Java para SecureDigitalType complex type.
+ * <p>Clase Java para MultiMediaCardType complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="SecureDigitalType">
+ * &lt;complexType name="MultiMediaCardType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="CID" type="{}DumpType"/>
  *         &lt;element name="CSD" type="{}DumpType" minOccurs="0"/>
- *         &lt;element name="SCR" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="ExtendedCSD" type="{}DumpType" minOccurs="0"/>
  *         &lt;element name="OCR" type="{}DumpType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -39,20 +39,20 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SecureDigitalType", propOrder = {
+@XmlType(name = "MultiMediaCardType", propOrder = {
     "cid",
     "csd",
-    "scr",
+    "extendedCSD",
     "ocr"
 })
-public class SecureDigitalType {
+public class MultiMediaCardType {
 
     @XmlElement(name = "CID", required = true)
     protected DumpType cid;
     @XmlElement(name = "CSD")
     protected DumpType csd;
-    @XmlElement(name = "SCR")
-    protected DumpType scr;
+    @XmlElement(name = "ExtendedCSD")
+    protected DumpType extendedCSD;
     @XmlElement(name = "OCR")
     protected DumpType ocr;
 
@@ -105,27 +105,27 @@ public class SecureDigitalType {
     }
 
     /**
-     * Obtiene el valor de la propiedad scr.
+     * Obtiene el valor de la propiedad extendedCSD.
      * 
      * @return
      *     possible object is
      *     {@link DumpType }
      *     
      */
-    public DumpType getSCR() {
-        return scr;
+    public DumpType getExtendedCSD() {
+        return extendedCSD;
     }
 
     /**
-     * Define el valor de la propiedad scr.
+     * Define el valor de la propiedad extendedCSD.
      * 
      * @param value
      *     allowed object is
      *     {@link DumpType }
      *     
      */
-    public void setSCR(DumpType value) {
-        this.scr = value;
+    public void setExtendedCSD(DumpType value) {
+        this.extendedCSD = value;
     }
 
     /**

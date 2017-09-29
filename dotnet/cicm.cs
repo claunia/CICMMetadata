@@ -3608,13 +3608,15 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SecureDigitalType {
+    public partial class MultiMediaCardType {
         
         private DumpType cIDField;
         
         private DumpType cSDField;
         
         private DumpType extendedCSDField;
+        
+        private DumpType oCRField;
         
         /// <remarks/>
         public DumpType CID {
@@ -3643,6 +3645,72 @@ namespace Schemas {
             }
             set {
                 this.extendedCSDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType OCR {
+            get {
+                return this.oCRField;
+            }
+            set {
+                this.oCRField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SecureDigitalType {
+        
+        private DumpType cIDField;
+        
+        private DumpType cSDField;
+        
+        private DumpType sCRField;
+        
+        private DumpType oCRField;
+        
+        /// <remarks/>
+        public DumpType CID {
+            get {
+                return this.cIDField;
+            }
+            set {
+                this.cIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType CSD {
+            get {
+                return this.cSDField;
+            }
+            set {
+                this.cSDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType SCR {
+            get {
+                return this.sCRField;
+            }
+            set {
+                this.sCRField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DumpType OCR {
+            get {
+                return this.oCRField;
+            }
+            set {
+                this.oCRField = value;
             }
         }
     }
@@ -3939,6 +4007,8 @@ namespace Schemas {
         
         private SecureDigitalType secureDigitalField;
         
+        private MultiMediaCardType multiMediaCardField;
+        
         private SCSIType sCSIField;
         
         private USBType uSBField;
@@ -4192,6 +4262,16 @@ namespace Schemas {
             }
             set {
                 this.secureDigitalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public MultiMediaCardType MultiMediaCard {
+            get {
+                return this.multiMediaCardField;
+            }
+            set {
+                this.multiMediaCardField = value;
             }
         }
         

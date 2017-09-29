@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.06.20 a las 06:21:52 AM WEST 
+// Generado el: 2017.09.29 a las 02:23:35 PM WEST 
 //
 
 
@@ -50,6 +50,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="PCI" type="{}PCIType" minOccurs="0"/>
  *         &lt;element name="PCMCIA" type="{}PCMCIAType" minOccurs="0"/>
  *         &lt;element name="SecureDigital" type="{}SecureDigitalType" minOccurs="0"/>
+ *         &lt;element name="MultiMediaCard" type="{}MultiMediaCardType" minOccurs="0"/>
  *         &lt;element name="SCSI" type="{}SCSIType" minOccurs="0"/>
  *         &lt;element name="USB" type="{}USBType" minOccurs="0"/>
  *         &lt;element name="MAM" type="{}DumpType" minOccurs="0"/>
@@ -95,6 +96,7 @@ import javax.xml.bind.annotation.XmlType;
     "pci",
     "pcmcia",
     "secureDigital",
+    "multiMediaCard",
     "scsi",
     "usb",
     "mam",
@@ -155,6 +157,8 @@ public class BlockMediaType {
     protected PCMCIAType pcmcia;
     @XmlElement(name = "SecureDigital")
     protected SecureDigitalType secureDigital;
+    @XmlElement(name = "MultiMediaCard")
+    protected MultiMediaCardType multiMediaCard;
     @XmlElement(name = "SCSI")
     protected SCSIType scsi;
     @XmlElement(name = "USB")
@@ -676,6 +680,30 @@ public class BlockMediaType {
      */
     public void setSecureDigital(SecureDigitalType value) {
         this.secureDigital = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad multiMediaCard.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MultiMediaCardType }
+     *     
+     */
+    public MultiMediaCardType getMultiMediaCard() {
+        return multiMediaCard;
+    }
+
+    /**
+     * Define el valor de la propiedad multiMediaCard.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MultiMediaCardType }
+     *     
+     */
+    public void setMultiMediaCard(MultiMediaCardType value) {
+        this.multiMediaCard = value;
     }
 
     /**

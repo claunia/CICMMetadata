@@ -1553,15 +1553,62 @@
         </Checksums>
       </CSD>
       <!--Optional:-->
-      <ExtendedCSD>
+      <SCR>
         <Image>string</Image>
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
           <Checksum type="fletcher16">string</Checksum>
         </Checksums>
-      </ExtendedCSD>
+      </SCR>
+      <!--Optional:-->
+      <OCR>
+        <Image>string</Image>
+        <Size>3</Size>
+        <Checksums>
+          <!--1 or more repetitions:-->
+          <Checksum type="adler32">string</Checksum>
+        </Checksums>
+      </OCR>
     </SecureDigital>
+    <!--Optional:-->
+    <MultiMediaCard>
+      <CID>
+        <Image>string</Image>
+        <Size>3</Size>
+        <Checksums>
+          <!--1 or more repetitions:-->
+          <Checksum type="snefru">string</Checksum>
+        </Checksums>
+      </CID>
+      <!--Optional:-->
+      <CSD>
+        <Image>string</Image>
+        <Size>3</Size>
+        <Checksums>
+          <!--1 or more repetitions:-->
+          <Checksum type="crc16ccitt">string</Checksum>
+        </Checksums>
+      </CSD>
+      <!--Optional:-->
+      <ExtendedCSD>
+        <Image>string</Image>
+        <Size>3</Size>
+        <Checksums>
+          <!--1 or more repetitions:-->
+          <Checksum type="crc32">string</Checksum>
+        </Checksums>
+      </ExtendedCSD>
+      <!--Optional:-->
+      <OCR>
+        <Image>string</Image>
+        <Size>3</Size>
+        <Checksums>
+          <!--1 or more repetitions:-->
+          <Checksum type="whirlpool">string</Checksum>
+        </Checksums>
+      </OCR>
+    </MultiMediaCard>
     <!--Optional:-->
     <SCSI>
       <Inquiry>
@@ -1569,7 +1616,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="adler32">string</Checksum>
+          <Checksum type="dm6">string</Checksum>
         </Checksums>
       </Inquiry>
       <!--Zero or more repetitions:-->
@@ -1578,7 +1625,7 @@
         <Size>10</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="snefru">string</Checksum>
+          <Checksum type="ripemd128">string</Checksum>
         </Checksums>
       </EVPD>
       <!--Optional:-->
@@ -1587,7 +1634,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="crc16ccitt">string</Checksum>
+          <Checksum type="skein">string</Checksum>
         </Checksums>
       </ModeSense>
       <!--Optional:-->
@@ -1596,7 +1643,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="crc32">string</Checksum>
+          <Checksum type="tiger">string</Checksum>
         </Checksums>
       </ModeSense10>
       <!--Optional:-->
@@ -1605,7 +1652,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="whirlpool">string</Checksum>
+          <Checksum type="fletcher16">string</Checksum>
         </Checksums>
       </LogSense>
     </SCSI>
@@ -1619,7 +1666,7 @@
         <Size>3</Size>
         <Checksums>
           <!--1 or more repetitions:-->
-          <Checksum type="dm6">string</Checksum>
+          <Checksum type="crc32">string</Checksum>
         </Checksums>
       </Descriptors>
     </USB>
@@ -1629,7 +1676,7 @@
       <Size>3</Size>
       <Checksums>
         <!--1 or more repetitions:-->
-        <Checksum type="ripemd128">string</Checksum>
+        <Checksum type="blake512">string</Checksum>
       </Checksums>
     </MAM>
     <!--Optional:-->
@@ -1650,7 +1697,7 @@
       <BytesPerSector>3</BytesPerSector>
       <Checksums>
         <!--1 or more repetitions:-->
-        <Checksum type="skein">string</Checksum>
+        <Checksum type="fletcher16">string</Checksum>
       </Checksums>
       <!--Optional:-->
       <Format>string</Format>
@@ -1684,64 +1731,28 @@
           <FileSystem>
             <Type>string</Type>
             <!--Optional:-->
-            <CreationDate>2012-11-05T00:24:55+00:00</CreationDate>
             <!--Optional:-->
-            <ModificationDate>2002-12-04T03:53:14+00:00</ModificationDate>
             <!--Optional:-->
-            <BackupDate>2001-04-19T23:08:17</BackupDate>
             <ClusterSize>3</ClusterSize>
             <Clusters>10</Clusters>
             <!--Optional:-->
-            <Files>10</Files>
-            <Bootable>true</Bootable>
+            <Bootable>false</Bootable>
             <!--Optional:-->
-            <VolumeSerial>string</VolumeSerial>
             <!--Optional:-->
-            <VolumeName>string</VolumeName>
             <!--Optional:-->
-            <FreeClusters>10</FreeClusters>
-            <Dirty>true</Dirty>
+            <Dirty>false</Dirty>
             <!--Optional:-->
-            <ExpirationDate>2017-05-19T03:01:47</ExpirationDate>
             <!--Optional:-->
-            <EffectiveDate>2017-07-13T21:19:16</EffectiveDate>
             <!--Optional:-->
-            <SystemIdentifier>string</SystemIdentifier>
             <!--Optional:-->
-            <VolumeSetIdentifier>string</VolumeSetIdentifier>
             <!--Optional:-->
-            <PublisherIdentifier>string</PublisherIdentifier>
             <!--Optional:-->
-            <DataPreparerIdentifier>string</DataPreparerIdentifier>
             <!--Optional:-->
-            <ApplicationIdentifier>string</ApplicationIdentifier>
           </FileSystem>
         </FileSystems>
       </Partition>
     </FileSystemInformation>
     <!--Optional:-->
-    <DumpHardwareArray>
-      <!--1 or more repetitions:-->
-      <DumpHardware>
-        <Manufacturer>string</Manufacturer>
-        <Model>string</Model>
-        <Revision>string</Revision>
-        <Firmware>string</Firmware>
-        <Serial>string</Serial>
-        <Extents>
-          <!--1 or more repetitions:-->
-          <Extent>
-            <Start>11</Start>
-            <End>11</End>
-          </Extent>
-        </Extents>
-        <Software>
-          <Name>string</Name>
-          <Version>string</Version>
-          <OperatingSystem>string</OperatingSystem>
-        </Software>
-      </DumpHardware>
-    </DumpHardwareArray>
     <DiskType>string</DiskType>
     <DiskSubType>string</DiskSubType>
   </BlockMedia>

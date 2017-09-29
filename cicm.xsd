@@ -2761,22 +2761,54 @@
 	</xs:complexType>
 	<xs:complexType name="SecureDigitalType">
 		<xs:annotation>
-			<xs:documentation>Contains SD/MMC device information</xs:documentation>
+			<xs:documentation>Contains SecureDigital device information</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element type="DumpType" name="CID" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Contains SD/MMC's CID</xs:documentation>
+					<xs:documentation>Contains SD Card Identification Data</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element type="DumpType" name="CSD" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Contains SD/MMC's CSD</xs:documentation>
+					<xs:documentation>Contains SD Card Status Data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="SCR" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SD Card Register</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="OCR" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains SD Operation Conditions Register</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MultiMediaCardType">
+		<xs:annotation>
+			<xs:documentation>Contains MultiMediaCard device information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="DumpType" name="CID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains MultiMediaCard Card Identification Data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="CSD" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains MultiMediaCard Card Status Data</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element type="DumpType" name="ExtendedCSD" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Contains SD/MMC's extended CSD</xs:documentation>
+					<xs:documentation>Contains MultiMediaCard extended CSD</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="DumpType" name="OCR" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contains MultiMediaCard Operation Conditions Register</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -2963,7 +2995,12 @@
 			</xs:element>
 			<xs:element type="SecureDigitalType" name="SecureDigital" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>If media is SecureDigital or MultiMediaCard, information here</xs:documentation>
+					<xs:documentation>If media is SecureDigital, information here</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="MultiMediaCardType" name="MultiMediaCard" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If media is MultiMediaCard, information here</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element type="SCSIType" name="SCSI" minOccurs="0">
