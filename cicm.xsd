@@ -95,51 +95,78 @@
 			<xs:element name="Architecture" minOccurs="1" maxOccurs="unbounded">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="i86" />
-						<xs:enumeration value="ia32" />
-						<xs:enumeration value="ia64" />
-						<xs:enumeration value="amd64" />
 						<xs:enumeration value="4004" />
 						<xs:enumeration value="4040" />
-						<xs:enumeration value="8080" />
+						<xs:enumeration value="6502" />
+						<xs:enumeration value="65816" />
 						<xs:enumeration value="8008" />
-						<xs:enumeration value="8085" />
 						<xs:enumeration value="8051" />
+						<xs:enumeration value="8080" />
+						<xs:enumeration value="8085" />
+						<xs:enumeration value="aarch64" />
+						<xs:enumeration value="am29000" />
+						<xs:enumeration value="amd64" />
+						<xs:enumeration value="apx432" />
+						<xs:enumeration value="arm" />
+						<xs:enumeration value="avr" />
+						<xs:enumeration value="avr32" />
+						<xs:enumeration value="axp" />
+						<xs:enumeration value="clipper" />
+						<xs:enumeration value="cray" />
+						<xs:enumeration value="esa390" />
+						<xs:enumeration value="hobbit" />
+						<xs:enumeration value="i86" />
 						<xs:enumeration value="i860" />
 						<xs:enumeration value="i960" />
-						<xs:enumeration value="apx432" />
+						<xs:enumeration value="ia32" />
+						<xs:enumeration value="ia64" />
+						<xs:enumeration value="m56k" />
+						<xs:enumeration value="m6800" />
+						<xs:enumeration value="m6801" />
+						<xs:enumeration value="m6805" />
+						<xs:enumeration value="m6809" />
 						<xs:enumeration value="m68k" />
+						<xs:enumeration value="m88k" />
+						<xs:enumeration value="mcs41" />
+						<xs:enumeration value="mcs48" />
+						<xs:enumeration value="mips32" />
+						<xs:enumeration value="mips64" />
+						<xs:enumeration value="msp430" />
+						<xs:enumeration value="nios2" />
+						<xs:enumeration value="openrisc" />
+						<xs:enumeration value="parisc" />
+						<xs:enumeration value="pdp1" />
+						<xs:enumeration value="pdp10" />
+						<xs:enumeration value="pdp11" />
+						<xs:enumeration value="pdp7" />
+						<xs:enumeration value="pdp8" />
+						<xs:enumeration value="pic" />
+						<xs:enumeration value="power" />
 						<xs:enumeration value="ppc" />
 						<xs:enumeration value="ppc64" />
-						<xs:enumeration value="x32" />
-						<xs:enumeration value="sparc" />
-						<xs:enumeration value="sparc64" />
-						<xs:enumeration value="arm" />
-						<xs:enumeration value="aarch64" />
-						<xs:enumeration value="avr" />
-						<xs:enumeration value="pic" />
-						<xs:enumeration value="msp430" />
-						<xs:enumeration value="z80" />
-						<xs:enumeration value="65816" />
+						<xs:enumeration value="prism" />
+						<xs:enumeration value="renesasrx" />
+						<xs:enumeration value="riscv" />
+						<xs:enumeration value="s360" />
+						<xs:enumeration value="s370" />
 						<xs:enumeration value="sh" />
 						<xs:enumeration value="sh1" />
 						<xs:enumeration value="sh2" />
 						<xs:enumeration value="sh3" />
-						<xs:enumeration value="sh5" />
 						<xs:enumeration value="sh4" />
-						<xs:enumeration value="m6800" />
-						<xs:enumeration value="6502" />
-						<xs:enumeration value="axp" />
-						<xs:enumeration value="parisc" />
-						<xs:enumeration value="mips32" />
-						<xs:enumeration value="mips64" />
-						<xs:enumeration value="s360" />
-						<xs:enumeration value="s370" />
-						<xs:enumeration value="esa390" />
-						<xs:enumeration value="zarch" />
-						<xs:enumeration value="pdp11" />
+						<xs:enumeration value="sh5" />
+						<xs:enumeration value="sh64" />
+						<xs:enumeration value="sparc" />
+						<xs:enumeration value="sparc64" />
+						<xs:enumeration value="transputer" />
 						<xs:enumeration value="vax" />
-						<xs:enumeration value="power" />
+						<xs:enumeration value="we32000" />
+						<xs:enumeration value="x32" />
+						<xs:enumeration value="z80" />
+						<xs:enumeration value="z800" />
+						<xs:enumeration value="z8000" />
+						<xs:enumeration value="z80000" />
+						<xs:enumeration value="zarch" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -862,10 +889,10 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="DumpHardwareArrayType">
-        <xs:annotation>
-        	<xs:documentation>Array of drives information</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
+		<xs:annotation>
+			<xs:documentation>Array of drives information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
 			<xs:element type="DumpHardwareType" name="DumpHardware" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Drives information</xs:documentation>
@@ -3259,11 +3286,11 @@
 					<xs:documentation>File sequence</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-            <xs:element type="xs:long" name="BlockSize" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>Size of blocks in this file</xs:documentation>
-                </xs:annotation>
-            </xs:element>
+			<xs:element type="xs:long" name="BlockSize" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Size of blocks in this file</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element type="xs:long" name="StartBlock" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>File start block</xs:documentation>

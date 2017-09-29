@@ -180,7 +180,7 @@
   <!--Optional:-->
   <Architectures>
     <!--1 or more repetitions:-->
-    <Architecture>ppc</Architecture>
+    <Architecture>renesasrx</Architecture>
   </Architectures>
   <!--Optional:-->
   <RequiredOperatingSystems>

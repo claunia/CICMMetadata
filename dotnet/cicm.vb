@@ -7911,18 +7911,6 @@ Namespace Schemas
     Public Enum ArchitecturesTypeArchitecture
         
         '''<remarks/>
-        i86
-        
-        '''<remarks/>
-        ia32
-        
-        '''<remarks/>
-        ia64
-        
-        '''<remarks/>
-        amd64
-        
-        '''<remarks/>
         <System.Xml.Serialization.XmlEnumAttribute("4004")>  _
         Item4004
         
@@ -7931,20 +7919,67 @@ Namespace Schemas
         Item4040
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("8080")>  _
-        Item8080
+        <System.Xml.Serialization.XmlEnumAttribute("6502")>  _
+        Item6502
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("65816")>  _
+        Item65816
         
         '''<remarks/>
         <System.Xml.Serialization.XmlEnumAttribute("8008")>  _
         Item8008
         
         '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("8051")>  _
+        Item8051
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlEnumAttribute("8080")>  _
+        Item8080
+        
+        '''<remarks/>
         <System.Xml.Serialization.XmlEnumAttribute("8085")>  _
         Item8085
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("8051")>  _
-        Item8051
+        aarch64
+        
+        '''<remarks/>
+        am29000
+        
+        '''<remarks/>
+        amd64
+        
+        '''<remarks/>
+        apx432
+        
+        '''<remarks/>
+        arm
+        
+        '''<remarks/>
+        avr
+        
+        '''<remarks/>
+        avr32
+        
+        '''<remarks/>
+        axp
+        
+        '''<remarks/>
+        clipper
+        
+        '''<remarks/>
+        cray
+        
+        '''<remarks/>
+        esa390
+        
+        '''<remarks/>
+        hobbit
+        
+        '''<remarks/>
+        i86
         
         '''<remarks/>
         i860
@@ -7953,10 +7988,76 @@ Namespace Schemas
         i960
         
         '''<remarks/>
-        apx432
+        ia32
+        
+        '''<remarks/>
+        ia64
+        
+        '''<remarks/>
+        m56k
+        
+        '''<remarks/>
+        m6800
+        
+        '''<remarks/>
+        m6801
+        
+        '''<remarks/>
+        m6805
+        
+        '''<remarks/>
+        m6809
         
         '''<remarks/>
         m68k
+        
+        '''<remarks/>
+        m88k
+        
+        '''<remarks/>
+        mcs41
+        
+        '''<remarks/>
+        mcs48
+        
+        '''<remarks/>
+        mips32
+        
+        '''<remarks/>
+        mips64
+        
+        '''<remarks/>
+        msp430
+        
+        '''<remarks/>
+        nios2
+        
+        '''<remarks/>
+        openrisc
+        
+        '''<remarks/>
+        parisc
+        
+        '''<remarks/>
+        pdp1
+        
+        '''<remarks/>
+        pdp10
+        
+        '''<remarks/>
+        pdp11
+        
+        '''<remarks/>
+        pdp7
+        
+        '''<remarks/>
+        pdp8
+        
+        '''<remarks/>
+        pic
+        
+        '''<remarks/>
+        power
         
         '''<remarks/>
         ppc
@@ -7965,35 +8066,19 @@ Namespace Schemas
         ppc64
         
         '''<remarks/>
-        x32
+        prism
         
         '''<remarks/>
-        sparc
+        renesasrx
         
         '''<remarks/>
-        sparc64
+        riscv
         
         '''<remarks/>
-        arm
+        s360
         
         '''<remarks/>
-        aarch64
-        
-        '''<remarks/>
-        avr
-        
-        '''<remarks/>
-        pic
-        
-        '''<remarks/>
-        msp430
-        
-        '''<remarks/>
-        z80
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("65816")>  _
-        Item65816
+        s370
         
         '''<remarks/>
         sh
@@ -8008,49 +8093,45 @@ Namespace Schemas
         sh3
         
         '''<remarks/>
-        sh5
-        
-        '''<remarks/>
         sh4
         
         '''<remarks/>
-        m6800
+        sh5
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlEnumAttribute("6502")>  _
-        Item6502
+        sh64
         
         '''<remarks/>
-        axp
+        sparc
         
         '''<remarks/>
-        parisc
+        sparc64
         
         '''<remarks/>
-        mips32
-        
-        '''<remarks/>
-        mips64
-        
-        '''<remarks/>
-        s360
-        
-        '''<remarks/>
-        s370
-        
-        '''<remarks/>
-        esa390
-        
-        '''<remarks/>
-        zarch
-        
-        '''<remarks/>
-        pdp11
+        transputer
         
         '''<remarks/>
         vax
         
         '''<remarks/>
-        power
+        we32000
+        
+        '''<remarks/>
+        x32
+        
+        '''<remarks/>
+        z80
+        
+        '''<remarks/>
+        z800
+        
+        '''<remarks/>
+        z8000
+        
+        '''<remarks/>
+        z80000
+        
+        '''<remarks/>
+        zarch
     End Enum
 End Namespace
