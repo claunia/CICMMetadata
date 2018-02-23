@@ -1,0 +1,145 @@
+* packages.config:
+* osrepodbmgr.Eto.csproj:
+  Updated nuget packages.
+
+* dlgAdd.xeto.cs:
+* frmMain.xeto.cs:
+* dlgMetadata.xeto.cs:
+  Corrected progress bars when value is outside of int bounds.
+
+* dlgMetadata.xeto:
+* dlgMetadata.xeto.cs:
+* dlgOpticalDisc.xeto:
+* dlgBlockMedia.xeto.cs:
+* dlgOpticalDisc.xeto.cs:
+  Updated DIC and Metadata code.
+
+2017-05-21  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto.cs:
+	* dlgOpticalDisc.xeto.cs:
+	  Corrected some NULL exceptions on GUI.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto.cs:
+	  Don't readd delegates every time.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto:
+	* frmMain.xeto:
+	* dlgAdd.xeto.cs:
+	* frmMain.xeto.cs:
+	* packages.config:
+	* dlgSettings.xeto.cs:
+	  Refactor: Format document.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto.cs:
+	* frmMain.xeto.cs:
+	  Corrected delegate.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto:
+	* frmMain.xeto:
+	* dlgAdd.xeto.cs:
+	* frmMain.xeto.cs:
+	  Added status fields.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto.cs:
+	* dlgBlockMedia.xeto:
+	* dlgBlockMedia.xeto.cs:
+	* dlgOpticalDisc.xeto.cs:
+	  Corrected GUI behaviour.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto:
+	* dlgHelp.xeto:
+	* frmMain.xeto:
+	* dlgMetadata.xeto:
+	* dlgSettings.xeto:
+	* dlgFilesystem.xeto:
+	  Added window titles.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto.cs:
+	* frmMain.xeto.cs:
+	  Do not color OS tables. Has no sense to be on the opaque
+	  repo.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto:
+	* frmMain.xeto.cs:
+	  Added code to clean database and repository.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto.cs:
+	  Make sure the OnBtnPopulateFilesClicked() is called.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto:
+	* frmMain.xeto.cs:
+	  Added an option to scan all pending files with clamd.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto.cs:
+	* frmMain.xeto.cs:
+	  Corrected GUI behaviour.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto.cs:
+	  
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto.cs:
+	  Added progress messages to clamd core.
+
+2017-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto.cs:
+	* dlgSettings.xeto:
+	* dlgSettings.xeto.cs:
+	  Added support for VirusTotal.
+
+2017-05-18  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto:
+	* frmMain.xeto.cs:
+	* dlgSettings.xeto:
+	* dlgSettings.xeto.cs:
+	  Added support for clamd scanning.
+
+2017-05-18  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgAdd.xeto:
+	* frmMain.xeto:
+	* dlgAdd.xeto.cs:
+	* frmMain.xeto.cs:
+	  Added support for marking/unmarking/detecting cracks.
+
+2017-05-18  Natalia Portillo  <claunia@claunia.com>
+
+	* frmMain.xeto:
+	* dlgAdd.xeto.cs:
+	* frmMain.xeto.cs:
+	  
+
+2017-05-18  Natalia Portillo  <claunia@claunia.com>
+
+	* dlgSettings.xeto.cs:
+	  If program files folder does not exist do not try to create
+	  an Uri from null.
+
