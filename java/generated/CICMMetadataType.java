@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.09.29 a las 02:33:23 PM WEST 
+// Generado el: 2018.03.18 a las 09:28:50 PM WET 
 //
 
 
@@ -45,6 +45,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *               &lt;enumeration value="Subscription"/>
  *               &lt;enumeration value="Demo"/>
  *               &lt;enumeration value="OEM"/>
+ *               &lt;enumeration value="Shareware"/>
+ *               &lt;enumeration value="FOSS"/>
+ *               &lt;enumeration value="Adware"/>
+ *               &lt;enumeration value="Donationware"/>
+ *               &lt;enumeration value="Digital download"/>
+ *               &lt;enumeration value="SaaS"/>
  *             &lt;/restriction>
  *           &lt;/simpleType>
  *         &lt;/element>

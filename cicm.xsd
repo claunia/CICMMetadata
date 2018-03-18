@@ -1302,6 +1302,12 @@
 						<xs:enumeration value="Subscription" />
 						<xs:enumeration value="Demo" />
 						<xs:enumeration value="OEM" />
+						<xs:enumeration value="Shareware" />
+						<xs:enumeration value="FOSS" />
+						<xs:enumeration value="Adware" />
+						<xs:enumeration value="Donationware" />
+						<xs:enumeration value="Digital download" />
+						<xs:enumeration value="SaaS" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
