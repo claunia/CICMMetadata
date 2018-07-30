@@ -79,6 +79,11 @@ namespace CICMMetadataEditor
         {
             XamlReader.Load(this);
 
+            LoadData();
+        }
+
+        void LoadData()
+        {
             Modified = false;
 
             cmbReleaseType = new EnumDropDown<CICMMetadataTypeReleaseType>();
