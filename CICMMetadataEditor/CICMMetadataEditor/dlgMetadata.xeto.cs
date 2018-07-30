@@ -32,7 +32,10 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Xml;
 using Eto.Threading;
 using Eto.Forms;
 using Eto.Serialization.Xaml;
@@ -65,15 +68,16 @@ namespace CICMMetadataEditor
 
         // TODO: Add the options to edit these fields
         MagazineType[]          magazines;
-        public CICMMetadataType Metadata;
+        CICMMetadataType metadata;
 
-        public bool Modified;
+        bool modified;
         PCIType[]   pcis;
         bool        stopped;
 
         Thread           thdDisc;
         Thread           thdDisk;
         UserManualType[] usermanuals;
+        string currentFile;
 
         public dlgMetadata()
         {
@@ -94,27 +98,87 @@ namespace CICMMetadataEditor
 
         protected void OnNewClicked(object sender, EventArgs e)
         {
-
+            metadata = null;
+            modified = false;
+            currentFile = null;
+            LoadData();
         }
 
         protected void OnOpenClicked(object sender, EventArgs e)
         {
+            OpenFileDialog dlgOpen = new OpenFileDialog
+            {
+                CheckFileExists = true,
+                MultiSelect     = false,
+                Title           = "Choose existing metadata file"
+            };
+            dlgOpen.Filters.Add(new FileFilter("Metadata files", ".xml"));
 
+            DialogResult result = dlgOpen.ShowDialog(this);
+
+            if(result != DialogResult.Ok) return;
+
+            try
+            {
+                System.Xml.Serialization.XmlSerializer reader =
+                    new System.Xml.Serialization.XmlSerializer(typeof(CICMMetadataType));
+                FileStream   fs   = new FileStream(dlgOpen.FileName, FileMode.Open, FileAccess.Read);
+                metadata = (CICMMetadataType)reader.Deserialize(fs);
+                fs.Dispose();
+                LoadData();
+                currentFile = dlgOpen.FileName;
+            }
+            catch(XmlException)
+            {
+                MessageBox.Show("The chosen file is not a correct CICM Metadata file.", MessageBoxType.Error);
+            }
         }
 
         protected void OnSaveClicked(object sender, EventArgs e)
         {
-
+            if(!string.IsNullOrEmpty(currentFile)) OnSaveAsClicked(sender, e);
+            else Save(currentFile);
         }
 
         protected void OnSaveAsClicked(object sender, EventArgs e)
         {
+            SaveFileDialog dlgSave = new SaveFileDialog
+            {
+                CheckFileExists = true,
+                Title           = "Choose new metadata file"
+            };
+            dlgSave.Filters.Add(new FileFilter("Metadata files", ".xml"));
+            DialogResult result = dlgSave.ShowDialog(this);
 
+            if(result != DialogResult.Ok) return;
+
+            Save(dlgSave.FileName);
+        }
+
+        void Save(string destination)
+        {
+
+            try
+            {
+                System.Xml.Serialization.XmlSerializer writer =
+                    new System.Xml.Serialization.XmlSerializer(typeof(CICMMetadataType));
+                FileStream   fs   = new FileStream(destination, FileMode.Create, FileAccess.Write);
+                writer.Serialize(fs, metadata);
+                fs.Dispose();
+                currentFile = destination;
+            }
+            catch(Exception)
+            {
+                if(Debugger.IsAttached)
+                    throw;
+
+                MessageBox.Show("Could not save metadata.", MessageBoxType.Error);
+            }
         }
 
         void LoadData()
         {
-            Modified = false;
+            modified = false;
 
             cmbReleaseType = new EnumDropDown<CICMMetadataTypeReleaseType>();
             stkReleaseType.Items.Add(new StackLayoutItem {Control = cmbReleaseType, Expand = true});
@@ -234,6 +298,8 @@ namespace CICMMetadataEditor
             txtPartNumber.ToolTip = "Part number of the application distribution.";
             txtSerialNumber.ToolTip =
                 "Serial number of the application distribution. Not to be confused with serial number required to install.";
+
+            FillFields();
         }
 
         void FillBarcodeCombo()
@@ -266,86 +332,86 @@ namespace CICMMetadataEditor
 
     public void FillFields()
     {
-        if(Metadata == null) return;
+        if(metadata == null) return;
 
-        if(Metadata.Developer != null)
-            foreach(string developer in Metadata.Developer)
+        if(metadata.Developer != null)
+            foreach(string developer in metadata.Developer)
             {
                 if(!string.IsNullOrWhiteSpace(txtDeveloper.Text)) txtDeveloper.Text += ",";
                 txtDeveloper.Text += developer;
             }
 
-        if(Metadata.Publisher != null)
-            foreach(string publisher in Metadata.Publisher)
+        if(metadata.Publisher != null)
+            foreach(string publisher in metadata.Publisher)
             {
                 if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
                 txtPublisher.Text += publisher;
             }
 
-        if(Metadata.Author != null)
-            foreach(string author in Metadata.Author)
+        if(metadata.Author != null)
+            foreach(string author in metadata.Author)
             {
                 if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
                 txtPublisher.Text += author;
             }
 
-        if(Metadata.Performer != null)
-            foreach(string performer in Metadata.Performer)
+        if(metadata.Performer != null)
+            foreach(string performer in metadata.Performer)
             {
                 if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
                 txtPublisher.Text += performer;
             }
 
-        txtName.Text         = Metadata.Name;
-        txtVersion.Text      = Metadata.Version;
-        txtPartNumber.Text   = Metadata.PartNumber;
-        txtSerialNumber.Text = Metadata.SerialNumber;
+        txtName.Text         = metadata.Name;
+        txtVersion.Text      = metadata.Version;
+        txtPartNumber.Text   = metadata.PartNumber;
+        txtSerialNumber.Text = metadata.SerialNumber;
 
-        if(Metadata.ReleaseTypeSpecified)
+        if(metadata.ReleaseTypeSpecified)
         {
             chkKnownReleaseType.Checked  = true;
             cmbReleaseType.Enabled       = true;
-            cmbReleaseType.SelectedValue = Metadata.ReleaseType;
+            cmbReleaseType.SelectedValue = metadata.ReleaseType;
         }
 
-        if(Metadata.ReleaseDateSpecified)
+        if(metadata.ReleaseDateSpecified)
         {
             chkReleaseDate.Checked = false;
             cldReleaseDate.Enabled = true;
-            cldReleaseDate.Value   = Metadata.ReleaseDate;
+            cldReleaseDate.Value   = metadata.ReleaseDate;
         }
 
-        if(Metadata.Keywords != null)
-            foreach(string keyword in Metadata.Keywords)
+        if(metadata.Keywords != null)
+            foreach(string keyword in metadata.Keywords)
                 lstKeywords.Add(new StringEntry {str = keyword});
-        if(Metadata.Categories != null)
-            foreach(string category in Metadata.Categories)
+        if(metadata.Categories != null)
+            foreach(string category in metadata.Categories)
                 lstCategories.Add(new StringEntry {str = category});
-        if(Metadata.Subcategories != null)
-            foreach(string subcategory in Metadata.Subcategories)
+        if(metadata.Subcategories != null)
+            foreach(string subcategory in metadata.Subcategories)
                 lstSubcategories.Add(new StringEntry {str = subcategory});
 
-        if(Metadata.Languages != null)
-            foreach(LanguagesTypeLanguage language in Metadata.Languages)
+        if(metadata.Languages != null)
+            foreach(LanguagesTypeLanguage language in metadata.Languages)
             {
                 lstLanguages.Add(new StringEntry {str = language.ToString()});
                 lstLanguageTypes.Remove(language.ToString());
             }
 
-        if(Metadata.RequiredOperatingSystems != null)
-            foreach(RequiredOperatingSystemType reqos in Metadata.RequiredOperatingSystems)
+        if(metadata.RequiredOperatingSystems != null)
+            foreach(RequiredOperatingSystemType reqos in metadata.RequiredOperatingSystems)
                 foreach(string reqver in reqos.Version)
                     lstOses.Add(new TargetOsEntry {name = reqos.Name, version = reqver});
 
-        if(Metadata.Architectures != null)
-            foreach(ArchitecturesTypeArchitecture architecture in Metadata.Architectures)
+        if(metadata.Architectures != null)
+            foreach(ArchitecturesTypeArchitecture architecture in metadata.Architectures)
             {
                 lstArchitectures.Add(new StringEntry {str = architecture.ToString()});
                 lstArchitecturesTypes.Remove(architecture.ToString());
             }
 
-        if(Metadata.OpticalDisc != null)
-            foreach(OpticalDiscType disc in Metadata.OpticalDisc)
+        if(metadata.OpticalDisc != null)
+            foreach(OpticalDiscType disc in metadata.OpticalDisc)
             {
                 lstDiscs.Add(new DiscEntry {path = disc.Image.Value, disc = disc});
                 List<string> files = new List<string> {disc.Image.Value};
@@ -379,8 +445,8 @@ namespace CICMMetadataEditor
                         lstFilesForMedia.Remove(file);
             }
 
-        if(Metadata.BlockMedia != null)
-            foreach(BlockMediaType disk in Metadata.BlockMedia)
+        if(metadata.BlockMedia != null)
+            foreach(BlockMediaType disk in metadata.BlockMedia)
             {
                 lstDisks.Add(new DiskEntry {path = disk.Image.Value, disk = disk});
                 List<string> files = new List<string> {disk.Image.Value};
@@ -414,13 +480,13 @@ namespace CICMMetadataEditor
                         lstFilesForMedia.Remove(file);
             }
 
-        magazines    = Metadata.Magazine;
-        books        = Metadata.Book;
-        usermanuals  = Metadata.UserManual;
-        adverts      = Metadata.Advertisement;
-        linearmedias = Metadata.LinearMedia;
-        pcis         = Metadata.PCICard;
-        audiomedias  = Metadata.AudioMedia;
+        magazines    = metadata.Magazine;
+        books        = metadata.Book;
+        usermanuals  = metadata.UserManual;
+        adverts      = metadata.Advertisement;
+        linearmedias = metadata.LinearMedia;
+        pcis         = metadata.PCICard;
+        audiomedias  = metadata.AudioMedia;
     }
 
     protected void OnChkKnownReleaseTypeToggled(object sender, EventArgs e)
@@ -1004,13 +1070,13 @@ Context.SelectedFile     =  "";
 
         protected void OnBtnCancelClicked(object sender, EventArgs e)
         {
-            Modified = false;
+            modified = false;
             Close();
         }
 
         protected void OnBtnOKClicked(object sender, EventArgs e)
         {
-            Metadata = new CICMMetadataType();
+            metadata = new CICMMetadataType();
             List<ArchitecturesTypeArchitecture> architectures = new List<ArchitecturesTypeArchitecture>();
             List<BarcodeType>                   barcodes      = new List<BarcodeType>();
             List<BlockMediaType>                disks         = new List<BlockMediaType>();
@@ -1021,24 +1087,24 @@ Context.SelectedFile     =  "";
             List<string>                        subcategories = new List<string>();
             List<string>                        systems       = new List<string>();
 
-            if(!string.IsNullOrEmpty(txtAuthor.Text)) Metadata.Author             = txtAuthor.Text.Split(',');
-            if(!string.IsNullOrEmpty(txtDeveloper.Text)) Metadata.Developer       = txtDeveloper.Text.Split(',');
-            if(!string.IsNullOrEmpty(txtName.Text)) Metadata.Name                 = txtName.Text;
-            if(!string.IsNullOrEmpty(txtPartNumber.Text)) Metadata.PartNumber     = txtPartNumber.Text;
-            if(!string.IsNullOrEmpty(txtPerformer.Text)) Metadata.Performer       = txtPerformer.Text.Split(',');
-            if(!string.IsNullOrEmpty(txtPublisher.Text)) Metadata.Publisher       = txtPublisher.Text.Split(',');
-            if(!string.IsNullOrEmpty(txtSerialNumber.Text)) Metadata.SerialNumber = txtSerialNumber.Text;
-            if(!string.IsNullOrEmpty(txtVersion.Text)) Metadata.Version           = txtVersion.Text;
+            if(!string.IsNullOrEmpty(txtAuthor.Text)) metadata.Author             = txtAuthor.Text.Split(',');
+            if(!string.IsNullOrEmpty(txtDeveloper.Text)) metadata.Developer       = txtDeveloper.Text.Split(',');
+            if(!string.IsNullOrEmpty(txtName.Text)) metadata.Name                 = txtName.Text;
+            if(!string.IsNullOrEmpty(txtPartNumber.Text)) metadata.PartNumber     = txtPartNumber.Text;
+            if(!string.IsNullOrEmpty(txtPerformer.Text)) metadata.Performer       = txtPerformer.Text.Split(',');
+            if(!string.IsNullOrEmpty(txtPublisher.Text)) metadata.Publisher       = txtPublisher.Text.Split(',');
+            if(!string.IsNullOrEmpty(txtSerialNumber.Text)) metadata.SerialNumber = txtSerialNumber.Text;
+            if(!string.IsNullOrEmpty(txtVersion.Text)) metadata.Version           = txtVersion.Text;
             if(!chkReleaseDate.Checked.Value)
             {
-                Metadata.ReleaseDate          = cldReleaseDate.Value.Value;
-                Metadata.ReleaseDateSpecified = true;
+                metadata.ReleaseDate          = cldReleaseDate.Value.Value;
+                metadata.ReleaseDateSpecified = true;
             }
 
             if(chkKnownReleaseType.Checked.Value)
             {
-                Metadata.ReleaseType          = cmbReleaseType.SelectedValue;
-                Metadata.ReleaseTypeSpecified = true;
+                metadata.ReleaseType          = cmbReleaseType.SelectedValue;
+                metadata.ReleaseTypeSpecified = true;
             }
 
             foreach(StringEntry entry in lstArchitectures)
@@ -1081,7 +1147,7 @@ Context.SelectedFile     =  "";
                     osesDict.Add(entry.name, versList);
                 }
 
-                Metadata.RequiredOperatingSystems = osesDict
+                metadata.RequiredOperatingSystems = osesDict
                                                    .OrderBy(t => t.Key)
                                                    .Select(entry => new RequiredOperatingSystemType
                                                     {
@@ -1090,25 +1156,25 @@ Context.SelectedFile     =  "";
                                                     }).ToArray();
             }
 
-            if(architectures.Count > 0) Metadata.Architectures = architectures.ToArray();
-            if(barcodes.Count      > 0) Metadata.Barcodes      = barcodes.ToArray();
-            if(disks.Count         > 0) Metadata.BlockMedia    = disks.ToArray();
-            if(categories.Count    > 0) Metadata.Categories    = categories.ToArray();
-            if(keywords.Count      > 0) Metadata.Keywords      = keywords.ToArray();
-            if(languages.Count     > 0) Metadata.Languages     = languages.ToArray();
-            if(discs.Count         > 0) Metadata.OpticalDisc   = discs.ToArray();
-            if(subcategories.Count > 0) Metadata.Subcategories = subcategories.ToArray();
-            if(systems.Count       > 0) Metadata.Systems       = systems.ToArray();
+            if(architectures.Count > 0) metadata.Architectures = architectures.ToArray();
+            if(barcodes.Count      > 0) metadata.Barcodes      = barcodes.ToArray();
+            if(disks.Count         > 0) metadata.BlockMedia    = disks.ToArray();
+            if(categories.Count    > 0) metadata.Categories    = categories.ToArray();
+            if(keywords.Count      > 0) metadata.Keywords      = keywords.ToArray();
+            if(languages.Count     > 0) metadata.Languages     = languages.ToArray();
+            if(discs.Count         > 0) metadata.OpticalDisc   = discs.ToArray();
+            if(subcategories.Count > 0) metadata.Subcategories = subcategories.ToArray();
+            if(systems.Count       > 0) metadata.Systems       = systems.ToArray();
 
-            Metadata.Magazine      = magazines;
-            Metadata.Book          = books;
-            Metadata.UserManual    = usermanuals;
-            Metadata.Advertisement = adverts;
-            Metadata.LinearMedia   = linearmedias;
-            Metadata.PCICard       = pcis;
-            Metadata.AudioMedia    = audiomedias;
+            metadata.Magazine      = magazines;
+            metadata.Book          = books;
+            metadata.UserManual    = usermanuals;
+            metadata.Advertisement = adverts;
+            metadata.LinearMedia   = linearmedias;
+            metadata.PCICard       = pcis;
+            metadata.AudioMedia    = audiomedias;
 
-            Modified = true;
+            modified = true;
             Close();
         }
 
