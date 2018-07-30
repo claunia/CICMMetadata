@@ -34,7 +34,7 @@ using Eto.Forms;
 using Eto.Serialization.Xaml;
 using Schemas;
 
-namespace apprepodbmgr.Eto
+namespace CICMMetadataEditor
 {
     public class dlgBlockMedia : Dialog
     {
@@ -1042,7 +1042,7 @@ namespace apprepodbmgr.Eto
         }
 
         protected void OnBtnEditFilesystemClicked(object sender, EventArgs e)
-        {
+        {/*
             if(treeFilesystems.SelectedItem == null) return;
 
             filesystemIter = (FileSystemType)treeFilesystems.SelectedItem;
@@ -1054,16 +1054,16 @@ namespace apprepodbmgr.Eto
             if(!_dlgFilesystem.Modified) return;
 
             ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Remove(filesystemIter);
-            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);
+            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnBtnAddFilesystemClicked(object sender, EventArgs e)
-        {
+        {/*
             dlgFilesystem _dlgFilesystem = new dlgFilesystem();
             _dlgFilesystem.ShowModal(this);
 
             if(_dlgFilesystem.Modified)
-                ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);
+                ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnChkDumpHardwareToggled(object sender, EventArgs e)

@@ -34,7 +34,7 @@ using Eto.Serialization.Xaml;
 using Schemas;
 using BorderType = Schemas.BorderType;
 
-namespace apprepodbmgr.Eto
+namespace CICMMetadataEditor
 {
     public class dlgOpticalDisc : Dialog
     {
@@ -1268,7 +1268,7 @@ namespace apprepodbmgr.Eto
         }
 
         protected void OnBtnEditFilesystemClicked(object sender, EventArgs e)
-        {
+        {/*
             if(treeFilesystems.SelectedItem == null) return;
 
             filesystemIter = (FileSystemType)treeFilesystems.SelectedItem;
@@ -1280,16 +1280,16 @@ namespace apprepodbmgr.Eto
             if(!_dlgFilesystem.Modified) return;
 
             ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Remove(filesystemIter);
-            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);
+            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnBtnAddFilesystemClicked(object sender, EventArgs e)
-        {
+        {/*
             dlgFilesystem _dlgFilesystem = new dlgFilesystem();
             _dlgFilesystem.ShowModal(this);
 
             if(_dlgFilesystem.Modified)
-                ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);
+                ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnBtnCancelTrackClicked(object sender, EventArgs e)
