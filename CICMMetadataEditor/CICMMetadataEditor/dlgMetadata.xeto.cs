@@ -41,7 +41,7 @@ using BorderType = Schemas.BorderType;
 
 namespace CICMMetadataEditor
 {
-    public class dlgMetadata : Dialog
+    public class dlgMetadata : Form
     {
         AdvertisementType[]                adverts;
         AudioMediaType[]                   audiomedias;
@@ -80,6 +80,36 @@ namespace CICMMetadataEditor
             XamlReader.Load(this);
 
             LoadData();
+        }
+
+        protected void OnAboutClicked(object sender, EventArgs e)
+        {
+            new AboutDialog().ShowDialog(this);
+        }
+
+        protected void OnQuitClicked(object sender, EventArgs e)
+        {
+            Application.Instance.Quit();
+        }
+
+        protected void OnNewClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void OnOpenClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void OnSaveClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void OnSaveAsClicked(object sender, EventArgs e)
+        {
+
         }
 
         void LoadData()
