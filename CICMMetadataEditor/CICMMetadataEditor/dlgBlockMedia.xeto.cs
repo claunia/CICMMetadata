@@ -41,16 +41,13 @@ namespace CICMMetadataEditor
 {
     public class dlgBlockMedia : Dialog
     {
-        // Non-editable fields
-        ChecksumType[]   checksums;
-        ChecksumType[]   contentChks;
-        DumpHardwareType dumpHwIter;
-        bool             editingDumpHw;
-
-        bool                              editingPartition;
-        FileSystemType                    filesystemIter;
-        ObservableCollection<StringEntry> lstAdditionalInformation;
-
+        ChecksumType[]                         checksums;
+        ChecksumType[]                         contentChks;
+        DumpHardwareType                       dumpHwIter;
+        bool                                   editingDumpHw;
+        bool                                   editingPartition;
+        FileSystemType                         filesystemIter;
+        ObservableCollection<StringEntry>      lstAdditionalInformation;
         ObservableCollection<DumpType>         lstAta;
         ObservableCollection<DumpType>         lstCID;
         ObservableCollection<DumpType>         lstCSD;
@@ -70,11 +67,10 @@ namespace CICMMetadataEditor
         ObservableCollection<DumpType>         lstUSBDescriptors;
         public BlockMediaType                  Metadata;
         public bool                            Modified;
-
-        PartitionType       partitionIter;
-        ScansType           scans;
-        TapePartitionType[] tapeInformation;
-        BlockSizeType[]     variableBlockSize;
+        PartitionType                          partitionIter;
+        ScansType                              scans;
+        TapePartitionType[]                    tapeInformation;
+        BlockSizeType[]                        variableBlockSize;
 
         public dlgBlockMedia()
         {
@@ -150,9 +146,9 @@ namespace CICMMetadataEditor
 
             treeDumpHardware.Columns.Add(new GridColumn
             {
-                DataCell                     =
+                DataCell =
                     new TextBoxCell {Binding = Binding.Property<DumpHardwareType, string>(r => r.Manufacturer)},
-                HeaderText                   = "Manufacturer"
+                HeaderText = "Manufacturer"
             });
             treeDumpHardware.Columns.Add(new GridColumn
             {
@@ -595,65 +591,66 @@ namespace CICMMetadataEditor
             treeAdditionalInformation.DataStore              = lstAdditionalInformation;
             treeAdditionalInformation.AllowMultipleSelection = false;
 
-            txtImage.ToolTip = "This is the disk image containing this media.";
-            txtFormat.ToolTip = "This is the format of the disk image.";
-            txtOffset.ToolTip = "Byte offset where the media dump starts in the disk image.";
-            txtSize.ToolTip = "Size of the disk dump.";
-            txtManufacturer.ToolTip = "Disk manufacturer.";
-            txtModel.ToolTip = "Disk model.";
-            txtSerial.ToolTip = "Disk serial number.";
-            txtFirmware.ToolTip = "Disk firmware revision.";
-            txtInterface.ToolTip = "Disk interface.";
+            txtImage.ToolTip          = "This is the disk image containing this media.";
+            txtFormat.ToolTip         = "This is the format of the disk image.";
+            txtOffset.ToolTip         = "Byte offset where the media dump starts in the disk image.";
+            txtSize.ToolTip           = "Size of the disk dump.";
+            txtManufacturer.ToolTip   = "Disk manufacturer.";
+            txtModel.ToolTip          = "Disk model.";
+            txtSerial.ToolTip         = "Disk serial number.";
+            txtFirmware.ToolTip       = "Disk firmware revision.";
+            txtInterface.ToolTip      = "Disk interface.";
             txtCopyProtection.ToolTip = "Disk copy protection.";
-            txtMediaType.ToolTip = "Disk type.";
-            txtMediaSubtype.ToolTip = "Disk subtype.";
-            chkSequence.ToolTip = "If checked means this disk is one in a sequence of several.";
-            txtMediaTitle.ToolTip = "Title of disk.";
-            spSequence.ToolTip = "Number of this disk in the sequence.";
-            spTotalMedia.ToolTip = "How many disks make the sequence.";
-            spSide.ToolTip = "On flippy disks, which side of the disk is represented by this dump.";
-            spLayer.ToolTip = "On PTP layered disks, which layer of the side of the disk is represented by this dump.";
-            txtBlocks.ToolTip = "How many individual blocks (sectors) are in this dump.";
+            txtMediaType.ToolTip      = "Disk type.";
+            txtMediaSubtype.ToolTip   = "Disk subtype.";
+            chkSequence.ToolTip       = "If checked means this disk is one in a sequence of several.";
+            txtMediaTitle.ToolTip     = "Title of disk.";
+            spSequence.ToolTip        = "Number of this disk in the sequence.";
+            spTotalMedia.ToolTip      = "How many disks make the sequence.";
+            spSide.ToolTip            = "On flippy disks, which side of the disk is represented by this dump.";
+            spLayer.ToolTip =
+                "On PTP layered disks, which layer of the side of the disk is represented by this dump.";
+            txtBlocks.ToolTip           = "How many individual blocks (sectors) are in this dump.";
             spPhysicalBlockSize.ToolTip = "Size of the biggest physical block in bytes.";
-            spLogicalBlockSize.ToolTip = "Size of the biggest logical block in bytes.";
-            spCylinders.ToolTip = "Cylinders of disk.";
-            spHeads.ToolTip = "Heads of disk.";
-            spSectors.ToolTip = "Sectors per track of disk.";
-            chkDimensions.ToolTip = "If checked, physical dimensions of disk are known.";
-            chkRound.ToolTip = "If checked, disk is physicaly round.";
-            spDiameter.ToolTip = "Diameter in milimeters of disk.";
-            spHeight.ToolTip = "Height in milimeters of disk.";
-            spWidth.ToolTip = "Width in milimeters of disk.";
-            spThickness.ToolTip = "Thickness in milimeters of disk.";
-            chkATA.ToolTip = "If checked, disk dump contains ATA(PI) IDENTIFY information.";
+            spLogicalBlockSize.ToolTip  = "Size of the biggest logical block in bytes.";
+            spCylinders.ToolTip         = "Cylinders of disk.";
+            spHeads.ToolTip             = "Heads of disk.";
+            spSectors.ToolTip           = "Sectors per track of disk.";
+            chkDimensions.ToolTip       = "If checked, physical dimensions of disk are known.";
+            chkRound.ToolTip            = "If checked, disk is physicaly round.";
+            spDiameter.ToolTip          = "Diameter in milimeters of disk.";
+            spHeight.ToolTip            = "Height in milimeters of disk.";
+            spWidth.ToolTip             = "Width in milimeters of disk.";
+            spThickness.ToolTip         = "Thickness in milimeters of disk.";
+            chkATA.ToolTip              = "If checked, disk dump contains ATA(PI) IDENTIFY information.";
         }
 
         public void FillFields()
         {
             if(Metadata == null) return;
 
-            txtImage.Text                                     = Metadata.Image.Value;
-            txtFormat.Text                                    = Metadata.Image.format;
+            txtImage.Text  = Metadata.Image.Value;
+            txtFormat.Text = Metadata.Image.format;
             if(Metadata.Image.offsetSpecified) txtOffset.Text = Metadata.Image.offset.ToString();
-            txtSize.Text                                      = Metadata.Size.ToString();
-            checksums                                         = Metadata.Checksums;
-            contentChks                                       = Metadata.ContentChecksums;
+            txtSize.Text = Metadata.Size.ToString();
+            checksums    = Metadata.Checksums;
+            contentChks  = Metadata.ContentChecksums;
             if(Metadata.Sequence != null)
             {
-                lblMediaTitle.Visible                              = true;
-                txtMediaTitle.Visible                              = true;
-                lblSequence.Visible                                = true;
-                spSequence.Visible                                 = true;
-                lblTotalMedia.Visible                              = true;
-                spTotalMedia.Visible                               = true;
-                lblSide.Visible                                    = true;
-                spSide.Visible                                     = true;
-                lblLayer.Visible                                   = true;
-                spLayer.Visible                                    = true;
-                chkSequence.Checked                                = true;
-                txtMediaTitle.Text                                 = Metadata.Sequence.MediaTitle;
-                spSequence.Value                                   = Metadata.Sequence.MediaSequence;
-                spTotalMedia.Value                                 = Metadata.Sequence.TotalMedia;
+                lblMediaTitle.Visible = true;
+                txtMediaTitle.Visible = true;
+                lblSequence.Visible   = true;
+                spSequence.Visible    = true;
+                lblTotalMedia.Visible = true;
+                spTotalMedia.Visible  = true;
+                lblSide.Visible       = true;
+                spSide.Visible        = true;
+                lblLayer.Visible      = true;
+                spLayer.Visible       = true;
+                chkSequence.Checked   = true;
+                txtMediaTitle.Text    = Metadata.Sequence.MediaTitle;
+                spSequence.Value      = Metadata.Sequence.MediaSequence;
+                spTotalMedia.Value    = Metadata.Sequence.TotalMedia;
                 if(Metadata.Sequence.SideSpecified) spSide.Value   = Metadata.Sequence.Side;
                 if(Metadata.Sequence.LayerSpecified) spLayer.Value = Metadata.Sequence.Layer;
             }
@@ -663,12 +660,12 @@ namespace CICMMetadataEditor
             if(Metadata.Serial       != null) txtSerial.Text       = Metadata.Serial;
             if(Metadata.Firmware     != null) txtFirmware.Text     = Metadata.Firmware;
             if(Metadata.Interface    != null) txtInterface.Text    = Metadata.Interface;
-            spPhysicalBlockSize.Value                              = Metadata.PhysicalBlockSize;
-            spLogicalBlockSize.Value                               = Metadata.LogicalBlockSize;
-            txtBlocks.Text                                         = Metadata.LogicalBlocks.ToString();
-            variableBlockSize                                      = Metadata.VariableBlockSize;
-            tapeInformation                                        = Metadata.TapeInformation;
-            scans                                                  = Metadata.Scans;
+            spPhysicalBlockSize.Value = Metadata.PhysicalBlockSize;
+            spLogicalBlockSize.Value  = Metadata.LogicalBlockSize;
+            txtBlocks.Text            = Metadata.LogicalBlocks.ToString();
+            variableBlockSize         = Metadata.VariableBlockSize;
+            tapeInformation           = Metadata.TapeInformation;
+            scans                     = Metadata.Scans;
             if(Metadata.ATA?.Identify != null)
             {
                 chkATA.Checked  = true;
@@ -721,14 +718,11 @@ namespace CICMMetadataEditor
 
                 if(Metadata.PCMCIA.Compliance != null) txtCompliance.Text = Metadata.PCMCIA.Compliance;
                 if(Metadata.PCMCIA.ManufacturerCodeSpecified)
-                    txtMfgCode.Text =
-                        $"0x{Metadata.PCMCIA.ManufacturerCode:X4}";
+                    txtMfgCode.Text = $"0x{Metadata.PCMCIA.ManufacturerCode:X4}";
                 if(Metadata.PCMCIA.CardCodeSpecified)
                     txtCardCode.Text = $"0x{Metadata.PCMCIA.CardCode:X4}";
-                if(Metadata.PCMCIA.Manufacturer != null)
-                    txtPCMCIAManufacturer.Text = Metadata.PCMCIA.Manufacturer;
-                if(Metadata.PCMCIA.ProductName != null)
-                    txtPCMCIAProductName.Text = Metadata.PCMCIA.ProductName;
+                if(Metadata.PCMCIA.Manufacturer != null) txtPCMCIAManufacturer.Text = Metadata.PCMCIA.Manufacturer;
+                if(Metadata.PCMCIA.ProductName  != null) txtPCMCIAProductName.Text  = Metadata.PCMCIA.ProductName;
                 if(Metadata.PCMCIA.AdditionalInformation != null)
                 {
                     lblAdditionalInformation.Visible  = true;
@@ -830,7 +824,7 @@ namespace CICMMetadataEditor
             }
 
             if(Metadata.CopyProtection != null) txtCopyProtection.Text = Metadata.CopyProtection;
-            if(Metadata.Dimensions     != null)
+            if(Metadata.Dimensions != null)
             {
                 chkDimensions.Checked = true;
                 if(Metadata.Dimensions.DiameterSpecified)
@@ -1045,28 +1039,30 @@ namespace CICMMetadataEditor
         }
 
         protected void OnBtnEditFilesystemClicked(object sender, EventArgs e)
-        {/*
-            if(treeFilesystems.SelectedItem == null) return;
+        {
+            /*
+                        if(treeFilesystems.SelectedItem == null) return;
 
-            filesystemIter = (FileSystemType)treeFilesystems.SelectedItem;
+                        filesystemIter = (FileSystemType)treeFilesystems.SelectedItem;
 
-            dlgFilesystem _dlgFilesystem = new dlgFilesystem {Metadata = filesystemIter};
-            _dlgFilesystem.FillFields();
-            _dlgFilesystem.ShowModal(this);
+                        dlgFilesystem _dlgFilesystem = new dlgFilesystem {Metadata = filesystemIter};
+                        _dlgFilesystem.FillFields();
+                        _dlgFilesystem.ShowModal(this);
 
-            if(!_dlgFilesystem.Modified) return;
+                        if(!_dlgFilesystem.Modified) return;
 
-            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Remove(filesystemIter);
-            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
+                        ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Remove(filesystemIter);
+                        ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnBtnAddFilesystemClicked(object sender, EventArgs e)
-        {/*
-            dlgFilesystem _dlgFilesystem = new dlgFilesystem();
-            _dlgFilesystem.ShowModal(this);
+        {
+            /*
+                        dlgFilesystem _dlgFilesystem = new dlgFilesystem();
+                        _dlgFilesystem.ShowModal(this);
 
-            if(_dlgFilesystem.Modified)
-                ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
+                        if(_dlgFilesystem.Modified)
+                            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnChkDumpHardwareToggled(object sender, EventArgs e)

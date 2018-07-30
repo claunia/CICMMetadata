@@ -36,9 +36,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml;
-using Eto.Threading;
+using System.Xml.Serialization;
 using Eto.Forms;
 using Eto.Serialization.Xaml;
+using Eto.Threading;
 using Schemas;
 using BorderType = Schemas.BorderType;
 
@@ -46,20 +47,19 @@ namespace CICMMetadataEditor
 {
     public class dlgMetadata : Form
     {
-        AdvertisementType[]                adverts;
-        AudioMediaType[]                   audiomedias;
-        BookType[]                         books;
-        LinearMediaType[]                  linearmedias;
-        ObservableCollection<StringEntry>  lstArchitectures;
-        ObservableCollection<string>       lstArchitecturesTypes;
-        ObservableCollection<BarcodeEntry> lstBarcodes;
-
-        ObservableCollection<string>      lstBarcodeTypes;
-        ObservableCollection<StringEntry> lstCategories;
-        ObservableCollection<DiscEntry>   lstDiscs;
-        ObservableCollection<DiskEntry>   lstDisks;
-        ObservableCollection<string>      lstFilesForMedia;
-
+        AdvertisementType[]                 adverts;
+        AudioMediaType[]                    audiomedias;
+        BookType[]                          books;
+        string                              currentFile;
+        LinearMediaType[]                   linearmedias;
+        ObservableCollection<StringEntry>   lstArchitectures;
+        ObservableCollection<string>        lstArchitecturesTypes;
+        ObservableCollection<BarcodeEntry>  lstBarcodes;
+        ObservableCollection<string>        lstBarcodeTypes;
+        ObservableCollection<StringEntry>   lstCategories;
+        ObservableCollection<DiscEntry>     lstDiscs;
+        ObservableCollection<DiskEntry>     lstDisks;
+        ObservableCollection<string>        lstFilesForMedia;
         ObservableCollection<StringEntry>   lstKeywords;
         ObservableCollection<StringEntry>   lstLanguages;
         ObservableCollection<string>        lstLanguageTypes;
@@ -67,17 +67,16 @@ namespace CICMMetadataEditor
         ObservableCollection<StringEntry>   lstSubcategories;
 
         // TODO: Add the options to edit these fields
-        MagazineType[]          magazines;
+        MagazineType[]   magazines;
         CICMMetadataType metadata;
 
-        bool modified;
-        PCIType[]   pcis;
-        bool        stopped;
+        bool      modified;
+        PCIType[] pcis;
+        bool      stopped;
 
         Thread           thdDisc;
         Thread           thdDisk;
         UserManualType[] usermanuals;
-        string currentFile;
 
         public dlgMetadata()
         {
@@ -86,7 +85,7 @@ namespace CICMMetadataEditor
             cmbReleaseType = new EnumDropDown<CICMMetadataTypeReleaseType>();
             stkReleaseType.Items.Add(new StackLayoutItem {Control = cmbReleaseType, Expand = true});
 
-                        treeKeywords.Columns.Add(new GridColumn
+            treeKeywords.Columns.Add(new GridColumn
             {
                 DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
                 HeaderText = "Keyword"
@@ -195,8 +194,8 @@ namespace CICMMetadataEditor
 
         protected void OnNewClicked(object sender, EventArgs e)
         {
-            metadata = null;
-            modified = false;
+            metadata    = null;
+            modified    = false;
             currentFile = null;
             LoadData();
         }
@@ -217,9 +216,8 @@ namespace CICMMetadataEditor
 
             try
             {
-                System.Xml.Serialization.XmlSerializer reader =
-                    new System.Xml.Serialization.XmlSerializer(typeof(CICMMetadataType));
-                FileStream   fs   = new FileStream(dlgOpen.FileName, FileMode.Open, FileAccess.Read);
+                XmlSerializer reader = new XmlSerializer(typeof(CICMMetadataType));
+                FileStream    fs     = new FileStream(dlgOpen.FileName, FileMode.Open, FileAccess.Read);
                 metadata = (CICMMetadataType)reader.Deserialize(fs);
                 fs.Dispose();
                 LoadData();
@@ -239,11 +237,7 @@ namespace CICMMetadataEditor
 
         protected void OnSaveAsClicked(object sender, EventArgs e)
         {
-            SaveFileDialog dlgSave = new SaveFileDialog
-            {
-                CheckFileExists = true,
-                Title           = "Choose new metadata file"
-            };
+            SaveFileDialog dlgSave = new SaveFileDialog {CheckFileExists = true, Title = "Choose new metadata file"};
             dlgSave.Filters.Add(new FileFilter("Metadata files", ".xml"));
             DialogResult result = dlgSave.ShowDialog(this);
 
@@ -254,20 +248,17 @@ namespace CICMMetadataEditor
 
         void Save(string destination)
         {
-
             try
             {
-                System.Xml.Serialization.XmlSerializer writer =
-                    new System.Xml.Serialization.XmlSerializer(typeof(CICMMetadataType));
-                FileStream   fs   = new FileStream(destination, FileMode.Create, FileAccess.Write);
+                XmlSerializer writer = new XmlSerializer(typeof(CICMMetadataType));
+                FileStream    fs     = new FileStream(destination, FileMode.Create, FileAccess.Write);
                 writer.Serialize(fs, metadata);
                 fs.Dispose();
                 currentFile = destination;
             }
             catch(Exception)
             {
-                if(Debugger.IsAttached)
-                    throw;
+                if(Debugger.IsAttached) throw;
 
                 MessageBox.Show("Could not save metadata.", MessageBoxType.Error);
             }
@@ -286,7 +277,6 @@ namespace CICMMetadataEditor
             lstArchitectures = new ObservableCollection<StringEntry>();
             lstDiscs         = new ObservableCollection<DiscEntry>();
             lstDisks         = new ObservableCollection<DiskEntry>();
-
 
             treeKeywords.DataStore      = lstKeywords;
             treeBarcodes.DataStore      = lstBarcodes;
@@ -345,435 +335,435 @@ namespace CICMMetadataEditor
             /* TODO
         foreach(KeyValuePair<string, DbAppFile> files in Context.Hashes) lstFilesForMedia.Add(files.Key);
         */
-    }
-
-    void FillFields()
-    {
-        if(metadata == null) return;
-
-        if(metadata.Developer != null)
-            foreach(string developer in metadata.Developer)
-            {
-                if(!string.IsNullOrWhiteSpace(txtDeveloper.Text)) txtDeveloper.Text += ",";
-                txtDeveloper.Text += developer;
-            }
-
-        if(metadata.Publisher != null)
-            foreach(string publisher in metadata.Publisher)
-            {
-                if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
-                txtPublisher.Text += publisher;
-            }
-
-        if(metadata.Author != null)
-            foreach(string author in metadata.Author)
-            {
-                if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
-                txtPublisher.Text += author;
-            }
-
-        if(metadata.Performer != null)
-            foreach(string performer in metadata.Performer)
-            {
-                if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
-                txtPublisher.Text += performer;
-            }
-
-        txtName.Text         = metadata.Name;
-        txtVersion.Text      = metadata.Version;
-        txtPartNumber.Text   = metadata.PartNumber;
-        txtSerialNumber.Text = metadata.SerialNumber;
-
-        if(metadata.ReleaseTypeSpecified)
-        {
-            chkKnownReleaseType.Checked  = true;
-            cmbReleaseType.Enabled       = true;
-            cmbReleaseType.SelectedValue = metadata.ReleaseType;
         }
 
-        if(metadata.ReleaseDateSpecified)
+        void FillFields()
         {
-            chkReleaseDate.Checked = false;
-            cldReleaseDate.Enabled = true;
-            cldReleaseDate.Value   = metadata.ReleaseDate;
+            if(metadata == null) return;
+
+            if(metadata.Developer != null)
+                foreach(string developer in metadata.Developer)
+                {
+                    if(!string.IsNullOrWhiteSpace(txtDeveloper.Text)) txtDeveloper.Text += ",";
+                    txtDeveloper.Text += developer;
+                }
+
+            if(metadata.Publisher != null)
+                foreach(string publisher in metadata.Publisher)
+                {
+                    if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
+                    txtPublisher.Text += publisher;
+                }
+
+            if(metadata.Author != null)
+                foreach(string author in metadata.Author)
+                {
+                    if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
+                    txtPublisher.Text += author;
+                }
+
+            if(metadata.Performer != null)
+                foreach(string performer in metadata.Performer)
+                {
+                    if(!string.IsNullOrWhiteSpace(txtPublisher.Text)) txtPublisher.Text += ",";
+                    txtPublisher.Text += performer;
+                }
+
+            txtName.Text         = metadata.Name;
+            txtVersion.Text      = metadata.Version;
+            txtPartNumber.Text   = metadata.PartNumber;
+            txtSerialNumber.Text = metadata.SerialNumber;
+
+            if(metadata.ReleaseTypeSpecified)
+            {
+                chkKnownReleaseType.Checked  = true;
+                cmbReleaseType.Enabled       = true;
+                cmbReleaseType.SelectedValue = metadata.ReleaseType;
+            }
+
+            if(metadata.ReleaseDateSpecified)
+            {
+                chkReleaseDate.Checked = false;
+                cldReleaseDate.Enabled = true;
+                cldReleaseDate.Value   = metadata.ReleaseDate;
+            }
+
+            if(metadata.Keywords != null)
+                foreach(string keyword in metadata.Keywords)
+                    lstKeywords.Add(new StringEntry {str = keyword});
+            if(metadata.Categories != null)
+                foreach(string category in metadata.Categories)
+                    lstCategories.Add(new StringEntry {str = category});
+            if(metadata.Subcategories != null)
+                foreach(string subcategory in metadata.Subcategories)
+                    lstSubcategories.Add(new StringEntry {str = subcategory});
+
+            if(metadata.Languages != null)
+                foreach(LanguagesTypeLanguage language in metadata.Languages)
+                {
+                    lstLanguages.Add(new StringEntry {str = language.ToString()});
+                    lstLanguageTypes.Remove(language.ToString());
+                }
+
+            if(metadata.RequiredOperatingSystems != null)
+                foreach(RequiredOperatingSystemType reqos in metadata.RequiredOperatingSystems)
+                    foreach(string reqver in reqos.Version)
+                        lstOses.Add(new TargetOsEntry {name = reqos.Name, version = reqver});
+
+            if(metadata.Architectures != null)
+                foreach(ArchitecturesTypeArchitecture architecture in metadata.Architectures)
+                {
+                    lstArchitectures.Add(new StringEntry {str = architecture.ToString()});
+                    lstArchitecturesTypes.Remove(architecture.ToString());
+                }
+
+            if(metadata.OpticalDisc != null)
+                foreach(OpticalDiscType disc in metadata.OpticalDisc)
+                {
+                    lstDiscs.Add(new DiscEntry {path = disc.Image.Value, disc = disc});
+                    List<string> files = new List<string> {disc.Image.Value};
+                    if(disc.ADIP    != null) files.Add(disc.ADIP.Image);
+                    if(disc.ATIP    != null) files.Add(disc.ATIP.Image);
+                    if(disc.BCA     != null) files.Add(disc.BCA.Image);
+                    if(disc.CMI     != null) files.Add(disc.CMI.Image);
+                    if(disc.DCB     != null) files.Add(disc.DCB.Image);
+                    if(disc.DDS     != null) files.Add(disc.DDS.Image);
+                    if(disc.DMI     != null) files.Add(disc.DMI.Image);
+                    if(disc.LastRMD != null) files.Add(disc.LastRMD.Image);
+                    if(disc.LeadIn != null)
+                        foreach(BorderType border in disc.LeadIn)
+                            files.Add(border.Image);
+                    if(disc.LeadInCdText != null) files.Add(disc.LeadInCdText.Image);
+                    if(disc.LeadOut != null)
+                        foreach(BorderType border in disc.LeadOut)
+                            files.Add(border.Image);
+                    if(disc.MediaID != null) files.Add(disc.MediaID.Image);
+                    if(disc.PAC     != null) files.Add(disc.PAC.Image);
+                    if(disc.PFI     != null) files.Add(disc.PFI.Image);
+                    if(disc.PFIR    != null) files.Add(disc.PFIR.Image);
+                    if(disc.PMA     != null) files.Add(disc.PMA.Image);
+                    if(disc.PRI     != null) files.Add(disc.PRI.Image);
+                    if(disc.SAI     != null) files.Add(disc.SAI.Image);
+                    if(disc.TOC     != null) files.Add(disc.TOC.Image);
+                    if(disc.Track   != null) files.AddRange(disc.Track.Select(track => track.Image.Value));
+
+                    foreach(string file in files)
+                        if(lstFilesForMedia.Contains(file))
+                            lstFilesForMedia.Remove(file);
+                }
+
+            if(metadata.BlockMedia != null)
+                foreach(BlockMediaType disk in metadata.BlockMedia)
+                {
+                    lstDisks.Add(new DiskEntry {path = disk.Image.Value, disk = disk});
+                    List<string> files = new List<string> {disk.Image.Value};
+                    if(disk.ATA?.Identify     != null) files.Add(disk.ATA.Identify.Image);
+                    if(disk.MAM               != null) files.Add(disk.MAM.Image);
+                    if(disk.PCI?.ExpansionROM != null) files.Add(disk.PCI.ExpansionROM.Image.Value);
+                    if(disk.PCMCIA?.CIS       != null) files.Add(disk.PCMCIA.CIS.Image);
+                    if(disk.SCSI != null)
+                    {
+                        if(disk.SCSI.Inquiry     != null) files.Add(disk.SCSI.Inquiry.Image);
+                        if(disk.SCSI.LogSense    != null) files.Add(disk.SCSI.LogSense.Image);
+                        if(disk.SCSI.ModeSense   != null) files.Add(disk.SCSI.ModeSense.Image);
+                        if(disk.SCSI.ModeSense10 != null) files.Add(disk.SCSI.ModeSense10.Image);
+                        if(disk.SCSI.EVPD        != null) files.AddRange(disk.SCSI.EVPD.Select(evpd => evpd.Image));
+                    }
+
+                    if(disk.SecureDigital != null)
+                    {
+                        if(disk.SecureDigital.CID          != null) files.Add(disk.SecureDigital.CID.Image);
+                        if(disk.SecureDigital.CSD          != null) files.Add(disk.SecureDigital.CSD.Image);
+                        if(disk.MultiMediaCard.ExtendedCSD != null) files.Add(disk.MultiMediaCard.ExtendedCSD.Image);
+                    }
+
+                    if(disk.TapeInformation != null)
+                        files.AddRange(disk.TapeInformation.Select(tapePart => tapePart.Image.Value));
+                    if(disk.Track            != null) files.AddRange(disk.Track.Select(track => track.Image.Value));
+                    if(disk.USB?.Descriptors != null) files.Add(disk.USB.Descriptors.Image);
+
+                    foreach(string file in files)
+                        if(lstFilesForMedia.Contains(file))
+                            lstFilesForMedia.Remove(file);
+                }
+
+            magazines    = metadata.Magazine;
+            books        = metadata.Book;
+            usermanuals  = metadata.UserManual;
+            adverts      = metadata.Advertisement;
+            linearmedias = metadata.LinearMedia;
+            pcis         = metadata.PCICard;
+            audiomedias  = metadata.AudioMedia;
         }
 
-        if(metadata.Keywords != null)
-            foreach(string keyword in metadata.Keywords)
-                lstKeywords.Add(new StringEntry {str = keyword});
-        if(metadata.Categories != null)
-            foreach(string category in metadata.Categories)
-                lstCategories.Add(new StringEntry {str = category});
-        if(metadata.Subcategories != null)
-            foreach(string subcategory in metadata.Subcategories)
-                lstSubcategories.Add(new StringEntry {str = subcategory});
-
-        if(metadata.Languages != null)
-            foreach(LanguagesTypeLanguage language in metadata.Languages)
-            {
-                lstLanguages.Add(new StringEntry {str = language.ToString()});
-                lstLanguageTypes.Remove(language.ToString());
-            }
-
-        if(metadata.RequiredOperatingSystems != null)
-            foreach(RequiredOperatingSystemType reqos in metadata.RequiredOperatingSystems)
-                foreach(string reqver in reqos.Version)
-                    lstOses.Add(new TargetOsEntry {name = reqos.Name, version = reqver});
-
-        if(metadata.Architectures != null)
-            foreach(ArchitecturesTypeArchitecture architecture in metadata.Architectures)
-            {
-                lstArchitectures.Add(new StringEntry {str = architecture.ToString()});
-                lstArchitecturesTypes.Remove(architecture.ToString());
-            }
-
-        if(metadata.OpticalDisc != null)
-            foreach(OpticalDiscType disc in metadata.OpticalDisc)
-            {
-                lstDiscs.Add(new DiscEntry {path = disc.Image.Value, disc = disc});
-                List<string> files = new List<string> {disc.Image.Value};
-                if(disc.ADIP    != null) files.Add(disc.ADIP.Image);
-                if(disc.ATIP    != null) files.Add(disc.ATIP.Image);
-                if(disc.BCA     != null) files.Add(disc.BCA.Image);
-                if(disc.CMI     != null) files.Add(disc.CMI.Image);
-                if(disc.DCB     != null) files.Add(disc.DCB.Image);
-                if(disc.DDS     != null) files.Add(disc.DDS.Image);
-                if(disc.DMI     != null) files.Add(disc.DMI.Image);
-                if(disc.LastRMD != null) files.Add(disc.LastRMD.Image);
-                if(disc.LeadIn != null)
-                    foreach(BorderType border in disc.LeadIn)
-                        files.Add(border.Image);
-                if(disc.LeadInCdText != null) files.Add(disc.LeadInCdText.Image);
-                if(disc.LeadOut != null)
-                    foreach(BorderType border in disc.LeadOut)
-                        files.Add(border.Image);
-                if(disc.MediaID != null) files.Add(disc.MediaID.Image);
-                if(disc.PAC     != null) files.Add(disc.PAC.Image);
-                if(disc.PFI     != null) files.Add(disc.PFI.Image);
-                if(disc.PFIR    != null) files.Add(disc.PFIR.Image);
-                if(disc.PMA     != null) files.Add(disc.PMA.Image);
-                if(disc.PRI     != null) files.Add(disc.PRI.Image);
-                if(disc.SAI     != null) files.Add(disc.SAI.Image);
-                if(disc.TOC     != null) files.Add(disc.TOC.Image);
-                if(disc.Track   != null) files.AddRange(disc.Track.Select(track => track.Image.Value));
-
-                foreach(string file in files)
-                    if(lstFilesForMedia.Contains(file))
-                        lstFilesForMedia.Remove(file);
-            }
-
-        if(metadata.BlockMedia != null)
-            foreach(BlockMediaType disk in metadata.BlockMedia)
-            {
-                lstDisks.Add(new DiskEntry {path = disk.Image.Value, disk = disk});
-                List<string> files = new List<string> {disk.Image.Value};
-                if(disk.ATA?.Identify     != null) files.Add(disk.ATA.Identify.Image);
-                if(disk.MAM               != null) files.Add(disk.MAM.Image);
-                if(disk.PCI?.ExpansionROM != null) files.Add(disk.PCI.ExpansionROM.Image.Value);
-                if(disk.PCMCIA?.CIS       != null) files.Add(disk.PCMCIA.CIS.Image);
-                if(disk.SCSI != null)
-                {
-                    if(disk.SCSI.Inquiry     != null) files.Add(disk.SCSI.Inquiry.Image);
-                    if(disk.SCSI.LogSense    != null) files.Add(disk.SCSI.LogSense.Image);
-                    if(disk.SCSI.ModeSense   != null) files.Add(disk.SCSI.ModeSense.Image);
-                    if(disk.SCSI.ModeSense10 != null) files.Add(disk.SCSI.ModeSense10.Image);
-                    if(disk.SCSI.EVPD        != null) files.AddRange(disk.SCSI.EVPD.Select(evpd => evpd.Image));
-                }
-
-                if(disk.SecureDigital != null)
-                {
-                    if(disk.SecureDigital.CID          != null) files.Add(disk.SecureDigital.CID.Image);
-                    if(disk.SecureDigital.CSD          != null) files.Add(disk.SecureDigital.CSD.Image);
-                    if(disk.MultiMediaCard.ExtendedCSD != null) files.Add(disk.MultiMediaCard.ExtendedCSD.Image);
-                }
-
-                if(disk.TapeInformation != null)
-                    files.AddRange(disk.TapeInformation.Select(tapePart => tapePart.Image.Value));
-                if(disk.Track            != null) files.AddRange(disk.Track.Select(track => track.Image.Value));
-                if(disk.USB?.Descriptors != null) files.Add(disk.USB.Descriptors.Image);
-
-                foreach(string file in files)
-                    if(lstFilesForMedia.Contains(file))
-                        lstFilesForMedia.Remove(file);
-            }
-
-        magazines    = metadata.Magazine;
-        books        = metadata.Book;
-        usermanuals  = metadata.UserManual;
-        adverts      = metadata.Advertisement;
-        linearmedias = metadata.LinearMedia;
-        pcis         = metadata.PCICard;
-        audiomedias  = metadata.AudioMedia;
-    }
-
-    protected void OnChkKnownReleaseTypeToggled(object sender, EventArgs e)
-    {
-        cmbReleaseType.Enabled = chkKnownReleaseType.Checked.Value;
-    }
-
-    protected void OnChkReleaseDateToggled(object sender, EventArgs e)
-    {
-        cldReleaseDate.Enabled = !chkReleaseDate.Checked.Value;
-    }
-
-    protected void OnBtnAddKeywordClicked(object sender, EventArgs e)
-    {
-        lstKeywords.Add(new StringEntry {str = txtNewKeyword.Text});
-        txtNewKeyword.Text = "";
-    }
-
-    protected void OnBtnRemoveKeywordClicked(object sender, EventArgs e)
-    {
-        if(treeKeywords.SelectedItem != null) lstKeywords.Remove((StringEntry)treeKeywords.SelectedItem);
-    }
-
-    protected void OnBtnClearKeywordsClicked(object sender, EventArgs e)
-    {
-        lstKeywords.Clear();
-    }
-
-    protected void OnBtnAddBarcodeClicked(object sender, EventArgs e)
-    {
-        if(string.IsNullOrEmpty(cmbBarcodes.Text)) return;
-
-        lstBarcodes.Add(new BarcodeEntry
+        protected void OnChkKnownReleaseTypeToggled(object sender, EventArgs e)
         {
-            code = txtNewBarcode.Text,
-            type = (BarcodeTypeType)Enum.Parse(typeof(BarcodeTypeType), cmbBarcodes.Text)
-        });
-        txtNewBarcode.Text = "";
-    }
-
-    protected void OnBtnClearBarcodesClicked(object sender, EventArgs e)
-    {
-        lstBarcodes.Clear();
-    }
-
-    protected void OnBtnRemoveBarcodeClicked(object sender, EventArgs e)
-    {
-        if(treeBarcodes.SelectedItem != null) lstBarcodes.Remove((BarcodeEntry)treeBarcodes.SelectedItem);
-    }
-
-    protected void OnBtnAddCategoryClicked(object sender, EventArgs e)
-    {
-        lstCategories.Add(new StringEntry {str = txtNewCategory.Text});
-        txtNewCategory.Text = "";
-    }
-
-    protected void OnBtnAddSubcategoryClicked(object sender, EventArgs e)
-    {
-        lstSubcategories.Add(new StringEntry {str = txtNewSubcategory.Text});
-        txtNewSubcategory.Text = "";
-    }
-
-    protected void OnBtnRemoveSubcategoryClicked(object sender, EventArgs e)
-    {
-        if(treeSubcategories.SelectedItem != null)
-            lstSubcategories.Remove((StringEntry)treeSubcategories.SelectedItem);
-    }
-
-    protected void OnBtnClearSubcategoriesClicked(object sender, EventArgs e)
-    {
-        lstSubcategories.Clear();
-    }
-
-    protected void OnBtnRemoveCategoryClicked(object sender, EventArgs e)
-    {
-        if(treeCategories.SelectedItem != null) lstCategories.Remove((StringEntry)treeCategories.SelectedItem);
-    }
-
-    protected void OnBtnClearCategoriesClicked(object sender, EventArgs e)
-    {
-        lstCategories.Clear();
-    }
-
-    protected void OnBtnAddLanguageClicked(object sender, EventArgs e)
-    {
-        if(string.IsNullOrWhiteSpace(cmbLanguages.Text)) return;
-
-        lstLanguages.Add(new StringEntry {str = cmbLanguages.Text});
-        lstLanguageTypes.Remove(cmbLanguages.Text);
-    }
-
-    protected void OnBtnRemoveLanguageClicked(object sender, EventArgs e)
-    {
-        if(treeLanguages.SelectedItem == null) return;
-
-        lstLanguageTypes.Add(((StringEntry)treeLanguages.SelectedItem).str);
-        lstLanguages.Remove((StringEntry)treeLanguages.SelectedItem);
-    }
-
-    protected void OnBtnClearLanguagesClicked(object sender, EventArgs e)
-    {
-        lstLanguages.Clear();
-        FillLanguagesCombo();
-    }
-
-    protected void OnBtnAddNewOsClicked(object sender, EventArgs e)
-    {
-        if(string.IsNullOrWhiteSpace(txtNewOsName.Text))
-        {
-            MessageBox.Show("Operating system name cannot be empty.", MessageBoxType.Error);
-            return;
+            cmbReleaseType.Enabled = chkKnownReleaseType.Checked.Value;
         }
 
-        if(string.IsNullOrWhiteSpace(txtNewOsVersion.Text))
+        protected void OnChkReleaseDateToggled(object sender, EventArgs e)
         {
-            MessageBox.Show("Operating system version cannot be empty.", MessageBoxType.Error);
-            return;
+            cldReleaseDate.Enabled = !chkReleaseDate.Checked.Value;
         }
 
-        lstOses.Add(new TargetOsEntry {name = txtNewOsName.Text, version = txtNewOsVersion.Text});
-        txtNewOsName.Text    = "";
-        txtNewOsVersion.Text = "";
-    }
-
-    protected void OnBtnClearOsesClicked(object sender, EventArgs e)
-    {
-        lstOses.Clear();
-    }
-
-    protected void OnBtnRemoveOsClicked(object sender, EventArgs e)
-    {
-        if(treeOses.SelectedItem != null) lstOses.Remove((TargetOsEntry)treeOses.SelectedItem);
-    }
-
-    protected void OnBtnAddArchitectureClicked(object sender, EventArgs e)
-    {
-        if(string.IsNullOrWhiteSpace(cmbArchitectures.Text)) return;
-
-        lstArchitectures.Add(new StringEntry {str = cmbArchitectures.Text});
-        lstArchitecturesTypes.Remove(cmbArchitectures.Text);
-    }
-
-    protected void OnBtnClearArchitecturesClicked(object sender, EventArgs e)
-    {
-        lstArchitectures.Clear();
-        FillArchitecturesCombo();
-    }
-
-    protected void OnBtnRemoveArchitectureClicked(object sender, EventArgs e)
-    {
-        if(treeArchitectures.SelectedItem == null) return;
-
-        lstArchitecturesTypes.Add(((StringEntry)treeArchitectures.SelectedItem).str);
-        lstArchitectures.Remove((StringEntry)treeArchitectures.SelectedItem);
-    }
-
-    protected void OnBtnAddDiscClicked(object sender, EventArgs e)
-    {
-        /* TODO
-    Context.SelectedFile     =  cmbFilesForNewDisc.Text;
-    */
-        tabGeneral.Visible       =  false;
-        tabKeywords.Visible      =  false;
-        tabBarcodes.Visible      =  false;
-        tabCategories.Visible    =  false;
-        tabLanguages.Visible     =  false;
-        tabTargetOs.Visible      =  false;
-        tabArchitectures.Visible =  false;
-        tabDisks.Visible         =  false;
-        prgAddDisc1.Visible      =  true;
-        prgAddDisc2.Visible      =  true;
-        lblAddDisc1.Visible      =  true;
-        lblAddDisc2.Visible      =  true;
-        btnCancel.Visible        =  false;
-        btnOK.Visible            =  false;
-        btnEditDisc.Visible      =  false;
-        btnClearDiscs.Visible    =  false;
-        /* TODO
-    Workers.Failed           += OnDiscAddFailed;
-    Workers.Finished         += OnDiscAddFinished;
-    Workers.UpdateProgress   += UpdateDiscProgress1;
-    Workers.UpdateProgress2  += UpdateDiscProgress2;
-    Context.WorkingDisc      =  null;
-    */
-        btnStopAddDisc.Visible   =  true;
-        btnAddDisc.Visible       =  false;
-        btnRemoveDisc.Visible    =  false;
-        /* TODO
-    thdDisc                  =  new Thread(Workers.AddMedia);
-    thdDisc.Start();
-    */
-    }
-
-    protected void OnBtnStopAddDiscClicked(object sender, EventArgs e)
-    {
-        thdDisc?.Abort();
-        stopped = true;
-        OnDiscAddFailed(null);
-    }
-
-    void UpdateDiscProgress1(string text, string inner, long current, long maximum)
-    {
-        Application.Instance.Invoke(delegate
+        protected void OnBtnAddKeywordClicked(object sender, EventArgs e)
         {
-            lblAddDisc1.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
-            if(maximum > 0)
+            lstKeywords.Add(new StringEntry {str = txtNewKeyword.Text});
+            txtNewKeyword.Text = "";
+        }
+
+        protected void OnBtnRemoveKeywordClicked(object sender, EventArgs e)
+        {
+            if(treeKeywords.SelectedItem != null) lstKeywords.Remove((StringEntry)treeKeywords.SelectedItem);
+        }
+
+        protected void OnBtnClearKeywordsClicked(object sender, EventArgs e)
+        {
+            lstKeywords.Clear();
+        }
+
+        protected void OnBtnAddBarcodeClicked(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(cmbBarcodes.Text)) return;
+
+            lstBarcodes.Add(new BarcodeEntry
             {
-                if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
-                   maximum > int.MaxValue)
-                {
-                    current /= 100;
-                    maximum /= 100;
-                }
+                code = txtNewBarcode.Text,
+                type = (BarcodeTypeType)Enum.Parse(typeof(BarcodeTypeType), cmbBarcodes.Text)
+            });
+            txtNewBarcode.Text = "";
+        }
 
-                prgAddDisc1.Indeterminate = false;
-                prgAddDisc1.MinValue      = 0;
-                prgAddDisc1.MaxValue      = (int)maximum;
-                prgAddDisc1.Value         = (int)current;
-            }
-            else prgAddDisc1.Indeterminate = true;
-        });
-    }
-
-    void UpdateDiscProgress2(string text, string inner, long current, long maximum)
-    {
-        Application.Instance.Invoke(delegate
+        protected void OnBtnClearBarcodesClicked(object sender, EventArgs e)
         {
-            lblAddDisc2.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
-            if(maximum > 0)
+            lstBarcodes.Clear();
+        }
+
+        protected void OnBtnRemoveBarcodeClicked(object sender, EventArgs e)
+        {
+            if(treeBarcodes.SelectedItem != null) lstBarcodes.Remove((BarcodeEntry)treeBarcodes.SelectedItem);
+        }
+
+        protected void OnBtnAddCategoryClicked(object sender, EventArgs e)
+        {
+            lstCategories.Add(new StringEntry {str = txtNewCategory.Text});
+            txtNewCategory.Text = "";
+        }
+
+        protected void OnBtnAddSubcategoryClicked(object sender, EventArgs e)
+        {
+            lstSubcategories.Add(new StringEntry {str = txtNewSubcategory.Text});
+            txtNewSubcategory.Text = "";
+        }
+
+        protected void OnBtnRemoveSubcategoryClicked(object sender, EventArgs e)
+        {
+            if(treeSubcategories.SelectedItem != null)
+                lstSubcategories.Remove((StringEntry)treeSubcategories.SelectedItem);
+        }
+
+        protected void OnBtnClearSubcategoriesClicked(object sender, EventArgs e)
+        {
+            lstSubcategories.Clear();
+        }
+
+        protected void OnBtnRemoveCategoryClicked(object sender, EventArgs e)
+        {
+            if(treeCategories.SelectedItem != null) lstCategories.Remove((StringEntry)treeCategories.SelectedItem);
+        }
+
+        protected void OnBtnClearCategoriesClicked(object sender, EventArgs e)
+        {
+            lstCategories.Clear();
+        }
+
+        protected void OnBtnAddLanguageClicked(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(cmbLanguages.Text)) return;
+
+            lstLanguages.Add(new StringEntry {str = cmbLanguages.Text});
+            lstLanguageTypes.Remove(cmbLanguages.Text);
+        }
+
+        protected void OnBtnRemoveLanguageClicked(object sender, EventArgs e)
+        {
+            if(treeLanguages.SelectedItem == null) return;
+
+            lstLanguageTypes.Add(((StringEntry)treeLanguages.SelectedItem).str);
+            lstLanguages.Remove((StringEntry)treeLanguages.SelectedItem);
+        }
+
+        protected void OnBtnClearLanguagesClicked(object sender, EventArgs e)
+        {
+            lstLanguages.Clear();
+            FillLanguagesCombo();
+        }
+
+        protected void OnBtnAddNewOsClicked(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtNewOsName.Text))
             {
-                if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
-                   maximum > int.MaxValue)
-                {
-                    current /= 100;
-                    maximum /= 100;
-                }
-
-                prgAddDisc2.Indeterminate = false;
-                prgAddDisc2.MinValue      = 0;
-                prgAddDisc2.MaxValue      = (int)maximum;
-                prgAddDisc2.Value         = (int)current;
+                MessageBox.Show("Operating system name cannot be empty.", MessageBoxType.Error);
+                return;
             }
-            else prgAddDisc2.Indeterminate = true;
-        });
-    }
 
-    void OnDiscAddFailed(string text)
-    {
-        Application.Instance.Invoke(delegate
+            if(string.IsNullOrWhiteSpace(txtNewOsVersion.Text))
+            {
+                MessageBox.Show("Operating system version cannot be empty.", MessageBoxType.Error);
+                return;
+            }
+
+            lstOses.Add(new TargetOsEntry {name = txtNewOsName.Text, version = txtNewOsVersion.Text});
+            txtNewOsName.Text    = "";
+            txtNewOsVersion.Text = "";
+        }
+
+        protected void OnBtnClearOsesClicked(object sender, EventArgs e)
         {
-            if(!stopped) MessageBox.Show(text, MessageBoxType.Error);
+            lstOses.Clear();
+        }
+
+        protected void OnBtnRemoveOsClicked(object sender, EventArgs e)
+        {
+            if(treeOses.SelectedItem != null) lstOses.Remove((TargetOsEntry)treeOses.SelectedItem);
+        }
+
+        protected void OnBtnAddArchitectureClicked(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(cmbArchitectures.Text)) return;
+
+            lstArchitectures.Add(new StringEntry {str = cmbArchitectures.Text});
+            lstArchitecturesTypes.Remove(cmbArchitectures.Text);
+        }
+
+        protected void OnBtnClearArchitecturesClicked(object sender, EventArgs e)
+        {
+            lstArchitectures.Clear();
+            FillArchitecturesCombo();
+        }
+
+        protected void OnBtnRemoveArchitectureClicked(object sender, EventArgs e)
+        {
+            if(treeArchitectures.SelectedItem == null) return;
+
+            lstArchitecturesTypes.Add(((StringEntry)treeArchitectures.SelectedItem).str);
+            lstArchitectures.Remove((StringEntry)treeArchitectures.SelectedItem);
+        }
+
+        protected void OnBtnAddDiscClicked(object sender, EventArgs e)
+        {
             /* TODO
-            Context.SelectedFile     =  "";
-            */
-                tabGeneral.Visible       =  true;
-                tabKeywords.Visible      =  true;
-                tabBarcodes.Visible      =  true;
-                tabCategories.Visible    =  true;
-                tabLanguages.Visible     =  true;
-                tabTargetOs.Visible      =  true;
-                tabArchitectures.Visible =  true;
-                tabDisks.Visible         =  true;
-                prgAddDisc1.Visible      =  false;
-                prgAddDisc2.Visible      =  false;
-                lblAddDisc1.Visible      =  false;
-                lblAddDisc2.Visible      =  false;
-                btnCancel.Visible        =  true;
-                btnOK.Visible            =  true;
-                btnEditDisc.Visible      =  true;
-                btnClearDiscs.Visible    =  true;
+        Context.SelectedFile     =  cmbFilesForNewDisc.Text;
+        */
+            tabGeneral.Visible       = false;
+            tabKeywords.Visible      = false;
+            tabBarcodes.Visible      = false;
+            tabCategories.Visible    = false;
+            tabLanguages.Visible     = false;
+            tabTargetOs.Visible      = false;
+            tabArchitectures.Visible = false;
+            tabDisks.Visible         = false;
+            prgAddDisc1.Visible      = true;
+            prgAddDisc2.Visible      = true;
+            lblAddDisc1.Visible      = true;
+            lblAddDisc2.Visible      = true;
+            btnCancel.Visible        = false;
+            btnOK.Visible            = false;
+            btnEditDisc.Visible      = false;
+            btnClearDiscs.Visible    = false;
+            /* TODO
+        Workers.Failed           += OnDiscAddFailed;
+        Workers.Finished         += OnDiscAddFinished;
+        Workers.UpdateProgress   += UpdateDiscProgress1;
+        Workers.UpdateProgress2  += UpdateDiscProgress2;
+        Context.WorkingDisc      =  null;
+        */
+            btnStopAddDisc.Visible = true;
+            btnAddDisc.Visible     = false;
+            btnRemoveDisc.Visible  = false;
+            /* TODO
+        thdDisc                  =  new Thread(Workers.AddMedia);
+        thdDisc.Start();
+        */
+        }
+
+        protected void OnBtnStopAddDiscClicked(object sender, EventArgs e)
+        {
+            thdDisc?.Abort();
+            stopped = true;
+            OnDiscAddFailed(null);
+        }
+
+        void UpdateDiscProgress1(string text, string inner, long current, long maximum)
+        {
+            Application.Instance.Invoke(delegate
+            {
+                lblAddDisc1.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
+                if(maximum > 0)
+                {
+                    if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
+                       maximum > int.MaxValue)
+                    {
+                        current /= 100;
+                        maximum /= 100;
+                    }
+
+                    prgAddDisc1.Indeterminate = false;
+                    prgAddDisc1.MinValue      = 0;
+                    prgAddDisc1.MaxValue      = (int)maximum;
+                    prgAddDisc1.Value         = (int)current;
+                }
+                else prgAddDisc1.Indeterminate = true;
+            });
+        }
+
+        void UpdateDiscProgress2(string text, string inner, long current, long maximum)
+        {
+            Application.Instance.Invoke(delegate
+            {
+                lblAddDisc2.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
+                if(maximum > 0)
+                {
+                    if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
+                       maximum > int.MaxValue)
+                    {
+                        current /= 100;
+                        maximum /= 100;
+                    }
+
+                    prgAddDisc2.Indeterminate = false;
+                    prgAddDisc2.MinValue      = 0;
+                    prgAddDisc2.MaxValue      = (int)maximum;
+                    prgAddDisc2.Value         = (int)current;
+                }
+                else prgAddDisc2.Indeterminate = true;
+            });
+        }
+
+        void OnDiscAddFailed(string text)
+        {
+            Application.Instance.Invoke(delegate
+            {
+                if(!stopped) MessageBox.Show(text, MessageBoxType.Error);
+                /* TODO
+                Context.SelectedFile     =  "";
+                */
+                tabGeneral.Visible       = true;
+                tabKeywords.Visible      = true;
+                tabBarcodes.Visible      = true;
+                tabCategories.Visible    = true;
+                tabLanguages.Visible     = true;
+                tabTargetOs.Visible      = true;
+                tabArchitectures.Visible = true;
+                tabDisks.Visible         = true;
+                prgAddDisc1.Visible      = false;
+                prgAddDisc2.Visible      = false;
+                lblAddDisc1.Visible      = false;
+                lblAddDisc2.Visible      = false;
+                btnCancel.Visible        = true;
+                btnOK.Visible            = true;
+                btnEditDisc.Visible      = true;
+                btnClearDiscs.Visible    = true;
                 /* TODO
                 Workers.Failed           -= OnDiscAddFailed;
                 Workers.Finished         -= OnDiscAddFinished;
@@ -781,10 +771,10 @@ namespace CICMMetadataEditor
                 Workers.UpdateProgress2  -= UpdateDiscProgress2;
                 Context.WorkingDisc      =  null;
                 */
-                btnStopAddDisc.Visible   =  false;
-                btnAddDisc.Visible       =  true;
-                btnRemoveDisc.Visible    =  true;
-                thdDisc                  =  null;
+                btnStopAddDisc.Visible = false;
+                btnAddDisc.Visible     = true;
+                btnRemoveDisc.Visible  = true;
+                thdDisc                = null;
             });
         }
 
@@ -825,22 +815,22 @@ namespace CICMMetadataEditor
                 /* TODO
                 Context.SelectedFile     =  "";
                 */
-                tabGeneral.Visible       =  true;
-                tabKeywords.Visible      =  true;
-                tabBarcodes.Visible      =  true;
-                tabCategories.Visible    =  true;
-                tabLanguages.Visible     =  true;
-                tabTargetOs.Visible      =  true;
-                tabArchitectures.Visible =  true;
-                tabDisks.Visible         =  true;
-                prgAddDisc1.Visible      =  false;
-                prgAddDisc2.Visible      =  false;
-                lblAddDisc1.Visible      =  false;
-                lblAddDisc2.Visible      =  false;
-                btnCancel.Visible        =  true;
-                btnOK.Visible            =  true;
-                btnEditDisc.Visible      =  true;
-                btnClearDiscs.Visible    =  true;
+                tabGeneral.Visible       = true;
+                tabKeywords.Visible      = true;
+                tabBarcodes.Visible      = true;
+                tabCategories.Visible    = true;
+                tabLanguages.Visible     = true;
+                tabTargetOs.Visible      = true;
+                tabArchitectures.Visible = true;
+                tabDisks.Visible         = true;
+                prgAddDisc1.Visible      = false;
+                prgAddDisc2.Visible      = false;
+                lblAddDisc1.Visible      = false;
+                lblAddDisc2.Visible      = false;
+                btnCancel.Visible        = true;
+                btnOK.Visible            = true;
+                btnEditDisc.Visible      = true;
+                btnClearDiscs.Visible    = true;
                 /* TODO
                 Workers.Failed           -= OnDiscAddFailed;
                 Workers.Finished         -= OnDiscAddFinished;
@@ -848,10 +838,10 @@ namespace CICMMetadataEditor
                 Workers.UpdateProgress2  -= UpdateDiscProgress2;
                 Context.WorkingDisc      =  null;
                 */
-                btnStopAddDisc.Visible   =  false;
-                btnAddDisc.Visible       =  true;
-                btnRemoveDisc.Visible    =  true;
-                thdDisc                  =  null;
+                btnStopAddDisc.Visible = false;
+                btnAddDisc.Visible     = true;
+                btnRemoveDisc.Visible  = true;
+                thdDisc                = null;
             });
         }
 
@@ -875,116 +865,116 @@ namespace CICMMetadataEditor
             /* TODO
         Context.SelectedFile     =  cmbFilesForNewDisk.Text;
         */
-        tabGeneral.Visible       =  false;
-        tabKeywords.Visible      =  false;
-        tabBarcodes.Visible      =  false;
-        tabCategories.Visible    =  false;
-        tabLanguages.Visible     =  false;
-        tabTargetOs.Visible      =  false;
-        tabArchitectures.Visible =  false;
-        tabDiscs.Visible         =  false;
-        prgAddDisk1.Visible      =  true;
-        prgAddDisk2.Visible      =  true;
-        lblAddDisk1.Visible      =  true;
-        lblAddDisk2.Visible      =  true;
-        btnCancel.Visible        =  false;
-        btnOK.Visible            =  false;
-        btnEditDisk.Visible      =  false;
-        btnClearDisks.Visible    =  false;
-        /* TODO
-    Workers.Failed           += OnDiskAddFailed;
-    Workers.Finished         += OnDiskAddFinished;
-    Workers.UpdateProgress   += UpdateDiskProgress1;
-    Workers.UpdateProgress2  += UpdateDiskProgress2;
-    Context.WorkingDisk      =  null;
-    */
-        btnStopAddDisk.Visible   =  true;
-        btnAddDisk.Visible       =  false;
-        btnRemoveDisk.Visible    =  false;
+            tabGeneral.Visible       = false;
+            tabKeywords.Visible      = false;
+            tabBarcodes.Visible      = false;
+            tabCategories.Visible    = false;
+            tabLanguages.Visible     = false;
+            tabTargetOs.Visible      = false;
+            tabArchitectures.Visible = false;
+            tabDiscs.Visible         = false;
+            prgAddDisk1.Visible      = true;
+            prgAddDisk2.Visible      = true;
+            lblAddDisk1.Visible      = true;
+            lblAddDisk2.Visible      = true;
+            btnCancel.Visible        = false;
+            btnOK.Visible            = false;
+            btnEditDisk.Visible      = false;
+            btnClearDisks.Visible    = false;
+            /* TODO
+        Workers.Failed           += OnDiskAddFailed;
+        Workers.Finished         += OnDiskAddFinished;
+        Workers.UpdateProgress   += UpdateDiskProgress1;
+        Workers.UpdateProgress2  += UpdateDiskProgress2;
+        Context.WorkingDisk      =  null;
+        */
+            btnStopAddDisk.Visible = true;
+            btnAddDisk.Visible     = false;
+            btnRemoveDisk.Visible  = false;
             /* TODO
 
 thdDisk                  =  new Thread(Workers.AddMedia);
 thdDisk.Start();
 */
-}
+        }
 
-protected void OnBtnStopAddDiskClicked(object sender, EventArgs e)
-{
-thdDisk?.Abort();
-stopped = true;
-OnDiskAddFailed(null);
-}
+        protected void OnBtnStopAddDiskClicked(object sender, EventArgs e)
+        {
+            thdDisk?.Abort();
+            stopped = true;
+            OnDiskAddFailed(null);
+        }
 
-void UpdateDiskProgress1(string text, string inner, long current, long maximum)
-{
-Application.Instance.Invoke(delegate
-{
-lblAddDisk1.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
-if(maximum > 0)
-{
-if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
-   maximum > int.MaxValue)
-{
-    current /= 100;
-    maximum /= 100;
-}
+        void UpdateDiskProgress1(string text, string inner, long current, long maximum)
+        {
+            Application.Instance.Invoke(delegate
+            {
+                lblAddDisk1.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
+                if(maximum > 0)
+                {
+                    if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
+                       maximum > int.MaxValue)
+                    {
+                        current /= 100;
+                        maximum /= 100;
+                    }
 
-prgAddDisk1.Indeterminate = false;
-prgAddDisk1.MinValue      = 0;
-prgAddDisk1.MaxValue      = (int)maximum;
-prgAddDisk1.Value         = (int)current;
-}
-else prgAddDisk1.Indeterminate = true;
-});
-}
+                    prgAddDisk1.Indeterminate = false;
+                    prgAddDisk1.MinValue      = 0;
+                    prgAddDisk1.MaxValue      = (int)maximum;
+                    prgAddDisk1.Value         = (int)current;
+                }
+                else prgAddDisk1.Indeterminate = true;
+            });
+        }
 
-void UpdateDiskProgress2(string text, string inner, long current, long maximum)
-{
-Application.Instance.Invoke(delegate
-{
-lblAddDisk2.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
-if(maximum > 0)
-{
-if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
-   maximum > int.MaxValue)
-{
-    current /= 100;
-    maximum /= 100;
-}
+        void UpdateDiskProgress2(string text, string inner, long current, long maximum)
+        {
+            Application.Instance.Invoke(delegate
+            {
+                lblAddDisk2.Text = !string.IsNullOrWhiteSpace(inner) ? inner : text;
+                if(maximum > 0)
+                {
+                    if(current < int.MinValue || current > int.MaxValue || maximum < int.MinValue ||
+                       maximum > int.MaxValue)
+                    {
+                        current /= 100;
+                        maximum /= 100;
+                    }
 
-prgAddDisk2.Indeterminate = false;
-prgAddDisk2.MinValue      = 0;
-prgAddDisk2.MaxValue      = (int)maximum;
-prgAddDisk2.Value         = (int)current;
-}
-else prgAddDisk2.Indeterminate = true;
-});
-}
+                    prgAddDisk2.Indeterminate = false;
+                    prgAddDisk2.MinValue      = 0;
+                    prgAddDisk2.MaxValue      = (int)maximum;
+                    prgAddDisk2.Value         = (int)current;
+                }
+                else prgAddDisk2.Indeterminate = true;
+            });
+        }
 
-void OnDiskAddFailed(string text)
-{
-Application.Instance.Invoke(delegate
-{
-if(!stopped) MessageBox.Show(text, MessageBoxType.Error);
-/* TODO
-Context.SelectedFile     =  "";
-*/
-                tabGeneral.Visible       =  true;
-                tabKeywords.Visible      =  true;
-                tabBarcodes.Visible      =  true;
-                tabCategories.Visible    =  true;
-                tabLanguages.Visible     =  true;
-                tabTargetOs.Visible      =  true;
-                tabArchitectures.Visible =  true;
-                tabDiscs.Visible         =  true;
-                prgAddDisk1.Visible      =  false;
-                prgAddDisk2.Visible      =  false;
-                lblAddDisk1.Visible      =  false;
-                lblAddDisk2.Visible      =  false;
-                btnCancel.Visible        =  true;
-                btnOK.Visible            =  true;
-                btnEditDisk.Visible      =  true;
-                btnClearDisks.Visible    =  true;
+        void OnDiskAddFailed(string text)
+        {
+            Application.Instance.Invoke(delegate
+            {
+                if(!stopped) MessageBox.Show(text, MessageBoxType.Error);
+                /* TODO
+                Context.SelectedFile     =  "";
+                */
+                tabGeneral.Visible       = true;
+                tabKeywords.Visible      = true;
+                tabBarcodes.Visible      = true;
+                tabCategories.Visible    = true;
+                tabLanguages.Visible     = true;
+                tabTargetOs.Visible      = true;
+                tabArchitectures.Visible = true;
+                tabDiscs.Visible         = true;
+                prgAddDisk1.Visible      = false;
+                prgAddDisk2.Visible      = false;
+                lblAddDisk1.Visible      = false;
+                lblAddDisk2.Visible      = false;
+                btnCancel.Visible        = true;
+                btnOK.Visible            = true;
+                btnEditDisk.Visible      = true;
+                btnClearDisks.Visible    = true;
                 /* TODO
                 Workers.Failed           -= OnDiskAddFailed;
                 Workers.Finished         -= OnDiskAddFinished;
@@ -992,10 +982,10 @@ Context.SelectedFile     =  "";
                 Workers.UpdateProgress2  -= UpdateDiskProgress2;
                 Context.WorkingDisk      =  null;
                 */
-                btnStopAddDisk.Visible   =  false;
-                btnAddDisk.Visible       =  true;
-                btnRemoveDisk.Visible    =  true;
-                thdDisk                  =  null;
+                btnStopAddDisk.Visible = false;
+                btnAddDisk.Visible     = true;
+                btnRemoveDisk.Visible  = true;
+                thdDisk                = null;
             });
         }
 
@@ -1041,32 +1031,32 @@ Context.SelectedFile     =  "";
                 /* TODO
                 Context.SelectedFile     =  "";
                 */
-                tabGeneral.Visible       =  true;
-                tabKeywords.Visible      =  true;
-                tabBarcodes.Visible      =  true;
-                tabCategories.Visible    =  true;
-                tabLanguages.Visible     =  true;
-                tabTargetOs.Visible      =  true;
-                tabArchitectures.Visible =  true;
-                tabDiscs.Visible         =  true;
-                prgAddDisk1.Visible      =  false;
-                prgAddDisk2.Visible      =  false;
-                lblAddDisk1.Visible      =  false;
-                lblAddDisk2.Visible      =  false;
-                btnCancel.Visible        =  true;
-                btnOK.Visible            =  true;
-                btnEditDisk.Visible      =  true;
-                btnClearDisks.Visible    =  true;
+                tabGeneral.Visible       = true;
+                tabKeywords.Visible      = true;
+                tabBarcodes.Visible      = true;
+                tabCategories.Visible    = true;
+                tabLanguages.Visible     = true;
+                tabTargetOs.Visible      = true;
+                tabArchitectures.Visible = true;
+                tabDiscs.Visible         = true;
+                prgAddDisk1.Visible      = false;
+                prgAddDisk2.Visible      = false;
+                lblAddDisk1.Visible      = false;
+                lblAddDisk2.Visible      = false;
+                btnCancel.Visible        = true;
+                btnOK.Visible            = true;
+                btnEditDisk.Visible      = true;
+                btnClearDisks.Visible    = true;
                 /* TODO
                 Workers.Failed           -= OnDiskAddFailed;
                 Workers.Finished         -= OnDiskAddFinished;
                 Workers.UpdateProgress   -= UpdateDiskProgress1;
                 Workers.UpdateProgress2  -= UpdateDiskProgress2;
                 Context.WorkingDisk      =  null;*/
-                btnStopAddDisk.Visible   =  false;
-                btnAddDisk.Visible       =  true;
-                btnRemoveDisk.Visible    =  true;
-                thdDisk                  =  null;
+                btnStopAddDisk.Visible = false;
+                btnAddDisk.Visible     = true;
+                btnRemoveDisk.Visible  = true;
+                thdDisk                = null;
             });
         }
 

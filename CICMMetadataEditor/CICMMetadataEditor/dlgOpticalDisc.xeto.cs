@@ -41,23 +41,20 @@ namespace CICMMetadataEditor
 {
     public class dlgOpticalDisc : Dialog
     {
-        // Non-editable fields
-        ChecksumType[]   checksums;
-        DumpHardwareType dumpHwIter;
-        bool             editingDumpHw;
-
-        bool                           editingPartition;
-        FileSystemType                 filesystemIter;
-        ObservableCollection<DumpType> lstADIP;
-        ObservableCollection<DumpType> lstATIP;
-        ObservableCollection<DumpType> lstBCA;
-        ObservableCollection<DumpType> lstCDText;
-        ObservableCollection<DumpType> lstCMI;
-        ObservableCollection<DumpType> lstDCB;
-        ObservableCollection<DumpType> lstDDS;
-        ObservableCollection<DumpType> lstDI;
-        ObservableCollection<DumpType> lstDMI;
-
+        ChecksumType[]                         checksums;
+        DumpHardwareType                       dumpHwIter;
+        bool                                   editingDumpHw;
+        bool                                   editingPartition;
+        FileSystemType                         filesystemIter;
+        ObservableCollection<DumpType>         lstADIP;
+        ObservableCollection<DumpType>         lstATIP;
+        ObservableCollection<DumpType>         lstBCA;
+        ObservableCollection<DumpType>         lstCDText;
+        ObservableCollection<DumpType>         lstCMI;
+        ObservableCollection<DumpType>         lstDCB;
+        ObservableCollection<DumpType>         lstDDS;
+        ObservableCollection<DumpType>         lstDI;
+        ObservableCollection<DumpType>         lstDMI;
         ObservableCollection<DumpHardwareType> lstDumpHw;
         ObservableCollection<DumpType>         lstLastRMD;
         ObservableCollection<SectorsType>      lstLayers;
@@ -82,9 +79,8 @@ namespace CICMMetadataEditor
         public bool                            Modified;
         PartitionType                          partitionIter;
         ScansType                              scans;
-
-        TrackType trackIter;
-        XboxType  xbox;
+        TrackType                              trackIter;
+        XboxType                               xbox;
 
         public dlgOpticalDisc()
         {
@@ -156,9 +152,9 @@ namespace CICMMetadataEditor
 
             treeDumpHardware.Columns.Add(new GridColumn
             {
-                DataCell                     =
+                DataCell =
                     new TextBoxCell {Binding = Binding.Property<DumpHardwareType, string>(r => r.Manufacturer)},
-                HeaderText                   = "Manufacturer"
+                HeaderText = "Manufacturer"
             });
             treeDumpHardware.Columns.Add(new GridColumn
             {
@@ -643,7 +639,7 @@ namespace CICMMetadataEditor
             #endregion Set mould text table
 
             #region Set layer type combo box
-            cmbLayerType                                     = new EnumDropDown<LayersTypeType>();
+            cmbLayerType = new EnumDropDown<LayersTypeType>();
             stkLayers.Items.Add(new StackLayoutItem {Control = cmbLayerType});
             #endregion Set layer type combo box
 
@@ -841,39 +837,40 @@ namespace CICMMetadataEditor
             spSequence.ToolTip        = "Number of this disc in the sequence.";
             spTotalMedia.ToolTip      = "How many diskc make the sequence.";
             spSide.ToolTip            = "On double sided discs, which side of the disc is represented by this dump.";
-            spLayer.ToolTip           = "On PTP layered discs, which layer of the side of the disc is represented by this dump.";
-            chkDimensions.ToolTip     = "If checked, physical dimensions of disk are known.";
-            chkRound.ToolTip          = "If checked, disk is physicaly round.";
-            spDiameter.ToolTip        = "Diameter in milimeters of disk.";
-            spHeight.ToolTip          = "Height in milimeters of disk.";
-            spWidth.ToolTip           = "Width in milimeters of disk.";
-            spThickness.ToolTip       = "Thickness in milimeters of disk.";
+            spLayer.ToolTip =
+                "On PTP layered discs, which layer of the side of the disc is represented by this dump.";
+            chkDimensions.ToolTip = "If checked, physical dimensions of disk are known.";
+            chkRound.ToolTip      = "If checked, disk is physicaly round.";
+            spDiameter.ToolTip    = "Diameter in milimeters of disk.";
+            spHeight.ToolTip      = "Height in milimeters of disk.";
+            spWidth.ToolTip       = "Width in milimeters of disk.";
+            spThickness.ToolTip   = "Thickness in milimeters of disk.";
         }
 
         public void FillFields()
         {
             if(Metadata == null) return;
 
-            txtImage.Text                                     = Metadata.Image.Value;
-            txtFormat.Text                                    = Metadata.Image.format;
+            txtImage.Text  = Metadata.Image.Value;
+            txtFormat.Text = Metadata.Image.format;
             if(Metadata.Image.offsetSpecified) txtOffset.Text = Metadata.Image.offset.ToString();
-            txtSize.Text                                      = Metadata.Size.ToString();
+            txtSize.Text = Metadata.Size.ToString();
             if(Metadata.Sequence != null)
             {
-                lblDiscTitle.Visible                               = true;
-                lblDiscTitle.Visible                               = true;
-                lblSequence.Visible                                = true;
-                spSequence.Visible                                 = true;
-                lblTotalMedia.Visible                              = true;
-                spTotalMedia.Visible                               = true;
-                lblSide.Visible                                    = true;
-                spSide.Visible                                     = true;
-                lblLayer.Visible                                   = true;
-                spLayer.Visible                                    = true;
-                chkSequence.Checked                                = true;
-                txtDiscTitle.Text                                  = Metadata.Sequence.MediaTitle;
-                spSequence.Value                                   = Metadata.Sequence.MediaSequence;
-                spTotalMedia.Value                                 = Metadata.Sequence.TotalMedia;
+                lblDiscTitle.Visible  = true;
+                lblDiscTitle.Visible  = true;
+                lblSequence.Visible   = true;
+                spSequence.Visible    = true;
+                lblTotalMedia.Visible = true;
+                spTotalMedia.Visible  = true;
+                lblSide.Visible       = true;
+                spSide.Visible        = true;
+                lblLayer.Visible      = true;
+                spLayer.Visible       = true;
+                chkSequence.Checked   = true;
+                txtDiscTitle.Text     = Metadata.Sequence.MediaTitle;
+                spSequence.Value      = Metadata.Sequence.MediaSequence;
+                spTotalMedia.Value    = Metadata.Sequence.TotalMedia;
                 if(Metadata.Sequence.SideSpecified) spSide.Value   = Metadata.Sequence.Side;
                 if(Metadata.Sequence.LayerSpecified) spLayer.Value = Metadata.Sequence.Layer;
             }
@@ -921,11 +918,11 @@ namespace CICMMetadataEditor
                 treeMouldTexts.DataStore = lstMouldTexts;
             }
 
-            if(Metadata.DiscType    != null) txtDiscType.Text          = Metadata.DiscType;
-            if(Metadata.DiscSubType != null) txtDiscSubtype.Text       = Metadata.DiscSubType;
-            if(Metadata.OffsetSpecified) txtWriteOffset.Text           = Metadata.Offset.ToString();
-            txtMediaTracks.Text                                        = Metadata.Tracks[0].ToString();
-            txtMediaSessions.Text                                      = Metadata.Sessions.ToString();
+            if(Metadata.DiscType    != null) txtDiscType.Text    = Metadata.DiscType;
+            if(Metadata.DiscSubType != null) txtDiscSubtype.Text = Metadata.DiscSubType;
+            if(Metadata.OffsetSpecified) txtWriteOffset.Text     = Metadata.Offset.ToString();
+            txtMediaTracks.Text   = Metadata.Tracks[0].ToString();
+            txtMediaSessions.Text = Metadata.Sessions.ToString();
             if(Metadata.CopyProtection != null) txtCopyProtection.Text = Metadata.CopyProtection;
 
             if(Metadata.Dimensions != null)
@@ -1182,9 +1179,9 @@ namespace CICMMetadataEditor
             txtPartitionType.Text        = partitionIter.Type;
             txtPartitionName.Text        = partitionIter.Name;
             txtPartitionDescription.Text = partitionIter.Description;
-            treeFilesystems.DataStore    = partitionIter.FileSystems != null
-                                               ? new ObservableCollection<FileSystemType>(partitionIter.FileSystems)
-                                               : new ObservableCollection<FileSystemType>();
+            treeFilesystems.DataStore = partitionIter.FileSystems != null
+                                            ? new ObservableCollection<FileSystemType>(partitionIter.FileSystems)
+                                            : new ObservableCollection<FileSystemType>();
             btnCancelPartition.Visible  = true;
             btnApplyPartition.Visible   = true;
             btnRemovePartition.Visible  = false;
@@ -1271,28 +1268,30 @@ namespace CICMMetadataEditor
         }
 
         protected void OnBtnEditFilesystemClicked(object sender, EventArgs e)
-        {/*
-            if(treeFilesystems.SelectedItem == null) return;
+        {
+            /*
+                        if(treeFilesystems.SelectedItem == null) return;
 
-            filesystemIter = (FileSystemType)treeFilesystems.SelectedItem;
+                        filesystemIter = (FileSystemType)treeFilesystems.SelectedItem;
 
-            dlgFilesystem _dlgFilesystem = new dlgFilesystem {Metadata = filesystemIter};
-            _dlgFilesystem.FillFields();
-            _dlgFilesystem.ShowModal(this);
+                        dlgFilesystem _dlgFilesystem = new dlgFilesystem {Metadata = filesystemIter};
+                        _dlgFilesystem.FillFields();
+                        _dlgFilesystem.ShowModal(this);
 
-            if(!_dlgFilesystem.Modified) return;
+                        if(!_dlgFilesystem.Modified) return;
 
-            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Remove(filesystemIter);
-            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
+                        ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Remove(filesystemIter);
+                        ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnBtnAddFilesystemClicked(object sender, EventArgs e)
-        {/*
-            dlgFilesystem _dlgFilesystem = new dlgFilesystem();
-            _dlgFilesystem.ShowModal(this);
+        {
+            /*
+                        dlgFilesystem _dlgFilesystem = new dlgFilesystem();
+                        _dlgFilesystem.ShowModal(this);
 
-            if(_dlgFilesystem.Modified)
-                ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
+                        if(_dlgFilesystem.Modified)
+                            ((ObservableCollection<FileSystemType>)treeFilesystems.DataStore).Add(_dlgFilesystem.Metadata);*/
         }
 
         protected void OnBtnCancelTrackClicked(object sender, EventArgs e)
@@ -1309,27 +1308,27 @@ namespace CICMMetadataEditor
 
         protected void OnBtnApplyTrackClicked(object sender, EventArgs e)
         {
-            string             file       = trackIter.Image.Value;
-            long               filesize   = trackIter.Size;
-            string             fileformat = trackIter.Image.format;
-            long               fileoffset = trackIter.Image.offset;
-            ChecksumType[]     checksums  = trackIter.Checksums;
-            SubChannelType     subchannel = trackIter.SubChannel;
-            TrackTypeTrackType trackType  =
+            string         file       = trackIter.Image.Value;
+            long           filesize   = trackIter.Size;
+            string         fileformat = trackIter.Image.format;
+            long           fileoffset = trackIter.Image.offset;
+            ChecksumType[] checksums  = trackIter.Checksums;
+            SubChannelType subchannel = trackIter.SubChannel;
+            TrackTypeTrackType trackType =
                 (TrackTypeTrackType)Enum.Parse(typeof(TrackTypeTrackType), cmbTrackType.Text);
 
             lstTracks.Remove(trackIter);
 
             trackIter = new TrackType
             {
-                AccoustID                 = txtAcoustID.Text,
-                BytesPerSector            = int.Parse(txtBytesPerSector.Text),
-                Checksums                 = checksums,
-                EndMSF                    = txtMSFEnd.Text,
-                EndSector                 = long.Parse(txtTrackEnd.Text),
-                Image                     =
+                AccoustID      = txtAcoustID.Text,
+                BytesPerSector = int.Parse(txtBytesPerSector.Text),
+                Checksums      = checksums,
+                EndMSF         = txtMSFEnd.Text,
+                EndSector      = long.Parse(txtTrackEnd.Text),
+                Image =
                     new ImageType {format = fileformat, offset = fileoffset, offsetSpecified = true, Value = file},
-                Sequence                  =
+                Sequence =
                     new TrackSequenceType
                     {
                         Session     = int.Parse(txtSessionSequence.Text),

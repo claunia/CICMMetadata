@@ -28,9 +28,10 @@
 //  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
+
 using System;
+using Eto;
 using Eto.Forms;
-using Eto.Drawing;
 
 namespace CICMMetadataEditor.Desktop
 {
@@ -39,7 +40,7 @@ namespace CICMMetadataEditor.Desktop
         [STAThread]
         static void Main(string[] args)
         {
-            new Application(Eto.Platform.Detect).Run(new dlgMetadata());
+            new Application(Platform.Detect).Run(new dlgMetadata());
         }
     }
 }

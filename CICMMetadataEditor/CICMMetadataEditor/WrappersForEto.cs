@@ -58,7 +58,7 @@ namespace CICMMetadataEditor
 
     class TargetOsEntry
     {
-        public string name { get; set; }
+        public string name    { get; set; }
         public string version { get; set; }
     }
 }
