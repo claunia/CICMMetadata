@@ -83,7 +83,104 @@ namespace CICMMetadataEditor
         {
             XamlReader.Load(this);
 
-            LoadData();
+            cmbReleaseType = new EnumDropDown<CICMMetadataTypeReleaseType>();
+            stkReleaseType.Items.Add(new StackLayoutItem {Control = cmbReleaseType, Expand = true});
+
+                        treeKeywords.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
+                HeaderText = "Keyword"
+            });
+            treeBarcodes.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<BarcodeEntry, string>(r => r.code)},
+                HeaderText = "Barcode"
+            });
+            treeBarcodes.Columns.Add(new GridColumn
+            {
+                DataCell = new TextBoxCell
+                {
+                    Binding = Binding.Property<BarcodeEntry, BarcodeTypeType>(r => r.type).Convert(v => v.ToString())
+                },
+                HeaderText = "Type"
+            });
+            treeCategories.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
+                HeaderText = "Category"
+            });
+            treeSubcategories.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
+                HeaderText = "Subcategory"
+            });
+            treeLanguages.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
+                HeaderText = "Language"
+            });
+            treeOses.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<TargetOsEntry, string>(r => r.name)},
+                HeaderText = "Name"
+            });
+            treeOses.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<TargetOsEntry, string>(r => r.version)},
+                HeaderText = "Version"
+            });
+            treeArchitectures.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
+                HeaderText = "Architecture"
+            });
+            treeDiscs.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<DiscEntry, string>(r => r.path)},
+                HeaderText = "File"
+            });
+            treeDisks.Columns.Add(new GridColumn
+            {
+                DataCell   = new TextBoxCell {Binding = Binding.Property<DiskEntry, string>(r => r.path)},
+                HeaderText = "File"
+            });
+
+            treeKeywords.AllowMultipleSelection      = false;
+            treeBarcodes.AllowMultipleSelection      = false;
+            treeCategories.AllowMultipleSelection    = false;
+            treeSubcategories.AllowMultipleSelection = false;
+            treeLanguages.AllowMultipleSelection     = false;
+            treeOses.AllowMultipleSelection          = false;
+            treeArchitectures.AllowMultipleSelection = false;
+            treeDiscs.AllowMultipleSelection         = false;
+            treeDisks.AllowMultipleSelection         = false;
+
+            txtDeveloper.ToolTip  = "Who developed the application.";
+            txtPublisher.ToolTip  = "Who published the application.";
+            txtAuthor.ToolTip     = "Author of the audiovisual media.";
+            txtPerformer.ToolTip  = "Performer of the audiovisual media.";
+            txtName.ToolTip       = "Application name.";
+            txtVersion.ToolTip    = "Application version.";
+            txtPartNumber.ToolTip = "Part number of the application distribution.";
+            txtSerialNumber.ToolTip =
+                "Serial number of the application distribution. Not to be confused with serial number required to install.";
+
+            lstBarcodeTypes       = new ObservableCollection<string>();
+            lstLanguageTypes      = new ObservableCollection<string>();
+            lstArchitecturesTypes = new ObservableCollection<string>();
+            lstFilesForMedia      = new ObservableCollection<string>();
+
+            //cmbBarcodes.ItemTextBinding = Binding.Property<StringEntry, string>(r => r.str);
+            cmbBarcodes.DataStore        = lstBarcodeTypes;
+            cmbLanguages.DataStore       = lstLanguageTypes;
+            cmbArchitectures.DataStore   = lstArchitecturesTypes;
+            cmbFilesForNewDisc.DataStore = lstFilesForMedia;
+            cmbFilesForNewDisk.DataStore = lstFilesForMedia;
+
+            FillBarcodeCombo();
+            FillLanguagesCombo();
+            FillArchitecturesCombo();
+            FillFilesCombos();
         }
 
         protected void OnAboutClicked(object sender, EventArgs e)
@@ -180,9 +277,6 @@ namespace CICMMetadataEditor
         {
             modified = false;
 
-            cmbReleaseType = new EnumDropDown<CICMMetadataTypeReleaseType>();
-            stkReleaseType.Items.Add(new StackLayoutItem {Control = cmbReleaseType, Expand = true});
-
             lstKeywords      = new ObservableCollection<StringEntry>();
             lstBarcodes      = new ObservableCollection<BarcodeEntry>();
             lstCategories    = new ObservableCollection<StringEntry>();
@@ -193,64 +287,6 @@ namespace CICMMetadataEditor
             lstDiscs         = new ObservableCollection<DiscEntry>();
             lstDisks         = new ObservableCollection<DiskEntry>();
 
-            treeKeywords.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
-                HeaderText = "Keyword"
-            });
-            treeBarcodes.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<BarcodeEntry, string>(r => r.code)},
-                HeaderText = "Barcode"
-            });
-            treeBarcodes.Columns.Add(new GridColumn
-            {
-                DataCell = new TextBoxCell
-                {
-                    Binding = Binding.Property<BarcodeEntry, BarcodeTypeType>(r => r.type).Convert(v => v.ToString())
-                },
-                HeaderText = "Type"
-            });
-            treeCategories.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
-                HeaderText = "Category"
-            });
-            treeSubcategories.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
-                HeaderText = "Subcategory"
-            });
-            treeLanguages.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
-                HeaderText = "Language"
-            });
-            treeOses.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<TargetOsEntry, string>(r => r.name)},
-                HeaderText = "Name"
-            });
-            treeOses.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<TargetOsEntry, string>(r => r.version)},
-                HeaderText = "Version"
-            });
-            treeArchitectures.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<StringEntry, string>(r => r.str)},
-                HeaderText = "Architecture"
-            });
-            treeDiscs.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<DiscEntry, string>(r => r.path)},
-                HeaderText = "File"
-            });
-            treeDisks.Columns.Add(new GridColumn
-            {
-                DataCell   = new TextBoxCell {Binding = Binding.Property<DiskEntry, string>(r => r.path)},
-                HeaderText = "File"
-            });
 
             treeKeywords.DataStore      = lstKeywords;
             treeBarcodes.DataStore      = lstBarcodes;
@@ -262,42 +298,23 @@ namespace CICMMetadataEditor
             treeDiscs.DataStore         = lstDiscs;
             treeDisks.DataStore         = lstDisks;
 
-            treeKeywords.AllowMultipleSelection      = false;
-            treeBarcodes.AllowMultipleSelection      = false;
-            treeCategories.AllowMultipleSelection    = false;
-            treeSubcategories.AllowMultipleSelection = false;
-            treeLanguages.AllowMultipleSelection     = false;
-            treeOses.AllowMultipleSelection          = false;
-            treeArchitectures.AllowMultipleSelection = false;
-            treeDiscs.AllowMultipleSelection         = false;
-            treeDisks.AllowMultipleSelection         = false;
-
-            lstBarcodeTypes       = new ObservableCollection<string>();
-            lstLanguageTypes      = new ObservableCollection<string>();
-            lstArchitecturesTypes = new ObservableCollection<string>();
-            lstFilesForMedia      = new ObservableCollection<string>();
-
-            //cmbBarcodes.ItemTextBinding = Binding.Property<StringEntry, string>(r => r.str);
-            cmbBarcodes.DataStore        = lstBarcodeTypes;
-            cmbLanguages.DataStore       = lstLanguageTypes;
-            cmbArchitectures.DataStore   = lstArchitecturesTypes;
-            cmbFilesForNewDisc.DataStore = lstFilesForMedia;
-            cmbFilesForNewDisk.DataStore = lstFilesForMedia;
-
-            FillBarcodeCombo();
-            FillLanguagesCombo();
-            FillArchitecturesCombo();
-            FillFilesCombos();
-
-            txtDeveloper.ToolTip  = "Who developed the application.";
-            txtPublisher.ToolTip  = "Who published the application.";
-            txtAuthor.ToolTip     = "Author of the audiovisual media.";
-            txtPerformer.ToolTip  = "Performer of the audiovisual media.";
-            txtName.ToolTip       = "Application name.";
-            txtVersion.ToolTip    = "Application version.";
-            txtPartNumber.ToolTip = "Part number of the application distribution.";
-            txtSerialNumber.ToolTip =
-                "Serial number of the application distribution. Not to be confused with serial number required to install.";
+            txtDeveloper.Text           = "";
+            txtPublisher.Text           = "";
+            txtAuthor.Text              = "";
+            txtPerformer.Text           = "";
+            txtName.Text                = "";
+            txtVersion.Text             = "";
+            chkKnownReleaseType.Checked = false;
+            cldReleaseDate.Value        = DateTime.UtcNow;
+            chkReleaseDate.Checked      = false;
+            txtPartNumber.Text          = "";
+            txtSerialNumber.Text        = "";
+            txtNewKeyword.Text          = "";
+            txtNewBarcode.Text          = "";
+            txtNewCategory.Text         = "";
+            txtNewSubcategory.Text      = "";
+            txtNewOsName.Text           = "";
+            txtNewOsVersion.Text        = "";
 
             FillFields();
         }
@@ -330,7 +347,7 @@ namespace CICMMetadataEditor
         */
     }
 
-    public void FillFields()
+    void FillFields()
     {
         if(metadata == null) return;
 
