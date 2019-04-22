@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2018.03.18 a las 09:28:50 PM WET 
+// Generado el: 2019.04.22 a las 11:40:52 PM BST 
 //
 
 
@@ -17,35 +17,37 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Describes a dump of a media that is stored in an audio device (like a ZX Spectrum cassette)
+ * Describes a dump of a media that is stored in an audio device (like a ZX Spectrum
+ *                 cassette)
+ *             
  * 
  * <p>Clase Java para AudioMediaType complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="AudioMediaType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Image" type="{}ImageType"/>
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="Checksums" type="{}ChecksumsType"/>
- *         &lt;element name="Sequence" type="{}SequenceType"/>
- *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="AccoustID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Block" type="{}AudioBlockType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Dimensions" type="{}DimensionsType"/>
- *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/>
- *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AudioMediaType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Image" type="{}ImageType"/&gt;
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
+ *         &lt;element name="Sequence" type="{}SequenceType"/&gt;
+ *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="AccoustID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Block" type="{}AudioBlockType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Dimensions" type="{}DimensionsType"/&gt;
+ *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/&gt;
+ *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

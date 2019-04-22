@@ -5069,6 +5069,8 @@ Namespace Schemas
         
         Private applicationIdentifierField As String
         
+        Private contentsField As FilesystemContentsType
+        
         '''<remarks/>
         Public Property Type() As String
             Get
@@ -5333,6 +5335,789 @@ Namespace Schemas
             End Get
             Set
                 Me.applicationIdentifierField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Contents() As FilesystemContentsType
+            Get
+                Return Me.contentsField
+            End Get
+            Set
+                Me.contentsField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class FilesystemContentsType
+        
+        Private fileField() As ContentsFileType
+        
+        Private directoryField() As DirectoryType
+        
+        Private namespaceField As String
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("File")>  _
+        Public Property File() As ContentsFileType()
+            Get
+                Return Me.fileField
+            End Get
+            Set
+                Me.fileField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Directory")>  _
+        Public Property Directory() As DirectoryType()
+            Get
+                Return Me.directoryField
+            End Get
+            Set
+                Me.directoryField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property [namespace]() As String
+            Get
+                Return Me.namespaceField
+            End Get
+            Set
+                Me.namespaceField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ContentsFileType
+        
+        Private checksumsField() As ChecksumType
+        
+        Private extendedAttributesField() As ExtendedAttributeType
+        
+        Private nameField As String
+        
+        Private creationTimeField As Date
+        
+        Private creationTimeFieldSpecified As Boolean
+        
+        Private accessTimeField As Date
+        
+        Private accessTimeFieldSpecified As Boolean
+        
+        Private statusChangeTimeField As Date
+        
+        Private statusChangeTimeFieldSpecified As Boolean
+        
+        Private backupTimeField As Date
+        
+        Private backupTimeFieldSpecified As Boolean
+        
+        Private lastWriteTimeField As Date
+        
+        Private lastWriteTimeFieldSpecified As Boolean
+        
+        Private attributesField As ULong
+        
+        Private posixModeField As UInteger
+        
+        Private posixModeFieldSpecified As Boolean
+        
+        Private deviceNumberField As ULong
+        
+        Private deviceNumberFieldSpecified As Boolean
+        
+        Private posixGroupIdField As ULong
+        
+        Private posixGroupIdFieldSpecified As Boolean
+        
+        Private inodeField As ULong
+        
+        Private linksField As ULong
+        
+        Private posixUserIdField As ULong
+        
+        Private posixUserIdFieldSpecified As Boolean
+        
+        Private lengthField As ULong
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("ExtendedAttribute", IsNullable:=false)>  _
+        Public Property ExtendedAttributes() As ExtendedAttributeType()
+            Get
+                Return Me.extendedAttributesField
+            End Get
+            Set
+                Me.extendedAttributesField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property name() As String
+            Get
+                Return Me.nameField
+            End Get
+            Set
+                Me.nameField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property creationTime() As Date
+            Get
+                Return Me.creationTimeField
+            End Get
+            Set
+                Me.creationTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property creationTimeSpecified() As Boolean
+            Get
+                Return Me.creationTimeFieldSpecified
+            End Get
+            Set
+                Me.creationTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property accessTime() As Date
+            Get
+                Return Me.accessTimeField
+            End Get
+            Set
+                Me.accessTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property accessTimeSpecified() As Boolean
+            Get
+                Return Me.accessTimeFieldSpecified
+            End Get
+            Set
+                Me.accessTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property statusChangeTime() As Date
+            Get
+                Return Me.statusChangeTimeField
+            End Get
+            Set
+                Me.statusChangeTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property statusChangeTimeSpecified() As Boolean
+            Get
+                Return Me.statusChangeTimeFieldSpecified
+            End Get
+            Set
+                Me.statusChangeTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property backupTime() As Date
+            Get
+                Return Me.backupTimeField
+            End Get
+            Set
+                Me.backupTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property backupTimeSpecified() As Boolean
+            Get
+                Return Me.backupTimeFieldSpecified
+            End Get
+            Set
+                Me.backupTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property lastWriteTime() As Date
+            Get
+                Return Me.lastWriteTimeField
+            End Get
+            Set
+                Me.lastWriteTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property lastWriteTimeSpecified() As Boolean
+            Get
+                Return Me.lastWriteTimeFieldSpecified
+            End Get
+            Set
+                Me.lastWriteTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property attributes() As ULong
+            Get
+                Return Me.attributesField
+            End Get
+            Set
+                Me.attributesField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property posixMode() As UInteger
+            Get
+                Return Me.posixModeField
+            End Get
+            Set
+                Me.posixModeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property posixModeSpecified() As Boolean
+            Get
+                Return Me.posixModeFieldSpecified
+            End Get
+            Set
+                Me.posixModeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property deviceNumber() As ULong
+            Get
+                Return Me.deviceNumberField
+            End Get
+            Set
+                Me.deviceNumberField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property deviceNumberSpecified() As Boolean
+            Get
+                Return Me.deviceNumberFieldSpecified
+            End Get
+            Set
+                Me.deviceNumberFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property posixGroupId() As ULong
+            Get
+                Return Me.posixGroupIdField
+            End Get
+            Set
+                Me.posixGroupIdField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property posixGroupIdSpecified() As Boolean
+            Get
+                Return Me.posixGroupIdFieldSpecified
+            End Get
+            Set
+                Me.posixGroupIdFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property inode() As ULong
+            Get
+                Return Me.inodeField
+            End Get
+            Set
+                Me.inodeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property links() As ULong
+            Get
+                Return Me.linksField
+            End Get
+            Set
+                Me.linksField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property posixUserId() As ULong
+            Get
+                Return Me.posixUserIdField
+            End Get
+            Set
+                Me.posixUserIdField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property posixUserIdSpecified() As Boolean
+            Get
+                Return Me.posixUserIdFieldSpecified
+            End Get
+            Set
+                Me.posixUserIdFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property length() As ULong
+            Get
+                Return Me.lengthField
+            End Get
+            Set
+                Me.lengthField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ExtendedAttributeType
+        
+        Private checksumsField() As ChecksumType
+        
+        Private nameField As String
+        
+        Private lengthField As ULong
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable:=false)>  _
+        Public Property Checksums() As ChecksumType()
+            Get
+                Return Me.checksumsField
+            End Get
+            Set
+                Me.checksumsField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property name() As String
+            Get
+                Return Me.nameField
+            End Get
+            Set
+                Me.nameField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property length() As ULong
+            Get
+                Return Me.lengthField
+            End Get
+            Set
+                Me.lengthField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DirectoryType
+        
+        Private fileField() As ContentsFileType
+        
+        Private directoryField() As DirectoryType
+        
+        Private nameField As String
+        
+        Private creationTimeField As Date
+        
+        Private creationTimeFieldSpecified As Boolean
+        
+        Private accessTimeField As Date
+        
+        Private accessTimeFieldSpecified As Boolean
+        
+        Private statusChangeTimeField As Date
+        
+        Private statusChangeTimeFieldSpecified As Boolean
+        
+        Private backupTimeField As Date
+        
+        Private backupTimeFieldSpecified As Boolean
+        
+        Private lastWriteTimeField As Date
+        
+        Private lastWriteTimeFieldSpecified As Boolean
+        
+        Private attributesField As ULong
+        
+        Private posixModeField As UInteger
+        
+        Private posixModeFieldSpecified As Boolean
+        
+        Private deviceNumberField As ULong
+        
+        Private deviceNumberFieldSpecified As Boolean
+        
+        Private posixGroupIdField As ULong
+        
+        Private posixGroupIdFieldSpecified As Boolean
+        
+        Private inodeField As ULong
+        
+        Private inodeFieldSpecified As Boolean
+        
+        Private linksField As ULong
+        
+        Private linksFieldSpecified As Boolean
+        
+        Private posixUserIdField As ULong
+        
+        Private posixUserIdFieldSpecified As Boolean
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("File")>  _
+        Public Property File() As ContentsFileType()
+            Get
+                Return Me.fileField
+            End Get
+            Set
+                Me.fileField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("Directory")>  _
+        Public Property Directory() As DirectoryType()
+            Get
+                Return Me.directoryField
+            End Get
+            Set
+                Me.directoryField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property name() As String
+            Get
+                Return Me.nameField
+            End Get
+            Set
+                Me.nameField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property creationTime() As Date
+            Get
+                Return Me.creationTimeField
+            End Get
+            Set
+                Me.creationTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property creationTimeSpecified() As Boolean
+            Get
+                Return Me.creationTimeFieldSpecified
+            End Get
+            Set
+                Me.creationTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property accessTime() As Date
+            Get
+                Return Me.accessTimeField
+            End Get
+            Set
+                Me.accessTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property accessTimeSpecified() As Boolean
+            Get
+                Return Me.accessTimeFieldSpecified
+            End Get
+            Set
+                Me.accessTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property statusChangeTime() As Date
+            Get
+                Return Me.statusChangeTimeField
+            End Get
+            Set
+                Me.statusChangeTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property statusChangeTimeSpecified() As Boolean
+            Get
+                Return Me.statusChangeTimeFieldSpecified
+            End Get
+            Set
+                Me.statusChangeTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property backupTime() As Date
+            Get
+                Return Me.backupTimeField
+            End Get
+            Set
+                Me.backupTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property backupTimeSpecified() As Boolean
+            Get
+                Return Me.backupTimeFieldSpecified
+            End Get
+            Set
+                Me.backupTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property lastWriteTime() As Date
+            Get
+                Return Me.lastWriteTimeField
+            End Get
+            Set
+                Me.lastWriteTimeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property lastWriteTimeSpecified() As Boolean
+            Get
+                Return Me.lastWriteTimeFieldSpecified
+            End Get
+            Set
+                Me.lastWriteTimeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property attributes() As ULong
+            Get
+                Return Me.attributesField
+            End Get
+            Set
+                Me.attributesField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property posixMode() As UInteger
+            Get
+                Return Me.posixModeField
+            End Get
+            Set
+                Me.posixModeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property posixModeSpecified() As Boolean
+            Get
+                Return Me.posixModeFieldSpecified
+            End Get
+            Set
+                Me.posixModeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property deviceNumber() As ULong
+            Get
+                Return Me.deviceNumberField
+            End Get
+            Set
+                Me.deviceNumberField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property deviceNumberSpecified() As Boolean
+            Get
+                Return Me.deviceNumberFieldSpecified
+            End Get
+            Set
+                Me.deviceNumberFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property posixGroupId() As ULong
+            Get
+                Return Me.posixGroupIdField
+            End Get
+            Set
+                Me.posixGroupIdField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property posixGroupIdSpecified() As Boolean
+            Get
+                Return Me.posixGroupIdFieldSpecified
+            End Get
+            Set
+                Me.posixGroupIdFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property inode() As ULong
+            Get
+                Return Me.inodeField
+            End Get
+            Set
+                Me.inodeField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property inodeSpecified() As Boolean
+            Get
+                Return Me.inodeFieldSpecified
+            End Get
+            Set
+                Me.inodeFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property links() As ULong
+            Get
+                Return Me.linksField
+            End Get
+            Set
+                Me.linksField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property linksSpecified() As Boolean
+            Get
+                Return Me.linksFieldSpecified
+            End Get
+            Set
+                Me.linksFieldSpecified = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property posixUserId() As ULong
+            Get
+                Return Me.posixUserIdField
+            End Get
+            Set
+                Me.posixUserIdField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlIgnoreAttribute()>  _
+        Public Property posixUserIdSpecified() As Boolean
+            Get
+                Return Me.posixUserIdFieldSpecified
+            End Get
+            Set
+                Me.posixUserIdFieldSpecified = value
             End Set
         End Property
     End Class

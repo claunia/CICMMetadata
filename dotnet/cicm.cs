@@ -5066,6 +5066,8 @@ namespace Schemas {
         
         private string applicationIdentifierField;
         
+        private FilesystemContentsType contentsField;
+        
         /// <remarks/>
         public string Type {
             get {
@@ -5330,6 +5332,789 @@ namespace Schemas {
             }
             set {
                 this.applicationIdentifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FilesystemContentsType Contents {
+            get {
+                return this.contentsField;
+            }
+            set {
+                this.contentsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FilesystemContentsType {
+        
+        private ContentsFileType[] fileField;
+        
+        private DirectoryType[] directoryField;
+        
+        private string namespaceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("File")]
+        public ContentsFileType[] File {
+            get {
+                return this.fileField;
+            }
+            set {
+                this.fileField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Directory")]
+        public DirectoryType[] Directory {
+            get {
+                return this.directoryField;
+            }
+            set {
+                this.directoryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string @namespace {
+            get {
+                return this.namespaceField;
+            }
+            set {
+                this.namespaceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ContentsFileType {
+        
+        private ChecksumType[] checksumsField;
+        
+        private ExtendedAttributeType[] extendedAttributesField;
+        
+        private string nameField;
+        
+        private System.DateTime creationTimeField;
+        
+        private bool creationTimeFieldSpecified;
+        
+        private System.DateTime accessTimeField;
+        
+        private bool accessTimeFieldSpecified;
+        
+        private System.DateTime statusChangeTimeField;
+        
+        private bool statusChangeTimeFieldSpecified;
+        
+        private System.DateTime backupTimeField;
+        
+        private bool backupTimeFieldSpecified;
+        
+        private System.DateTime lastWriteTimeField;
+        
+        private bool lastWriteTimeFieldSpecified;
+        
+        private ulong attributesField;
+        
+        private uint posixModeField;
+        
+        private bool posixModeFieldSpecified;
+        
+        private ulong deviceNumberField;
+        
+        private bool deviceNumberFieldSpecified;
+        
+        private ulong posixGroupIdField;
+        
+        private bool posixGroupIdFieldSpecified;
+        
+        private ulong inodeField;
+        
+        private ulong linksField;
+        
+        private ulong posixUserIdField;
+        
+        private bool posixUserIdFieldSpecified;
+        
+        private ulong lengthField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("ExtendedAttribute", IsNullable=false)]
+        public ExtendedAttributeType[] ExtendedAttributes {
+            get {
+                return this.extendedAttributesField;
+            }
+            set {
+                this.extendedAttributesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime creationTime {
+            get {
+                return this.creationTimeField;
+            }
+            set {
+                this.creationTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool creationTimeSpecified {
+            get {
+                return this.creationTimeFieldSpecified;
+            }
+            set {
+                this.creationTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime accessTime {
+            get {
+                return this.accessTimeField;
+            }
+            set {
+                this.accessTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool accessTimeSpecified {
+            get {
+                return this.accessTimeFieldSpecified;
+            }
+            set {
+                this.accessTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime statusChangeTime {
+            get {
+                return this.statusChangeTimeField;
+            }
+            set {
+                this.statusChangeTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statusChangeTimeSpecified {
+            get {
+                return this.statusChangeTimeFieldSpecified;
+            }
+            set {
+                this.statusChangeTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime backupTime {
+            get {
+                return this.backupTimeField;
+            }
+            set {
+                this.backupTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool backupTimeSpecified {
+            get {
+                return this.backupTimeFieldSpecified;
+            }
+            set {
+                this.backupTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime lastWriteTime {
+            get {
+                return this.lastWriteTimeField;
+            }
+            set {
+                this.lastWriteTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool lastWriteTimeSpecified {
+            get {
+                return this.lastWriteTimeFieldSpecified;
+            }
+            set {
+                this.lastWriteTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong attributes {
+            get {
+                return this.attributesField;
+            }
+            set {
+                this.attributesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public uint posixMode {
+            get {
+                return this.posixModeField;
+            }
+            set {
+                this.posixModeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool posixModeSpecified {
+            get {
+                return this.posixModeFieldSpecified;
+            }
+            set {
+                this.posixModeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong deviceNumber {
+            get {
+                return this.deviceNumberField;
+            }
+            set {
+                this.deviceNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool deviceNumberSpecified {
+            get {
+                return this.deviceNumberFieldSpecified;
+            }
+            set {
+                this.deviceNumberFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong posixGroupId {
+            get {
+                return this.posixGroupIdField;
+            }
+            set {
+                this.posixGroupIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool posixGroupIdSpecified {
+            get {
+                return this.posixGroupIdFieldSpecified;
+            }
+            set {
+                this.posixGroupIdFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong inode {
+            get {
+                return this.inodeField;
+            }
+            set {
+                this.inodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong links {
+            get {
+                return this.linksField;
+            }
+            set {
+                this.linksField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong posixUserId {
+            get {
+                return this.posixUserIdField;
+            }
+            set {
+                this.posixUserIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool posixUserIdSpecified {
+            get {
+                return this.posixUserIdFieldSpecified;
+            }
+            set {
+                this.posixUserIdFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong length {
+            get {
+                return this.lengthField;
+            }
+            set {
+                this.lengthField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExtendedAttributeType {
+        
+        private ChecksumType[] checksumsField;
+        
+        private string nameField;
+        
+        private ulong lengthField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Checksum", IsNullable=false)]
+        public ChecksumType[] Checksums {
+            get {
+                return this.checksumsField;
+            }
+            set {
+                this.checksumsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong length {
+            get {
+                return this.lengthField;
+            }
+            set {
+                this.lengthField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DirectoryType {
+        
+        private ContentsFileType[] fileField;
+        
+        private DirectoryType[] directoryField;
+        
+        private string nameField;
+        
+        private System.DateTime creationTimeField;
+        
+        private bool creationTimeFieldSpecified;
+        
+        private System.DateTime accessTimeField;
+        
+        private bool accessTimeFieldSpecified;
+        
+        private System.DateTime statusChangeTimeField;
+        
+        private bool statusChangeTimeFieldSpecified;
+        
+        private System.DateTime backupTimeField;
+        
+        private bool backupTimeFieldSpecified;
+        
+        private System.DateTime lastWriteTimeField;
+        
+        private bool lastWriteTimeFieldSpecified;
+        
+        private ulong attributesField;
+        
+        private uint posixModeField;
+        
+        private bool posixModeFieldSpecified;
+        
+        private ulong deviceNumberField;
+        
+        private bool deviceNumberFieldSpecified;
+        
+        private ulong posixGroupIdField;
+        
+        private bool posixGroupIdFieldSpecified;
+        
+        private ulong inodeField;
+        
+        private bool inodeFieldSpecified;
+        
+        private ulong linksField;
+        
+        private bool linksFieldSpecified;
+        
+        private ulong posixUserIdField;
+        
+        private bool posixUserIdFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("File")]
+        public ContentsFileType[] File {
+            get {
+                return this.fileField;
+            }
+            set {
+                this.fileField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Directory")]
+        public DirectoryType[] Directory {
+            get {
+                return this.directoryField;
+            }
+            set {
+                this.directoryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime creationTime {
+            get {
+                return this.creationTimeField;
+            }
+            set {
+                this.creationTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool creationTimeSpecified {
+            get {
+                return this.creationTimeFieldSpecified;
+            }
+            set {
+                this.creationTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime accessTime {
+            get {
+                return this.accessTimeField;
+            }
+            set {
+                this.accessTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool accessTimeSpecified {
+            get {
+                return this.accessTimeFieldSpecified;
+            }
+            set {
+                this.accessTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime statusChangeTime {
+            get {
+                return this.statusChangeTimeField;
+            }
+            set {
+                this.statusChangeTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statusChangeTimeSpecified {
+            get {
+                return this.statusChangeTimeFieldSpecified;
+            }
+            set {
+                this.statusChangeTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime backupTime {
+            get {
+                return this.backupTimeField;
+            }
+            set {
+                this.backupTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool backupTimeSpecified {
+            get {
+                return this.backupTimeFieldSpecified;
+            }
+            set {
+                this.backupTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime lastWriteTime {
+            get {
+                return this.lastWriteTimeField;
+            }
+            set {
+                this.lastWriteTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool lastWriteTimeSpecified {
+            get {
+                return this.lastWriteTimeFieldSpecified;
+            }
+            set {
+                this.lastWriteTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong attributes {
+            get {
+                return this.attributesField;
+            }
+            set {
+                this.attributesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public uint posixMode {
+            get {
+                return this.posixModeField;
+            }
+            set {
+                this.posixModeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool posixModeSpecified {
+            get {
+                return this.posixModeFieldSpecified;
+            }
+            set {
+                this.posixModeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong deviceNumber {
+            get {
+                return this.deviceNumberField;
+            }
+            set {
+                this.deviceNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool deviceNumberSpecified {
+            get {
+                return this.deviceNumberFieldSpecified;
+            }
+            set {
+                this.deviceNumberFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong posixGroupId {
+            get {
+                return this.posixGroupIdField;
+            }
+            set {
+                this.posixGroupIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool posixGroupIdSpecified {
+            get {
+                return this.posixGroupIdFieldSpecified;
+            }
+            set {
+                this.posixGroupIdFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong inode {
+            get {
+                return this.inodeField;
+            }
+            set {
+                this.inodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool inodeSpecified {
+            get {
+                return this.inodeFieldSpecified;
+            }
+            set {
+                this.inodeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong links {
+            get {
+                return this.linksField;
+            }
+            set {
+                this.linksField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool linksSpecified {
+            get {
+                return this.linksFieldSpecified;
+            }
+            set {
+                this.linksFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ulong posixUserId {
+            get {
+                return this.posixUserIdField;
+            }
+            set {
+                this.posixUserIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool posixUserIdSpecified {
+            get {
+                return this.posixUserIdFieldSpecified;
+            }
+            set {
+                this.posixUserIdFieldSpecified = value;
             }
         }
     }

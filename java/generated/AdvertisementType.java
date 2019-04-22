@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2018.03.18 a las 09:28:50 PM WET 
+// Generado el: 2019.04.22 a las 11:40:52 PM BST 
 //
 
 
@@ -22,26 +22,26 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="AdvertisementType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Product" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="File" type="{}FileType"/>
- *         &lt;element name="FileSize" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="Frames" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="Duration" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="MeanFrameRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="Checksums" type="{}ChecksumsType"/>
- *         &lt;element name="AudioTrack" type="{}AudioTracksType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="VideoTrack" type="{}VideoTracksType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SubtitleTrack" type="{}SubtitleTracksType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Recording" type="{}RecordingType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AdvertisementType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Product" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="File" type="{}FileType"/&gt;
+ *         &lt;element name="FileSize" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="Frames" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="Duration" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="MeanFrameRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
+ *         &lt;element name="AudioTrack" type="{}AudioTracksType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="VideoTrack" type="{}VideoTracksType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="SubtitleTrack" type="{}SubtitleTracksType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Recording" type="{}RecordingType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

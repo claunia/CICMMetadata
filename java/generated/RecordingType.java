@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2018.03.18 a las 09:28:50 PM WET 
+// Generado el: 2019.04.22 a las 11:40:52 PM BST 
 //
 
 
@@ -24,93 +24,93 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="RecordingType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Broadcaster" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BroadcastPlatform" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="SourceFormat">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="ITU-A"/>
- *               &lt;enumeration value="ITU-B"/>
- *               &lt;enumeration value="ITU-C"/>
- *               &lt;enumeration value="ITU-D"/>
- *               &lt;enumeration value="ITU-E"/>
- *               &lt;enumeration value="ITU-F"/>
- *               &lt;enumeration value="ITU-G"/>
- *               &lt;enumeration value="ITU-H"/>
- *               &lt;enumeration value="ITU-I"/>
- *               &lt;enumeration value="ITU-J"/>
- *               &lt;enumeration value="ITU-K"/>
- *               &lt;enumeration value="ITU-L"/>
- *               &lt;enumeration value="ITU-M"/>
- *               &lt;enumeration value="ITU-N"/>
- *               &lt;enumeration value="PAL-B"/>
- *               &lt;enumeration value="SECAM-B"/>
- *               &lt;enumeration value="PAL-D"/>
- *               &lt;enumeration value="SECAM-D"/>
- *               &lt;enumeration value="PAL-G"/>
- *               &lt;enumeration value="SECAM-G"/>
- *               &lt;enumeration value="PAL-H"/>
- *               &lt;enumeration value="PAL-I"/>
- *               &lt;enumeration value="PAL-K"/>
- *               &lt;enumeration value="SECAM-K"/>
- *               &lt;enumeration value="NTSC-M"/>
- *               &lt;enumeration value="PAL-N"/>
- *               &lt;enumeration value="PAL-M"/>
- *               &lt;enumeration value="SECAM-M"/>
- *               &lt;enumeration value="MUSE"/>
- *               &lt;enumeration value="PALplus"/>
- *               &lt;enumeration value="FM"/>
- *               &lt;enumeration value="AM"/>
- *               &lt;enumeration value="COFDM"/>
- *               &lt;enumeration value="CAM-D"/>
- *               &lt;enumeration value="DAB"/>
- *               &lt;enumeration value="DAB+"/>
- *               &lt;enumeration value="DRM"/>
- *               &lt;enumeration value="DRM+"/>
- *               &lt;enumeration value="FMeXtra"/>
- *               &lt;enumeration value="ATSC"/>
- *               &lt;enumeration value="ATSC2"/>
- *               &lt;enumeration value="ATSC3"/>
- *               &lt;enumeration value="ATSC-M/H"/>
- *               &lt;enumeration value="DVB-T"/>
- *               &lt;enumeration value="DVB-T2"/>
- *               &lt;enumeration value="DVB-S"/>
- *               &lt;enumeration value="DVB-S2"/>
- *               &lt;enumeration value="DVB-S2X"/>
- *               &lt;enumeration value="DVB-C"/>
- *               &lt;enumeration value="DVB-C2"/>
- *               &lt;enumeration value="DVB-H"/>
- *               &lt;enumeration value="DVB-NGH"/>
- *               &lt;enumeration value="DVB-SH"/>
- *               &lt;enumeration value="ISDB-T"/>
- *               &lt;enumeration value="ISDB-Tb"/>
- *               &lt;enumeration value="ISDB-S"/>
- *               &lt;enumeration value="ISDB-C"/>
- *               &lt;enumeration value="1seg"/>
- *               &lt;enumeration value="DTMB"/>
- *               &lt;enumeration value="CCMB"/>
- *               &lt;enumeration value="T-DMB"/>
- *               &lt;enumeration value="S-DMB"/>
- *               &lt;enumeration value="IPTV"/>
- *               &lt;enumeration value="DVB-MT"/>
- *               &lt;enumeration value="DVB-MC"/>
- *               &lt;enumeration value="DVB-MS"/>
- *               &lt;enumeration value="ADR"/>
- *               &lt;enumeration value="SDR"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="Timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *         &lt;element name="Software" type="{}SoftwareType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Coordinates" type="{}CoordinatesType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RecordingType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Broadcaster" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BroadcastPlatform" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="SourceFormat"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="ITU-A"/&gt;
+ *               &lt;enumeration value="ITU-B"/&gt;
+ *               &lt;enumeration value="ITU-C"/&gt;
+ *               &lt;enumeration value="ITU-D"/&gt;
+ *               &lt;enumeration value="ITU-E"/&gt;
+ *               &lt;enumeration value="ITU-F"/&gt;
+ *               &lt;enumeration value="ITU-G"/&gt;
+ *               &lt;enumeration value="ITU-H"/&gt;
+ *               &lt;enumeration value="ITU-I"/&gt;
+ *               &lt;enumeration value="ITU-J"/&gt;
+ *               &lt;enumeration value="ITU-K"/&gt;
+ *               &lt;enumeration value="ITU-L"/&gt;
+ *               &lt;enumeration value="ITU-M"/&gt;
+ *               &lt;enumeration value="ITU-N"/&gt;
+ *               &lt;enumeration value="PAL-B"/&gt;
+ *               &lt;enumeration value="SECAM-B"/&gt;
+ *               &lt;enumeration value="PAL-D"/&gt;
+ *               &lt;enumeration value="SECAM-D"/&gt;
+ *               &lt;enumeration value="PAL-G"/&gt;
+ *               &lt;enumeration value="SECAM-G"/&gt;
+ *               &lt;enumeration value="PAL-H"/&gt;
+ *               &lt;enumeration value="PAL-I"/&gt;
+ *               &lt;enumeration value="PAL-K"/&gt;
+ *               &lt;enumeration value="SECAM-K"/&gt;
+ *               &lt;enumeration value="NTSC-M"/&gt;
+ *               &lt;enumeration value="PAL-N"/&gt;
+ *               &lt;enumeration value="PAL-M"/&gt;
+ *               &lt;enumeration value="SECAM-M"/&gt;
+ *               &lt;enumeration value="MUSE"/&gt;
+ *               &lt;enumeration value="PALplus"/&gt;
+ *               &lt;enumeration value="FM"/&gt;
+ *               &lt;enumeration value="AM"/&gt;
+ *               &lt;enumeration value="COFDM"/&gt;
+ *               &lt;enumeration value="CAM-D"/&gt;
+ *               &lt;enumeration value="DAB"/&gt;
+ *               &lt;enumeration value="DAB+"/&gt;
+ *               &lt;enumeration value="DRM"/&gt;
+ *               &lt;enumeration value="DRM+"/&gt;
+ *               &lt;enumeration value="FMeXtra"/&gt;
+ *               &lt;enumeration value="ATSC"/&gt;
+ *               &lt;enumeration value="ATSC2"/&gt;
+ *               &lt;enumeration value="ATSC3"/&gt;
+ *               &lt;enumeration value="ATSC-M/H"/&gt;
+ *               &lt;enumeration value="DVB-T"/&gt;
+ *               &lt;enumeration value="DVB-T2"/&gt;
+ *               &lt;enumeration value="DVB-S"/&gt;
+ *               &lt;enumeration value="DVB-S2"/&gt;
+ *               &lt;enumeration value="DVB-S2X"/&gt;
+ *               &lt;enumeration value="DVB-C"/&gt;
+ *               &lt;enumeration value="DVB-C2"/&gt;
+ *               &lt;enumeration value="DVB-H"/&gt;
+ *               &lt;enumeration value="DVB-NGH"/&gt;
+ *               &lt;enumeration value="DVB-SH"/&gt;
+ *               &lt;enumeration value="ISDB-T"/&gt;
+ *               &lt;enumeration value="ISDB-Tb"/&gt;
+ *               &lt;enumeration value="ISDB-S"/&gt;
+ *               &lt;enumeration value="ISDB-C"/&gt;
+ *               &lt;enumeration value="1seg"/&gt;
+ *               &lt;enumeration value="DTMB"/&gt;
+ *               &lt;enumeration value="CCMB"/&gt;
+ *               &lt;enumeration value="T-DMB"/&gt;
+ *               &lt;enumeration value="S-DMB"/&gt;
+ *               &lt;enumeration value="IPTV"/&gt;
+ *               &lt;enumeration value="DVB-MT"/&gt;
+ *               &lt;enumeration value="DVB-MC"/&gt;
+ *               &lt;enumeration value="DVB-MS"/&gt;
+ *               &lt;enumeration value="ADR"/&gt;
+ *               &lt;enumeration value="SDR"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+ *         &lt;element name="Software" type="{}SoftwareType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Coordinates" type="{}CoordinatesType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

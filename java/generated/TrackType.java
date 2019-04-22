@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2018.03.18 a las 09:28:50 PM WET 
+// Generado el: 2019.04.22 a las 11:40:52 PM BST 
 //
 
 
@@ -22,42 +22,42 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="TrackType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Image" type="{}ImageType"/>
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="Sequence" type="{}TrackSequenceType"/>
- *         &lt;element name="StartMSF" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="EndMSF" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="TrackType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="audio"/>
- *               &lt;enumeration value="mode0"/>
- *               &lt;enumeration value="mode1"/>
- *               &lt;enumeration value="mode2"/>
- *               &lt;enumeration value="m2f1"/>
- *               &lt;enumeration value="m2f2"/>
- *               &lt;enumeration value="dvd"/>
- *               &lt;enumeration value="hddvd"/>
- *               &lt;enumeration value="bluray"/>
- *               &lt;enumeration value="ddcd"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="BytesPerSector" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="AccoustID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Checksums" type="{}ChecksumsType"/>
- *         &lt;element name="SubChannel" type="{}SubChannelType" minOccurs="0"/>
- *         &lt;element name="FileSystemInformation" type="{}FileSystemInformationType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="TrackType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Image" type="{}ImageType"/&gt;
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="Sequence" type="{}TrackSequenceType"/&gt;
+ *         &lt;element name="StartMSF" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="EndMSF" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="TrackType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="audio"/&gt;
+ *               &lt;enumeration value="mode0"/&gt;
+ *               &lt;enumeration value="mode1"/&gt;
+ *               &lt;enumeration value="mode2"/&gt;
+ *               &lt;enumeration value="m2f1"/&gt;
+ *               &lt;enumeration value="m2f2"/&gt;
+ *               &lt;enumeration value="dvd"/&gt;
+ *               &lt;enumeration value="hddvd"/&gt;
+ *               &lt;enumeration value="bluray"/&gt;
+ *               &lt;enumeration value="ddcd"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="BytesPerSector" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="AccoustID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
+ *         &lt;element name="SubChannel" type="{}SubChannelType" minOccurs="0"/&gt;
+ *         &lt;element name="FileSystemInformation" type="{}FileSystemInformationType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

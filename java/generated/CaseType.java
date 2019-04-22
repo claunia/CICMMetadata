@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2018.03.18 a las 09:28:50 PM WET 
+// Generado el: 2019.04.22 a las 11:40:52 PM BST 
 //
 
 
@@ -20,48 +20,48 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="CaseType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="CaseType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="jewel"/>
- *               &lt;enumeration value="bigjewel"/>
- *               &lt;enumeration value="slimjewel"/>
- *               &lt;enumeration value="sleeve"/>
- *               &lt;enumeration value="qpack"/>
- *               &lt;enumeration value="digisleeve"/>
- *               &lt;enumeration value="discboxslider"/>
- *               &lt;enumeration value="compacplus"/>
- *               &lt;enumeration value="keepcase"/>
- *               &lt;enumeration value="snapcase"/>
- *               &lt;enumeration value="softcase"/>
- *               &lt;enumeration value="ecopack"/>
- *               &lt;enumeration value="liftlock"/>
- *               &lt;enumeration value="spindle"/>
- *               &lt;enumeration value="ps2case"/>
- *               &lt;enumeration value="ps3case"/>
- *               &lt;enumeration value="bluraykeepcase"/>
- *               &lt;enumeration value="pscase"/>
- *               &lt;enumeration value="dccase"/>
- *               &lt;enumeration value="saturncase"/>
- *               &lt;enumeration value="xboxcase"/>
- *               &lt;enumeration value="xbox360case"/>
- *               &lt;enumeration value="xboxonecase"/>
- *               &lt;enumeration value="saturnbigcase"/>
- *               &lt;enumeration value="gccase"/>
- *               &lt;enumeration value="wiicase"/>
- *               &lt;enumeration value="unknown"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="Scans" type="{}ScansType"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CaseType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="CaseType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="jewel"/&gt;
+ *               &lt;enumeration value="bigjewel"/&gt;
+ *               &lt;enumeration value="slimjewel"/&gt;
+ *               &lt;enumeration value="sleeve"/&gt;
+ *               &lt;enumeration value="qpack"/&gt;
+ *               &lt;enumeration value="digisleeve"/&gt;
+ *               &lt;enumeration value="discboxslider"/&gt;
+ *               &lt;enumeration value="compacplus"/&gt;
+ *               &lt;enumeration value="keepcase"/&gt;
+ *               &lt;enumeration value="snapcase"/&gt;
+ *               &lt;enumeration value="softcase"/&gt;
+ *               &lt;enumeration value="ecopack"/&gt;
+ *               &lt;enumeration value="liftlock"/&gt;
+ *               &lt;enumeration value="spindle"/&gt;
+ *               &lt;enumeration value="ps2case"/&gt;
+ *               &lt;enumeration value="ps3case"/&gt;
+ *               &lt;enumeration value="bluraykeepcase"/&gt;
+ *               &lt;enumeration value="pscase"/&gt;
+ *               &lt;enumeration value="dccase"/&gt;
+ *               &lt;enumeration value="saturncase"/&gt;
+ *               &lt;enumeration value="xboxcase"/&gt;
+ *               &lt;enumeration value="xbox360case"/&gt;
+ *               &lt;enumeration value="xboxonecase"/&gt;
+ *               &lt;enumeration value="saturnbigcase"/&gt;
+ *               &lt;enumeration value="gccase"/&gt;
+ *               &lt;enumeration value="wiicase"/&gt;
+ *               &lt;enumeration value="unknown"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Scans" type="{}ScansType"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

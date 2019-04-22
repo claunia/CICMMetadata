@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2018.03.18 a las 09:28:50 PM WET 
+// Generado el: 2019.04.22 a las 11:40:52 PM BST 
 //
 
 
@@ -21,48 +21,48 @@ import javax.xml.bind.annotation.XmlValue;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="BarcodeType">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *       &lt;attribute name="type" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="aztec"/>
- *             &lt;enumeration value="codabar"/>
- *             &lt;enumeration value="code11"/>
- *             &lt;enumeration value="code128"/>
- *             &lt;enumeration value="code39"/>
- *             &lt;enumeration value="code93"/>
- *             &lt;enumeration value="cpcbinary"/>
- *             &lt;enumeration value="ezcode"/>
- *             &lt;enumeration value="fim"/>
- *             &lt;enumeration value="itf"/>
- *             &lt;enumeration value="itf14"/>
- *             &lt;enumeration value="ean13"/>
- *             &lt;enumeration value="ean8"/>
- *             &lt;enumeration value="maxicode"/>
- *             &lt;enumeration value="isbn"/>
- *             &lt;enumeration value="isrc"/>
- *             &lt;enumeration value="msi"/>
- *             &lt;enumeration value="tof"/>
- *             &lt;enumeration value="shotcode"/>
- *             &lt;enumeration value="rm4scc"/>
- *             &lt;enumeration value="qr"/>
- *             &lt;enumeration value="ean5"/>
- *             &lt;enumeration value="ean2"/>
- *             &lt;enumeration value="qr"/>
- *             &lt;enumeration value="postnet"/>
- *             &lt;enumeration value="postbar"/>
- *             &lt;enumeration value="plessey"/>
- *             &lt;enumeration value="pharmacode"/>
- *             &lt;enumeration value="pdf417"/>
- *             &lt;enumeration value="patchcode"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="BarcodeType"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+ *       &lt;attribute name="type" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;enumeration value="aztec"/&gt;
+ *             &lt;enumeration value="codabar"/&gt;
+ *             &lt;enumeration value="code11"/&gt;
+ *             &lt;enumeration value="code128"/&gt;
+ *             &lt;enumeration value="code39"/&gt;
+ *             &lt;enumeration value="code93"/&gt;
+ *             &lt;enumeration value="cpcbinary"/&gt;
+ *             &lt;enumeration value="ezcode"/&gt;
+ *             &lt;enumeration value="fim"/&gt;
+ *             &lt;enumeration value="itf"/&gt;
+ *             &lt;enumeration value="itf14"/&gt;
+ *             &lt;enumeration value="ean13"/&gt;
+ *             &lt;enumeration value="ean8"/&gt;
+ *             &lt;enumeration value="maxicode"/&gt;
+ *             &lt;enumeration value="isbn"/&gt;
+ *             &lt;enumeration value="isrc"/&gt;
+ *             &lt;enumeration value="msi"/&gt;
+ *             &lt;enumeration value="tof"/&gt;
+ *             &lt;enumeration value="shotcode"/&gt;
+ *             &lt;enumeration value="rm4scc"/&gt;
+ *             &lt;enumeration value="qr"/&gt;
+ *             &lt;enumeration value="ean5"/&gt;
+ *             &lt;enumeration value="ean2"/&gt;
+ *             &lt;enumeration value="qr"/&gt;
+ *             &lt;enumeration value="postnet"/&gt;
+ *             &lt;enumeration value="postbar"/&gt;
+ *             &lt;enumeration value="plessey"/&gt;
+ *             &lt;enumeration value="pharmacode"/&gt;
+ *             &lt;enumeration value="pdf417"/&gt;
+ *             &lt;enumeration value="patchcode"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

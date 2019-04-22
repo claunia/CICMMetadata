@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
-// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2018.03.18 a las 09:28:50 PM WET 
+// Generado el: 2019.04.22 a las 11:40:52 PM BST 
 //
 
 
@@ -26,58 +26,58 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="CICMMetadataType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Developer" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Publisher" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Author" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Performer" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Version" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ReleaseType" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="Retail"/>
- *               &lt;enumeration value="Bundle"/>
- *               &lt;enumeration value="Coverdisc"/>
- *               &lt;enumeration value="Subscription"/>
- *               &lt;enumeration value="Demo"/>
- *               &lt;enumeration value="OEM"/>
- *               &lt;enumeration value="Shareware"/>
- *               &lt;enumeration value="FOSS"/>
- *               &lt;enumeration value="Adware"/>
- *               &lt;enumeration value="Donationware"/>
- *               &lt;enumeration value="Digital download"/>
- *               &lt;enumeration value="SaaS"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="ReleaseDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
- *         &lt;element name="Barcodes" type="{}BarcodesType" minOccurs="0"/>
- *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Keywords" type="{}KeywordsType" minOccurs="0"/>
- *         &lt;element name="Magazine" type="{}MagazineType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Book" type="{}BookType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Categories" type="{}CategoriesType" minOccurs="0"/>
- *         &lt;element name="Subcategories" type="{}SubcategoriesType" minOccurs="0"/>
- *         &lt;element name="Languages" type="{}LanguagesType" minOccurs="0"/>
- *         &lt;element name="Systems" type="{}SystemsType" minOccurs="0"/>
- *         &lt;element name="Architectures" type="{}ArchitecturesType" minOccurs="0"/>
- *         &lt;element name="RequiredOperatingSystems" type="{}RequiredOperatingSystemsType" minOccurs="0"/>
- *         &lt;element name="UserManual" type="{}UserManualType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="OpticalDisc" type="{}OpticalDiscType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Advertisement" type="{}AdvertisementType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="LinearMedia" type="{}LinearMediaType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="PCICard" type="{}PCIType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="BlockMedia" type="{}BlockMediaType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AudioMedia" type="{}AudioMediaType" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CICMMetadataType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Developer" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Publisher" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Author" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Performer" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Version" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="ReleaseType" minOccurs="0"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="Retail"/&gt;
+ *               &lt;enumeration value="Bundle"/&gt;
+ *               &lt;enumeration value="Coverdisc"/&gt;
+ *               &lt;enumeration value="Subscription"/&gt;
+ *               &lt;enumeration value="Demo"/&gt;
+ *               &lt;enumeration value="OEM"/&gt;
+ *               &lt;enumeration value="Shareware"/&gt;
+ *               &lt;enumeration value="FOSS"/&gt;
+ *               &lt;enumeration value="Adware"/&gt;
+ *               &lt;enumeration value="Donationware"/&gt;
+ *               &lt;enumeration value="Digital download"/&gt;
+ *               &lt;enumeration value="SaaS"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="ReleaseDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
+ *         &lt;element name="Barcodes" type="{}BarcodesType" minOccurs="0"/&gt;
+ *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Keywords" type="{}KeywordsType" minOccurs="0"/&gt;
+ *         &lt;element name="Magazine" type="{}MagazineType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Book" type="{}BookType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Categories" type="{}CategoriesType" minOccurs="0"/&gt;
+ *         &lt;element name="Subcategories" type="{}SubcategoriesType" minOccurs="0"/&gt;
+ *         &lt;element name="Languages" type="{}LanguagesType" minOccurs="0"/&gt;
+ *         &lt;element name="Systems" type="{}SystemsType" minOccurs="0"/&gt;
+ *         &lt;element name="Architectures" type="{}ArchitecturesType" minOccurs="0"/&gt;
+ *         &lt;element name="RequiredOperatingSystems" type="{}RequiredOperatingSystemsType" minOccurs="0"/&gt;
+ *         &lt;element name="UserManual" type="{}UserManualType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="OpticalDisc" type="{}OpticalDiscType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Advertisement" type="{}AdvertisementType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="LinearMedia" type="{}LinearMediaType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="PCICard" type="{}PCIType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="BlockMedia" type="{}BlockMediaType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="AudioMedia" type="{}AudioMediaType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
