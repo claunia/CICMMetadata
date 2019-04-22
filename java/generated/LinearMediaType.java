@@ -2,15 +2,17 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,15 +31,15 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="Image" type="{}ImageType"/&gt;
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
  *         &lt;element name="ImageChecksums" type="{}ChecksumsType"/&gt;
  *         &lt;element name="Checksums" type="{}ChecksumsType" minOccurs="0"/&gt;
  *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Title" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Sequence" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="ImageInterleave" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="Interleave" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="Sequence" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/&gt;
+ *         &lt;element name="ImageInterleave" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/&gt;
+ *         &lt;element name="Interleave" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/&gt;
  *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Package" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
@@ -81,8 +83,9 @@ public class LinearMediaType {
 
     @XmlElement(name = "Image", required = true)
     protected ImageType image;
-    @XmlElement(name = "Size")
-    protected long size;
+    @XmlElement(name = "Size", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger size;
     @XmlElement(name = "ImageChecksums", required = true)
     protected ChecksumsType imageChecksums;
     @XmlElement(name = "Checksums")
@@ -94,11 +97,14 @@ public class LinearMediaType {
     @XmlElement(name = "Title", required = true)
     protected String title;
     @XmlElement(name = "Sequence")
-    protected Integer sequence;
+    @XmlSchemaType(name = "unsignedInt")
+    protected Long sequence;
     @XmlElement(name = "ImageInterleave")
-    protected Integer imageInterleave;
+    @XmlSchemaType(name = "unsignedInt")
+    protected Long imageInterleave;
     @XmlElement(name = "Interleave")
-    protected Integer interleave;
+    @XmlSchemaType(name = "unsignedInt")
+    protected Long interleave;
     @XmlElement(name = "Manufacturer")
     protected String manufacturer;
     @XmlElement(name = "Model")
@@ -145,16 +151,24 @@ public class LinearMediaType {
     /**
      * Obtiene el valor de la propiedad size.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getSize() {
+    public BigInteger getSize() {
         return size;
     }
 
     /**
      * Define el valor de la propiedad size.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setSize(long value) {
+    public void setSize(BigInteger value) {
         this.size = value;
     }
 
@@ -283,10 +297,10 @@ public class LinearMediaType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public Integer getSequence() {
+    public Long getSequence() {
         return sequence;
     }
 
@@ -295,10 +309,10 @@ public class LinearMediaType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public void setSequence(Integer value) {
+    public void setSequence(Long value) {
         this.sequence = value;
     }
 
@@ -307,10 +321,10 @@ public class LinearMediaType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public Integer getImageInterleave() {
+    public Long getImageInterleave() {
         return imageInterleave;
     }
 
@@ -319,10 +333,10 @@ public class LinearMediaType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public void setImageInterleave(Integer value) {
+    public void setImageInterleave(Long value) {
         this.imageInterleave = value;
     }
 
@@ -331,10 +345,10 @@ public class LinearMediaType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public Integer getInterleave() {
+    public Long getInterleave() {
         return interleave;
     }
 
@@ -343,10 +357,10 @@ public class LinearMediaType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public void setInterleave(Integer value) {
+    public void setInterleave(Long value) {
         this.interleave = value;
     }
 

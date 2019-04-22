@@ -2,17 +2,19 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -27,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="Image" type="{}ImageType"/&gt;
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
  *         &lt;element name="Sequence" type="{}SequenceType"/&gt;
  *         &lt;element name="Layers" type="{}LayersType" minOccurs="0"/&gt;
  *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
@@ -41,8 +43,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DiscType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="DiscSubType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Offset" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="Tracks" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Sessions" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Tracks" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="Sessions" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
  *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Dimensions" type="{}DimensionsType"/&gt;
  *         &lt;element name="Case" type="{}CaseType" minOccurs="0"/&gt;
@@ -131,8 +133,9 @@ public class OpticalDiscType {
 
     @XmlElement(name = "Image", required = true)
     protected ImageType image;
-    @XmlElement(name = "Size")
-    protected long size;
+    @XmlElement(name = "Size", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger size;
     @XmlElement(name = "Sequence", required = true)
     protected SequenceType sequence;
     @XmlElement(name = "Layers")
@@ -159,10 +162,12 @@ public class OpticalDiscType {
     protected String discSubType;
     @XmlElement(name = "Offset")
     protected Integer offset;
-    @XmlElement(name = "Tracks", type = Integer.class)
-    protected List<Integer> tracks;
+    @XmlElement(name = "Tracks", type = Long.class)
+    @XmlSchemaType(name = "unsignedInt")
+    protected List<Long> tracks;
     @XmlElement(name = "Sessions")
-    protected int sessions;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long sessions;
     @XmlElement(name = "CopyProtection")
     protected String copyProtection;
     @XmlElement(name = "Dimensions", required = true)
@@ -247,16 +252,24 @@ public class OpticalDiscType {
     /**
      * Obtiene el valor de la propiedad size.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getSize() {
+    public BigInteger getSize() {
         return size;
     }
 
     /**
      * Define el valor de la propiedad size.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setSize(long value) {
+    public void setSize(BigInteger value) {
         this.size = value;
     }
 
@@ -615,13 +628,13 @@ public class OpticalDiscType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Integer }
+     * {@link Long }
      * 
      * 
      */
-    public List<Integer> getTracks() {
+    public List<Long> getTracks() {
         if (tracks == null) {
-            tracks = new ArrayList<Integer>();
+            tracks = new ArrayList<Long>();
         }
         return this.tracks;
     }
@@ -630,7 +643,7 @@ public class OpticalDiscType {
      * Obtiene el valor de la propiedad sessions.
      * 
      */
-    public int getSessions() {
+    public long getSessions() {
         return sessions;
     }
 
@@ -638,7 +651,7 @@ public class OpticalDiscType {
      * Define el valor de la propiedad sessions.
      * 
      */
-    public void setSessions(int value) {
+    public void setSessions(long value) {
         this.sessions = value;
     }
 

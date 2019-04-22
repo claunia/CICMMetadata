@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -31,9 +31,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Editorial" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="PublicationDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
- *         &lt;element name="Number" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="Number" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/&gt;
  *         &lt;element name="Language" type="{}LanguagesType" minOccurs="0"/&gt;
- *         &lt;element name="Pages" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="Pages" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/&gt;
  *         &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Scan" type="{}ScanType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -71,11 +71,13 @@ public class MagazineType {
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar publicationDate;
     @XmlElement(name = "Number")
-    protected Integer number;
+    @XmlSchemaType(name = "unsignedInt")
+    protected Long number;
     @XmlElement(name = "Language")
     protected LanguagesType language;
     @XmlElement(name = "Pages")
-    protected Integer pages;
+    @XmlSchemaType(name = "unsignedInt")
+    protected Long pages;
     @XmlElement(name = "PageSize")
     protected String pageSize;
     @XmlElement(name = "Scan")
@@ -206,10 +208,10 @@ public class MagazineType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public Integer getNumber() {
+    public Long getNumber() {
         return number;
     }
 
@@ -218,10 +220,10 @@ public class MagazineType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public void setNumber(Integer value) {
+    public void setNumber(Long value) {
         this.number = value;
     }
 
@@ -254,10 +256,10 @@ public class MagazineType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public Integer getPages() {
+    public Long getPages() {
         return pages;
     }
 
@@ -266,10 +268,10 @@ public class MagazineType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public void setPages(Integer value) {
+    public void setPages(Long value) {
         this.pages = value;
     }
 

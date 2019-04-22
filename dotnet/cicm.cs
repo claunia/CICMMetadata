@@ -580,7 +580,7 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private string accoustIDField;
         
@@ -599,7 +599,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -649,7 +649,7 @@ namespace Schemas {
         
         private string formatField;
         
-        private long offsetField;
+        private ulong offsetField;
         
         private bool offsetFieldSpecified;
         
@@ -668,7 +668,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public long offset {
+        public ulong offset {
             get {
                 return this.offsetField;
             }
@@ -828,7 +828,7 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private ChecksumType[] checksumsField;
         
@@ -865,7 +865,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -1007,15 +1007,15 @@ namespace Schemas {
         
         private string mediaTitleField;
         
-        private int mediaSequenceField;
+        private uint mediaSequenceField;
         
-        private int totalMediaField;
+        private uint totalMediaField;
         
-        private int sideField;
+        private byte sideField;
         
         private bool sideFieldSpecified;
         
-        private int layerField;
+        private byte layerField;
         
         private bool layerFieldSpecified;
         
@@ -1030,7 +1030,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int MediaSequence {
+        public uint MediaSequence {
             get {
                 return this.mediaSequenceField;
             }
@@ -1040,7 +1040,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int TotalMedia {
+        public uint TotalMedia {
             get {
                 return this.totalMediaField;
             }
@@ -1050,7 +1050,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Side {
+        public byte Side {
             get {
                 return this.sideField;
             }
@@ -1071,7 +1071,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Layer {
+        public byte Layer {
             get {
                 return this.layerField;
             }
@@ -3273,19 +3273,19 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
-        private long headField;
+        private ushort headField;
         
-        private long cylinderField;
+        private uint cylinderField;
         
-        private long startSectorField;
+        private ulong startSectorField;
         
-        private long endSectorField;
+        private ulong endSectorField;
         
-        private long sectorsField;
+        private ulong sectorsField;
         
-        private int bytesPerSectorField;
+        private uint bytesPerSectorField;
         
         private ChecksumType[] checksumsField;
         
@@ -3302,7 +3302,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -3312,7 +3312,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Head {
+        public ushort Head {
             get {
                 return this.headField;
             }
@@ -3322,7 +3322,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Cylinder {
+        public uint Cylinder {
             get {
                 return this.cylinderField;
             }
@@ -3332,7 +3332,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long StartSector {
+        public ulong StartSector {
             get {
                 return this.startSectorField;
             }
@@ -3342,7 +3342,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long EndSector {
+        public ulong EndSector {
             get {
                 return this.endSectorField;
             }
@@ -3352,7 +3352,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Sectors {
+        public ulong Sectors {
             get {
                 return this.sectorsField;
             }
@@ -3362,7 +3362,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int BytesPerSector {
+        public uint BytesPerSector {
             get {
                 return this.bytesPerSectorField;
             }
@@ -3400,14 +3400,14 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class USBType {
         
-        private int vendorIDField;
+        private ushort vendorIDField;
         
-        private int productIDField;
+        private ushort productIDField;
         
         private DumpType descriptorsField;
         
         /// <remarks/>
-        public int VendorID {
+        public ushort VendorID {
             get {
                 return this.vendorIDField;
             }
@@ -3417,7 +3417,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int ProductID {
+        public ushort ProductID {
             get {
                 return this.productIDField;
             }
@@ -3446,7 +3446,7 @@ namespace Schemas {
         
         private string imageField;
         
-        private int sizeField;
+        private ulong sizeField;
         
         private ChecksumType[] checksumsField;
         
@@ -3461,7 +3461,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -3491,11 +3491,11 @@ namespace Schemas {
         
         private string imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private ChecksumType[] checksumsField;
         
-        private int pageField;
+        private byte pageField;
         
         private bool pageFieldSpecified;
         
@@ -3510,7 +3510,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -3532,7 +3532,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int page {
+        public byte page {
             get {
                 return this.pageField;
             }
@@ -3763,15 +3763,15 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
-        private long sequenceField;
+        private ulong sequenceField;
         
-        private long blockSizeField;
+        private ulong blockSizeField;
         
-        private long startBlockField;
+        private ulong startBlockField;
         
-        private long endBlockField;
+        private ulong endBlockField;
         
         private ChecksumType[] checksumsField;
         
@@ -3786,7 +3786,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -3796,7 +3796,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Sequence {
+        public ulong Sequence {
             get {
                 return this.sequenceField;
             }
@@ -3806,7 +3806,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long BlockSize {
+        public ulong BlockSize {
             get {
                 return this.blockSizeField;
             }
@@ -3816,7 +3816,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long StartBlock {
+        public ulong StartBlock {
             get {
                 return this.startBlockField;
             }
@@ -3826,7 +3826,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long EndBlock {
+        public ulong EndBlock {
             get {
                 return this.endBlockField;
             }
@@ -3856,13 +3856,13 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
-        private long sequenceField;
+        private ulong sequenceField;
         
-        private long startBlockField;
+        private ulong startBlockField;
         
-        private long endBlockField;
+        private ulong endBlockField;
         
         private ChecksumType[] checksumsField;
         
@@ -3879,7 +3879,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -3889,7 +3889,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Sequence {
+        public ulong Sequence {
             get {
                 return this.sequenceField;
             }
@@ -3899,7 +3899,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long StartBlock {
+        public ulong StartBlock {
             get {
                 return this.startBlockField;
             }
@@ -3909,7 +3909,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long EndBlock {
+        public ulong EndBlock {
             get {
                 return this.endBlockField;
             }
@@ -3948,13 +3948,13 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class BlockSizeType {
         
-        private int startingBlockField;
+        private uint startingBlockField;
         
-        private int valueField;
+        private uint valueField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int startingBlock {
+        public uint startingBlock {
             get {
                 return this.startingBlockField;
             }
@@ -3965,7 +3965,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
-        public int Value {
+        public uint Value {
             get {
                 return this.valueField;
             }
@@ -3984,7 +3984,7 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private ChecksumType[] checksumsField;
         
@@ -4006,11 +4006,11 @@ namespace Schemas {
         
         private string serialNumberField;
         
-        private int physicalBlockSizeField;
+        private uint physicalBlockSizeField;
         
-        private int logicalBlockSizeField;
+        private uint logicalBlockSizeField;
         
-        private long logicalBlocksField;
+        private ulong logicalBlocksField;
         
         private BlockSizeType[] variableBlockSizeField;
         
@@ -4034,15 +4034,15 @@ namespace Schemas {
         
         private DumpType mAMField;
         
-        private long headsField;
+        private ushort headsField;
         
         private bool headsFieldSpecified;
         
-        private long cylindersField;
+        private uint cylindersField;
         
         private bool cylindersFieldSpecified;
         
-        private long sectorsPerTrackField;
+        private ulong sectorsPerTrackField;
         
         private bool sectorsPerTrackFieldSpecified;
         
@@ -4071,7 +4071,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -4183,7 +4183,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int PhysicalBlockSize {
+        public uint PhysicalBlockSize {
             get {
                 return this.physicalBlockSizeField;
             }
@@ -4193,7 +4193,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int LogicalBlockSize {
+        public uint LogicalBlockSize {
             get {
                 return this.logicalBlockSizeField;
             }
@@ -4203,7 +4203,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long LogicalBlocks {
+        public ulong LogicalBlocks {
             get {
                 return this.logicalBlocksField;
             }
@@ -4325,7 +4325,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Heads {
+        public ushort Heads {
             get {
                 return this.headsField;
             }
@@ -4346,7 +4346,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Cylinders {
+        public uint Cylinders {
             get {
                 return this.cylindersField;
             }
@@ -4367,7 +4367,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long SectorsPerTrack {
+        public ulong SectorsPerTrack {
             get {
                 return this.sectorsPerTrackField;
             }
@@ -4468,16 +4468,16 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class PCIType {
         
-        private int vendorIDField;
+        private ushort vendorIDField;
         
-        private int deviceIDField;
+        private ushort deviceIDField;
         
         private DumpType configurationField;
         
         private LinearMediaType expansionROMField;
         
         /// <remarks/>
-        public int VendorID {
+        public ushort VendorID {
             get {
                 return this.vendorIDField;
             }
@@ -4487,7 +4487,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int DeviceID {
+        public ushort DeviceID {
             get {
                 return this.deviceIDField;
             }
@@ -4526,7 +4526,7 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private ChecksumType[] imageChecksumsField;
         
@@ -4538,15 +4538,15 @@ namespace Schemas {
         
         private string titleField;
         
-        private int sequenceField;
+        private uint sequenceField;
         
         private bool sequenceFieldSpecified;
         
-        private int imageInterleaveField;
+        private uint imageInterleaveField;
         
         private bool imageInterleaveFieldSpecified;
         
-        private int interleaveField;
+        private uint interleaveField;
         
         private bool interleaveFieldSpecified;
         
@@ -4579,7 +4579,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -4641,7 +4641,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Sequence {
+        public uint Sequence {
             get {
                 return this.sequenceField;
             }
@@ -4662,7 +4662,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int ImageInterleave {
+        public uint ImageInterleave {
             get {
                 return this.imageInterleaveField;
             }
@@ -4683,7 +4683,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Interleave {
+        public uint Interleave {
             get {
                 return this.interleaveField;
             }
@@ -4921,22 +4921,22 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class PartitionType {
         
-        private int sequenceField;
+        private uint sequenceField;
         
         private string nameField;
         
         private string typeField;
         
-        private int startSectorField;
+        private ulong startSectorField;
         
-        private int endSectorField;
+        private ulong endSectorField;
         
         private string descriptionField;
         
         private FileSystemType[] fileSystemsField;
         
         /// <remarks/>
-        public int Sequence {
+        public uint Sequence {
             get {
                 return this.sequenceField;
             }
@@ -4966,7 +4966,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int StartSector {
+        public ulong StartSector {
             get {
                 return this.startSectorField;
             }
@@ -4976,7 +4976,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int EndSector {
+        public ulong EndSector {
             get {
                 return this.endSectorField;
             }
@@ -5028,11 +5028,11 @@ namespace Schemas {
         
         private bool backupDateFieldSpecified;
         
-        private int clusterSizeField;
+        private uint clusterSizeField;
         
-        private long clustersField;
+        private ulong clustersField;
         
-        private long filesField;
+        private ulong filesField;
         
         private bool filesFieldSpecified;
         
@@ -5042,7 +5042,7 @@ namespace Schemas {
         
         private string volumeNameField;
         
-        private long freeClustersField;
+        private ulong freeClustersField;
         
         private bool freeClustersFieldSpecified;
         
@@ -5142,7 +5142,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int ClusterSize {
+        public uint ClusterSize {
             get {
                 return this.clusterSizeField;
             }
@@ -5152,7 +5152,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Clusters {
+        public ulong Clusters {
             get {
                 return this.clustersField;
             }
@@ -5162,7 +5162,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Files {
+        public ulong Files {
             get {
                 return this.filesField;
             }
@@ -5213,7 +5213,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long FreeClusters {
+        public ulong FreeClusters {
             get {
                 return this.freeClustersField;
             }
@@ -6504,7 +6504,7 @@ namespace Schemas {
         
         private LanguagesTypeLanguage[] languagesField;
         
-        private int trackNumberField;
+        private uint trackNumberField;
         
         private string codecField;
         
@@ -6521,7 +6521,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int TrackNumber {
+        public uint TrackNumber {
             get {
                 return this.trackNumberField;
             }
@@ -6551,13 +6551,13 @@ namespace Schemas {
         
         private LanguagesTypeLanguage[] languagesField;
         
-        private int trackNumberField;
+        private uint trackNumberField;
         
         private string codecField;
         
-        private int horizontalField;
+        private uint horizontalField;
         
-        private int verticalField;
+        private uint verticalField;
         
         private long meanBitrateField;
         
@@ -6576,7 +6576,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int TrackNumber {
+        public uint TrackNumber {
             get {
                 return this.trackNumberField;
             }
@@ -6598,7 +6598,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int Horizontal {
+        public uint Horizontal {
             get {
                 return this.horizontalField;
             }
@@ -6609,7 +6609,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int Vertical {
+        public uint Vertical {
             get {
                 return this.verticalField;
             }
@@ -6650,15 +6650,15 @@ namespace Schemas {
         
         private LanguagesTypeLanguage[] languagesField;
         
-        private int trackNumberField;
+        private uint trackNumberField;
         
         private string accoustIDField;
         
         private string codecField;
         
-        private int channelsField;
+        private uint channelsField;
         
-        private int sampleRateField;
+        private double sampleRateField;
         
         private long meanBitrateField;
         
@@ -6675,7 +6675,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int TrackNumber {
+        public uint TrackNumber {
             get {
                 return this.trackNumberField;
             }
@@ -6708,7 +6708,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int Channels {
+        public uint Channels {
             get {
                 return this.channelsField;
             }
@@ -6719,7 +6719,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int SampleRate {
+        public double SampleRate {
             get {
                 return this.sampleRateField;
             }
@@ -6753,15 +6753,15 @@ namespace Schemas {
         
         private FileType fileField;
         
-        private long fileSizeField;
+        private ulong fileSizeField;
         
-        private long framesField;
+        private ulong framesField;
         
         private bool framesFieldSpecified;
         
-        private long durationField;
+        private double durationField;
         
-        private int meanFrameRateField;
+        private float meanFrameRateField;
         
         private bool meanFrameRateFieldSpecified;
         
@@ -6806,7 +6806,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long FileSize {
+        public ulong FileSize {
             get {
                 return this.fileSizeField;
             }
@@ -6816,7 +6816,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Frames {
+        public ulong Frames {
             get {
                 return this.framesField;
             }
@@ -6837,7 +6837,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Duration {
+        public double Duration {
             get {
                 return this.durationField;
             }
@@ -6847,7 +6847,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int MeanFrameRate {
+        public float MeanFrameRate {
             get {
                 return this.meanFrameRateField;
             }
@@ -6931,7 +6931,7 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private ChecksumType[] checksumsField;
         
@@ -6946,7 +6946,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -6974,12 +6974,12 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TrackSequenceType {
         
-        private int trackNumberField;
+        private uint trackNumberField;
         
-        private int sessionField;
+        private uint sessionField;
         
         /// <remarks/>
-        public int TrackNumber {
+        public uint TrackNumber {
             get {
                 return this.trackNumberField;
             }
@@ -6989,7 +6989,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Session {
+        public uint Session {
             get {
                 return this.sessionField;
             }
@@ -7008,7 +7008,7 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private TrackSequenceType sequenceField;
         
@@ -7016,13 +7016,13 @@ namespace Schemas {
         
         private string endMSFField;
         
-        private long startSectorField;
+        private ulong startSectorField;
         
-        private long endSectorField;
+        private ulong endSectorField;
         
         private TrackTypeTrackType trackType1Field;
         
-        private int bytesPerSectorField;
+        private uint bytesPerSectorField;
         
         private string accoustIDField;
         
@@ -7043,7 +7043,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -7083,7 +7083,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long StartSector {
+        public ulong StartSector {
             get {
                 return this.startSectorField;
             }
@@ -7093,7 +7093,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long EndSector {
+        public ulong EndSector {
             get {
                 return this.endSectorField;
             }
@@ -7114,7 +7114,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int BytesPerSector {
+        public uint BytesPerSector {
             get {
                 return this.bytesPerSectorField;
             }
@@ -7242,14 +7242,14 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class XboxSecuritySectorsType {
         
-        private int requestVersionField;
+        private uint requestVersionField;
         
-        private int requestNumberField;
+        private uint requestNumberField;
         
         private DumpType securitySectorsField;
         
         /// <remarks/>
-        public int RequestVersion {
+        public uint RequestVersion {
             get {
                 return this.requestVersionField;
             }
@@ -7259,7 +7259,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int RequestNumber {
+        public uint RequestNumber {
             get {
                 return this.requestNumberField;
             }
@@ -7333,11 +7333,11 @@ namespace Schemas {
         
         private string imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private ChecksumType[] checksumsField;
         
-        private int sessionField;
+        private uint sessionField;
         
         private bool sessionFieldSpecified;
         
@@ -7352,7 +7352,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -7374,7 +7374,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int session {
+        public uint session {
             get {
                 return this.sessionField;
             }
@@ -7523,7 +7523,7 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class LayeredTextType {
         
-        private int layerField;
+        private uint layerField;
         
         private bool layerFieldSpecified;
         
@@ -7531,7 +7531,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int layer {
+        public uint layer {
             get {
                 return this.layerField;
             }
@@ -7570,15 +7570,15 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SectorsType {
         
-        private int layerField;
+        private uint layerField;
         
         private bool layerFieldSpecified;
         
-        private long valueField;
+        private ulong valueField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int layer {
+        public uint layer {
             get {
                 return this.layerField;
             }
@@ -7600,7 +7600,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
-        public long Value {
+        public ulong Value {
             get {
                 return this.valueField;
             }
@@ -7679,7 +7679,7 @@ namespace Schemas {
         
         private ImageType imageField;
         
-        private long sizeField;
+        private ulong sizeField;
         
         private SequenceType sequenceField;
         
@@ -7709,9 +7709,9 @@ namespace Schemas {
         
         private bool offsetFieldSpecified;
         
-        private int[] tracksField;
+        private uint[] tracksField;
         
-        private int sessionsField;
+        private uint sessionsField;
         
         private string copyProtectionField;
         
@@ -7780,7 +7780,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public long Size {
+        public ulong Size {
             get {
                 return this.sizeField;
             }
@@ -7938,7 +7938,7 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Tracks")]
-        public int[] Tracks {
+        public uint[] Tracks {
             get {
                 return this.tracksField;
             }
@@ -7948,7 +7948,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Sessions {
+        public uint Sessions {
             get {
                 return this.sessionsField;
             }
@@ -8251,7 +8251,7 @@ namespace Schemas {
         
         private LanguagesTypeLanguage[] languageField;
         
-        private int pagesField;
+        private uint pagesField;
         
         private string pageSizeField;
         
@@ -8269,7 +8269,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Pages {
+        public uint Pages {
             get {
                 return this.pagesField;
             }
@@ -8355,7 +8355,7 @@ namespace Schemas {
         
         private LanguagesTypeLanguage[] languageField;
         
-        private int pagesField;
+        private uint pagesField;
         
         private bool pagesFieldSpecified;
         
@@ -8448,7 +8448,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Pages {
+        public uint Pages {
             get {
                 return this.pagesField;
             }
@@ -8554,13 +8554,13 @@ namespace Schemas {
         
         private bool publicationDateFieldSpecified;
         
-        private int numberField;
+        private uint numberField;
         
         private bool numberFieldSpecified;
         
         private LanguagesTypeLanguage[] languageField;
         
-        private int pagesField;
+        private uint pagesField;
         
         private bool pagesFieldSpecified;
         
@@ -8632,7 +8632,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Number {
+        public uint Number {
             get {
                 return this.numberField;
             }
@@ -8664,7 +8664,7 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        public int Pages {
+        public uint Pages {
             get {
                 return this.pagesField;
             }

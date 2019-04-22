@@ -50,14 +50,14 @@
         <!--Optional:-->
         <PublicationDate>2008-11-15</PublicationDate>
         <!--Optional:-->
-        <Number>3</Number>
+        <Number>7</Number>
         <!--Optional:-->
         <Language>
             <!--1 or more repetitions:-->
             <Language>ypk</Language>
         </Language>
         <!--Optional:-->
-        <Pages>3</Pages>
+        <Pages>7</Pages>
         <!--Optional:-->
         <PageSize>string</PageSize>
         <!--Optional:-->
@@ -121,7 +121,7 @@
             <Language>kru</Language>
         </Language>
         <!--Optional:-->
-        <Pages>3</Pages>
+        <Pages>7</Pages>
         <!--Optional:-->
         <PageSize>string</PageSize>
         <Scan>
@@ -198,7 +198,7 @@
             <!--1 or more repetitions:-->
             <Language>cau</Language>
         </Language>
-        <Pages>3</Pages>
+        <Pages>7</Pages>
         <!--Optional:-->
         <PageSize>string</PageSize>
         <!--Optional:-->
@@ -237,13 +237,13 @@
     </UserManual>
     <!--Zero or more repetitions:-->
     <OpticalDisc>
-        <Image format="string" offset="10">string</Image>
-        <Size>10</Size>
+        <Image format="string" offset="11">string</Image>
+        <Size>11</Size>
         <Sequence>
             <!--Optional:-->
             <MediaTitle>string</MediaTitle>
-            <MediaSequence>3</MediaSequence>
-            <TotalMedia>3</TotalMedia>
+            <MediaSequence>7</MediaSequence>
+            <TotalMedia>7</TotalMedia>
             <!--Optional:-->
             <Side>2</Side>
             <!--Optional:-->
@@ -252,7 +252,7 @@
         <!--Optional:-->
         <Layers type="PTP">
             <!--1 or more repetitions:-->
-            <Sectors layer="3">10</Sectors>
+            <Sectors layer="7">11</Sectors>
         </Layers>
         <Checksums>
             <!--1 or more repetitions:-->
@@ -263,22 +263,22 @@
         <!--Optional:-->
         <SerialNumber>string</SerialNumber>
         <!--Zero or more repetitions:-->
-        <RingCode layer="3">string</RingCode>
+        <RingCode layer="7">string</RingCode>
         <!--Zero or more repetitions:-->
-        <MasteringSID layer="3">string</MasteringSID>
+        <MasteringSID layer="7">string</MasteringSID>
         <!--Zero or more repetitions:-->
-        <Toolstamp layer="3">string</Toolstamp>
+        <Toolstamp layer="7">string</Toolstamp>
         <!--Zero or more repetitions:-->
-        <MouldSID layer="3">string</MouldSID>
+        <MouldSID layer="7">string</MouldSID>
         <!--Zero or more repetitions:-->
-        <MouldText layer="3">string</MouldText>
+        <MouldText layer="7">string</MouldText>
         <DiscType>string</DiscType>
         <DiscSubType>string</DiscSubType>
         <!--Optional:-->
         <Offset>3</Offset>
         <!--1 or more repetitions:-->
-        <Tracks>3</Tracks>
-        <Sessions>3</Sessions>
+        <Tracks>7</Tracks>
+        <Sessions>7</Sessions>
         <!--Optional:-->
         <CopyProtection>string</CopyProtection>
         <Dimensions>
@@ -446,7 +446,7 @@
         <!--Optional:-->
         <PFI>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="sha256">string</Checksum>
@@ -455,7 +455,7 @@
         <!--Optional:-->
         <DMI>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="blake256">string</Checksum>
@@ -464,7 +464,7 @@
         <!--Optional:-->
         <CMI>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="ripemed320">string</Checksum>
@@ -473,7 +473,7 @@
         <!--Optional:-->
         <BCA>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="blake512">string</Checksum>
@@ -482,7 +482,7 @@
         <!--Optional:-->
         <ATIP>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="ripemed320">string</Checksum>
@@ -491,7 +491,7 @@
         <!--Optional:-->
         <ADIP>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="ripemed320">string</Checksum>
@@ -500,7 +500,7 @@
         <!--Optional:-->
         <PMA>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="sha256">string</Checksum>
@@ -509,7 +509,7 @@
         <!--Optional:-->
         <DDS>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="ripemed320">string</Checksum>
@@ -518,7 +518,7 @@
         <!--Optional:-->
         <SAI>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="sha256">string</Checksum>
@@ -527,7 +527,7 @@
         <!--Optional:-->
         <LastRMD>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="whirlpool">string</Checksum>
@@ -536,7 +536,7 @@
         <!--Optional:-->
         <PRI>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="ripemd160">string</Checksum>
@@ -545,7 +545,7 @@
         <!--Optional:-->
         <MediaID>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="blake512">string</Checksum>
@@ -554,7 +554,7 @@
         <!--Optional:-->
         <PFIR>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="sha512">string</Checksum>
@@ -563,7 +563,7 @@
         <!--Optional:-->
         <DCB>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="ripemd128">string</Checksum>
@@ -572,7 +572,7 @@
         <!--Optional:-->
         <DI>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="blake256">string</Checksum>
@@ -581,7 +581,7 @@
         <!--Optional:-->
         <PAC>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="ripemed320">string</Checksum>
@@ -590,7 +590,7 @@
         <!--Optional:-->
         <TOC>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="crc16ccitt">string</Checksum>
@@ -599,25 +599,25 @@
         <!--Optional:-->
         <LeadInCdText>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="sha224">string</Checksum>
             </Checksums>
         </LeadInCdText>
         <!--Zero or more repetitions:-->
-        <LeadIn session="3">
+        <LeadIn session="7">
             <Image>string</Image>
-            <Size>10</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="spamsum">string</Checksum>
             </Checksums>
         </LeadIn>
         <!--Zero or more repetitions:-->
-        <LeadOut session="3">
+        <LeadOut session="7">
             <Image>string</Image>
-            <Size>10</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="crc64">string</Checksum>
@@ -627,7 +627,7 @@
         <Xbox>
             <PFI>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="fletcher32">string</Checksum>
@@ -635,7 +635,7 @@
             </PFI>
             <DMI>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="sha224">string</Checksum>
@@ -643,11 +643,11 @@
             </DMI>
             <!--1 or more repetitions:-->
             <SecuritySectors>
-                <RequestVersion>3</RequestVersion>
-                <RequestNumber>3</RequestNumber>
+                <RequestVersion>7</RequestVersion>
+                <RequestNumber>7</RequestNumber>
                 <SecuritySectors>
                     <Image>string</Image>
-                    <Size>3</Size>
+                    <Size>11</Size>
                     <Checksums>
                         <!--1 or more repetitions:-->
                         <Checksum type="sha384">string</Checksum>
@@ -662,20 +662,20 @@
         </PS3Encryption>
         <!--1 or more repetitions:-->
         <Track>
-            <Image format="string" offset="10">string</Image>
-            <Size>10</Size>
+            <Image format="string" offset="11">string</Image>
+            <Size>11</Size>
             <Sequence>
-                <TrackNumber>3</TrackNumber>
-                <Session>3</Session>
+                <TrackNumber>7</TrackNumber>
+                <Session>7</Session>
             </Sequence>
             <!--Optional:-->
             <StartMSF>string</StartMSF>
             <!--Optional:-->
             <EndMSF>string</EndMSF>
-            <StartSector>10</StartSector>
-            <EndSector>10</EndSector>
+            <StartSector>11</StartSector>
+            <EndSector>11</EndSector>
             <TrackType>bluray</TrackType>
-            <BytesPerSector>3</BytesPerSector>
+            <BytesPerSector>7</BytesPerSector>
             <!--Optional:-->
             <AccoustID>string</AccoustID>
             <Checksums>
@@ -684,8 +684,8 @@
             </Checksums>
             <!--Optional:-->
             <SubChannel>
-                <Image format="string" offset="10">string</Image>
-                <Size>10</Size>
+                <Image format="string" offset="11">string</Image>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="md4">string</Checksum>
@@ -695,13 +695,13 @@
             <FileSystemInformation>
                 <!--1 or more repetitions:-->
                 <Partition>
-                    <Sequence>3</Sequence>
+                    <Sequence>7</Sequence>
                     <!--Optional:-->
                     <Name>string</Name>
                     <!--Optional:-->
                     <Type>string</Type>
-                    <StartSector>3</StartSector>
-                    <EndSector>3</EndSector>
+                    <StartSector>7</StartSector>
+                    <EndSector>7</EndSector>
                     <!--Optional:-->
                     <Description>string</Description>
                     <FileSystems>
@@ -714,17 +714,17 @@
                             <ModificationDate>2018-04-13T19:36:55</ModificationDate>
                             <!--Optional:-->
                             <BackupDate>2012-01-08T00:21:27+00:00</BackupDate>
-                            <ClusterSize>3</ClusterSize>
-                            <Clusters>10</Clusters>
+                            <ClusterSize>7</ClusterSize>
+                            <Clusters>11</Clusters>
                             <!--Optional:-->
-                            <Files>10</Files>
+                            <Files>11</Files>
                             <Bootable>true</Bootable>
                             <!--Optional:-->
                             <VolumeSerial>string</VolumeSerial>
                             <!--Optional:-->
                             <VolumeName>string</VolumeName>
                             <!--Optional:-->
-                            <FreeClusters>10</FreeClusters>
+                            <FreeClusters>11</FreeClusters>
                             <Dirty>true</Dirty>
                             <!--Optional:-->
                             <ExpirationDate>2002-05-25T15:08:08</ExpirationDate>
@@ -828,18 +828,19 @@
         <Manufacturer>string</Manufacturer>
         <Product>string</Product>
         <File format="string">string</File>
-        <FileSize>10</FileSize>
+        <FileSize>11</FileSize>
         <!--Optional:-->
-        <Frames>10</Frames>
-        <Duration>10</Duration>
+        <Frames>11</Frames>
+        <Duration>1.051732E7</Duration>
         <!--Optional:-->
-        <MeanFrameRate>3</MeanFrameRate>
+        <MeanFrameRate>1.5E2</MeanFrameRate>
         <Checksums>
             <!--1 or more repetitions:-->
             <Checksum type="adler32">string</Checksum>
         </Checksums>
         <!--Zero or more repetitions:-->
-        <AudioTrack TrackNumber="3" AccoustID="string" Codec="string" Channels="3" SampleRate="3" MeanBitrate="10">
+        <AudioTrack TrackNumber="7" AccoustID="string" Codec="string" Channels="7" SampleRate="1.051732E7"
+                    MeanBitrate="10">
             <!--Optional:-->
             <Languages>
                 <!--1 or more repetitions:-->
@@ -847,7 +848,7 @@
             </Languages>
         </AudioTrack>
         <!--Zero or more repetitions:-->
-        <VideoTrack TrackNumber="3" Codec="string" Horizontal="3" Vertical="3" MeanBitrate="10" ThreeD="false">
+        <VideoTrack TrackNumber="7" Codec="string" Horizontal="7" Vertical="7" MeanBitrate="10" ThreeD="false">
             <!--Optional:-->
             <Languages>
                 <!--1 or more repetitions:-->
@@ -855,7 +856,7 @@
             </Languages>
         </VideoTrack>
         <!--Zero or more repetitions:-->
-        <SubtitleTrack TrackNumber="3" Codec="string">
+        <SubtitleTrack TrackNumber="7" Codec="string">
             <!--Optional:-->
             <Languages>
                 <!--1 or more repetitions:-->
@@ -885,8 +886,8 @@
     </Advertisement>
     <!--Zero or more repetitions:-->
     <LinearMedia>
-        <Image format="string" offset="10">string</Image>
-        <Size>10</Size>
+        <Image format="string" offset="11">string</Image>
+        <Size>11</Size>
         <ImageChecksums>
             <!--1 or more repetitions:-->
             <Checksum type="dm6">string</Checksum>
@@ -902,11 +903,11 @@
         <SerialNumber>string</SerialNumber>
         <Title>string</Title>
         <!--Optional:-->
-        <Sequence>3</Sequence>
+        <Sequence>7</Sequence>
         <!--Optional:-->
-        <ImageInterleave>3</ImageInterleave>
+        <ImageInterleave>7</ImageInterleave>
         <!--Optional:-->
-        <Interleave>3</Interleave>
+        <Interleave>7</Interleave>
         <!--Optional:-->
         <Manufacturer>string</Manufacturer>
         <!--Optional:-->
@@ -1026,7 +1027,7 @@
         <PCMCIA>
             <CIS>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="tiger">string</Checksum>
@@ -1050,12 +1051,12 @@
     </LinearMedia>
     <!--Zero or more repetitions:-->
     <PCICard>
-        <VendorID>3</VendorID>
-        <DeviceID>3</DeviceID>
+        <VendorID>5</VendorID>
+        <DeviceID>5</DeviceID>
         <!--Optional:-->
         <Configuration>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="fletcher32">string</Checksum>
@@ -1063,8 +1064,8 @@
         </Configuration>
         <!--Optional:-->
         <ExpansionROM>
-            <Image format="string" offset="10">string</Image>
-            <Size>10</Size>
+            <Image format="string" offset="11">string</Image>
+            <Size>11</Size>
             <ImageChecksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="crc16">string</Checksum>
@@ -1080,11 +1081,11 @@
             <SerialNumber>string</SerialNumber>
             <Title>string</Title>
             <!--Optional:-->
-            <Sequence>3</Sequence>
+            <Sequence>7</Sequence>
             <!--Optional:-->
-            <ImageInterleave>3</ImageInterleave>
+            <ImageInterleave>7</ImageInterleave>
             <!--Optional:-->
-            <Interleave>3</Interleave>
+            <Interleave>7</Interleave>
             <!--Optional:-->
             <Manufacturer>string</Manufacturer>
             <!--Optional:-->
@@ -1204,7 +1205,7 @@
             <PCMCIA>
                 <CIS>
                     <Image>string</Image>
-                    <Size>3</Size>
+                    <Size>11</Size>
                     <Checksums>
                         <!--1 or more repetitions:-->
                         <Checksum type="tiger">string</Checksum>
@@ -1229,8 +1230,8 @@
     </PCICard>
     <!--Zero or more repetitions:-->
     <BlockMedia>
-        <Image format="string" offset="10">string</Image>
-        <Size>10</Size>
+        <Image format="string" offset="11">string</Image>
+        <Size>11</Size>
         <Checksums>
             <!--1 or more repetitions:-->
             <Checksum type="md4">string</Checksum>
@@ -1242,8 +1243,8 @@
         <Sequence>
             <!--Optional:-->
             <MediaTitle>string</MediaTitle>
-            <MediaSequence>3</MediaSequence>
-            <TotalMedia>3</TotalMedia>
+            <MediaSequence>7</MediaSequence>
+            <TotalMedia>7</TotalMedia>
             <!--Optional:-->
             <Side>2</Side>
             <!--Optional:-->
@@ -1263,35 +1264,35 @@
         <PartNumber>string</PartNumber>
         <!--Optional:-->
         <SerialNumber>string</SerialNumber>
-        <PhysicalBlockSize>3</PhysicalBlockSize>
-        <LogicalBlockSize>3</LogicalBlockSize>
-        <LogicalBlocks>10</LogicalBlocks>
+        <PhysicalBlockSize>7</PhysicalBlockSize>
+        <LogicalBlockSize>7</LogicalBlockSize>
+        <LogicalBlocks>11</LogicalBlocks>
         <!--Optional:-->
         <VariableBlockSize>
             <!--1 or more repetitions:-->
-            <BlockSize startingBlock="3">3</BlockSize>
+            <BlockSize startingBlock="7">7</BlockSize>
         </VariableBlockSize>
         <!--Optional:-->
         <TapeInformation>
             <!--1 or more repetitions:-->
             <Partition>
-                <Image format="string" offset="10">string</Image>
-                <Size>10</Size>
-                <Sequence>10</Sequence>
-                <StartBlock>10</StartBlock>
-                <EndBlock>10</EndBlock>
+                <Image format="string" offset="11">string</Image>
+                <Size>11</Size>
+                <Sequence>11</Sequence>
+                <StartBlock>11</StartBlock>
+                <EndBlock>11</EndBlock>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="adler32">string</Checksum>
                 </Checksums>
                 <!--1 or more repetitions:-->
                 <File>
-                    <Image format="string" offset="10">string</Image>
-                    <Size>10</Size>
-                    <Sequence>10</Sequence>
-                    <BlockSize>10</BlockSize>
-                    <StartBlock>10</StartBlock>
-                    <EndBlock>10</EndBlock>
+                    <Image format="string" offset="11">string</Image>
+                    <Size>11</Size>
+                    <Sequence>11</Sequence>
+                    <BlockSize>11</BlockSize>
+                    <StartBlock>11</StartBlock>
+                    <EndBlock>11</EndBlock>
                     <Checksums>
                         <!--1 or more repetitions:-->
                         <Checksum type="skein">string</Checksum>
@@ -1378,7 +1379,7 @@
         <ATA>
             <Identify>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="fletcher32">string</Checksum>
@@ -1387,12 +1388,12 @@
         </ATA>
         <!--Optional:-->
         <PCI>
-            <VendorID>3</VendorID>
-            <DeviceID>3</DeviceID>
+            <VendorID>5</VendorID>
+            <DeviceID>5</DeviceID>
             <!--Optional:-->
             <Configuration>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="adler32">string</Checksum>
@@ -1400,8 +1401,8 @@
             </Configuration>
             <!--Optional:-->
             <ExpansionROM>
-                <Image format="string" offset="10">string</Image>
-                <Size>10</Size>
+                <Image format="string" offset="11">string</Image>
+                <Size>11</Size>
                 <ImageChecksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="snefru">string</Checksum>
@@ -1417,11 +1418,11 @@
                 <SerialNumber>string</SerialNumber>
                 <Title>string</Title>
                 <!--Optional:-->
-                <Sequence>3</Sequence>
+                <Sequence>7</Sequence>
                 <!--Optional:-->
-                <ImageInterleave>3</ImageInterleave>
+                <ImageInterleave>7</ImageInterleave>
                 <!--Optional:-->
-                <Interleave>3</Interleave>
+                <Interleave>7</Interleave>
                 <!--Optional:-->
                 <Manufacturer>string</Manufacturer>
                 <!--Optional:-->
@@ -1541,7 +1542,7 @@
                 <PCMCIA>
                     <CIS>
                         <Image>string</Image>
-                        <Size>3</Size>
+                        <Size>11</Size>
                         <Checksums>
                             <!--1 or more repetitions:-->
                             <Checksum type="ripemd128">string</Checksum>
@@ -1568,7 +1569,7 @@
         <PCMCIA>
             <CIS>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="fletcher16">string</Checksum>
@@ -1591,7 +1592,7 @@
         <SecureDigital>
             <CID>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="crc16">string</Checksum>
@@ -1600,7 +1601,7 @@
             <!--Optional:-->
             <CSD>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="crc16ccitt">string</Checksum>
@@ -1609,7 +1610,7 @@
             <!--Optional:-->
             <SCR>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="tiger">string</Checksum>
@@ -1618,7 +1619,7 @@
             <!--Optional:-->
             <OCR>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="fletcher16">string</Checksum>
@@ -1629,7 +1630,7 @@
         <MultiMediaCard>
             <CID>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="fletcher32">string</Checksum>
@@ -1638,7 +1639,7 @@
             <!--Optional:-->
             <CSD>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="crc16">string</Checksum>
@@ -1647,7 +1648,7 @@
             <!--Optional:-->
             <ExtendedCSD>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="md5">string</Checksum>
@@ -1656,7 +1657,7 @@
             <!--Optional:-->
             <OCR>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="blake512">string</Checksum>
@@ -1667,16 +1668,16 @@
         <SCSI>
             <Inquiry>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="tiger">string</Checksum>
                 </Checksums>
             </Inquiry>
             <!--Zero or more repetitions:-->
-            <EVPD page="3">
+            <EVPD page="6">
                 <Image>string</Image>
-                <Size>10</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="md4">string</Checksum>
@@ -1685,7 +1686,7 @@
             <!--Optional:-->
             <ModeSense>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="sha384">string</Checksum>
@@ -1694,7 +1695,7 @@
             <!--Optional:-->
             <ModeSense10>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="dm6">string</Checksum>
@@ -1703,7 +1704,7 @@
             <!--Optional:-->
             <LogSense>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="fletcher32">string</Checksum>
@@ -1712,12 +1713,12 @@
         </SCSI>
         <!--Optional:-->
         <USB>
-            <VendorID>3</VendorID>
-            <ProductID>3</ProductID>
+            <VendorID>5</VendorID>
+            <ProductID>5</ProductID>
             <!--Optional:-->
             <Descriptors>
                 <Image>string</Image>
-                <Size>3</Size>
+                <Size>11</Size>
                 <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="md4">string</Checksum>
@@ -1727,28 +1728,28 @@
         <!--Optional:-->
         <MAM>
             <Image>string</Image>
-            <Size>3</Size>
+            <Size>11</Size>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="crc64">string</Checksum>
             </Checksums>
         </MAM>
         <!--Optional:-->
-        <Heads>10</Heads>
+        <Heads>5</Heads>
         <!--Optional:-->
-        <Cylinders>10</Cylinders>
+        <Cylinders>7</Cylinders>
         <!--Optional:-->
-        <SectorsPerTrack>10</SectorsPerTrack>
+        <SectorsPerTrack>11</SectorsPerTrack>
         <!--Zero or more repetitions:-->
         <Track>
-            <Image format="string" offset="10">string</Image>
-            <Size>10</Size>
-            <Head>10</Head>
-            <Cylinder>10</Cylinder>
-            <StartSector>10</StartSector>
-            <EndSector>10</EndSector>
-            <Sectors>10</Sectors>
-            <BytesPerSector>3</BytesPerSector>
+            <Image format="string" offset="11">string</Image>
+            <Size>11</Size>
+            <Head>5</Head>
+            <Cylinder>7</Cylinder>
+            <StartSector>11</StartSector>
+            <EndSector>11</EndSector>
+            <Sectors>11</Sectors>
+            <BytesPerSector>7</BytesPerSector>
             <Checksums>
                 <!--1 or more repetitions:-->
                 <Checksum type="whirlpool">string</Checksum>

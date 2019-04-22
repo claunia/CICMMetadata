@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlValue;
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
  *       &lt;attribute name="layer"&gt;
  *         &lt;simpleType&gt;
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
  *             &lt;minInclusive value="0"/&gt;
  *           &lt;/restriction&gt;
  *         &lt;/simpleType&gt;
@@ -47,7 +47,7 @@ public class LayeredTextType {
     @XmlValue
     protected String value;
     @XmlAttribute(name = "layer")
-    protected Integer layer;
+    protected Long layer;
 
     /**
      * Obtiene el valor de la propiedad value.
@@ -78,10 +78,10 @@ public class LayeredTextType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public Integer getLayer() {
+    public Long getLayer() {
         return layer;
     }
 
@@ -90,10 +90,10 @@ public class LayeredTextType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Long }
      *     
      */
-    public void setLayer(Integer value) {
+    public void setLayer(Long value) {
         this.layer = value;
     }
 

@@ -2,17 +2,19 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="Image" type="{}ImageType"/&gt;
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
  *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
  *         &lt;element name="ContentChecksums" type="{}ChecksumsType"/&gt;
  *         &lt;element name="Sequence" type="{}SequenceType"/&gt;
@@ -40,9 +42,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Interface" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="PhysicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="LogicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="LogicalBlocks" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="PhysicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+ *         &lt;element name="LogicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+ *         &lt;element name="LogicalBlocks" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
  *         &lt;element name="VariableBlockSize" type="{}VariableBlockSizeType" minOccurs="0"/&gt;
  *         &lt;element name="TapeInformation" type="{}TapeInformationType" minOccurs="0"/&gt;
  *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/&gt;
@@ -54,9 +56,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SCSI" type="{}SCSIType" minOccurs="0"/&gt;
  *         &lt;element name="USB" type="{}USBType" minOccurs="0"/&gt;
  *         &lt;element name="MAM" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="Heads" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
- *         &lt;element name="Cylinders" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
- *         &lt;element name="SectorsPerTrack" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="Heads" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" minOccurs="0"/&gt;
+ *         &lt;element name="Cylinders" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/&gt;
+ *         &lt;element name="SectorsPerTrack" type="{http://www.w3.org/2001/XMLSchema}unsignedLong" minOccurs="0"/&gt;
  *         &lt;element name="Track" type="{}BlockTrackType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Dimensions" type="{}DimensionsType"/&gt;
@@ -115,8 +117,9 @@ public class BlockMediaType {
 
     @XmlElement(name = "Image", required = true)
     protected ImageType image;
-    @XmlElement(name = "Size")
-    protected long size;
+    @XmlElement(name = "Size", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger size;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
     @XmlElement(name = "ContentChecksums", required = true)
@@ -138,11 +141,14 @@ public class BlockMediaType {
     @XmlElement(name = "SerialNumber")
     protected String serialNumber;
     @XmlElement(name = "PhysicalBlockSize")
-    protected int physicalBlockSize;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long physicalBlockSize;
     @XmlElement(name = "LogicalBlockSize")
-    protected int logicalBlockSize;
-    @XmlElement(name = "LogicalBlocks")
-    protected long logicalBlocks;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long logicalBlockSize;
+    @XmlElement(name = "LogicalBlocks", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger logicalBlocks;
     @XmlElement(name = "VariableBlockSize")
     protected VariableBlockSizeType variableBlockSize;
     @XmlElement(name = "TapeInformation")
@@ -166,11 +172,14 @@ public class BlockMediaType {
     @XmlElement(name = "MAM")
     protected DumpType mam;
     @XmlElement(name = "Heads")
-    protected Long heads;
+    @XmlSchemaType(name = "unsignedShort")
+    protected Integer heads;
     @XmlElement(name = "Cylinders")
+    @XmlSchemaType(name = "unsignedInt")
     protected Long cylinders;
     @XmlElement(name = "SectorsPerTrack")
-    protected Long sectorsPerTrack;
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger sectorsPerTrack;
     @XmlElement(name = "Track")
     protected List<BlockTrackType> track;
     @XmlElement(name = "CopyProtection")
@@ -213,16 +222,24 @@ public class BlockMediaType {
     /**
      * Obtiene el valor de la propiedad size.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getSize() {
+    public BigInteger getSize() {
         return size;
     }
 
     /**
      * Define el valor de la propiedad size.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setSize(long value) {
+    public void setSize(BigInteger value) {
         this.size = value;
     }
 
@@ -470,7 +487,7 @@ public class BlockMediaType {
      * Obtiene el valor de la propiedad physicalBlockSize.
      * 
      */
-    public int getPhysicalBlockSize() {
+    public long getPhysicalBlockSize() {
         return physicalBlockSize;
     }
 
@@ -478,7 +495,7 @@ public class BlockMediaType {
      * Define el valor de la propiedad physicalBlockSize.
      * 
      */
-    public void setPhysicalBlockSize(int value) {
+    public void setPhysicalBlockSize(long value) {
         this.physicalBlockSize = value;
     }
 
@@ -486,7 +503,7 @@ public class BlockMediaType {
      * Obtiene el valor de la propiedad logicalBlockSize.
      * 
      */
-    public int getLogicalBlockSize() {
+    public long getLogicalBlockSize() {
         return logicalBlockSize;
     }
 
@@ -494,23 +511,31 @@ public class BlockMediaType {
      * Define el valor de la propiedad logicalBlockSize.
      * 
      */
-    public void setLogicalBlockSize(int value) {
+    public void setLogicalBlockSize(long value) {
         this.logicalBlockSize = value;
     }
 
     /**
      * Obtiene el valor de la propiedad logicalBlocks.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getLogicalBlocks() {
+    public BigInteger getLogicalBlocks() {
         return logicalBlocks;
     }
 
     /**
      * Define el valor de la propiedad logicalBlocks.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setLogicalBlocks(long value) {
+    public void setLogicalBlocks(BigInteger value) {
         this.logicalBlocks = value;
     }
 
@@ -783,10 +808,10 @@ public class BlockMediaType {
      * 
      * @return
      *     possible object is
-     *     {@link Long }
+     *     {@link Integer }
      *     
      */
-    public Long getHeads() {
+    public Integer getHeads() {
         return heads;
     }
 
@@ -795,10 +820,10 @@ public class BlockMediaType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Long }
+     *     {@link Integer }
      *     
      */
-    public void setHeads(Long value) {
+    public void setHeads(Integer value) {
         this.heads = value;
     }
 
@@ -831,10 +856,10 @@ public class BlockMediaType {
      * 
      * @return
      *     possible object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public Long getSectorsPerTrack() {
+    public BigInteger getSectorsPerTrack() {
         return sectorsPerTrack;
     }
 
@@ -843,10 +868,10 @@ public class BlockMediaType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public void setSectorsPerTrack(Long value) {
+    public void setSectorsPerTrack(BigInteger value) {
         this.sectorsPerTrack = value;
     }
 

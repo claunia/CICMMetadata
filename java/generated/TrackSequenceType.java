@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -11,6 +11,7 @@ package generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -27,10 +28,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="TrackNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="TrackNumber" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
  *         &lt;element name="Session"&gt;
  *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
  *               &lt;minInclusive value="1"/&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
@@ -51,15 +52,16 @@ import javax.xml.bind.annotation.XmlType;
 public class TrackSequenceType {
 
     @XmlElement(name = "TrackNumber")
-    protected int trackNumber;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long trackNumber;
     @XmlElement(name = "Session")
-    protected int session;
+    protected long session;
 
     /**
      * Obtiene el valor de la propiedad trackNumber.
      * 
      */
-    public int getTrackNumber() {
+    public long getTrackNumber() {
         return trackNumber;
     }
 
@@ -67,7 +69,7 @@ public class TrackSequenceType {
      * Define el valor de la propiedad trackNumber.
      * 
      */
-    public void setTrackNumber(int value) {
+    public void setTrackNumber(long value) {
         this.trackNumber = value;
     }
 
@@ -75,7 +77,7 @@ public class TrackSequenceType {
      * Obtiene el valor de la propiedad session.
      * 
      */
-    public int getSession() {
+    public long getSession() {
         return session;
     }
 
@@ -83,7 +85,7 @@ public class TrackSequenceType {
      * Define el valor de la propiedad session.
      * 
      */
-    public void setSession(int value) {
+    public void setSession(long value) {
         this.session = value;
     }
 

@@ -583,7 +583,7 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private accoustIDField As String
         
@@ -602,7 +602,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -652,7 +652,7 @@ Namespace Schemas
         
         Private formatField As String
         
-        Private offsetField As Long
+        Private offsetField As ULong
         
         Private offsetFieldSpecified As Boolean
         
@@ -671,7 +671,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property offset() As Long
+        Public Property offset() As ULong
             Get
                 Return Me.offsetField
             End Get
@@ -831,7 +831,7 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private checksumsField() As ChecksumType
         
@@ -868,7 +868,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -1010,15 +1010,15 @@ Namespace Schemas
         
         Private mediaTitleField As String
         
-        Private mediaSequenceField As Integer
+        Private mediaSequenceField As UInteger
         
-        Private totalMediaField As Integer
+        Private totalMediaField As UInteger
         
-        Private sideField As Integer
+        Private sideField As Byte
         
         Private sideFieldSpecified As Boolean
         
-        Private layerField As Integer
+        Private layerField As Byte
         
         Private layerFieldSpecified As Boolean
         
@@ -1033,7 +1033,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property MediaSequence() As Integer
+        Public Property MediaSequence() As UInteger
             Get
                 Return Me.mediaSequenceField
             End Get
@@ -1043,7 +1043,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property TotalMedia() As Integer
+        Public Property TotalMedia() As UInteger
             Get
                 Return Me.totalMediaField
             End Get
@@ -1053,7 +1053,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Side() As Integer
+        Public Property Side() As Byte
             Get
                 Return Me.sideField
             End Get
@@ -1074,7 +1074,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Layer() As Integer
+        Public Property Layer() As Byte
             Get
                 Return Me.layerField
             End Get
@@ -3276,19 +3276,19 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
-        Private headField As Long
+        Private headField As UShort
         
-        Private cylinderField As Long
+        Private cylinderField As UInteger
         
-        Private startSectorField As Long
+        Private startSectorField As ULong
         
-        Private endSectorField As Long
+        Private endSectorField As ULong
         
-        Private sectorsField As Long
+        Private sectorsField As ULong
         
-        Private bytesPerSectorField As Integer
+        Private bytesPerSectorField As UInteger
         
         Private checksumsField() As ChecksumType
         
@@ -3305,7 +3305,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -3315,7 +3315,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Head() As Long
+        Public Property Head() As UShort
             Get
                 Return Me.headField
             End Get
@@ -3325,7 +3325,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Cylinder() As Long
+        Public Property Cylinder() As UInteger
             Get
                 Return Me.cylinderField
             End Get
@@ -3335,7 +3335,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property StartSector() As Long
+        Public Property StartSector() As ULong
             Get
                 Return Me.startSectorField
             End Get
@@ -3345,7 +3345,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property EndSector() As Long
+        Public Property EndSector() As ULong
             Get
                 Return Me.endSectorField
             End Get
@@ -3355,7 +3355,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Sectors() As Long
+        Public Property Sectors() As ULong
             Get
                 Return Me.sectorsField
             End Get
@@ -3365,7 +3365,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property BytesPerSector() As Integer
+        Public Property BytesPerSector() As UInteger
             Get
                 Return Me.bytesPerSectorField
             End Get
@@ -3403,14 +3403,14 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class USBType
         
-        Private vendorIDField As Integer
+        Private vendorIDField As UShort
         
-        Private productIDField As Integer
+        Private productIDField As UShort
         
         Private descriptorsField As DumpType
         
         '''<remarks/>
-        Public Property VendorID() As Integer
+        Public Property VendorID() As UShort
             Get
                 Return Me.vendorIDField
             End Get
@@ -3420,7 +3420,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property ProductID() As Integer
+        Public Property ProductID() As UShort
             Get
                 Return Me.productIDField
             End Get
@@ -3449,7 +3449,7 @@ Namespace Schemas
         
         Private imageField As String
         
-        Private sizeField As Integer
+        Private sizeField As ULong
         
         Private checksumsField() As ChecksumType
         
@@ -3464,7 +3464,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Integer
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -3494,11 +3494,11 @@ Namespace Schemas
         
         Private imageField As String
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private checksumsField() As ChecksumType
         
-        Private pageField As Integer
+        Private pageField As Byte
         
         Private pageFieldSpecified As Boolean
         
@@ -3513,7 +3513,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -3535,7 +3535,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property page() As Integer
+        Public Property page() As Byte
             Get
                 Return Me.pageField
             End Get
@@ -3766,15 +3766,15 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
-        Private sequenceField As Long
+        Private sequenceField As ULong
         
-        Private blockSizeField As Long
+        Private blockSizeField As ULong
         
-        Private startBlockField As Long
+        Private startBlockField As ULong
         
-        Private endBlockField As Long
+        Private endBlockField As ULong
         
         Private checksumsField() As ChecksumType
         
@@ -3789,7 +3789,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -3799,7 +3799,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Sequence() As Long
+        Public Property Sequence() As ULong
             Get
                 Return Me.sequenceField
             End Get
@@ -3809,7 +3809,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property BlockSize() As Long
+        Public Property BlockSize() As ULong
             Get
                 Return Me.blockSizeField
             End Get
@@ -3819,7 +3819,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property StartBlock() As Long
+        Public Property StartBlock() As ULong
             Get
                 Return Me.startBlockField
             End Get
@@ -3829,7 +3829,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property EndBlock() As Long
+        Public Property EndBlock() As ULong
             Get
                 Return Me.endBlockField
             End Get
@@ -3859,13 +3859,13 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
-        Private sequenceField As Long
+        Private sequenceField As ULong
         
-        Private startBlockField As Long
+        Private startBlockField As ULong
         
-        Private endBlockField As Long
+        Private endBlockField As ULong
         
         Private checksumsField() As ChecksumType
         
@@ -3882,7 +3882,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -3892,7 +3892,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Sequence() As Long
+        Public Property Sequence() As ULong
             Get
                 Return Me.sequenceField
             End Get
@@ -3902,7 +3902,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property StartBlock() As Long
+        Public Property StartBlock() As ULong
             Get
                 Return Me.startBlockField
             End Get
@@ -3912,7 +3912,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property EndBlock() As Long
+        Public Property EndBlock() As ULong
             Get
                 Return Me.endBlockField
             End Get
@@ -3951,13 +3951,13 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class BlockSizeType
         
-        Private startingBlockField As Integer
+        Private startingBlockField As UInteger
         
-        Private valueField As Integer
+        Private valueField As UInteger
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property startingBlock() As Integer
+        Public Property startingBlock() As UInteger
             Get
                 Return Me.startingBlockField
             End Get
@@ -3968,7 +3968,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlTextAttribute()>  _
-        Public Property Value() As Integer
+        Public Property Value() As UInteger
             Get
                 Return Me.valueField
             End Get
@@ -3987,7 +3987,7 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private checksumsField() As ChecksumType
         
@@ -4009,11 +4009,11 @@ Namespace Schemas
         
         Private serialNumberField As String
         
-        Private physicalBlockSizeField As Integer
+        Private physicalBlockSizeField As UInteger
         
-        Private logicalBlockSizeField As Integer
+        Private logicalBlockSizeField As UInteger
         
-        Private logicalBlocksField As Long
+        Private logicalBlocksField As ULong
         
         Private variableBlockSizeField() As BlockSizeType
         
@@ -4037,15 +4037,15 @@ Namespace Schemas
         
         Private mAMField As DumpType
         
-        Private headsField As Long
+        Private headsField As UShort
         
         Private headsFieldSpecified As Boolean
         
-        Private cylindersField As Long
+        Private cylindersField As UInteger
         
         Private cylindersFieldSpecified As Boolean
         
-        Private sectorsPerTrackField As Long
+        Private sectorsPerTrackField As ULong
         
         Private sectorsPerTrackFieldSpecified As Boolean
         
@@ -4074,7 +4074,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -4186,7 +4186,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property PhysicalBlockSize() As Integer
+        Public Property PhysicalBlockSize() As UInteger
             Get
                 Return Me.physicalBlockSizeField
             End Get
@@ -4196,7 +4196,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property LogicalBlockSize() As Integer
+        Public Property LogicalBlockSize() As UInteger
             Get
                 Return Me.logicalBlockSizeField
             End Get
@@ -4206,7 +4206,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property LogicalBlocks() As Long
+        Public Property LogicalBlocks() As ULong
             Get
                 Return Me.logicalBlocksField
             End Get
@@ -4328,7 +4328,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Heads() As Long
+        Public Property Heads() As UShort
             Get
                 Return Me.headsField
             End Get
@@ -4349,7 +4349,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Cylinders() As Long
+        Public Property Cylinders() As UInteger
             Get
                 Return Me.cylindersField
             End Get
@@ -4370,7 +4370,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property SectorsPerTrack() As Long
+        Public Property SectorsPerTrack() As ULong
             Get
                 Return Me.sectorsPerTrackField
             End Get
@@ -4471,16 +4471,16 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class PCIType
         
-        Private vendorIDField As Integer
+        Private vendorIDField As UShort
         
-        Private deviceIDField As Integer
+        Private deviceIDField As UShort
         
         Private configurationField As DumpType
         
         Private expansionROMField As LinearMediaType
         
         '''<remarks/>
-        Public Property VendorID() As Integer
+        Public Property VendorID() As UShort
             Get
                 Return Me.vendorIDField
             End Get
@@ -4490,7 +4490,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property DeviceID() As Integer
+        Public Property DeviceID() As UShort
             Get
                 Return Me.deviceIDField
             End Get
@@ -4529,7 +4529,7 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private imageChecksumsField() As ChecksumType
         
@@ -4541,15 +4541,15 @@ Namespace Schemas
         
         Private titleField As String
         
-        Private sequenceField As Integer
+        Private sequenceField As UInteger
         
         Private sequenceFieldSpecified As Boolean
         
-        Private imageInterleaveField As Integer
+        Private imageInterleaveField As UInteger
         
         Private imageInterleaveFieldSpecified As Boolean
         
-        Private interleaveField As Integer
+        Private interleaveField As UInteger
         
         Private interleaveFieldSpecified As Boolean
         
@@ -4582,7 +4582,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -4644,7 +4644,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Sequence() As Integer
+        Public Property Sequence() As UInteger
             Get
                 Return Me.sequenceField
             End Get
@@ -4665,7 +4665,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property ImageInterleave() As Integer
+        Public Property ImageInterleave() As UInteger
             Get
                 Return Me.imageInterleaveField
             End Get
@@ -4686,7 +4686,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Interleave() As Integer
+        Public Property Interleave() As UInteger
             Get
                 Return Me.interleaveField
             End Get
@@ -4924,22 +4924,22 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class PartitionType
         
-        Private sequenceField As Integer
+        Private sequenceField As UInteger
         
         Private nameField As String
         
         Private typeField As String
         
-        Private startSectorField As Integer
+        Private startSectorField As ULong
         
-        Private endSectorField As Integer
+        Private endSectorField As ULong
         
         Private descriptionField As String
         
         Private fileSystemsField() As FileSystemType
         
         '''<remarks/>
-        Public Property Sequence() As Integer
+        Public Property Sequence() As UInteger
             Get
                 Return Me.sequenceField
             End Get
@@ -4969,7 +4969,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property StartSector() As Integer
+        Public Property StartSector() As ULong
             Get
                 Return Me.startSectorField
             End Get
@@ -4979,7 +4979,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property EndSector() As Integer
+        Public Property EndSector() As ULong
             Get
                 Return Me.endSectorField
             End Get
@@ -5031,11 +5031,11 @@ Namespace Schemas
         
         Private backupDateFieldSpecified As Boolean
         
-        Private clusterSizeField As Integer
+        Private clusterSizeField As UInteger
         
-        Private clustersField As Long
+        Private clustersField As ULong
         
-        Private filesField As Long
+        Private filesField As ULong
         
         Private filesFieldSpecified As Boolean
         
@@ -5045,7 +5045,7 @@ Namespace Schemas
         
         Private volumeNameField As String
         
-        Private freeClustersField As Long
+        Private freeClustersField As ULong
         
         Private freeClustersFieldSpecified As Boolean
         
@@ -5145,7 +5145,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property ClusterSize() As Integer
+        Public Property ClusterSize() As UInteger
             Get
                 Return Me.clusterSizeField
             End Get
@@ -5155,7 +5155,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Clusters() As Long
+        Public Property Clusters() As ULong
             Get
                 Return Me.clustersField
             End Get
@@ -5165,7 +5165,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Files() As Long
+        Public Property Files() As ULong
             Get
                 Return Me.filesField
             End Get
@@ -5216,7 +5216,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property FreeClusters() As Long
+        Public Property FreeClusters() As ULong
             Get
                 Return Me.freeClustersField
             End Get
@@ -6507,7 +6507,7 @@ Namespace Schemas
         
         Private languagesField() As LanguagesTypeLanguage
         
-        Private trackNumberField As Integer
+        Private trackNumberField As UInteger
         
         Private codecField As String
         
@@ -6524,7 +6524,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property TrackNumber() As Integer
+        Public Property TrackNumber() As UInteger
             Get
                 Return Me.trackNumberField
             End Get
@@ -6554,13 +6554,13 @@ Namespace Schemas
         
         Private languagesField() As LanguagesTypeLanguage
         
-        Private trackNumberField As Integer
+        Private trackNumberField As UInteger
         
         Private codecField As String
         
-        Private horizontalField As Integer
+        Private horizontalField As UInteger
         
-        Private verticalField As Integer
+        Private verticalField As UInteger
         
         Private meanBitrateField As Long
         
@@ -6579,7 +6579,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property TrackNumber() As Integer
+        Public Property TrackNumber() As UInteger
             Get
                 Return Me.trackNumberField
             End Get
@@ -6601,7 +6601,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Horizontal() As Integer
+        Public Property Horizontal() As UInteger
             Get
                 Return Me.horizontalField
             End Get
@@ -6612,7 +6612,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Vertical() As Integer
+        Public Property Vertical() As UInteger
             Get
                 Return Me.verticalField
             End Get
@@ -6653,15 +6653,15 @@ Namespace Schemas
         
         Private languagesField() As LanguagesTypeLanguage
         
-        Private trackNumberField As Integer
+        Private trackNumberField As UInteger
         
         Private accoustIDField As String
         
         Private codecField As String
         
-        Private channelsField As Integer
+        Private channelsField As UInteger
         
-        Private sampleRateField As Integer
+        Private sampleRateField As Double
         
         Private meanBitrateField As Long
         
@@ -6678,7 +6678,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property TrackNumber() As Integer
+        Public Property TrackNumber() As UInteger
             Get
                 Return Me.trackNumberField
             End Get
@@ -6711,7 +6711,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property Channels() As Integer
+        Public Property Channels() As UInteger
             Get
                 Return Me.channelsField
             End Get
@@ -6722,7 +6722,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property SampleRate() As Integer
+        Public Property SampleRate() As Double
             Get
                 Return Me.sampleRateField
             End Get
@@ -6756,15 +6756,15 @@ Namespace Schemas
         
         Private fileField As FileType
         
-        Private fileSizeField As Long
+        Private fileSizeField As ULong
         
-        Private framesField As Long
+        Private framesField As ULong
         
         Private framesFieldSpecified As Boolean
         
-        Private durationField As Long
+        Private durationField As Double
         
-        Private meanFrameRateField As Integer
+        Private meanFrameRateField As Single
         
         Private meanFrameRateFieldSpecified As Boolean
         
@@ -6809,7 +6809,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property FileSize() As Long
+        Public Property FileSize() As ULong
             Get
                 Return Me.fileSizeField
             End Get
@@ -6819,7 +6819,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Frames() As Long
+        Public Property Frames() As ULong
             Get
                 Return Me.framesField
             End Get
@@ -6840,7 +6840,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Duration() As Long
+        Public Property Duration() As Double
             Get
                 Return Me.durationField
             End Get
@@ -6850,7 +6850,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property MeanFrameRate() As Integer
+        Public Property MeanFrameRate() As Single
             Get
                 Return Me.meanFrameRateField
             End Get
@@ -6934,7 +6934,7 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private checksumsField() As ChecksumType
         
@@ -6949,7 +6949,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -6977,12 +6977,12 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class TrackSequenceType
         
-        Private trackNumberField As Integer
+        Private trackNumberField As UInteger
         
-        Private sessionField As Integer
+        Private sessionField As UInteger
         
         '''<remarks/>
-        Public Property TrackNumber() As Integer
+        Public Property TrackNumber() As UInteger
             Get
                 Return Me.trackNumberField
             End Get
@@ -6992,7 +6992,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Session() As Integer
+        Public Property Session() As UInteger
             Get
                 Return Me.sessionField
             End Get
@@ -7011,7 +7011,7 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private sequenceField As TrackSequenceType
         
@@ -7019,13 +7019,13 @@ Namespace Schemas
         
         Private endMSFField As String
         
-        Private startSectorField As Long
+        Private startSectorField As ULong
         
-        Private endSectorField As Long
+        Private endSectorField As ULong
         
         Private trackType1Field As TrackTypeTrackType
         
-        Private bytesPerSectorField As Integer
+        Private bytesPerSectorField As UInteger
         
         Private accoustIDField As String
         
@@ -7046,7 +7046,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -7086,7 +7086,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property StartSector() As Long
+        Public Property StartSector() As ULong
             Get
                 Return Me.startSectorField
             End Get
@@ -7096,7 +7096,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property EndSector() As Long
+        Public Property EndSector() As ULong
             Get
                 Return Me.endSectorField
             End Get
@@ -7117,7 +7117,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property BytesPerSector() As Integer
+        Public Property BytesPerSector() As UInteger
             Get
                 Return Me.bytesPerSectorField
             End Get
@@ -7245,14 +7245,14 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class XboxSecuritySectorsType
         
-        Private requestVersionField As Integer
+        Private requestVersionField As UInteger
         
-        Private requestNumberField As Integer
+        Private requestNumberField As UInteger
         
         Private securitySectorsField As DumpType
         
         '''<remarks/>
-        Public Property RequestVersion() As Integer
+        Public Property RequestVersion() As UInteger
             Get
                 Return Me.requestVersionField
             End Get
@@ -7262,7 +7262,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property RequestNumber() As Integer
+        Public Property RequestNumber() As UInteger
             Get
                 Return Me.requestNumberField
             End Get
@@ -7336,11 +7336,11 @@ Namespace Schemas
         
         Private imageField As String
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private checksumsField() As ChecksumType
         
-        Private sessionField As Integer
+        Private sessionField As UInteger
         
         Private sessionFieldSpecified As Boolean
         
@@ -7355,7 +7355,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -7377,7 +7377,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property session() As Integer
+        Public Property session() As UInteger
             Get
                 Return Me.sessionField
             End Get
@@ -7526,7 +7526,7 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class LayeredTextType
         
-        Private layerField As Integer
+        Private layerField As UInteger
         
         Private layerFieldSpecified As Boolean
         
@@ -7534,7 +7534,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property layer() As Integer
+        Public Property layer() As UInteger
             Get
                 Return Me.layerField
             End Get
@@ -7573,15 +7573,15 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class SectorsType
         
-        Private layerField As Integer
+        Private layerField As UInteger
         
         Private layerFieldSpecified As Boolean
         
-        Private valueField As Long
+        Private valueField As ULong
         
         '''<remarks/>
         <System.Xml.Serialization.XmlAttributeAttribute()>  _
-        Public Property layer() As Integer
+        Public Property layer() As UInteger
             Get
                 Return Me.layerField
             End Get
@@ -7603,7 +7603,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlTextAttribute()>  _
-        Public Property Value() As Long
+        Public Property Value() As ULong
             Get
                 Return Me.valueField
             End Get
@@ -7682,7 +7682,7 @@ Namespace Schemas
         
         Private imageField As ImageType
         
-        Private sizeField As Long
+        Private sizeField As ULong
         
         Private sequenceField As SequenceType
         
@@ -7712,9 +7712,9 @@ Namespace Schemas
         
         Private offsetFieldSpecified As Boolean
         
-        Private tracksField() As Integer
+        Private tracksField() As UInteger
         
-        Private sessionsField As Integer
+        Private sessionsField As UInteger
         
         Private copyProtectionField As String
         
@@ -7783,7 +7783,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Size() As Long
+        Public Property Size() As ULong
             Get
                 Return Me.sizeField
             End Get
@@ -7941,7 +7941,7 @@ Namespace Schemas
         
         '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute("Tracks")>  _
-        Public Property Tracks() As Integer()
+        Public Property Tracks() As UInteger()
             Get
                 Return Me.tracksField
             End Get
@@ -7951,7 +7951,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Sessions() As Integer
+        Public Property Sessions() As UInteger
             Get
                 Return Me.sessionsField
             End Get
@@ -8254,7 +8254,7 @@ Namespace Schemas
         
         Private languageField() As LanguagesTypeLanguage
         
-        Private pagesField As Integer
+        Private pagesField As UInteger
         
         Private pageSizeField As String
         
@@ -8272,7 +8272,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Pages() As Integer
+        Public Property Pages() As UInteger
             Get
                 Return Me.pagesField
             End Get
@@ -8358,7 +8358,7 @@ Namespace Schemas
         
         Private languageField() As LanguagesTypeLanguage
         
-        Private pagesField As Integer
+        Private pagesField As UInteger
         
         Private pagesFieldSpecified As Boolean
         
@@ -8451,7 +8451,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Pages() As Integer
+        Public Property Pages() As UInteger
             Get
                 Return Me.pagesField
             End Get
@@ -8557,13 +8557,13 @@ Namespace Schemas
         
         Private publicationDateFieldSpecified As Boolean
         
-        Private numberField As Integer
+        Private numberField As UInteger
         
         Private numberFieldSpecified As Boolean
         
         Private languageField() As LanguagesTypeLanguage
         
-        Private pagesField As Integer
+        Private pagesField As UInteger
         
         Private pagesFieldSpecified As Boolean
         
@@ -8635,7 +8635,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Number() As Integer
+        Public Property Number() As UInteger
             Get
                 Return Me.numberField
             End Get
@@ -8667,7 +8667,7 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        Public Property Pages() As Integer
+        Public Property Pages() As UInteger
             Get
                 Return Me.pagesField
             End Get

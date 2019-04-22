@@ -2,15 +2,17 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -26,15 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="Sequence"&gt;
  *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
  *               &lt;minInclusive value="1"/&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
  *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
  *         &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="FileSystems" type="{}FileSystemsType"/&gt;
  *       &lt;/sequence&gt;
@@ -58,15 +60,17 @@ import javax.xml.bind.annotation.XmlType;
 public class PartitionType {
 
     @XmlElement(name = "Sequence")
-    protected int sequence;
+    protected long sequence;
     @XmlElement(name = "Name")
     protected String name;
     @XmlElement(name = "Type")
     protected String type;
-    @XmlElement(name = "StartSector")
-    protected int startSector;
-    @XmlElement(name = "EndSector")
-    protected int endSector;
+    @XmlElement(name = "StartSector", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger startSector;
+    @XmlElement(name = "EndSector", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger endSector;
     @XmlElement(name = "Description")
     protected String description;
     @XmlElement(name = "FileSystems", required = true)
@@ -76,7 +80,7 @@ public class PartitionType {
      * Obtiene el valor de la propiedad sequence.
      * 
      */
-    public int getSequence() {
+    public long getSequence() {
         return sequence;
     }
 
@@ -84,7 +88,7 @@ public class PartitionType {
      * Define el valor de la propiedad sequence.
      * 
      */
-    public void setSequence(int value) {
+    public void setSequence(long value) {
         this.sequence = value;
     }
 
@@ -139,32 +143,48 @@ public class PartitionType {
     /**
      * Obtiene el valor de la propiedad startSector.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public int getStartSector() {
+    public BigInteger getStartSector() {
         return startSector;
     }
 
     /**
      * Define el valor de la propiedad startSector.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setStartSector(int value) {
+    public void setStartSector(BigInteger value) {
         this.startSector = value;
     }
 
     /**
      * Obtiene el valor de la propiedad endSector.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public int getEndSector() {
+    public BigInteger getEndSector() {
         return endSector;
     }
 
     /**
      * Define el valor de la propiedad endSector.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setEndSector(int value) {
+    public void setEndSector(BigInteger value) {
         this.endSector = value;
     }
 

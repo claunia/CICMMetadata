@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="TrackNumber" use="required"&gt;
  *         &lt;simpleType&gt;
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
  *             &lt;minInclusive value="1"/&gt;
  *           &lt;/restriction&gt;
  *         &lt;/simpleType&gt;
@@ -51,7 +51,7 @@ public class SubtitleTracksType {
     @XmlElement(name = "Languages")
     protected LanguagesType languages;
     @XmlAttribute(name = "TrackNumber", required = true)
-    protected int trackNumber;
+    protected long trackNumber;
     @XmlAttribute(name = "Codec", required = true)
     protected String codec;
 
@@ -83,7 +83,7 @@ public class SubtitleTracksType {
      * Obtiene el valor de la propiedad trackNumber.
      * 
      */
-    public int getTrackNumber() {
+    public long getTrackNumber() {
         return trackNumber;
     }
 
@@ -91,7 +91,7 @@ public class SubtitleTracksType {
      * Define el valor de la propiedad trackNumber.
      * 
      */
-    public void setTrackNumber(int value) {
+    public void setTrackNumber(long value) {
         this.trackNumber = value;
     }
 

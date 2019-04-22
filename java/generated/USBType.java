@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="VendorID"&gt;
  *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedShort"&gt;
  *               &lt;minInclusive value="1"/&gt;
  *               &lt;maxInclusive value="65534"/&gt;
  *             &lt;/restriction&gt;
@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;/element&gt;
  *         &lt;element name="ProductID"&gt;
  *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedShort"&gt;
  *               &lt;minInclusive value="1"/&gt;
  *               &lt;maxInclusive value="65534"/&gt;
  *             &lt;/restriction&gt;

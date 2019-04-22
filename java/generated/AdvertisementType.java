@@ -2,17 +2,19 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,10 +31,10 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Product" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="File" type="{}FileType"/&gt;
- *         &lt;element name="FileSize" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="Frames" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
- *         &lt;element name="Duration" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="MeanFrameRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="FileSize" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="Frames" type="{http://www.w3.org/2001/XMLSchema}unsignedLong" minOccurs="0"/&gt;
+ *         &lt;element name="Duration" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="MeanFrameRate" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
  *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
  *         &lt;element name="AudioTrack" type="{}AudioTracksType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="VideoTrack" type="{}VideoTracksType" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -69,14 +71,16 @@ public class AdvertisementType {
     protected String product;
     @XmlElement(name = "File", required = true)
     protected FileType file;
-    @XmlElement(name = "FileSize")
-    protected long fileSize;
+    @XmlElement(name = "FileSize", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger fileSize;
     @XmlElement(name = "Frames")
-    protected Long frames;
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger frames;
     @XmlElement(name = "Duration")
-    protected long duration;
+    protected double duration;
     @XmlElement(name = "MeanFrameRate")
-    protected Integer meanFrameRate;
+    protected Float meanFrameRate;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
     @XmlElement(name = "AudioTrack")
@@ -163,16 +167,24 @@ public class AdvertisementType {
     /**
      * Obtiene el valor de la propiedad fileSize.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getFileSize() {
+    public BigInteger getFileSize() {
         return fileSize;
     }
 
     /**
      * Define el valor de la propiedad fileSize.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setFileSize(long value) {
+    public void setFileSize(BigInteger value) {
         this.fileSize = value;
     }
 
@@ -181,10 +193,10 @@ public class AdvertisementType {
      * 
      * @return
      *     possible object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public Long getFrames() {
+    public BigInteger getFrames() {
         return frames;
     }
 
@@ -193,10 +205,10 @@ public class AdvertisementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public void setFrames(Long value) {
+    public void setFrames(BigInteger value) {
         this.frames = value;
     }
 
@@ -204,7 +216,7 @@ public class AdvertisementType {
      * Obtiene el valor de la propiedad duration.
      * 
      */
-    public long getDuration() {
+    public double getDuration() {
         return duration;
     }
 
@@ -212,7 +224,7 @@ public class AdvertisementType {
      * Define el valor de la propiedad duration.
      * 
      */
-    public void setDuration(long value) {
+    public void setDuration(double value) {
         this.duration = value;
     }
 
@@ -221,10 +233,10 @@ public class AdvertisementType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Float }
      *     
      */
-    public Integer getMeanFrameRate() {
+    public Float getMeanFrameRate() {
         return meanFrameRate;
     }
 
@@ -233,10 +245,10 @@ public class AdvertisementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Float }
      *     
      */
-    public void setMeanFrameRate(Integer value) {
+    public void setMeanFrameRate(Float value) {
         this.meanFrameRate = value;
     }
 

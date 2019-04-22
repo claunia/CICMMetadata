@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -11,6 +11,7 @@ package generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -28,17 +29,17 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="MediaTitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="MediaSequence" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="MediaSequence" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
  *         &lt;element name="TotalMedia"&gt;
  *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
  *               &lt;minInclusive value="1"/&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
  *         &lt;element name="Side" minOccurs="0"&gt;
  *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedByte"&gt;
  *               &lt;maxInclusive value="2"/&gt;
  *               &lt;minInclusive value="1"/&gt;
  *             &lt;/restriction&gt;
@@ -46,7 +47,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;/element&gt;
  *         &lt;element name="Layer" minOccurs="0"&gt;
  *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedByte"&gt;
  *               &lt;minInclusive value="0"/&gt;
  *               &lt;maxInclusive value="1"/&gt;
  *             &lt;/restriction&gt;
@@ -73,13 +74,14 @@ public class SequenceType {
     @XmlElement(name = "MediaTitle")
     protected String mediaTitle;
     @XmlElement(name = "MediaSequence")
-    protected int mediaSequence;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long mediaSequence;
     @XmlElement(name = "TotalMedia")
-    protected int totalMedia;
+    protected long totalMedia;
     @XmlElement(name = "Side")
-    protected Integer side;
+    protected Short side;
     @XmlElement(name = "Layer")
-    protected Integer layer;
+    protected Short layer;
 
     /**
      * Obtiene el valor de la propiedad mediaTitle.
@@ -109,7 +111,7 @@ public class SequenceType {
      * Obtiene el valor de la propiedad mediaSequence.
      * 
      */
-    public int getMediaSequence() {
+    public long getMediaSequence() {
         return mediaSequence;
     }
 
@@ -117,7 +119,7 @@ public class SequenceType {
      * Define el valor de la propiedad mediaSequence.
      * 
      */
-    public void setMediaSequence(int value) {
+    public void setMediaSequence(long value) {
         this.mediaSequence = value;
     }
 
@@ -125,7 +127,7 @@ public class SequenceType {
      * Obtiene el valor de la propiedad totalMedia.
      * 
      */
-    public int getTotalMedia() {
+    public long getTotalMedia() {
         return totalMedia;
     }
 
@@ -133,7 +135,7 @@ public class SequenceType {
      * Define el valor de la propiedad totalMedia.
      * 
      */
-    public void setTotalMedia(int value) {
+    public void setTotalMedia(long value) {
         this.totalMedia = value;
     }
 
@@ -142,10 +144,10 @@ public class SequenceType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Short }
      *     
      */
-    public Integer getSide() {
+    public Short getSide() {
         return side;
     }
 
@@ -154,10 +156,10 @@ public class SequenceType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Short }
      *     
      */
-    public void setSide(Integer value) {
+    public void setSide(Short value) {
         this.side = value;
     }
 
@@ -166,10 +168,10 @@ public class SequenceType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Short }
      *     
      */
-    public Integer getLayer() {
+    public Short getLayer() {
         return layer;
     }
 
@@ -178,10 +180,10 @@ public class SequenceType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Short }
      *     
      */
-    public void setLayer(Integer value) {
+    public void setLayer(Short value) {
         this.layer = value;
     }
 

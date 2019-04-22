@@ -2,15 +2,17 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -27,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="Image" type="{}ImageType"/&gt;
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="Head" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="Cylinder" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="Sectors" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="BytesPerSector" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="Head" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/&gt;
+ *         &lt;element name="Cylinder" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+ *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="Sectors" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="BytesPerSector" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
  *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
  *         &lt;element name="Format" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -61,20 +63,27 @@ public class BlockTrackType {
 
     @XmlElement(name = "Image", required = true)
     protected ImageType image;
-    @XmlElement(name = "Size")
-    protected long size;
+    @XmlElement(name = "Size", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger size;
     @XmlElement(name = "Head")
-    protected long head;
+    @XmlSchemaType(name = "unsignedShort")
+    protected int head;
     @XmlElement(name = "Cylinder")
+    @XmlSchemaType(name = "unsignedInt")
     protected long cylinder;
-    @XmlElement(name = "StartSector")
-    protected long startSector;
-    @XmlElement(name = "EndSector")
-    protected long endSector;
-    @XmlElement(name = "Sectors")
-    protected long sectors;
+    @XmlElement(name = "StartSector", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger startSector;
+    @XmlElement(name = "EndSector", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger endSector;
+    @XmlElement(name = "Sectors", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger sectors;
     @XmlElement(name = "BytesPerSector")
-    protected int bytesPerSector;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long bytesPerSector;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
     @XmlElement(name = "Format")
@@ -107,16 +116,24 @@ public class BlockTrackType {
     /**
      * Obtiene el valor de la propiedad size.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getSize() {
+    public BigInteger getSize() {
         return size;
     }
 
     /**
      * Define el valor de la propiedad size.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setSize(long value) {
+    public void setSize(BigInteger value) {
         this.size = value;
     }
 
@@ -124,7 +141,7 @@ public class BlockTrackType {
      * Obtiene el valor de la propiedad head.
      * 
      */
-    public long getHead() {
+    public int getHead() {
         return head;
     }
 
@@ -132,7 +149,7 @@ public class BlockTrackType {
      * Define el valor de la propiedad head.
      * 
      */
-    public void setHead(long value) {
+    public void setHead(int value) {
         this.head = value;
     }
 
@@ -155,48 +172,72 @@ public class BlockTrackType {
     /**
      * Obtiene el valor de la propiedad startSector.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getStartSector() {
+    public BigInteger getStartSector() {
         return startSector;
     }
 
     /**
      * Define el valor de la propiedad startSector.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setStartSector(long value) {
+    public void setStartSector(BigInteger value) {
         this.startSector = value;
     }
 
     /**
      * Obtiene el valor de la propiedad endSector.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getEndSector() {
+    public BigInteger getEndSector() {
         return endSector;
     }
 
     /**
      * Define el valor de la propiedad endSector.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setEndSector(long value) {
+    public void setEndSector(BigInteger value) {
         this.endSector = value;
     }
 
     /**
      * Obtiene el valor de la propiedad sectors.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getSectors() {
+    public BigInteger getSectors() {
         return sectors;
     }
 
     /**
      * Define el valor de la propiedad sectors.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setSectors(long value) {
+    public void setSectors(BigInteger value) {
         this.sectors = value;
     }
 
@@ -204,7 +245,7 @@ public class BlockTrackType {
      * Obtiene el valor de la propiedad bytesPerSector.
      * 
      */
-    public int getBytesPerSector() {
+    public long getBytesPerSector() {
         return bytesPerSector;
     }
 
@@ -212,7 +253,7 @@ public class BlockTrackType {
      * Define el valor de la propiedad bytesPerSector.
      * 
      */
-    public void setBytesPerSector(int value) {
+    public void setBytesPerSector(long value) {
         this.bytesPerSector = value;
     }
 

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -11,6 +11,7 @@ package generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -24,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="RequestVersion" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="RequestNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="RequestVersion" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+ *         &lt;element name="RequestNumber" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
  *         &lt;element name="SecuritySectors" type="{}DumpType"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -44,9 +45,11 @@ import javax.xml.bind.annotation.XmlType;
 public class XboxSecuritySectorsType {
 
     @XmlElement(name = "RequestVersion")
-    protected int requestVersion;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long requestVersion;
     @XmlElement(name = "RequestNumber")
-    protected int requestNumber;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long requestNumber;
     @XmlElement(name = "SecuritySectors", required = true)
     protected DumpType securitySectors;
 
@@ -54,7 +57,7 @@ public class XboxSecuritySectorsType {
      * Obtiene el valor de la propiedad requestVersion.
      * 
      */
-    public int getRequestVersion() {
+    public long getRequestVersion() {
         return requestVersion;
     }
 
@@ -62,7 +65,7 @@ public class XboxSecuritySectorsType {
      * Define el valor de la propiedad requestVersion.
      * 
      */
-    public void setRequestVersion(int value) {
+    public void setRequestVersion(long value) {
         this.requestVersion = value;
     }
 
@@ -70,7 +73,7 @@ public class XboxSecuritySectorsType {
      * Obtiene el valor de la propiedad requestNumber.
      * 
      */
-    public int getRequestNumber() {
+    public long getRequestNumber() {
         return requestNumber;
     }
 
@@ -78,7 +81,7 @@ public class XboxSecuritySectorsType {
      * Define el valor de la propiedad requestNumber.
      * 
      */
-    public void setRequestNumber(int value) {
+    public void setRequestNumber(long value) {
         this.requestNumber = value;
     }
 

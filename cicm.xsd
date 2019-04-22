@@ -83,7 +83,7 @@
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:string" name="format" use="optional"/>
-                <xs:attribute type="xs:long" name="offset" use="optional"/>
+                <xs:attribute type="xs:unsignedLong" name="offset" use="optional"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -194,7 +194,7 @@
                     <xs:documentation>File containing border dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of border dump</xs:documentation>
                 </xs:annotation>
@@ -207,7 +207,7 @@
         </xs:sequence>
         <xs:attribute name="session">
             <xs:simpleType>
-                <xs:restriction base="xs:int">
+                <xs:restriction base="xs:unsignedInt">
                     <xs:minInclusive value="1"/>
                 </xs:restriction>
             </xs:simpleType>
@@ -224,7 +224,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of track dump in bytes</xs:documentation>
                 </xs:annotation>
@@ -245,12 +245,12 @@
                     <xs:documentation>Track end address in MM:SS:FF</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="StartSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Track start sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="EndSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Track end sector</xs:documentation>
                 </xs:annotation>
@@ -275,7 +275,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="xs:int" name="BytesPerSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="BytesPerSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical
                         format)
@@ -333,7 +333,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Number" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Number" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Sequential number of this magazine
                     </xs:documentation>
@@ -345,7 +345,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Pages" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Pages of this magazine, including cover and back
                     </xs:documentation>
@@ -390,17 +390,17 @@
                     <xs:documentation>Filesystem last backup date</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="ClusterSize" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="ClusterSize" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Bytes per cluster</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Clusters" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Clusters" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Clusters in filesystem</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Files" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Files" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Files in filesystem</xs:documentation>
                 </xs:annotation>
@@ -420,7 +420,7 @@
                     <xs:documentation>Filesystem volume name</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="FreeClusters" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="FreeClusters" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Free clusters in filesystem</xs:documentation>
                 </xs:annotation>
@@ -590,7 +590,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
@@ -667,12 +667,12 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Tracks" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="xs:unsignedInt" name="Tracks" minOccurs="1" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Tracks on this disc/side</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Sessions" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Sessions" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Sessions on this disc/side</xs:documentation>
                 </xs:annotation>
@@ -856,7 +856,7 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedInt">
                         <xs:minInclusive value="1"/>
                     </xs:restriction>
                 </xs:simpleType>
@@ -872,12 +872,12 @@
                     <xs:documentation>Partition type</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="StartSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Partition starting sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="EndSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Partition ending sector</xs:documentation>
                 </xs:annotation>
@@ -913,7 +913,7 @@
             <xs:extension base="xs:string">
                 <xs:attribute name="layer">
                     <xs:simpleType>
-                        <xs:restriction base="xs:int">
+                        <xs:restriction base="xs:unsignedInt">
                             <xs:minInclusive value="0"/>
                         </xs:restriction>
                     </xs:simpleType>
@@ -956,12 +956,12 @@
     </xs:complexType>
     <xs:complexType name="XboxSecuritySectorsType">
         <xs:sequence>
-            <xs:element type="xs:int" name="RequestVersion" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="RequestVersion" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Xbox SS Request Version</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="RequestNumber" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="RequestNumber" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Xbox SS Request Number</xs:documentation>
                 </xs:annotation>
@@ -1072,7 +1072,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="MediaSequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="MediaSequence" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Media title as printed in label</xs:documentation>
                 </xs:annotation>
@@ -1083,7 +1083,7 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedInt">
                         <xs:minInclusive value="1"/>
                     </xs:restriction>
                 </xs:simpleType>
@@ -1094,7 +1094,7 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedByte">
                         <xs:maxInclusive value="2"/>
                         <xs:minInclusive value="1"/>
                     </xs:restriction>
@@ -1106,7 +1106,7 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedByte">
                         <xs:minInclusive value="0"/>
                         <xs:maxInclusive value="1"/>
                     </xs:restriction>
@@ -1120,7 +1120,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:int" name="TrackNumber" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="TrackNumber" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Track number</xs:documentation>
                 </xs:annotation>
@@ -1130,7 +1130,7 @@
                     <xs:documentation>Session this track belongs to</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedInt">
                         <xs:minInclusive value="1"/>
                     </xs:restriction>
                 </xs:simpleType>
@@ -1174,7 +1174,7 @@
                     <xs:documentation>Book language</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Pages" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Book pages</xs:documentation>
                 </xs:annotation>
@@ -1229,7 +1229,7 @@
                     <xs:documentation>File containing dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Size" maxOccurs="1" minOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" maxOccurs="1" minOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of dump</xs:documentation>
                 </xs:annotation>
@@ -1466,8 +1466,8 @@
     </xs:complexType>
     <xs:complexType name="SectorsType">
         <xs:simpleContent>
-            <xs:extension base="xs:long">
-                <xs:attribute type="xs:int" name="layer"/>
+            <xs:extension base="xs:unsignedLong">
+                <xs:attribute type="xs:unsignedInt" name="layer"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -1605,7 +1605,7 @@
                     <xs:documentation>Language of the user manual</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Pages" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Pages of the user manual</xs:documentation>
                 </xs:annotation>
@@ -1637,13 +1637,13 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:long" name="Start">
+            <xs:element type="xs:unsignedLong" name="Start">
                 <xs:annotation>
                     <xs:documentation>Start of XGD's security sectors
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="End">
+            <xs:element type="xs:unsignedLong" name="End">
                 <xs:annotation>
                     <xs:documentation>End of XGD's security sectors</xs:documentation>
                 </xs:annotation>
@@ -2192,7 +2192,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of subchannel dump</xs:documentation>
                 </xs:annotation>
@@ -2231,7 +2231,7 @@
                 <xs:documentation>Track number in media container</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
-                <xs:restriction base="xs:int">
+                <xs:restriction base="xs:unsignedInt">
                     <xs:minInclusive value="1"/>
                 </xs:restriction>
             </xs:simpleType>
@@ -2246,12 +2246,12 @@
                 <xs:documentation>Track's codec</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Channels" type="xs:int" use="required">
+        <xs:attribute name="Channels" type="xs:unsignedInt" use="required">
             <xs:annotation>
                 <xs:documentation>Audio channels</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="SampleRate" type="xs:int" use="required">
+        <xs:attribute name="SampleRate" type="xs:double" use="required">
             <xs:annotation>
                 <xs:documentation>Audio sampling rate</xs:documentation>
             </xs:annotation>
@@ -2276,7 +2276,7 @@
                 <xs:documentation>Track number in media container</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
-                <xs:restriction base="xs:int">
+                <xs:restriction base="xs:unsignedInt">
                     <xs:minInclusive value="1"/>
                 </xs:restriction>
             </xs:simpleType>
@@ -2286,12 +2286,12 @@
                 <xs:documentation>Track's codec</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Horizontal" type="xs:int" use="required">
+        <xs:attribute name="Horizontal" type="xs:unsignedInt" use="required">
             <xs:annotation>
                 <xs:documentation>Horizontal resolution in pixels</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Vertical" type="xs:int" use="required">
+        <xs:attribute name="Vertical" type="xs:unsignedInt" use="required">
             <xs:annotation>
                 <xs:documentation>Vertical resolution in pixels</xs:documentation>
             </xs:annotation>
@@ -2321,7 +2321,7 @@
                 <xs:documentation>Track number in media container</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
-                <xs:restriction base="xs:int">
+                <xs:restriction base="xs:unsignedInt">
                     <xs:minInclusive value="1"/>
                 </xs:restriction>
             </xs:simpleType>
@@ -2477,22 +2477,22 @@
                     <xs:documentation>File containing advertising</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="FileSize" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="FileSize" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Frames" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Frames" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Total video frames</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Duration" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:double" name="Duration" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Duration in seconds</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="MeanFrameRate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:float" name="MeanFrameRate" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Mean framerate</xs:documentation>
                 </xs:annotation>
@@ -2540,7 +2540,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
@@ -2574,18 +2574,18 @@
                     <xs:documentation>Title as it is labeled on media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Sequence" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Sequence" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Sequence of media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="ImageInterleave" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="ImageInterleave" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>How many bytes must be read in image file for each byte in media
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Interleave" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Interleave" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>How many bytes must be skipped in image file for each byte in media
                     </xs:documentation>
@@ -2692,7 +2692,7 @@
                     <xs:documentation>Contains PCI Vendor ID</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedShort">
                         <xs:minInclusive value="1"/>
                         <xs:maxInclusive value="65534"/>
                     </xs:restriction>
@@ -2703,7 +2703,7 @@
                     <xs:documentation>Contains PCI Device ID</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedShort">
                         <xs:minInclusive value="1"/>
                         <xs:maxInclusive value="65534"/>
                     </xs:restriction>
@@ -2728,7 +2728,7 @@
                     <xs:documentation>File containing SCSI Extended Vendor Page Descriptor dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of SCSI Extended Vendor Page Descriptor dump</xs:documentation>
                 </xs:annotation>
@@ -2744,7 +2744,7 @@
                 <xs:documentation>EVPD page</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
-                <xs:restriction base="xs:int">
+                <xs:restriction base="xs:unsignedByte">
                     <xs:minInclusive value="1"/>
                     <xs:maxInclusive value="255"/>
                 </xs:restriction>
@@ -2793,7 +2793,7 @@
                     <xs:documentation>Contains USB Vendor ID</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedShort">
                         <xs:minInclusive value="1"/>
                         <xs:maxInclusive value="65534"/>
                     </xs:restriction>
@@ -2804,7 +2804,7 @@
                     <xs:documentation>Contains USB Product ID</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
-                    <xs:restriction base="xs:int">
+                    <xs:restriction base="xs:unsignedShort">
                         <xs:minInclusive value="1"/>
                         <xs:maxInclusive value="65534"/>
                     </xs:restriction>
@@ -2893,39 +2893,39 @@
                     <xs:documentation>File containing track dump, and format</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of track dump in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Head" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedShort" name="Head" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Head (from 0) where this track resides</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Cylinder" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Cylinder" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Cylinder where this track resides</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="StartSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Track start sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="EndSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Track end sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Sectors" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Sectors" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Sectors in track. Not necessarily EndSector-StartSector, as there can be hidden
                         sectors
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="BytesPerSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="BytesPerSector" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Bytes per sector, physical undecoded tag-less</xs:documentation>
                 </xs:annotation>
@@ -2953,7 +2953,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
@@ -3011,17 +3011,17 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="PhysicalBlockSize" minOccurs="1">
+            <xs:element type="xs:unsignedInt" name="PhysicalBlockSize" minOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Physical block size in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="LogicalBlockSize" minOccurs="1">
+            <xs:element type="xs:unsignedInt" name="LogicalBlockSize" minOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Logical block size in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="LogicalBlocks" minOccurs="1">
+            <xs:element type="xs:unsignedLong" name="LogicalBlocks" minOccurs="1">
                 <xs:annotation>
                     <xs:documentation>User accessible logical blocks</xs:documentation>
                 </xs:annotation>
@@ -3082,17 +3082,17 @@
                     <xs:documentation>Medium Auxiliary Memory</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Heads" minOccurs="0">
+            <xs:element type="xs:unsignedShort" name="Heads" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Real physical heads</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Cylinders" minOccurs="0">
+            <xs:element type="xs:unsignedInt" name="Cylinders" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Real physical cylinders</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="SectorsPerTrack" minOccurs="0">
+            <xs:element type="xs:unsignedLong" name="SectorsPerTrack" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Sectors per track, if constant, if not, this field is ommited and separate tracks
                         must be indicated
@@ -3150,7 +3150,7 @@
                     <xs:documentation>File containing block dump, and format</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of block dump in bytes</xs:documentation>
                 </xs:annotation>
@@ -3185,7 +3185,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
@@ -3261,8 +3261,8 @@
     </xs:complexType>
     <xs:complexType name="BlockSizeType">
         <xs:simpleContent>
-            <xs:extension base="xs:int">
-                <xs:attribute type="xs:int" name="startingBlock" use="required"/>
+            <xs:extension base="xs:unsignedInt">
+                <xs:attribute type="xs:unsignedInt" name="startingBlock" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -3283,22 +3283,22 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of partition dump in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Sequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Sequence" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Partition sequence</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="StartBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartBlock" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Partition start block</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="EndBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndBlock" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Partition end block</xs:documentation>
                 </xs:annotation>
@@ -3324,27 +3324,27 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of file in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="Sequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Sequence" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>File sequence</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="BlockSize" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="BlockSize" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Size of blocks in this file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="StartBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartBlock" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>File start block</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:long" name="EndBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndBlock" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>File end block</xs:documentation>
                 </xs:annotation>

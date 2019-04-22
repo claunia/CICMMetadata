@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,14 +30,14 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="TrackNumber" use="required"&gt;
  *         &lt;simpleType&gt;
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
  *             &lt;minInclusive value="1"/&gt;
  *           &lt;/restriction&gt;
  *         &lt;/simpleType&gt;
  *       &lt;/attribute&gt;
  *       &lt;attribute name="Codec" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="Horizontal" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="Vertical" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="Horizontal" use="required" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" /&gt;
+ *       &lt;attribute name="Vertical" use="required" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" /&gt;
  *       &lt;attribute name="MeanBitrate" use="required" type="{http://www.w3.org/2001/XMLSchema}long" /&gt;
  *       &lt;attribute name="ThreeD" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
  *     &lt;/restriction&gt;
@@ -55,13 +56,15 @@ public class VideoTracksType {
     @XmlElement(name = "Languages")
     protected LanguagesType languages;
     @XmlAttribute(name = "TrackNumber", required = true)
-    protected int trackNumber;
+    protected long trackNumber;
     @XmlAttribute(name = "Codec", required = true)
     protected String codec;
     @XmlAttribute(name = "Horizontal", required = true)
-    protected int horizontal;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long horizontal;
     @XmlAttribute(name = "Vertical", required = true)
-    protected int vertical;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long vertical;
     @XmlAttribute(name = "MeanBitrate", required = true)
     protected long meanBitrate;
     @XmlAttribute(name = "ThreeD", required = true)
@@ -95,7 +98,7 @@ public class VideoTracksType {
      * Obtiene el valor de la propiedad trackNumber.
      * 
      */
-    public int getTrackNumber() {
+    public long getTrackNumber() {
         return trackNumber;
     }
 
@@ -103,7 +106,7 @@ public class VideoTracksType {
      * Define el valor de la propiedad trackNumber.
      * 
      */
-    public void setTrackNumber(int value) {
+    public void setTrackNumber(long value) {
         this.trackNumber = value;
     }
 
@@ -135,7 +138,7 @@ public class VideoTracksType {
      * Obtiene el valor de la propiedad horizontal.
      * 
      */
-    public int getHorizontal() {
+    public long getHorizontal() {
         return horizontal;
     }
 
@@ -143,7 +146,7 @@ public class VideoTracksType {
      * Define el valor de la propiedad horizontal.
      * 
      */
-    public void setHorizontal(int value) {
+    public void setHorizontal(long value) {
         this.horizontal = value;
     }
 
@@ -151,7 +154,7 @@ public class VideoTracksType {
      * Obtiene el valor de la propiedad vertical.
      * 
      */
-    public int getVertical() {
+    public long getVertical() {
         return vertical;
     }
 
@@ -159,7 +162,7 @@ public class VideoTracksType {
      * Define el valor de la propiedad vertical.
      * 
      */
-    public void setVertical(int value) {
+    public void setVertical(long value) {
         this.vertical = value;
     }
 

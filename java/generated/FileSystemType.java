@@ -2,12 +2,13 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -32,13 +33,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="CreationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="ModificationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="BackupDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
- *         &lt;element name="ClusterSize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Clusters" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="Files" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="ClusterSize" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
+ *         &lt;element name="Clusters" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="Files" type="{http://www.w3.org/2001/XMLSchema}unsignedLong" minOccurs="0"/&gt;
  *         &lt;element name="Bootable" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="VolumeSerial" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="VolumeName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="FreeClusters" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="FreeClusters" type="{http://www.w3.org/2001/XMLSchema}unsignedLong" minOccurs="0"/&gt;
  *         &lt;element name="Dirty" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="ExpirationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="EffectiveDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
@@ -93,11 +94,14 @@ public class FileSystemType {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar backupDate;
     @XmlElement(name = "ClusterSize")
-    protected int clusterSize;
-    @XmlElement(name = "Clusters")
-    protected long clusters;
+    @XmlSchemaType(name = "unsignedInt")
+    protected long clusterSize;
+    @XmlElement(name = "Clusters", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger clusters;
     @XmlElement(name = "Files")
-    protected Long files;
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger files;
     @XmlElement(name = "Bootable")
     protected boolean bootable;
     @XmlElement(name = "VolumeSerial")
@@ -105,7 +109,8 @@ public class FileSystemType {
     @XmlElement(name = "VolumeName")
     protected String volumeName;
     @XmlElement(name = "FreeClusters")
-    protected Long freeClusters;
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger freeClusters;
     @XmlElement(name = "Dirty")
     protected boolean dirty;
     @XmlElement(name = "ExpirationDate")
@@ -227,7 +232,7 @@ public class FileSystemType {
      * Obtiene el valor de la propiedad clusterSize.
      * 
      */
-    public int getClusterSize() {
+    public long getClusterSize() {
         return clusterSize;
     }
 
@@ -235,23 +240,31 @@ public class FileSystemType {
      * Define el valor de la propiedad clusterSize.
      * 
      */
-    public void setClusterSize(int value) {
+    public void setClusterSize(long value) {
         this.clusterSize = value;
     }
 
     /**
      * Obtiene el valor de la propiedad clusters.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getClusters() {
+    public BigInteger getClusters() {
         return clusters;
     }
 
     /**
      * Define el valor de la propiedad clusters.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setClusters(long value) {
+    public void setClusters(BigInteger value) {
         this.clusters = value;
     }
 
@@ -260,10 +273,10 @@ public class FileSystemType {
      * 
      * @return
      *     possible object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public Long getFiles() {
+    public BigInteger getFiles() {
         return files;
     }
 
@@ -272,10 +285,10 @@ public class FileSystemType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public void setFiles(Long value) {
+    public void setFiles(BigInteger value) {
         this.files = value;
     }
 
@@ -348,10 +361,10 @@ public class FileSystemType {
      * 
      * @return
      *     possible object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public Long getFreeClusters() {
+    public BigInteger getFreeClusters() {
         return freeClusters;
     }
 
@@ -360,10 +373,10 @@ public class FileSystemType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public void setFreeClusters(Long value) {
+    public void setFreeClusters(BigInteger value) {
         this.freeClusters = value;
     }
 

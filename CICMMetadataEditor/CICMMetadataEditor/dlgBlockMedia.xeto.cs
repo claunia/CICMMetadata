@@ -85,7 +85,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<PartitionType, int>(r => r.Sequence).Convert(v => v.ToString())
+                    Binding = Binding.Property<PartitionType, uint>(r => r.Sequence).Convert(v => v.ToString())
                 },
                 HeaderText = "Sequence"
             });
@@ -93,7 +93,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<PartitionType, int>(r => r.StartSector).Convert(v => v.ToString())
+                    Binding = Binding.Property<PartitionType, ulong>(r => r.StartSector).Convert(v => v.ToString())
                 },
                 HeaderText = "Start"
             });
@@ -101,7 +101,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<PartitionType, int>(r => r.EndSector).Convert(v => v.ToString())
+                    Binding = Binding.Property<PartitionType, ulong>(r => r.EndSector).Convert(v => v.ToString())
                 },
                 HeaderText = "End"
             });
@@ -229,7 +229,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -247,7 +247,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -265,7 +265,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -283,7 +283,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -301,7 +301,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -319,7 +319,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -337,7 +337,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -355,7 +355,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -373,7 +373,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -391,7 +391,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -405,7 +405,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<EVPDType, int>(r => r.page).Convert(v => v.ToString())
+                    Binding = Binding.Property<EVPDType, byte>(r => r.page).Convert(v => v.ToString())
                 },
                 HeaderText = "Page"
             });
@@ -418,7 +418,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<EVPDType, long>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<EVPDType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -439,7 +439,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -457,7 +457,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<DumpType, int>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<DumpType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -476,7 +476,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<LinearMediaType, long>(r => r.Image.offset).Convert(v => v.ToString())
+                    Binding = Binding.Property<LinearMediaType, ulong>(r => r.Image.offset).Convert(v => v.ToString())
                 },
                 HeaderText = "Offset"
             });
@@ -484,7 +484,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<LinearMediaType, long>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<LinearMediaType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -506,7 +506,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, long>(r => r.Image.offset).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, ulong>(r => r.Image.offset).Convert(v => v.ToString())
                 },
                 HeaderText = "Offset"
             });
@@ -514,7 +514,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, long>(r => r.Size).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, ulong>(r => r.Size).Convert(v => v.ToString())
                 },
                 HeaderText = "Size"
             });
@@ -527,7 +527,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, long>(r => r.Head).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, ushort>(r => r.Head).Convert(v => v.ToString())
                 },
                 HeaderText = "Head"
             });
@@ -535,7 +535,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, long>(r => r.Cylinder).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, uint>(r => r.Cylinder).Convert(v => v.ToString())
                 },
                 HeaderText = "Cylinder"
             });
@@ -543,7 +543,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, long>(r => r.StartSector).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, ulong>(r => r.StartSector).Convert(v => v.ToString())
                 },
                 HeaderText = "Start"
             });
@@ -551,7 +551,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, long>(r => r.EndSector).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, ulong>(r => r.EndSector).Convert(v => v.ToString())
                 },
                 HeaderText = "End"
             });
@@ -559,7 +559,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, long>(r => r.Sectors).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, ulong>(r => r.Sectors).Convert(v => v.ToString())
                 },
                 HeaderText = "Sectors"
             });
@@ -567,7 +567,7 @@ namespace CICMMetadataEditor
             {
                 DataCell = new TextBoxCell
                 {
-                    Binding = Binding.Property<BlockTrackType, int>(r => r.BytesPerSector).Convert(v => v.ToString())
+                    Binding = Binding.Property<BlockTrackType, uint>(r => r.BytesPerSector).Convert(v => v.ToString())
                 },
                 HeaderText = "Bytes per sector"
             });
@@ -989,9 +989,9 @@ namespace CICMMetadataEditor
 
             partitionIter = new PartitionType
             {
-                Sequence    = (int)spPartitionSequence.Value,
-                StartSector = int.Parse(txtPartitionStart.Text),
-                EndSector   = int.Parse(txtPartitionEnd.Text),
+                Sequence    = (uint)spPartitionSequence.Value,
+                StartSector = ulong.Parse(txtPartitionStart.Text),
+                EndSector   = ulong.Parse(txtPartitionEnd.Text),
                 Type        = txtPartitionType.Text,
                 Name        = txtPartitionName.Text,
                 Description = txtPartitionDescription.Text
@@ -1463,10 +1463,10 @@ namespace CICMMetadataEditor
             if(!string.IsNullOrWhiteSpace(txtOffset.Text) && long.TryParse(txtOffset.Text, out ltmp))
             {
                 Metadata.Image.offsetSpecified = true;
-                Metadata.Image.offset          = long.Parse(txtOffset.Text);
+                Metadata.Image.offset          = ulong.Parse(txtOffset.Text);
             }
 
-            Metadata.Size             = long.Parse(txtSize.Text);
+            Metadata.Size             = ulong.Parse(txtSize.Text);
             Metadata.Checksums        = checksums;
             Metadata.ContentChecksums = contentChks;
 
@@ -1475,19 +1475,19 @@ namespace CICMMetadataEditor
                 Metadata.Sequence = new SequenceType
                 {
                     MediaTitle    = txtMediaTitle.Text,
-                    MediaSequence = (int)spSequence.Value,
-                    TotalMedia    = (int)spTotalMedia.Value
+                    MediaSequence = (uint)spSequence.Value,
+                    TotalMedia    = (uint)spTotalMedia.Value
                 };
                 if(spSide.Value > 0)
                 {
                     Metadata.Sequence.SideSpecified = true;
-                    Metadata.Sequence.Side          = (int)spSide.Value;
+                    Metadata.Sequence.Side          = (byte)spSide.Value;
                 }
 
                 if(spLayer.Value > 0)
                 {
                     Metadata.Sequence.LayerSpecified = true;
-                    Metadata.Sequence.Layer          = (int)spLayer.Value;
+                    Metadata.Sequence.Layer          = (byte)spLayer.Value;
                 }
             }
 
@@ -1497,9 +1497,9 @@ namespace CICMMetadataEditor
             if(!string.IsNullOrWhiteSpace(txtFirmware.Text)) Metadata.Firmware         = txtFirmware.Text;
             if(!string.IsNullOrWhiteSpace(txtInterface.Text)) Metadata.Interface       = txtInterface.Text;
 
-            Metadata.PhysicalBlockSize = (int)spPhysicalBlockSize.Value;
-            Metadata.LogicalBlockSize  = (int)spLogicalBlockSize.Value;
-            Metadata.LogicalBlocks     = long.Parse(txtBlocks.Text);
+            Metadata.PhysicalBlockSize = (uint)spPhysicalBlockSize.Value;
+            Metadata.LogicalBlockSize  = (uint)spLogicalBlockSize.Value;
+            Metadata.LogicalBlocks     = ulong.Parse(txtBlocks.Text);
             Metadata.VariableBlockSize = variableBlockSize;
             Metadata.TapeInformation   = tapeInformation;
             Metadata.Scans             = scans;
@@ -1588,9 +1588,9 @@ namespace CICMMetadataEditor
                 Metadata.HeadsSpecified           = true;
                 Metadata.CylindersSpecified       = true;
                 Metadata.SectorsPerTrackSpecified = true;
-                Metadata.Heads                    = (long)spHeads.Value;
-                Metadata.Cylinders                = (long)spCylinders.Value;
-                Metadata.SectorsPerTrack          = (long)spSectors.Value;
+                Metadata.Heads                    = (ushort)spHeads.Value;
+                Metadata.Cylinders                = (uint)spCylinders.Value;
+                Metadata.SectorsPerTrack          = (ulong)spSectors.Value;
             }
 
             if(lstTracks.Count > 0) Metadata.Track = lstTracks.ToArray();

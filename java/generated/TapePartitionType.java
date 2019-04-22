@@ -2,17 +2,19 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,10 +31,10 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="Image" type="{}ImageType"/&gt;
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="Sequence" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="StartBlock" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="EndBlock" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="Sequence" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="StartBlock" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
+ *         &lt;element name="EndBlock" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
  *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
  *         &lt;sequence&gt;
  *           &lt;element name="File" type="{}TapeFileType" maxOccurs="unbounded"/&gt;
@@ -59,14 +61,18 @@ public class TapePartitionType {
 
     @XmlElement(name = "Image", required = true)
     protected ImageType image;
-    @XmlElement(name = "Size")
-    protected long size;
-    @XmlElement(name = "Sequence")
-    protected long sequence;
-    @XmlElement(name = "StartBlock")
-    protected long startBlock;
-    @XmlElement(name = "EndBlock")
-    protected long endBlock;
+    @XmlElement(name = "Size", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger size;
+    @XmlElement(name = "Sequence", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger sequence;
+    @XmlElement(name = "StartBlock", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger startBlock;
+    @XmlElement(name = "EndBlock", required = true)
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger endBlock;
     @XmlElement(name = "Checksums", required = true)
     protected ChecksumsType checksums;
     @XmlElement(name = "File", required = true)
@@ -99,64 +105,96 @@ public class TapePartitionType {
     /**
      * Obtiene el valor de la propiedad size.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getSize() {
+    public BigInteger getSize() {
         return size;
     }
 
     /**
      * Define el valor de la propiedad size.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setSize(long value) {
+    public void setSize(BigInteger value) {
         this.size = value;
     }
 
     /**
      * Obtiene el valor de la propiedad sequence.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getSequence() {
+    public BigInteger getSequence() {
         return sequence;
     }
 
     /**
      * Define el valor de la propiedad sequence.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setSequence(long value) {
+    public void setSequence(BigInteger value) {
         this.sequence = value;
     }
 
     /**
      * Obtiene el valor de la propiedad startBlock.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getStartBlock() {
+    public BigInteger getStartBlock() {
         return startBlock;
     }
 
     /**
      * Define el valor de la propiedad startBlock.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setStartBlock(long value) {
+    public void setStartBlock(BigInteger value) {
         this.startBlock = value;
     }
 
     /**
      * Obtiene el valor de la propiedad endBlock.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public long getEndBlock() {
+    public BigInteger getEndBlock() {
         return endBlock;
     }
 
     /**
      * Define el valor de la propiedad endBlock.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setEndBlock(long value) {
+    public void setEndBlock(BigInteger value) {
         this.endBlock = value;
     }
 

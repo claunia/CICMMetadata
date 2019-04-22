@@ -2,15 +2,17 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:40:52 PM BST 
+// Generado el: 2019.04.22 a las 11:59:16 PM BST 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
@@ -28,7 +30,7 @@ import javax.xml.bind.annotation.XmlValue;
  *   &lt;simpleContent&gt;
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
  *       &lt;attribute name="format" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="offset" type="{http://www.w3.org/2001/XMLSchema}long" /&gt;
+ *       &lt;attribute name="offset" type="{http://www.w3.org/2001/XMLSchema}unsignedLong" /&gt;
  *     &lt;/extension&gt;
  *   &lt;/simpleContent&gt;
  * &lt;/complexType&gt;
@@ -47,7 +49,8 @@ public class ImageType {
     @XmlAttribute(name = "format")
     protected String format;
     @XmlAttribute(name = "offset")
-    protected Long offset;
+    @XmlSchemaType(name = "unsignedLong")
+    protected BigInteger offset;
 
     /**
      * Obtiene el valor de la propiedad value.
@@ -102,10 +105,10 @@ public class ImageType {
      * 
      * @return
      *     possible object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public Long getOffset() {
+    public BigInteger getOffset() {
         return offset;
     }
 
@@ -114,10 +117,10 @@ public class ImageType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Long }
+     *     {@link BigInteger }
      *     
      */
-    public void setOffset(Long value) {
+    public void setOffset(BigInteger value) {
         this.offset = value;
     }
 
