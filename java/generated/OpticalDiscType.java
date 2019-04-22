@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.22 a las 11:59:16 PM BST 
+// Generado el: 2019.04.23 a las 12:13:17 AM BST 
 //
 
 
@@ -67,6 +67,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="PAC" type="{}DumpType" minOccurs="0"/&gt;
  *         &lt;element name="TOC" type="{}DumpType" minOccurs="0"/&gt;
  *         &lt;element name="LeadInCdText" type="{}DumpType" minOccurs="0"/&gt;
+ *         &lt;element name="FirstTrackPregrap" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="LeadIn" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="LeadOut" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="Xbox" type="{}XboxType" minOccurs="0"/&gt;
@@ -122,6 +123,7 @@ import javax.xml.bind.annotation.XmlType;
     "pac",
     "toc",
     "leadInCdText",
+    "firstTrackPregrap",
     "leadIn",
     "leadOut",
     "xbox",
@@ -212,6 +214,8 @@ public class OpticalDiscType {
     protected DumpType toc;
     @XmlElement(name = "LeadInCdText")
     protected DumpType leadInCdText;
+    @XmlElement(name = "FirstTrackPregrap")
+    protected List<BorderType> firstTrackPregrap;
     @XmlElement(name = "LeadIn")
     protected List<BorderType> leadIn;
     @XmlElement(name = "LeadOut")
@@ -1181,6 +1185,35 @@ public class OpticalDiscType {
      */
     public void setLeadInCdText(DumpType value) {
         this.leadInCdText = value;
+    }
+
+    /**
+     * Gets the value of the firstTrackPregrap property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the firstTrackPregrap property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFirstTrackPregrap().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BorderType }
+     * 
+     * 
+     */
+    public List<BorderType> getFirstTrackPregrap() {
+        if (firstTrackPregrap == null) {
+            firstTrackPregrap = new ArrayList<BorderType>();
+        }
+        return this.firstTrackPregrap;
     }
 
     /**

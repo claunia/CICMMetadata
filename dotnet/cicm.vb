@@ -7760,6 +7760,8 @@ Namespace Schemas
         
         Private leadInCdTextField As DumpType
         
+        Private firstTrackPregrapField() As BorderType
+        
         Private leadInField() As BorderType
         
         Private leadOutField() As BorderType
@@ -8177,6 +8179,17 @@ Namespace Schemas
             End Get
             Set
                 Me.leadInCdTextField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute("FirstTrackPregrap")>  _
+        Public Property FirstTrackPregrap() As BorderType()
+            Get
+                Return Me.firstTrackPregrapField
+            End Get
+            Set
+                Me.firstTrackPregrapField = value
             End Set
         End Property
         

@@ -790,6 +790,12 @@
                     <xs:documentation>CD-Text in Lead-In</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element type="BorderType" name="FirstTrackPregrap" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Data between first Lead-In/Border-In and first data track
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element type="BorderType" name="LeadIn" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Lead-In, Border-In, or equivalent

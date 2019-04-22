@@ -7757,6 +7757,8 @@ namespace Schemas {
         
         private DumpType leadInCdTextField;
         
+        private BorderType[] firstTrackPregrapField;
+        
         private BorderType[] leadInField;
         
         private BorderType[] leadOutField;
@@ -8174,6 +8176,17 @@ namespace Schemas {
             }
             set {
                 this.leadInCdTextField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FirstTrackPregrap")]
+        public BorderType[] FirstTrackPregrap {
+            get {
+                return this.firstTrackPregrapField;
+            }
+            set {
+                this.firstTrackPregrapField = value;
             }
         }
         
