@@ -7056,6 +7056,8 @@ namespace Schemas {
         
         private TrackIndexType[] indexesField;
         
+        private string iSRCField;
+        
         private TrackTypeTrackType trackType1Field;
         
         private uint bytesPerSectorField;
@@ -7146,6 +7148,16 @@ namespace Schemas {
             }
             set {
                 this.indexesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ISRC {
+            get {
+                return this.iSRCField;
+            }
+            set {
+                this.iSRCField = value;
             }
         }
         

@@ -689,6 +689,8 @@
         <!--1 or more repetitions:-->
         <Index index="100">100</Index>
       </Indexes>
+      <!--Optional:-->
+      <ISRC>string</ISRC>
       <TrackType>m2f1</TrackType>
       <BytesPerSector>7</BytesPerSector>
       <!--Optional:-->

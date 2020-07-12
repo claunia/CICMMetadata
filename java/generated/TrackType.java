@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.07.12 a las 09:59:10 PM WEST 
+// Generado el: 2020.07.12 a las 10:02:34 PM WEST 
 //
 
 
@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
  *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
  *         &lt;element name="Indexes" type="{}TrackIndexesType"/>
+ *         &lt;element name="ISRC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="TrackType">
  *           &lt;simpleType>
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
@@ -75,6 +76,7 @@ import javax.xml.bind.annotation.XmlType;
     "startSector",
     "endSector",
     "indexes",
+    "isrc",
     "trackType",
     "bytesPerSector",
     "accoustID",
@@ -103,6 +105,8 @@ public class TrackType {
     protected BigInteger endSector;
     @XmlElement(name = "Indexes", required = true)
     protected TrackIndexesType indexes;
+    @XmlElement(name = "ISRC")
+    protected String isrc;
     @XmlElement(name = "TrackType", required = true)
     protected String trackType;
     @XmlElement(name = "BytesPerSector")
@@ -307,6 +311,30 @@ public class TrackType {
      */
     public void setIndexes(TrackIndexesType value) {
         this.indexes = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad isrc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getISRC() {
+        return isrc;
+    }
+
+    /**
+     * Define el valor de la propiedad isrc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setISRC(String value) {
+        this.isrc = value;
     }
 
     /**

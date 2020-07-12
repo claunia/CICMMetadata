@@ -7059,6 +7059,8 @@ Namespace Schemas
         
         Private indexesField() As TrackIndexType
         
+        Private iSRCField As String
+        
         Private trackType1Field As TrackTypeTrackType
         
         Private bytesPerSectorField As UInteger
@@ -7149,6 +7151,16 @@ Namespace Schemas
             End Get
             Set
                 Me.indexesField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ISRC() As String
+            Get
+                Return Me.iSRCField
+            End Get
+            Set
+                Me.iSRCField = value
             End Set
         End Property
         

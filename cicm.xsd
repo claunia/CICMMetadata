@@ -256,6 +256,11 @@
                     <xs:documentation>Track indexes</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element type="xs:string" name="ISRC" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>ISRC</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="TrackType">
                 <xs:annotation>
                     <xs:documentation>Track type: audio, mode0, mode1, mode2</xs:documentation>
