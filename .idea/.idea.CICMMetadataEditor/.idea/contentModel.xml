@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_CICMMetadataEditor.633693045.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.config/git/ignore" t="IncludeRecursive" />
+    <e p="$APPLICATION_PLUGINS_DIR$/puppet/lib/stubs" t="IncludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p=".git/info/exclude" t="IncludeRecursive" />
+      <e p="CICMMetadataEditor/CICMMetadataEditor" t="IncludeRecursive">
+        <e p="CICMMetadataEditor.csproj" t="IncludeRecursive" />
+        <e p="WrappersForEto.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="dlgBlockMedia.xeto" t="Include" />
+        <e p="dlgBlockMedia.xeto.cs" t="Include" />
+        <e p="dlgMetadata.xeto" t="Include" />
+        <e p="dlgMetadata.xeto.cs" t="Include" />
+        <e p="dlgOpticalDisc.xeto" t="Include" />
+        <e p="dlgOpticalDisc.xeto.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard1.6" t="Include">
+              <e p="CICMMetadataEditor.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="CICMMetadataEditor/CICMMetadataEditor.Desktop" t="IncludeRecursive">
+        <e p="CICMMetadataEditor.Desktop.csproj" t="IncludeRecursive" />
+        <e p="Info.plist" t="Include" />
+        <e p="MacIcon.icns" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+      </e>
+      <e p="CICMMetadataEditor/CICMMetadataEditor.XamMac" t="IncludeRecursive">
+        <e p="CICMMetadataEditor.XamMac.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="CICMMetadataEditor/LICENSE" t="Include" />
+      <e p="CICMMetadataEditor.sln" t="IncludeFlat" />
+      <e p="cicm.xml" t="Include" />
+      <e p="cicm.xsd" t="Include" />
+      <e p="dotnet/cicm.cs" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

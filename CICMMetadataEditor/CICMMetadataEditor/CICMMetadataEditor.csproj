@@ -18,6 +18,9 @@
       <Link>cicm.xsd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="..\..\cicm.xml">
+      <Link>cicm.xml</Link>
+    </Content>
     <Content Include="..\LICENSE">
       <Link>LICENSE</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
