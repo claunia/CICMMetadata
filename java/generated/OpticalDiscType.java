@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
-// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
+// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.23 a las 12:13:17 AM BST 
+// Generado el: 2020.07.12 a las 09:57:36 PM WEST 
 //
 
 
@@ -24,60 +24,60 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="OpticalDiscType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Image" type="{}ImageType"/&gt;
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
- *         &lt;element name="Sequence" type="{}SequenceType"/&gt;
- *         &lt;element name="Layers" type="{}LayersType" minOccurs="0"/&gt;
- *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
- *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="RingCode" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="MasteringSID" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Toolstamp" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="MouldSID" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="MouldText" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="DiscType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="DiscSubType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Offset" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="Tracks" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Sessions" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
- *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Dimensions" type="{}DimensionsType"/&gt;
- *         &lt;element name="Case" type="{}CaseType" minOccurs="0"/&gt;
- *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/&gt;
- *         &lt;element name="PFI" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="DMI" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="CMI" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="BCA" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="ATIP" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="ADIP" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="PMA" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="DDS" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="SAI" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="LastRMD" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="PRI" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="MediaID" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="PFIR" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="DCB" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="DI" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="PAC" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="TOC" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="LeadInCdText" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="FirstTrackPregrap" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="LeadIn" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="LeadOut" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Xbox" type="{}XboxType" minOccurs="0"/&gt;
- *         &lt;element name="PS3Encryption" type="{}PS3EncryptionType" minOccurs="0"/&gt;
- *         &lt;element name="Track" type="{}TrackType" maxOccurs="unbounded"/&gt;
- *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType name="OpticalDiscType">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="Image" type="{}ImageType"/>
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
+ *         &lt;element name="Sequence" type="{}SequenceType"/>
+ *         &lt;element name="Layers" type="{}LayersType" minOccurs="0"/>
+ *         &lt;element name="Checksums" type="{}ChecksumsType"/>
+ *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="RingCode" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="MasteringSID" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="Toolstamp" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="MouldSID" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="MouldText" type="{}LayeredTextType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="DiscType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="DiscSubType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Offset" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="Tracks" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" maxOccurs="unbounded"/>
+ *         &lt;element name="Sessions" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/>
+ *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Dimensions" type="{}DimensionsType"/>
+ *         &lt;element name="Case" type="{}CaseType" minOccurs="0"/>
+ *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/>
+ *         &lt;element name="PFI" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="DMI" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="CMI" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="BCA" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="ATIP" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="ADIP" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="PMA" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="DDS" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="SAI" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="LastRMD" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="PRI" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="MediaID" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="PFIR" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="DCB" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="DI" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="PAC" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="TOC" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="LeadInCdText" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="FirstTrackPregrap" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="LeadIn" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="LeadOut" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="Xbox" type="{}XboxType" minOccurs="0"/>
+ *         &lt;element name="PS3Encryption" type="{}PS3EncryptionType" minOccurs="0"/>
+ *         &lt;element name="Track" type="{}TrackType" maxOccurs="unbounded"/>
+ *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 

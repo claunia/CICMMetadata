@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1-b171012.0423 
-// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
+// Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.23 a las 12:13:17 AM BST 
+// Generado el: 2020.07.12 a las 09:57:36 PM WEST 
 //
 
 
@@ -26,50 +26,50 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="BlockMediaType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Image" type="{}ImageType"/&gt;
- *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
- *         &lt;element name="Checksums" type="{}ChecksumsType"/&gt;
- *         &lt;element name="ContentChecksums" type="{}ChecksumsType"/&gt;
- *         &lt;element name="Sequence" type="{}SequenceType"/&gt;
- *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Serial" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Firmware" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Interface" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="PhysicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
- *         &lt;element name="LogicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/&gt;
- *         &lt;element name="LogicalBlocks" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/&gt;
- *         &lt;element name="VariableBlockSize" type="{}VariableBlockSizeType" minOccurs="0"/&gt;
- *         &lt;element name="TapeInformation" type="{}TapeInformationType" minOccurs="0"/&gt;
- *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/&gt;
- *         &lt;element name="ATA" type="{}ATAType" minOccurs="0"/&gt;
- *         &lt;element name="PCI" type="{}PCIType" minOccurs="0"/&gt;
- *         &lt;element name="PCMCIA" type="{}PCMCIAType" minOccurs="0"/&gt;
- *         &lt;element name="SecureDigital" type="{}SecureDigitalType" minOccurs="0"/&gt;
- *         &lt;element name="MultiMediaCard" type="{}MultiMediaCardType" minOccurs="0"/&gt;
- *         &lt;element name="SCSI" type="{}SCSIType" minOccurs="0"/&gt;
- *         &lt;element name="USB" type="{}USBType" minOccurs="0"/&gt;
- *         &lt;element name="MAM" type="{}DumpType" minOccurs="0"/&gt;
- *         &lt;element name="Heads" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" minOccurs="0"/&gt;
- *         &lt;element name="Cylinders" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/&gt;
- *         &lt;element name="SectorsPerTrack" type="{http://www.w3.org/2001/XMLSchema}unsignedLong" minOccurs="0"/&gt;
- *         &lt;element name="Track" type="{}BlockTrackType" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Dimensions" type="{}DimensionsType"/&gt;
- *         &lt;element name="FileSystemInformation" type="{}FileSystemInformationType" minOccurs="0"/&gt;
- *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/&gt;
- *         &lt;element name="DiskType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="DiskSubType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType name="BlockMediaType">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="Image" type="{}ImageType"/>
+ *         &lt;element name="Size" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
+ *         &lt;element name="Checksums" type="{}ChecksumsType"/>
+ *         &lt;element name="ContentChecksums" type="{}ChecksumsType"/>
+ *         &lt;element name="Sequence" type="{}SequenceType"/>
+ *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Serial" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Firmware" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Interface" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="PartNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="PhysicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/>
+ *         &lt;element name="LogicalBlockSize" type="{http://www.w3.org/2001/XMLSchema}unsignedInt"/>
+ *         &lt;element name="LogicalBlocks" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
+ *         &lt;element name="VariableBlockSize" type="{}VariableBlockSizeType" minOccurs="0"/>
+ *         &lt;element name="TapeInformation" type="{}TapeInformationType" minOccurs="0"/>
+ *         &lt;element name="Scans" type="{}ScansType" minOccurs="0"/>
+ *         &lt;element name="ATA" type="{}ATAType" minOccurs="0"/>
+ *         &lt;element name="PCI" type="{}PCIType" minOccurs="0"/>
+ *         &lt;element name="PCMCIA" type="{}PCMCIAType" minOccurs="0"/>
+ *         &lt;element name="SecureDigital" type="{}SecureDigitalType" minOccurs="0"/>
+ *         &lt;element name="MultiMediaCard" type="{}MultiMediaCardType" minOccurs="0"/>
+ *         &lt;element name="SCSI" type="{}SCSIType" minOccurs="0"/>
+ *         &lt;element name="USB" type="{}USBType" minOccurs="0"/>
+ *         &lt;element name="MAM" type="{}DumpType" minOccurs="0"/>
+ *         &lt;element name="Heads" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" minOccurs="0"/>
+ *         &lt;element name="Cylinders" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/>
+ *         &lt;element name="SectorsPerTrack" type="{http://www.w3.org/2001/XMLSchema}unsignedLong" minOccurs="0"/>
+ *         &lt;element name="Track" type="{}BlockTrackType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="CopyProtection" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Dimensions" type="{}DimensionsType"/>
+ *         &lt;element name="FileSystemInformation" type="{}FileSystemInformationType" minOccurs="0"/>
+ *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/>
+ *         &lt;element name="DiskType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="DiskSubType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 

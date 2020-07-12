@@ -6975,6 +6975,40 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class TrackIndexType
+        
+        Private indexField As String
+        
+        Private valueField As String
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="integer")>  _
+        Public Property index() As String
+            Get
+                Return Me.indexField
+            End Get
+            Set
+                Me.indexField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlTextAttribute(DataType:="integer")>  _
+        Public Property Value() As String
+            Get
+                Return Me.valueField
+            End Get
+            Set
+                Me.valueField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class TrackSequenceType
         
         Private trackNumberField As UInteger
@@ -7022,6 +7056,8 @@ Namespace Schemas
         Private startSectorField As ULong
         
         Private endSectorField As ULong
+        
+        Private indexesField() As TrackIndexType
         
         Private trackType1Field As TrackTypeTrackType
         
@@ -7102,6 +7138,17 @@ Namespace Schemas
             End Get
             Set
                 Me.endSectorField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlArrayItemAttribute("Index", IsNullable:=false)>  _
+        Public Property Indexes() As TrackIndexType()
+            Get
+                Return Me.indexesField
+            End Get
+            Set
+                Me.indexesField = value
             End Set
         End Property
         

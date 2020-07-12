@@ -683,6 +683,10 @@
       <EndMSF>string</EndMSF>
       <StartSector>11</StartSector>
       <EndSector>11</EndSector>
+      <Indexes>
+        <!--1 or more repetitions:-->
+        <Index index="100">100</Index>
+      </Indexes>
       <TrackType>m2f1</TrackType>
       <BytesPerSector>7</BytesPerSector>
       <!--Optional:-->
@@ -754,9 +758,8 @@
                 <!--Zero or more repetitions:-->
                 <File name="string" creationTime="2019-06-11T09:11:35" accessTime="2006-08-04T11:16:57"
                       statusChangeTime="2013-07-07T09:43:40+01:00" backupTime="2001-01-03T11:25:01"
-                      lastWriteTime="2014-01-10T11:17:30" attributes="11" posixMode="7"
-                      deviceNumber="11" posixGroupId="11" inode="11" links="11" posixUserId="11"
-                      length="11">
+                      lastWriteTime="2014-01-10T11:17:30" attributes="11" posixMode="7" deviceNumber="11"
+                      posixGroupId="11" inode="11" links="11" posixUserId="11" length="11">
                   <Checksums>
                     <!--1 or more repetitions:-->
                     <Checksum type="fletcher16">string</Checksum>
@@ -772,17 +775,15 @@
                   </ExtendedAttributes>
                 </File>
                 <!--Zero or more repetitions:-->
-                <Directory name="string" creationTime="2004-09-10T23:14:54"
-                           accessTime="2003-06-25T19:09:03" statusChangeTime="2011-05-05T12:49:40"
-                           backupTime="2006-11-30T20:00:57+00:00" lastWriteTime="2010-01-27T05:39:05"
-                           attributes="11" posixMode="7" deviceNumber="11" posixGroupId="11" inode="11"
-                           links="11" posixUserId="11">
+                <Directory name="string" creationTime="2004-09-10T23:14:54" accessTime="2003-06-25T19:09:03"
+                           statusChangeTime="2011-05-05T12:49:40" backupTime="2006-11-30T20:00:57+00:00"
+                           lastWriteTime="2010-01-27T05:39:05" attributes="11" posixMode="7" deviceNumber="11"
+                           posixGroupId="11" inode="11" links="11" posixUserId="11">
                   <!--Zero or more repetitions:-->
-                  <File name="string" creationTime="2003-03-06T11:43:28"
-                        accessTime="2016-02-27T03:01:16" statusChangeTime="2019-07-03T23:40:21"
-                        backupTime="2008-06-02T21:36:59" lastWriteTime="2005-05-11T07:55:50+01:00"
-                        attributes="11" posixMode="7" deviceNumber="11" posixGroupId="11" inode="11"
-                        links="11" posixUserId="11" length="11">
+                  <File name="string" creationTime="2003-03-06T11:43:28" accessTime="2016-02-27T03:01:16"
+                        statusChangeTime="2019-07-03T23:40:21" backupTime="2008-06-02T21:36:59"
+                        lastWriteTime="2005-05-11T07:55:50+01:00" attributes="11" posixMode="7" deviceNumber="11"
+                        posixGroupId="11" inode="11" links="11" posixUserId="11" length="11">
                     <Checksums>
                       <!--1 or more repetitions:-->
                       <Checksum type="adler32">string</Checksum>
@@ -846,8 +847,7 @@
       <Checksum type="skein">string</Checksum>
     </Checksums>
     <!--Zero or more repetitions:-->
-    <AudioTrack TrackNumber="7" AccoustID="string" Codec="string" Channels="7" SampleRate="1.051732E7"
-                MeanBitrate="10">
+    <AudioTrack TrackNumber="7" AccoustID="string" Codec="string" Channels="7" SampleRate="1.051732E7" MeanBitrate="10">
       <!--Optional:-->
       <Languages>
         <!--1 or more repetitions:-->

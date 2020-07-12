@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
     <xs:element name="CICMMetadata" type="CICMMetadataType"/>
     <xs:complexType name="ScanType">
         <xs:sequence>
-            <xs:element type="FileType" name="File" minOccurs="1" maxOccurs="1">
+            <xs:element type="FileType" name="File">
                 <xs:annotation>
                     <xs:documentation>File containing the scan</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
-                    <xs:documentation>Checksum of scan file pointed above
-                    </xs:documentation>
+                    <xs:documentation>Checksum of scan file pointed above</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="ScannerType" name="Scanner" minOccurs="0" maxOccurs="unbounded">
@@ -22,8 +21,7 @@
             </xs:element>
             <xs:element type="ScanProcessingType" name="ScanProcessing" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Information about any scan processing done
-                    </xs:documentation>
+                    <xs:documentation>Information about any scan processing done</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="OCRType" name="OCR" minOccurs="0" maxOccurs="unbounded">
@@ -35,10 +33,9 @@
     </xs:complexType>
     <xs:complexType name="CaseType">
         <xs:sequence>
-            <xs:element name="CaseType" minOccurs="1" maxOccurs="1">
+            <xs:element name="CaseType">
                 <xs:annotation>
-                    <xs:documentation>Original case type: jewel, bigjewel, dvdcase, etc
-                    </xs:documentation>
+                    <xs:documentation>Original case type: jewel, bigjewel, dvdcase, etc</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -72,7 +69,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="ScansType" name="Scans" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="ScansType" name="Scans"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ImageType">
@@ -82,8 +79,8 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:string" name="format" use="optional"/>
-                <xs:attribute type="xs:unsignedLong" name="offset" use="optional"/>
+                <xs:attribute type="xs:string" name="format"/>
+                <xs:attribute type="xs:unsignedLong" name="offset"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -93,7 +90,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="Architecture" minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="Architecture" maxOccurs="unbounded">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="4004"/>
@@ -175,12 +172,12 @@
     </xs:complexType>
     <xs:complexType name="ExtentType">
         <xs:sequence>
-            <xs:element type="xs:unsignedLong" name="Start" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Start">
                 <xs:annotation>
                     <xs:documentation>Starting sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="End" maxOccurs="1" minOccurs="1">
+            <xs:element type="xs:unsignedLong" name="End">
                 <xs:annotation>
                     <xs:documentation>Ending sector</xs:documentation>
                 </xs:annotation>
@@ -189,17 +186,17 @@
     </xs:complexType>
     <xs:complexType name="BorderType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing border dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of border dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of border dump</xs:documentation>
                 </xs:annotation>
@@ -218,47 +215,50 @@
             <xs:documentation>Track information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing track dump, and format, binary, yranib, or audio/video container
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of track dump in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="TrackSequenceType" name="Sequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="TrackSequenceType" name="Sequence">
                 <xs:annotation>
                     <xs:documentation>Track sequence information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="StartMSF" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="StartMSF" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Track start address in MM:SS:FF
-                    </xs:documentation>
+                    <xs:documentation>Track start address in MM:SS:FF</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="EndMSF" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="EndMSF" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Track end address in MM:SS:FF</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="StartSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartSector">
                 <xs:annotation>
                     <xs:documentation>Track start sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="EndSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndSector">
                 <xs:annotation>
                     <xs:documentation>Track end sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="TrackType" minOccurs="1" maxOccurs="1">
+            <xs:element type="TrackIndexesType" name="Indexes">
                 <xs:annotation>
-                    <xs:documentation>Track type: audio, mode0, mode1, mode2
-                    </xs:documentation>
+                    <xs:documentation>Track indexes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TrackType">
+                <xs:annotation>
+                    <xs:documentation>Track type: audio, mode0, mode1, mode2</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -275,29 +275,29 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="BytesPerSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="BytesPerSector">
                 <xs:annotation>
                     <xs:documentation>Bytes per sector: 2048, 2352, 2448, etc, etc (as stored in image, not in physical
                         format)
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="AccoustID" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="AccoustID" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>AccoustID for audio tracks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of track dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="SubChannelType" name="SubChannel" minOccurs="0" maxOccurs="1">
+            <xs:element type="SubChannelType" name="SubChannel" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Track's subchannel information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="FileSystemInformationType" name="FileSystemInformation" minOccurs="0" maxOccurs="1">
+            <xs:element type="FileSystemInformationType" name="FileSystemInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Information about filesystems and partitions contained in that track
                     </xs:documentation>
@@ -307,57 +307,52 @@
     </xs:complexType>
     <xs:complexType name="MagazineType">
         <xs:sequence>
-            <xs:element type="BarcodesType" name="Barcodes" minOccurs="0" maxOccurs="1">
+            <xs:element type="BarcodesType" name="Barcodes" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Barcodes for this magazine</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="CoverType" name="Cover" minOccurs="0" maxOccurs="1">
+            <xs:element type="CoverType" name="Cover" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Cover of this magazine</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Name" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Name">
                 <xs:annotation>
                     <xs:documentation>Name of this magazine</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Editorial" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Editorial" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Editorial of this magazine</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:date" name="PublicationDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:date" name="PublicationDate" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Publication date of this magazine
-                    </xs:documentation>
+                    <xs:documentation>Publication date of this magazine</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Number" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Number" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Sequential number of this magazine
-                    </xs:documentation>
+                    <xs:documentation>Sequential number of this magazine</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="LanguagesType" name="Language" minOccurs="0" maxOccurs="1">
+            <xs:element type="LanguagesType" name="Language" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Languages this magazine is written in
-                    </xs:documentation>
+                    <xs:documentation>Languages this magazine is written in</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Pages of this magazine, including cover and back
-                    </xs:documentation>
+                    <xs:documentation>Pages of this magazine, including cover and back</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PageSize" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PageSize" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Page size of this magazine, standard or in WxH milimeters
-                    </xs:documentation>
+                    <xs:documentation>Page size of this magazine, standard or in WxH milimeters</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ScanType" name="Scan" minOccurs="0" maxOccurs="1">
+            <xs:element type="ScanType" name="Scan" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Scan of this magazine</xs:documentation>
                 </xs:annotation>
@@ -369,106 +364,102 @@
             <xs:documentation>Information about a filesystem</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:string" name="Type" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Type">
                 <xs:annotation>
                     <xs:documentation>Filesystem type</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:dateTime" name="CreationDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:dateTime" name="CreationDate" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Filesystem creation date</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:dateTime" name="ModificationDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:dateTime" name="ModificationDate" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Filesystem last modification date
-                    </xs:documentation>
+                    <xs:documentation>Filesystem last modification date</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:dateTime" name="BackupDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:dateTime" name="BackupDate" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Filesystem last backup date</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="ClusterSize" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="ClusterSize">
                 <xs:annotation>
                     <xs:documentation>Bytes per cluster</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Clusters" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Clusters">
                 <xs:annotation>
                     <xs:documentation>Clusters in filesystem</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Files" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Files" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Files in filesystem</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:boolean" name="Bootable" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:boolean" name="Bootable">
                 <xs:annotation>
                     <xs:documentation>Bootable filesystem?</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="VolumeSerial" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="VolumeSerial" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Filesystem serial number</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="VolumeName" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="VolumeName" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Filesystem volume name</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="FreeClusters" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="FreeClusters" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Free clusters in filesystem</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:boolean" name="Dirty" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:boolean" name="Dirty">
                 <xs:annotation>
                     <xs:documentation>Dirty/unclean filesystem</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:dateTime" name="ExpirationDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:dateTime" name="ExpirationDate" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Filesystem expiration date</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:dateTime" name="EffectiveDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:dateTime" name="EffectiveDate" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Filesystem effective date</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SystemIdentifier" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="SystemIdentifier" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>System identifier filesystem applies to
-                    </xs:documentation>
+                    <xs:documentation>System identifier filesystem applies to</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="VolumeSetIdentifier" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="VolumeSetIdentifier" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Volume set identifier</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PublisherIdentifier" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PublisherIdentifier" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Filesystem publisher identifier
-                    </xs:documentation>
+                    <xs:documentation>Filesystem publisher identifier</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="DataPreparerIdentifier" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="DataPreparerIdentifier" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Filesystem data preparer</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="ApplicationIdentifier" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="ApplicationIdentifier" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Filesystem application preparer
-                    </xs:documentation>
+                    <xs:documentation>Filesystem application preparer</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="FilesystemContentsType" name="Contents" minOccurs="0" maxOccurs="1">
+            <xs:element type="FilesystemContentsType" name="Contents" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contents of filesystem</xs:documentation>
                 </xs:annotation>
@@ -477,10 +468,9 @@
     </xs:complexType>
     <xs:complexType name="CaseScanType">
         <xs:sequence>
-            <xs:element name="CaseScanElement" minOccurs="1" maxOccurs="1">
+            <xs:element name="CaseScanElement">
                 <xs:annotation>
-                    <xs:documentation>Scanned element: cover, back, inlay, etc
-                    </xs:documentation>
+                    <xs:documentation>Scanned element: cover, back, inlay, etc</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -496,7 +486,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="ScanType" name="Scan" minOccurs="1" maxOccurs="1">
+            <xs:element type="ScanType" name="Scan">
                 <xs:annotation>
                     <xs:documentation>Scanning information</xs:documentation>
                 </xs:annotation>
@@ -505,7 +495,7 @@
     </xs:complexType>
     <xs:complexType name="ExtentsType">
         <xs:sequence>
-            <xs:element type="ExtentType" name="Extent" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="ExtentType" name="Extent" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Array of dumped extents</xs:documentation>
                 </xs:annotation>
@@ -514,41 +504,39 @@
     </xs:complexType>
     <xs:complexType name="DumpHardwareType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Manufacturer" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Manufacturer">
                 <xs:annotation>
                     <xs:documentation>Drive manufacturer</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Model" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Model">
                 <xs:annotation>
                     <xs:documentation>Drive model</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Revision" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Revision">
                 <xs:annotation>
                     <xs:documentation>Drive revision</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Firmware" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Firmware">
                 <xs:annotation>
                     <xs:documentation>Drive firmware version</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Serial" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Serial">
                 <xs:annotation>
                     <xs:documentation>Drive serial number</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ExtentsType" name="Extents" minOccurs="1" maxOccurs="1">
+            <xs:element type="ExtentsType" name="Extents">
                 <xs:annotation>
-                    <xs:documentation>Extents of sectors read with this drive
-                    </xs:documentation>
+                    <xs:documentation>Extents of sectors read with this drive</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="SoftwareType" name="Software" minOccurs="1" maxOccurs="1">
+            <xs:element type="SoftwareType" name="Software">
                 <xs:annotation>
-                    <xs:documentation>Software used to read with this drive
-                    </xs:documentation>
+                    <xs:documentation>Software used to read with this drive</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
@@ -559,23 +547,23 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:string" name="format" use="optional"/>
+                <xs:attribute type="xs:string" name="format"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
     <xs:complexType name="CoverType">
         <xs:sequence>
-            <xs:element type="FileType" name="File" minOccurs="1" maxOccurs="1">
+            <xs:element type="FileType" name="File">
                 <xs:annotation>
                     <xs:documentation>Cover file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Cover file checksum</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:base64Binary" name="Thumbnail" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:base64Binary" name="Thumbnail">
                 <xs:annotation>
                     <xs:documentation>Base64 of JPEG thumbnail</xs:documentation>
                 </xs:annotation>
@@ -584,40 +572,38 @@
     </xs:complexType>
     <xs:complexType name="OpticalDiscType">
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>Image file, or image description file, plus format (cue, toc, etc, etc)
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="SequenceType" name="Sequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="SequenceType" name="Sequence">
                 <xs:annotation>
-                    <xs:documentation>Sequence information about this disc
-                    </xs:documentation>
+                    <xs:documentation>Sequence information about this disc</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="LayersType" name="Layers" maxOccurs="1" minOccurs="0">
+            <xs:element type="LayersType" name="Layers" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Layering type and sizes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
-                    <xs:documentation>Checksum of image file pointed above
-                    </xs:documentation>
+                    <xs:documentation>Checksum of image file pointed above</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PartNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer part no. or SKU</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="SerialNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer serial no., not to be confused with software registration serial
                         number
@@ -649,184 +635,175 @@
                     <xs:documentation>Disc/side mould text</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="DiscType" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="DiscType">
                 <xs:annotation>
-                    <xs:documentation>Disc type (CD, GD, SACD, DDCD, DVD, HDDVD, BD)
-                    </xs:documentation>
+                    <xs:documentation>Disc type (CD, GD, SACD, DDCD, DVD, HDDVD, BD)</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="DiscSubType" maxOccurs="1" minOccurs="1">
+            <xs:element type="xs:string" name="DiscSubType">
                 <xs:annotation>
-                    <xs:documentation>Disc subtype (CD-ROM, CD-DA, CD+G, etc)
-                    </xs:documentation>
+                    <xs:documentation>Disc subtype (CD-ROM, CD-DA, CD+G, etc)</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:int" name="Offset" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:int" name="Offset" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Offset between subchannel servo and data sectors servo, in bytes
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Tracks" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="xs:unsignedInt" name="Tracks" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Tracks on this disc/side</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Sessions" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Sessions">
                 <xs:annotation>
                     <xs:documentation>Sessions on this disc/side</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="CopyProtection" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="CopyProtection" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Copy protection, if applicable</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DimensionsType" name="Dimensions" minOccurs="1">
+            <xs:element type="DimensionsType" name="Dimensions">
                 <xs:annotation>
                     <xs:documentation>Dimensions of the disc</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="CaseType" name="Case" minOccurs="0" maxOccurs="1">
+            <xs:element type="CaseType" name="Case" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Case where the disk came from factory
-                    </xs:documentation>
+                    <xs:documentation>Case where the disk came from factory</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ScansType" name="Scans" minOccurs="0" maxOccurs="1">
+            <xs:element type="ScansType" name="Scans" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Disc scans</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="PFI" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="PFI" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Physical Manufacturing Information (DVD and HD DVD)
-                    </xs:documentation>
+                    <xs:documentation>Physical Manufacturing Information (DVD and HD DVD)</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="DMI" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="DMI" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Disc Manufacturing Information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="CMI" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="CMI" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Lead-In Copyright Management Information
-                    </xs:documentation>
+                    <xs:documentation>Lead-In Copyright Management Information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="BCA" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="BCA" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Burst Cutting Area</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="ATIP" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="ATIP" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Absolute Time In Pre-groove</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="ADIP" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="ADIP" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>ADdress In Pre-groove</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="PMA" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="PMA" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>PMA</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="DDS" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="DDS" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Disc Definition Structure</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="SAI" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="SAI" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Spare Area Information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="LastRMD" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="LastRMD" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Last RMD</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="PRI" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="PRI" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Pre-Recorded Information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="MediaID" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="MediaID" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Media Identification</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="PFIR" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="PFIR" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>PFI for recordables</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="DCB" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="DCB" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Disc Control Blocks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="DI" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="DI" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Disc Information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="PAC" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="PAC" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>PAC</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="TOC" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="TOC" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>CD TOC</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="LeadInCdText" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="LeadInCdText" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>CD-Text in Lead-In</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="BorderType" name="FirstTrackPregrap" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Data between first Lead-In/Border-In and first data track
-                    </xs:documentation>
+                    <xs:documentation>Data between first Lead-In/Border-In and first data track</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="BorderType" name="LeadIn" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Lead-In, Border-In, or equivalent
-                    </xs:documentation>
+                    <xs:documentation>Lead-In, Border-In, or equivalent</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="BorderType" name="LeadOut" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Lead-Out, Border-Out, or equivalent
-                    </xs:documentation>
+                    <xs:documentation>Lead-Out, Border-Out, or equivalent</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="XboxType" name="Xbox" minOccurs="0" maxOccurs="1">
+            <xs:element type="XboxType" name="Xbox" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>XGD information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="PS3EncryptionType" name="PS3Encryption" minOccurs="0" maxOccurs="1">
+            <xs:element type="PS3EncryptionType" name="PS3Encryption" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>PS3 Encryption Key</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="TrackType" name="Track" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="TrackType" name="Track" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Array of disc tracks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Array of drives used to dump disc
-                    </xs:documentation>
+                    <xs:documentation>Array of drives used to dump disc</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
@@ -836,30 +813,28 @@
             <xs:documentation>Software used for disc reading</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:string" name="Name" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Name">
                 <xs:annotation>
                     <xs:documentation>Software name</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Version" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Version">
                 <xs:annotation>
                     <xs:documentation>Software version</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="OperatingSystem" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="OperatingSystem">
                 <xs:annotation>
-                    <xs:documentation>Operating system name and version where the software was run
-                    </xs:documentation>
+                    <xs:documentation>Operating system name and version where the software was run</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="PartitionType">
         <xs:sequence>
-            <xs:element name="Sequence" minOccurs="1" maxOccurs="1">
+            <xs:element name="Sequence">
                 <xs:annotation>
-                    <xs:documentation>Partition sequence number, starting on 1
-                    </xs:documentation>
+                    <xs:documentation>Partition sequence number, starting on 1</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:unsignedInt">
@@ -867,37 +842,34 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="xs:string" name="Name" maxOccurs="1" minOccurs="0">
+            <xs:element type="xs:string" name="Name" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Partition name if supported by partition scheme
-                    </xs:documentation>
+                    <xs:documentation>Partition name if supported by partition scheme</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Type" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Type" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Partition type</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="StartSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartSector">
                 <xs:annotation>
                     <xs:documentation>Partition starting sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="EndSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndSector">
                 <xs:annotation>
                     <xs:documentation>Partition ending sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Description" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Description" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Partition description if supported by partition scheme
-                    </xs:documentation>
+                    <xs:documentation>Partition description if supported by partition scheme</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="FileSystemsType" name="FileSystems" minOccurs="1" maxOccurs="1">
+            <xs:element type="FileSystemsType" name="FileSystems">
                 <xs:annotation>
-                    <xs:documentation>Array of filesystems contained in the partition
-                    </xs:documentation>
+                    <xs:documentation>Array of filesystems contained in the partition</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
@@ -907,7 +879,7 @@
             <xs:documentation>Array of drives information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="DumpHardwareType" name="DumpHardware" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="DumpHardwareType" name="DumpHardware" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Drives information</xs:documentation>
                 </xs:annotation>
@@ -929,12 +901,12 @@
     </xs:complexType>
     <xs:complexType name="PS3EncryptionType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Key" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Key">
                 <xs:annotation>
                     <xs:documentation>PS3 encryption key</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Serial" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Serial">
                 <xs:annotation>
                     <xs:documentation>PS3 encryption key</xs:documentation>
                 </xs:annotation>
@@ -943,17 +915,17 @@
     </xs:complexType>
     <xs:complexType name="XboxType">
         <xs:sequence>
-            <xs:element type="DumpType" name="PFI" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="PFI">
                 <xs:annotation>
                     <xs:documentation>XGD unlocked PFI</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="DMI" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="DMI">
                 <xs:annotation>
                     <xs:documentation>XGD unlocked DMI</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="XboxSecuritySectorsType" name="SecuritySectors" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="XboxSecuritySectorsType" name="SecuritySectors" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>XGD security sectors</xs:documentation>
                 </xs:annotation>
@@ -962,17 +934,17 @@
     </xs:complexType>
     <xs:complexType name="XboxSecuritySectorsType">
         <xs:sequence>
-            <xs:element type="xs:unsignedInt" name="RequestVersion" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="RequestVersion">
                 <xs:annotation>
                     <xs:documentation>Xbox SS Request Version</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="RequestNumber" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="RequestNumber">
                 <xs:annotation>
                     <xs:documentation>Xbox SS Request Number</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="SecuritySectors" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="SecuritySectors">
                 <xs:annotation>
                     <xs:documentation>XGD Security Sectors</xs:documentation>
                 </xs:annotation>
@@ -984,28 +956,24 @@
             <xs:documentation>Dimensions of media</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:double" name="Diameter" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:double" name="Diameter" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Diameter in milimeters for circular discs
-                    </xs:documentation>
+                    <xs:documentation>Diameter in milimeters for circular discs</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:double" name="Height" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:double" name="Height" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Height in milimeters for non-circular disks
-                    </xs:documentation>
+                    <xs:documentation>Height in milimeters for non-circular disks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:double" name="Width" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:double" name="Width" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Width in milimeters for non-circular disks
-                    </xs:documentation>
+                    <xs:documentation>Width in milimeters for non-circular disks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:double" name="Thickness" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:double" name="Thickness">
                 <xs:annotation>
-                    <xs:documentation>Thickness in milimeters for non-circular disks
-                    </xs:documentation>
+                    <xs:documentation>Thickness in milimeters for non-circular disks</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
@@ -1015,32 +983,32 @@
             <xs:documentation>Information about scanning</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:string" name="Author" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Author">
                 <xs:annotation>
                     <xs:documentation>Who scanned it?</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Manufacturer" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Manufacturer">
                 <xs:annotation>
                     <xs:documentation>Who built the scanner</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Model" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Model">
                 <xs:annotation>
                     <xs:documentation>Scanner model</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Serial" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Serial">
                 <xs:annotation>
                     <xs:documentation>Scanner serial number</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Software" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Software">
                 <xs:annotation>
                     <xs:documentation>Software used for scanning</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SoftwareVersion" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="SoftwareVersion">
                 <xs:annotation>
                     <xs:documentation>Software version</xs:documentation>
                 </xs:annotation>
@@ -1049,7 +1017,7 @@
     </xs:complexType>
     <xs:complexType name="KeywordsType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Keyword" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="xs:string" name="Keyword" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Keywords</xs:documentation>
                 </xs:annotation>
@@ -1060,8 +1028,7 @@
         <xs:sequence>
             <xs:element type="xs:string" name="System" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Operating systems this set is intended to be run on
-                    </xs:documentation>
+                    <xs:documentation>Operating systems this set is intended to be run on</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
@@ -1072,21 +1039,19 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:string" name="MediaTitle" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="MediaTitle" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Sequence information about this media
-                    </xs:documentation>
+                    <xs:documentation>Sequence information about this media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="MediaSequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="MediaSequence">
                 <xs:annotation>
                     <xs:documentation>Media title as printed in label</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="TotalMedia" minOccurs="1" maxOccurs="1">
+            <xs:element name="TotalMedia">
                 <xs:annotation>
-                    <xs:documentation>Total number of discs in this set
-                    </xs:documentation>
+                    <xs:documentation>Total number of discs in this set</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:unsignedInt">
@@ -1094,10 +1059,9 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="Side" minOccurs="0" maxOccurs="1">
+            <xs:element name="Side" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Side of disc described by this field
-                    </xs:documentation>
+                    <xs:documentation>Side of disc described by this field</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:unsignedByte">
@@ -1106,7 +1070,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="Layer" minOccurs="0" maxOccurs="1">
+            <xs:element name="Layer" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>On PTP layering, layer of disc described by this field, starting on 0
                     </xs:documentation>
@@ -1126,12 +1090,12 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:unsignedInt" name="TrackNumber" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="TrackNumber">
                 <xs:annotation>
                     <xs:documentation>Track number</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Session" minOccurs="1" maxOccurs="1">
+            <xs:element name="Session">
                 <xs:annotation>
                     <xs:documentation>Session this track belongs to</xs:documentation>
                 </xs:annotation>
@@ -1145,50 +1109,49 @@
     </xs:complexType>
     <xs:complexType name="BookType">
         <xs:sequence>
-            <xs:element type="BarcodesType" name="Barcodes" minOccurs="1" maxOccurs="1">
+            <xs:element type="BarcodesType" name="Barcodes">
                 <xs:annotation>
                     <xs:documentation>Barcodes from this book</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="CoverType" name="Cover" minOccurs="0" maxOccurs="1">
+            <xs:element type="CoverType" name="Cover" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Book cover</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Name" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Name">
                 <xs:annotation>
                     <xs:documentation>Book name</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Editorial" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Editorial" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Book publisher</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Author" minOccurs="1">
+            <xs:element type="xs:string" name="Author">
                 <xs:annotation>
                     <xs:documentation>Book author</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:date" name="PublicationDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:date" name="PublicationDate" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Book's publication date</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="LanguagesType" name="Language" minOccurs="0" maxOccurs="1">
+            <xs:element type="LanguagesType" name="Language" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Book language</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Book pages</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PageSize" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PageSize" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Magazine page size in WxH milimeters
-                    </xs:documentation>
+                    <xs:documentation>Magazine page size in WxH milimeters</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="ScanType" name="Scan">
@@ -1200,7 +1163,7 @@
     </xs:complexType>
     <xs:complexType name="FileSystemInformationType">
         <xs:sequence>
-            <xs:element type="PartitionType" name="Partition" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="PartitionType" name="Partition" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Partition</xs:documentation>
                 </xs:annotation>
@@ -1209,7 +1172,7 @@
     </xs:complexType>
     <xs:complexType name="LayersType">
         <xs:sequence>
-            <xs:element type="SectorsType" name="Sectors" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="SectorsType" name="Sectors" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Layering type and sizes</xs:documentation>
                 </xs:annotation>
@@ -1230,17 +1193,17 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:string" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" maxOccurs="1" minOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of dump</xs:documentation>
                 </xs:annotation>
@@ -1249,7 +1212,7 @@
     </xs:complexType>
     <xs:complexType name="FileSystemsType">
         <xs:sequence>
-            <xs:element type="FileSystemType" name="FileSystem" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="FileSystemType" name="FileSystem" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Array of filesystems</xs:documentation>
                 </xs:annotation>
@@ -1258,13 +1221,12 @@
     </xs:complexType>
     <xs:complexType name="RequiredOperatingSystemType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Name" minOccurs="1">
+            <xs:element type="xs:string" name="Name">
                 <xs:annotation>
-                    <xs:documentation>Minimal supported operating system
-                    </xs:documentation>
+                    <xs:documentation>Minimal supported operating system</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Version" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element type="xs:string" name="Version" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="CICMMetadataType">
@@ -1292,21 +1254,19 @@
                     <xs:documentation>Performer/narrator of the set</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Name" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Name">
                 <xs:annotation>
                     <xs:documentation>Name of the set</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Version" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Version" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Version of the set if applicable
-                    </xs:documentation>
+                    <xs:documentation>Version of the set if applicable</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="ReleaseType" minOccurs="0" maxOccurs="1">
+            <xs:element name="ReleaseType" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Kind of release: OEM, Bundle, Coverdisc, Retail, Demo
-                    </xs:documentation>
+                    <xs:documentation>Kind of release: OEM, Bundle, Coverdisc, Retail, Demo</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -1325,29 +1285,29 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="xs:date" name="ReleaseDate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:date" name="ReleaseDate" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Date of release in YYYY-MM-DD</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="BarcodesType" name="Barcodes" minOccurs="0" maxOccurs="1">
+            <xs:element type="BarcodesType" name="Barcodes" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Barcodes for this release</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PartNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer part no. or SKU</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="SerialNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer serial no., not to be confused with software registration serial
                         number
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="KeywordsType" name="Keywords" minOccurs="0" maxOccurs="1">
+            <xs:element type="KeywordsType" name="Keywords" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Keywords</xs:documentation>
                 </xs:annotation>
@@ -1362,37 +1322,36 @@
                     <xs:documentation>Books on this set</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="CategoriesType" name="Categories" minOccurs="0" maxOccurs="1">
+            <xs:element type="CategoriesType" name="Categories" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Categories this set belongs to</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="SubcategoriesType" name="Subcategories" minOccurs="0" maxOccurs="1">
+            <xs:element type="SubcategoriesType" name="Subcategories" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Subcategories this set belongs to
-                    </xs:documentation>
+                    <xs:documentation>Subcategories this set belongs to</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="LanguagesType" name="Languages" minOccurs="0" maxOccurs="1">
+            <xs:element type="LanguagesType" name="Languages" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Languages this set comes in</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="SystemsType" name="Systems" minOccurs="0" maxOccurs="1">
+            <xs:element type="SystemsType" name="Systems" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Systems this set is designed to run on, if it includes software
-                    </xs:documentation>
+                    <xs:documentation>Systems this set is designed to run on, if it includes software</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ArchitecturesType" name="Architectures" minOccurs="0" maxOccurs="1">
+            <xs:element type="ArchitecturesType" name="Architectures" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>CPU architectures this set is designed to run on, if it includes software
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="RequiredOperatingSystemsType" name="RequiredOperatingSystems" minOccurs="0" maxOccurs="1">
+            <xs:element type="RequiredOperatingSystemsType" name="RequiredOperatingSystems" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Required operating systems and versions this set runs on, if it includes software
+                    <xs:documentation>Required operating systems and versions this set runs on, if it includes
+                        software
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -1404,8 +1363,7 @@
             </xs:element>
             <xs:element type="OpticalDiscType" name="OpticalDisc" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Optical discs this set contains
-                    </xs:documentation>
+                    <xs:documentation>Optical discs this set contains</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="AdvertisementType" name="Advertisement" minOccurs="0" maxOccurs="unbounded">
@@ -1444,7 +1402,7 @@
             <xs:documentation>Barcodes for this release</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="BarcodeType" name="Barcode" maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element type="BarcodeType" name="Barcode" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ScanProcessingType">
@@ -1453,17 +1411,17 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="xs:string" name="Author" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Author">
                 <xs:annotation>
                     <xs:documentation>Who processed it?</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Software" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Software">
                 <xs:annotation>
                     <xs:documentation>Software used for processing</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SoftwareVersion" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="SoftwareVersion">
                 <xs:annotation>
                     <xs:documentation>Software version</xs:documentation>
                 </xs:annotation>
@@ -1479,7 +1437,7 @@
     </xs:complexType>
     <xs:complexType name="CategoriesType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Category" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="xs:string" name="Category" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Category of the set</xs:documentation>
                 </xs:annotation>
@@ -1526,10 +1484,9 @@
     </xs:complexType>
     <xs:complexType name="MediaScanType">
         <xs:sequence>
-            <xs:element name="MediaScanElement" minOccurs="1" maxOccurs="1">
+            <xs:element name="MediaScanElement">
                 <xs:annotation>
-                    <xs:documentation>Scanned element: up, down, label, data, etc
-                    </xs:documentation>
+                    <xs:documentation>Scanned element: up, down, label, data, etc</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -1542,7 +1499,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="ScanType" name="Scan" minOccurs="1" maxOccurs="1">
+            <xs:element type="ScanType" name="Scan">
                 <xs:annotation>
                     <xs:documentation>Scan of disk part</xs:documentation>
                 </xs:annotation>
@@ -1593,7 +1550,7 @@
     </xs:complexType>
     <xs:complexType name="SubcategoriesType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Subcategory" minOccurs="1" maxOccurs="unbounded">
+            <xs:element type="xs:string" name="Subcategory" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Subcategory of the set</xs:documentation>
                 </xs:annotation>
@@ -1606,23 +1563,22 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="LanguagesType" name="Language" minOccurs="0" maxOccurs="1">
+            <xs:element type="LanguagesType" name="Language" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Language of the user manual</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Pages" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Pages">
                 <xs:annotation>
                     <xs:documentation>Pages of the user manual</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PageSize" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PageSize" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Paper size in standard name or in WxH milimeters
-                    </xs:documentation>
+                    <xs:documentation>Paper size in standard name or in WxH milimeters</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ScanType" name="Scan" minOccurs="0" maxOccurs="1">
+            <xs:element type="ScanType" name="Scan" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>User manual scanning</xs:documentation>
                 </xs:annotation>
@@ -1634,7 +1590,7 @@
             <xs:documentation>Checksum of file element</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ChecksumType" name="Checksum" maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element type="ChecksumType" name="Checksum" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SecuritySectorsType">
@@ -1645,8 +1601,7 @@
         <xs:sequence>
             <xs:element type="xs:unsignedLong" name="Start">
                 <xs:annotation>
-                    <xs:documentation>Start of XGD's security sectors
-                    </xs:documentation>
+                    <xs:documentation>Start of XGD's security sectors</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="xs:unsignedLong" name="End">
@@ -1658,35 +1613,33 @@
     </xs:complexType>
     <xs:complexType name="OCRType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Author" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Author">
                 <xs:annotation>
                     <xs:documentation>Who did the OCR</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Software" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Software">
                 <xs:annotation>
                     <xs:documentation>Using what software</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SoftwareVersion" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="SoftwareVersion">
                 <xs:annotation>
                     <xs:documentation>And the software version</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="LanguagesType" name="Language" minOccurs="1" maxOccurs="1">
+            <xs:element type="LanguagesType" name="Language">
                 <xs:annotation>
-                    <xs:documentation>OCR applied for which languages
-                    </xs:documentation>
+                    <xs:documentation>OCR applied for which languages</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="LanguagesType">
         <xs:sequence>
-            <xs:element name="Language" minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="Language" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Languages included in the set, ISO 3-letter code
-                    </xs:documentation>
+                    <xs:documentation>Languages included in the set, ISO 3-letter code</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -2183,7 +2136,7 @@
     </xs:complexType>
     <xs:complexType name="RequiredOperatingSystemsType">
         <xs:sequence>
-            <xs:element type="RequiredOperatingSystemType" name="RequiredOperatingSystem" minOccurs="1"
+            <xs:element type="RequiredOperatingSystemType" name="RequiredOperatingSystem"
                         maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
@@ -2192,18 +2145,18 @@
             <xs:documentation>Track's subchannel information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing track's subchannel dump and format, packed, rw_raw
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of subchannel dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" maxOccurs="1" minOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksum of subchannel dump</xs:documentation>
                 </xs:annotation>
@@ -2226,7 +2179,7 @@
     </xs:complexType>
     <xs:complexType name="AudioTracksType">
         <xs:sequence>
-            <xs:element name="Languages" type="LanguagesType" minOccurs="0" maxOccurs="1">
+            <xs:element name="Languages" type="LanguagesType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Track languages</xs:documentation>
                 </xs:annotation>
@@ -2242,7 +2195,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="AccoustID" type="xs:string" use="optional">
+        <xs:attribute name="AccoustID" type="xs:string">
             <xs:annotation>
                 <xs:documentation>Track's AccoustID</xs:documentation>
             </xs:annotation>
@@ -2271,7 +2224,7 @@
     </xs:complexType>
     <xs:complexType name="VideoTracksType">
         <xs:sequence>
-            <xs:element name="Languages" type="LanguagesType" minOccurs="0" maxOccurs="1">
+            <xs:element name="Languages" type="LanguagesType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Track languages</xs:documentation>
                 </xs:annotation>
@@ -2316,7 +2269,7 @@
     </xs:complexType>
     <xs:complexType name="SubtitleTracksType">
         <xs:sequence>
-            <xs:element name="Languages" type="LanguagesType" minOccurs="0" maxOccurs="1">
+            <xs:element name="Languages" type="LanguagesType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Track languages</xs:documentation>
                 </xs:annotation>
@@ -2342,36 +2295,32 @@
         <xs:sequence>
             <xs:element type="xs:double" name="Latitude">
                 <xs:annotation>
-                    <xs:documentation>Approximate latitude of recording
-                    </xs:documentation>
+                    <xs:documentation>Approximate latitude of recording</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="xs:double" name="Longitude">
                 <xs:annotation>
-                    <xs:documentation>Approximate longitude of recording
-                    </xs:documentation>
+                    <xs:documentation>Approximate longitude of recording</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="RecordingType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Broadcaster" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Broadcaster" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Name of the television channel this recording was broadcasted, if applicable
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="BroadcastPlatform" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="BroadcastPlatform" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Platform that broadcasted the television channel, if applicable
-                    </xs:documentation>
+                    <xs:documentation>Platform that broadcasted the television channel, if applicable</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="SourceFormat" minOccurs="1" maxOccurs="1">
+            <xs:element name="SourceFormat">
                 <xs:annotation>
-                    <xs:documentation>Format of the source of this recording
-                    </xs:documentation>
+                    <xs:documentation>Format of the source of this recording</xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -2446,64 +2395,61 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="xs:dateTime" name="Timestamp" maxOccurs="1" minOccurs="1">
+            <xs:element type="xs:dateTime" name="Timestamp">
                 <xs:annotation>
                     <xs:documentation>Date and time of broadcast</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element type="SoftwareType" name="Software" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Software used to capture, process, convert, the recording
-                    </xs:documentation>
+                    <xs:documentation>Software used to capture, process, convert, the recording</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="CoordinatesType" name="Coordinates" minOccurs="0" maxOccurs="1">
+            <xs:element type="CoordinatesType" name="Coordinates" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Approximate coordinates where the recording was done
-                    </xs:documentation>
+                    <xs:documentation>Approximate coordinates where the recording was done</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="AdvertisementType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Manufacturer" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Manufacturer">
                 <xs:annotation>
-                    <xs:documentation>Manufactured of the advertised product
-                    </xs:documentation>
+                    <xs:documentation>Manufactured of the advertised product</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Product" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Product">
                 <xs:annotation>
                     <xs:documentation>Advertised product</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="FileType" name="File" minOccurs="1" maxOccurs="1">
+            <xs:element type="FileType" name="File">
                 <xs:annotation>
                     <xs:documentation>File containing advertising</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="FileSize" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="FileSize">
                 <xs:annotation>
                     <xs:documentation>Size of file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Frames" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Frames" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Total video frames</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:double" name="Duration" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:double" name="Duration">
                 <xs:annotation>
                     <xs:documentation>Duration in seconds</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:float" name="MeanFrameRate" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:float" name="MeanFrameRate" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Mean framerate</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of advertisement</xs:documentation>
                 </xs:annotation>
@@ -2520,11 +2466,10 @@
             </xs:element>
             <xs:element type="SubtitleTracksType" name="SubtitleTrack" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Subtitle tracks of advertisement
-                    </xs:documentation>
+                    <xs:documentation>Subtitle tracks of advertisement</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="RecordingType" name="Recording" minOccurs="0" maxOccurs="1">
+            <xs:element type="RecordingType" name="Recording" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>If advertisement has been capture from a television/radio broadcast, here is the
                         capture information
@@ -2540,106 +2485,106 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>Image file, or image description file, plus format (cue, toc, etc, etc)
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="ImageChecksums" minOccurs="1">
+            <xs:element type="ChecksumsType" name="ImageChecksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of image file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="0" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>If image file contains several deinterleaved dumps, here are the checkums of the
                         interleaved dump
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PartNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer part no. or SKU</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="SerialNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer serial no., not to be confused with software registration serial
                         number
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Title" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Title">
                 <xs:annotation>
                     <xs:documentation>Title as it is labeled on media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Sequence" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Sequence" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Sequence of media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="ImageInterleave" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="ImageInterleave" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>How many bytes must be read in image file for each byte in media
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Interleave" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Interleave" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>How many bytes must be skipped in image file for each byte in media
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Manufacturer" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Manufacturer" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Media manufacturer</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Model" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Model" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Media model</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Package" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Package">
                 <xs:annotation>
                     <xs:documentation>Media packaging (DIP, PCMCIA, Cartridge, etc)</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Interface" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Interface" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Media interface</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DimensionsType" name="Dimensions" minOccurs="0" maxOccurs="1">
+            <xs:element type="DimensionsType" name="Dimensions" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Dimensions of media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ScansType" name="Scans" minOccurs="0" maxOccurs="1">
+            <xs:element type="ScansType" name="Scans" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Scan of media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Array of hardware used to dump media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="PCMCIAType" name="PCMCIA" minOccurs="0" maxOccurs="1">
+            <xs:element type="PCMCIAType" name="PCMCIA" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Present if media is a PCMCIA Linear Flash or SRAM card, to contain PCMCIA specific
                         information
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="CopyProtection" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="CopyProtection" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Copy protection, if applicable</xs:documentation>
                 </xs:annotation>
@@ -2651,32 +2596,32 @@
             <xs:documentation>Contains PCMCIA card information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="DumpType" name="CIS" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="CIS">
                 <xs:annotation>
                     <xs:documentation>Contains the PCMCIA Card Information Structure dump.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Compliance" maxOccurs="1" minOccurs="0">
+            <xs:element type="xs:string" name="Compliance" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains the PCMCIA version standard compliance</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedShort" name="ManufacturerCode" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedShort" name="ManufacturerCode" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains the PCMCIA manufacturer ID</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedShort" name="CardCode" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:unsignedShort" name="CardCode" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains the PCMCIA card ID</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Manufacturer" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Manufacturer" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains the PCMCIA manufacturer string</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="ProductName" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="ProductName" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains the PCMCIA product name string</xs:documentation>
                 </xs:annotation>
@@ -2693,7 +2638,7 @@
             <xs:documentation>Contains PCI/PCI-X/PCIe card information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="VendorID" minOccurs="1" maxOccurs="1">
+            <xs:element name="VendorID">
                 <xs:annotation>
                     <xs:documentation>Contains PCI Vendor ID</xs:documentation>
                 </xs:annotation>
@@ -2704,7 +2649,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="DeviceID" minOccurs="1" maxOccurs="1">
+            <xs:element name="DeviceID">
                 <xs:annotation>
                     <xs:documentation>Contains PCI Device ID</xs:documentation>
                 </xs:annotation>
@@ -2715,12 +2660,12 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="DumpType" name="Configuration" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="Configuration" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Binary dump of the PCI configuration space</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="LinearMediaType" name="ExpansionROM" minOccurs="0" maxOccurs="1">
+            <xs:element type="LinearMediaType" name="ExpansionROM" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Binary dump of the PCI expansion rom</xs:documentation>
                 </xs:annotation>
@@ -2729,17 +2674,17 @@
     </xs:complexType>
     <xs:complexType name="EVPDType">
         <xs:sequence>
-            <xs:element type="xs:string" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing SCSI Extended Vendor Page Descriptor dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of SCSI Extended Vendor Page Descriptor dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of SCSI Extended Vendor Page Descriptor dump</xs:documentation>
                 </xs:annotation>
@@ -2762,7 +2707,7 @@
             <xs:documentation>Contains SCSI device information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="DumpType" name="Inquiry" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="Inquiry">
                 <xs:annotation>
                     <xs:documentation>Contains SCSI INQUIRY result dump</xs:documentation>
                 </xs:annotation>
@@ -2772,17 +2717,17 @@
                     <xs:documentation>Contains SCSI EVPD dumps</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="ModeSense" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="ModeSense" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains SCSI MODE SENSE(6) dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="ModeSense10" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="ModeSense10" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains SCSI MODE SENSE(10) dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="LogSense" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="LogSense" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains SCSI LOG SENSE dump</xs:documentation>
                 </xs:annotation>
@@ -2794,7 +2739,7 @@
             <xs:documentation>Contains USB device information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="VendorID" minOccurs="1" maxOccurs="1">
+            <xs:element name="VendorID">
                 <xs:annotation>
                     <xs:documentation>Contains USB Vendor ID</xs:documentation>
                 </xs:annotation>
@@ -2805,7 +2750,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="ProductID" minOccurs="1" maxOccurs="1">
+            <xs:element name="ProductID">
                 <xs:annotation>
                     <xs:documentation>Contains USB Product ID</xs:documentation>
                 </xs:annotation>
@@ -2816,7 +2761,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element type="DumpType" name="Descriptors" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="Descriptors" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Binary dump of the USB descriptors</xs:documentation>
                 </xs:annotation>
@@ -2828,22 +2773,22 @@
             <xs:documentation>Contains SecureDigital device information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="DumpType" name="CID" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="CID">
                 <xs:annotation>
                     <xs:documentation>Contains SD Card Identification Data</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="CSD" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="CSD" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains SD Card Status Data</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="SCR" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="SCR" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains SD Card Register</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="OCR" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="OCR" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains SD Operation Conditions Register</xs:documentation>
                 </xs:annotation>
@@ -2855,22 +2800,22 @@
             <xs:documentation>Contains MultiMediaCard device information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="DumpType" name="CID" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="CID">
                 <xs:annotation>
                     <xs:documentation>Contains MultiMediaCard Card Identification Data</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="CSD" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="CSD" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains MultiMediaCard Card Status Data</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="ExtendedCSD" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="ExtendedCSD" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains MultiMediaCard extended CSD</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="OCR" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="OCR" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Contains MultiMediaCard Operation Conditions Register</xs:documentation>
                 </xs:annotation>
@@ -2882,7 +2827,7 @@
             <xs:documentation>Contains ATA/ATAPI device information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="DumpType" name="Identify" minOccurs="1" maxOccurs="1">
+            <xs:element type="DumpType" name="Identify">
                 <xs:annotation>
                     <xs:documentation>Contains ATA/ATAPI IDENTIFY binary dump</xs:documentation>
                 </xs:annotation>
@@ -2894,54 +2839,54 @@
             <xs:documentation>Information about track in non-abstracted block based media</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing track dump, and format</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of track dump in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedShort" name="Head" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedShort" name="Head">
                 <xs:annotation>
                     <xs:documentation>Head (from 0) where this track resides</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="Cylinder" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="Cylinder">
                 <xs:annotation>
                     <xs:documentation>Cylinder where this track resides</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="StartSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartSector">
                 <xs:annotation>
                     <xs:documentation>Track start sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="EndSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndSector">
                 <xs:annotation>
                     <xs:documentation>Track end sector</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Sectors" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Sectors">
                 <xs:annotation>
                     <xs:documentation>Sectors in track. Not necessarily EndSector-StartSector, as there can be hidden
                         sectors
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="BytesPerSector" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedInt" name="BytesPerSector">
                 <xs:annotation>
                     <xs:documentation>Bytes per sector, physical undecoded tag-less</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of track dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Format" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Format" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Track format (IBM FM, IBM MFM, Amiga MFM, Apple GCR, etc)</xs:documentation>
                 </xs:annotation>
@@ -2953,28 +2898,28 @@
             <xs:documentation>Describes a dump of a block (sector) layered media</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>Image file, or image description file, plus format (cue, toc, etc, etc)
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of image file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="ContentChecksums" minOccurs="1">
+            <xs:element type="ChecksumsType" name="ContentChecksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="SequenceType" name="Sequence" minOccurs="1">
+            <xs:element type="SequenceType" name="Sequence">
                 <xs:annotation>
                     <xs:documentation>Media sequence information</xs:documentation>
                 </xs:annotation>
@@ -3005,39 +2950,39 @@
                     <xs:documentation>Media physical interface, for fixed media only</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PartNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer part no. or SKU</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="SerialNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer serial no., not to be confused with software registration serial
                         number
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="PhysicalBlockSize" minOccurs="1">
+            <xs:element type="xs:unsignedInt" name="PhysicalBlockSize">
                 <xs:annotation>
                     <xs:documentation>Physical block size in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedInt" name="LogicalBlockSize" minOccurs="1">
+            <xs:element type="xs:unsignedInt" name="LogicalBlockSize">
                 <xs:annotation>
                     <xs:documentation>Logical block size in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="LogicalBlocks" minOccurs="1">
+            <xs:element type="xs:unsignedLong" name="LogicalBlocks">
                 <xs:annotation>
                     <xs:documentation>User accessible logical blocks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="VariableBlockSizeType" name="VariableBlockSize" maxOccurs="1" minOccurs="0">
+            <xs:element type="VariableBlockSizeType" name="VariableBlockSize" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>List size for variable blocks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="TapeInformationType" name="TapeInformation" maxOccurs="1" minOccurs="0">
+            <xs:element type="TapeInformationType" name="TapeInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Presents information specific about a digital tape</xs:documentation>
                 </xs:annotation>
@@ -3083,7 +3028,7 @@
                     <xs:documentation>If media is USB attached, information here</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpType" name="MAM" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpType" name="MAM" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Medium Auxiliary Memory</xs:documentation>
                 </xs:annotation>
@@ -3113,33 +3058,33 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="CopyProtection" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="CopyProtection" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Copy protection, if applicable</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DimensionsType" name="Dimensions" minOccurs="1">
+            <xs:element type="DimensionsType" name="Dimensions">
                 <xs:annotation>
                     <xs:documentation>Dimensions of the media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="FileSystemInformationType" name="FileSystemInformation" minOccurs="0" maxOccurs="1">
+            <xs:element type="FileSystemInformationType" name="FileSystemInformation" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Information about filesystems and partitions contained in this media
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Array of hardware used to dump media, if removable</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="DiskType" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="DiskType">
                 <xs:annotation>
                     <xs:documentation>Disk type (Floppy, Twiggy, Hard Disk)</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="DiskSubType" maxOccurs="1" minOccurs="1">
+            <xs:element type="xs:string" name="DiskSubType">
                 <xs:annotation>
                     <xs:documentation>Disk subtype</xs:documentation>
                 </xs:annotation>
@@ -3151,27 +3096,27 @@
             <xs:documentation>Information about "blocks" in audio based media</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing block dump, and format</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of block dump in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="AccoustID" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:string" name="AccoustID">
                 <xs:annotation>
                     <xs:documentation>AccoustID of block</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of block dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="Format" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="Format" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Block format/encoding</xs:documentation>
                 </xs:annotation>
@@ -3185,33 +3130,33 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>Image file, or image description file, plus format (cue, toc, etc, etc)
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Image file size</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of image file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="SequenceType" name="Sequence" minOccurs="1">
+            <xs:element type="SequenceType" name="Sequence">
                 <xs:annotation>
                     <xs:documentation>Media sequence information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="PartNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="PartNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer part no. or SKU</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="SerialNumber" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="SerialNumber" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Manufacturer serial no., not to be confused with software registration serial
                         number
@@ -3238,22 +3183,22 @@
                     <xs:documentation>Blocks on audio media that uses separate blocks</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="CopyProtection" minOccurs="0" maxOccurs="1">
+            <xs:element type="xs:string" name="CopyProtection" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Copy protection, if applicable</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DimensionsType" name="Dimensions" minOccurs="1">
+            <xs:element type="DimensionsType" name="Dimensions">
                 <xs:annotation>
                     <xs:documentation>Dimensions of the media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ScansType" name="Scans" minOccurs="0" maxOccurs="1">
+            <xs:element type="ScansType" name="Scans" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Scan of media</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0" maxOccurs="1">
+            <xs:element type="DumpHardwareArrayType" name="DumpHardwareArray" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Array of hardware used to dump media, if removable</xs:documentation>
                 </xs:annotation>
@@ -3262,7 +3207,7 @@
     </xs:complexType>
     <xs:complexType name="VariableBlockSizeType">
         <xs:sequence>
-            <xs:element type="BlockSizeType" name="BlockSize" maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element type="BlockSizeType" name="BlockSize" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="BlockSizeType">
@@ -3274,7 +3219,7 @@
     </xs:complexType>
     <xs:complexType name="TapeInformationType">
         <xs:sequence>
-            <xs:element type="TapePartitionType" name="Partition" maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element type="TapePartitionType" name="Partition" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="TapePartitionType">
@@ -3282,40 +3227,40 @@
             <xs:documentation>Partition information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing partition dump, and format, binary, yranib, or audio/video
                         container
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of partition dump in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Sequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Sequence">
                 <xs:annotation>
                     <xs:documentation>Partition sequence</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="StartBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartBlock">
                 <xs:annotation>
                     <xs:documentation>Partition start block</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="EndBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndBlock">
                 <xs:annotation>
                     <xs:documentation>Partition end block</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of track dump</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:sequence>
-                <xs:element type="TapeFileType" name="File" maxOccurs="unbounded" minOccurs="1"/>
+                <xs:element type="TapeFileType" name="File" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:sequence>
     </xs:complexType>
@@ -3324,38 +3269,38 @@
             <xs:documentation>Tape file information</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element type="ImageType" name="Image" minOccurs="1" maxOccurs="1">
+            <xs:element type="ImageType" name="Image">
                 <xs:annotation>
                     <xs:documentation>File containing file dump, and format, binary, yranib, or audio/video container
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Size" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Size">
                 <xs:annotation>
                     <xs:documentation>Size of file in bytes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="Sequence" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="Sequence">
                 <xs:annotation>
                     <xs:documentation>File sequence</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="BlockSize" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="BlockSize">
                 <xs:annotation>
                     <xs:documentation>Size of blocks in this file</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="StartBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="StartBlock">
                 <xs:annotation>
                     <xs:documentation>File start block</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:unsignedLong" name="EndBlock" minOccurs="1" maxOccurs="1">
+            <xs:element type="xs:unsignedLong" name="EndBlock">
                 <xs:annotation>
                     <xs:documentation>File end block</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1">
+            <xs:element type="ChecksumsType" name="Checksums">
                 <xs:annotation>
                     <xs:documentation>Checksums of track dump</xs:documentation>
                 </xs:annotation>
@@ -3367,7 +3312,7 @@
             <xs:element type="ContentsFileType" name="File" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element type="DirectoryType" name="Directory" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute type="xs:string" name="namespace" use="optional"/>
+        <xs:attribute type="xs:string" name="namespace"/>
     </xs:complexType>
     <xs:complexType name="DirectoryType">
         <xs:sequence>
@@ -3375,49 +3320,65 @@
             <xs:element type="DirectoryType" name="Directory" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute type="xs:string" name="name" use="required"/>
-        <xs:attribute type="xs:dateTime" name="creationTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="accessTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="statusChangeTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="backupTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="lastWriteTime" use="optional"/>
+        <xs:attribute type="xs:dateTime" name="creationTime"/>
+        <xs:attribute type="xs:dateTime" name="accessTime"/>
+        <xs:attribute type="xs:dateTime" name="statusChangeTime"/>
+        <xs:attribute type="xs:dateTime" name="backupTime"/>
+        <xs:attribute type="xs:dateTime" name="lastWriteTime"/>
         <xs:attribute type="xs:unsignedLong" name="attributes" use="required"/>
-        <xs:attribute type="xs:unsignedInt" name="posixMode" use="optional"/>
-        <xs:attribute type="xs:unsignedLong" name="deviceNumber" use="optional"/>
-        <xs:attribute type="xs:unsignedLong" name="posixGroupId" use="optional"/>
-        <xs:attribute type="xs:unsignedLong" name="inode" use="optional"/>
-        <xs:attribute type="xs:unsignedLong" name="links" use="optional"/>
-        <xs:attribute type="xs:unsignedLong" name="posixUserId" use="optional"/>
+        <xs:attribute type="xs:unsignedInt" name="posixMode"/>
+        <xs:attribute type="xs:unsignedLong" name="deviceNumber"/>
+        <xs:attribute type="xs:unsignedLong" name="posixGroupId"/>
+        <xs:attribute type="xs:unsignedLong" name="inode"/>
+        <xs:attribute type="xs:unsignedLong" name="links"/>
+        <xs:attribute type="xs:unsignedLong" name="posixUserId"/>
     </xs:complexType>
     <xs:complexType name="ContentsFileType">
         <xs:sequence>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1"/>
-            <xs:element type="ExtendedAttributesType" name="ExtendedAttributes" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="ChecksumsType" name="Checksums"/>
+            <xs:element type="ExtendedAttributesType" name="ExtendedAttributes"/>
         </xs:sequence>
         <xs:attribute type="xs:string" name="name" use="required"/>
-        <xs:attribute type="xs:dateTime" name="creationTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="accessTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="statusChangeTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="backupTime" use="optional"/>
-        <xs:attribute type="xs:dateTime" name="lastWriteTime" use="optional"/>
+        <xs:attribute type="xs:dateTime" name="creationTime"/>
+        <xs:attribute type="xs:dateTime" name="accessTime"/>
+        <xs:attribute type="xs:dateTime" name="statusChangeTime"/>
+        <xs:attribute type="xs:dateTime" name="backupTime"/>
+        <xs:attribute type="xs:dateTime" name="lastWriteTime"/>
         <xs:attribute type="xs:unsignedLong" name="attributes" use="required"/>
-        <xs:attribute type="xs:unsignedInt" name="posixMode" use="optional"/>
-        <xs:attribute type="xs:unsignedLong" name="deviceNumber" use="optional"/>
-        <xs:attribute type="xs:unsignedLong" name="posixGroupId" use="optional"/>
+        <xs:attribute type="xs:unsignedInt" name="posixMode"/>
+        <xs:attribute type="xs:unsignedLong" name="deviceNumber"/>
+        <xs:attribute type="xs:unsignedLong" name="posixGroupId"/>
         <xs:attribute type="xs:unsignedLong" name="inode" use="required"/>
         <xs:attribute type="xs:unsignedLong" name="links" use="required"/>
-        <xs:attribute type="xs:unsignedLong" name="posixUserId" use="optional"/>
+        <xs:attribute type="xs:unsignedLong" name="posixUserId"/>
         <xs:attribute type="xs:unsignedLong" name="length" use="required"/>
     </xs:complexType>
     <xs:complexType name="ExtendedAttributesType">
         <xs:sequence>
-            <xs:element type="ExtendedAttributeType" name="ExtendedAttribute" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element type="ExtendedAttributeType" name="ExtendedAttribute" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ExtendedAttributeType">
         <xs:sequence>
-            <xs:element type="ChecksumsType" name="Checksums" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="ChecksumsType" name="Checksums"/>
         </xs:sequence>
         <xs:attribute type="xs:string" name="name" use="required"/>
         <xs:attribute type="xs:unsignedLong" name="length" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="TrackIndexesType">
+        <xs:sequence>
+            <xs:element type="TrackIndexType" name="Index" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TrackIndexType">
+        <xs:simpleContent>
+            <xs:extension base="xs:integer">
+                <xs:attribute name="index" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer"/>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 </xs:schema>

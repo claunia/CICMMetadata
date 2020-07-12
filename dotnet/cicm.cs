@@ -6972,6 +6972,40 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TrackIndexType {
+        
+        private string indexField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
+        public string index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute(DataType="integer")]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TrackSequenceType {
         
         private uint trackNumberField;
@@ -7019,6 +7053,8 @@ namespace Schemas {
         private ulong startSectorField;
         
         private ulong endSectorField;
+        
+        private TrackIndexType[] indexesField;
         
         private TrackTypeTrackType trackType1Field;
         
@@ -7099,6 +7135,17 @@ namespace Schemas {
             }
             set {
                 this.endSectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Index", IsNullable=false)]
+        public TrackIndexType[] Indexes {
+            get {
+                return this.indexesField;
+            }
+            set {
+                this.indexesField = value;
             }
         }
         
