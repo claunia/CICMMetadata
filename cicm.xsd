@@ -3387,12 +3387,8 @@
     </xs:complexType>
     <xs:complexType name="TrackIndexType">
         <xs:simpleContent>
-            <xs:extension base="xs:integer">
-                <xs:attribute name="index" use="required">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:integer"/>
-                    </xs:simpleType>
-                </xs:attribute>
+            <xs:extension base="xs:int">
+                <xs:attribute type="xs:unsignedShort" name="index" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

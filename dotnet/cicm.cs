@@ -7030,13 +7030,13 @@ namespace Schemas {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TrackIndexType {
         
-        private string indexField;
+        private ushort indexField;
         
-        private string valueField;
+        private int valueField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
-        public string index {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ushort index {
             get {
                 return this.indexField;
             }
@@ -7046,8 +7046,8 @@ namespace Schemas {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute(DataType="integer")]
-        public string Value {
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public int Value {
             get {
                 return this.valueField;
             }

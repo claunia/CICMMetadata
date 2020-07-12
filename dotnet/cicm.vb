@@ -7033,13 +7033,13 @@ Namespace Schemas
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class TrackIndexType
         
-        Private indexField As String
+        Private indexField As UShort
         
-        Private valueField As String
+        Private valueField As Integer
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="integer")>  _
-        Public Property index() As String
+        <System.Xml.Serialization.XmlAttributeAttribute()>  _
+        Public Property index() As UShort
             Get
                 Return Me.indexField
             End Get
@@ -7049,8 +7049,8 @@ Namespace Schemas
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlTextAttribute(DataType:="integer")>  _
-        Public Property Value() As String
+        <System.Xml.Serialization.XmlTextAttribute()>  _
+        Public Property Value() As Integer
             Get
                 Return Me.valueField
             End Get

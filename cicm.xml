@@ -688,7 +688,7 @@
       <!--Optional:-->
       <Indexes>
         <!--1 or more repetitions:-->
-        <Index index="100">100</Index>
+        <Index index="5">3</Index>
       </Indexes>
       <!--Optional:-->
       <Flags>
