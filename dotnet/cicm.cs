@@ -7814,6 +7814,8 @@ namespace Schemas {
         
         private PS3EncryptionType pS3EncryptionField;
         
+        private string mediaCatalogueNumberField;
+        
         private TrackType[] trackField;
         
         private DumpHardwareType[] dumpHardwareArrayField;
@@ -8276,6 +8278,16 @@ namespace Schemas {
             }
             set {
                 this.pS3EncryptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MediaCatalogueNumber {
+            get {
+                return this.mediaCatalogueNumberField;
+            }
+            set {
+                this.mediaCatalogueNumberField = value;
             }
         }
         

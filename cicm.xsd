@@ -796,6 +796,11 @@
                     <xs:documentation>PS3 Encryption Key</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element type="xs:string" name="MediaCatalogueNumber" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Media catalogue number or MCN</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element type="TrackType" name="Track" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>Array of disc tracks</xs:documentation>

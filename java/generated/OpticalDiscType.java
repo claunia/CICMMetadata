@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.07.12 a las 09:57:36 PM WEST 
+// Generado el: 2020.07.12 a las 09:59:10 PM WEST 
 //
 
 
@@ -72,6 +72,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="LeadOut" type="{}BorderType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="Xbox" type="{}XboxType" minOccurs="0"/>
  *         &lt;element name="PS3Encryption" type="{}PS3EncryptionType" minOccurs="0"/>
+ *         &lt;element name="MediaCatalogueNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Track" type="{}TrackType" maxOccurs="unbounded"/>
  *         &lt;element name="DumpHardwareArray" type="{}DumpHardwareArrayType" minOccurs="0"/>
  *       &lt;/sequence>
@@ -128,6 +129,7 @@ import javax.xml.bind.annotation.XmlType;
     "leadOut",
     "xbox",
     "ps3Encryption",
+    "mediaCatalogueNumber",
     "track",
     "dumpHardwareArray"
 })
@@ -224,6 +226,8 @@ public class OpticalDiscType {
     protected XboxType xbox;
     @XmlElement(name = "PS3Encryption")
     protected PS3EncryptionType ps3Encryption;
+    @XmlElement(name = "MediaCatalogueNumber")
+    protected String mediaCatalogueNumber;
     @XmlElement(name = "Track", required = true)
     protected List<TrackType> track;
     @XmlElement(name = "DumpHardwareArray")
@@ -1320,6 +1324,30 @@ public class OpticalDiscType {
      */
     public void setPS3Encryption(PS3EncryptionType value) {
         this.ps3Encryption = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad mediaCatalogueNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMediaCatalogueNumber() {
+        return mediaCatalogueNumber;
+    }
+
+    /**
+     * Define el valor de la propiedad mediaCatalogueNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMediaCatalogueNumber(String value) {
+        this.mediaCatalogueNumber = value;
     }
 
     /**

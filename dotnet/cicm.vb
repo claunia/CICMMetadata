@@ -7817,6 +7817,8 @@ Namespace Schemas
         
         Private pS3EncryptionField As PS3EncryptionType
         
+        Private mediaCatalogueNumberField As String
+        
         Private trackField() As TrackType
         
         Private dumpHardwareArrayField() As DumpHardwareType
@@ -8279,6 +8281,16 @@ Namespace Schemas
             End Get
             Set
                 Me.pS3EncryptionField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property MediaCatalogueNumber() As String
+            Get
+                Return Me.mediaCatalogueNumberField
+            End Get
+            Set
+                Me.mediaCatalogueNumberField = value
             End Set
         End Property
         

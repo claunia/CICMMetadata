@@ -669,6 +669,8 @@
       <Key>string</Key>
       <Serial>string</Serial>
     </PS3Encryption>
+    <!--Optional:-->
+    <MediaCatalogueNumber>string</MediaCatalogueNumber>
     <!--1 or more repetitions:-->
     <Track>
       <Image format="string" offset="11">string</Image>
