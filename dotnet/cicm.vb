@@ -6975,6 +6975,62 @@ Namespace Schemas
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class TrackFlagsType
+        
+        Private quadraphonicField As Boolean
+        
+        Private dataField As Boolean
+        
+        Private copyPermittedField As Boolean
+        
+        Private preEmphasisField As Boolean
+        
+        '''<remarks/>
+        Public Property Quadraphonic() As Boolean
+            Get
+                Return Me.quadraphonicField
+            End Get
+            Set
+                Me.quadraphonicField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Data() As Boolean
+            Get
+                Return Me.dataField
+            End Get
+            Set
+                Me.dataField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CopyPermitted() As Boolean
+            Get
+                Return Me.copyPermittedField
+            End Get
+            Set
+                Me.copyPermittedField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property PreEmphasis() As Boolean
+            Get
+                Return Me.preEmphasisField
+            End Get
+            Set
+                Me.preEmphasisField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class TrackIndexType
         
         Private indexField As String
@@ -7058,6 +7114,8 @@ Namespace Schemas
         Private endSectorField As ULong
         
         Private indexesField() As TrackIndexType
+        
+        Private flagsField As TrackFlagsType
         
         Private iSRCField As String
         
@@ -7151,6 +7209,16 @@ Namespace Schemas
             End Get
             Set
                 Me.indexesField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property Flags() As TrackFlagsType
+            Get
+                Return Me.flagsField
+            End Get
+            Set
+                Me.flagsField = value
             End Set
         End Property
         

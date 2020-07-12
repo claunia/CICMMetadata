@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.07.12 a las 10:02:34 PM WEST 
+// Generado el: 2020.07.12 a las 10:14:31 PM WEST 
 //
 
 
@@ -35,7 +35,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="EndMSF" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="StartSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
  *         &lt;element name="EndSector" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
- *         &lt;element name="Indexes" type="{}TrackIndexesType"/>
+ *         &lt;element name="Indexes" type="{}TrackIndexesType" minOccurs="0"/>
+ *         &lt;element name="Flags" type="{}TrackFlagsType" minOccurs="0"/>
  *         &lt;element name="ISRC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="TrackType">
  *           &lt;simpleType>
@@ -76,6 +77,7 @@ import javax.xml.bind.annotation.XmlType;
     "startSector",
     "endSector",
     "indexes",
+    "flags",
     "isrc",
     "trackType",
     "bytesPerSector",
@@ -103,8 +105,10 @@ public class TrackType {
     @XmlElement(name = "EndSector", required = true)
     @XmlSchemaType(name = "unsignedLong")
     protected BigInteger endSector;
-    @XmlElement(name = "Indexes", required = true)
+    @XmlElement(name = "Indexes")
     protected TrackIndexesType indexes;
+    @XmlElement(name = "Flags")
+    protected TrackFlagsType flags;
     @XmlElement(name = "ISRC")
     protected String isrc;
     @XmlElement(name = "TrackType", required = true)
@@ -311,6 +315,30 @@ public class TrackType {
      */
     public void setIndexes(TrackIndexesType value) {
         this.indexes = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad flags.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TrackFlagsType }
+     *     
+     */
+    public TrackFlagsType getFlags() {
+        return flags;
+    }
+
+    /**
+     * Define el valor de la propiedad flags.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TrackFlagsType }
+     *     
+     */
+    public void setFlags(TrackFlagsType value) {
+        this.flags = value;
     }
 
     /**

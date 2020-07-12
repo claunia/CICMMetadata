@@ -6972,6 +6972,62 @@ namespace Schemas {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TrackFlagsType {
+        
+        private bool quadraphonicField;
+        
+        private bool dataField;
+        
+        private bool copyPermittedField;
+        
+        private bool preEmphasisField;
+        
+        /// <remarks/>
+        public bool Quadraphonic {
+            get {
+                return this.quadraphonicField;
+            }
+            set {
+                this.quadraphonicField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool CopyPermitted {
+            get {
+                return this.copyPermittedField;
+            }
+            set {
+                this.copyPermittedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool PreEmphasis {
+            get {
+                return this.preEmphasisField;
+            }
+            set {
+                this.preEmphasisField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TrackIndexType {
         
         private string indexField;
@@ -7055,6 +7111,8 @@ namespace Schemas {
         private ulong endSectorField;
         
         private TrackIndexType[] indexesField;
+        
+        private TrackFlagsType flagsField;
         
         private string iSRCField;
         
@@ -7148,6 +7206,16 @@ namespace Schemas {
             }
             set {
                 this.indexesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TrackFlagsType Flags {
+            get {
+                return this.flagsField;
+            }
+            set {
+                this.flagsField = value;
             }
         }
         
