@@ -1,3 +1,8 @@
+THIS FORMAT IS DEPRECATED
+=========================
+This format is deprecated in its place use [Aaru](https://www.aaru.app)'s metadata.
+
+
 Canary Islands Computer Museum
 ==============================
 Digital Asset Metadata Sidecar
